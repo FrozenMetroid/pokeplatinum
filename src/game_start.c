@@ -23,6 +23,8 @@
 #include "trainer_info.h"
 #include "unk_0206B9D8.h"
 #include "vars_flags.h"
+#include "player_avatar.h"
+#include "field_overworld_state.h"
 
 #include "constdata/const_020EA10C.h"
 #include "constdata/const_020EA11C.h"
@@ -182,6 +184,9 @@ static void StartNewSave(int unused, SaveData *saveData)
 {
     SaveData_Clear(saveData);
     InitPlayerStartLocation(saveData);
-    TrainerInfo_SetMoney(SaveData_GetTrainerInfo(saveData), 3000);
+    TrainerInfo_SetMoney(SaveData_GetTrainerInfo(saveData), 5000);
     SystemFlag_SetBagAcquired(SaveData_GetVarsFlags(saveData));
+    FieldOverworldState *overworldState = SaveData_GetFieldOverworldState(saveData);
+    PlayerData *playerData = FieldOverworldState_GetPlayerData(overworldState);
+    PlayerData_SetRunningShoes(playerData, TRUE);
 }

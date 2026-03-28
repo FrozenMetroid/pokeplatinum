@@ -68,7 +68,16 @@
         "thank him properly for your Pokémon.\r",
         "His lab is in Sandgem Town, isn’t it?\r",
         "Now that you have your own Pokémon,\n",
-        "the tall grass won’t be so threatening.\r"
+        "the tall grass won’t be so threatening.\r",
+        "Going to Sandgem Town is like an\n",
+        "adventure in itself, right?"
+      ]
+    },
+    {
+      "id": "TwinleafTownPlayerHouse1F_Text_GoingToSandgemIsAnAdventure",
+      "en_US": [
+        "Going to Sandgem Town is like an\n",
+        "adventure in itself, right?"
       ]
     },
     {
@@ -76,41 +85,6 @@
       "en_US": [
         "Oh, I know!\n",
         "{STRVAR_1 3, 0, 0}, put these on.\r"
-      ]
-    },
-    {
-      "id": "TwinleafTownPlayerHouse1F_Text_PlayerReceivedRunningShoes",
-      "en_US": [
-        "{STRVAR_1 3, 0, 0} received a pair of\n",
-        "{COLOR 1}Running Shoes{COLOR 0}!"
-      ]
-    },
-    {
-      "id": "TwinleafTownPlayerHouse1F_Text_LetMeReadTheInstructions",
-      "en_US": [
-        "Going to Sandgem Town is like an\n",
-        "adventure in itself, right?\r",
-        "With those Running Shoes, you can\n",
-        "get to faraway places much faster.\r",
-        "OK...\n",
-        "Let me read the instructions...\r",
-        "“Press the B Button and dash\n",
-        "about faster than ever before!\r",
-        "“Put on the Running Shoes and\n",
-        "blaze new trails of adventure!”\r",
-        "Well, isn’t that just nifty!"
-      ]
-    },
-    {
-      "id": "TwinleafTownPlayerHouse1F_Text_IllReadTheInstructions",
-      "en_US": [
-        "Mom: I’ll read you the instructions\n",
-        "for the Running Shoes...\r",
-        "“Press the B Button and dash\n",
-        "about faster than ever before!\r",
-        "“Put on the Running Shoes and\n",
-        "blaze new trails of adventure!”\r",
-        "Well, isn’t that just nifty!"
       ]
     },
     {

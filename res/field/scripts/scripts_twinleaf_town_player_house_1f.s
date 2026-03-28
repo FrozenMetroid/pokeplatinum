@@ -126,21 +126,8 @@ TwinleafTownPlayerHouse1F_OnFrame_CutsceneAfterRivalBattle:
     BufferRivalName 0
     BufferPlayerName 1
     Message TwinleafTownPlayerHouse1F_Text_WowThatsWhatHappenedToYou
-    CloseMessage
-    WaitTime 30, VAR_RESULT
-    BufferPlayerName 0
-    Message TwinleafTownPlayerHouse1F_Text_PutTheseOn
-    GiveRunningShoes
-    BufferPlayerName 0
-    Message TwinleafTownPlayerHouse1F_Text_PlayerReceivedRunningShoes
-    PlayFanfare SEQ_FANFA4
-    WaitFanfare
-    Message TwinleafTownPlayerHouse1F_Text_LetMeReadTheInstructions
-    WaitButton
-    CloseMessage
     SetVar VAR_PLAYER_HOUSE_STATE, 4
-    ReleaseAll
-    End
+    GoTo TwinleafTownPlayerHouse1F_CloseMessage
 
     .balign 4, 0
 TwinleafTownPlayerHouse1F_Movement_MomWalkFromKitchenToCouch:
@@ -173,7 +160,7 @@ TwinleafTownPlayerHouse1F_Mom:
     GoToIfEq VAR_PLAYER_HOUSE_STATE, 6, TwinleafTownPlayerHouse1F_EnjoyYourAdventure
     GoToIfSet FLAG_HAS_POKEDEX, TwinleafTownPlayerHouse1F_MomGiveJournal
     GoToIfGe VAR_PLAYER_HOUSE_STATE, 5, TwinleafTownPlayerHouse1F_CallTakeAQuickRest
-    GoToIfGe VAR_PLAYER_HOUSE_STATE, 4, TwinleafTownPlayerHouse1F_IllReadTheInstructions
+    GoToIfGe VAR_PLAYER_HOUSE_STATE, 4, TwinleafTownPlayerHouse1F_GoingToSandgemIsAnAdventure
     GoToIfSet FLAG_UNK_0x00F8, TwinleafTownPlayerHouse1F_IsntRivalWaitingForYou
     GoToIfGe VAR_PLAYER_HOUSE_STATE, 2, TwinleafTownPlayerHouse1F_YouTakeCareNow
     GoToIfSet FLAG_TALKED_TO_MOM, TwinleafTownPlayerHouse1F_YouKnowHowImpatientRivalIs
@@ -181,19 +168,13 @@ TwinleafTownPlayerHouse1F_Mom:
     BufferPlayerName 0
     BufferRivalName 1
     Message TwinleafTownPlayerHouse1F_Text_RivalAlreadyLeft
-    WaitButton
-    CloseMessage
-    ReleaseAll
-    End
+    GoTo TwinleafTownPlayerHouse1F_CloseMessage
 
 TwinleafTownPlayerHouse1F_Unused:
     BufferPlayerName 0
     BufferRivalName 1
     Message TwinleafTownPlayerHouse1F_Text_RivalCameLookingForYou
-    WaitButton
-    CloseMessage
-    ReleaseAll
-    End
+    GoTo TwinleafTownPlayerHouse1F_CloseMessage
 
 TwinleafTownPlayerHouse1F_DoMomMessage:
     GoToIfGe VAR_CANALAVE_LIBRARY_STATE, 2, TwinleafTownPlayerHouse1F_IsEverythingAllRight
@@ -249,10 +230,7 @@ TwinleafTownPlayerHouse1F_CloseMessage:
 TwinleafTownPlayerHouse1F_EnjoyYourAdventure:
     BufferPlayerName 0
     Message TwinleafTownPlayerHouse1F_Text_EnjoyYourAdventure2
-    WaitButton
-    CloseMessage
-    ReleaseAll
-    End
+    GoTo TwinleafTownPlayerHouse1F_CloseMessage
 
 TwinleafTownPlayerHouse1F_MomGiveJournal:
     Call TwinleafTownPlayerHouse1F_TakeAQuickRest
@@ -489,30 +467,17 @@ TwinleafTownPlayerHouse1F_LateNightTakeAQuickRest:
     Message TwinleafTownPlayerHouse1F_Text_SoLateRightNowTakeAQuickRest
     Return
 
-TwinleafTownPlayerHouse1F_IllReadTheInstructions:
-    Message TwinleafTownPlayerHouse1F_Text_IllReadTheInstructions
-    WaitButton
-    CloseMessage
-    ReleaseAll
-    End
+TwinleafTownPlayerHouse1F_GoingToSandgemIsAnAdventure:
+    Message TwinleafTownPlayerHouse1F_Text_GoingToSandgemIsAnAdventure
+    GoTo TwinleafTownPlayerHouse1F_CloseMessage
 
 TwinleafTownPlayerHouse1F_Unused2:
     BufferRivalName 0
     BufferPlayerName 1
     Message TwinleafTownPlayerHouse1F_Text_WowThatsWhatHappenedToYou
-    CloseMessage
-    WaitTime 30, VAR_RESULT
-    BufferPlayerName 0
-    Message TwinleafTownPlayerHouse1F_Text_PutTheseOn
-    GiveBag
-    AddItem ITEM_POTION, 1, VAR_RESULT
-    BufferPlayerName 0
-    Message TwinleafTownPlayerHouse1F_Text_PlayerReceivedRunningShoes
-    PlayFanfare SEQ_FANFA4
-    WaitFanfare
-    Message TwinleafTownPlayerHouse1F_Text_LetMeReadTheInstructions
     WaitButton
     CloseMessage
+    AddItem ITEM_POTION, 1, VAR_RESULT
     SetVar VAR_PLAYER_HOUSE_STATE, 4
     ReleaseAll
     End
@@ -520,27 +485,18 @@ TwinleafTownPlayerHouse1F_Unused2:
 TwinleafTownPlayerHouse1F_IsntRivalWaitingForYou:
     BufferRivalName 0
     Message TwinleafTownPlayerHouse1F_Text_IsntRivalWaitingForYou
-    WaitButton
-    CloseMessage
-    ReleaseAll
-    End
+    GoTo TwinleafTownPlayerHouse1F_CloseMessage
 
 TwinleafTownPlayerHouse1F_YouTakeCareNow:
     SetFlag FLAG_UNK_0x00F8
     BufferPlayerName 0
     Message TwinleafTownPlayerHouse1F_Text_YouTakeCareNow
-    WaitButton
-    CloseMessage
-    ReleaseAll
-    End
+    GoTo TwinleafTownPlayerHouse1F_CloseMessage
 
 TwinleafTownPlayerHouse1F_YouKnowHowImpatientRivalIs:
     BufferRivalName 0
     Message TwinleafTownPlayerHouse1F_Text_YouKnowHowImpatientRivalIs
-    WaitButton
-    CloseMessage
-    ReleaseAll
-    End
+    GoTo TwinleafTownPlayerHouse1F_CloseMessage
 
 TwinleafTownPlayerHouse1F_CallTakeAQuickRest:
     Call TwinleafTownPlayerHouse1F_TakeAQuickRest
@@ -749,10 +705,7 @@ TwinleafTownPlayerHouse1F_DontGoIntoTheTallGrass:
     SetVar VAR_PLAYER_HOUSE_STATE, 2
     BufferPlayerName 0
     Message TwinleafTownPlayerHouse1F_Text_DontGoIntoTheTallGrass
-    WaitButton
-    CloseMessage
-    ReleaseAll
-    End
+    GoTo TwinleafTownPlayerHouse1F_CloseMessage
 
     .balign 4, 0
 TwinleafTownPlayerHouse1F_Movement_PlayerAtDoorFaceMom:
