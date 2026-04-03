@@ -3841,12 +3841,13 @@ static int BattleSystem_Cursor_Menu(UnkStruct_ov16_02268A14 *param0, BOOL cursor
         break;
     default: // normal fight menu, with bag, run and pokemon
         buttonId = sBattleMenuButtonLayout[cursor->y][cursor->x];
-
+        button = BattleSystem_MoveCursor(cursor, 3, 2, sBattleMenuButtonLayout[0]); // temporarily set button to the id of the new button
         if ((buttonId == 3) && (gSystem.pressedKeys & PAD_KEY_UP)) {
-            (void)0; // Do nothing if run is selected and up is pressed
+            cursor->x = 1;
+            cursor->y = 0;
+            Sound_PlayEffect(SEQ_SE_CONFIRM);
+            button = PAD_KEY_UP;
         } else {
-            button = BattleSystem_MoveCursor(cursor, 3, 2, sBattleMenuButtonLayout[0]); // temporarily set button to the id of the new button
-
             if ((button == 0) && (buttonId == 0)) { // if fight is selected, and is still selected
                 if (gSystem.pressedKeys & PAD_KEY_LEFT) { // Move to bag on the bottom row
                     cursor->x = 0;
