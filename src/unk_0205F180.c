@@ -264,42 +264,39 @@ static void PlayerAvatar_PlayWalkSE(PlayerAvatar *playerAvatar)
         MapObject *mapObj = Player_MapObject(playerAvatar);
         u8 v1, v2 = MapObject_GetCurrTileBehavior(mapObj);
 
-        {
-            int animationCode = MapObject_GetMovementAction(mapObj);
-            int v4 = MovementAction_GetDirFromAction(animationCode);
-
-            if (v4 == -1) {
-                v1 = v2;
-            } else {
-                v1 = MapObject_GetTileBehaviorFromDir(mapObj, v4);
-            }
+        int animationCode = MapObject_GetMovementAction(mapObj);
+        int v4 = MovementAction_GetDirFromAction(animationCode);
+        if (v4 == -1) {
+            v1 = v2;
+        } else {
+            v1 = MapObject_GetTileBehaviorFromDir(mapObj, v4);
         }
-
-        if ((MapObject_IsOnSnow(mapObj, v2) == 1) || (TileBehavior_IsSnowWithShadows(v2) == 1)) {
-            Sound_PlayEffect(SEQ_SE_PL_YUKI);
-        }
-
-        if (TileBehavior_IsPuddle(v2) == 1) {
-            Sound_PlayEffect(SEQ_SE_DP_FOOT3_0);
-        }
-
-        if (TileBehavior_IsShallowWater(v2) == 1) {
-            Sound_PlayEffect(SEQ_SE_DP_FOOT3_1);
-        }
-
-        if (TileBehavior_IsSand(v2) == 1) {
-        }
-
-        if ((TileBehavior_IsMud(v2) == 1) && (TileBehavior_IsDeepMud(v2) != 1)) {
-            Sound_PlayEffect(SEQ_SE_DP_MARSH_WALK);
-        }
-
         int code = MapObject_GetMovementAction(mapObj);
 
-        if (!IsMovementWalkOnSpotSlow(code)) {
-            if ((TileBehavior_IsVeryTallGrass(v2) == 1) || (TileBehavior_IsVeryTallGrass(v1) == 1)) {
+        if ((MapObject_IsOnSnow(mapObj, v2)) || (TileBehavior_IsSnowWithShadows(v2))) {
+            Sound_PlayEffect(SEQ_SE_PL_YUKI);
+        } 
+        else if (TileBehavior_IsPuddle(v2)) {
+            Sound_PlayEffect(SEQ_SE_DP_FOOT3_0);
+        } 
+        else if (TileBehavior_IsShallowWater(v2)) {
+            Sound_PlayEffect(SEQ_SE_DP_FOOT3_1);
+        }
+        else if (TileBehavior_IsSand(v2)) {
+            Sound_PlayEffect(SEQ_SE_PL_YUKI); // same as snow for now, sounds fitting enough
+        }
+        else if ((TileBehavior_IsMud(v2)) && (!TileBehavior_IsDeepMud(v2))) {
+            Sound_PlayEffect(SEQ_SE_DP_MARSH_WALK);
+        }
+        else if (TileBehavior_IsTallGrass(v2)) {
+            Sound_PlayEffect(SEQ_SE_DP_KUSA);
+        }
+        else if (!IsMovementWalkOnSpotSlow(code) && ((TileBehavior_IsTallGrass(v2)) || (TileBehavior_IsVeryTallGrass(v2)))) {
                 Sound_PlayEffect(SEQ_SE_DP_KUSA);
-            }
+        }
+        else {
+            // haven't been able to add this sseq just yet
+            // Sound_PlayEffect(SEQ_SE_PL_ASHIOTO);
         }
     }
 }
