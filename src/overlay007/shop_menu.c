@@ -60,6 +60,7 @@
 #include "unk_0208C098.h"
 #include "unk_02097B18.h"
 #include "vars_flags.h"
+#include "debug.h"
 
 #include "res/graphics/shop_menu/shop_gra.naix"
 #include "res/graphics/sprite_templates/shop_menu.h"
@@ -95,6 +96,7 @@ static u8 Shop_FinishFreePremierBall(ShopMenu *shopMenu);
 static u8 Shop_ShowConfirmPurchase(ShopMenu *shopMenu);
 static u8 Shop_SelectConfirmPurchase(ShopMenu *shopMenu);
 static u8 Shop_ConfirmItemPurchase(ShopMenu *shopMenu);
+static BOOL IsItemPokeBall(u16 itemId);
 static u8 Shop_ReinitContextMenu(ShopMenu *shopMenu);
 static void Shop_PrintExit(FieldSystem *fieldSystem, ShopMenu *shopMenu);
 static void Shop_StartScreenFade(FieldSystem *fieldSystem, ShopMenu *shopMenu);
@@ -1247,8 +1249,14 @@ static u8 Shop_ConfirmItemPurchase(ShopMenu *shopMenu)
     return SHOP_STATE_FINISH_PURCHASE;
 }
 
+static BOOL IsItemPokeBall(u16 itemId)
+{
+    return (itemId >= ITEM_MASTER_BALL && itemId <= ITEM_CHERISH_BALL);
+}
+
 static u8 Shop_FinishPurchase(ShopMenu *shopMenu)
 {
+    u16 premierBallCount;
     if (FieldMessage_FinishedPrinting(shopMenu->fieldMsgPrinterId) == FALSE) {
         return SHOP_STATE_FINISH_PURCHASE;
     }
@@ -1258,22 +1266,36 @@ static u8 Shop_FinishPurchase(ShopMenu *shopMenu)
             SystemVars_IncrementDepartmentStoreBuyCount(shopMenu->varsFlags);
         }
 
-        if (((shopMenu->martType == MART_TYPE_NORMAL) || (shopMenu->martType == MART_TYPE_FRONTIER)) && (shopMenu->itemId == ITEM_POKE_BALL) && (shopMenu->itemAmount >= 10)) {
-            if (Bag_TryAddItem(shopMenu->destInventory, ITEM_PREMIER_BALL, 1, HEAP_ID_FIELD2) == TRUE) {
-                String *string = MessageLoader_GetNewString(shopMenu->msgLoader, pl_msg_00000543_00010);
+        if ((shopMenu->martType == MART_TYPE_NORMAL) || (shopMenu->martType == MART_TYPE_FRONTIER)) { 
+            if (IsItemPokeBall(shopMenu->itemId) && (shopMenu->itemAmount >= 10)) {
+                premierBallCount = shopMenu->itemAmount / 10; // make it so that you can receive more than 1
+                while (Bag_CanFitItem(shopMenu->destInventory, ITEM_PREMIER_BALL, premierBallCount, HEAP_ID_FIELD2) == FALSE && premierBallCount > 0) { // if you can't fit all the premier balls, try with one less until you can fit them or you have no more to give
+                    premierBallCount--;
+                }
+                if (premierBallCount != 0) {
+                    if (Bag_TryAddItem(shopMenu->destInventory, ITEM_PREMIER_BALL, premierBallCount, HEAP_ID_FIELD2) == TRUE) {
+                        String *string;
+                        if (premierBallCount > 1) {
+                            string = MessageLoader_GetNewString(shopMenu->msgLoader, pl_msg_00000543_00039_Multiple_Premier_Balls);
+                        } else {
+                            string = MessageLoader_GetNewString(shopMenu->msgLoader, pl_msg_00000543_00010);
+                        }
+                        StringTemplate_Format(shopMenu->strTemplate, shopMenu->string, string);
+                        String_Free(string);
+                        Window_FillTilemap(&shopMenu->windows[SHOP_WINDOW_MESSAGE], 15);
 
-                StringTemplate_Format(shopMenu->strTemplate, shopMenu->string, string);
-                String_Free(string);
-                Window_FillTilemap(&shopMenu->windows[SHOP_WINDOW_MESSAGE], 15);
+                        shopMenu->fieldMsgPrinterId = FieldMessage_Print(&shopMenu->windows[SHOP_WINDOW_MESSAGE], shopMenu->string, shopMenu->options, TRUE);
 
-                shopMenu->fieldMsgPrinterId = FieldMessage_Print(&shopMenu->windows[SHOP_WINDOW_MESSAGE], shopMenu->string, shopMenu->options, TRUE);
-
-                GameRecords *records = SaveData_GetGameRecords(shopMenu->saveData);
-                GameRecords_IncrementRecordValue(records, RECORD_UNK_050);
-
-                return SHOP_STATE_FINISH_FREE_PREMIER;
+                        GameRecords *records = SaveData_GetGameRecords(shopMenu->saveData);
+                        for (int i = 0; i <= premierBallCount; i++) { // increment it for how many premier balls you got
+                            GameRecords_IncrementRecordValue(records, RECORD_PREMIER_BALLS);
+                        }
+                        return SHOP_STATE_FINISH_FREE_PREMIER;
+                    }
+                }
             }
         }
+        
 
         Window_EraseMessageBox(&shopMenu->windows[SHOP_WINDOW_MESSAGE], FALSE);
         Shop_SetScrollSpritesPositionXY(shopMenu, FALSE);

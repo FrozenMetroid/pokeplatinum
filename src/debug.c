@@ -1,3 +1,5 @@
+#define LOGGING_ENABLED
+
 #ifdef LOGGING_ENABLED
 #include "debug.h"
 

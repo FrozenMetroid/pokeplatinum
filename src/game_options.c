@@ -8,6 +8,7 @@
 #include "savedata.h"
 #include "system.h"
 #include "text.h"
+#include "global/testing.h"
 
 Options *Options_New(enum HeapID heapID)
 {
@@ -26,10 +27,18 @@ void Options_Init(Options *options)
 {
     MI_CpuFill8(options, 0, sizeof(Options));
 
+    #ifdef TESTING_SPEED_UP_TEXT
     options->textSpeed = OPTIONS_TEXT_SPEED_FAST;
+    #else
+    options->textSpeed = OPTIONS_TEXT_SPEED_NORMAL;
+    #endif
     options->soundMode = OPTIONS_SOUND_MODE_STEREO;
     options->battleStyle = OPTIONS_BATTLE_STYLE_SHIFT;
+    #ifdef TESTING_SPEED_UP_BATTLES
+    options->battleScene = OPTIONS_BATTLE_SCENE_OFF;
+    #else
     options->battleScene = OPTIONS_BATTLE_SCENE_ON;
+    #endif
     options->buttonMode = OPTIONS_BUTTON_MODE_NORMAL;
     options->frame = OPTIONS_FRAME_1;
 }

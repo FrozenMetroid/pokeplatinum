@@ -217,6 +217,13 @@
     {
       "id": "pl_msg_00000543_00038",
       "en_US": "{STRVAR_1 53, 0, 0} BP"
+    },
+    {
+      "id": "pl_msg_00000543_00039_Multiple_Premier_Balls",
+      "en_US": [
+        "You also get Premier Balls as\n",
+        "an added bonus."
+      ]
     }
   ]
 }

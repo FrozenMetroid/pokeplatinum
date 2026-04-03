@@ -1,6 +1,8 @@
 #ifndef DEBUGGING_H
 #define DEBUGGING_H
 
+#define LOGGING_ENABLED
+
 #ifdef LOGGING_ENABLED
 
 #define LOG_MESSAGE_MAX_LENGTH 1024

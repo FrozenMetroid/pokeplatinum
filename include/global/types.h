@@ -1,0 +1,4 @@
+#ifndef POKEPLATINUM_TYPES_H
+#define POKEPLATINUM_TYPES_H
+
+#endif
