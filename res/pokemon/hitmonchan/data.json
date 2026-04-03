@@ -116,7 +116,7 @@
         "trainer_pos_m": 9,
         "pokemon_pos_m": 5,
         "en": {
-            "name": "HITMONCHAN",
+            "name": "Hitmonchan",
             "category": "Punching Pokémon",
             "entry_text": [
                 "The arm-twisting punches it throws\n",
@@ -125,7 +125,7 @@
             ]
         },
         "fr": {
-            "name": "TYGNON",
+            "name": "Tygnon",
             "category": "Pokémon Puncheur",
             "entry_text": [
                 "Même le béton cède sous ses \n",
@@ -134,7 +134,7 @@
             ]
         },
         "de": {
-            "name": "NOCKCHAN",
+            "name": "Nockchan",
             "category": "Puncher",
             "entry_text": [
                 "Die Schläge, die es austeilt, können\n",
@@ -143,7 +143,7 @@
             ]
         },
         "it": {
-            "name": "HITMONCHAN",
+            "name": "Hitmonchan",
             "category": "Pokémon Tirapugni",
             "entry_text": [
                 "Sferra pugni così potenti da polve-\n",
@@ -152,7 +152,7 @@
             ]
         },
         "es": {
-            "name": "HITMONCHAN",
+            "name": "Hitmonchan",
             "category": "Pokémon Puñetazo",
             "entry_text": [
                 "Los potentes golpes de sus brazos\n",

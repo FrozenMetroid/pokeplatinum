@@ -118,7 +118,7 @@
         "trainer_pos_m": 9,
         "pokemon_pos_m": 10,
         "en": {
-            "name": "MAGMAR",
+            "name": "Magmar",
             "category": "Spitfire Pokémon",
             "entry_text": [
                 "When it breathes deeply, heat\n",
@@ -127,7 +127,7 @@
             ]
         },
         "fr": {
-            "name": "MAGMAR",
+            "name": "Magmar",
             "category": "Pokémon Crache-Feu",
             "entry_text": [
                 "Il est né au milieu d’un volcan.\n",
@@ -136,7 +136,7 @@
             ]
         },
         "de": {
-            "name": "MAGMAR",
+            "name": "Magmar",
             "category": "Brenner",
             "entry_text": [
                 "Es wurde bei einem Vulkanausbruch\n",
@@ -145,7 +145,7 @@
             ]
         },
         "it": {
-            "name": "MAGMAR",
+            "name": "Magmar",
             "category": "Pokémon Sputafuoco",
             "entry_text": [
                 "È nato dallo zampillo di un vulcano.\n",
@@ -154,7 +154,7 @@
             ]
         },
         "es": {
-            "name": "MAGMAR",
+            "name": "Magmar",
             "category": "Pokémon Escupfuego",
             "entry_text": [
                 "Nació en el centro de un volcán.\n",

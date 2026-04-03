@@ -117,7 +117,7 @@
         "trainer_pos_m": 9,
         "pokemon_pos_m": 0,
         "en": {
-            "name": "MAGNETON",
+            "name": "Magneton",
             "category": "Magnet Pokémon",
             "entry_text": [
                 "Many mysteriously appear when more\n",
@@ -126,7 +126,7 @@
             ]
         },
         "fr": {
-            "name": "MAGNETON",
+            "name": "Magneton",
             "category": "Pokémon Magnétique",
             "entry_text": [
                 "Il est formé de trois MAGNETI liés\n",
@@ -135,7 +135,7 @@
             ]
         },
         "de": {
-            "name": "MAGNETON",
+            "name": "Magneton",
             "category": "Magnet",
             "entry_text": [
                 "Eigentlich sind es drei MAGNETILO,\n",
@@ -144,7 +144,7 @@
             ]
         },
         "it": {
-            "name": "MAGNETON",
+            "name": "Magneton",
             "category": "Pokémon Calamita",
             "entry_text": [
                 "Pokémon formato da tre MAGNEMITE\n",
@@ -153,7 +153,7 @@
             ]
         },
         "es": {
-            "name": "MAGNETON",
+            "name": "Magneton",
             "category": "Pokémon Imán",
             "entry_text": [
                 "Realmente son tres MAGNEMITE\n",

@@ -128,7 +128,7 @@
         "trainer_pos_m": 9,
         "pokemon_pos_m": 26,
         "en": {
-            "name": "BALTOY",
+            "name": "Baltoy",
             "category": "Clay Doll Pokémon",
             "entry_text": [
                 "It moves by spinning on its foot.\n",
@@ -137,7 +137,7 @@
             ]
         },
         "fr": {
-            "name": "BALBUTO",
+            "name": "Balbuto",
             "category": "Pokémon Poupargile",
             "entry_text": [
                 "Il se déplace en tournoyant sur\n",
@@ -146,7 +146,7 @@
             ]
         },
         "de": {
-            "name": "PUPPANCE",
+            "name": "Puppance",
             "category": "Lehmpuppe",
             "entry_text": [
                 "Es bewegt sich, indem es sich auf\n",
@@ -155,7 +155,7 @@
             ]
         },
         "it": {
-            "name": "BALTOY",
+            "name": "Baltoy",
             "category": "Pokémon Argilla",
             "entry_text": [
                 "Pokémon raro che si muove rotean-\n",
@@ -164,7 +164,7 @@
             ]
         },
         "es": {
-            "name": "BALTOY",
+            "name": "Baltoy",
             "category": "Pokémon Muñ. Barro",
             "entry_text": [
                 "Se mueve girando sobre su eje.\n",

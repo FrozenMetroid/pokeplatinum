@@ -127,7 +127,7 @@
         "trainer_pos_m": 9,
         "pokemon_pos_m": 14,
         "en": {
-            "name": "LINOONE",
+            "name": "Linoone",
             "category": "Rushing Pokémon",
             "entry_text": [
                 "It charges prey at speeds over\n",
@@ -136,7 +136,7 @@
             ]
         },
         "fr": {
-            "name": "LINEON",
+            "name": "Lineon",
             "category": "Pokémon Fonceur",
             "entry_text": [
                 "Il fonce sur sa proie à plus de 100\n",
@@ -145,7 +145,7 @@
             ]
         },
         "de": {
-            "name": "GERADAKS",
+            "name": "Geradaks",
             "category": "Sprinter",
             "entry_text": [
                 "Es stürzt sich mit 100 km/h auf\n",
@@ -154,7 +154,7 @@
             ]
         },
         "it": {
-            "name": "LINOONE",
+            "name": "Linoone",
             "category": "Pokémon Sfrecciante",
             "entry_text": [
                 "Carica la preda ad una velocità di\n",
@@ -163,7 +163,7 @@
             ]
         },
         "es": {
-            "name": "LINOONE",
+            "name": "Linoone",
             "category": "Pokémon Lanzado",
             "entry_text": [
                 "Carga contra sus enemigos a más\n",

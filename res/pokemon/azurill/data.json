@@ -108,7 +108,7 @@
         "trainer_pos_m": 9,
         "pokemon_pos_m": 27,
         "en": {
-            "name": "AZURILL",
+            "name": "Azurill",
             "category": "Polka Dot Pokémon",
             "entry_text": [
                 "Its tail bounces like a rubber ball.\n",
@@ -117,7 +117,7 @@
             ]
         },
         "fr": {
-            "name": "AZURILL",
+            "name": "Azurill",
             "category": "Pokémon Point Polka",
             "entry_text": [
                 "Un Pokémon qui vit près de l’eau.\n",
@@ -126,7 +126,7 @@
             ]
         },
         "de": {
-            "name": "AZURILL",
+            "name": "Azurill",
             "category": "Gepunktet",
             "entry_text": [
                 "Dieses PKMN lebt am Wasser. An\n",
@@ -135,7 +135,7 @@
             ]
         },
         "it": {
-            "name": "AZURILL",
+            "name": "Azurill",
             "category": "Pokémon Pois",
             "entry_text": [
                 "Pokémon che vive nell’acqua. Si\n",
@@ -144,7 +144,7 @@
             ]
         },
         "es": {
-            "name": "AZURILL",
+            "name": "Azurill",
             "category": "Pokémon A Topos",
             "entry_text": [
                 "Vive cerca del agua. En la tierra\n",

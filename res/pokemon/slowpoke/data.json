@@ -150,7 +150,7 @@
         "trainer_pos_m": 9,
         "pokemon_pos_m": 19,
         "en": {
-            "name": "SLOWPOKE",
+            "name": "Slowpoke",
             "category": "Dopey Pokémon",
             "entry_text": [
                 "Although slow, it is skilled at\n",
@@ -159,7 +159,7 @@
             ]
         },
         "fr": {
-            "name": "RAMOLOSS",
+            "name": "Ramoloss",
             "category": "Pokémon Crétin",
             "entry_text": [
                 "Bien que lent, c’est un pêcheur\n",
@@ -168,7 +168,7 @@
             ]
         },
         "de": {
-            "name": "FLEGMON",
+            "name": "Flegmon",
             "category": "Schnarcher",
             "entry_text": [
                 "Es ist langsam, hat aber ein Talent,\n",
@@ -177,7 +177,7 @@
             ]
         },
         "it": {
-            "name": "SLOWPOKE",
+            "name": "Slowpoke",
             "category": "Pokémon Ronfone",
             "entry_text": [
                 "Anche se è lento, è abile a pescare\n",
@@ -186,7 +186,7 @@
             ]
         },
         "es": {
-            "name": "SLOWPOKE",
+            "name": "Slowpoke",
             "category": "Pokémon Atontado",
             "entry_text": [
                 "A pesar de su lentitud, tiene una\n",

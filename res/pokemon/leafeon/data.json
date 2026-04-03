@@ -118,7 +118,7 @@
         "trainer_pos_m": 9,
         "pokemon_pos_m": 14,
         "en": {
-            "name": "LEAFEON",
+            "name": "Leafeon",
             "category": "Verdant Pokémon",
             "entry_text": [
                 "It basically does not fight. With\n",
@@ -127,7 +127,7 @@
             ]
         },
         "fr": {
-            "name": "PHYLLALI",
+            "name": "Phyllali",
             "category": "Pokémon Verdoyant",
             "entry_text": [
                 "Il utilise la photosynthèse comme\n",
@@ -136,7 +136,7 @@
             ]
         },
         "de": {
-            "name": "FOLIPURBA",
+            "name": "Folipurba",
             "category": "Unreif",
             "entry_text": [
                 "Genau wie ein Pflanze führt es die\n",
@@ -145,7 +145,7 @@
             ]
         },
         "it": {
-            "name": "LEAFEON",
+            "name": "Leafeon",
             "category": "Pokémon Rigoglioso",
             "entry_text": [
                 "Usa la fotosintesi, proprio come\n",
@@ -154,7 +154,7 @@
             ]
         },
         "es": {
-            "name": "LEAFEON",
+            "name": "Leafeon",
             "category": "Pokémon Verdor",
             "entry_text": [
                 "Al igual que una planta, hace la\n",

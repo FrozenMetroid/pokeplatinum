@@ -117,7 +117,7 @@
         "trainer_pos_m": 9,
         "pokemon_pos_m": 19,
         "en": {
-            "name": "GLOOM",
+            "name": "Gloom",
             "category": "Weed Pokémon",
             "entry_text": [
                 "The honey it drools from its mouth\n",
@@ -126,7 +126,7 @@
             ]
         },
         "fr": {
-            "name": "ORTIDE",
+            "name": "Ortide",
             "category": "Pokémon Racine",
             "entry_text": [
                 "L’odeur du nectar de sa bouche \n",
@@ -135,7 +135,7 @@
             ]
         },
         "de": {
-            "name": "DUFLOR",
+            "name": "Duflor",
             "category": "Unkraut",
             "entry_text": [
                 "Der Honig, den es abgibt, riecht so\n",
@@ -144,7 +144,7 @@
             ]
         },
         "it": {
-            "name": "GLOOM",
+            "name": "Gloom",
             "category": "Pokémon Malerba",
             "entry_text": [
                 "Il fluido che fuoriesce dalla sua\n",
@@ -153,7 +153,7 @@
             ]
         },
         "es": {
-            "name": "GLOOM",
+            "name": "Gloom",
             "category": "Pokémon Hierbajo",
             "entry_text": [
                 "La miel que emana de su boca\n",

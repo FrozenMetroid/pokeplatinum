@@ -105,7 +105,7 @@
         "trainer_pos_m": 16,
         "pokemon_pos_m": 6,
         "en": {
-            "name": "ARCANINE",
+            "name": "Arcanine",
             "category": "Legendary Pokémon",
             "entry_text": [
                 "Its proud and regal appearance\n",
@@ -114,7 +114,7 @@
             ]
         },
         "fr": {
-            "name": "ARCANIN",
+            "name": "Arcanin",
             "category": "Pokémon Légendaire",
             "entry_text": [
                 "Son port altier et son attitude \n",
@@ -123,7 +123,7 @@
             ]
         },
         "de": {
-            "name": "ARKANI",
+            "name": "Arkani",
             "category": "Legendär",
             "entry_text": [
                 "Mit seiner stolzen und königlichen\n",
@@ -132,7 +132,7 @@
             ]
         },
         "it": {
-            "name": "ARCANINE",
+            "name": "Arcanine",
             "category": "Pokémon Leggenda",
             "entry_text": [
                 "Con il suo aspetto fiero ed\n",
@@ -141,7 +141,7 @@
             ]
         },
         "es": {
-            "name": "ARCANINE",
+            "name": "Arcanine",
             "category": "Pokémon Legendario",
             "entry_text": [
                 "Su aspecto regio y orgulloso se\n",

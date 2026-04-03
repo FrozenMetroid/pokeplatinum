@@ -121,7 +121,7 @@
         "trainer_pos_m": 9,
         "pokemon_pos_m": 10,
         "en": {
-            "name": "GRAVELER",
+            "name": "Graveler",
             "category": "Rock Pokémon",
             "entry_text": [
                 "It rolls on mountain paths to move.\n",
@@ -130,7 +130,7 @@
             ]
         },
         "fr": {
-            "name": "GRAVALANCH",
+            "name": "Gravalanch",
             "category": "Pokémon Roche",
             "entry_text": [
                 "GRAVALANCH creuse son terrier\n",
@@ -139,7 +139,7 @@
             ]
         },
         "de": {
-            "name": "GEOROK",
+            "name": "Georok",
             "category": "Gestein",
             "entry_text": [
                 "GEOROK leben an steilen\n",
@@ -148,7 +148,7 @@
             ]
         },
         "it": {
-            "name": "GRAVELER",
+            "name": "Graveler",
             "category": "Pokémon Roccia",
             "entry_text": [
                 "Costruisce la sua tana in fessure\n",
@@ -157,7 +157,7 @@
             ]
         },
         "es": {
-            "name": "GRAVELER",
+            "name": "Graveler",
             "category": "Pokémon Roca",
             "entry_text": [
                 "Muchos GRAVELER hacen agujeros\n",

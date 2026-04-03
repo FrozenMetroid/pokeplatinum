@@ -125,7 +125,7 @@
         "trainer_pos_m": 9,
         "pokemon_pos_m": 65532,
         "en": {
-            "name": "LUNATONE",
+            "name": "Lunatone",
             "category": "Meteorite Pokémon",
             "entry_text": [
                 "Because it turns active on nights\n",
@@ -134,7 +134,7 @@
             ]
         },
         "fr": {
-            "name": "SELEROC",
+            "name": "Seleroc",
             "category": "Pokémon Météorite",
             "entry_text": [
                 "On suppose qu’il est lié au cycle\n",
@@ -143,7 +143,7 @@
             ]
         },
         "de": {
-            "name": "LUNASTEIN",
+            "name": "Lunastein",
             "category": "Meteorit",
             "entry_text": [
                 "Da es in Vollmondnächten aktiv wird,\n",
@@ -152,7 +152,7 @@
             ]
         },
         "it": {
-            "name": "LUNATONE",
+            "name": "Lunatone",
             "category": "Pokémon Meteorite",
             "entry_text": [
                 "Diventa attivo nelle notti di luna\n",
@@ -161,7 +161,7 @@
             ]
         },
         "es": {
-            "name": "LUNATONE",
+            "name": "Lunatone",
             "category": "Pokémon Meteorito",
             "entry_text": [
                 "Se piensa que está muy influido\n",

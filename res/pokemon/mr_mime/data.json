@@ -152,7 +152,7 @@
         "trainer_pos_m": 9,
         "pokemon_pos_m": 9,
         "en": {
-            "name": "MR. MIME",
+            "name": "Mr. Mime",
             "category": "Barrier Pokémon",
             "entry_text": [
                 "It shapes an invisible wall in midair\n",
@@ -161,7 +161,7 @@
             ]
         },
         "fr": {
-            "name": "M. MIME",
+            "name": "M. Mime",
             "category": "Pokémon Bloqueur",
             "entry_text": [
                 "Un expert de la pantomime dont\n",
@@ -170,7 +170,7 @@
             ]
         },
         "de": {
-            "name": "PANTIMOS",
+            "name": "Pantimos",
             "category": "Sperre",
             "entry_text": [
                 "Ein Experte der Pantomime. Es kann\n",
@@ -179,7 +179,7 @@
             ]
         },
         "it": {
-            "name": "MR. MIME",
+            "name": "Mr. Mime",
             "category": "Pokémon Barriera",
             "entry_text": [
                 "È un esperto di mimica che, con\n",
@@ -188,7 +188,7 @@
             ]
         },
         "es": {
-            "name": "MR. MIME",
+            "name": "Mr. Mime",
             "category": "Pokémon Barrera",
             "entry_text": [
                 "Es un experto mimo que puede\n",

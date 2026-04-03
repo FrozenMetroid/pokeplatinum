@@ -121,7 +121,7 @@
         "trainer_pos_m": 9,
         "pokemon_pos_m": 18,
         "en": {
-            "name": "TYROGUE",
+            "name": "Tyrogue",
             "category": "Scuffle Pokémon",
             "entry_text": [
                 "It is famous for its eagerness to\n",
@@ -130,7 +130,7 @@
             ]
         },
         "fr": {
-            "name": "DEBUGANT",
+            "name": "Debugant",
             "category": "Pokémon Bagarreur",
             "entry_text": [
                 "Il est réputé pour sa combativité.\n",
@@ -139,7 +139,7 @@
             ]
         },
         "de": {
-            "name": "RABAUZ",
+            "name": "Rabauz",
             "category": "Racker",
             "entry_text": [
                 "Es ist bekannt für seine Kampfbe-\n",
@@ -148,7 +148,7 @@
             ]
         },
         "it": {
-            "name": "TYROGUE",
+            "name": "Tyrogue",
             "category": "Pokémon Baruffa",
             "entry_text": [
                 "È famoso per la sua brama di lotta.\n",
@@ -157,7 +157,7 @@
             ]
         },
         "es": {
-            "name": "TYROGUE",
+            "name": "Tyrogue",
             "category": "Pokémon Peleón",
             "entry_text": [
                 "Famoso por su disposición a la\n",

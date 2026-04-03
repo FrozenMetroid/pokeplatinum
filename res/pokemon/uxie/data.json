@@ -128,7 +128,7 @@
         "trainer_pos_m": 9,
         "pokemon_pos_m": 65526,
         "en": {
-            "name": "UXIE",
+            "name": "Uxie",
             "category": "Knowledge Pokémon",
             "entry_text": [
                 "When UXIE flew, people gained the\n",
@@ -137,7 +137,7 @@
             ]
         },
         "fr": {
-            "name": "CREHELF",
+            "name": "Crehelf",
             "category": "Pokémon Savoir",
             "entry_text": [
                 "On l’appelle “être du savoir”.\n",
@@ -146,7 +146,7 @@
             ]
         },
         "de": {
-            "name": "SELFE",
+            "name": "Selfe",
             "category": "Wissen",
             "entry_text": [
                 "“Das wissende Wesen”.\n",
@@ -155,7 +155,7 @@
             ]
         },
         "it": {
-            "name": "UXIE",
+            "name": "Uxie",
             "category": "Pokémon Sapienza",
             "entry_text": [
                 "Noto come “Essere della\n",
@@ -164,7 +164,7 @@
             ]
         },
         "es": {
-            "name": "UXIE",
+            "name": "Uxie",
             "category": "Pokémon Sabiduría",
             "entry_text": [
                 "Se le conoce como el “ser de\n",

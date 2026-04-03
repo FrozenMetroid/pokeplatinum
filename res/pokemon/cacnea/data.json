@@ -134,7 +134,7 @@
         "trainer_pos_m": 9,
         "pokemon_pos_m": 27,
         "en": {
-            "name": "CACNEA",
+            "name": "Cacnea",
             "category": "Cactus Pokémon",
             "entry_text": [
                 "By storing water in its body, this\n",
@@ -143,7 +143,7 @@
             ]
         },
         "fr": {
-            "name": "CACNEA",
+            "name": "Cacnea",
             "category": "Pokémon Cactus",
             "entry_text": [
                 "En stockant l’eau dans son corps,\n",
@@ -152,7 +152,7 @@
             ]
         },
         "de": {
-            "name": "TUSKA",
+            "name": "Tuska",
             "category": "Kaktus",
             "entry_text": [
                 "Dieser Wüstenbewohner speichert\n",
@@ -161,7 +161,7 @@
             ]
         },
         "it": {
-            "name": "CACNEA",
+            "name": "Cacnea",
             "category": "Pokémon Cactus",
             "entry_text": [
                 "Immagazzina acqua nel corpo e\n",
@@ -170,7 +170,7 @@
             ]
         },
         "es": {
-            "name": "CACNEA",
+            "name": "Cacnea",
             "category": "Pokémon Cactus",
             "entry_text": [
                 "Habita en el desierto. Aguanta\n",

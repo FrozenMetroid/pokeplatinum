@@ -132,7 +132,7 @@
         "trainer_pos_m": 9,
         "pokemon_pos_m": 27,
         "en": {
-            "name": "MARILL",
+            "name": "Marill",
             "category": "Aqua Mouse Pokémon",
             "entry_text": [
                 "The oil-filled end of its tail floats\n",
@@ -141,7 +141,7 @@
             ]
         },
         "fr": {
-            "name": "MARILL",
+            "name": "Marill",
             "category": "Pokémon Aquasouris",
             "entry_text": [
                 "Il plonge sous l’eau en utilisant sa\n",
@@ -150,7 +150,7 @@
             ]
         },
         "de": {
-            "name": "MARILL",
+            "name": "Marill",
             "category": "Aquamaus",
             "entry_text": [
                 "Seinen Schweif verwendet es als\n",
@@ -159,7 +159,7 @@
             ]
         },
         "it": {
-            "name": "MARILL",
+            "name": "Marill",
             "category": "Pokémon Acquatopo",
             "entry_text": [
                 "Si tuffa in acqua e usa la coda come\n",
@@ -168,7 +168,7 @@
             ]
         },
         "es": {
-            "name": "MARILL",
+            "name": "Marill",
             "category": "Pokémon Ratón Agua",
             "entry_text": [
                 "Bucea usando su cola a modo\n",

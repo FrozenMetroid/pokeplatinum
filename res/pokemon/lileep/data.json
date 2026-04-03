@@ -124,7 +124,7 @@
         "trainer_pos_m": 9,
         "pokemon_pos_m": 16,
         "en": {
-            "name": "LILEEP",
+            "name": "Lileep",
             "category": "Sea Lily Pokémon",
             "entry_text": [
                 "It lived on the seafloor 100\n",
@@ -133,7 +133,7 @@
             ]
         },
         "fr": {
-            "name": "LILIA",
+            "name": "Lilia",
             "category": "Pokémon Lis D’Eau",
             "entry_text": [
                 "Il vivait au fond de la mer il y a\n",
@@ -142,7 +142,7 @@
             ]
         },
         "de": {
-            "name": "LILIEP",
+            "name": "Liliep",
             "category": "Seeanemone",
             "entry_text": [
                 "Vor 100 Millionen Jahren lebte\n",
@@ -151,7 +151,7 @@
             ]
         },
         "it": {
-            "name": "LILEEP",
+            "name": "Lileep",
             "category": "Pokémon Fiordimare",
             "entry_text": [
                 "Viveva sul fondo marino 100 milioni\n",
@@ -160,7 +160,7 @@
             ]
         },
         "es": {
-            "name": "LILEEP",
+            "name": "Lileep",
             "category": "Pokémon Lila Mar",
             "entry_text": [
                 "Vivió en los fondos marinos hace\n",

@@ -131,7 +131,7 @@
         "trainer_pos_m": 9,
         "pokemon_pos_m": 18,
         "en": {
-            "name": "LAIRON",
+            "name": "Lairon",
             "category": "Iron Armor Pokémon",
             "entry_text": [
                 "For food, it digs up iron ore. It\n",
@@ -140,7 +140,7 @@
             ]
         },
         "fr": {
-            "name": "GALEGON",
+            "name": "Galegon",
             "category": "Pokémon Armurfer",
             "entry_text": [
                 "Il se nourrit du minerai de fer qu’il\n",
@@ -149,7 +149,7 @@
             ]
         },
         "de": {
-            "name": "STOLLRAK",
+            "name": "Stollrak",
             "category": "Eisenpanzer",
             "entry_text": [
                 "Es ernährt sich von Eisenerz. Um\n",
@@ -158,7 +158,7 @@
             ]
         },
         "it": {
-            "name": "LAIRON",
+            "name": "Lairon",
             "category": "Pokémon Corazza",
             "entry_text": [
                 "Scava per cercare ferro, di cui si\n",
@@ -167,7 +167,7 @@
             ]
         },
         "es": {
-            "name": "LAIRON",
+            "name": "Lairon",
             "category": "Pokémon Cor. Férrea",
             "entry_text": [
                 "Extrae hierro para alimentarse\n",

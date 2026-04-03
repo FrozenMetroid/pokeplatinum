@@ -116,7 +116,7 @@
         "trainer_pos_m": 9,
         "pokemon_pos_m": 12,
         "en": {
-            "name": "ESPEON",
+            "name": "Espeon",
             "category": "Sun Pokémon",
             "entry_text": [
                 "Its fur is so sensitive, it can\n",
@@ -125,7 +125,7 @@
             ]
         },
         "fr": {
-            "name": "MENTALI",
+            "name": "Mentali",
             "category": "Pokémon Soleil",
             "entry_text": [
                 "Son pelage a l’aspect et la texture\n",
@@ -134,7 +134,7 @@
             ]
         },
         "de": {
-            "name": "PSIANA",
+            "name": "Psiana",
             "category": "Sonne",
             "entry_text": [
                 "Sein Fell ist wie Samt. Setzt es\n",
@@ -143,7 +143,7 @@
             ]
         },
         "it": {
-            "name": "ESPEON",
+            "name": "Espeon",
             "category": "Pokémon Sole",
             "entry_text": [
                 "Il suo pelo è simile al velluto.\n",
@@ -152,7 +152,7 @@
             ]
         },
         "es": {
-            "name": "ESPEON",
+            "name": "Espeon",
             "category": "Pokémon Sol",
             "entry_text": [
                 "Su pelaje es como el terciopelo.\n",

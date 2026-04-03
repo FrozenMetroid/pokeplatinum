@@ -145,7 +145,7 @@
         "trainer_pos_m": 9,
         "pokemon_pos_m": 16,
         "en": {
-            "name": "RHYHORN",
+            "name": "Rhyhorn",
             "category": "Spikes Pokémon",
             "entry_text": [
                 "Its powerful tackles can destroy\n",
@@ -154,7 +154,7 @@
             ]
         },
         "fr": {
-            "name": "RHINOCORNE",
+            "name": "Rhinocorne",
             "category": "Pokémon Piquant",
             "entry_text": [
                 "Sa peau est très épaisse et sa \n",
@@ -163,7 +163,7 @@
             ]
         },
         "de": {
-            "name": "RIHORN",
+            "name": "Rihorn",
             "category": "Stachler",
             "entry_text": [
                 "Sein Körper ist von einer dicken\n",
@@ -172,7 +172,7 @@
             ]
         },
         "it": {
-            "name": "RHYHORN",
+            "name": "Rhyhorn",
             "category": "Pokémon Punzoni",
             "entry_text": [
                 "Ha una pelle molto spessa ed è in\n",
@@ -181,7 +181,7 @@
             ]
         },
         "es": {
-            "name": "RHYHORN",
+            "name": "Rhyhorn",
             "category": "Pokémon Clavos",
             "entry_text": [
                 "Su cuerpo está protegido por una\n",

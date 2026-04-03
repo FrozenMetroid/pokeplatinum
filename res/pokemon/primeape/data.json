@@ -132,7 +132,7 @@
         "trainer_pos_m": 9,
         "pokemon_pos_m": 14,
         "en": {
-            "name": "PRIMEAPE",
+            "name": "Primeape",
             "category": "Pig Monkey Pokémon",
             "entry_text": [
                 "It grows angry if you see its eyes\n",
@@ -141,7 +141,7 @@
             ]
         },
         "fr": {
-            "name": "COLOSSINGE",
+            "name": "Colossinge",
             "category": "Pokémon Porsinge",
             "entry_text": [
                 "Il grogne quand on le toise,\n",
@@ -150,7 +150,7 @@
             ]
         },
         "de": {
-            "name": "RASAFF",
+            "name": "Rasaff",
             "category": "Schw./ Affe",
             "entry_text": [
                 "Siehst du ihm in die Augen, wird es\n",
@@ -159,7 +159,7 @@
             ]
         },
         "it": {
-            "name": "PRIMEAPE",
+            "name": "Primeape",
             "category": "Pokémon Suinpanzé",
             "entry_text": [
                 "Se lo guardi fisso negli occhi, si\n",
@@ -168,7 +168,7 @@
             ]
         },
         "es": {
-            "name": "PRIMEAPE",
+            "name": "Primeape",
             "category": "Pokémon Mono Cerdo",
             "entry_text": [
                 "Se molesta si le miras a los ojos.\n",

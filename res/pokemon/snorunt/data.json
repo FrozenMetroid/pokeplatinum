@@ -120,7 +120,7 @@
         "trainer_pos_m": 9,
         "pokemon_pos_m": 17,
         "en": {
-            "name": "SNORUNT",
+            "name": "Snorunt",
             "category": "Snow Hat Pokémon",
             "entry_text": [
                 "It is said that several SNORUNT\n",
@@ -129,7 +129,7 @@
             ]
         },
         "fr": {
-            "name": "STALGAMIN",
+            "name": "Stalgamin",
             "category": "Pokémon Capuche",
             "entry_text": [
                 "Selon un vieux dicton des régions\n",
@@ -138,7 +138,7 @@
             ]
         },
         "de": {
-            "name": "SCHNEPPKE",
+            "name": "Schneppke",
             "category": "Schneehut",
             "entry_text": [
                 "Im Land des Schnees sagt eine\n",
@@ -147,7 +147,7 @@
             ]
         },
         "it": {
-            "name": "SNORUNT",
+            "name": "Snorunt",
             "category": "Pokémon Cappelneve",
             "entry_text": [
                 "Secondo alcune leggende delle\n",
@@ -156,7 +156,7 @@
             ]
         },
         "es": {
-            "name": "SNORUNT",
+            "name": "Snorunt",
             "category": "Pokémon Gorro Nieve",
             "entry_text": [
                 "En las zonas nevadas, las leyendas\n",

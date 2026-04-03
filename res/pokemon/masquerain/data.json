@@ -118,7 +118,7 @@
         "trainer_pos_m": 9,
         "pokemon_pos_m": 65533,
         "en": {
-            "name": "MASQUERAIN",
+            "name": "Masquerain",
             "category": "Eyeball Pokémon",
             "entry_text": [
                 "Its antennae have eye patterns\n",
@@ -127,7 +127,7 @@
             ]
         },
         "fr": {
-            "name": "MASKADRA",
+            "name": "Maskadra",
             "category": "Pokémon Boule Oeil",
             "entry_text": [
                 "Des motifs en forme d’yeux ornent\n",
@@ -136,7 +136,7 @@
             ]
         },
         "de": {
-            "name": "MASKEREGEN",
+            "name": "Maskeregen",
             "category": "Auge",
             "entry_text": [
                 "Seine Antenne besitzt ein Augen-\n",
@@ -145,7 +145,7 @@
             ]
         },
         "it": {
-            "name": "MASQUERAIN",
+            "name": "Masquerain",
             "category": "Pokémon Occhi",
             "entry_text": [
                 "Le sue antenne presentano un\n",
@@ -154,7 +154,7 @@
             ]
         },
         "es": {
-            "name": "MASQUERAIN",
+            "name": "Masquerain",
             "category": "Pokémon Globocular",
             "entry_text": [
                 "Sus antenas tienen dibujos de ojos,\n",

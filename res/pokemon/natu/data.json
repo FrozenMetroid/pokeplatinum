@@ -142,7 +142,7 @@
         "trainer_pos_m": 9,
         "pokemon_pos_m": 31,
         "en": {
-            "name": "NATU",
+            "name": "Natu",
             "category": "Tiny Bird Pokémon",
             "entry_text": [
                 "It picks food from cactus plants,\n",
@@ -151,7 +151,7 @@
             ]
         },
         "fr": {
-            "name": "NATU",
+            "name": "Natu",
             "category": "Pokémon Minoiseau",
             "entry_text": [
                 "Il mange des cactus en prenant\n",
@@ -160,7 +160,7 @@
             ]
         },
         "de": {
-            "name": "NATU",
+            "name": "Natu",
             "category": "Kleinvogel",
             "entry_text": [
                 "Es pickt seine Nahrung aus\n",
@@ -169,7 +169,7 @@
             ]
         },
         "it": {
-            "name": "NATU",
+            "name": "Natu",
             "category": "Pokémon Uccellino",
             "entry_text": [
                 "Raccoglie cibo dai cactus, evitando\n",
@@ -178,7 +178,7 @@
             ]
         },
         "es": {
-            "name": "NATU",
+            "name": "Natu",
             "category": "Pokémon Pajarito",
             "entry_text": [
                 "Recoge alimento de los cactos\n",

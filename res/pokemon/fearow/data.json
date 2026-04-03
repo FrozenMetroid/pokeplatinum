@@ -109,7 +109,7 @@
         "trainer_pos_m": 9,
         "pokemon_pos_m": 0,
         "en": {
-            "name": "FEAROW",
+            "name": "Fearow",
             "category": "Beak Pokémon",
             "entry_text": [
                 "It has the stamina to fly all\n",
@@ -118,7 +118,7 @@
             ]
         },
         "fr": {
-            "name": "RAPASDEPIC",
+            "name": "Rapasdepic",
             "category": "Pokémon Bec-Oiseau",
             "entry_text": [
                 "Il a assez d’énergie pour voler \n",
@@ -127,7 +127,7 @@
             ]
         },
         "de": {
-            "name": "IBITAK",
+            "name": "Ibitak",
             "category": "Pickvogel",
             "entry_text": [
                 "Es hat genügend Ausdauer, den\n",
@@ -136,7 +136,7 @@
             ]
         },
         "it": {
-            "name": "FEAROW",
+            "name": "Fearow",
             "category": "Pokémon Becco",
             "entry_text": [
                 "Le sue ampie ali robuste gli permet-\n",
@@ -145,7 +145,7 @@
             ]
         },
         "es": {
-            "name": "FEAROW",
+            "name": "Fearow",
             "category": "Pokémon Pico",
             "entry_text": [
                 "Tiene energía para volar todo el\n",

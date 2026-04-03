@@ -112,7 +112,7 @@
         "trainer_pos_m": 9,
         "pokemon_pos_m": 6,
         "en": {
-            "name": "PIDGEOT",
+            "name": "Pidgeot",
             "category": "Bird Pokémon",
             "entry_text": [
                 "By flapping its wings with all its\n",
@@ -121,7 +121,7 @@
             ]
         },
         "fr": {
-            "name": "ROUCARNAGE",
+            "name": "Roucarnage",
             "category": "Pokémon Oiseau",
             "entry_text": [
                 "En battant des ailes de toutes ses\n",
@@ -130,7 +130,7 @@
             ]
         },
         "de": {
-            "name": "TAUBOSS",
+            "name": "Tauboss",
             "category": "Vogel",
             "entry_text": [
                 "Schlägt TAUBOSS mit ganzer Kraft\n",
@@ -139,7 +139,7 @@
             ]
         },
         "it": {
-            "name": "PIDGEOT",
+            "name": "Pidgeot",
             "category": "Pokémon Uccello",
             "entry_text": [
                 "Sbattendo le ali a più non posso,\n",
@@ -148,7 +148,7 @@
             ]
         },
         "es": {
-            "name": "PIDGEOT",
+            "name": "Pidgeot",
             "category": "Pokémon Pájaro",
             "entry_text": [
                 "Aleteando con toda su fuerza,\n",

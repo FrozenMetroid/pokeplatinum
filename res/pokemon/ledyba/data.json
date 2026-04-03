@@ -132,7 +132,7 @@
         "trainer_pos_m": 9,
         "pokemon_pos_m": 65531,
         "en": {
-            "name": "LEDYBA",
+            "name": "Ledyba",
             "category": "Five Star Pokémon",
             "entry_text": [
                 "It is so timid, it can’t move if it\n",
@@ -141,7 +141,7 @@
             ]
         },
         "fr": {
-            "name": "COXY",
+            "name": "Coxy",
             "category": "Pokémon 5 Etoiles",
             "entry_text": [
                 "Il est si timide qu’il ne se déplace\n",
@@ -150,7 +150,7 @@
             ]
         },
         "de": {
-            "name": "LEDYBA",
+            "name": "Ledyba",
             "category": "Fünf-Punkt",
             "entry_text": [
                 "Es ist so scheu, dass es sich\n",
@@ -159,7 +159,7 @@
             ]
         },
         "it": {
-            "name": "LEDYBA",
+            "name": "Ledyba",
             "category": "Pokémon Pentastra",
             "entry_text": [
                 "È tanto timido da non muoversi se\n",
@@ -168,7 +168,7 @@
             ]
         },
         "es": {
-            "name": "LEDYBA",
+            "name": "Ledyba",
             "category": "Pokémon 5estrellas",
             "entry_text": [
                 "Es tan temeroso que no se mueve\n",

@@ -73,7 +73,7 @@
         "trainer_pos_m": 9,
         "pokemon_pos_m": 27,
         "en": {
-            "name": "WURMPLE",
+            "name": "Wurmple",
             "category": "Worm Pokémon",
             "entry_text": [
                 "Often targeted by bird Pokémon,\n",
@@ -82,7 +82,7 @@
             ]
         },
         "fr": {
-            "name": "CHENIPOTTE",
+            "name": "Chenipotte",
             "category": "Pokémon Ver",
             "entry_text": [
                 "Il adore manger des feuilles. Si un\n",
@@ -91,7 +91,7 @@
             ]
         },
         "de": {
-            "name": "WAUMPEL",
+            "name": "Waumpel",
             "category": "Wurm",
             "entry_text": [
                 "Es isst am liebsten Blätter. Wird es\n",
@@ -100,7 +100,7 @@
             ]
         },
         "it": {
-            "name": "WURMPLE",
+            "name": "Wurmple",
             "category": "Pokémon Baco",
             "entry_text": [
                 "Ama mangiare le foglie. Se STARLY lo\n",
@@ -109,7 +109,7 @@
             ]
         },
         "es": {
-            "name": "WURMPLE",
+            "name": "Wurmple",
             "category": "Pokémon Gusano",
             "entry_text": [
                 "Le encanta comer hojas. Si le\n",

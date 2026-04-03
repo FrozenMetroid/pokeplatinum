@@ -141,7 +141,7 @@
         "trainer_pos_m": 9,
         "pokemon_pos_m": 8,
         "en": {
-            "name": "SLOWBRO",
+            "name": "Slowbro",
             "category": "Hermit Crab Pokémon",
             "entry_text": [
                 "Though usually dim witted, it\n",
@@ -150,7 +150,7 @@
             ]
         },
         "fr": {
-            "name": "FLAGADOSS",
+            "name": "Flagadoss",
             "category": "Pokémon Symbiose",
             "entry_text": [
                 "Ce grand benêt connaît des éclairs\n",
@@ -159,7 +159,7 @@
             ]
         },
         "de": {
-            "name": "LAHMUS",
+            "name": "Lahmus",
             "category": "Symbiose",
             "entry_text": [
                 "Ein begriffsstutziges Pokémon.\n",
@@ -168,7 +168,7 @@
             ]
         },
         "it": {
-            "name": "SLOWBRO",
+            "name": "Slowbro",
             "category": "Pokémon Paguro",
             "entry_text": [
                 "Non è molto perspicace, ma sembra\n",
@@ -177,7 +177,7 @@
             ]
         },
         "es": {
-            "name": "SLOWBRO",
+            "name": "Slowbro",
             "category": "Pokémon Ermitaño",
             "entry_text": [
                 "Normalmente se muestra torpe,\n",

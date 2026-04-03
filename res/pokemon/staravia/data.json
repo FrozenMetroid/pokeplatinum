@@ -112,7 +112,7 @@
         "trainer_pos_m": 9,
         "pokemon_pos_m": 24,
         "en": {
-            "name": "STARAVIA",
+            "name": "Staravia",
             "category": "Starling Pokémon",
             "entry_text": [
                 "Recognizing their own weakness,\n",
@@ -121,7 +121,7 @@
             ]
         },
         "fr": {
-            "name": "ETOURVOL",
+            "name": "Etourvol",
             "category": "Pokémon Etourneau",
             "entry_text": [
                 "Il survole les forêts et les champs\n",
@@ -130,7 +130,7 @@
             ]
         },
         "de": {
-            "name": "STARAVIA",
+            "name": "Staravia",
             "category": "Star",
             "entry_text": [
                 "Auf der Suche nach Käfer-PKMN\n",
@@ -139,7 +139,7 @@
             ]
         },
         "it": {
-            "name": "STARAVIA",
+            "name": "Staravia",
             "category": "Pokémon Storno",
             "entry_text": [
                 "Vola nelle foreste e nei campi\n",
@@ -148,7 +148,7 @@
             ]
         },
         "es": {
-            "name": "STARAVIA",
+            "name": "Staravia",
             "category": "Pokémon Estornino",
             "entry_text": [
                 "Vuela por bosques y campos en\n",

@@ -132,7 +132,7 @@
         "trainer_pos_m": 9,
         "pokemon_pos_m": 3,
         "en": {
-            "name": "EMPOLEON",
+            "name": "Empoleon",
             "category": "Emperor Pokémon",
             "entry_text": [
                 "If anyone were to hurt its pride,\n",
@@ -141,7 +141,7 @@
             ]
         },
         "fr": {
-            "name": "PINGOLEON",
+            "name": "Pingoleon",
             "category": "Pokémon Empereur",
             "entry_text": [
                 "Les trois cornes de son bec sont le\n",
@@ -150,7 +150,7 @@
             ]
         },
         "de": {
-            "name": "IMPOLEON",
+            "name": "Impoleon",
             "category": "Kaiser",
             "entry_text": [
                 "Die 3 Hörner, die aus dem Schnabel\n",
@@ -159,7 +159,7 @@
             ]
         },
         "it": {
-            "name": "EMPOLEON",
+            "name": "Empoleon",
             "category": "Pokémon Imperatore",
             "entry_text": [
                 "I tre corni che si allungano dal suo\n",
@@ -168,7 +168,7 @@
             ]
         },
         "es": {
-            "name": "EMPOLEON",
+            "name": "Empoleon",
             "category": "Pokémon Emperador",
             "entry_text": [
                 "Los tres cuernos de su pico son\n",

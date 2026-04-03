@@ -127,7 +127,7 @@
         "trainer_pos_m": 9,
         "pokemon_pos_m": 8,
         "en": {
-            "name": "BRELOOM",
+            "name": "Breloom",
             "category": "Mushroom Pokémon",
             "entry_text": [
                 "Its short arms stretch when it\n",
@@ -136,7 +136,7 @@
             ]
         },
         "fr": {
-            "name": "CHAPIGNON",
+            "name": "Chapignon",
             "category": "Pokémon Champignon",
             "entry_text": [
                 "Ses petits bras s’étendent quand il\n",
@@ -145,7 +145,7 @@
             ]
         },
         "de": {
-            "name": "KAPILZ",
+            "name": "Kapilz",
             "category": "Pilz",
             "entry_text": [
                 "Seine kurzen Arme dehnen sich aus,\n",
@@ -154,7 +154,7 @@
             ]
         },
         "it": {
-            "name": "BRELOOM",
+            "name": "Breloom",
             "category": "Pokémon Fungo",
             "entry_text": [
                 "Tirando pugni, i suoi cortissimi arti\n",
@@ -163,7 +163,7 @@
             ]
         },
         "es": {
-            "name": "BRELOOM",
+            "name": "Breloom",
             "category": "Pokémon Hongo",
             "entry_text": [
                 "Sus cortos brazos se expanden\n",

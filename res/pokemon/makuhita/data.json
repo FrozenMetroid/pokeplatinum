@@ -135,7 +135,7 @@
         "trainer_pos_m": 9,
         "pokemon_pos_m": 13,
         "en": {
-            "name": "MAKUHITA",
+            "name": "Makuhita",
             "category": "Guts Pokémon",
             "entry_text": [
                 "It toughens its body by slamming\n",
@@ -144,7 +144,7 @@
             ]
         },
         "fr": {
-            "name": "MAKUHITA",
+            "name": "Makuhita",
             "category": "Pokémon Tenace",
             "entry_text": [
                 "Il fortifie son corps en fonçant\n",
@@ -153,7 +153,7 @@
             ]
         },
         "de": {
-            "name": "MAKUHITA",
+            "name": "Makuhita",
             "category": "Courage",
             "entry_text": [
                 "Es stärkt seinen Körper, indem es\n",
@@ -162,7 +162,7 @@
             ]
         },
         "it": {
-            "name": "MAKUHITA",
+            "name": "Makuhita",
             "category": "Pokémon Coraggio",
             "entry_text": [
                 "Si rinforza sbattendo contro enormi\n",
@@ -171,7 +171,7 @@
             ]
         },
         "es": {
-            "name": "MAKUHITA",
+            "name": "Makuhita",
             "category": "Pokémon Valiente",
             "entry_text": [
                 "Endurece su cuerpo golpeando\n",

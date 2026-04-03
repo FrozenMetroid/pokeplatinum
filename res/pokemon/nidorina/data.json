@@ -116,7 +116,7 @@
         "trainer_pos_m": 9,
         "pokemon_pos_m": 19,
         "en": {
-            "name": "NIDORINA",
+            "name": "Nidorina",
             "category": "Poison Pin Pokémon",
             "entry_text": [
                 "When it senses danger, it raises\n",
@@ -125,7 +125,7 @@
             ]
         },
         "fr": {
-            "name": "NIDORINA",
+            "name": "Nidorina",
             "category": "Pokémon Venepic",
             "entry_text": [
                 "Ce Pokémon dresse ses piquants\n",
@@ -134,7 +134,7 @@
             ]
         },
         "de": {
-            "name": "NIDORINA",
+            "name": "Nidorina",
             "category": "Giftdorn",
             "entry_text": [
                 "Bei Gefahr fährt es die Wider-\n",
@@ -143,7 +143,7 @@
             ]
         },
         "it": {
-            "name": "NIDORINA",
+            "name": "Nidorina",
             "category": "Pokémon Velenago",
             "entry_text": [
                 "Quando avverte il pericolo, rizza\n",
@@ -152,7 +152,7 @@
             ]
         },
         "es": {
-            "name": "NIDORINA",
+            "name": "Nidorina",
             "category": "Pokémon Pin Veneno",
             "entry_text": [
                 "Saca las púas de su cuerpo si\n",

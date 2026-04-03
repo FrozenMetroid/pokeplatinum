@@ -135,7 +135,7 @@
         "trainer_pos_m": 16,
         "pokemon_pos_m": 7,
         "en": {
-            "name": "LAPRAS",
+            "name": "Lapras",
             "category": "Transport Pokémon",
             "entry_text": [
                 "It loves crossing the sea with\n",
@@ -144,7 +144,7 @@
             ]
         },
         "fr": {
-            "name": "LOKHLASS",
+            "name": "Lokhlass",
             "category": "Pokémon Transport",
             "entry_text": [
                 "Il aime naviguer en portant des\n",
@@ -153,7 +153,7 @@
             ]
         },
         "de": {
-            "name": "LAPRAS",
+            "name": "Lapras",
             "category": "Transport",
             "entry_text": [
                 "Es liebt es, das Meer mit PKMN und\n",
@@ -162,7 +162,7 @@
             ]
         },
         "it": {
-            "name": "LAPRAS",
+            "name": "Lapras",
             "category": "Pokémon Trasporto",
             "entry_text": [
                 "Ama attraversare il mare con\n",
@@ -171,7 +171,7 @@
             ]
         },
         "es": {
-            "name": "LAPRAS",
+            "name": "Lapras",
             "category": "Pokémon Transporte",
             "entry_text": [
                 "Le encanta surcar los mares con\n",

@@ -129,7 +129,7 @@
         "trainer_pos_m": 9,
         "pokemon_pos_m": 5,
         "en": {
-            "name": "REMORAID",
+            "name": "Remoraid",
             "category": "Jet Pokémon",
             "entry_text": [
                 "It forcefully squirts water. The\n",
@@ -138,12 +138,12 @@
             ]
         },
         "fr": {
-            "name": "REMORAID",
+            "name": "Remoraid",
             "category": "Pokémon Jet",
             "entry_text": [ "Il crache un puissant jet d’eau\n", "pour abattre les proies volantes." ]
         },
         "de": {
-            "name": "REMORAID",
+            "name": "Remoraid",
             "category": "Hochdruck",
             "entry_text": [
                 "Es spritzt Wasser mit Hochdruck\n",
@@ -152,7 +152,7 @@
             ]
         },
         "it": {
-            "name": "REMORAID",
+            "name": "Remoraid",
             "category": "Pokémon Jet",
             "entry_text": [
                 "Emette potenti getti d’acqua con i\n",
@@ -161,7 +161,7 @@
             ]
         },
         "es": {
-            "name": "REMORAID",
+            "name": "Remoraid",
             "category": "Pokémon Reactor",
             "entry_text": [ "Escupe potentes chorros de agua\n", "para derribar presas voladoras." ]
         },

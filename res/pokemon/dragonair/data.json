@@ -121,7 +121,7 @@
         "trainer_pos_m": 15,
         "pokemon_pos_m": 4,
         "en": {
-            "name": "DRAGONAIR",
+            "name": "Dragonair",
             "category": "Dragon Pokémon",
             "entry_text": [
                 "If its body takes on an aura, the\n",
@@ -130,7 +130,7 @@
             ]
         },
         "fr": {
-            "name": "DRACO",
+            "name": "Draco",
             "category": "Pokémon Dragon",
             "entry_text": [
                 "La météo change brusquement quand\n",
@@ -139,7 +139,7 @@
             ]
         },
         "de": {
-            "name": "DRAGONIR",
+            "name": "Dragonir",
             "category": "Drache",
             "entry_text": [
                 "Erscheint um seinen Körper eine\n",
@@ -148,7 +148,7 @@
             ]
         },
         "it": {
-            "name": "DRAGONAIR",
+            "name": "Dragonair",
             "category": "Pokémon Drago",
             "entry_text": [
                 "Se il suo corpo emana un’aura, il\n",
@@ -157,7 +157,7 @@
             ]
         },
         "es": {
-            "name": "DRAGONAIR",
+            "name": "Dragonair",
             "category": "Pokémon Dragón",
             "entry_text": [
                 "Si su cuerpo está rodeado de un\n",

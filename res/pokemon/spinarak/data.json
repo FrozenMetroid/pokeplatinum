@@ -118,7 +118,7 @@
         "trainer_pos_m": 9,
         "pokemon_pos_m": 26,
         "en": {
-            "name": "SPINARAK",
+            "name": "Spinarak",
             "category": "String Spit Pokémon",
             "entry_text": [
                 "It sets a trap by spinning a web\n",
@@ -127,7 +127,7 @@
             ]
         },
         "fr": {
-            "name": "MIMIGAL",
+            "name": "Mimigal",
             "category": "Pokémon Crache Fil",
             "entry_text": [
                 "Il tisse une toile fine mais solide\n",
@@ -136,7 +136,7 @@
             ]
         },
         "de": {
-            "name": "WEBARAK",
+            "name": "Webarak",
             "category": "Fadenwurf",
             "entry_text": [
                 "Es baut eine Falle, indem es ein\n",
@@ -145,7 +145,7 @@
             ]
         },
         "it": {
-            "name": "SPINARAK",
+            "name": "Spinarak",
             "category": "Pokémon Tela",
             "entry_text": [
                 "Tesse una trappola con un filo di\n",
@@ -154,7 +154,7 @@
             ]
         },
         "es": {
-            "name": "SPINARAK",
+            "name": "Spinarak",
             "category": "Pokémon Escupesoga",
             "entry_text": [
                 "Pone trampas tejiendo una red\n",

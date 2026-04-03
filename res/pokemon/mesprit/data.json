@@ -128,7 +128,7 @@
         "trainer_pos_m": 9,
         "pokemon_pos_m": 65526,
         "en": {
-            "name": "MESPRIT",
+            "name": "Mesprit",
             "category": "Emotion Pokémon",
             "entry_text": [
                 "When MESPRIT flew, people learned\n",
@@ -137,7 +137,7 @@
             ]
         },
         "fr": {
-            "name": "CREFOLLET",
+            "name": "Crefollet",
             "category": "Pokémon Emotion",
             "entry_text": [
                 "On l’appelle “être de l’émotion”.\n",
@@ -146,7 +146,7 @@
             ]
         },
         "de": {
-            "name": "VESPRIT",
+            "name": "Vesprit",
             "category": "Emotion",
             "entry_text": [
                 "“Das fühlende Wesen”.\n",
@@ -155,7 +155,7 @@
             ]
         },
         "it": {
-            "name": "MESPRIT",
+            "name": "Mesprit",
             "category": "Pokémon Emozione",
             "entry_text": [
                 "Detto “Essere delle emozioni”.\n",
@@ -164,7 +164,7 @@
             ]
         },
         "es": {
-            "name": "MESPRIT",
+            "name": "Mesprit",
             "category": "Pokémon Sensorio",
             "entry_text": [
                 "Se le conoce como el “ser de la\n",

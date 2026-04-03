@@ -124,7 +124,7 @@
         "trainer_pos_m": 22,
         "pokemon_pos_m": 0,
         "en": {
-            "name": "GYARADOS",
+            "name": "Gyarados",
             "category": "Atrocious Pokémon",
             "entry_text": [
                 "Once it begins to rampage, a\n",
@@ -133,7 +133,7 @@
             ]
         },
         "fr": {
-            "name": "LEVIATOR",
+            "name": "Leviator",
             "category": "Pokémon Terrifiant",
             "entry_text": [
                 "Lorsqu’il apparaît, sa rage ne\n",
@@ -142,7 +142,7 @@
             ]
         },
         "de": {
-            "name": "GARADOS",
+            "name": "Garados",
             "category": "Grausam",
             "entry_text": [
                 "Sobald es erscheint, nimmt seine\n",
@@ -151,7 +151,7 @@
             ]
         },
         "it": {
-            "name": "GYARADOS",
+            "name": "Gyarados",
             "category": "Pokémon Atroce",
             "entry_text": [
                 "La sua ira non si placa finché non\n",
@@ -160,7 +160,7 @@
             ]
         },
         "es": {
-            "name": "GYARADOS",
+            "name": "Gyarados",
             "category": "Pokémon Atrocidad",
             "entry_text": [
                 "Cuando se enfada, su rabia solo\n",

@@ -138,7 +138,7 @@
         "trainer_pos_m": 9,
         "pokemon_pos_m": 19,
         "en": {
-            "name": "DROWZEE",
+            "name": "Drowzee",
             "category": "Hypnosis Pokémon",
             "entry_text": [
                 "It can tell what people are\n",
@@ -147,7 +147,7 @@
             ]
         },
         "fr": {
-            "name": "SOPORIFIK",
+            "name": "Soporifik",
             "category": "Pokémon Hypnose",
             "entry_text": [
                 "Son grand nez lui permet de lire\n",
@@ -156,7 +156,7 @@
             ]
         },
         "de": {
-            "name": "TRAUMATO",
+            "name": "Traumato",
             "category": "Hypnose",
             "entry_text": [
                 "Mit seiner großen Nase kann es die\n",
@@ -165,7 +165,7 @@
             ]
         },
         "it": {
-            "name": "DROWZEE",
+            "name": "Drowzee",
             "category": "Pokémon Ipnosi",
             "entry_text": [
                 "Riesce ad indovinare cosa sognano\n",
@@ -174,7 +174,7 @@
             ]
         },
         "es": {
-            "name": "DROWZEE",
+            "name": "Drowzee",
             "category": "Pokémon Hipnosis",
             "entry_text": [
                 "Puede oler los sueños de la\n",

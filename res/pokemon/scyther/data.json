@@ -134,7 +134,7 @@
         "trainer_pos_m": 9,
         "pokemon_pos_m": 7,
         "en": {
-            "name": "SCYTHER",
+            "name": "Scyther",
             "category": "Mantis Pokémon",
             "entry_text": [
                 "The sharp scythes on its forearms\n",
@@ -143,7 +143,7 @@
             ]
         },
         "fr": {
-            "name": "INSECATEUR",
+            "name": "Insecateur",
             "category": "Pokémon Mante",
             "entry_text": [
                 "Ses coups de faux sont \n",
@@ -152,7 +152,7 @@
             ]
         },
         "de": {
-            "name": "SICHLOR",
+            "name": "Sichlor",
             "category": "Mantis",
             "entry_text": [
                 "Es ist fast unmöglich, seinen\n",
@@ -161,7 +161,7 @@
             ]
         },
         "it": {
-            "name": "SCYTHER",
+            "name": "Scyther",
             "category": "Pokémon Mantide",
             "entry_text": [
                 "È quasi impossibile parare gli\n",
@@ -170,7 +170,7 @@
             ]
         },
         "es": {
-            "name": "SCYTHER",
+            "name": "Scyther",
             "category": "Pokémon Mantis",
             "entry_text": [
                 "Es casi imposible evitar el ataque\n",

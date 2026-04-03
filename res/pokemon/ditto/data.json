@@ -59,7 +59,7 @@
         "trainer_pos_m": 9,
         "pokemon_pos_m": 30,
         "en": {
-            "name": "DITTO",
+            "name": "Ditto",
             "category": "Transform Pokémon",
             "entry_text": [
                 "It has the ability to reconstitute\n",
@@ -68,7 +68,7 @@
             ]
         },
         "fr": {
-            "name": "METAMORPH",
+            "name": "Metamorph",
             "category": "Pokémon Morphing",
             "entry_text": [
                 "Il a la capacité de modifier sa\n",
@@ -77,7 +77,7 @@
             ]
         },
         "de": {
-            "name": "DITTO",
+            "name": "Ditto",
             "category": "Transform",
             "entry_text": [
                 "Es kann seine Zellstruktur so\n",
@@ -86,7 +86,7 @@
             ]
         },
         "it": {
-            "name": "DITTO",
+            "name": "Ditto",
             "category": "Pokémon Mutante",
             "entry_text": [
                 "Ha la capacità di modificare la sua\n",
@@ -95,7 +95,7 @@
             ]
         },
         "es": {
-            "name": "DITTO",
+            "name": "Ditto",
             "category": "Pokémon Transform.",
             "entry_text": [
                 "Puede alterar por completo su\n",

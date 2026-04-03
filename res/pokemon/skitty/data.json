@@ -143,7 +143,7 @@
         "trainer_pos_m": 9,
         "pokemon_pos_m": 21,
         "en": {
-            "name": "SKITTY",
+            "name": "Skitty",
             "category": "Kitten Pokémon",
             "entry_text": [
                 "It can’t stop itself from chasing\n",
@@ -152,7 +152,7 @@
             ]
         },
         "fr": {
-            "name": "SKITTY",
+            "name": "Skitty",
             "category": "Pokémon Chaton",
             "entry_text": [
                 "Il poursuit tout ce qui bouge. On\n",
@@ -161,7 +161,7 @@
             ]
         },
         "de": {
-            "name": "ENECO",
+            "name": "Eneco",
             "category": "Kätzchen",
             "entry_text": [
                 "Es muss Dinge, die sich bewegen,\n",
@@ -170,7 +170,7 @@
             ]
         },
         "it": {
-            "name": "SKITTY",
+            "name": "Skitty",
             "category": "Pokémon Micio",
             "entry_text": [
                 "Non riesce ad evitare di inseguire\n",
@@ -179,7 +179,7 @@
             ]
         },
         "es": {
-            "name": "SKITTY",
+            "name": "Skitty",
             "category": "Pokémon Gatito",
             "entry_text": [
                 "No puede evitar ir tras las cosas\n",

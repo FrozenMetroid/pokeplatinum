@@ -133,7 +133,7 @@
         "trainer_pos_m": 13,
         "pokemon_pos_m": 5,
         "en": {
-            "name": "BLAZIKEN",
+            "name": "Blaziken",
             "category": "Blaze Pokémon",
             "entry_text": [
                 "Flames spout from its wrists,\n",
@@ -142,7 +142,7 @@
             ]
         },
         "fr": {
-            "name": "BRASEGALI",
+            "name": "Brasegali",
             "category": "Pokémon Ardent",
             "entry_text": [
                 "Des flammes fusent de ses\n",
@@ -151,7 +151,7 @@
             ]
         },
         "de": {
-            "name": "LOHGOCK",
+            "name": "Lohgock",
             "category": "Großbrand",
             "entry_text": [
                 "Aus seinen Handgelenken kommt\n",
@@ -160,7 +160,7 @@
             ]
         },
         "it": {
-            "name": "BLAZIKEN",
+            "name": "Blaziken",
             "category": "Pokémon Vampe",
             "entry_text": [
                 "Le fiamme che fuoriescono dai suoi\n",
@@ -169,7 +169,7 @@
             ]
         },
         "es": {
-            "name": "BLAZIKEN",
+            "name": "Blaziken",
             "category": "Pokémon Llameante",
             "entry_text": [
                 "Sus puños están envueltos en\n",

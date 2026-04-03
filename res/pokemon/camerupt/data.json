@@ -118,7 +118,7 @@
         "trainer_pos_m": 16,
         "pokemon_pos_m": 3,
         "en": {
-            "name": "CAMERUPT",
+            "name": "Camerupt",
             "category": "Eruption Pokémon",
             "entry_text": [
                 "It has volcanoes on its back. If\n",
@@ -127,7 +127,7 @@
             ]
         },
         "fr": {
-            "name": "CAMERUPT",
+            "name": "Camerupt",
             "category": "Pokémon Eruption",
             "entry_text": [
                 "Il porte des volcans sur son dos.\n",
@@ -136,7 +136,7 @@
             ]
         },
         "de": {
-            "name": "CAMERUPT",
+            "name": "Camerupt",
             "category": "Ausbruch",
             "entry_text": [
                 "Auf seinem Rücken befinden sich\n",
@@ -145,7 +145,7 @@
             ]
         },
         "it": {
-            "name": "CAMERUPT",
+            "name": "Camerupt",
             "category": "Pokémon Eruzione",
             "entry_text": [
                 "Ha dei vulcani sul dorso. Se il\n",
@@ -154,7 +154,7 @@
             ]
         },
         "es": {
-            "name": "CAMERUPT",
+            "name": "Camerupt",
             "category": "Pokémon Erupción",
             "entry_text": [
                 "Tiene volcanes en el lomo. Si el\n",

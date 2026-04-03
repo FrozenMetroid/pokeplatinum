@@ -139,7 +139,7 @@
         "trainer_pos_m": 22,
         "pokemon_pos_m": 0,
         "en": {
-            "name": "RAYQUAZA",
+            "name": "Rayquaza",
             "category": "Sky High Pokémon",
             "entry_text": [
                 "It lives in the ozone layer far\n",
@@ -148,7 +148,7 @@
             ]
         },
         "fr": {
-            "name": "RAYQUAZA",
+            "name": "Rayquaza",
             "category": "Pokémon Cieux",
             "entry_text": [
                 "Il vit dans la couche d’ozone, au\n",
@@ -157,7 +157,7 @@
             ]
         },
         "de": {
-            "name": "RAYQUAZA",
+            "name": "Rayquaza",
             "category": "Himmelhoch",
             "entry_text": [
                 "Es lebt in der Ozonschicht hoch\n",
@@ -166,7 +166,7 @@
             ]
         },
         "it": {
-            "name": "RAYQUAZA",
+            "name": "Rayquaza",
             "category": "Pokémon Stratosfera",
             "entry_text": [
                 "Vive nello strato di ozono oltre le\n",
@@ -175,7 +175,7 @@
             ]
         },
         "es": {
-            "name": "RAYQUAZA",
+            "name": "Rayquaza",
             "category": "Pokémon Cielo",
             "entry_text": [
                 "Vive en la capa de ozono sobre\n",

@@ -130,7 +130,7 @@
         "trainer_pos_m": 9,
         "pokemon_pos_m": 28,
         "en": {
-            "name": "PIPLUP",
+            "name": "Piplup",
             "category": "Penguin Pokémon",
             "entry_text": [
                 "A poor walker, it often falls down.\n",
@@ -139,7 +139,7 @@
             ]
         },
         "fr": {
-            "name": "TIPLOUF",
+            "name": "Tiplouf",
             "category": "Pokémon Pingouin",
             "entry_text": [
                 "Il est fier et déteste accepter\n",
@@ -148,7 +148,7 @@
             ]
         },
         "de": {
-            "name": "PLINFA",
+            "name": "Plinfa",
             "category": "Pinguin",
             "entry_text": [
                 "Es ist sehr stolz und nimmt daher\n",
@@ -157,7 +157,7 @@
             ]
         },
         "it": {
-            "name": "PIPLUP",
+            "name": "Piplup",
             "category": "Pokémon Pinguino",
             "entry_text": [
                 "È molto orgoglioso e odia accettare\n",
@@ -166,7 +166,7 @@
             ]
         },
         "es": {
-            "name": "PIPLUP",
+            "name": "Piplup",
             "category": "Pokémon Pingüino",
             "entry_text": [
                 "Es muy orgulloso, por lo que odia\n",

@@ -121,7 +121,7 @@
         "trainer_pos_m": 9,
         "pokemon_pos_m": 3,
         "en": {
-            "name": "SWALOT",
+            "name": "Swalot",
             "category": "Poison Bag Pokémon",
             "entry_text": [
                 "It swallows anything whole.\n",
@@ -130,7 +130,7 @@
             ]
         },
         "fr": {
-            "name": "AVALTOUT",
+            "name": "Avaltout",
             "category": "Pokémon Sac Poison",
             "entry_text": [
                 "Il avale tout en une bouchée. Ses\n",
@@ -139,7 +139,7 @@
             ]
         },
         "de": {
-            "name": "SCHLUKWECH",
+            "name": "Schlukwech",
             "category": "Giftbeutel",
             "entry_text": [
                 "Es verschluckt alles in einem\n",
@@ -148,7 +148,7 @@
             ]
         },
         "it": {
-            "name": "SWALOT",
+            "name": "Swalot",
             "category": "Pokémon Velenosacco",
             "entry_text": [
                 "Inghiotte intera qualsiasi cosa.\n",
@@ -157,7 +157,7 @@
             ]
         },
         "es": {
-            "name": "SWALOT",
+            "name": "Swalot",
             "category": "Pokémon Bolsa Ven.",
             "entry_text": [
                 "Se traga cualquier cosa de una\n",

@@ -131,7 +131,7 @@
         "trainer_pos_m": 9,
         "pokemon_pos_m": 9,
         "en": {
-            "name": "KABUTOPS",
+            "name": "Kabutops",
             "category": "Shellfish Pokémon",
             "entry_text": [
                 "It is thought that this Pokémon\n",
@@ -140,7 +140,7 @@
             ]
         },
         "fr": {
-            "name": "KABUTOPS",
+            "name": "Kabutops",
             "category": "Pokémon Carapace",
             "entry_text": [
                 "On pense que ce Pokémon est\n",
@@ -149,7 +149,7 @@
             ]
         },
         "de": {
-            "name": "KABUTOPS",
+            "name": "Kabutops",
             "category": "Schaltier",
             "entry_text": [
                 "Man geht davon aus, dass dieses\n",
@@ -158,7 +158,7 @@
             ]
         },
         "it": {
-            "name": "KABUTOPS",
+            "name": "Kabutops",
             "category": "Pokémon Crostaceo",
             "entry_text": [
                 "Pokémon probabilmente giunto sulla\n",
@@ -167,7 +167,7 @@
             ]
         },
         "es": {
-            "name": "KABUTOPS",
+            "name": "Kabutops",
             "category": "Pokémon Marisco",
             "entry_text": [
                 "Se cree que este Pokémon cambió\n",

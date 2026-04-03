@@ -124,7 +124,7 @@
         "trainer_pos_m": 9,
         "pokemon_pos_m": 65531,
         "en": {
-            "name": "PELIPPER",
+            "name": "Pelipper",
             "category": "Water Bird Pokémon",
             "entry_text": [
                 "It is a messenger of the skies,\n",
@@ -133,7 +133,7 @@
             ]
         },
         "fr": {
-            "name": "BEKIPAN",
+            "name": "Bekipan",
             "category": "Pokémon Oiseaudo",
             "entry_text": [
                 "Il trempe son grand bec dans la\n",
@@ -142,7 +142,7 @@
             ]
         },
         "de": {
-            "name": "PELIPPER",
+            "name": "Pelipper",
             "category": "Wasservogel",
             "entry_text": [
                 "Es taucht seinen großen Schnabel\n",
@@ -151,7 +151,7 @@
             ]
         },
         "it": {
-            "name": "PELIPPER",
+            "name": "Pelipper",
             "category": "Pokémon Alacquatico",
             "entry_text": [
                 "Immerge il suo enorme becco nel\n",
@@ -160,7 +160,7 @@
             ]
         },
         "es": {
-            "name": "PELIPPER",
+            "name": "Pelipper",
             "category": "Pokémon Ave Agua",
             "entry_text": [
                 "Hunde su gran pico en el mar\n",

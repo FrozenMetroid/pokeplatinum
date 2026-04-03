@@ -112,7 +112,7 @@
         "trainer_pos_m": 15,
         "pokemon_pos_m": 3,
         "en": {
-            "name": "MILOTIC",
+            "name": "Milotic",
             "category": "Tender Pokémon",
             "entry_text": [
                 "Its lovely scales are described as\n",
@@ -121,7 +121,7 @@
             ]
         },
         "fr": {
-            "name": "MILOBELLUS",
+            "name": "Milobellus",
             "category": "Pokémon Tendre",
             "entry_text": [
                 "On raconte qu’il surgit du fond des\n",
@@ -130,7 +130,7 @@
             ]
         },
         "de": {
-            "name": "MILOTIC",
+            "name": "Milotic",
             "category": "Zartheit",
             "entry_text": [
                 "Wenn sich jemand streitet, steigt\n",
@@ -139,7 +139,7 @@
             ]
         },
         "it": {
-            "name": "MILOTIC",
+            "name": "Milotic",
             "category": "Pokémon Tenerezza",
             "entry_text": [
                 "Si dice che sorga dai fondali dei\n",
@@ -148,7 +148,7 @@
             ]
         },
         "es": {
-            "name": "MILOTIC",
+            "name": "Milotic",
             "category": "Pokémon Tierno",
             "entry_text": [
                 "Se dice que emerge del fondo de\n",

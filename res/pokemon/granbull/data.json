@@ -132,7 +132,7 @@
         "trainer_pos_m": 9,
         "pokemon_pos_m": 7,
         "en": {
-            "name": "GRANBULL",
+            "name": "Granbull",
             "category": "Fairy Pokémon",
             "entry_text": [
                 "It is timid in spite of its looks.\n",
@@ -141,7 +141,7 @@
             ]
         },
         "fr": {
-            "name": "GRANBULL",
+            "name": "Granbull",
             "category": "Pokémon Fée",
             "entry_text": [
                 "En dépit des apparences, c’est un\n",
@@ -150,7 +150,7 @@
             ]
         },
         "de": {
-            "name": "GRANBULL",
+            "name": "Granbull",
             "category": "Fee",
             "entry_text": [
                 "Es ist trotz seines Äußeren\n",
@@ -159,7 +159,7 @@
             ]
         },
         "it": {
-            "name": "GRANBULL",
+            "name": "Granbull",
             "category": "Pokémon Fata",
             "entry_text": [
                 "Malgrado il suo aspetto, è molto\n",
@@ -168,7 +168,7 @@
             ]
         },
         "es": {
-            "name": "GRANBULL",
+            "name": "Granbull",
             "category": "Pokémon Hada",
             "entry_text": [
                 "A pesar de su aspecto, es muy\n",

@@ -103,7 +103,7 @@
         "trainer_pos_m": 9,
         "pokemon_pos_m": 27,
         "en": {
-            "name": "BELLOSSOM",
+            "name": "Bellossom",
             "category": "Flower Pokémon",
             "entry_text": [
                 "When the heavy rainfall season\n",
@@ -112,7 +112,7 @@
             ]
         },
         "fr": {
-            "name": "JOLIFLOR",
+            "name": "Joliflor",
             "category": "Pokémon Fleur",
             "entry_text": [
                 "A la fin de la saison des pluies,\n",
@@ -121,7 +121,7 @@
             ]
         },
         "de": {
-            "name": "BLUBELLA",
+            "name": "Blubella",
             "category": "Blume",
             "entry_text": [
                 "Sobald die Regenzeit vorbei ist,\n",
@@ -130,7 +130,7 @@
             ]
         },
         "it": {
-            "name": "BELLOSSOM",
+            "name": "Bellossom",
             "category": "Pokémon Fiore",
             "entry_text": [
                 "Quando finisce la stagione delle\n",
@@ -139,7 +139,7 @@
             ]
         },
         "es": {
-            "name": "BELLOSSOM",
+            "name": "Bellossom",
             "category": "Pokémon Flor",
             "entry_text": [
                 "Cuando acaba la estación de las\n",

@@ -107,7 +107,7 @@
         "trainer_pos_m": 9,
         "pokemon_pos_m": 12,
         "en": {
-            "name": "ARIADOS",
+            "name": "Ariados",
             "category": "Long Leg Pokémon",
             "entry_text": [
                 "It attaches silk to its prey and\n",
@@ -116,7 +116,7 @@
             ]
         },
         "fr": {
-            "name": "MIGALOS",
+            "name": "Migalos",
             "category": "Pokémon Long-Patte",
             "entry_text": [
                 "Il attache un fil à sa proie avant\n",
@@ -125,7 +125,7 @@
             ]
         },
         "de": {
-            "name": "ARIADOS",
+            "name": "Ariados",
             "category": "Langbein",
             "entry_text": [
                 "Es befestigt Seide an der Beute und\n",
@@ -134,7 +134,7 @@
             ]
         },
         "it": {
-            "name": "ARIADOS",
+            "name": "Ariados",
             "category": "Pokémon Lungazampa",
             "entry_text": [
                 "Aggancia la preda con un filo di se-\n",
@@ -143,7 +143,7 @@
             ]
         },
         "es": {
-            "name": "ARIADOS",
+            "name": "Ariados",
             "category": "Pokémon Pata Larga",
             "entry_text": [
                 "Pega hilos de seda a sus presas y\n",

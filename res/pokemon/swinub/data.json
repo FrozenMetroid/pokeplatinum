@@ -130,7 +130,7 @@
         "trainer_pos_m": 9,
         "pokemon_pos_m": 26,
         "en": {
-            "name": "SWINUB",
+            "name": "Swinub",
             "category": "Pig Pokémon",
             "entry_text": [
                 "It has a very sensitive nose. It\n",
@@ -139,7 +139,7 @@
             ]
         },
         "fr": {
-            "name": "MARCACRIN",
+            "name": "Marcacrin",
             "category": "Pokémon Cochon",
             "entry_text": [
                 "Il adore les champignons qui\n",
@@ -148,7 +148,7 @@
             ]
         },
         "de": {
-            "name": "QUIEKEL",
+            "name": "Quiekel",
             "category": "Ferkel",
             "entry_text": [
                 "Es liebt Pilze, die unter totem Gras\n",
@@ -157,7 +157,7 @@
             ]
         },
         "it": {
-            "name": "SWINUB",
+            "name": "Swinub",
             "category": "Pokémon Maiale",
             "entry_text": [
                 "Ama mangiare i funghi che crescono\n",
@@ -166,7 +166,7 @@
             ]
         },
         "es": {
-            "name": "SWINUB",
+            "name": "Swinub",
             "category": "Pokémon Cerdo",
             "entry_text": [
                 "Le encanta comer las setas que\n",

@@ -144,7 +144,7 @@
         "trainer_pos_m": 9,
         "pokemon_pos_m": 6,
         "en": {
-            "name": "BLISSEY",
+            "name": "Blissey",
             "category": "Happiness Pokémon",
             "entry_text": [
                 "The eggs it lays are filled with\n",
@@ -153,7 +153,7 @@
             ]
         },
         "fr": {
-            "name": "LEUPHORIE",
+            "name": "Leuphorie",
             "category": "Pokémon Bonheur",
             "entry_text": [
                 "Ce Pokémon au cœur d’or\n",
@@ -162,7 +162,7 @@
             ]
         },
         "de": {
-            "name": "HEITEIRA",
+            "name": "Heiteira",
             "category": "Freude",
             "entry_text": [
                 "Dieses gutherzige PKMN pflegt\n",
@@ -171,7 +171,7 @@
             ]
         },
         "it": {
-            "name": "BLISSEY",
+            "name": "Blissey",
             "category": "Pokémon Felicità",
             "entry_text": [
                 "Questo Pokémon buono cura i\n",
@@ -180,7 +180,7 @@
             ]
         },
         "es": {
-            "name": "BLISSEY",
+            "name": "Blissey",
             "category": "Pokémon Felicidad",
             "entry_text": [
                 "Este amable Pokémon cuida de\n",

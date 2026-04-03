@@ -117,7 +117,7 @@
         "trainer_pos_m": 9,
         "pokemon_pos_m": 65523,
         "en": {
-            "name": "CASTFORM",
+            "name": "Castform",
             "category": "Weather Pokémon",
             "entry_text": [
                 "Its appearance changes with the\n",
@@ -126,7 +126,7 @@
             ]
         },
         "fr": {
-            "name": "MORPHEO",
+            "name": "Morpheo",
             "category": "Pokémon Climat",
             "entry_text": [
                 "Son aspect change avec la météo.\n",
@@ -135,7 +135,7 @@
             ]
         },
         "de": {
-            "name": "FORMEO",
+            "name": "Formeo",
             "category": "Wetter",
             "entry_text": [
                 "Seine Gestalt ändert sich mit dem\n",
@@ -144,7 +144,7 @@
             ]
         },
         "it": {
-            "name": "CASTFORM",
+            "name": "Castform",
             "category": "Pokémon Meteo",
             "entry_text": [
                 "Il suo aspetto varia con il clima.\n",
@@ -153,7 +153,7 @@
             ]
         },
         "es": {
-            "name": "CASTFORM",
+            "name": "Castform",
             "category": "Pokémon Clima",
             "entry_text": [
                 "La meteorología determina su\n",

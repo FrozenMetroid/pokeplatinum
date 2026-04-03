@@ -130,7 +130,7 @@
         "trainer_pos_m": 9,
         "pokemon_pos_m": 7,
         "en": {
-            "name": "SLAKING",
+            "name": "Slaking",
             "category": "Lazy Pokémon",
             "entry_text": [
                 "The world’s laziest Pokémon. When\n",
@@ -139,7 +139,7 @@
             ]
         },
         "fr": {
-            "name": "MONAFLEMIT",
+            "name": "Monaflemit",
             "category": "Pokémon Fainéant",
             "entry_text": [
                 "Le Pokémon le plus fainéant du\n",
@@ -148,7 +148,7 @@
             ]
         },
         "de": {
-            "name": "LETARKING",
+            "name": "Letarking",
             "category": "Müßig",
             "entry_text": [
                 "Das faulste PKMN der Welt. Wenn es\n",
@@ -157,7 +157,7 @@
             ]
         },
         "it": {
-            "name": "SLAKING",
+            "name": "Slaking",
             "category": "Pokémon Pigrizia",
             "entry_text": [
                 "Il Pokémon più pigro in assoluto.\n",
@@ -166,7 +166,7 @@
             ]
         },
         "es": {
-            "name": "SLAKING",
+            "name": "Slaking",
             "category": "Pokémon Holgazán",
             "entry_text": [
                 "El Pokémon más perezoso del\n",

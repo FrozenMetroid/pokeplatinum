@@ -141,7 +141,7 @@
         "trainer_pos_m": 9,
         "pokemon_pos_m": 65534,
         "en": {
-            "name": "LATIAS",
+            "name": "Latias",
             "category": "Eon Pokémon",
             "entry_text": [
                 "Its body is covered with a down\n",
@@ -150,7 +150,7 @@
             ]
         },
         "fr": {
-            "name": "LATIAS",
+            "name": "Latias",
             "category": "Pokémon Eon",
             "entry_text": [
                 "Son corps est recouvert d’un \n",
@@ -159,7 +159,7 @@
             ]
         },
         "de": {
-            "name": "LATIAS",
+            "name": "Latias",
             "category": "Äon",
             "entry_text": [
                 "Sein Körper ist mit Daunen bedeckt,\n",
@@ -168,7 +168,7 @@
             ]
         },
         "it": {
-            "name": "LATIAS",
+            "name": "Latias",
             "category": "Pokémon Eone",
             "entry_text": [
                 "Questo Pokémon ha il corpo\n",
@@ -177,7 +177,7 @@
             ]
         },
         "es": {
-            "name": "LATIAS",
+            "name": "Latias",
             "category": "Pokémon Eón",
             "entry_text": [
                 "Su cuerpo está cubierto de un\n",

@@ -123,7 +123,7 @@
         "trainer_pos_m": 9,
         "pokemon_pos_m": 28,
         "en": {
-            "name": "SUNKERN",
+            "name": "Sunkern",
             "category": "Seed Pokémon",
             "entry_text": [
                 "It suddenly falls out of the sky in\n",
@@ -132,7 +132,7 @@
             ]
         },
         "fr": {
-            "name": "TOURNEGRIN",
+            "name": "Tournegrin",
             "category": "Pokémon Graine",
             "entry_text": [
                 "Il tombe du ciel sans crier gare en\n",
@@ -141,7 +141,7 @@
             ]
         },
         "de": {
-            "name": "SONNKERN",
+            "name": "Sonnkern",
             "category": "Samen",
             "entry_text": [
                 "Morgens fällt es plötzlich aus dem\n",
@@ -150,7 +150,7 @@
             ]
         },
         "it": {
-            "name": "SUNKERN",
+            "name": "Sunkern",
             "category": "Pokémon Seme",
             "entry_text": [
                 "Cade improvvisamente giù dal cielo\n",
@@ -159,7 +159,7 @@
             ]
         },
         "es": {
-            "name": "SUNKERN",
+            "name": "Sunkern",
             "category": "Pokémon Semilla",
             "entry_text": [
                 "Cae de repente del cielo por las\n",

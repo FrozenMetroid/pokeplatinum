@@ -131,7 +131,7 @@
         "trainer_pos_m": 6,
         "pokemon_pos_m": 1,
         "en": {
-            "name": "BLASTOISE",
+            "name": "Blastoise",
             "category": "Shellfish Pokémon",
             "entry_text": [
                 "The jets of water it spouts from\n",
@@ -140,7 +140,7 @@
             ]
         },
         "fr": {
-            "name": "TORTANK",
+            "name": "Tortank",
             "category": "Pokémon Carapace",
             "entry_text": [
                 "Les trombes d’eau projetées par\n",
@@ -149,7 +149,7 @@
             ]
         },
         "de": {
-            "name": "TURTOK",
+            "name": "Turtok",
             "category": "Panzer",
             "entry_text": [
                 "Der Wasserstrahl, der aus den\n",
@@ -158,7 +158,7 @@
             ]
         },
         "it": {
-            "name": "BLASTOISE",
+            "name": "Blastoise",
             "category": "Pokémon Crostaceo",
             "entry_text": [
                 "I getti d’acqua lanciati dai\n",
@@ -167,7 +167,7 @@
             ]
         },
         "es": {
-            "name": "BLASTOISE",
+            "name": "Blastoise",
             "category": "Pokémon Marisco",
             "entry_text": [
                 "Los chorros de agua que lanza\n",

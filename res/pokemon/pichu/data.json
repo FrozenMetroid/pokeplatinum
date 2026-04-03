@@ -115,7 +115,7 @@
         "trainer_pos_m": 9,
         "pokemon_pos_m": 27,
         "en": {
-            "name": "PICHU",
+            "name": "Pichu",
             "category": "Tiny Mouse Pokémon",
             "entry_text": [
                 "The electric sacs in its cheeks are\n",
@@ -124,7 +124,7 @@
             ]
         },
         "fr": {
-            "name": "PICHU",
+            "name": "Pichu",
             "category": "Pokémon Minisouris",
             "entry_text": [
                 "Les poches sur ses joues sont\n",
@@ -133,7 +133,7 @@
             ]
         },
         "de": {
-            "name": "PICHU",
+            "name": "Pichu",
             "category": "Babymaus",
             "entry_text": [
                 "Seine Backentaschen sind noch\n",
@@ -142,7 +142,7 @@
             ]
         },
         "it": {
-            "name": "PICHU",
+            "name": "Pichu",
             "category": "Pokémon Topino",
             "entry_text": [
                 "Le sacche che ha sulle guance sono\n",
@@ -151,7 +151,7 @@
             ]
         },
         "es": {
-            "name": "PICHU",
+            "name": "Pichu",
             "category": "Pokémon Ratoncito",
             "entry_text": [
                 "Las bolsas de sus mejillas son aún\n",

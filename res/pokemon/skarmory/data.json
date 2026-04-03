@@ -131,7 +131,7 @@
         "trainer_pos_m": 9,
         "pokemon_pos_m": 2,
         "en": {
-            "name": "SKARMORY",
+            "name": "Skarmory",
             "category": "Armor Bird Pokémon",
             "entry_text": [
                 "Despite being clad entirely in\n",
@@ -140,7 +140,7 @@
             ]
         },
         "fr": {
-            "name": "AIRMURE",
+            "name": "Airmure",
             "category": "Pokémon Armoiseau",
             "entry_text": [
                 "Son corps est prisonnier d’une\n",
@@ -149,7 +149,7 @@
             ]
         },
         "de": {
-            "name": "PANZAERON",
+            "name": "Panzaeron",
             "category": "Flugstahl",
             "entry_text": [
                 "Es wird komplett von einer eisen-\n",
@@ -158,7 +158,7 @@
             ]
         },
         "it": {
-            "name": "SKARMORY",
+            "name": "Skarmory",
             "category": "Pokémon Armuccello",
             "entry_text": [
                 "È interamente rivestito da\n",
@@ -167,7 +167,7 @@
             ]
         },
         "es": {
-            "name": "SKARMORY",
+            "name": "Skarmory",
             "category": "Pokémon Coraza Ave",
             "entry_text": [
                 "Una armadura de hierro cubre por\n",

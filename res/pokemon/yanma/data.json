@@ -129,7 +129,7 @@
         "trainer_pos_m": 9,
         "pokemon_pos_m": 65531,
         "en": {
-            "name": "YANMA",
+            "name": "Yanma",
             "category": "Clear Wing Pokémon",
             "entry_text": [
                 "It can hover in one spot by\n",
@@ -138,7 +138,7 @@
             ]
         },
         "fr": {
-            "name": "YANMA",
+            "name": "Yanma",
             "category": "Pokémon Translaile",
             "entry_text": [
                 "Il voit à 360 degrés sans avoir à\n",
@@ -147,7 +147,7 @@
             ]
         },
         "de": {
-            "name": "YANMA",
+            "name": "Yanma",
             "category": "Libelle",
             "entry_text": [
                 "Mit seinen Augen hat es einen Blick-\n",
@@ -156,7 +156,7 @@
             ]
         },
         "it": {
-            "name": "YANMA",
+            "name": "Yanma",
             "category": "Pokémon Alachiara",
             "entry_text": [
                 "Ha un campo visivo a 360° senza\n",
@@ -165,7 +165,7 @@
             ]
         },
         "es": {
-            "name": "YANMA",
+            "name": "Yanma",
             "category": "Pokémon Ala Clara",
             "entry_text": [
                 "Su campo visual es de 360 grados\n",

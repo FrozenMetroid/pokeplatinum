@@ -140,7 +140,7 @@
         "trainer_pos_m": 9,
         "pokemon_pos_m": 16,
         "en": {
-            "name": "SPINDA",
+            "name": "Spinda",
             "category": "Spot Panda Pokémon",
             "entry_text": [
                 "No two SPINDA have the same\n",
@@ -149,7 +149,7 @@
             ]
         },
         "fr": {
-            "name": "SPINDA",
+            "name": "Spinda",
             "category": "Pokémon Panda Tache",
             "entry_text": [
                 "Les motifs sur leur fourrure sont\n",
@@ -158,7 +158,7 @@
             ]
         },
         "de": {
-            "name": "PANDIR",
+            "name": "Pandir",
             "category": "Punkt-Panda",
             "entry_text": [
                 "Das Muster eines PANDIR ist wie\n",
@@ -167,7 +167,7 @@
             ]
         },
         "it": {
-            "name": "SPINDA",
+            "name": "Spinda",
             "category": "Pokémon Macchipanda",
             "entry_text": [
                 "Non ci sono due SPINDA con lo stes-\n",
@@ -176,7 +176,7 @@
             ]
         },
         "es": {
-            "name": "SPINDA",
+            "name": "Spinda",
             "category": "Pokémon Panda Topos",
             "entry_text": [
                 "No hay dos SPINDA que tengan\n",

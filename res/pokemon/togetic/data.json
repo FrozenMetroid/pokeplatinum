@@ -142,7 +142,7 @@
         "trainer_pos_m": 9,
         "pokemon_pos_m": 25,
         "en": {
-            "name": "TOGETIC",
+            "name": "Togetic",
             "category": "Happiness Pokémon",
             "entry_text": [
                 "To share its happiness, it flies\n",
@@ -151,7 +151,7 @@
             ]
         },
         "fr": {
-            "name": "TOGETIC",
+            "name": "Togetic",
             "category": "Pokémon Bonheur",
             "entry_text": [
                 "On dit qu’il apparaît aux êtres\n",
@@ -160,7 +160,7 @@
             ]
         },
         "de": {
-            "name": "TOGETIC",
+            "name": "Togetic",
             "category": "Freude",
             "entry_text": [
                 "Man sagt, es erscheint vor denen,\n",
@@ -169,7 +169,7 @@
             ]
         },
         "it": {
-            "name": "TOGETIC",
+            "name": "Togetic",
             "category": "Pokémon Felicità",
             "entry_text": [
                 "Pare che appaia alle persone gentili\n",
@@ -178,7 +178,7 @@
             ]
         },
         "es": {
-            "name": "TOGETIC",
+            "name": "Togetic",
             "category": "Pokémon Felicidad",
             "entry_text": [
                 "Se dice que se aparece a la gente\n",

@@ -116,7 +116,7 @@
         "trainer_pos_m": 15,
         "pokemon_pos_m": 1,
         "en": {
-            "name": "MOLTRES",
+            "name": "Moltres",
             "category": "Flame Pokémon",
             "entry_text": [
                 "One of the legendary bird Pokémon.\n",
@@ -125,7 +125,7 @@
             ]
         },
         "fr": {
-            "name": "SULFURA",
+            "name": "Sulfura",
             "category": "Pokémon Flamme",
             "entry_text": [
                 "L’un des Pokémon Oiseaux\n",
@@ -134,7 +134,7 @@
             ]
         },
         "de": {
-            "name": "LAVADOS",
+            "name": "Lavados",
             "category": "Flamme",
             "entry_text": [
                 "Eines der Legendären Vogel-\n",
@@ -143,7 +143,7 @@
             ]
         },
         "it": {
-            "name": "MOLTRES",
+            "name": "Moltres",
             "category": "Pokémon Fiamma",
             "entry_text": [
                 "Un Pokémon uccello leggendario.\n",
@@ -152,7 +152,7 @@
             ]
         },
         "es": {
-            "name": "MOLTRES",
+            "name": "Moltres",
             "category": "Pokémon Llama",
             "entry_text": [
                 "Uno de los legendarios Pokémon\n",

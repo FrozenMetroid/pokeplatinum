@@ -134,7 +134,7 @@
         "trainer_pos_m": 9,
         "pokemon_pos_m": 65526,
         "en": {
-            "name": "AZELF",
+            "name": "Azelf",
             "category": "Willpower Pokémon",
             "entry_text": [
                 "When AZELF flew, people gained the\n",
@@ -143,7 +143,7 @@
             ]
         },
         "fr": {
-            "name": "CREFADET",
+            "name": "Crefadet",
             "category": "Pokémon Volonté",
             "entry_text": [
                 "On l’appelle “être de la volonté”.\n",
@@ -152,7 +152,7 @@
             ]
         },
         "de": {
-            "name": "TOBUTZ",
+            "name": "Tobutz",
             "category": "Willenskraft",
             "entry_text": [
                 "“Das starke Wesen”.\n",
@@ -161,7 +161,7 @@
             ]
         },
         "it": {
-            "name": "AZELF",
+            "name": "Azelf",
             "category": "Pokémon Volontà",
             "entry_text": [
                 "Detto “Essere della volontà”.\n",
@@ -170,7 +170,7 @@
             ]
         },
         "es": {
-            "name": "AZELF",
+            "name": "Azelf",
             "category": "Pokémon Voluntad",
             "entry_text": [
                 "Se le conoce como el “ser de la\n",

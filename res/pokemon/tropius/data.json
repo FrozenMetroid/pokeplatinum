@@ -131,7 +131,7 @@
         "trainer_pos_m": 15,
         "pokemon_pos_m": 0,
         "en": {
-            "name": "TROPIUS",
+            "name": "Tropius",
             "category": "Fruit Pokémon",
             "entry_text": [
                 "Delicious fruits grew out from\n",
@@ -140,7 +140,7 @@
             ]
         },
         "fr": {
-            "name": "TROPIUS",
+            "name": "Tropius",
             "category": "Pokémon Fruit",
             "entry_text": [
                 "A force de manger son fruit\n",
@@ -149,7 +149,7 @@
             ]
         },
         "de": {
-            "name": "TROPIUS",
+            "name": "Tropius",
             "category": "Obst",
             "entry_text": [
                 "Da es ausschließlich seine Lieb-\n",
@@ -158,7 +158,7 @@
             ]
         },
         "it": {
-            "name": "TROPIUS",
+            "name": "Tropius",
             "category": "Pokémon Frutto",
             "entry_text": [
                 "Poiché mangiava sempre i suoi frutti\n",
@@ -167,7 +167,7 @@
             ]
         },
         "es": {
-            "name": "TROPIUS",
+            "name": "Tropius",
             "category": "Pokémon Fruto",
             "entry_text": [
                 "Como solo comía su fruta favorita,\n",

@@ -133,7 +133,7 @@
         "trainer_pos_m": 9,
         "pokemon_pos_m": 8,
         "en": {
-            "name": "MEDICHAM",
+            "name": "Medicham",
             "category": "Meditate Pokémon",
             "entry_text": [
                 "It gains the ability to see the aura\n",
@@ -142,7 +142,7 @@
             ]
         },
         "fr": {
-            "name": "CHARMINA",
+            "name": "Charmina",
             "category": "Pokémon Méditation",
             "entry_text": [
                 "Il a développé son sixième sens\n",
@@ -151,7 +151,7 @@
             ]
         },
         "de": {
-            "name": "MEDITALIS",
+            "name": "Meditalis",
             "category": "Meditation",
             "entry_text": [
                 "Mit Yoga-Training hat es seinen\n",
@@ -160,7 +160,7 @@
             ]
         },
         "it": {
-            "name": "MEDICHAM",
+            "name": "Medicham",
             "category": "Pokémon Meditazione",
             "entry_text": [
                 "Con gli esercizi di yoga ha affinato\n",
@@ -169,7 +169,7 @@
             ]
         },
         "es": {
-            "name": "MEDICHAM",
+            "name": "Medicham",
             "category": "Pokémon Meditador",
             "entry_text": [
                 "El yoga ha perfeccionado su\n",

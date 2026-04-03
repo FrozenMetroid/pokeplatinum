@@ -135,7 +135,7 @@
         "trainer_pos_m": 10,
         "pokemon_pos_m": 0,
         "en": {
-            "name": "GLISCOR",
+            "name": "Gliscor",
             "category": "Fang Scorp Pokémon",
             "entry_text": [
                 "If it succeeds in catching even a\n",
@@ -144,7 +144,7 @@
             ]
         },
         "fr": {
-            "name": "SCORVOL",
+            "name": "Scorvol",
             "category": "Pokémon Scorpicroc",
             "entry_text": [
                 "Il guette sa proie, pendu à une\n",
@@ -153,7 +153,7 @@
             ]
         },
         "de": {
-            "name": "SKORGRO",
+            "name": "Skorgro",
             "category": "Zahnskorpi",
             "entry_text": [
                 "Es hängt kopfüber von einem Ast\n",
@@ -162,7 +162,7 @@
             ]
         },
         "it": {
-            "name": "GLISCOR",
+            "name": "Gliscor",
             "category": "Pokémon Scorpidente",
             "entry_text": [
                 "Sta appeso ai rami con la testa in\n",
@@ -171,7 +171,7 @@
             ]
         },
         "es": {
-            "name": "GLISCOR",
+            "name": "Gliscor",
             "category": "Pokémon Colmicorpio",
             "entry_text": [
                 "Espera a sus presas colgado de\n",

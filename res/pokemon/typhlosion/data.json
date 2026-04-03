@@ -124,7 +124,7 @@
         "trainer_pos_m": 9,
         "pokemon_pos_m": 3,
         "en": {
-            "name": "TYPHLOSION",
+            "name": "Typhlosion",
             "category": "Volcano Pokémon",
             "entry_text": [
                 "It attacks using blasts of fire.\n",
@@ -133,7 +133,7 @@
             ]
         },
         "fr": {
-            "name": "TYPHLOSION",
+            "name": "Typhlosion",
             "category": "Pokémon Volcan",
             "entry_text": [
                 "Il attaque en projetant des\n",
@@ -142,7 +142,7 @@
             ]
         },
         "de": {
-            "name": "TORNUPTO",
+            "name": "Tornupto",
             "category": "Vulkan",
             "entry_text": [
                 "Es greift seine Gegner mit Feuer\n",
@@ -151,7 +151,7 @@
             ]
         },
         "it": {
-            "name": "TYPHLOSION",
+            "name": "Typhlosion",
             "category": "Pokémon Vulcano",
             "entry_text": [
                 "Attacca usando fiamme esplosive.\n",
@@ -160,7 +160,7 @@
             ]
         },
         "es": {
-            "name": "TYPHLOSION",
+            "name": "Typhlosion",
             "category": "Pokémon Volcán",
             "entry_text": [
                 "Ataca con llamaradas. Con ellas\n",

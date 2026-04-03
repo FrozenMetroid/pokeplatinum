@@ -150,7 +150,7 @@
         "trainer_pos_m": 8,
         "pokemon_pos_m": 5,
         "en": {
-            "name": "DRAGONITE",
+            "name": "Dragonite",
             "category": "Dragon Pokémon",
             "entry_text": [
                 "It is said to make its home\n",
@@ -159,7 +159,7 @@
             ]
         },
         "fr": {
-            "name": "DRACOLOSSE",
+            "name": "Dracolosse",
             "category": "Pokémon Dragon",
             "entry_text": [
                 "On raconte qu’il vit quelque part\n",
@@ -168,7 +168,7 @@
             ]
         },
         "de": {
-            "name": "DRAGORAN",
+            "name": "Dragoran",
             "category": "Drache",
             "entry_text": [
                 "Man sagt, es lebe in den Meeren.\n",
@@ -177,7 +177,7 @@
             ]
         },
         "it": {
-            "name": "DRAGONITE",
+            "name": "Dragonite",
             "category": "Pokémon Drago",
             "entry_text": [
                 "Si dice che faccia la sua tana da\n",
@@ -186,7 +186,7 @@
             ]
         },
         "es": {
-            "name": "DRAGONITE",
+            "name": "Dragonite",
             "category": "Pokémon Dragón",
             "entry_text": [
                 "Se dice que vive en algún lugar\n",

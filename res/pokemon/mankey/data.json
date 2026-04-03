@@ -145,7 +145,7 @@
         "trainer_pos_m": 9,
         "pokemon_pos_m": 23,
         "en": {
-            "name": "MANKEY",
+            "name": "Mankey",
             "category": "Pig Monkey Pokémon",
             "entry_text": [
                 "It lives in treetop colonies.\n",
@@ -154,7 +154,7 @@
             ]
         },
         "fr": {
-            "name": "FEROSINGE",
+            "name": "Ferosinge",
             "category": "Pokémon Porsinge",
             "entry_text": [
                 "Ils vivent en colonies sylvestres.\n",
@@ -163,7 +163,7 @@
             ]
         },
         "de": {
-            "name": "MENKI",
+            "name": "Menki",
             "category": "Schw./ Affe",
             "entry_text": [
                 "Es lebt mit anderen in Baumkronen.\n",
@@ -172,7 +172,7 @@
             ]
         },
         "it": {
-            "name": "MANKEY",
+            "name": "Mankey",
             "category": "Pokémon Suinpanzé",
             "entry_text": [
                 "Vive in colonie sugli alberi. Se uno\n",
@@ -181,7 +181,7 @@
             ]
         },
         "es": {
-            "name": "MANKEY",
+            "name": "Mankey",
             "category": "Pokémon Mono Cerdo",
             "entry_text": [
                 "Vive en colonias en los árboles.\n",

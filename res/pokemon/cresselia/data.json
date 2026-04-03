@@ -119,7 +119,7 @@
         "trainer_pos_m": 7,
         "pokemon_pos_m": 65533,
         "en": {
-            "name": "CRESSELIA",
+            "name": "Cresselia",
             "category": "Lunar Pokémon",
             "entry_text": [
                 "On nights around the quarter moon,\n",
@@ -128,7 +128,7 @@
             ]
         },
         "fr": {
-            "name": "CRESSELIA",
+            "name": "Cresselia",
             "category": "Pokémon Lunaire",
             "entry_text": [
                 "Ses ailes libèrent un rideau de\n",
@@ -137,7 +137,7 @@
             ]
         },
         "de": {
-            "name": "CRESSELIA",
+            "name": "Cresselia",
             "category": "Lunar",
             "entry_text": [
                 "Seine Flügel geben schimmernde\n",
@@ -146,7 +146,7 @@
             ]
         },
         "it": {
-            "name": "CRESSELIA",
+            "name": "Cresselia",
             "category": "Pokémon Falcato",
             "entry_text": [
                 "Volando rilascia un velo di \n",
@@ -155,7 +155,7 @@
             ]
         },
         "es": {
-            "name": "CRESSELIA",
+            "name": "Cresselia",
             "category": "Pokémon Lunar",
             "entry_text": [
                 "Sus alas emiten un velo de\n",

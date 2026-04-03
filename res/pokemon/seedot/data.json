@@ -116,7 +116,7 @@
         "trainer_pos_m": 9,
         "pokemon_pos_m": 24,
         "en": {
-            "name": "SEEDOT",
+            "name": "Seedot",
             "category": "Acorn Pokémon",
             "entry_text": [
                 "When it dangles from a tree\n",
@@ -125,7 +125,7 @@
             ]
         },
         "fr": {
-            "name": "GRAINIPIOT",
+            "name": "Grainipiot",
             "category": "Pokémon Gland",
             "entry_text": [
                 "Il ressemble à un gland pendu\n",
@@ -134,7 +134,7 @@
             ]
         },
         "de": {
-            "name": "SAMURZEL",
+            "name": "Samurzel",
             "category": "Eichelnuss",
             "entry_text": [
                 "Es sieht aus wie eine Eichel, die am\n",
@@ -143,7 +143,7 @@
             ]
         },
         "it": {
-            "name": "SEEDOT",
+            "name": "Seedot",
             "category": "Pokémon Ghianda",
             "entry_text": [
                 "Quando si attacca a un ramo,\n",
@@ -152,7 +152,7 @@
             ]
         },
         "es": {
-            "name": "SEEDOT",
+            "name": "Seedot",
             "category": "Pokémon Bellota",
             "entry_text": [
                 "Cuando cuelga de las ramas\n",

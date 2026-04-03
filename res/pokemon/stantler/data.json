@@ -135,7 +135,7 @@
         "trainer_pos_m": 8,
         "pokemon_pos_m": 7,
         "en": {
-            "name": "STANTLER",
+            "name": "Stantler",
             "category": "Big Horn Pokémon",
             "entry_text": [
                 "Staring at its antlers creates\n",
@@ -144,7 +144,7 @@
             ]
         },
         "fr": {
-            "name": "CERFROUSSE",
+            "name": "Cerfrousse",
             "category": "Pokémon Maxi Corne",
             "entry_text": [
                 "Quiconque observe ses antennes\n",
@@ -153,7 +153,7 @@
             ]
         },
         "de": {
-            "name": "DAMHIRPLEX",
+            "name": "Damhirplex",
             "category": "Vielender",
             "entry_text": [
                 "Starrt man auf sein Geweih, bekommt\n",
@@ -162,7 +162,7 @@
             ]
         },
         "it": {
-            "name": "STANTLER",
+            "name": "Stantler",
             "category": "Pokémon Grancorno",
             "entry_text": [
                 "Chi fissa le sue corna riceve una\n",
@@ -171,7 +171,7 @@
             ]
         },
         "es": {
-            "name": "STANTLER",
+            "name": "Stantler",
             "category": "Pokémon Grancuerno",
             "entry_text": [
                 "Mirar a su cornamenta provoca\n",

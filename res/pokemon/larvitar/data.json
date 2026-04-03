@@ -132,7 +132,7 @@
         "trainer_pos_m": 9,
         "pokemon_pos_m": 21,
         "en": {
-            "name": "LARVITAR",
+            "name": "Larvitar",
             "category": "Rock Skin Pokémon",
             "entry_text": [
                 "A Pokémon that eats soil. Once it\n",
@@ -141,7 +141,7 @@
             ]
         },
         "fr": {
-            "name": "EMBRYLEX",
+            "name": "Embrylex",
             "category": "Pokémon Peaupierre",
             "entry_text": [
                 "Un Pokémon qui se nourrit de terre.\n",
@@ -150,7 +150,7 @@
             ]
         },
         "de": {
-            "name": "LARVITAR",
+            "name": "Larvitar",
             "category": "Felshaut",
             "entry_text": [
                 "Dieses PKMN frisst das Erdreich.\n",
@@ -159,7 +159,7 @@
             ]
         },
         "it": {
-            "name": "LARVITAR",
+            "name": "Larvitar",
             "category": "Pokémon Peldisasso",
             "entry_text": [
                 "Pokémon che mangia la terra. Dopo\n",
@@ -168,7 +168,7 @@
             ]
         },
         "es": {
-            "name": "LARVITAR",
+            "name": "Larvitar",
             "category": "Pokémon Piel Roca",
             "entry_text": [
                 "Este Pokémon come tierra.\n",

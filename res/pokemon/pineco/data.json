@@ -126,7 +126,7 @@
         "trainer_pos_m": 9,
         "pokemon_pos_m": 2,
         "en": {
-            "name": "PINECO",
+            "name": "Pineco",
             "category": "Bagworm Pokémon",
             "entry_text": [
                 "It looks just like a pinecone.\n",
@@ -135,7 +135,7 @@
             ]
         },
         "fr": {
-            "name": "POMDEPIK",
+            "name": "Pomdepik",
             "category": "Pokémon Ver Caché",
             "entry_text": [
                 "Il ressemble à une pomme de pin.\n",
@@ -144,7 +144,7 @@
             ]
         },
         "de": {
-            "name": "TANNZA",
+            "name": "Tannza",
             "category": "Beutelwurm",
             "entry_text": [
                 "Es sieht aus wie ein Tannenzapfen.\n",
@@ -153,7 +153,7 @@
             ]
         },
         "it": {
-            "name": "PINECO",
+            "name": "Pineco",
             "category": "Pokémon Larva",
             "entry_text": [
                 "Ha l’aspetto di una pigna. Il suo\n",
@@ -162,7 +162,7 @@
             ]
         },
         "es": {
-            "name": "PINECO",
+            "name": "Pineco",
             "category": "Pokémon Larva",
             "entry_text": [
                 "Es como una piña piñonera. Su\n",

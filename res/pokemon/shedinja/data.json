@@ -109,7 +109,7 @@
         "trainer_pos_m": 9,
         "pokemon_pos_m": 65533,
         "en": {
-            "name": "SHEDINJA",
+            "name": "Shedinja",
             "category": "Shed Pokémon",
             "entry_text": [
                 "A discarded bug shell that came to\n",
@@ -118,7 +118,7 @@
             ]
         },
         "fr": {
-            "name": "MUNJA",
+            "name": "Munja",
             "category": "Pokémon Exuvie",
             "entry_text": [
                 "Une carapace d’insecte laissée à\n",
@@ -127,7 +127,7 @@
             ]
         },
         "de": {
-            "name": "NINJATOM",
+            "name": "Ninjatom",
             "category": "Häutung",
             "entry_text": [
                 "Ein weggeworfener Käferpanzer, der\n",
@@ -136,7 +136,7 @@
             ]
         },
         "it": {
-            "name": "SHEDINJA",
+            "name": "Shedinja",
             "category": "Pokémon Cambiapelle",
             "entry_text": [
                 "È nato dal guscio vuoto di un inset-\n",
@@ -145,7 +145,7 @@
             ]
         },
         "es": {
-            "name": "SHEDINJA",
+            "name": "Shedinja",
             "category": "Pokémon Muda",
             "entry_text": [
                 "Es el caparazón de un bicho que\n",

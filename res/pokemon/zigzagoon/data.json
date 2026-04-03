@@ -134,7 +134,7 @@
         "trainer_pos_m": 9,
         "pokemon_pos_m": 27,
         "en": {
-            "name": "ZIGZAGOON",
+            "name": "Zigzagoon",
             "category": "TinyRaccoon Pokémon",
             "entry_text": [
                 "It walks in zigzag fashion. It is\n",
@@ -143,7 +143,7 @@
             ]
         },
         "fr": {
-            "name": "ZIGZATON",
+            "name": "Zigzaton",
             "category": "Pokémon Petit Raton",
             "entry_text": [
                 "Il marche en zigzaguant et n’a\n",
@@ -152,7 +152,7 @@
             ]
         },
         "de": {
-            "name": "ZIGZACHS",
+            "name": "Zigzachs",
             "category": "Kleindachs",
             "entry_text": [
                 "Es läuft im Zickzack. Es hat das\n",
@@ -161,12 +161,12 @@
             ]
         },
         "it": {
-            "name": "ZIGZAGOON",
+            "name": "Zigzagoon",
             "category": "Pokémon Procione",
             "entry_text": [ "Avanza a zigzag. È bravo a trovare\n", "strumenti nell’erba e sul terreno." ]
         },
         "es": {
-            "name": "ZIGZAGOON",
+            "name": "Zigzagoon",
             "category": "Pokémon Mapachito",
             "entry_text": [
                 "Se mueve en zigzag. Se le da\n",

@@ -147,7 +147,7 @@
         "trainer_pos_m": 17,
         "pokemon_pos_m": 3,
         "en": {
-            "name": "RHYPERIOR",
+            "name": "Rhyperior",
             "category": "Drill Pokémon",
             "entry_text": [
                 "It can launch a rock held in its\n",
@@ -156,7 +156,7 @@
             ]
         },
         "fr": {
-            "name": "RHINASTOC",
+            "name": "Rhinastoc",
             "category": "Pokémon Perceur",
             "entry_text": [
                 "Il bande ses muscles pour projeter\n",
@@ -165,7 +165,7 @@
             ]
         },
         "de": {
-            "name": "RIHORNIOR",
+            "name": "Rihornior",
             "category": "Bohrer",
             "entry_text": [
                 "Es legt Steine in die Löcher seiner\n",
@@ -174,7 +174,7 @@
             ]
         },
         "it": {
-            "name": "RHYPERIOR",
+            "name": "Rhyperior",
             "category": "Pokémon Trapano",
             "entry_text": [
                 "Mette rocce nelle cavità dei suoi\n",
@@ -183,7 +183,7 @@
             ]
         },
         "es": {
-            "name": "RHYPERIOR",
+            "name": "Rhyperior",
             "category": "Pokémon Taladro",
             "entry_text": [
                 "Pone rocas en los agujeros de sus\n",

@@ -139,7 +139,7 @@
         "trainer_pos_m": 9,
         "pokemon_pos_m": 4,
         "en": {
-            "name": "AERODACTYL",
+            "name": "Aerodactyl",
             "category": "Fossil Pokémon",
             "entry_text": [
                 "A Pokémon that roamed the skies\n",
@@ -148,7 +148,7 @@
             ]
         },
         "fr": {
-            "name": "PTERA",
+            "name": "Ptera",
             "category": "Pokémon Fossile",
             "entry_text": [
                 "Un Pokémon qui arpentait le ciel\n",
@@ -157,7 +157,7 @@
             ]
         },
         "de": {
-            "name": "AERODACTYL",
+            "name": "Aerodactyl",
             "category": "Fossil",
             "entry_text": [
                 "Dieses PKMN flog zu Zeiten der\n",
@@ -166,7 +166,7 @@
             ]
         },
         "it": {
-            "name": "AERODACTYL",
+            "name": "Aerodactyl",
             "category": "Pokémon Fossile",
             "entry_text": [
                 "Un Pokémon che vagava nei cieli\n",
@@ -175,7 +175,7 @@
             ]
         },
         "es": {
-            "name": "AERODACTYL",
+            "name": "Aerodactyl",
             "category": "Pokémon Fósil",
             "entry_text": [
                 "Este Pokémon surcó los cielos\n",

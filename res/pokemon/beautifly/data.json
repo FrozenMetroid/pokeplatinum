@@ -109,7 +109,7 @@
         "trainer_pos_m": 9,
         "pokemon_pos_m": 65526,
         "en": {
-            "name": "BEAUTIFLY",
+            "name": "Beautifly",
             "category": "Butterfly Pokémon",
             "entry_text": [
                 "Despite its looks, it is aggressive.\n",
@@ -118,7 +118,7 @@
             ]
         },
         "fr": {
-            "name": "CHARMILLON",
+            "name": "Charmillon",
             "category": "Pokémon Papillon",
             "entry_text": [
                 "Il est très agressif. Il pique sa \n",
@@ -127,7 +127,7 @@
             ]
         },
         "de": {
-            "name": "PAPINELLA",
+            "name": "Papinella",
             "category": "Falter",
             "entry_text": [
                 "Es besitzt ein aggressives Wesen.\n",
@@ -136,7 +136,7 @@
             ]
         },
         "it": {
-            "name": "BEAUTIFLY",
+            "name": "Beautifly",
             "category": "Pokémon Farfalla",
             "entry_text": [
                 "Ha un’indole aggressiva. Conficca\n",
@@ -145,7 +145,7 @@
             ]
         },
         "es": {
-            "name": "BEAUTIFLY",
+            "name": "Beautifly",
             "category": "Pokémon Mariposa",
             "entry_text": [
                 "Es un Pokémon agresivo. Con su\n",

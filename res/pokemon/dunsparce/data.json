@@ -140,7 +140,7 @@
         "trainer_pos_m": 9,
         "pokemon_pos_m": 16,
         "en": {
-            "name": "DUNSPARCE",
+            "name": "Dunsparce",
             "category": "Land Snake Pokémon",
             "entry_text": [
                 "It digs into the ground with its\n",
@@ -149,7 +149,7 @@
             ]
         },
         "fr": {
-            "name": "INSOLOURDO",
+            "name": "Insolourdo",
             "category": "Pokémon Serpent",
             "entry_text": [
                 "Son nid est un véritable labyrinthe\n",
@@ -158,7 +158,7 @@
             ]
         },
         "de": {
-            "name": "DUMMISEL",
+            "name": "Dummisel",
             "category": "Schlange",
             "entry_text": [
                 "Es gräbt sich mit seinem Schweif in\n",
@@ -167,7 +167,7 @@
             ]
         },
         "it": {
-            "name": "DUNSPARCE",
+            "name": "Dunsparce",
             "category": "Pokémon Terraserpe",
             "entry_text": [
                 "Scava nel terreno con la coda\n",
@@ -176,7 +176,7 @@
             ]
         },
         "es": {
-            "name": "DUNSPARCE",
+            "name": "Dunsparce",
             "category": "Pokémon Serptierra",
             "entry_text": [
                 "Cava el suelo con su cola para\n",

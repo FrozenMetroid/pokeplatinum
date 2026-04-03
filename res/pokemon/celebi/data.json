@@ -133,7 +133,7 @@
         "trainer_pos_m": 9,
         "pokemon_pos_m": 65535,
         "en": {
-            "name": "CELEBI",
+            "name": "Celebi",
             "category": "Time Travel Pokémon",
             "entry_text": [
                 "It has the power to travel across\n",
@@ -142,7 +142,7 @@
             ]
         },
         "fr": {
-            "name": "CELEBI",
+            "name": "Celebi",
             "category": "Pokémon Temporel",
             "entry_text": [
                 "Il a le pouvoir de voyager dans le\n",
@@ -151,7 +151,7 @@
             ]
         },
         "de": {
-            "name": "CELEBI",
+            "name": "Celebi",
             "category": "Zeitreise",
             "entry_text": [
                 "Es kann durch die Zeit reisen,\n",
@@ -160,7 +160,7 @@
             ]
         },
         "it": {
-            "name": "CELEBI",
+            "name": "Celebi",
             "category": "Pokémon Tempovia",
             "entry_text": [
                 "Ha il potere di viaggiare attraverso\n",
@@ -169,7 +169,7 @@
             ]
         },
         "es": {
-            "name": "CELEBI",
+            "name": "Celebi",
             "category": "Pokémon Viajetiempo",
             "entry_text": [
                 "Puede viajar en el tiempo, pero\n",

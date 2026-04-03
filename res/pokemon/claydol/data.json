@@ -131,7 +131,7 @@
         "trainer_pos_m": 9,
         "pokemon_pos_m": 0,
         "en": {
-            "name": "CLAYDOL",
+            "name": "Claydol",
             "category": "Clay Doll Pokémon",
             "entry_text": [
                 "An ancient clay figurine that came\n",
@@ -140,7 +140,7 @@
             ]
         },
         "fr": {
-            "name": "KAORINE",
+            "name": "Kaorine",
             "category": "Pokémon Poupargile",
             "entry_text": [
                 "Une ancienne figurine d’argile qui \n",
@@ -149,7 +149,7 @@
             ]
         },
         "de": {
-            "name": "LEPUMENTAS",
+            "name": "Lepumentas",
             "category": "Lehmpuppe",
             "entry_text": [
                 "Eine antike Lehmstatue, die durch\n",
@@ -158,7 +158,7 @@
             ]
         },
         "it": {
-            "name": "CLAYDOL",
+            "name": "Claydol",
             "category": "Pokémon Argilla",
             "entry_text": [
                 "Pokémon nato da un’antica\n",
@@ -167,7 +167,7 @@
             ]
         },
         "es": {
-            "name": "CLAYDOL",
+            "name": "Claydol",
             "category": "Pokémon Muñ. Barro",
             "entry_text": [
                 "Este Pokémon es una vieja figurilla\n",

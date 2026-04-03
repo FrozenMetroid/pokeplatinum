@@ -131,7 +131,7 @@
         "trainer_pos_m": 9,
         "pokemon_pos_m": 26,
         "en": {
-            "name": "WOOPER",
+            "name": "Wooper",
             "category": "Water Fish Pokémon",
             "entry_text": [
                 "When walking on land, it covers its\n",
@@ -140,7 +140,7 @@
             ]
         },
         "fr": {
-            "name": "AXOLOTO",
+            "name": "Axoloto",
             "category": "Pokémon Poisson",
             "entry_text": [
                 "Il vit en eau froide. Il dort à demi\n",
@@ -149,7 +149,7 @@
             ]
         },
         "de": {
-            "name": "FELINO",
+            "name": "Felino",
             "category": "Fisch",
             "entry_text": [
                 "Es lebt im kalten Wasser. Es\n",
@@ -158,7 +158,7 @@
             ]
         },
         "it": {
-            "name": "WOOPER",
+            "name": "Wooper",
             "category": "Pokémon Acquapesce",
             "entry_text": [
                 "Vive nell’acqua fredda e quando\n",
@@ -167,7 +167,7 @@
             ]
         },
         "es": {
-            "name": "WOOPER",
+            "name": "Wooper",
             "category": "Pokémon Pez Agua",
             "entry_text": [
                 "Vive en aguas frías. Para dormir\n",

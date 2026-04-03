@@ -119,7 +119,7 @@
         "trainer_pos_m": 9,
         "pokemon_pos_m": 25,
         "en": {
-            "name": "NINCADA",
+            "name": "Nincada",
             "category": "Trainee Pokémon",
             "entry_text": [
                 "It grows underground, sensing\n",
@@ -128,7 +128,7 @@
             ]
         },
         "fr": {
-            "name": "NINGALE",
+            "name": "Ningale",
             "category": "Pokémon Apprenti",
             "entry_text": [
                 "Il grandit sous terre et se repère\n",
@@ -137,7 +137,7 @@
             ]
         },
         "de": {
-            "name": "NINCADA",
+            "name": "Nincada",
             "category": "Vorbereiter",
             "entry_text": [
                 "Es wächst unterirdisch heran und\n",
@@ -146,7 +146,7 @@
             ]
         },
         "it": {
-            "name": "NINCADA",
+            "name": "Nincada",
             "category": "Pokémon Novizio",
             "entry_text": [
                 "Cresce sottoterra e, poiché è\n",
@@ -155,7 +155,7 @@
             ]
         },
         "es": {
-            "name": "NINCADA",
+            "name": "Nincada",
             "category": "Pokémon Aprendiz",
             "entry_text": [
                 "Crece bajo tierra y explora el\n",

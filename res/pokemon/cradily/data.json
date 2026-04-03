@@ -118,7 +118,7 @@
         "trainer_pos_m": 9,
         "pokemon_pos_m": 6,
         "en": {
-            "name": "CRADILY",
+            "name": "Cradily",
             "category": "Barnacle Pokémon",
             "entry_text": [
                 "It lives in the shallows of warm\n",
@@ -127,7 +127,7 @@
             ]
         },
         "fr": {
-            "name": "VACILYS",
+            "name": "Vacilys",
             "category": "Pokémon Bernacle",
             "entry_text": [
                 "Vit dans les hauts-fonds des mers\n",
@@ -136,7 +136,7 @@
             ]
         },
         "de": {
-            "name": "WIELIE",
+            "name": "Wielie",
             "category": "Rankfüßer",
             "entry_text": [
                 "Es lebt in seichten Stellen warmer\n",
@@ -145,7 +145,7 @@
             ]
         },
         "it": {
-            "name": "CRADILY",
+            "name": "Cradily",
             "category": "Pokémon Lepade",
             "entry_text": [
                 "Vive in acque poco profonde nei\n",
@@ -154,7 +154,7 @@
             ]
         },
         "es": {
-            "name": "CRADILY",
+            "name": "Cradily",
             "category": "Pokémon Percebe",
             "entry_text": [
                 "Vive en el fondo de los mares de\n",

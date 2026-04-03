@@ -104,7 +104,7 @@
         "trainer_pos_m": 2,
         "pokemon_pos_m": 4,
         "en": {
-            "name": "VICTREEBEL",
+            "name": "Victreebel",
             "category": "Flycatcher Pokémon",
             "entry_text": [
                 "It pools in its mouth a fluid with\n",
@@ -113,7 +113,7 @@
             ]
         },
         "fr": {
-            "name": "EMPIFLOR",
+            "name": "Empiflor",
             "category": "Pokémon Carnivore",
             "entry_text": [
                 "Sa bouche sécrète un fluide à\n",
@@ -122,7 +122,7 @@
             ]
         },
         "de": {
-            "name": "SARZENIA",
+            "name": "Sarzenia",
             "category": "Fliegentot",
             "entry_text": [
                 "In seinem Maul sammelt sich eine\n",
@@ -131,7 +131,7 @@
             ]
         },
         "it": {
-            "name": "VICTREEBEL",
+            "name": "Victreebel",
             "category": "Pokémon Moschivoro",
             "entry_text": [
                 "Tiene in bocca un liquido dall’aroma\n",
@@ -140,7 +140,7 @@
             ]
         },
         "es": {
-            "name": "VICTREEBEL",
+            "name": "Victreebel",
             "category": "Pokémon Matamoscas",
             "entry_text": [
                 "Su boca segrega un fluido de olor\n",

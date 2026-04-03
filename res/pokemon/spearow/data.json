@@ -121,7 +121,7 @@
         "trainer_pos_m": 9,
         "pokemon_pos_m": 30,
         "en": {
-            "name": "SPEAROW",
+            "name": "Spearow",
             "category": "Tiny Bird Pokémon",
             "entry_text": [
                 "It flaps its small wings busily to\n",
@@ -130,7 +130,7 @@
             ]
         },
         "fr": {
-            "name": "PIAFABEC",
+            "name": "Piafabec",
             "category": "Pokémon Minoiseau",
             "entry_text": [
                 "Il fait battre vigoureusement ses\n",
@@ -139,7 +139,7 @@
             ]
         },
         "de": {
-            "name": "HABITAK",
+            "name": "Habitak",
             "category": "Kleinvogel",
             "entry_text": [
                 "Im Flug schlägt es eifrig mit den\n",
@@ -148,7 +148,7 @@
             ]
         },
         "it": {
-            "name": "SPEAROW",
+            "name": "Spearow",
             "category": "Pokémon Uccellino",
             "entry_text": [
                 "Sbatte con foga le sue alette per\n",
@@ -157,7 +157,7 @@
             ]
         },
         "es": {
-            "name": "SPEAROW",
+            "name": "Spearow",
             "category": "Pokémon Pajarito",
             "entry_text": [
                 "Agita continuamente sus alitas\n",

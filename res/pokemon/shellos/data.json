@@ -120,7 +120,7 @@
         "trainer_pos_m": 9,
         "pokemon_pos_m": 25,
         "en": {
-            "name": "SHELLOS",
+            "name": "Shellos",
             "category": "Sea Slug Pokémon",
             "entry_text": [
                 "Beware of pushing strongly on\n",
@@ -129,7 +129,7 @@
             ]
         },
         "fr": {
-            "name": "SANCOKI",
+            "name": "Sancoki",
             "category": "Pokémon Aqualimace",
             "entry_text": [
                 "Sa couleur et sa forme varient\n",
@@ -138,7 +138,7 @@
             ]
         },
         "de": {
-            "name": "SCHALELLOS",
+            "name": "Schalellos",
             "category": "Seeschnecke",
             "entry_text": [
                 "Sein Aussehen ist von Region zu\n",
@@ -147,7 +147,7 @@
             ]
         },
         "it": {
-            "name": "SHELLOS",
+            "name": "Shellos",
             "category": "Pokémon Lumacomare",
             "entry_text": [
                 "Forma e colori variano di regione\n",
@@ -156,7 +156,7 @@
             ]
         },
         "es": {
-            "name": "SHELLOS",
+            "name": "Shellos",
             "category": "Pokémon Babosa Mar.",
             "entry_text": [
                 "El color y la forma varían según\n",

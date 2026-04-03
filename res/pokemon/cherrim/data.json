@@ -104,7 +104,7 @@
         "trainer_pos_m": 9,
         "pokemon_pos_m": 25,
         "en": {
-            "name": "CHERRIM",
+            "name": "Cherrim",
             "category": "Blossom Pokémon",
             "entry_text": [
                 "If it senses strong sunlight, it\n",
@@ -113,7 +113,7 @@
             ]
         },
         "fr": {
-            "name": "CERIFLOR",
+            "name": "Ceriflor",
             "category": "Pokémon Floraison",
             "entry_text": [
                 "Il fleurit lorsque le soleil est au\n",
@@ -122,7 +122,7 @@
             ]
         },
         "de": {
-            "name": "KINOSO",
+            "name": "Kinoso",
             "category": "Blüte",
             "entry_text": [
                 "In Zeiten mit viel Sonnenschein\n",
@@ -131,7 +131,7 @@
             ]
         },
         "it": {
-            "name": "CHERRIM",
+            "name": "Cherrim",
             "category": "Pokémon Bocciolo",
             "entry_text": [
                 "Sboccia quando fa caldo e cerca\n",
@@ -140,7 +140,7 @@
             ]
         },
         "es": {
-            "name": "CHERRIM",
+            "name": "Cherrim",
             "category": "Pokémon Floración",
             "entry_text": [
                 "Florece en épocas de mucha\n",

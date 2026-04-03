@@ -126,7 +126,7 @@
         "trainer_pos_m": 9,
         "pokemon_pos_m": 7,
         "en": {
-            "name": "FROSLASS",
+            "name": "Froslass",
             "category": "Snow Land Pokémon",
             "entry_text": [
                 "It freezes prey by blowing its -58\n",
@@ -135,7 +135,7 @@
             ]
         },
         "fr": {
-            "name": "MOMARTIK",
+            "name": "Momartik",
             "category": "Pokémon Enneigement",
             "entry_text": [
                 "MOMARTIK gèle ses ennemis grâce à\n",
@@ -144,7 +144,7 @@
             ]
         },
         "de": {
-            "name": "FROSDEDJE",
+            "name": "Frosdedje",
             "category": "Schneegebiet",
             "entry_text": [
                 "Sein eisiger Atem mit minus 50 Grad\n",
@@ -153,7 +153,7 @@
             ]
         },
         "it": {
-            "name": "FROSLASS",
+            "name": "Froslass",
             "category": "Pokémon Suolnevoso",
             "entry_text": [
                 "Congela i nemici con un alito\n",
@@ -162,7 +162,7 @@
             ]
         },
         "es": {
-            "name": "FROSLASS",
+            "name": "Froslass",
             "category": "Pokémon Tierra Fría",
             "entry_text": [
                 "Congela a sus enemigos con un\n",

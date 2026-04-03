@@ -124,7 +124,7 @@
         "trainer_pos_m": 9,
         "pokemon_pos_m": 65528,
         "en": {
-            "name": "BRONZOR",
+            "name": "Bronzor",
             "category": "Bronze Pokémon",
             "entry_text": [
                 "There are researchers who believe\n",
@@ -133,7 +133,7 @@
             ]
         },
         "fr": {
-            "name": "ARCHEOMIRE",
+            "name": "Archeomire",
             "category": "Pokémon Bronze",
             "entry_text": [
                 "Il rappelle des objets trouvés\n",
@@ -142,7 +142,7 @@
             ]
         },
         "de": {
-            "name": "BRONZEL",
+            "name": "Bronzel",
             "category": "Bronze",
             "entry_text": [
                 "Sein Körper sieht aus, als seien\n",
@@ -151,7 +151,7 @@
             ]
         },
         "it": {
-            "name": "BRONZOR",
+            "name": "Bronzor",
             "category": "Pokémon Bronzo",
             "entry_text": [
                 "Il suo aspetto ricorda alcuni\n",
@@ -160,7 +160,7 @@
             ]
         },
         "es": {
-            "name": "BRONZOR",
+            "name": "Bronzor",
             "category": "Pokémon Bronce",
             "entry_text": [
                 "Se descubrieron herramientas con\n",

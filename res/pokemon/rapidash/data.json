@@ -108,7 +108,7 @@
         "trainer_pos_m": 9,
         "pokemon_pos_m": 4,
         "en": {
-            "name": "RAPIDASH",
+            "name": "Rapidash",
             "category": "Fire Horse Pokémon",
             "entry_text": [
                 "When at an all-out gallop, its\n",
@@ -117,7 +117,7 @@
             ]
         },
         "fr": {
-            "name": "GALOPA",
+            "name": "Galopa",
             "category": "Pokémon Cheval Feu",
             "entry_text": [
                 "Son galop dépasse les 240 km/h. Il\n",
@@ -126,7 +126,7 @@
             ]
         },
         "de": {
-            "name": "GALLOPA",
+            "name": "Gallopa",
             "category": "Feuerpferd",
             "entry_text": [
                 "Seine Mähne lodert auf, wenn es\n",
@@ -135,7 +135,7 @@
             ]
         },
         "it": {
-            "name": "RAPIDASH",
+            "name": "Rapidash",
             "category": "Pokémon Cavalfuoco",
             "entry_text": [
                 "Galoppa alla velocità di 240 km/h.\n",
@@ -144,7 +144,7 @@
             ]
         },
         "es": {
-            "name": "RAPIDASH",
+            "name": "Rapidash",
             "category": "Pokémon Caballo F.",
             "entry_text": [
                 "Galopa a casi 240 km por hora.\n",

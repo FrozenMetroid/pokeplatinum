@@ -117,7 +117,7 @@
         "trainer_pos_m": 9,
         "pokemon_pos_m": 27,
         "en": {
-            "name": "ODDISH",
+            "name": "Oddish",
             "category": "Weed Pokémon",
             "entry_text": [
                 "It often plants its root feet in the\n",
@@ -126,7 +126,7 @@
             ]
         },
         "fr": {
-            "name": "MYSTHERBE",
+            "name": "Mystherbe",
             "category": "Pokémon Racine",
             "entry_text": [
                 "En journée, il plante ses pieds-\n",
@@ -135,7 +135,7 @@
             ]
         },
         "de": {
-            "name": "MYRAPLA",
+            "name": "Myrapla",
             "category": "Unkraut",
             "entry_text": [
                 "Tagsüber verankert es sich mit\n",
@@ -144,7 +144,7 @@
             ]
         },
         "it": {
-            "name": "ODDISH",
+            "name": "Oddish",
             "category": "Pokémon Malerba",
             "entry_text": [
                 "Durante il giorno, pianta i piedi\n",
@@ -153,7 +153,7 @@
             ]
         },
         "es": {
-            "name": "ODDISH",
+            "name": "Oddish",
             "category": "Pokémon Hierbajo",
             "entry_text": [
                 "Suele plantarse en el suelo\n",

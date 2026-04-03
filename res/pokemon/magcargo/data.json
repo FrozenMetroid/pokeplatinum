@@ -119,7 +119,7 @@
         "trainer_pos_m": 9,
         "pokemon_pos_m": 14,
         "en": {
-            "name": "MAGCARGO",
+            "name": "Magcargo",
             "category": "Lava Pokémon",
             "entry_text": [
                 "Its body temperature is roughly\n",
@@ -128,7 +128,7 @@
             ]
         },
         "fr": {
-            "name": "VOLCAROPOD",
+            "name": "Volcaropod",
             "category": "Pokémon Lave",
             "entry_text": [
                 "Sa température corporelle avoisine\n",
@@ -137,7 +137,7 @@
             ]
         },
         "de": {
-            "name": "MAGCARGO",
+            "name": "Magcargo",
             "category": "Lava",
             "entry_text": [
                 "Seine Körpertemperatur beträgt\n",
@@ -146,7 +146,7 @@
             ]
         },
         "it": {
-            "name": "MAGCARGO",
+            "name": "Magcargo",
             "category": "Pokémon Lava",
             "entry_text": [
                 "Ha una temperatura corporea di\n",
@@ -155,7 +155,7 @@
             ]
         },
         "es": {
-            "name": "MAGCARGO",
+            "name": "Magcargo",
             "category": "Pokémon Lava",
             "entry_text": [
                 "Su cuerpo está a una temperatura\n",

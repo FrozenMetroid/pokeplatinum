@@ -131,7 +131,7 @@
         "trainer_pos_m": 9,
         "pokemon_pos_m": 24,
         "en": {
-            "name": "KABUTO",
+            "name": "Kabuto",
             "category": "Shellfish Pokémon",
             "entry_text": [
                 "It is thought to have inhabited\n",
@@ -140,7 +140,7 @@
             ]
         },
         "fr": {
-            "name": "KABUTO",
+            "name": "Kabuto",
             "category": "Pokémon Carapace",
             "entry_text": [
                 "On pense qu’il peuplait les plages\n",
@@ -149,7 +149,7 @@
             ]
         },
         "de": {
-            "name": "KABUTO",
+            "name": "Kabuto",
             "category": "Schaltier",
             "entry_text": [
                 "Man geht davon aus, dass dieses\n",
@@ -158,7 +158,7 @@
             ]
         },
         "it": {
-            "name": "KABUTO",
+            "name": "Kabuto",
             "category": "Pokémon Crostaceo",
             "entry_text": [
                 "Si ritiene che vivesse sulle spiagge\n",
@@ -167,7 +167,7 @@
             ]
         },
         "es": {
-            "name": "KABUTO",
+            "name": "Kabuto",
             "category": "Pokémon Marisco",
             "entry_text": [
                 "Se cree que habitó las playas\n",

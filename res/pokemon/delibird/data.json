@@ -110,7 +110,7 @@
         "trainer_pos_m": 9,
         "pokemon_pos_m": 15,
         "en": {
-            "name": "DELIBIRD",
+            "name": "Delibird",
             "category": "Delivery Pokémon",
             "entry_text": [
                 "It carries food rolled up in its\n",
@@ -119,7 +119,7 @@
             ]
         },
         "fr": {
-            "name": "CADOIZO",
+            "name": "Cadoizo",
             "category": "Pokémon Livraison",
             "entry_text": [
                 "Il dépose sa nourriture dans sa\n",
@@ -128,7 +128,7 @@
             ]
         },
         "de": {
-            "name": "BOTOGEL",
+            "name": "Botogel",
             "category": "Lieferant",
             "entry_text": [
                 "Im eingerollten Schweif transpor-\n",
@@ -137,7 +137,7 @@
             ]
         },
         "it": {
-            "name": "DELIBIRD",
+            "name": "Delibird",
             "category": "Pokémon Consegna",
             "entry_text": [
                 "Trascina il cibo avvolgendolo nella\n",
@@ -146,7 +146,7 @@
             ]
         },
         "es": {
-            "name": "DELIBIRD",
+            "name": "Delibird",
             "category": "Pokémon Reparto",
             "entry_text": [
                 "Lleva alimentos en su saco. Le\n",

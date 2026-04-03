@@ -142,7 +142,7 @@
         "trainer_pos_m": 16,
         "pokemon_pos_m": 7,
         "en": {
-            "name": "SNORLAX",
+            "name": "Snorlax",
             "category": "Sleeping Pokémon",
             "entry_text": [
                 "When its belly is full, it becomes\n",
@@ -151,7 +151,7 @@
             ]
         },
         "fr": {
-            "name": "RONFLEX",
+            "name": "Ronflex",
             "category": "Pokémon Pionceur",
             "entry_text": [
                 "Son estomac peut digérer n’importe\n",
@@ -160,7 +160,7 @@
             ]
         },
         "de": {
-            "name": "RELAXO",
+            "name": "Relaxo",
             "category": "Tagträumer",
             "entry_text": [
                 "Sein Magen kann jede Art von\n",
@@ -169,7 +169,7 @@
             ]
         },
         "it": {
-            "name": "SNORLAX",
+            "name": "Snorlax",
             "category": "Pokémon Sonno",
             "entry_text": [
                 "Il suo stomaco riesce a digerire\n",
@@ -178,7 +178,7 @@
             ]
         },
         "es": {
-            "name": "SNORLAX",
+            "name": "Snorlax",
             "category": "Pokémon Dormir",
             "entry_text": [
                 "Su estómago puede digerir todo\n",

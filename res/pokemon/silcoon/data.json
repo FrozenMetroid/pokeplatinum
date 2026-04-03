@@ -66,7 +66,7 @@
         "trainer_pos_m": 9,
         "pokemon_pos_m": 22,
         "en": {
-            "name": "SILCOON",
+            "name": "Silcoon",
             "category": "Cocoon Pokémon",
             "entry_text": [
                 "It wraps silk around the branches\n",
@@ -75,7 +75,7 @@
             ]
         },
         "fr": {
-            "name": "ARMULYS",
+            "name": "Armulys",
             "category": "Pokémon Cocon",
             "entry_text": [
                 "Il s’accroche en enroulant sa soie\n",
@@ -84,7 +84,7 @@
             ]
         },
         "de": {
-            "name": "SCHALOKO",
+            "name": "Schaloko",
             "category": "Kokon",
             "entry_text": [
                 "Es bindet sich mit Seidenfäden an\n",
@@ -93,7 +93,7 @@
             ]
         },
         "it": {
-            "name": "SILCOON",
+            "name": "Silcoon",
             "category": "Pokémon Bozzolo",
             "entry_text": [
                 "SILCOON si ancora ai rami con\n",
@@ -102,7 +102,7 @@
             ]
         },
         "es": {
-            "name": "SILCOON",
+            "name": "Silcoon",
             "category": "Pokémon Capullo",
             "entry_text": [
                 "La seda que segrega su cuerpo le\n",

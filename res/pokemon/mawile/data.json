@@ -142,7 +142,7 @@
         "trainer_pos_m": 9,
         "pokemon_pos_m": 25,
         "en": {
-            "name": "MAWILE",
+            "name": "Mawile",
             "category": "Deceiver Pokémon",
             "entry_text": [
                 "Attached to its head is a huge\n",
@@ -151,7 +151,7 @@
             ]
         },
         "fr": {
-            "name": "MYSDIBULE",
+            "name": "Mysdibule",
             "category": "Pokémon Trompeur",
             "entry_text": [
                 "Ses cornes forment une grande\n",
@@ -160,7 +160,7 @@
             ]
         },
         "de": {
-            "name": "FLUNKIFER",
+            "name": "Flunkifer",
             "category": "Schwindler",
             "entry_text": [
                 "Auf seinem Kopf befindet sich ein\n",
@@ -169,7 +169,7 @@
             ]
         },
         "it": {
-            "name": "MAWILE",
+            "name": "Mawile",
             "category": "Pokémon Inganno",
             "entry_text": [
                 "Le sue due enormi mandibole sono\n",
@@ -178,7 +178,7 @@
             ]
         },
         "es": {
-            "name": "MAWILE",
+            "name": "Mawile",
             "category": "Pokémon Tramposo",
             "entry_text": [
                 "Las grandes fauces de su cabeza\n",

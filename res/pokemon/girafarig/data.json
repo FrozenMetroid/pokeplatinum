@@ -137,7 +137,7 @@
         "trainer_pos_m": 9,
         "pokemon_pos_m": 4,
         "en": {
-            "name": "GIRAFARIG",
+            "name": "Girafarig",
             "category": "Long Neck Pokémon",
             "entry_text": [
                 "The head on its tail contains a\n",
@@ -146,7 +146,7 @@
             ]
         },
         "fr": {
-            "name": "GIRAFARIG",
+            "name": "Girafarig",
             "category": "Pokémon Long-Cou",
             "entry_text": [
                 "Sa queue contient un minuscule\n",
@@ -155,7 +155,7 @@
             ]
         },
         "de": {
-            "name": "GIRAFARIG",
+            "name": "Girafarig",
             "category": "Langhals",
             "entry_text": [
                 "Sein Schweif besitzt ebenfalls ein\n",
@@ -164,7 +164,7 @@
             ]
         },
         "it": {
-            "name": "GIRAFARIG",
+            "name": "Girafarig",
             "category": "Pokémon Lungocollo",
             "entry_text": [
                 "Ha due cervelli, uno piccolo anche\n",
@@ -173,7 +173,7 @@
             ]
         },
         "es": {
-            "name": "GIRAFARIG",
+            "name": "Girafarig",
             "category": "Pokémon Grancuello",
             "entry_text": [
                 "Su cola tiene un pequeño cerebro\n",

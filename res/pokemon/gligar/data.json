@@ -145,7 +145,7 @@
         "trainer_pos_m": 9,
         "pokemon_pos_m": 65533,
         "en": {
-            "name": "GLIGAR",
+            "name": "Gligar",
             "category": "FlyScorpion Pokémon",
             "entry_text": [
                 "It glides as if sliding. It startles\n",
@@ -154,7 +154,7 @@
             ]
         },
         "fr": {
-            "name": "SCORPLANE",
+            "name": "Scorplane",
             "category": "Pokémon Scorpivol",
             "entry_text": [
                 "Il chevauche les vents en tendant\n",
@@ -163,7 +163,7 @@
             ]
         },
         "de": {
-            "name": "SKORGLA",
+            "name": "Skorgla",
             "category": "Flugskorpi",
             "entry_text": [
                 "Es segelt durch die Lüfte und\n",
@@ -172,7 +172,7 @@
             ]
         },
         "it": {
-            "name": "GLIGAR",
+            "name": "Gligar",
             "category": "Pokémon Aliscorpio",
             "entry_text": [
                 "Si fa trasportare dai venti con le\n",
@@ -181,7 +181,7 @@
             ]
         },
         "es": {
-            "name": "GLIGAR",
+            "name": "Gligar",
             "category": "Pokémon Escorpiala",
             "entry_text": [
                 "Ataca desde el aire con sus\n",

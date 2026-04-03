@@ -128,7 +128,7 @@
         "trainer_pos_m": 9,
         "pokemon_pos_m": 4,
         "en": {
-            "name": "HYPNO",
+            "name": "Hypno",
             "category": "Hypnosis Pokémon",
             "entry_text": [
                 "Seeing its swinging pendulum can\n",
@@ -137,7 +137,7 @@
             ]
         },
         "fr": {
-            "name": "HYPNOMADE",
+            "name": "Hypnomade",
             "category": "Pokémon Hypnose",
             "entry_text": [
                 "La vue de son pendule oscillant\n",
@@ -146,7 +146,7 @@
             ]
         },
         "de": {
-            "name": "HYPNO",
+            "name": "Hypno",
             "category": "Hypnose",
             "entry_text": [
                 "Ein Blick auf das Pendel versetzt\n",
@@ -155,7 +155,7 @@
             ]
         },
         "it": {
-            "name": "HYPNO",
+            "name": "Hypno",
             "category": "Pokémon Ipnosi",
             "entry_text": [
                 "Con il suo pendolo fa addormentare\n",
@@ -164,7 +164,7 @@
             ]
         },
         "es": {
-            "name": "HYPNO",
+            "name": "Hypno",
             "category": "Pokémon Hipnosis",
             "entry_text": [
                 "Mirar su péndulo puede inducir al\n",

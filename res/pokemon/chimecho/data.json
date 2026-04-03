@@ -129,7 +129,7 @@
         "trainer_pos_m": 9,
         "pokemon_pos_m": 65523,
         "en": {
-            "name": "CHIMECHO",
+            "name": "Chimecho",
             "category": "Wind Chime Pokémon",
             "entry_text": [
                 "Its cries echo inside its hollow\n",
@@ -138,7 +138,7 @@
             ]
         },
         "fr": {
-            "name": "EOKO",
+            "name": "Eoko",
             "category": "Pokémon Carillon",
             "entry_text": [
                 "Son langage comporte sept cris.\n",
@@ -147,7 +147,7 @@
             ]
         },
         "de": {
-            "name": "PALIMPALIM",
+            "name": "Palimpalim",
             "category": "Windspiel",
             "entry_text": [
                 "Um die Gegner fortzuwehen, setzt\n",
@@ -156,7 +156,7 @@
             ]
         },
         "it": {
-            "name": "CHIMECHO",
+            "name": "Chimecho",
             "category": "Pokémon Vencampana",
             "entry_text": [
                 "Le sue urla sono così potenti da\n",
@@ -165,7 +165,7 @@
             ]
         },
         "es": {
-            "name": "CHIMECHO",
+            "name": "Chimecho",
             "category": "Pokémon Sonido Aire",
             "entry_text": [
                 "Sus gritos sacuden el aire para\n",

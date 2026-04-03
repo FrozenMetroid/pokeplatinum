@@ -107,7 +107,7 @@
         "trainer_pos_m": 9,
         "pokemon_pos_m": 65535,
         "en": {
-            "name": "FEEBAS",
+            "name": "Feebas",
             "category": "Fish Pokémon",
             "entry_text": [
                 "It is a shabby and ugly Pokémon.\n",
@@ -116,7 +116,7 @@
             ]
         },
         "fr": {
-            "name": "BARPAU",
+            "name": "Barpau",
             "category": "Pokémon Poisson",
             "entry_text": [
                 "Il est connu pour son teint maladif.\n",
@@ -125,7 +125,7 @@
             ]
         },
         "de": {
-            "name": "BARSCHWA",
+            "name": "Barschwa",
             "category": "Fisch",
             "entry_text": [
                 "Seine lumpige Gestalt ist berühmt.\n",
@@ -134,7 +134,7 @@
             ]
         },
         "it": {
-            "name": "FEEBAS",
+            "name": "Feebas",
             "category": "Pokémon Pesce",
             "entry_text": [
                 "È noto per il suo aspetto disordi-\n",
@@ -143,7 +143,7 @@
             ]
         },
         "es": {
-            "name": "FEEBAS",
+            "name": "Feebas",
             "category": "Pokémon Pez",
             "entry_text": [
                 "Se caracterizan por su aspecto\n",

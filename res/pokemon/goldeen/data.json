@@ -121,7 +121,7 @@
         "trainer_pos_m": 9,
         "pokemon_pos_m": 65531,
         "en": {
-            "name": "GOLDEEN",
+            "name": "Goldeen",
             "category": "Goldfish Pokémon",
             "entry_text": [
                 "Though it appears very elegant\n",
@@ -130,7 +130,7 @@
             ]
         },
         "fr": {
-            "name": "POISSIRENE",
+            "name": "Poissirene",
             "category": "Pokémon Poisson",
             "entry_text": [
                 "Il nage élégamment en agitant sa\n",
@@ -139,7 +139,7 @@
             ]
         },
         "de": {
-            "name": "GOLDINI",
+            "name": "Goldini",
             "category": "Goldfisch",
             "entry_text": [
                 "Es schwimmt elegant und bewegt\n",
@@ -148,7 +148,7 @@
             ]
         },
         "it": {
-            "name": "GOLDEEN",
+            "name": "Goldeen",
             "category": "Pokémon Pescerosso",
             "entry_text": [
                 "Quando nuota, la pinna posteriore\n",
@@ -157,7 +157,7 @@
             ]
         },
         "es": {
-            "name": "GOLDEEN",
+            "name": "Goldeen",
             "category": "Pokémon Pez Color",
             "entry_text": [
                 "Nada elegantemente moviendo la\n",

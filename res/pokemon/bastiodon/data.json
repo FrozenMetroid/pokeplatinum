@@ -125,7 +125,7 @@
         "trainer_pos_m": 9,
         "pokemon_pos_m": 9,
         "en": {
-            "name": "BASTIODON",
+            "name": "Bastiodon",
             "category": "Shield Pokémon",
             "entry_text": [
                 "When they lined up side by side, no\n",
@@ -134,7 +134,7 @@
             ]
         },
         "fr": {
-            "name": "BASTIODON",
+            "name": "Bastiodon",
             "category": "Pokémon Bouclier",
             "entry_text": [
                 "Il résiste à toute attaque\n",
@@ -143,7 +143,7 @@
             ]
         },
         "de": {
-            "name": "BOLLTERUS",
+            "name": "Bollterus",
             "category": "Schutzschild",
             "entry_text": [
                 "Jeder Frontalangriff wird abge-\n",
@@ -152,7 +152,7 @@
             ]
         },
         "it": {
-            "name": "BASTIODON",
+            "name": "Bastiodon",
             "category": "Pokémon Schermo",
             "entry_text": [
                 "Respinge qualsiasi attacco\n",
@@ -161,7 +161,7 @@
             ]
         },
         "es": {
-            "name": "BASTIODON",
+            "name": "Bastiodon",
             "category": "Pokémon Escudo",
             "entry_text": [
                 "Repele cualquier ataque frontal.\n",

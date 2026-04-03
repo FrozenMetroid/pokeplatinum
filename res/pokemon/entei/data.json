@@ -116,7 +116,7 @@
         "trainer_pos_m": 15,
         "pokemon_pos_m": 3,
         "en": {
-            "name": "ENTEI",
+            "name": "Entei",
             "category": "Volcano Pokémon",
             "entry_text": [
                 "It is said that when it roars, a\n",
@@ -125,7 +125,7 @@
             ]
         },
         "fr": {
-            "name": "ENTEI",
+            "name": "Entei",
             "category": "Pokémon Volcan",
             "entry_text": [
                 "On raconte qu’à chaque fois qu’il\n",
@@ -134,12 +134,12 @@
             ]
         },
         "de": {
-            "name": "ENTEI",
+            "name": "Entei",
             "category": "Vulkan",
             "entry_text": [ "Man sagt, wenn es brüllt, bricht\n", "irgendwo in der Welt ein Vulkan aus." ]
         },
         "it": {
-            "name": "ENTEI",
+            "name": "Entei",
             "category": "Pokémon Vulcano",
             "entry_text": [
                 "Si dice che quando emette il suo\n",
@@ -148,7 +148,7 @@
             ]
         },
         "es": {
-            "name": "ENTEI",
+            "name": "Entei",
             "category": "Pokémon Volcán",
             "entry_text": [
                 "Se dice que, cuando ruge, un\n",

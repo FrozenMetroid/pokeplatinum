@@ -116,7 +116,7 @@
         "trainer_pos_m": 9,
         "pokemon_pos_m": 16,
         "en": {
-            "name": "HIPPOPOTAS",
+            "name": "Hippopotas",
             "category": "Hippo Pokémon",
             "entry_text": [
                 "It shuts its nostrils tight then\n",
@@ -125,7 +125,7 @@
             ]
         },
         "fr": {
-            "name": "HIPPOPOTAS",
+            "name": "Hippopotas",
             "category": "Pokémon Hippo",
             "entry_text": [
                 "Il vit dans des endroits arides.\n",
@@ -134,7 +134,7 @@
             ]
         },
         "de": {
-            "name": "HIPPOPOTAS",
+            "name": "Hippopotas",
             "category": "Flusspferd",
             "entry_text": [
                 "Es lebt in ausgetrockneten\n",
@@ -143,7 +143,7 @@
             ]
         },
         "it": {
-            "name": "HIPPOPOTAS",
+            "name": "Hippopotas",
             "category": "Pokémon Ippo",
             "entry_text": [
                 "Vive in territori aridi. Invece del\n",
@@ -152,7 +152,7 @@
             ]
         },
         "es": {
-            "name": "HIPPOPOTAS",
+            "name": "Hippopotas",
             "category": "Pokémon Hipo",
             "entry_text": [
                 "Vive en zonas áridas. En lugar\n",

@@ -118,7 +118,7 @@
         "trainer_pos_m": 9,
         "pokemon_pos_m": 15,
         "en": {
-            "name": "SEALEO",
+            "name": "Sealeo",
             "category": "Ball Roll Pokémon",
             "entry_text": [
                 "It habitually spins things on its\n",
@@ -127,7 +127,7 @@
             ]
         },
         "fr": {
-            "name": "PHOGLEUR",
+            "name": "Phogleur",
             "category": "Pokémon Roule Boule",
             "entry_text": [
                 "Il fait souvent tourner des objets\n",
@@ -136,7 +136,7 @@
             ]
         },
         "de": {
-            "name": "SEEJONG",
+            "name": "Seejong",
             "category": "Spielball",
             "entry_text": [
                 "Es balanciert Dinge auf seiner\n",
@@ -145,7 +145,7 @@
             ]
         },
         "it": {
-            "name": "SEALEO",
+            "name": "Sealeo",
             "category": "Pokémon Rotapalla",
             "entry_text": [
                 "Fa roteare oggetti sul naso\n",
@@ -154,7 +154,7 @@
             ]
         },
         "es": {
-            "name": "SEALEO",
+            "name": "Sealeo",
             "category": "Pokémon Rodabola",
             "entry_text": [
                 "Suele hacer girar objetos en su\n",

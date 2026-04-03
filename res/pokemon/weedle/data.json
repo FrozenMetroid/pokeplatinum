@@ -67,7 +67,7 @@
         "trainer_pos_m": 9,
         "pokemon_pos_m": 26,
         "en": {
-            "name": "WEEDLE",
+            "name": "Weedle",
             "category": "Hairy Bug Pokémon",
             "entry_text": [
                 "It eats its weight in leaves every\n",
@@ -76,7 +76,7 @@
             ]
         },
         "fr": {
-            "name": "ASPICOT",
+            "name": "Aspicot",
             "category": "Pokémon Insectopic",
             "entry_text": [
                 "Il mange chaque jour son poids en\n",
@@ -85,7 +85,7 @@
             ]
         },
         "de": {
-            "name": "HORNLIU",
+            "name": "Hornliu",
             "category": "Raupe",
             "entry_text": [
                 "Es frisst täglich sein Gewicht in\n",
@@ -94,7 +94,7 @@
             ]
         },
         "it": {
-            "name": "WEEDLE",
+            "name": "Weedle",
             "category": "Pokémon Millepiedi",
             "entry_text": [
                 "Divora ogni giorno una quantità di\n",
@@ -103,7 +103,7 @@
             ]
         },
         "es": {
-            "name": "WEEDLE",
+            "name": "Weedle",
             "category": "Pokémon Oruga",
             "entry_text": [
                 "Come el equivalente a su peso en\n",

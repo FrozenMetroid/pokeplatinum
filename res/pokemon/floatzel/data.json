@@ -120,7 +120,7 @@
         "trainer_pos_m": 9,
         "pokemon_pos_m": 10,
         "en": {
-            "name": "FLOATZEL",
+            "name": "Floatzel",
             "category": "Sea Weasel Pokémon",
             "entry_text": [
                 "It is a common sight around\n",
@@ -129,7 +129,7 @@
             ]
         },
         "fr": {
-            "name": "MUSTEFLOTT",
+            "name": "Musteflott",
             "category": "Pokémon Aquabelette",
             "entry_text": [
                 "Il flotte grâce à sa bouée très\n",
@@ -138,7 +138,7 @@
             ]
         },
         "de": {
-            "name": "BOJELIN",
+            "name": "Bojelin",
             "category": "Meereswiesel",
             "entry_text": [
                 "Es treibt mithilfe einer Art\n",
@@ -147,7 +147,7 @@
             ]
         },
         "it": {
-            "name": "FLOATZEL",
+            "name": "Floatzel",
             "category": "Pokémon Maridonnola",
             "entry_text": [
                 "Nuota con il suo grosso galleg-\n",
@@ -156,7 +156,7 @@
             ]
         },
         "es": {
-            "name": "FLOATZEL",
+            "name": "Floatzel",
             "category": "Pokémon Nutria Mar.",
             "entry_text": [
                 "Nada gracias a su flotador.\n",

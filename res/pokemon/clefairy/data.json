@@ -148,7 +148,7 @@
         "trainer_pos_m": 9,
         "pokemon_pos_m": 23,
         "en": {
-            "name": "CLEFAIRY",
+            "name": "Clefairy",
             "category": "Fairy Pokémon",
             "entry_text": [
                 "It is said that happiness will come\n",
@@ -157,7 +157,7 @@
             ]
         },
         "fr": {
-            "name": "MELOFEE",
+            "name": "Melofee",
             "category": "Pokémon Fée",
             "entry_text": [
                 "Tout le monde craque pour cet\n",
@@ -166,7 +166,7 @@
             ]
         },
         "de": {
-            "name": "PIEPI",
+            "name": "Piepi",
             "category": "Fee",
             "entry_text": [
                 "Es ist bekannt für sein liebens-\n",
@@ -175,7 +175,7 @@
             ]
         },
         "it": {
-            "name": "CLEFAIRY",
+            "name": "Clefairy",
             "category": "Pokémon Fata",
             "entry_text": [
                 "È molto amato per la sua indole\n",
@@ -184,7 +184,7 @@
             ]
         },
         "es": {
-            "name": "CLEFAIRY",
+            "name": "Clefairy",
             "category": "Pokémon Hada",
             "entry_text": [
                 "El preferido de mucha gente por su\n",

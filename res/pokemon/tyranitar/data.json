@@ -149,7 +149,7 @@
         "trainer_pos_m": 16,
         "pokemon_pos_m": 3,
         "en": {
-            "name": "TYRANITAR",
+            "name": "Tyranitar",
             "category": "Armor Pokémon",
             "entry_text": [
                 "If it rampages, it knocks down\n",
@@ -158,7 +158,7 @@
             ]
         },
         "fr": {
-            "name": "TYRANOCIF",
+            "name": "Tyranocif",
             "category": "Pokémon Armure",
             "entry_text": [
                 "Lorsqu’il est en colère, il abat des\n",
@@ -167,7 +167,7 @@
             ]
         },
         "de": {
-            "name": "DESPOTAR",
+            "name": "Despotar",
             "category": "Panzer",
             "entry_text": [
                 "Bei einem Tobsuchtsanfall zerstört\n",
@@ -176,7 +176,7 @@
             ]
         },
         "it": {
-            "name": "TYRANITAR",
+            "name": "Tyranitar",
             "category": "Pokémon Armatura",
             "entry_text": [
                 "Se s’infuria, abbatte le montagne e\n",
@@ -185,7 +185,7 @@
             ]
         },
         "es": {
-            "name": "TYRANITAR",
+            "name": "Tyranitar",
             "category": "Pokémon Coraza",
             "entry_text": [
                 "Puede alterar el paisaje derribando\n",

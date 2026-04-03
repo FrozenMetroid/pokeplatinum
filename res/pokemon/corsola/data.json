@@ -135,7 +135,7 @@
         "trainer_pos_m": 9,
         "pokemon_pos_m": 23,
         "en": {
-            "name": "CORSOLA",
+            "name": "Corsola",
             "category": "Coral Pokémon",
             "entry_text": [
                 "Many live in the clean seas of the\n",
@@ -144,7 +144,7 @@
             ]
         },
         "fr": {
-            "name": "CORAYON",
+            "name": "Corayon",
             "category": "Pokémon Corail",
             "entry_text": [
                 "On en trouve beaucoup dans les\n",
@@ -153,7 +153,7 @@
             ]
         },
         "de": {
-            "name": "CORASONN",
+            "name": "Corasonn",
             "category": "Koralle",
             "entry_text": [
                 "Viele von ihnen leben in den\n",
@@ -162,7 +162,7 @@
             ]
         },
         "it": {
-            "name": "CORSOLA",
+            "name": "Corsola",
             "category": "Pokémon Corallo",
             "entry_text": [
                 "Vivono numerosi nei limpidi mari del\n",
@@ -171,7 +171,7 @@
             ]
         },
         "es": {
-            "name": "CORSOLA",
+            "name": "Corsola",
             "category": "Pokémon Coral",
             "entry_text": [
                 "Muchos viven en los cristalinos\n",

@@ -129,7 +129,7 @@
         "trainer_pos_m": 9,
         "pokemon_pos_m": 65528,
         "en": {
-            "name": "DRIFBLIM",
+            "name": "Drifblim",
             "category": "Blimp Pokémon",
             "entry_text": [
                 "At dusk, swarms of them are\n",
@@ -138,7 +138,7 @@
             ]
         },
         "fr": {
-            "name": "GRODRIVE",
+            "name": "Grodrive",
             "category": "Pokémon Ballon",
             "entry_text": [
                 "Il somnole la journée et s’envole\n",
@@ -147,7 +147,7 @@
             ]
         },
         "de": {
-            "name": "DRIFZEPELI",
+            "name": "Drifzepeli",
             "category": "Luftschiff",
             "entry_text": [
                 "Tagsüber treibt es faul vor sich\n",
@@ -156,7 +156,7 @@
             ]
         },
         "it": {
-            "name": "DRIFBLIM",
+            "name": "Drifblim",
             "category": "Pokémon Dirigibile",
             "entry_text": [
                 "Di giorno fluttua con aria\n",
@@ -165,7 +165,7 @@
             ]
         },
         "es": {
-            "name": "DRIFBLIM",
+            "name": "Drifblim",
             "category": "Pokémon Dirigible",
             "entry_text": [
                 "Durante el día está somnoliento,\n",

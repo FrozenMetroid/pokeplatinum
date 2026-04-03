@@ -121,7 +121,7 @@
         "trainer_pos_m": 9,
         "pokemon_pos_m": 14,
         "en": {
-            "name": "SHELGON",
+            "name": "Shelgon",
             "category": "Endurance Pokémon",
             "entry_text": [
                 "Within its rugged shell, its cells\n",
@@ -130,7 +130,7 @@
             ]
         },
         "fr": {
-            "name": "DRACKHAUS",
+            "name": "Drackhaus",
             "category": "Pokémon Endurant",
             "entry_text": [
                 "Ses cellules ont commencé à\n",
@@ -139,7 +139,7 @@
             ]
         },
         "de": {
-            "name": "DRASCHEL",
+            "name": "Draschel",
             "category": "Durchsteher",
             "entry_text": [
                 "Die Zellen seines Panzers fingen an,\n",
@@ -148,7 +148,7 @@
             ]
         },
         "it": {
-            "name": "SHELGON",
+            "name": "Shelgon",
             "category": "Pokémon Resistenza",
             "entry_text": [
                 "Nella sua dura corazza le cellule\n",
@@ -157,7 +157,7 @@
             ]
         },
         "es": {
-            "name": "SHELGON",
+            "name": "Shelgon",
             "category": "Pokémon Resistencia",
             "entry_text": [
                 "Las células han empezado a cambiar\n",

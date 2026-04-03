@@ -127,7 +127,7 @@
         "trainer_pos_m": 9,
         "pokemon_pos_m": 20,
         "en": {
-            "name": "SPHEAL",
+            "name": "Spheal",
             "category": "Clap Pokémon",
             "entry_text": [
                 "It rolls across ice floes to reach\n",
@@ -136,7 +136,7 @@
             ]
         },
         "fr": {
-            "name": "OBALIE",
+            "name": "Obalie",
             "category": "Pokémon Clap Clap",
             "entry_text": [
                 "Il gagne la côte en roulant sur les\n",
@@ -145,7 +145,7 @@
             ]
         },
         "de": {
-            "name": "SEEMOPS",
+            "name": "Seemops",
             "category": "Applaus",
             "entry_text": [
                 "Es rollt über Eisschollen, um Land\n",
@@ -154,7 +154,7 @@
             ]
         },
         "it": {
-            "name": "SPHEAL",
+            "name": "Spheal",
             "category": "Pokémon Rotolante",
             "entry_text": [
                 "Poiché il suo corpo non è adatto al\n",
@@ -163,7 +163,7 @@
             ]
         },
         "es": {
-            "name": "SPHEAL",
+            "name": "Spheal",
             "category": "Pokémon Aplauso",
             "entry_text": [
                 "Rueda por los témpanos de hielo\n",

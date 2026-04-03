@@ -131,7 +131,7 @@
         "trainer_pos_m": 21,
         "pokemon_pos_m": 4,
         "en": {
-            "name": "STEELIX",
+            "name": "Steelix",
             "category": "Iron Snake Pokémon",
             "entry_text": [
                 "It is thought its body transformed\n",
@@ -140,7 +140,7 @@
             ]
         },
         "fr": {
-            "name": "STEELIX",
+            "name": "Steelix",
             "category": "Pokémon Serpenfer",
             "entry_text": [
                 "Grâce à la température élevée et la\n",
@@ -149,7 +149,7 @@
             ]
         },
         "de": {
-            "name": "STAHLOS",
+            "name": "Stahlos",
             "category": "Stahlboa",
             "entry_text": [
                 "Hoher Druck und hohe Temperaturen\n",
@@ -158,7 +158,7 @@
             ]
         },
         "it": {
-            "name": "STEELIX",
+            "name": "Steelix",
             "category": "Pokémon Ferroserpe",
             "entry_text": [
                 "Temprato dalla pressione e dal\n",
@@ -167,7 +167,7 @@
             ]
         },
         "es": {
-            "name": "STEELIX",
+            "name": "Steelix",
             "category": "Pokémon Serpférrea",
             "entry_text": [
                 "Su cuerpo es más duro que\n",

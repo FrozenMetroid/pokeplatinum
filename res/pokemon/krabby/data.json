@@ -136,7 +136,7 @@
         "trainer_pos_m": 9,
         "pokemon_pos_m": 30,
         "en": {
-            "name": "KRABBY",
+            "name": "Krabby",
             "category": "River Crab Pokémon",
             "entry_text": [
                 "It lives in burrows dug on sandy\n",
@@ -145,7 +145,7 @@
             ]
         },
         "fr": {
-            "name": "KRABBY",
+            "name": "Krabby",
             "category": "Pokémon Doux Crabe",
             "entry_text": [
                 "Il creuse son terrier sur des \n",
@@ -154,7 +154,7 @@
             ]
         },
         "de": {
-            "name": "KRABBY",
+            "name": "Krabby",
             "category": "Krabbe",
             "entry_text": [
                 "Es lebt in Höhlen am Strand. Seine\n",
@@ -163,7 +163,7 @@
             ]
         },
         "it": {
-            "name": "KRABBY",
+            "name": "Krabby",
             "category": "Pokémon Granchio",
             "entry_text": [
                 "Vive in buche scavate sulle spiagge\n",
@@ -172,7 +172,7 @@
             ]
         },
         "es": {
-            "name": "KRABBY",
+            "name": "Krabby",
             "category": "Pokémon Cangrejo",
             "entry_text": [
                 "Vive en madrigueras excavadas\n",

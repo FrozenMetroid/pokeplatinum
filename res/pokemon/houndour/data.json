@@ -136,7 +136,7 @@
         "trainer_pos_m": 9,
         "pokemon_pos_m": 23,
         "en": {
-            "name": "HOUNDOUR",
+            "name": "Houndour",
             "category": "Dark Pokémon",
             "entry_text": [
                 "It is smart enough to hunt in\n",
@@ -145,7 +145,7 @@
             ]
         },
         "fr": {
-            "name": "MALOSSE",
+            "name": "Malosse",
             "category": "Pokémon Sombre",
             "entry_text": [
                 "Il exprime ses émotions en modulant\n",
@@ -154,7 +154,7 @@
             ]
         },
         "de": {
-            "name": "HUNDUSTER",
+            "name": "Hunduster",
             "category": "Hades",
             "entry_text": [
                 "Durch unterschiedliche Schreie\n",
@@ -163,7 +163,7 @@
             ]
         },
         "it": {
-            "name": "HOUNDOUR",
+            "name": "Houndour",
             "category": "Pokémon Buio",
             "entry_text": [
                 "Trasmette i suoi stati d’animo con\n",
@@ -172,7 +172,7 @@
             ]
         },
         "es": {
-            "name": "HOUNDOUR",
+            "name": "Houndour",
             "category": "Pokémon Siniestro",
             "entry_text": [
                 "Se comunica mediante gritos y\n",

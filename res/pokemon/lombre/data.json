@@ -125,7 +125,7 @@
         "trainer_pos_m": 9,
         "pokemon_pos_m": 14,
         "en": {
-            "name": "LOMBRE",
+            "name": "Lombre",
             "category": "Jolly Pokémon",
             "entry_text": [
                 "It has a mischievous spirit. If it\n",
@@ -134,7 +134,7 @@
             ]
         },
         "fr": {
-            "name": "LOMBRE",
+            "name": "Lombre",
             "category": "Pokémon Jovial",
             "entry_text": [
                 "C’est un mauvais plaisantin. Quand\n",
@@ -143,7 +143,7 @@
             ]
         },
         "de": {
-            "name": "LOMBRERO",
+            "name": "Lombrero",
             "category": "Frohmut",
             "entry_text": [
                 "Es hat ein spitzbübisches Wesen.\n",
@@ -152,7 +152,7 @@
             ]
         },
         "it": {
-            "name": "LOMBRE",
+            "name": "Lombre",
             "category": "Pokémon Giocoso",
             "entry_text": [
                 "È un po’ dispettoso. Se vede un\n",
@@ -161,7 +161,7 @@
             ]
         },
         "es": {
-            "name": "LOMBRE",
+            "name": "Lombre",
             "category": "Pokémon Alegre",
             "entry_text": [
                 "Tiene carácter travieso. Si ve un\n",

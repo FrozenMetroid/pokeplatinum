@@ -103,7 +103,7 @@
         "trainer_pos_m": 9,
         "pokemon_pos_m": 9,
         "en": {
-            "name": "CLOYSTER",
+            "name": "Cloyster",
             "category": "Bivalve Pokémon",
             "entry_text": [
                 "It fights by keeping its shell\n",
@@ -112,7 +112,7 @@
             ]
         },
         "fr": {
-            "name": "CRUSTABRI",
+            "name": "Crustabri",
             "category": "Pokémon Bivalve",
             "entry_text": [
                 "Il se défend en fermant sa coquille\n",
@@ -121,7 +121,7 @@
             ]
         },
         "de": {
-            "name": "AUSTOS",
+            "name": "Austos",
             "category": "Muschel",
             "entry_text": [
                 "Im Kampf schließt es seine Schale,\n",
@@ -130,7 +130,7 @@
             ]
         },
         "it": {
-            "name": "CLOYSTER",
+            "name": "Cloyster",
             "category": "Pokémon Bivalve",
             "entry_text": [
                 "Quando lotta si protegge tenendo\n",
@@ -139,7 +139,7 @@
             ]
         },
         "es": {
-            "name": "CLOYSTER",
+            "name": "Cloyster",
             "category": "Pokémon Bivalvo",
             "entry_text": [
                 "En la lucha se protege cerrando\n",

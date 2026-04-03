@@ -127,7 +127,7 @@
         "trainer_pos_m": 9,
         "pokemon_pos_m": 26,
         "en": {
-            "name": "POOCHYENA",
+            "name": "Poochyena",
             "category": "Bite Pokémon",
             "entry_text": [
                 "A Pokémon with a persistent\n",
@@ -136,7 +136,7 @@
             ]
         },
         "fr": {
-            "name": "MEDHYENA",
+            "name": "Medhyena",
             "category": "Pokémon Morsure",
             "entry_text": [
                 "Un Pokémon très obstiné qui\n",
@@ -145,7 +145,7 @@
             ]
         },
         "de": {
-            "name": "FIFFYEN",
+            "name": "Fiffyen",
             "category": "Biss",
             "entry_text": [
                 "Ein beharrliches PKMN, das seine\n",
@@ -154,7 +154,7 @@
             ]
         },
         "it": {
-            "name": "POOCHYENA",
+            "name": "Poochyena",
             "category": "Pokémon Morso",
             "entry_text": [
                 "Pokémon di natura ostinata.\n",
@@ -163,7 +163,7 @@
             ]
         },
         "es": {
-            "name": "POOCHYENA",
+            "name": "Poochyena",
             "category": "Pokémon Mordisco",
             "entry_text": [
                 "Es muy persistente. Si se fija en\n",

@@ -121,7 +121,7 @@
         "trainer_pos_m": 9,
         "pokemon_pos_m": 23,
         "en": {
-            "name": "CYNDAQUIL",
+            "name": "Cyndaquil",
             "category": "Fire Mouse Pokémon",
             "entry_text": [
                 "It has a timid nature. If it is\n",
@@ -130,7 +130,7 @@
             ]
         },
         "fr": {
-            "name": "HERICENDRE",
+            "name": "Hericendre",
             "category": "Pokémon Souris Feu",
             "entry_text": [
                 "Ce Pokémon est un grand timide.\n",
@@ -139,7 +139,7 @@
             ]
         },
         "de": {
-            "name": "FEURIGEL",
+            "name": "Feurigel",
             "category": "Feuermaus",
             "entry_text": [
                 "Erschrickt sich dieses scheue PKMN,\n",
@@ -148,7 +148,7 @@
             ]
         },
         "it": {
-            "name": "CYNDAQUIL",
+            "name": "Cyndaquil",
             "category": "Pokémon Fuocotopo",
             "entry_text": [
                 "È riservato per natura. Se viene\n",
@@ -157,7 +157,7 @@
             ]
         },
         "es": {
-            "name": "CYNDAQUIL",
+            "name": "Cyndaquil",
             "category": "Pokémon Ratónfuego",
             "entry_text": [
                 "Es un Pokémon muy tímido. Si\n",

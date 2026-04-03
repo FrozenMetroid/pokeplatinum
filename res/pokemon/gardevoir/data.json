@@ -132,7 +132,7 @@
         "trainer_pos_m": 9,
         "pokemon_pos_m": 2,
         "en": {
-            "name": "GARDEVOIR",
+            "name": "Gardevoir",
             "category": "Embrace Pokémon",
             "entry_text": [
                 "To protect its Trainer, it will\n",
@@ -141,7 +141,7 @@
             ]
         },
         "fr": {
-            "name": "GARDEVOIR",
+            "name": "Gardevoir",
             "category": "Pokémon Etreinte",
             "entry_text": [
                 "Il donnera sa vie pour protéger\n",
@@ -150,7 +150,7 @@
             ]
         },
         "de": {
-            "name": "GUARDEVOIR",
+            "name": "Guardevoir",
             "category": "Umarmung",
             "entry_text": [
                 "Es wird seinen Trainer mit dem Leben\n",
@@ -159,7 +159,7 @@
             ]
         },
         "it": {
-            "name": "GARDEVOIR",
+            "name": "Gardevoir",
             "category": "Pokémon Abbraccio",
             "entry_text": [
                 "Difende il suo fidato Allenatore\n",
@@ -168,7 +168,7 @@
             ]
         },
         "es": {
-            "name": "GARDEVOIR",
+            "name": "Gardevoir",
             "category": "Pokémon Envolvente",
             "entry_text": [
                 "Protegerá al entrenador que le\n",

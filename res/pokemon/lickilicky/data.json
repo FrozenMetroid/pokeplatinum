@@ -136,7 +136,7 @@
         "trainer_pos_m": 9,
         "pokemon_pos_m": 65535,
         "en": {
-            "name": "LICKILICKY",
+            "name": "Lickilicky",
             "category": "Licking Pokémon",
             "entry_text": [
                 "The long tongue is always soggy\n",
@@ -145,7 +145,7 @@
             ]
         },
         "fr": {
-            "name": "COUDLANGUE",
+            "name": "Coudlangue",
             "category": "Pokémon Lécheur",
             "entry_text": [
                 "Il enroule tout dans sa langue\n",
@@ -154,7 +154,7 @@
             ]
         },
         "de": {
-            "name": "SCHLURPLEK",
+            "name": "Schlurplek",
             "category": "Schlecker",
             "entry_text": [
                 "Es umklammert Dinge mit seiner\n",
@@ -163,7 +163,7 @@
             ]
         },
         "it": {
-            "name": "LICKILICKY",
+            "name": "Lickilicky",
             "category": "Pokémon Linguaccia",
             "entry_text": [
                 "Avvolge ogni cosa con la sua lingua\n",
@@ -172,7 +172,7 @@
             ]
         },
         "es": {
-            "name": "LICKILICKY",
+            "name": "Lickilicky",
             "category": "Pokémon Lametazo",
             "entry_text": [
                 "Agarra cosas con su lengua\n",

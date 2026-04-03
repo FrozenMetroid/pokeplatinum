@@ -128,7 +128,7 @@
         "trainer_pos_m": 5,
         "pokemon_pos_m": 6,
         "en": {
-            "name": "DRATINI",
+            "name": "Dratini",
             "category": "Dragon Pokémon",
             "entry_text": [
                 "It is called the “Mirage Pokémon”\n",
@@ -137,7 +137,7 @@
             ]
         },
         "fr": {
-            "name": "MINIDRACO",
+            "name": "Minidraco",
             "category": "Pokémon Dragon",
             "entry_text": [
                 "On l’appelle “Pokémon mirage”\n",
@@ -146,7 +146,7 @@
             ]
         },
         "de": {
-            "name": "DRATINI",
+            "name": "Dratini",
             "category": "Drache",
             "entry_text": [
                 "Man nennt es “Illusion-Pokémon”,\n",
@@ -155,7 +155,7 @@
             ]
         },
         "it": {
-            "name": "DRATINI",
+            "name": "Dratini",
             "category": "Pokémon Drago",
             "entry_text": [
                 "Detto “Pokémon miraggio” perché\n",
@@ -164,7 +164,7 @@
             ]
         },
         "es": {
-            "name": "DRATINI",
+            "name": "Dratini",
             "category": "Pokémon Dragón",
             "entry_text": [
                 "Se le llama el “Pokémon espejismo”\n",

@@ -68,7 +68,7 @@
         "trainer_pos_m": 9,
         "pokemon_pos_m": 15,
         "en": {
-            "name": "SMEARGLE",
+            "name": "Smeargle",
             "category": "Painter Pokémon",
             "entry_text": [
                 "It marks its territory by using its\n",
@@ -77,7 +77,7 @@
             ]
         },
         "fr": {
-            "name": "QUEULORIOR",
+            "name": "Queulorior",
             "category": "Pokémon Peintre",
             "entry_text": [
                 "Il marque son territoire en maniant\n",
@@ -86,7 +86,7 @@
             ]
         },
         "de": {
-            "name": "FARBEAGLE",
+            "name": "Farbeagle",
             "category": "Maler",
             "entry_text": [
                 "Sein Revier markiert es mit seinem\n",
@@ -95,7 +95,7 @@
             ]
         },
         "it": {
-            "name": "SMEARGLE",
+            "name": "Smeargle",
             "category": "Pokémon Pittore",
             "entry_text": [
                 "Delimita il suo territorio usando la\n",
@@ -104,7 +104,7 @@
             ]
         },
         "es": {
-            "name": "SMEARGLE",
+            "name": "Smeargle",
             "category": "Pokémon Pintor",
             "entry_text": [
                 "Marca su territorio usando su\n",

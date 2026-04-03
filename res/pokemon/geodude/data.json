@@ -130,7 +130,7 @@
         "trainer_pos_m": 9,
         "pokemon_pos_m": 23,
         "en": {
-            "name": "GEODUDE",
+            "name": "Geodude",
             "category": "Rock Pokémon",
             "entry_text": [
                 "At rest, it looks just like a rock.\n",
@@ -139,7 +139,7 @@
             ]
         },
         "fr": {
-            "name": "RACAILLOU",
+            "name": "Racaillou",
             "category": "Pokémon Roche",
             "entry_text": [
                 "Nombre d’entre eux vivent sur des\n",
@@ -148,7 +148,7 @@
             ]
         },
         "de": {
-            "name": "KLEINSTEIN",
+            "name": "Kleinstein",
             "category": "Gestein",
             "entry_text": [
                 "Viele von ihnen leben auf\n",
@@ -157,7 +157,7 @@
             ]
         },
         "it": {
-            "name": "GEODUDE",
+            "name": "Geodude",
             "category": "Pokémon Roccia",
             "entry_text": [
                 "Molti vivono sui sentieri montani\n",
@@ -166,7 +166,7 @@
             ]
         },
         "es": {
-            "name": "GEODUDE",
+            "name": "Geodude",
             "category": "Pokémon Roca",
             "entry_text": [
                 "Muchos viven en zonas montañosas\n",

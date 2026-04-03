@@ -121,7 +121,7 @@
         "trainer_pos_m": 9,
         "pokemon_pos_m": 23,
         "en": {
-            "name": "PACHIRISU",
+            "name": "Pachirisu",
             "category": "EleSquirrel Pokémon",
             "entry_text": [
                 "A pair may be seen rubbing their\n",
@@ -130,7 +130,7 @@
             ]
         },
         "fr": {
-            "name": "PACHIRISU",
+            "name": "Pachirisu",
             "category": "Pokémon Ecurélec",
             "entry_text": [
                 "Il roule des boules de poils pleines\n",
@@ -139,7 +139,7 @@
             ]
         },
         "de": {
-            "name": "PACHIRISU",
+            "name": "Pachirisu",
             "category": "Elektrohörnchen",
             "entry_text": [
                 "Es bildet ein Fellknäuel, der vor\n",
@@ -148,7 +148,7 @@
             ]
         },
         "it": {
-            "name": "PACHIRISU",
+            "name": "Pachirisu",
             "category": "Pokémon Elescoiatto",
             "entry_text": [
                 "Forma delle palle di pelo cariche\n",
@@ -157,7 +157,7 @@
             ]
         },
         "es": {
-            "name": "PACHIRISU",
+            "name": "Pachirisu",
             "category": "Pokémon Ardillalec",
             "entry_text": [
                 "Crea bolas de pelo que crepitan\n",

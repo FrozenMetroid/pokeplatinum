@@ -123,7 +123,7 @@
         "trainer_pos_m": 9,
         "pokemon_pos_m": 6,
         "en": {
-            "name": "QUAGSIRE",
+            "name": "Quagsire",
             "category": "Water Fish Pokémon",
             "entry_text": [
                 "It has an easygoing nature. It\n",
@@ -132,7 +132,7 @@
             ]
         },
         "fr": {
-            "name": "MARAISTE",
+            "name": "Maraiste",
             "category": "Pokémon Poisson",
             "entry_text": [
                 "C’est un grand paresseux qui \n",
@@ -141,7 +141,7 @@
             ]
         },
         "de": {
-            "name": "MORLORD",
+            "name": "Morlord",
             "category": "Fisch",
             "entry_text": [
                 "Ein träges PKMN, das auf dem Grund\n",
@@ -150,7 +150,7 @@
             ]
         },
         "it": {
-            "name": "QUAGSIRE",
+            "name": "Quagsire",
             "category": "Pokémon Acquapesce",
             "entry_text": [
                 "È pigro per natura. Sta sul fondo\n",
@@ -159,7 +159,7 @@
             ]
         },
         "es": {
-            "name": "QUAGSIRE",
+            "name": "Quagsire",
             "category": "Pokémon Pez Agua",
             "entry_text": [
                 "Es un Pokémon bastante perezoso.\n",

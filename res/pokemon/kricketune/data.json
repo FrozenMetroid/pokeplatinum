@@ -109,7 +109,7 @@
         "trainer_pos_m": 9,
         "pokemon_pos_m": 17,
         "en": {
-            "name": "KRICKETUNE",
+            "name": "Kricketune",
             "category": "Cricket Pokémon",
             "entry_text": [
                 "There is a village that hosts a\n",
@@ -118,7 +118,7 @@
             ]
         },
         "fr": {
-            "name": "MELOKRIK",
+            "name": "Melokrik",
             "category": "Pokémon Criquet",
             "entry_text": [
                 "Il croise ses bras affûtés devant\n",
@@ -127,7 +127,7 @@
             ]
         },
         "de": {
-            "name": "ZIRPEISE",
+            "name": "Zirpeise",
             "category": "Zirper",
             "entry_text": [
                 "Wenn es ruft, verschränkt es seine\n",
@@ -136,7 +136,7 @@
             ]
         },
         "it": {
-            "name": "KRICKETUNE",
+            "name": "Kricketune",
             "category": "Pokémon Grillo",
             "entry_text": [
                 "Quando canta tiene le zampe\n",
@@ -145,7 +145,7 @@
             ]
         },
         "es": {
-            "name": "KRICKETUNE",
+            "name": "Kricketune",
             "category": "Pokémon Grillo",
             "entry_text": [
                 "Cuando llora, cruza sus brazos\n",

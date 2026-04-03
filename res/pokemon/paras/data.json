@@ -127,7 +127,7 @@
         "trainer_pos_m": 9,
         "pokemon_pos_m": 30,
         "en": {
-            "name": "PARAS",
+            "name": "Paras",
             "category": "Mushroom Pokémon",
             "entry_text": [
                 "Mushrooms named tochukaso grow\n",
@@ -136,7 +136,7 @@
             ]
         },
         "fr": {
-            "name": "PARAS",
+            "name": "Paras",
             "category": "Pokémon Champignon",
             "entry_text": [
                 "Des champignons appelés\n",
@@ -145,7 +145,7 @@
             ]
         },
         "de": {
-            "name": "PARAS",
+            "name": "Paras",
             "category": "Pilz",
             "entry_text": [
                 "Auf seinem Rücken wachsen Pilze,\n",
@@ -154,7 +154,7 @@
             ]
         },
         "it": {
-            "name": "PARAS",
+            "name": "Paras",
             "category": "Pokémon Fungo",
             "entry_text": [
                 "Ha sul dorso dei funghi chiamati\n",
@@ -163,7 +163,7 @@
             ]
         },
         "es": {
-            "name": "PARAS",
+            "name": "Paras",
             "category": "Pokémon Hongo",
             "entry_text": [
                 "En el lomo de PARAS crecen\n",

@@ -131,7 +131,7 @@
         "trainer_pos_m": 9,
         "pokemon_pos_m": 28,
         "en": {
-            "name": "OMANYTE",
+            "name": "Omanyte",
             "category": "Spiral Pokémon",
             "entry_text": [
                 "A Pokémon that was resurrected\n",
@@ -140,7 +140,7 @@
             ]
         },
         "fr": {
-            "name": "AMONITA",
+            "name": "Amonita",
             "category": "Pokémon Spirale",
             "entry_text": [
                 "Un Pokémon ramené à la vie par\n",
@@ -149,7 +149,7 @@
             ]
         },
         "de": {
-            "name": "AMONITAS",
+            "name": "Amonitas",
             "category": "Spirale",
             "entry_text": [
                 "Dieses PKMN wurde von der modernen\n",
@@ -158,7 +158,7 @@
             ]
         },
         "it": {
-            "name": "OMANYTE",
+            "name": "Omanyte",
             "category": "Pokémon Spirale",
             "entry_text": [
                 "Pokémon rigenerato da un fossile\n",
@@ -167,7 +167,7 @@
             ]
         },
         "es": {
-            "name": "OMANYTE",
+            "name": "Omanyte",
             "category": "Pokémon Espiral",
             "entry_text": [
                 "Fue recuperado a partir de un fósil\n",

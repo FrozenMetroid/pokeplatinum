@@ -119,7 +119,7 @@
         "trainer_pos_m": 9,
         "pokemon_pos_m": 65532,
         "en": {
-            "name": "GOLBAT",
+            "name": "Golbat",
             "category": "Bat Pokémon",
             "entry_text": [
                 "Its sharp fangs puncture the\n",
@@ -128,7 +128,7 @@
             ]
         },
         "fr": {
-            "name": "NOSFERALTO",
+            "name": "Nosferalto",
             "category": "Pokémon Chovsouris",
             "entry_text": [
                 "Il aime le sang des humains et des\n",
@@ -137,7 +137,7 @@
             ]
         },
         "de": {
-            "name": "GOLBAT",
+            "name": "Golbat",
             "category": "Fledermaus",
             "entry_text": [
                 "Es liebt das Blut von Menschen und\n",
@@ -146,7 +146,7 @@
             ]
         },
         "it": {
-            "name": "GOLBAT",
+            "name": "Golbat",
             "category": "Pokémon Pipistrello",
             "entry_text": [
                 "Ama il sangue umano e quello dei\n",
@@ -155,7 +155,7 @@
             ]
         },
         "es": {
-            "name": "GOLBAT",
+            "name": "Golbat",
             "category": "Pokémon Murciélago",
             "entry_text": [
                 "Le encanta la sangre, tanto la de\n",

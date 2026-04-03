@@ -121,7 +121,7 @@
         "trainer_pos_m": 9,
         "pokemon_pos_m": 65531,
         "en": {
-            "name": "BARBOACH",
+            "name": "Barboach",
             "category": "Whiskers Pokémon",
             "entry_text": [
                 "Its slimy body is hard to grasp. In\n",
@@ -130,7 +130,7 @@
             ]
         },
         "fr": {
-            "name": "BARLOCHE",
+            "name": "Barloche",
             "category": "Pokémon Barbillon",
             "entry_text": [
                 "Il enduit son corps d’une \n",
@@ -139,7 +139,7 @@
             ]
         },
         "de": {
-            "name": "SCHMERBE",
+            "name": "Schmerbe",
             "category": "Barthaar",
             "entry_text": [
                 "Es bedeckt seinen Körper mit einer\n",
@@ -148,7 +148,7 @@
             ]
         },
         "it": {
-            "name": "BARBOACH",
+            "name": "Barboach",
             "category": "Pokémon Baffetti",
             "entry_text": [
                 "Il suo corpo è ricoperto da una\n",
@@ -157,7 +157,7 @@
             ]
         },
         "es": {
-            "name": "BARBOACH",
+            "name": "Barboach",
             "category": "Pokémon Bigotudo",
             "entry_text": [
                 "Recubre su cuerpo de una película\n",

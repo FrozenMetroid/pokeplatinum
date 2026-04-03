@@ -120,7 +120,7 @@
         "trainer_pos_m": 9,
         "pokemon_pos_m": 3,
         "en": {
-            "name": "MACHAMP",
+            "name": "Machamp",
             "category": "Superpower Pokémon",
             "entry_text": [
                 "Its four muscled arms slam foes\n",
@@ -129,7 +129,7 @@
             ]
         },
         "fr": {
-            "name": "MACKOGNEUR",
+            "name": "Mackogneur",
             "category": "Pokémon Colosse",
             "entry_text": [
                 "Ses quatre bras frappent à une\n",
@@ -138,7 +138,7 @@
             ]
         },
         "de": {
-            "name": "MACHOMEI",
+            "name": "Machomei",
             "category": "Kraftprotz",
             "entry_text": [
                 "Mit seinen vier Armen schlägt es\n",
@@ -147,7 +147,7 @@
             ]
         },
         "it": {
-            "name": "MACHAMP",
+            "name": "Machamp",
             "category": "Pokémon Megaforza",
             "entry_text": [
                 "Tira pugni con le quattro braccia\n",
@@ -156,7 +156,7 @@
             ]
         },
         "es": {
-            "name": "MACHAMP",
+            "name": "Machamp",
             "category": "Pokémon Superpoder",
             "entry_text": [
                 "Golpea con sus cuatro brazos a\n",

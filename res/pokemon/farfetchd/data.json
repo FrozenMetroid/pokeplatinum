@@ -131,7 +131,7 @@
         "trainer_pos_m": 9,
         "pokemon_pos_m": 20,
         "en": {
-            "name": "FARFETCH’D",
+            "name": "Farfetch’d",
             "category": "Wild Duck Pokémon",
             "entry_text": [
                 "It can’t live without the stalk it\n",
@@ -140,7 +140,7 @@
             ]
         },
         "fr": {
-            "name": "CANARTICHO",
+            "name": "Canarticho",
             "category": "Pokémon Canard Fou",
             "entry_text": [
                 "Il ne peut pas vivre sans son\n",
@@ -149,7 +149,7 @@
             ]
         },
         "de": {
-            "name": "PORENTA",
+            "name": "Porenta",
             "category": "Wildente",
             "entry_text": [
                 "Ohne seinen Stock kann es nicht\n",
@@ -158,7 +158,7 @@
             ]
         },
         "it": {
-            "name": "FARFETCH’D",
+            "name": "Farfetch’d",
             "category": "Pokémon Selvanatra",
             "entry_text": [
                 "Non può vivere senza lo stelo che\n",
@@ -167,7 +167,7 @@
             ]
         },
         "es": {
-            "name": "FARFETCH’D",
+            "name": "Farfetch’d",
             "category": "Pokémon Pato Salv.",
             "entry_text": [
                 "No puede vivir sin el palo que lleva.\n",

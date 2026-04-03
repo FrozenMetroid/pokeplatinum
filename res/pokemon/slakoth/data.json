@@ -134,7 +134,7 @@
         "trainer_pos_m": 9,
         "pokemon_pos_m": 22,
         "en": {
-            "name": "SLAKOTH",
+            "name": "Slakoth",
             "category": "Slacker Pokémon",
             "entry_text": [
                 "It spends nearly all its time in a\n",
@@ -143,7 +143,7 @@
             ]
         },
         "fr": {
-            "name": "PARECOOL",
+            "name": "Parecool",
             "category": "Pokémon Flâneur",
             "entry_text": [
                 "Il passe le plus clair de son temps\n",
@@ -152,7 +152,7 @@
             ]
         },
         "de": {
-            "name": "BUMMELZ",
+            "name": "Bummelz",
             "category": "Faulpelz",
             "entry_text": [
                 "Es verbringt fast den ganzen Tag\n",
@@ -161,7 +161,7 @@
             ]
         },
         "it": {
-            "name": "SLAKOTH",
+            "name": "Slakoth",
             "category": "Pokémon Ozioso",
             "entry_text": [
                 "Passa quasi tutto il tempo\n",
@@ -170,7 +170,7 @@
             ]
         },
         "es": {
-            "name": "SLAKOTH",
+            "name": "Slakoth",
             "category": "Pokémon Gandul",
             "entry_text": [
                 "Pasa la mayor parte del día\n",

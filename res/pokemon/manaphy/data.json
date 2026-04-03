@@ -122,7 +122,7 @@
         "trainer_pos_m": 9,
         "pokemon_pos_m": 0,
         "en": {
-            "name": "MANAPHY",
+            "name": "Manaphy",
             "category": "Seafaring Pokémon",
             "entry_text": [
                 "It is born with a wondrous power\n",
@@ -131,7 +131,7 @@
             ]
         },
         "fr": {
-            "name": "MANAPHY",
+            "name": "Manaphy",
             "category": "Pokémon Voyagenmer",
             "entry_text": [
                 "Né dans les profondeurs froides de\n",
@@ -140,7 +140,7 @@
             ]
         },
         "de": {
-            "name": "MANAPHY",
+            "name": "Manaphy",
             "category": "Seefahrer",
             "entry_text": [
                 "Geboren auf dem Meeresboden,\n",
@@ -149,7 +149,7 @@
             ]
         },
         "it": {
-            "name": "MANAPHY",
+            "name": "Manaphy",
             "category": "Pokémon Oceandante",
             "entry_text": [
                 "Nato su freddi fondali marini, per-\n",
@@ -158,7 +158,7 @@
             ]
         },
         "es": {
-            "name": "MANAPHY",
+            "name": "Manaphy",
             "category": "Pokémon Náutico",
             "entry_text": [
                 "Nació en el frío fondo marino.\n",

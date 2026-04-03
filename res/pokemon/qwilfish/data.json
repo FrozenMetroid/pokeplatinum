@@ -128,7 +128,7 @@
         "trainer_pos_m": 9,
         "pokemon_pos_m": 4,
         "en": {
-            "name": "QWILFISH",
+            "name": "Qwilfish",
             "category": "Balloon Pokémon",
             "entry_text": [
                 "It shoots the poison spines on its\n",
@@ -137,7 +137,7 @@
             ]
         },
         "fr": {
-            "name": "QWILFISH",
+            "name": "Qwilfish",
             "category": "Pokémon Bouboule",
             "entry_text": [
                 "Il envoie ses piquants empoisonnés\n",
@@ -146,7 +146,7 @@
             ]
         },
         "de": {
-            "name": "BALDORFISH",
+            "name": "Baldorfish",
             "category": "Ballon",
             "entry_text": [
                 "Es verschießt die giftigen Stacheln\n",
@@ -155,7 +155,7 @@
             ]
         },
         "it": {
-            "name": "QWILFISH",
+            "name": "Qwilfish",
             "category": "Pokémon Pallone",
             "entry_text": [
                 "Spara i suoi aculei velenosi in\n",
@@ -164,7 +164,7 @@
             ]
         },
         "es": {
-            "name": "QWILFISH",
+            "name": "Qwilfish",
             "category": "Pokémon Globo",
             "entry_text": [
                 "Lanza púas venenosas en todas\n",

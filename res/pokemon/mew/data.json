@@ -210,7 +210,7 @@
         "trainer_pos_m": 9,
         "pokemon_pos_m": 65522,
         "en": {
-            "name": "MEW",
+            "name": "Mew",
             "category": "New Species Pokémon",
             "entry_text": [
                 "Because it can use all kinds of\n",
@@ -219,7 +219,7 @@
             ]
         },
         "fr": {
-            "name": "MEW",
+            "name": "Mew",
             "category": "Pokémon Nouveau",
             "entry_text": [
                 "Nombre de scientifiques voient en\n",
@@ -228,7 +228,7 @@
             ]
         },
         "de": {
-            "name": "MEW",
+            "name": "Mew",
             "category": "Neue Art",
             "entry_text": [
                 "Es beherrscht alle möglichen\n",
@@ -237,7 +237,7 @@
             ]
         },
         "it": {
-            "name": "MEW",
+            "name": "Mew",
             "category": "Pokémon Novaspecie",
             "entry_text": [
                 "Poiché sa usare qualsiasi mossa,\n",
@@ -246,7 +246,7 @@
             ]
         },
         "es": {
-            "name": "MEW",
+            "name": "Mew",
             "category": "Pokémon N. Especie",
             "entry_text": [
                 "Varios científicos lo consideran el\n",

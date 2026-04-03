@@ -123,7 +123,7 @@
         "trainer_pos_m": 9,
         "pokemon_pos_m": 31,
         "en": {
-            "name": "PIDGEY",
+            "name": "Pidgey",
             "category": "Tiny Bird Pokémon",
             "entry_text": [
                 "It is docile and prefers to avoid\n",
@@ -132,7 +132,7 @@
             ]
         },
         "fr": {
-            "name": "ROUCOOL",
+            "name": "Roucool",
             "category": "Pokémon Minoiseau",
             "entry_text": [
                 "Ce Pokémon docile préfère éviter\n",
@@ -141,12 +141,12 @@
             ]
         },
         "de": {
-            "name": "TAUBSI",
+            "name": "Taubsi",
             "category": "Kleinvogel",
             "entry_text": [ "Reizt man dieses an sich gutmütige\n", "Pokémon, wehrt es sich wütend." ]
         },
         "it": {
-            "name": "PIDGEY",
+            "name": "Pidgey",
             "category": "Pokémon Uccellino",
             "entry_text": [
                 "È docile e preferisce evitare i\n",
@@ -155,7 +155,7 @@
             ]
         },
         "es": {
-            "name": "PIDGEY",
+            "name": "Pidgey",
             "category": "Pokémon Pajarito",
             "entry_text": [
                 "Es manso y prefiere evitar los\n",

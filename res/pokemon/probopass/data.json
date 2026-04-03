@@ -126,7 +126,7 @@
         "trainer_pos_m": 9,
         "pokemon_pos_m": 4,
         "en": {
-            "name": "PROBOPASS",
+            "name": "Probopass",
             "category": "Compass Pokémon",
             "entry_text": [
                 "It freely controls three small\n",
@@ -135,7 +135,7 @@
             ]
         },
         "fr": {
-            "name": "TARINORME",
+            "name": "Tarinorme",
             "category": "Pokémon Boussole",
             "entry_text": [
                 "Son corps libère une puissante\n",
@@ -144,7 +144,7 @@
             ]
         },
         "de": {
-            "name": "VOLUMINAS",
+            "name": "Voluminas",
             "category": "Kompass",
             "entry_text": [
                 "Es gibt starken Magnetismus ab. Es\n",
@@ -153,7 +153,7 @@
             ]
         },
         "it": {
-            "name": "PROBOPASS",
+            "name": "Probopass",
             "category": "Pokémon Bussola",
             "entry_text": [
                 "Emana un forte magnetismo da\n",
@@ -162,7 +162,7 @@
             ]
         },
         "es": {
-            "name": "PROBOPASS",
+            "name": "Probopass",
             "category": "Pokémon Brújula",
             "entry_text": [
                 "Emana un fuerte magnetismo.\n",

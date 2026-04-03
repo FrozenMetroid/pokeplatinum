@@ -138,7 +138,7 @@
         "trainer_pos_m": 9,
         "pokemon_pos_m": 65522,
         "en": {
-            "name": "DRIFLOON",
+            "name": "Drifloon",
             "category": "Balloon Pokémon",
             "entry_text": [
                 "Because of the way it floats\n",
@@ -147,7 +147,7 @@
             ]
         },
         "fr": {
-            "name": "BAUDRIVE",
+            "name": "Baudrive",
             "category": "Pokémon Bouboule",
             "entry_text": [
                 "Un Pokémon né de l’esprit des gens\n",
@@ -156,7 +156,7 @@
             ]
         },
         "de": {
-            "name": "DRIFTLON",
+            "name": "Driftlon",
             "category": "Ballon",
             "entry_text": [
                 "Ein PKMN, entstanden aus den\n",
@@ -165,7 +165,7 @@
             ]
         },
         "it": {
-            "name": "DRIFLOON",
+            "name": "Drifloon",
             "category": "Pokémon Pallone",
             "entry_text": [
                 "Pokémon formato dalle anime di\n",
@@ -174,7 +174,7 @@
             ]
         },
         "es": {
-            "name": "DRIFLOON",
+            "name": "Drifloon",
             "category": "Pokémon Globo",
             "entry_text": [
                 "Está formado por los espíritus de\n",

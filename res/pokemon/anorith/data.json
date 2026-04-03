@@ -125,7 +125,7 @@
         "trainer_pos_m": 9,
         "pokemon_pos_m": 3,
         "en": {
-            "name": "ANORITH",
+            "name": "Anorith",
             "category": "Old Shrimp Pokémon",
             "entry_text": [
                 "A Pokémon ancestor that was\n",
@@ -134,7 +134,7 @@
             ]
         },
         "fr": {
-            "name": "ANORITH",
+            "name": "Anorith",
             "category": "Pokémon Crustage",
             "entry_text": [
                 "Un ancêtre Pokémon réanimé \n",
@@ -143,7 +143,7 @@
             ]
         },
         "de": {
-            "name": "ANORITH",
+            "name": "Anorith",
             "category": "Krebssenior",
             "entry_text": [
                 "Ein Vorfahre der PKMN, der aus\n",
@@ -152,7 +152,7 @@
             ]
         },
         "it": {
-            "name": "ANORITH",
+            "name": "Anorith",
             "category": "Pokémon Primaceo",
             "entry_text": [
                 "Un antico Pokémon rigenerato\n",
@@ -161,7 +161,7 @@
             ]
         },
         "es": {
-            "name": "ANORITH",
+            "name": "Anorith",
             "category": "Pokémon Camarón",
             "entry_text": [
                 "Este Pokémon fue recreado a partir\n",

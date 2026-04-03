@@ -134,7 +134,7 @@
         "trainer_pos_m": 9,
         "pokemon_pos_m": 23,
         "en": {
-            "name": "RATTATA",
+            "name": "Rattata",
             "category": "Mouse Pokémon",
             "entry_text": [
                 "Cautious in the extreme, its\n",
@@ -143,7 +143,7 @@
             ]
         },
         "fr": {
-            "name": "RATTATA",
+            "name": "Rattata",
             "category": "Pokémon Souris",
             "entry_text": [
                 "D’une prudence extrême, sa nature\n",
@@ -152,7 +152,7 @@
             ]
         },
         "de": {
-            "name": "RATTFRATZ",
+            "name": "Rattfratz",
             "category": "Maus",
             "entry_text": [
                 "Es strotzt vor Lebenskraft und\n",
@@ -161,7 +161,7 @@
             ]
         },
         "it": {
-            "name": "RATTATA",
+            "name": "Rattata",
             "category": "Pokémon Topo",
             "entry_text": [
                 "Un’incredibile vitalità gli permette\n",
@@ -170,7 +170,7 @@
             ]
         },
         "es": {
-            "name": "RATTATA",
+            "name": "Rattata",
             "category": "Pokémon Ratón",
             "entry_text": [
                 "Su capacidad de adaptación le\n",

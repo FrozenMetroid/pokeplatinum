@@ -143,7 +143,7 @@
         "trainer_pos_m": 9,
         "pokemon_pos_m": 25,
         "en": {
-            "name": "SABLEYE",
+            "name": "Sableye",
             "category": "Darkness Pokémon",
             "entry_text": [
                 "It hides in the darkness of caves.\n",
@@ -152,7 +152,7 @@
             ]
         },
         "fr": {
-            "name": "TENEFIX",
+            "name": "Tenefix",
             "category": "Pokémon Obscurité",
             "entry_text": [
                 "A force de manger des gemmes, \n",
@@ -161,7 +161,7 @@
             ]
         },
         "de": {
-            "name": "ZOBIRIS",
+            "name": "Zobiris",
             "category": "Finsternis",
             "entry_text": [
                 "Es versteckt sich im Dunkeln von\n",
@@ -170,7 +170,7 @@
             ]
         },
         "it": {
-            "name": "SABLEYE",
+            "name": "Sableye",
             "category": "Pokémon Oscurità",
             "entry_text": [
                 "Si cela nell’oscurità delle caverne.\n",
@@ -179,7 +179,7 @@
             ]
         },
         "es": {
-            "name": "SABLEYE",
+            "name": "Sableye",
             "category": "Pokémon Oscuridad",
             "entry_text": [
                 "Se oculta en cavernas oscuras.\n",

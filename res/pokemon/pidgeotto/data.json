@@ -115,7 +115,7 @@
         "trainer_pos_m": 9,
         "pokemon_pos_m": 65529,
         "en": {
-            "name": "PIDGEOTTO",
+            "name": "Pidgeotto",
             "category": "Bird Pokémon",
             "entry_text": [
                 "It flies over its wide territory in\n",
@@ -124,7 +124,7 @@
             ]
         },
         "fr": {
-            "name": "ROUCOUPS",
+            "name": "Roucoups",
             "category": "Pokémon Oiseau",
             "entry_text": [
                 "Il survole son vaste territoire en\n",
@@ -133,7 +133,7 @@
             ]
         },
         "de": {
-            "name": "TAUBOGA",
+            "name": "Tauboga",
             "category": "Vogel",
             "entry_text": [
                 "Auf der Suche nach Nahrung, die es\n",
@@ -142,7 +142,7 @@
             ]
         },
         "it": {
-            "name": "PIDGEOTTO",
+            "name": "Pidgeotto",
             "category": "Pokémon Uccello",
             "entry_text": [
                 "Sorvola il suo ampio territorio a\n",
@@ -151,7 +151,7 @@
             ]
         },
         "es": {
-            "name": "PIDGEOTTO",
+            "name": "Pidgeotto",
             "category": "Pokémon Pájaro",
             "entry_text": [
                 "Sobrevuela su extenso territorio\n",

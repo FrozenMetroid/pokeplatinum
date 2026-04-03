@@ -129,7 +129,7 @@
         "trainer_pos_m": 9,
         "pokemon_pos_m": 65529,
         "en": {
-            "name": "RELICANTH",
+            "name": "Relicanth",
             "category": "Longevity Pokémon",
             "entry_text": [
                 "A rare Pokémon discovered during\n",
@@ -138,7 +138,7 @@
             ]
         },
         "fr": {
-            "name": "RELICANTH",
+            "name": "Relicanth",
             "category": "Pokémon Longévité",
             "entry_text": [
                 "Un Pokémon rare aperçu lors d’une\n",
@@ -147,7 +147,7 @@
             ]
         },
         "de": {
-            "name": "RELICANTH",
+            "name": "Relicanth",
             "category": "Bestand",
             "entry_text": [
                 "Tiefseeforscher fanden dieses\n",
@@ -156,7 +156,7 @@
             ]
         },
         "it": {
-            "name": "RELICANTH",
+            "name": "Relicanth",
             "category": "Pokémon Longevità",
             "entry_text": [
                 "Un Pokémon raro scoperto durante\n",
@@ -165,7 +165,7 @@
             ]
         },
         "es": {
-            "name": "RELICANTH",
+            "name": "Relicanth",
             "category": "Pokémon Longevo",
             "entry_text": [
                 "Un Pokémon raro descubierto en una\n",

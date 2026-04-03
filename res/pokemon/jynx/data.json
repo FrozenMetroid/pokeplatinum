@@ -131,7 +131,7 @@
         "trainer_pos_m": 9,
         "pokemon_pos_m": 5,
         "en": {
-            "name": "JYNX",
+            "name": "Jynx",
             "category": "Human Shape Pokémon",
             "entry_text": [
                 "Its cries sound like human speech.\n",
@@ -140,7 +140,7 @@
             ]
         },
         "fr": {
-            "name": "LIPPOUTOU",
+            "name": "Lippoutou",
             "category": "Pokémon Humanoïde",
             "entry_text": [
                 "Son cri ressemble à des paroles\n",
@@ -149,7 +149,7 @@
             ]
         },
         "de": {
-            "name": "ROSSANA",
+            "name": "Rossana",
             "category": "Humanotyp",
             "entry_text": [
                 "Sein Ruf klingt wie menschliche\n",
@@ -158,7 +158,7 @@
             ]
         },
         "it": {
-            "name": "JYNX",
+            "name": "Jynx",
             "category": "Pokémon Umanoide",
             "entry_text": [
                 "Le sue grida ricordano il linguaggio\n",
@@ -167,7 +167,7 @@
             ]
         },
         "es": {
-            "name": "JYNX",
+            "name": "Jynx",
             "category": "Pokémon F. Humana",
             "entry_text": [
                 "Sus gritos se parecen al lenguaje\n",

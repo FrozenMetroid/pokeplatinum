@@ -134,7 +134,7 @@
         "trainer_pos_m": 9,
         "pokemon_pos_m": 18,
         "en": {
-            "name": "FURRET",
+            "name": "Furret",
             "category": "Long Body Pokémon",
             "entry_text": [
                 "The mother puts its offspring to\n",
@@ -143,7 +143,7 @@
             ]
         },
         "fr": {
-            "name": "FOUINAR",
+            "name": "Fouinar",
             "category": "Pokémon Allongé",
             "entry_text": [
                 "La femelle s’enroule autour des\n",
@@ -152,7 +152,7 @@
             ]
         },
         "de": {
-            "name": "WIESENIOR",
+            "name": "Wiesenior",
             "category": "Langleib",
             "entry_text": [
                 "Es rollt sich um seine Jungen, wenn\n",
@@ -161,7 +161,7 @@
             ]
         },
         "it": {
-            "name": "FURRET",
+            "name": "Furret",
             "category": "Pokémon Lungocorpo",
             "entry_text": [
                 "Si addormenta avvolto nell’esile\n",
@@ -170,7 +170,7 @@
             ]
         },
         "es": {
-            "name": "FURRET",
+            "name": "Furret",
             "category": "Pokémon Alargado",
             "entry_text": [
                 "Acurruca a sus crías para que\n",

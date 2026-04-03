@@ -125,7 +125,7 @@
         "trainer_pos_m": 9,
         "pokemon_pos_m": 65527,
         "en": {
-            "name": "CHINGLING",
+            "name": "Chingling",
             "category": "Bell Pokémon",
             "entry_text": [
                 "There is an orb inside its mouth.\n",
@@ -134,7 +134,7 @@
             ]
         },
         "fr": {
-            "name": "KORILLON",
+            "name": "Korillon",
             "category": "Pokémon Clochette",
             "entry_text": [
                 "Il émet des cris en agitant\n",
@@ -143,7 +143,7 @@
             ]
         },
         "de": {
-            "name": "KLINGPLIM",
+            "name": "Klingplim",
             "category": "Glöckchen",
             "entry_text": [
                 "Es ruft, indem es eine Kugel in\n",
@@ -152,7 +152,7 @@
             ]
         },
         "it": {
-            "name": "CHINGLING",
+            "name": "Chingling",
             "category": "Pokémon Sonaglio",
             "entry_text": [
                 "Emette versi muovendo la sfera\n",
@@ -161,7 +161,7 @@
             ]
         },
         "es": {
-            "name": "CHINGLING",
+            "name": "Chingling",
             "category": "Pokémon Campana",
             "entry_text": [
                 "Emite chillidos al agitar la esfera\n",

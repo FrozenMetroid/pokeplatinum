@@ -131,7 +131,7 @@
         "trainer_pos_m": 9,
         "pokemon_pos_m": 12,
         "en": {
-            "name": "CRAWDAUNT",
+            "name": "Crawdaunt",
             "category": "Rogue Pokémon",
             "entry_text": [
                 "It is a ruffian that uses its\n",
@@ -140,7 +140,7 @@
             ]
         },
         "fr": {
-            "name": "COLHOMARD",
+            "name": "Colhomard",
             "category": "Pokémon Crapule",
             "entry_text": [
                 "C’est un voyou qui utilise ses\n",
@@ -149,7 +149,7 @@
             ]
         },
         "de": {
-            "name": "KREBUTACK",
+            "name": "Krebutack",
             "category": "Schlingel",
             "entry_text": [
                 "Dieser Grobian ergreift andere PKMN\n",
@@ -158,7 +158,7 @@
             ]
         },
         "it": {
-            "name": "CRAWDAUNT",
+            "name": "Crawdaunt",
             "category": "Pokémon Canaglia",
             "entry_text": [
                 "Pokémon violento che afferra il\n",
@@ -167,7 +167,7 @@
             ]
         },
         "es": {
-            "name": "CRAWDAUNT",
+            "name": "Crawdaunt",
             "category": "Pokémon Granuja",
             "entry_text": [
                 "Este malandrín usa sus pinzas para\n",

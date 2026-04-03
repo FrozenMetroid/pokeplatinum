@@ -155,7 +155,7 @@
         "trainer_pos_m": 16,
         "pokemon_pos_m": 6,
         "en": {
-            "name": "MEWTWO",
+            "name": "Mewtwo",
             "category": "Genetic Pokémon",
             "entry_text": [
                 "A Pokémon created by recombining\n",
@@ -164,7 +164,7 @@
             ]
         },
         "fr": {
-            "name": "MEWTWO",
+            "name": "Mewtwo",
             "category": "Pokémon Génétique",
             "entry_text": [
                 "Un Pokémon conçu en réorganisant\n",
@@ -173,7 +173,7 @@
             ]
         },
         "de": {
-            "name": "MEWTU",
+            "name": "Mewtu",
             "category": "Genmutant",
             "entry_text": [
                 "Die Gene von MEW wurden neu\n",
@@ -182,7 +182,7 @@
             ]
         },
         "it": {
-            "name": "MEWTWO",
+            "name": "Mewtwo",
             "category": "Pokémon Genetico",
             "entry_text": [
                 "Un Pokémon creato usando i geni\n",
@@ -191,7 +191,7 @@
             ]
         },
         "es": {
-            "name": "MEWTWO",
+            "name": "Mewtwo",
             "category": "Pokémon Genético",
             "entry_text": [
                 "Pokémon creado por recombinación\n",

@@ -131,7 +131,7 @@
         "trainer_pos_m": 9,
         "pokemon_pos_m": 27,
         "en": {
-            "name": "MUDKIP",
+            "name": "Mudkip",
             "category": "Mud Fish Pokémon",
             "entry_text": [
                 "To alert it, the fin on its head\n",
@@ -140,7 +140,7 @@
             ]
         },
         "fr": {
-            "name": "GOBOU",
+            "name": "Gobou",
             "category": "Pokémon Poissonboue",
             "entry_text": [
                 "Il analyse le courant grâce à la\n",
@@ -149,7 +149,7 @@
             ]
         },
         "de": {
-            "name": "HYDROPI",
+            "name": "Hydropi",
             "category": "Lehmhüpfer",
             "entry_text": [
                 "Die Flosse auf seinem Kopf prüft\n",
@@ -158,7 +158,7 @@
             ]
         },
         "it": {
-            "name": "MUDKIP",
+            "name": "Mudkip",
             "category": "Pokémon Fango Pesce",
             "entry_text": [
                 "Con la pinna sulla testa percepi-\n",
@@ -167,7 +167,7 @@
             ]
         },
         "es": {
-            "name": "MUDKIP",
+            "name": "Mudkip",
             "category": "Pokémon Pez Lodo",
             "entry_text": [
                 "La aleta de su cabeza detecta las\n",

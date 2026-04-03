@@ -100,7 +100,7 @@
         "trainer_pos_m": 9,
         "pokemon_pos_m": 14,
         "en": {
-            "name": "VILEPLUME",
+            "name": "Vileplume",
             "category": "Flower Pokémon",
             "entry_text": [
                 "Its petals are the largest in the\n",
@@ -109,7 +109,7 @@
             ]
         },
         "fr": {
-            "name": "RAFFLESIA",
+            "name": "Rafflesia",
             "category": "Pokémon Fleur",
             "entry_text": [
                 "Ses pétales sont les plus grands\n",
@@ -118,7 +118,7 @@
             ]
         },
         "de": {
-            "name": "GIFLOR",
+            "name": "Giflor",
             "category": "Blume",
             "entry_text": [
                 "Es besitzt die größten Blätter der\n",
@@ -127,7 +127,7 @@
             ]
         },
         "it": {
-            "name": "VILEPLUME",
+            "name": "Vileplume",
             "category": "Pokémon Fiore",
             "entry_text": [
                 "I suoi petali sono i più grandi al\n",
@@ -136,7 +136,7 @@
             ]
         },
         "es": {
-            "name": "VILEPLUME",
+            "name": "Vileplume",
             "category": "Pokémon Flor",
             "entry_text": [
                 "Sus pétalos son los más grandes\n",

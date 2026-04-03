@@ -121,7 +121,7 @@
         "trainer_pos_m": 9,
         "pokemon_pos_m": 65532,
         "en": {
-            "name": "YANMEGA",
+            "name": "Yanmega",
             "category": "Ogre Darner Pokémon",
             "entry_text": [
                 "Its jaw power is incredible. It is\n",
@@ -130,7 +130,7 @@
             ]
         },
         "fr": {
-            "name": "YANMEGA",
+            "name": "Yanmega",
             "category": "Pokémon Libellogre",
             "entry_text": [
                 "Les ondes de choc qu’il génère\n",
@@ -139,7 +139,7 @@
             ]
         },
         "de": {
-            "name": "YANMEGA",
+            "name": "Yanmega",
             "category": "Agrion",
             "entry_text": [
                 "Durch die Bewegung seiner Flügel\n",
@@ -148,7 +148,7 @@
             ]
         },
         "it": {
-            "name": "YANMEGA",
+            "name": "Yanmega",
             "category": "Pokémon Libellorco",
             "entry_text": [
                 "Agitando le ali crea onde d’urto\n",
@@ -157,7 +157,7 @@
             ]
         },
         "es": {
-            "name": "YANMEGA",
+            "name": "Yanmega",
             "category": "Pokémon Libélula",
             "entry_text": [
                 "Agita sus alas para crear ondas\n",

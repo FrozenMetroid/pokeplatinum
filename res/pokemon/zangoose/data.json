@@ -149,7 +149,7 @@
         "trainer_pos_m": 9,
         "pokemon_pos_m": 8,
         "en": {
-            "name": "ZANGOOSE",
+            "name": "Zangoose",
             "category": "Cat Ferret Pokémon",
             "entry_text": [
                 "It has feuded with SEVIPER for\n",
@@ -158,7 +158,7 @@
             ]
         },
         "fr": {
-            "name": "MANGRIFF",
+            "name": "Mangriff",
             "category": "Pokémon Chat Furet",
             "entry_text": [
                 "C’est le rival de SEVIPER depuis\n",
@@ -167,7 +167,7 @@
             ]
         },
         "de": {
-            "name": "SENGO",
+            "name": "Sengo",
             "category": "Frettkatz",
             "entry_text": [
                 "Seit Generationen ist es mit\n",
@@ -176,7 +176,7 @@
             ]
         },
         "it": {
-            "name": "ZANGOOSE",
+            "name": "Zangoose",
             "category": "Pokémon Furogatto",
             "entry_text": [
                 "Da generazioni, è acerrimo nemico\n",
@@ -185,7 +185,7 @@
             ]
         },
         "es": {
-            "name": "ZANGOOSE",
+            "name": "Zangoose",
             "category": "Pokémon Gato Hurón",
             "entry_text": [
                 "Hace muchos años que se\n",

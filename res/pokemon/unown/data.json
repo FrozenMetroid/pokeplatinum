@@ -89,7 +89,7 @@
         "trainer_pos_m": 9,
         "pokemon_pos_m": 1,
         "en": {
-            "name": "UNOWN",
+            "name": "Unown",
             "category": "Symbol Pokémon",
             "entry_text": [
                 "When alone, nothing happens.\n",
@@ -98,7 +98,7 @@
             ]
         },
         "fr": {
-            "name": "ZARBI",
+            "name": "Zarbi",
             "category": "Pokémon Symbolique",
             "entry_text": [
                 "Il rappelle une écriture ancienne.\n",
@@ -107,7 +107,7 @@
             ]
         },
         "de": {
-            "name": "ICOGNITO",
+            "name": "Icognito",
             "category": "Symbol",
             "entry_text": [
                 "Seine Form sieht aus wie antike\n",
@@ -116,7 +116,7 @@
             ]
         },
         "it": {
-            "name": "UNOWN",
+            "name": "Unown",
             "category": "Pokémon Simbolo",
             "entry_text": [
                 "È a forma di lettera di un antico\n",
@@ -125,7 +125,7 @@
             ]
         },
         "es": {
-            "name": "UNOWN",
+            "name": "Unown",
             "category": "Pokémon Símbolo",
             "entry_text": [
                 "Tienen forma de letras antiguas.\n",

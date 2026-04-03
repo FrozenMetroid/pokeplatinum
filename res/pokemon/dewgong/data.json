@@ -115,7 +115,7 @@
         "trainer_pos_m": 5,
         "pokemon_pos_m": 1,
         "en": {
-            "name": "DEWGONG",
+            "name": "Dewgong",
             "category": "Sea Lion Pokémon",
             "entry_text": [
                 "In snow, the pure white coat\n",
@@ -124,7 +124,7 @@
             ]
         },
         "fr": {
-            "name": "LAMANTINE",
+            "name": "Lamantine",
             "category": "Pokémon Otarie",
             "entry_text": [
                 "Son corps est couvert d’un grand\n",
@@ -133,7 +133,7 @@
             ]
         },
         "de": {
-            "name": "JUGONG",
+            "name": "Jugong",
             "category": "Seehund",
             "entry_text": [
                 "Sein Körper ist mit einem weißen Fell\n",
@@ -142,7 +142,7 @@
             ]
         },
         "it": {
-            "name": "DEWGONG",
+            "name": "Dewgong",
             "category": "Pokémon Otaria",
             "entry_text": [
                 "Ha il corpo ricoperto da una\n",
@@ -151,7 +151,7 @@
             ]
         },
         "es": {
-            "name": "DEWGONG",
+            "name": "Dewgong",
             "category": "Pokémon León Mar.",
             "entry_text": [
                 "Está cubierto de un luminoso\n",

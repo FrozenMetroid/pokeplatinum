@@ -144,7 +144,7 @@
         "trainer_pos_m": 9,
         "pokemon_pos_m": 18,
         "en": {
-            "name": "SENTRET",
+            "name": "Sentret",
             "category": "Scout Pokémon",
             "entry_text": [
                 "It has a very nervous nature.\n",
@@ -153,7 +153,7 @@
             ]
         },
         "fr": {
-            "name": "FOUINETTE",
+            "name": "Fouinette",
             "category": "Pokémon Espion",
             "entry_text": [
                 "Ce Pokémon très nerveux\n",
@@ -162,7 +162,7 @@
             ]
         },
         "de": {
-            "name": "WIESOR",
+            "name": "Wiesor",
             "category": "Späher",
             "entry_text": [
                 "Ein sehr nervöses PKMN. Es steht\n",
@@ -171,7 +171,7 @@
             ]
         },
         "it": {
-            "name": "SENTRET",
+            "name": "Sentret",
             "category": "Pokémon Esplorante",
             "entry_text": [
                 "Ha un’indole alquanto nervosa. Sta\n",
@@ -180,7 +180,7 @@
             ]
         },
         "es": {
-            "name": "SENTRET",
+            "name": "Sentret",
             "category": "Pokémon Explorador",
             "entry_text": [
                 "Es de naturaleza nerviosa. Se alza\n",

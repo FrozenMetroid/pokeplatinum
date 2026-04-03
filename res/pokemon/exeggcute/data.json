@@ -133,7 +133,7 @@
         "trainer_pos_m": 9,
         "pokemon_pos_m": 28,
         "en": {
-            "name": "EXEGGCUTE",
+            "name": "Exeggcute",
             "category": "Egg Pokémon",
             "entry_text": [
                 "Its six eggs converse using\n",
@@ -142,7 +142,7 @@
             ]
         },
         "fr": {
-            "name": "NOEUNOEUF",
+            "name": "Noeunoeuf",
             "category": "Pokémon Oeuf",
             "entry_text": [
                 "Ces six œufs communiquent par\n",
@@ -151,7 +151,7 @@
             ]
         },
         "de": {
-            "name": "OWEI",
+            "name": "Owei",
             "category": "Ei",
             "entry_text": [
                 "Die sechs Eier kommunizieren\n",
@@ -160,7 +160,7 @@
             ]
         },
         "it": {
-            "name": "EXEGGCUTE",
+            "name": "Exeggcute",
             "category": "Pokémon Uovo",
             "entry_text": [
                 "Queste sei uova comunicano per\n",
@@ -169,7 +169,7 @@
             ]
         },
         "es": {
-            "name": "EXEGGCUTE",
+            "name": "Exeggcute",
             "category": "Pokémon Huevo",
             "entry_text": [
                 "Estos seis huevos se comunican por\n",

@@ -137,7 +137,7 @@
         "trainer_pos_m": 9,
         "pokemon_pos_m": 22,
         "en": {
-            "name": "TREECKO",
+            "name": "Treecko",
             "category": "Wood Gecko Pokémon",
             "entry_text": [
                 "The soles of its feet are covered\n",
@@ -146,7 +146,7 @@
             ]
         },
         "fr": {
-            "name": "ARCKO",
+            "name": "Arcko",
             "category": "Pokémon Bois Gecko",
             "entry_text": [
                 "Ses plantes de pieds sont\n",
@@ -155,7 +155,7 @@
             ]
         },
         "de": {
-            "name": "GECKARBOR",
+            "name": "Geckarbor",
             "category": "Waldgecko",
             "entry_text": [
                 "Seine Fußsohlen sind mit kleinen\n",
@@ -164,7 +164,7 @@
             ]
         },
         "it": {
-            "name": "TREECKO",
+            "name": "Treecko",
             "category": "Pokémon Legnogeco",
             "entry_text": [
                 "Le piante dei suoi piedi sono piene\n",
@@ -173,7 +173,7 @@
             ]
         },
         "es": {
-            "name": "TREECKO",
+            "name": "Treecko",
             "category": "Pokémon Geco Bosque",
             "entry_text": [
                 "Las plantas de sus pies tienen\n",

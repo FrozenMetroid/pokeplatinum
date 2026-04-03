@@ -133,7 +133,7 @@
         "trainer_pos_m": 9,
         "pokemon_pos_m": 6,
         "en": {
-            "name": "EXPLOUD",
+            "name": "Exploud",
             "category": "Loud Noise Pokémon",
             "entry_text": [
                 "Its howls can be heard over six\n",
@@ -142,7 +142,7 @@
             ]
         },
         "fr": {
-            "name": "BROUHABAM",
+            "name": "Brouhabam",
             "category": "Pokémon Bruit Sourd",
             "entry_text": [
                 "Son hurlement s’entend à 10 km\n",
@@ -151,7 +151,7 @@
             ]
         },
         "de": {
-            "name": "KRAWUMMS",
+            "name": "Krawumms",
             "category": "Krach",
             "entry_text": [
                 "Sein Heulen hört man in 10 km\n",
@@ -160,7 +160,7 @@
             ]
         },
         "it": {
-            "name": "EXPLOUD",
+            "name": "Exploud",
             "category": "Pokémon Fragore",
             "entry_text": [
                 "Le sue urla si sentono a 10 km di\n",
@@ -169,7 +169,7 @@
             ]
         },
         "es": {
-            "name": "EXPLOUD",
+            "name": "Exploud",
             "category": "Pokémon Escandaloso",
             "entry_text": [
                 "Su aullido se puede oír a 10 km.\n",

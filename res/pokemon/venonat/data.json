@@ -118,7 +118,7 @@
         "trainer_pos_m": 9,
         "pokemon_pos_m": 20,
         "en": {
-            "name": "VENONAT",
+            "name": "Venonat",
             "category": "Insect Pokémon",
             "entry_text": [
                 "Its big eyes are actually clusters\n",
@@ -127,7 +127,7 @@
             ]
         },
         "fr": {
-            "name": "MIMITOSS",
+            "name": "Mimitoss",
             "category": "Pokémon Vermine",
             "entry_text": [
                 "Ses grands yeux sont en fait\n",
@@ -136,7 +136,7 @@
             ]
         },
         "de": {
-            "name": "BLUZUK",
+            "name": "Bluzuk",
             "category": "Insekt",
             "entry_text": [
                 "Seine großen Augen bestehen aus\n",
@@ -145,7 +145,7 @@
             ]
         },
         "it": {
-            "name": "VENONAT",
+            "name": "Venonat",
             "category": "Pokémon Insetto",
             "entry_text": [
                 "I suoi grandi occhi sono in realtà\n",
@@ -154,7 +154,7 @@
             ]
         },
         "es": {
-            "name": "VENONAT",
+            "name": "Venonat",
             "category": "Pokémon Insecto",
             "entry_text": [
                 "Sus grandes ojos son en realidad\n",

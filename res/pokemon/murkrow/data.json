@@ -137,7 +137,7 @@
         "trainer_pos_m": 9,
         "pokemon_pos_m": 23,
         "en": {
-            "name": "MURKROW",
+            "name": "Murkrow",
             "category": "Darkness Pokémon",
             "entry_text": [
                 "If spotted, it will lure an unwary\n",
@@ -146,7 +146,7 @@
             ]
         },
         "fr": {
-            "name": "CORNEBRE",
+            "name": "Cornebre",
             "category": "Pokémon Obscurité",
             "entry_text": [
                 "On dit que rencontrer\n",
@@ -155,12 +155,12 @@
             ]
         },
         "de": {
-            "name": "KRAMURX",
+            "name": "Kramurx",
             "category": "Finsternis",
             "entry_text": [ "Sieht man dieses PKMN bei Nacht,\n", "sollen merkwürdige Dinge passieren." ]
         },
         "it": {
-            "name": "MURKROW",
+            "name": "Murkrow",
             "category": "Pokémon Oscurità",
             "entry_text": [
                 "Si dice che l’incontro notturno\n",
@@ -169,7 +169,7 @@
             ]
         },
         "es": {
-            "name": "MURKROW",
+            "name": "Murkrow",
             "category": "Pokémon Oscuridad",
             "entry_text": [
                 "Se dice que ver a este Pokémon\n",

@@ -116,7 +116,7 @@
         "trainer_pos_m": 9,
         "pokemon_pos_m": 10,
         "en": {
-            "name": "VAPOREON",
+            "name": "Vaporeon",
             "category": "Bubble Jet Pokémon",
             "entry_text": [
                 "Its cell composition is similar\n",
@@ -125,7 +125,7 @@
             ]
         },
         "fr": {
-            "name": "AQUALI",
+            "name": "Aquali",
             "category": "Pokémon Bulleur",
             "entry_text": [
                 "Il a évolué pour s’adapter au milieu\n",
@@ -134,7 +134,7 @@
             ]
         },
         "de": {
-            "name": "AQUANA",
+            "name": "Aquana",
             "category": "Blubblase",
             "entry_text": [
                 "Es hat sich so entwickelt, dass es\n",
@@ -143,7 +143,7 @@
             ]
         },
         "it": {
-            "name": "VAPOREON",
+            "name": "Vaporeon",
             "category": "Pokémon Bollajet",
             "entry_text": [
                 "Si è evoluto per adattarsi alla vita\n",
@@ -152,7 +152,7 @@
             ]
         },
         "es": {
-            "name": "VAPOREON",
+            "name": "Vaporeon",
             "category": "Pokémon Burbuja",
             "entry_text": [
                 "Ha evolucionado para adaptarse a\n",

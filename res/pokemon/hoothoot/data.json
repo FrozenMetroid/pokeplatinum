@@ -132,7 +132,7 @@
         "trainer_pos_m": 9,
         "pokemon_pos_m": 21,
         "en": {
-            "name": "HOOTHOOT",
+            "name": "Hoothoot",
             "category": "Owl Pokémon",
             "entry_text": [
                 "It marks time precisely. Some\n",
@@ -141,7 +141,7 @@
             ]
         },
         "fr": {
-            "name": "HOOTHOOT",
+            "name": "Hoothoot",
             "category": "Pokémon Hibou",
             "entry_text": [
                 "Il se tient toujours sur un pied. Il\n",
@@ -150,7 +150,7 @@
             ]
         },
         "de": {
-            "name": "HOOTHOOT",
+            "name": "Hoothoot",
             "category": "Eule",
             "entry_text": [
                 "Es steht ständig auf einem Fuß.\n",
@@ -159,7 +159,7 @@
             ]
         },
         "it": {
-            "name": "HOOTHOOT",
+            "name": "Hoothoot",
             "category": "Pokémon Gufo",
             "entry_text": [
                 "Sta sempre ritto su un piede solo\n",
@@ -168,7 +168,7 @@
             ]
         },
         "es": {
-            "name": "HOOTHOOT",
+            "name": "Hoothoot",
             "category": "Pokémon Búho",
             "entry_text": [
                 "Siempre se yergue sobre una pata.\n",

@@ -141,7 +141,7 @@
         "trainer_pos_m": 9,
         "pokemon_pos_m": 26,
         "en": {
-            "name": "MEOWTH",
+            "name": "Meowth",
             "category": "Scratch Cat Pokémon",
             "entry_text": [
                 "It is nocturnal in nature. If it\n",
@@ -150,7 +150,7 @@
             ]
         },
         "fr": {
-            "name": "MIAOUSS",
+            "name": "Miaouss",
             "category": "Pokémon Chadégout",
             "entry_text": [
                 "Son regard s’anime à la vue\n",
@@ -159,7 +159,7 @@
             ]
         },
         "de": {
-            "name": "MAUZI",
+            "name": "Mauzi",
             "category": "Katze",
             "entry_text": [
                 "Ein nachtaktives Pokémon. Sieht es\n",
@@ -168,7 +168,7 @@
             ]
         },
         "it": {
-            "name": "MEOWTH",
+            "name": "Meowth",
             "category": "Pokémon Graffimiao",
             "entry_text": [
                 "È un Pokémon attivo di notte.\n",
@@ -177,7 +177,7 @@
             ]
         },
         "es": {
-            "name": "MEOWTH",
+            "name": "Meowth",
             "category": "Pokémon Gato Araña",
             "entry_text": [ "Es de naturaleza nocturna.\n", "Le atraen los objetos brillantes." ]
         },

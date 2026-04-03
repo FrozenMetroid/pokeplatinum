@@ -125,7 +125,7 @@
         "trainer_pos_m": 9,
         "pokemon_pos_m": 15,
         "en": {
-            "name": "SANDSLASH",
+            "name": "Sandslash",
             "category": "Mouse Pokémon",
             "entry_text": [
                 "It curls up, then rolls into foes\n",
@@ -134,7 +134,7 @@
             ]
         },
         "fr": {
-            "name": "SABLAIREAU",
+            "name": "Sablaireau",
             "category": "Pokémon Souris",
             "entry_text": [
                 "Il se met en boule pour percuter\n",
@@ -143,7 +143,7 @@
             ]
         },
         "de": {
-            "name": "SANDAMER",
+            "name": "Sandamer",
             "category": "Maus",
             "entry_text": [
                 "Es rollt sich zusammen und rollt\n",
@@ -152,7 +152,7 @@
             ]
         },
         "it": {
-            "name": "SANDSLASH",
+            "name": "Sandslash",
             "category": "Pokémon Topo",
             "entry_text": [
                 "Si arrotola come una palla e rotola\n",
@@ -161,7 +161,7 @@
             ]
         },
         "es": {
-            "name": "SANDSLASH",
+            "name": "Sandslash",
             "category": "Pokémon Ratón",
             "entry_text": [
                 "Se hace una bola y se lanza\n",

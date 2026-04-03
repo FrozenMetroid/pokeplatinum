@@ -141,7 +141,7 @@
         "trainer_pos_m": 15,
         "pokemon_pos_m": 4,
         "en": {
-            "name": "SLOWKING",
+            "name": "Slowking",
             "category": "Royal Pokémon",
             "entry_text": [
                 "Being bitten by SHELLDER gave it\n",
@@ -150,7 +150,7 @@
             ]
         },
         "fr": {
-            "name": "ROIGADA",
+            "name": "Roigada",
             "category": "Pokémon Royal",
             "entry_text": [
                 "La morsure de KOKIYAS a fait\n",
@@ -159,7 +159,7 @@
             ]
         },
         "de": {
-            "name": "LASCHOKING",
+            "name": "Laschoking",
             "category": "Monarch",
             "entry_text": [
                 "Wird es von MUSCHAS gebissen, wird\n",
@@ -168,7 +168,7 @@
             ]
         },
         "it": {
-            "name": "SLOWKING",
+            "name": "Slowking",
             "category": "Pokémon Reale",
             "entry_text": [
                 "Il morso di SHELLDER gli ha infuso\n",
@@ -177,7 +177,7 @@
             ]
         },
         "es": {
-            "name": "SLOWKING",
+            "name": "Slowking",
             "category": "Pokémon Regio",
             "entry_text": [
                 "Al ser mordido por un SHELLDER\n",

@@ -125,7 +125,7 @@
         "trainer_pos_m": 9,
         "pokemon_pos_m": 20,
         "en": {
-            "name": "GROWLITHE",
+            "name": "Growlithe",
             "category": "Puppy Pokémon",
             "entry_text": [
                 "A Pokémon with a loyal nature.\n",
@@ -134,7 +134,7 @@
             ]
         },
         "fr": {
-            "name": "CANINOS",
+            "name": "Caninos",
             "category": "Pokémon Chiot",
             "entry_text": [
                 "Un Pokémon très loyal. Il\n",
@@ -143,7 +143,7 @@
             ]
         },
         "de": {
-            "name": "FUKANO",
+            "name": "Fukano",
             "category": "Hund",
             "entry_text": [
                 "Ein loyales Pokémon. Es wird erst\n",
@@ -152,7 +152,7 @@
             ]
         },
         "it": {
-            "name": "GROWLITHE",
+            "name": "Growlithe",
             "category": "Pokémon Cagnolino",
             "entry_text": [
                 "Un Pokémon fedele per natura.\n",
@@ -161,7 +161,7 @@
             ]
         },
         "es": {
-            "name": "GROWLITHE",
+            "name": "Growlithe",
             "category": "Pokémon Perrito",
             "entry_text": [
                 "Pokémon de naturaleza leal.\n",

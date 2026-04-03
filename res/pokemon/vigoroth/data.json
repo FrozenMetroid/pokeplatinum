@@ -131,7 +131,7 @@
         "trainer_pos_m": 9,
         "pokemon_pos_m": 1,
         "en": {
-            "name": "VIGOROTH",
+            "name": "Vigoroth",
             "category": "Wild Monkey Pokémon",
             "entry_text": [
                 "Its heart beats at a tenfold\n",
@@ -140,7 +140,7 @@
             ]
         },
         "fr": {
-            "name": "VIGOROTH",
+            "name": "Vigoroth",
             "category": "Pokémon Turbusinge",
             "entry_text": [
                 "Son cœur bat dix fois plus vite que\n",
@@ -149,7 +149,7 @@
             ]
         },
         "de": {
-            "name": "MUNTIER",
+            "name": "Muntier",
             "category": "Wildaffe",
             "entry_text": [
                 "Sein Herz schlägt schneller als das\n",
@@ -158,7 +158,7 @@
             ]
         },
         "it": {
-            "name": "VIGOROTH",
+            "name": "Vigoroth",
             "category": "Pokémon Indocile",
             "entry_text": [
                 "Il suo cuore batte 10 volte più\n",
@@ -167,7 +167,7 @@
             ]
         },
         "es": {
-            "name": "VIGOROTH",
+            "name": "Vigoroth",
             "category": "Pokémon Mono Feroz",
             "entry_text": [
                 "Su corazón late a un ritmo diez\n",

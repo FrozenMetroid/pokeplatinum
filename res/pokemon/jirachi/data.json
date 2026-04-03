@@ -137,7 +137,7 @@
         "trainer_pos_m": 9,
         "pokemon_pos_m": 65518,
         "en": {
-            "name": "JIRACHI",
+            "name": "Jirachi",
             "category": "Wish Pokémon",
             "entry_text": [
                 "It is said to have the ability to\n",
@@ -146,7 +146,7 @@
             ]
         },
         "fr": {
-            "name": "JIRACHI",
+            "name": "Jirachi",
             "category": "Pokémon Souhait",
             "entry_text": [
                 "On raconte qu’une fois tous les\n",
@@ -155,7 +155,7 @@
             ]
         },
         "de": {
-            "name": "JIRACHI",
+            "name": "Jirachi",
             "category": "Wünscher",
             "entry_text": [
                 "Man sagt, es kann alle tausend\n",
@@ -164,7 +164,7 @@
             ]
         },
         "it": {
-            "name": "JIRACHI",
+            "name": "Jirachi",
             "category": "Pokémon Desiderio",
             "entry_text": [
                 "Ha l’abilità di realizzare ogni\n",
@@ -173,7 +173,7 @@
             ]
         },
         "es": {
-            "name": "JIRACHI",
+            "name": "Jirachi",
             "category": "Pokémon Deseo",
             "entry_text": [
                 "Se dice que puede otorgar\n",

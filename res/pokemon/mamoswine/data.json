@@ -124,7 +124,7 @@
         "trainer_pos_m": 18,
         "pokemon_pos_m": 5,
         "en": {
-            "name": "MAMOSWINE",
+            "name": "Mamoswine",
             "category": "Twin Tusk Pokémon",
             "entry_text": [
                 "A frozen one was dug up from\n",
@@ -133,7 +133,7 @@
             ]
         },
         "fr": {
-            "name": "MAMMOCHON",
+            "name": "Mammochon",
             "category": "Pokémon Deudéfenses",
             "entry_text": [
                 "Ses défenses spectaculaires sont\n",
@@ -142,7 +142,7 @@
             ]
         },
         "de": {
-            "name": "MAMUTEL",
+            "name": "Mamutel",
             "category": "Doppelstoßzahn",
             "entry_text": [
                 "Die beeindruckenden Stoßzähne\n",
@@ -151,7 +151,7 @@
             ]
         },
         "it": {
-            "name": "MAMOSWINE",
+            "name": "Mamoswine",
             "category": "Pokémon Duezanne",
             "entry_text": [
                 "Ha enormi zanne di ghiaccio. La\n",
@@ -160,7 +160,7 @@
             ]
         },
         "es": {
-            "name": "MAMOSWINE",
+            "name": "Mamoswine",
             "category": "Pokémon 2colmillos",
             "entry_text": [
                 "Sus impresionantes colmillos están\n",

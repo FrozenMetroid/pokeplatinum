@@ -126,7 +126,7 @@
         "trainer_pos_m": 9,
         "pokemon_pos_m": 10,
         "en": {
-            "name": "CACTURNE",
+            "name": "Cacturne",
             "category": "Scarecrow Pokémon",
             "entry_text": [
                 "It becomes active at night,\n",
@@ -135,7 +135,7 @@
             ]
         },
         "fr": {
-            "name": "CACTURNE",
+            "name": "Cacturne",
             "category": "Pokémon Epouvantail",
             "entry_text": [
                 "Il sort la nuit pour chasser. Il\n",
@@ -144,7 +144,7 @@
             ]
         },
         "de": {
-            "name": "NOKTUSKA",
+            "name": "Noktuska",
             "category": "Vogelschock",
             "entry_text": [
                 "Ein nachtaktives PKMN, das Beute\n",
@@ -153,7 +153,7 @@
             ]
         },
         "it": {
-            "name": "CACTURNE",
+            "name": "Cacturne",
             "category": "Pokémon Spavento",
             "entry_text": [
                 "Diventa attivo di notte, quando va\n",
@@ -162,7 +162,7 @@
             ]
         },
         "es": {
-            "name": "CACTURNE",
+            "name": "Cacturne",
             "category": "Pokémon Espantajo",
             "entry_text": [
                 "Es un Pokémon nocturno. Busca\n",

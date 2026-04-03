@@ -129,7 +129,7 @@
         "trainer_pos_m": 9,
         "pokemon_pos_m": 29,
         "en": {
-            "name": "CLEFFA",
+            "name": "Cleffa",
             "category": "Star Shape Pokémon",
             "entry_text": [
                 "It is often seen when shooting\n",
@@ -138,7 +138,7 @@
             ]
         },
         "fr": {
-            "name": "MELO",
+            "name": "Melo",
             "category": "Pokémon Etoile",
             "entry_text": [
                 "Sa silhouette rappelle une étoile.\n",
@@ -147,7 +147,7 @@
             ]
         },
         "de": {
-            "name": "PII",
+            "name": "Pii",
             "category": "Sternform",
             "entry_text": [
                 "Seine Silhouette sieht aus wie ein\n",
@@ -156,7 +156,7 @@
             ]
         },
         "it": {
-            "name": "CLEFFA",
+            "name": "Cleffa",
             "category": "Pokémon Stella",
             "entry_text": [
                 "La sua sagoma ricorda quella di\n",
@@ -165,7 +165,7 @@
             ]
         },
         "es": {
-            "name": "CLEFFA",
+            "name": "Cleffa",
             "category": "Pokémon Estrellada",
             "entry_text": [
                 "Tiene forma de estrella. Se cree\n",

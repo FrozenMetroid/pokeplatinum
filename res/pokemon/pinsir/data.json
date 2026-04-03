@@ -127,7 +127,7 @@
         "trainer_pos_m": 9,
         "pokemon_pos_m": 5,
         "en": {
-            "name": "PINSIR",
+            "name": "Pinsir",
             "category": "Stag Beetle Pokémon",
             "entry_text": [
                 "It grips prey with its pincers\n",
@@ -136,7 +136,7 @@
             ]
         },
         "fr": {
-            "name": "SCARABRUTE",
+            "name": "Scarabrute",
             "category": "Pokémon Scarabée",
             "entry_text": [
                 "Il serre les proies dans ses pinces\n",
@@ -145,7 +145,7 @@
             ]
         },
         "de": {
-            "name": "PINSIR",
+            "name": "Pinsir",
             "category": "Kneifkäfer",
             "entry_text": [
                 "Es hält seine Beute mit seiner\n",
@@ -154,7 +154,7 @@
             ]
         },
         "it": {
-            "name": "PINSIR",
+            "name": "Pinsir",
             "category": "Pokémon Cervolante",
             "entry_text": [
                 "Afferra la preda con le pinze e non\n",
@@ -163,7 +163,7 @@
             ]
         },
         "es": {
-            "name": "PINSIR",
+            "name": "Pinsir",
             "category": "Pokémon Escarabajo",
             "entry_text": [
                 "Atrapa presas con sus pinzas\n",

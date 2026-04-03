@@ -110,7 +110,7 @@
         "trainer_pos_m": 10,
         "pokemon_pos_m": 3,
         "en": {
-            "name": "HIPPOWDON",
+            "name": "Hippowdon",
             "category": "Heavyweight Pokémon",
             "entry_text": [
                 "It is surprisingly quick to anger.\n",
@@ -119,7 +119,7 @@
             ]
         },
         "fr": {
-            "name": "HIPPODOCUS",
+            "name": "Hippodocus",
             "category": "Pokémon Poids Lourd",
             "entry_text": [
                 "Il emmagasine du sable qu’il\n",
@@ -128,7 +128,7 @@
             ]
         },
         "de": {
-            "name": "HIPPOTERUS",
+            "name": "Hippoterus",
             "category": "Schwergewicht",
             "entry_text": [
                 "Es wirbelt im Körper gespeicherten\n",
@@ -137,7 +137,7 @@
             ]
         },
         "it": {
-            "name": "HIPPOWDON",
+            "name": "Hippowdon",
             "category": "Pokémon Grandepeso",
             "entry_text": [
                 "Immagazzina sabbia all’interno del\n",
@@ -146,7 +146,7 @@
             ]
         },
         "es": {
-            "name": "HIPPOWDON",
+            "name": "Hippowdon",
             "category": "Pokémon Peso Pesado",
             "entry_text": [
                 "Cuando ataca, expulsa arena\n",

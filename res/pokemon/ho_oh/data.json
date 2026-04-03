@@ -136,7 +136,7 @@
         "trainer_pos_m": 21,
         "pokemon_pos_m": 0,
         "en": {
-            "name": "HO-OH",
+            "name": "Ho-Oh",
             "category": "Rainbow Pokémon",
             "entry_text": [
                 "Its feathers are in seven colors.\n",
@@ -145,7 +145,7 @@
             ]
         },
         "fr": {
-            "name": "HO-OH",
+            "name": "Ho-Oh",
             "category": "Pokémon Arcenciel",
             "entry_text": [
                 "Ses plumes possèdent sept \n",
@@ -154,7 +154,7 @@
             ]
         },
         "de": {
-            "name": "HO-OH",
+            "name": "Ho-Oh",
             "category": "Regenbogen",
             "entry_text": [
                 "Seine Federn besitzen 7 Farben.\n",
@@ -163,7 +163,7 @@
             ]
         },
         "it": {
-            "name": "HO-OH",
+            "name": "Ho-Oh",
             "category": "Pokémon Arcobaleno",
             "entry_text": [
                 "Le sue piume sono di sette colori.\n",
@@ -172,7 +172,7 @@
             ]
         },
         "es": {
-            "name": "HO-OH",
+            "name": "Ho-Oh",
             "category": "Pokémon Arco Iris",
             "entry_text": [
                 "Su plumaje tiene siete colores.\n",

@@ -143,7 +143,7 @@
         "trainer_pos_m": 9,
         "pokemon_pos_m": 25,
         "en": {
-            "name": "MEDITITE",
+            "name": "Meditite",
             "category": "Meditate Pokémon",
             "entry_text": [
                 "It always trains deep in mountains.\n",
@@ -152,7 +152,7 @@
             ]
         },
         "fr": {
-            "name": "MEDITIKKA",
+            "name": "Meditikka",
             "category": "Pokémon Méditation",
             "entry_text": [
                 "Il ne mange qu’une Baie par jour.\n",
@@ -161,7 +161,7 @@
             ]
         },
         "de": {
-            "name": "MEDITIE",
+            "name": "Meditie",
             "category": "Meditation",
             "entry_text": [
                 "Es isst gerade mal eine Beere am\n",
@@ -170,7 +170,7 @@
             ]
         },
         "it": {
-            "name": "MEDITITE",
+            "name": "Meditite",
             "category": "Pokémon Meditazione",
             "entry_text": [
                 "Mangia solo una bacca al giorno.\n",
@@ -179,7 +179,7 @@
             ]
         },
         "es": {
-            "name": "MEDITITE",
+            "name": "Meditite",
             "category": "Pokémon Meditador",
             "entry_text": [
                 "Solo come una baya al día. El\n",

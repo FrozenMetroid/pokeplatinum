@@ -124,7 +124,7 @@
         "trainer_pos_m": 9,
         "pokemon_pos_m": 23,
         "en": {
-            "name": "ELECTRIKE",
+            "name": "Electrike",
             "category": "Lightning Pokémon",
             "entry_text": [
                 "Using electricity stored in its fur,\n",
@@ -133,7 +133,7 @@
             ]
         },
         "fr": {
-            "name": "DYNAVOLT",
+            "name": "Dynavolt",
             "category": "Pokémon Orage",
             "entry_text": [
                 "Il améliore ses réflexes en\n",
@@ -142,7 +142,7 @@
             ]
         },
         "de": {
-            "name": "FRIZELBLIZ",
+            "name": "Frizelbliz",
             "category": "Gewitter",
             "entry_text": [
                 "Die Elektrizität, die es im Fell\n",
@@ -151,7 +151,7 @@
             ]
         },
         "it": {
-            "name": "ELECTRIKE",
+            "name": "Electrike",
             "category": "Pokémon Lampo",
             "entry_text": [
                 "L’elettricità immagazzinata nella\n",
@@ -160,7 +160,7 @@
             ]
         },
         "es": {
-            "name": "ELECTRIKE",
+            "name": "Electrike",
             "category": "Pokémon Calambre",
             "entry_text": [
                 "Estimula sus músculos y aumenta\n",

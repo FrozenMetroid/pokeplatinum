@@ -129,7 +129,7 @@
         "trainer_pos_m": 9,
         "pokemon_pos_m": 7,
         "en": {
-            "name": "ALAKAZAM",
+            "name": "Alakazam",
             "category": "Psi Pokémon",
             "entry_text": [
                 "The spoons clutched in its hands\n",
@@ -138,7 +138,7 @@
             ]
         },
         "fr": {
-            "name": "ALAKAZAM",
+            "name": "Alakazam",
             "category": "Pokémon Psy",
             "entry_text": [
                 "Grâce à sa mémoire exceptionnelle,\n",
@@ -147,7 +147,7 @@
             ]
         },
         "de": {
-            "name": "SIMSALA",
+            "name": "Simsala",
             "category": "Psi",
             "entry_text": [
                 "Es besitzt ein fantastisches Ge-\n",
@@ -156,7 +156,7 @@
             ]
         },
         "it": {
-            "name": "ALAKAZAM",
+            "name": "Alakazam",
             "category": "Pokémon Psico",
             "entry_text": [
                 "La sua incredibile memoria gli\n",
@@ -165,7 +165,7 @@
             ]
         },
         "es": {
-            "name": "ALAKAZAM",
+            "name": "Alakazam",
             "category": "Pokémon Psi",
             "entry_text": [
                 "Su gran memoria le permite\n",

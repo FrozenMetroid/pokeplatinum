@@ -115,7 +115,7 @@
         "trainer_pos_m": 9,
         "pokemon_pos_m": 65532,
         "en": {
-            "name": "VESPIQUEN",
+            "name": "Vespiquen",
             "category": "Beehive Pokémon",
             "entry_text": [
                 "It releases various pheromones\n",
@@ -124,7 +124,7 @@
             ]
         },
         "fr": {
-            "name": "APIREINE",
+            "name": "Apireine",
             "category": "Pokémon Ruche",
             "entry_text": [
                 "Son abdomen est un rayon où\n",
@@ -133,7 +133,7 @@
             ]
         },
         "de": {
-            "name": "HONWEISEL",
+            "name": "Honweisel",
             "category": "Bienenstock",
             "entry_text": [
                 "Ihr Bauch ist die Wabe für die\n",
@@ -142,7 +142,7 @@
             ]
         },
         "it": {
-            "name": "VESPIQUEN",
+            "name": "Vespiquen",
             "category": "Pokémon Alveare",
             "entry_text": [
                 "Il suo addome funge da rifugio per\n",
@@ -151,7 +151,7 @@
             ]
         },
         "es": {
-            "name": "VESPIQUEN",
+            "name": "Vespiquen",
             "category": "Pokémon Colmena",
             "entry_text": [
                 "Su abdomen es un panal de larvas\n",

@@ -114,7 +114,7 @@
         "trainer_pos_m": 9,
         "pokemon_pos_m": 18,
         "en": {
-            "name": "PARASECT",
+            "name": "Parasect",
             "category": "Mushroom Pokémon",
             "entry_text": [
                 "A mushroom grown larger than the\n",
@@ -123,7 +123,7 @@
             ]
         },
         "fr": {
-            "name": "PARASECT",
+            "name": "Parasect",
             "category": "Pokémon Champignon",
             "entry_text": [
                 "Un champignon parasite plus gros\n",
@@ -132,7 +132,7 @@
             ]
         },
         "de": {
-            "name": "PARASEK",
+            "name": "Parasek",
             "category": "Pilz",
             "entry_text": [
                 "PARASEK wird von einem Pilz, der\n",
@@ -141,7 +141,7 @@
             ]
         },
         "it": {
-            "name": "PARASECT",
+            "name": "Parasect",
             "category": "Pokémon Fungo",
             "entry_text": [
                 "PARASECT è controllato da un fungo\n",
@@ -150,7 +150,7 @@
             ]
         },
         "es": {
-            "name": "PARASECT",
+            "name": "Parasect",
             "category": "Pokémon Hongo",
             "entry_text": [
                 "PARASECT está dominado por un\n",

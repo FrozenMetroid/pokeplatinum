@@ -127,7 +127,7 @@
         "trainer_pos_m": 16,
         "pokemon_pos_m": 0,
         "en": {
-            "name": "TORTERRA",
+            "name": "Torterra",
             "category": "Continent Pokémon",
             "entry_text": [
                 "Some Pokémon are born on a\n",
@@ -136,7 +136,7 @@
             ]
         },
         "fr": {
-            "name": "TORTERRA",
+            "name": "Torterra",
             "category": "Pokémon Continent",
             "entry_text": [
                 "Il arrive que de petits Pokémon\n",
@@ -145,7 +145,7 @@
             ]
         },
         "de": {
-            "name": "CHELTERRAR",
+            "name": "Chelterrar",
             "category": "Kontinent",
             "entry_text": [
                 "Kleine PKMN fangen manchmal an,\n",
@@ -154,7 +154,7 @@
             ]
         },
         "it": {
-            "name": "TORTERRA",
+            "name": "Torterra",
             "category": "Pokémon Continente",
             "entry_text": [
                 "Piccoli Pokémon si radunano\n",
@@ -163,7 +163,7 @@
             ]
         },
         "es": {
-            "name": "TORTERRA",
+            "name": "Torterra",
             "category": "Pokémon Continente",
             "entry_text": [
                 "Algunos Pokémon pequeños\n",

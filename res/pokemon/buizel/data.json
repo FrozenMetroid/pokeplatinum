@@ -125,7 +125,7 @@
         "trainer_pos_m": 9,
         "pokemon_pos_m": 23,
         "en": {
-            "name": "BUIZEL",
+            "name": "Buizel",
             "category": "Sea Weasel Pokémon",
             "entry_text": [
                 "It spins its two tails like a screw\n",
@@ -134,7 +134,7 @@
             ]
         },
         "fr": {
-            "name": "MUSTEBOUEE",
+            "name": "Mustebouee",
             "category": "Pokémon Aquabelette",
             "entry_text": [
                 "Sa bouée est pareille à un\n",
@@ -143,7 +143,7 @@
             ]
         },
         "de": {
-            "name": "BAMELIN",
+            "name": "Bamelin",
             "category": "Meereswiesel",
             "entry_text": [
                 "Es hat eine Art Rettungsring um\n",
@@ -152,7 +152,7 @@
             ]
         },
         "it": {
-            "name": "BUIZEL",
+            "name": "Buizel",
             "category": "Pokémon Maridonnola",
             "entry_text": [
                 "Ha un collare che funge da galleg-\n",
@@ -161,7 +161,7 @@
             ]
         },
         "es": {
-            "name": "BUIZEL",
+            "name": "Buizel",
             "category": "Pokémon Nutria Mar.",
             "entry_text": [
                 "Posee un flotador en forma de\n",

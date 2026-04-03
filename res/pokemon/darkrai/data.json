@@ -138,7 +138,7 @@
         "trainer_pos_m": 9,
         "pokemon_pos_m": 4,
         "en": {
-            "name": "DARKRAI",
+            "name": "Darkrai",
             "category": "Pitch-Black Pokémon",
             "entry_text": [
                 "To protect itself, it afflicts those\n",
@@ -147,7 +147,7 @@
             ]
         },
         "fr": {
-            "name": "DARKRAI",
+            "name": "Darkrai",
             "category": "Pokémon Noirtotal",
             "entry_text": [
                 "Il a la capacité de bercer les gens\n",
@@ -156,7 +156,7 @@
             ]
         },
         "de": {
-            "name": "DARKRAI",
+            "name": "Darkrai",
             "category": "Dunkelnacht",
             "entry_text": [
                 "Es kann andere in Schlaf ver-\n",
@@ -165,7 +165,7 @@
             ]
         },
         "it": {
-            "name": "DARKRAI",
+            "name": "Darkrai",
             "category": "Pokémon Neropesto",
             "entry_text": [
                 "Ha l’abilità di far addormentare la\n",
@@ -174,7 +174,7 @@
             ]
         },
         "es": {
-            "name": "DARKRAI",
+            "name": "Darkrai",
             "category": "Pokémon Oscuridad",
             "entry_text": [
                 "Puede adormecer a la gente\n",

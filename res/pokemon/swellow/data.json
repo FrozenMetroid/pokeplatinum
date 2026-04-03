@@ -109,7 +109,7 @@
         "trainer_pos_m": 9,
         "pokemon_pos_m": 65531,
         "en": {
-            "name": "SWELLOW",
+            "name": "Swellow",
             "category": "Swallow Pokémon",
             "entry_text": [
                 "It circles the sky in search of\n",
@@ -118,7 +118,7 @@
             ]
         },
         "fr": {
-            "name": "HELEDELLE",
+            "name": "Heledelle",
             "category": "Pokémon Hirondelle",
             "entry_text": [
                 "Il vole en cercle en quête d’une\n",
@@ -127,7 +127,7 @@
             ]
         },
         "de": {
-            "name": "SCHWALBOSS",
+            "name": "Schwalboss",
             "category": "Schwalbe",
             "entry_text": [
                 "Es fliegt auf der Suche nach Beute\n",
@@ -136,7 +136,7 @@
             ]
         },
         "it": {
-            "name": "SWELLOW",
+            "name": "Swellow",
             "category": "Pokémon Rondine",
             "entry_text": [
                 "Vola in tondo alla ricerca di prede.\n",
@@ -145,7 +145,7 @@
             ]
         },
         "es": {
-            "name": "SWELLOW",
+            "name": "Swellow",
             "category": "Pokémon Buche",
             "entry_text": [
                 "Vuela en círculos en busca de\n",

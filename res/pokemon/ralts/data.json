@@ -140,7 +140,7 @@
         "trainer_pos_m": 9,
         "pokemon_pos_m": 26,
         "en": {
-            "name": "RALTS",
+            "name": "Ralts",
             "category": "Feeling Pokémon",
             "entry_text": [
                 "If its horns capture the warm\n",
@@ -149,7 +149,7 @@
             ]
         },
         "fr": {
-            "name": "TARSAL",
+            "name": "Tarsal",
             "category": "Pokémon Sentiment",
             "entry_text": [
                 "Il perçoit les émotions humaines\n",
@@ -158,7 +158,7 @@
             ]
         },
         "de": {
-            "name": "TRASLA",
+            "name": "Trasla",
             "category": "Gefühl",
             "entry_text": [
                 "Mit dem Horn kann es menschliche\n",
@@ -167,7 +167,7 @@
             ]
         },
         "it": {
-            "name": "RALTS",
+            "name": "Ralts",
             "category": "Pokémon Sensazione",
             "entry_text": [
                 "Percepisce gli stati d’animo delle\n",
@@ -176,7 +176,7 @@
             ]
         },
         "es": {
-            "name": "RALTS",
+            "name": "Ralts",
             "category": "Pokémon Sensible",
             "entry_text": [
                 "Su cuerno le permite presentir\n",

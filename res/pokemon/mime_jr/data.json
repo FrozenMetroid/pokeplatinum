@@ -148,7 +148,7 @@
         "trainer_pos_m": 9,
         "pokemon_pos_m": 24,
         "en": {
-            "name": "MIME JR.",
+            "name": "Mime Jr.",
             "category": "Mime Pokémon",
             "entry_text": [
                 "It mimics the expressions and\n",
@@ -157,7 +157,7 @@
             ]
         },
         "fr": {
-            "name": "MIME JR.",
+            "name": "Mime Jr.",
             "category": "Pokémon Mime",
             "entry_text": [
                 "Il imite ses ennemis. Une fois\n",
@@ -166,7 +166,7 @@
             ]
         },
         "de": {
-            "name": "PANTIMIMI",
+            "name": "Pantimimi",
             "category": "Mime",
             "entry_text": [
                 "Es ahmt seinen Gegner nach. Der\n",
@@ -175,7 +175,7 @@
             ]
         },
         "it": {
-            "name": "MIME JR.",
+            "name": "Mime Jr.",
             "category": "Pokémon Mimo",
             "entry_text": [
                 "Imita i movimenti dei nemici. Quando\n",
@@ -184,7 +184,7 @@
             ]
         },
         "es": {
-            "name": "MIME JR.",
+            "name": "Mime Jr.",
             "category": "Pokémon Mimo",
             "entry_text": [
                 "Suele imitar a sus enemigos.\n",

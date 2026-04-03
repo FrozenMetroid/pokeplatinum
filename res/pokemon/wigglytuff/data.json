@@ -127,7 +127,7 @@
         "trainer_pos_m": 9,
         "pokemon_pos_m": 16,
         "en": {
-            "name": "WIGGLYTUFF",
+            "name": "Wigglytuff",
             "category": "Balloon Pokémon",
             "entry_text": [
                 "Its fine fur feels sublime to the\n",
@@ -136,7 +136,7 @@
             ]
         },
         "fr": {
-            "name": "GRODOUDOU",
+            "name": "Grodoudou",
             "category": "Pokémon Bouboule",
             "entry_text": [
                 "Sa fourrure est d’une douceur\n",
@@ -145,7 +145,7 @@
             ]
         },
         "de": {
-            "name": "KNUDDELUFF",
+            "name": "Knuddeluff",
             "category": "Ballon",
             "entry_text": [
                 "Sein feines Fell fühlt sich herrlich\n",
@@ -154,7 +154,7 @@
             ]
         },
         "it": {
-            "name": "WIGGLYTUFF",
+            "name": "Wigglytuff",
             "category": "Pokémon Pallone",
             "entry_text": [
                 "Il suo pelo è morbidissimo.\n",
@@ -163,7 +163,7 @@
             ]
         },
         "es": {
-            "name": "WIGGLYTUFF",
+            "name": "Wigglytuff",
             "category": "Pokémon Globo",
             "entry_text": [
                 "Tiene un pelaje muy agradable al\n",

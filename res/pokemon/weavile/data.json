@@ -136,7 +136,7 @@
         "trainer_pos_m": 9,
         "pokemon_pos_m": 13,
         "en": {
-            "name": "WEAVILE",
+            "name": "Weavile",
             "category": "Sharp Claw Pokémon",
             "entry_text": [
                 "Evolution made it even more\n",
@@ -145,7 +145,7 @@
             ]
         },
         "fr": {
-            "name": "DIMORET",
+            "name": "Dimoret",
             "category": "Pokémon Grifacérée",
             "entry_text": [
                 "Ils vivent par groupe de 4 ou 5\n",
@@ -154,7 +154,7 @@
             ]
         },
         "de": {
-            "name": "SNIBUNNA",
+            "name": "Snibunna",
             "category": "Stichklaue",
             "entry_text": [
                 "Es lebt in kalten Gebieten in\n",
@@ -163,7 +163,7 @@
             ]
         },
         "it": {
-            "name": "WEAVILE",
+            "name": "Weavile",
             "category": "Pokémon Lamartigli",
             "entry_text": [
                 "Questi Pokémon vivono in zone fred-\n",
@@ -172,7 +172,7 @@
             ]
         },
         "es": {
-            "name": "WEAVILE",
+            "name": "Weavile",
             "category": "Pokémon Garra Filo",
             "entry_text": [
                 "Viven en zonas frías y forman\n",

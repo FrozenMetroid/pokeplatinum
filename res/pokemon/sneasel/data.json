@@ -149,7 +149,7 @@
         "trainer_pos_m": 9,
         "pokemon_pos_m": 12,
         "en": {
-            "name": "SNEASEL",
+            "name": "Sneasel",
             "category": "Sharp Claw Pokémon",
             "entry_text": [
                 "A smart and sneaky Pokémon. A pair\n",
@@ -158,7 +158,7 @@
             ]
         },
         "fr": {
-            "name": "FARFURET",
+            "name": "Farfuret",
             "category": "Pokémon Grifacérée",
             "entry_text": [
                 "Il se nourrit d’œufs volés dans \n",
@@ -167,7 +167,7 @@
             ]
         },
         "de": {
-            "name": "SNIEBEL",
+            "name": "Sniebel",
             "category": "Stichklaue",
             "entry_text": [
                 "Es ernährt sich von Eiern, die es\n",
@@ -176,7 +176,7 @@
             ]
         },
         "it": {
-            "name": "SNEASEL",
+            "name": "Sneasel",
             "category": "Pokémon Lamartigli",
             "entry_text": [
                 "Mangia uova rubate dai nidi.\n",
@@ -185,7 +185,7 @@
             ]
         },
         "es": {
-            "name": "SNEASEL",
+            "name": "Sneasel",
             "category": "Pokémon Garra Filo",
             "entry_text": [
                 "Se alimenta de huevos robados en\n",

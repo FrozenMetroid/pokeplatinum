@@ -125,7 +125,7 @@
         "trainer_pos_m": 9,
         "pokemon_pos_m": 65524,
         "en": {
-            "name": "CARVANHA",
+            "name": "Carvanha",
             "category": "Savage Pokémon",
             "entry_text": [
                 "They swarm any foe that invades\n",
@@ -134,7 +134,7 @@
             ]
         },
         "fr": {
-            "name": "CARVANHA",
+            "name": "Carvanha",
             "category": "Pokémon Féroce",
             "entry_text": [
                 "Il attaque en banc quand on\n",
@@ -143,7 +143,7 @@
             ]
         },
         "de": {
-            "name": "KANIVANHA",
+            "name": "Kanivanha",
             "category": "Gnadenlos",
             "entry_text": [
                 "Sie begegnen jedem Gegner, der in\n",
@@ -152,7 +152,7 @@
             ]
         },
         "it": {
-            "name": "CARVANHA",
+            "name": "Carvanha",
             "category": "Pokémon Feroce",
             "entry_text": [
                 "Attacca in branco chi invade il\n",
@@ -161,7 +161,7 @@
             ]
         },
         "es": {
-            "name": "CARVANHA",
+            "name": "Carvanha",
             "category": "Pokémon Feroz",
             "entry_text": [
                 "Rodean a los enemigos que osan\n",

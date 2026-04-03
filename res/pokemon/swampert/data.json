@@ -129,7 +129,7 @@
         "trainer_pos_m": 9,
         "pokemon_pos_m": 4,
         "en": {
-            "name": "SWAMPERT",
+            "name": "Swampert",
             "category": "Mud Fish Pokémon",
             "entry_text": [
                 "It can swim while towing a large\n",
@@ -138,7 +138,7 @@
             ]
         },
         "fr": {
-            "name": "LAGGRON",
+            "name": "Laggron",
             "category": "Pokémon Poissonboue",
             "entry_text": [
                 "Il peut traîner un grand bateau en\n",
@@ -147,7 +147,7 @@
             ]
         },
         "de": {
-            "name": "SUMPEX",
+            "name": "Sumpex",
             "category": "Lehmhüpfer",
             "entry_text": [
                 "Es kann im Schwimmen ein großes\n",
@@ -156,7 +156,7 @@
             ]
         },
         "it": {
-            "name": "SWAMPERT",
+            "name": "Swampert",
             "category": "Pokémon Fango Pesce",
             "entry_text": [
                 "Nuotando riesce a trainare una\n",
@@ -165,7 +165,7 @@
             ]
         },
         "es": {
-            "name": "SWAMPERT",
+            "name": "Swampert",
             "category": "Pokémon Pez Lodo",
             "entry_text": [
                 "Puede nadar y arrastrar un barco\n",

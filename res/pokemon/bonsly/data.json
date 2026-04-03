@@ -121,7 +121,7 @@
         "trainer_pos_m": 9,
         "pokemon_pos_m": 27,
         "en": {
-            "name": "BONSLY",
+            "name": "Bonsly",
             "category": "Bonsai Pokémon",
             "entry_text": [
                 "It prefers an arid atmosphere. It\n",
@@ -130,7 +130,7 @@
             ]
         },
         "fr": {
-            "name": "MANZAI",
+            "name": "Manzai",
             "category": "Pokémon Bonsaï",
             "entry_text": [
                 "On dirait qu’il pleure constamment.\n",
@@ -139,7 +139,7 @@
             ]
         },
         "de": {
-            "name": "MOBAI",
+            "name": "Mobai",
             "category": "Bonsai",
             "entry_text": [
                 "Es sieht aus, als würde es immer\n",
@@ -148,7 +148,7 @@
             ]
         },
         "it": {
-            "name": "BONSLY",
+            "name": "Bonsly",
             "category": "Pokémon Bonsai",
             "entry_text": [
                 "Sembra che pianga tutto il tempo.\n",
@@ -157,7 +157,7 @@
             ]
         },
         "es": {
-            "name": "BONSLY",
+            "name": "Bonsly",
             "category": "Pokémon Bonsái",
             "entry_text": [
                 "Parece que siempre está llorando,\n",

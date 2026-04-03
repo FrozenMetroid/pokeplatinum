@@ -117,7 +117,7 @@
         "trainer_pos_m": 9,
         "pokemon_pos_m": 8,
         "en": {
-            "name": "AMPHAROS",
+            "name": "Ampharos",
             "category": "Light Pokémon",
             "entry_text": [
                 "The tip of its tail shines brightly.\n",
@@ -126,7 +126,7 @@
             ]
         },
         "fr": {
-            "name": "PHARAMP",
+            "name": "Pharamp",
             "category": "Pokémon Lumière",
             "entry_text": [
                 "Le bout de sa queue brille avec\n",
@@ -135,7 +135,7 @@
             ]
         },
         "de": {
-            "name": "AMPHAROS",
+            "name": "Ampharos",
             "category": "Leuchte",
             "entry_text": [
                 "Seine Schweifspitze leuchtet hell.\n",
@@ -144,7 +144,7 @@
             ]
         },
         "it": {
-            "name": "AMPHAROS",
+            "name": "Ampharos",
             "category": "Pokémon Luce",
             "entry_text": [
                 "La punta della sua coda brilla. In\n",
@@ -153,7 +153,7 @@
             ]
         },
         "es": {
-            "name": "AMPHAROS",
+            "name": "Ampharos",
             "category": "Pokémon Luz",
             "entry_text": [
                 "La punta de su cola brilla.\n",

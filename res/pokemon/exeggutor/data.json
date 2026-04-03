@@ -112,7 +112,7 @@
         "trainer_pos_m": 14,
         "pokemon_pos_m": 2,
         "en": {
-            "name": "EXEGGUTOR",
+            "name": "Exeggutor",
             "category": "Coconut Pokémon",
             "entry_text": [
                 "It is called “The Walking Jungle.”\n",
@@ -121,7 +121,7 @@
             ]
         },
         "fr": {
-            "name": "NOADKOKO",
+            "name": "Noadkoko",
             "category": "Pokémon Fruitpalme",
             "entry_text": [
                 "On l’appelle “jungle sur pattes”.\n",
@@ -130,7 +130,7 @@
             ]
         },
         "de": {
-            "name": "KOKOWEI",
+            "name": "Kokowei",
             "category": "Palmfrucht",
             "entry_text": [
                 "Man nennt es den “Laufenden\n",
@@ -139,7 +139,7 @@
             ]
         },
         "it": {
-            "name": "EXEGGUTOR",
+            "name": "Exeggutor",
             "category": "Pokémon Nocecocco",
             "entry_text": [
                 "Noto come “Giungla in moto”. Se\n",
@@ -148,7 +148,7 @@
             ]
         },
         "es": {
-            "name": "EXEGGUTOR",
+            "name": "Exeggutor",
             "category": "Pokémon Coco",
             "entry_text": [
                 "Se le llama la “selva andante”.\n",

@@ -119,7 +119,7 @@
         "trainer_pos_m": 15,
         "pokemon_pos_m": 9,
         "en": {
-            "name": "SUICUNE",
+            "name": "Suicune",
             "category": "Aurora Pokémon",
             "entry_text": [
                 "It races around the world to\n",
@@ -128,7 +128,7 @@
             ]
         },
         "fr": {
-            "name": "SUICUNE",
+            "name": "Suicune",
             "category": "Pokémon Aurore",
             "entry_text": [
                 "Il parcourt le vaste monde pour\n",
@@ -137,7 +137,7 @@
             ]
         },
         "de": {
-            "name": "SUICUNE",
+            "name": "Suicune",
             "category": "Polarlicht",
             "entry_text": [
                 "Es wandert beständig in der Welt\n",
@@ -146,7 +146,7 @@
             ]
         },
         "it": {
-            "name": "SUICUNE",
+            "name": "Suicune",
             "category": "Pokémon Aurora",
             "entry_text": [
                 "Corre per tutto il mondo per\n",
@@ -155,7 +155,7 @@
             ]
         },
         "es": {
-            "name": "SUICUNE",
+            "name": "Suicune",
             "category": "Pokémon Aurora",
             "entry_text": [
                 "Recorre el mundo para purificar\n",

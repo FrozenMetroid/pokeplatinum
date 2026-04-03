@@ -147,7 +147,7 @@
         "trainer_pos_m": 9,
         "pokemon_pos_m": 22,
         "en": {
-            "name": "CROAGUNK",
+            "name": "Croagunk",
             "category": "Toxic Mouth Pokémon",
             "entry_text": [
                 "It rarely fights fairly, but that is\n",
@@ -156,7 +156,7 @@
             ]
         },
         "fr": {
-            "name": "CRADOPAUD",
+            "name": "Cradopaud",
             "category": "Pokémon Toxique",
             "entry_text": [
                 "Ses joues contiennent des glandes\n",
@@ -165,7 +165,7 @@
             ]
         },
         "de": {
-            "name": "GLIBUNKEL",
+            "name": "Glibunkel",
             "category": "Giftmund",
             "entry_text": [
                 "In seinen Backen sammelt sich Gift.\n",
@@ -174,7 +174,7 @@
             ]
         },
         "it": {
-            "name": "CROAGUNK",
+            "name": "Croagunk",
             "category": "Pokémon Inveieleno",
             "entry_text": [
                 "Le sacche delle guance contengono\n",
@@ -183,7 +183,7 @@
             ]
         },
         "es": {
-            "name": "CROAGUNK",
+            "name": "Croagunk",
             "category": "Pokémon Boca Tóxica",
             "entry_text": [
                 "Tiene bolsas venenosas en las\n",

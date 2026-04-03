@@ -140,7 +140,7 @@
         "trainer_pos_m": 9,
         "pokemon_pos_m": 0,
         "en": {
-            "name": "LATIOS",
+            "name": "Latios",
             "category": "Eon Pokémon",
             "entry_text": [
                 "A highly intelligent Pokémon.\n",
@@ -149,7 +149,7 @@
             ]
         },
         "fr": {
-            "name": "LATIOS",
+            "name": "Latios",
             "category": "Pokémon Eon",
             "entry_text": [
                 "Un Pokémon très intelligent. Il\n",
@@ -158,7 +158,7 @@
             ]
         },
         "de": {
-            "name": "LATIOS",
+            "name": "Latios",
             "category": "Äon",
             "entry_text": [
                 "Ein hochintelligentes PKMN. Wenn es\n",
@@ -167,7 +167,7 @@
             ]
         },
         "it": {
-            "name": "LATIOS",
+            "name": "Latios",
             "category": "Pokémon Eone",
             "entry_text": [
                 "Pokémon molto intelligente.\n",
@@ -176,7 +176,7 @@
             ]
         },
         "es": {
-            "name": "LATIOS",
+            "name": "Latios",
             "category": "Pokémon Eón",
             "entry_text": [
                 "Es un Pokémon muy inteligente.\n",

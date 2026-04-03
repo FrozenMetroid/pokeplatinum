@@ -119,7 +119,7 @@
         "trainer_pos_m": 9,
         "pokemon_pos_m": 15,
         "en": {
-            "name": "CHARMELEON",
+            "name": "Charmeleon",
             "category": "Flame Pokémon",
             "entry_text": [
                 "In the rocky mountains where\n",
@@ -128,7 +128,7 @@
             ]
         },
         "fr": {
-            "name": "REPTINCEL",
+            "name": "Reptincel",
             "category": "Pokémon Flamme",
             "entry_text": [
                 "La nuit, la queue ardente du\n",
@@ -137,7 +137,7 @@
             ]
         },
         "de": {
-            "name": "GLUTEXO",
+            "name": "Glutexo",
             "category": "Flamme",
             "entry_text": [
                 "GLUTEXO leben in den Bergen. Die\n",
@@ -146,7 +146,7 @@
             ]
         },
         "it": {
-            "name": "CHARMELEON",
+            "name": "Charmeleon",
             "category": "Pokémon Fiamma",
             "entry_text": [
                 "Sui monti rocciosi, sua dimora,\n",
@@ -155,7 +155,7 @@
             ]
         },
         "es": {
-            "name": "CHARMELEON",
+            "name": "Charmeleon",
             "category": "Pokémon Llama",
             "entry_text": [
                 "En las montañas rocosas donde\n",

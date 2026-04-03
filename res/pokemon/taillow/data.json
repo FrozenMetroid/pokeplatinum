@@ -120,7 +120,7 @@
         "trainer_pos_m": 9,
         "pokemon_pos_m": 65519,
         "en": {
-            "name": "TAILLOW",
+            "name": "Taillow",
             "category": "TinySwallow Pokémon",
             "entry_text": [
                 "It has a gutsy spirit that makes\n",
@@ -129,7 +129,7 @@
             ]
         },
         "fr": {
-            "name": "NIRONDELLE",
+            "name": "Nirondelle",
             "category": "Pokémon Minirondel",
             "entry_text": [
                 "Ce Pokémon téméraire n’a pas peur\n",
@@ -138,7 +138,7 @@
             ]
         },
         "de": {
-            "name": "SCHWALBINI",
+            "name": "Schwalbini",
             "category": "Schwälblein",
             "entry_text": [
                 "Es ist sehr mutig und stellt sich\n",
@@ -147,7 +147,7 @@
             ]
         },
         "it": {
-            "name": "TAILLOW",
+            "name": "Taillow",
             "category": "Pokémon Rondinella",
             "entry_text": [
                 "È molto coraggioso e affronta\n",
@@ -156,7 +156,7 @@
             ]
         },
         "es": {
-            "name": "TAILLOW",
+            "name": "Taillow",
             "category": "Pokémon Pequebuche",
             "entry_text": [
                 "Es un Pokémon valiente que no\n",

@@ -123,7 +123,7 @@
         "trainer_pos_m": 9,
         "pokemon_pos_m": 65531,
         "en": {
-            "name": "PORYGON-Z",
+            "name": "Porygon-Z",
             "category": "Virtual Pokémon",
             "entry_text": [
                 "Its programming was modified to\n",
@@ -132,7 +132,7 @@
             ]
         },
         "fr": {
-            "name": "PORYGON-Z",
+            "name": "Porygon-Z",
             "category": "Pokémon Virtuel",
             "entry_text": [
                 "Un logiciel supplémentaire fut \n",
@@ -141,7 +141,7 @@
             ]
         },
         "de": {
-            "name": "PORYGON-Z",
+            "name": "Porygon-Z",
             "category": "Virtuell",
             "entry_text": [
                 "Zusätzliche Software wurde instal-\n",
@@ -150,7 +150,7 @@
             ]
         },
         "it": {
-            "name": "PORYGON-Z",
+            "name": "Porygon-Z",
             "category": "Pokémon Virtuale",
             "entry_text": [
                 "È stato aggiunto un software per\n",
@@ -159,7 +159,7 @@
             ]
         },
         "es": {
-            "name": "PORYGON-Z",
+            "name": "Porygon-Z",
             "category": "Pokémon Virtual",
             "entry_text": [
                 "Se le instaló un software para\n",
@@ -168,7 +168,7 @@
             ]
         },
         "jp": {
-            "name": "ポリゴンＺ",
+            "name": "ポリゴンｚ",
             "category": "バ－チャルポケモン",
             "entry_text": [
                 "より　すぐれた　ポケモンに　するため\n",

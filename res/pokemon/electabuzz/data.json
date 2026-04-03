@@ -124,7 +124,7 @@
         "trainer_pos_m": 9,
         "pokemon_pos_m": 6,
         "en": {
-            "name": "ELECTABUZZ",
+            "name": "Electabuzz",
             "category": "Electric Pokémon",
             "entry_text": [
                 "It windmills its arms to slightly\n",
@@ -133,7 +133,7 @@
             ]
         },
         "fr": {
-            "name": "ELEKTEK",
+            "name": "Elektek",
             "category": "Pokémon Electrique",
             "entry_text": [
                 "Ce Pokémon dévore l’électricité des\n",
@@ -142,7 +142,7 @@
             ]
         },
         "de": {
-            "name": "ELEKTEK",
+            "name": "Elektek",
             "category": "Elektro",
             "entry_text": [
                 "Die Hälfte aller Stromausfälle wird\n",
@@ -151,7 +151,7 @@
             ]
         },
         "it": {
-            "name": "ELECTABUZZ",
+            "name": "Electabuzz",
             "category": "Pokémon Elettrico",
             "entry_text": [
                 "Quando si avvicina alle centrali\n",
@@ -160,7 +160,7 @@
             ]
         },
         "es": {
-            "name": "ELECTABUZZ",
+            "name": "Electabuzz",
             "category": "Pokémon Eléctrico",
             "entry_text": [
                 "La mitad de los apagones los\n",

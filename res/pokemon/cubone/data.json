@@ -140,7 +140,7 @@
         "trainer_pos_m": 9,
         "pokemon_pos_m": 28,
         "en": {
-            "name": "CUBONE",
+            "name": "Cubone",
             "category": "Lonely Pokémon",
             "entry_text": [
                 "When it thinks of its dead mother,\n",
@@ -149,7 +149,7 @@
             ]
         },
         "fr": {
-            "name": "OSSELAIT",
+            "name": "Osselait",
             "category": "Pokémon Solitaire",
             "entry_text": [
                 "Il pleure en pensant à sa mère\n",
@@ -158,7 +158,7 @@
             ]
         },
         "de": {
-            "name": "TRAGOSSO",
+            "name": "Tragosso",
             "category": "Einsam",
             "entry_text": [
                 "Denkt es an seine verstorbene\n",
@@ -167,7 +167,7 @@
             ]
         },
         "it": {
-            "name": "CUBONE",
+            "name": "Cubone",
             "category": "Pokémon Solitario",
             "entry_text": [
                 "Piange pensando alla madre defunta\n",
@@ -176,7 +176,7 @@
             ]
         },
         "es": {
-            "name": "CUBONE",
+            "name": "Cubone",
             "category": "Pokémon Solitario",
             "entry_text": [
                 "Llora cuando se acuerda de su\n",

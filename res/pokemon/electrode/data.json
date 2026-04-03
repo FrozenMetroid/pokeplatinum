@@ -112,7 +112,7 @@
         "trainer_pos_m": 9,
         "pokemon_pos_m": 11,
         "en": {
-            "name": "ELECTRODE",
+            "name": "Electrode",
             "category": "Ball Pokémon",
             "entry_text": [
                 "It is known to drift on winds if it\n",
@@ -121,7 +121,7 @@
             ]
         },
         "fr": {
-            "name": "ELECTRODE",
+            "name": "Electrode",
             "category": "Pokémon Balle",
             "entry_text": [
                 "Il se laisse porter par les vents\n",
@@ -130,7 +130,7 @@
             ]
         },
         "de": {
-            "name": "LEKTROBAL",
+            "name": "Lektrobal",
             "category": "Ball",
             "entry_text": [
                 "Es lässt sich vom Wind treiben,\n",
@@ -139,7 +139,7 @@
             ]
         },
         "it": {
-            "name": "ELECTRODE",
+            "name": "Electrode",
             "category": "Pokémon Ball",
             "entry_text": [
                 "Quando ha accumulato elettricità\n",
@@ -148,7 +148,7 @@
             ]
         },
         "es": {
-            "name": "ELECTRODE",
+            "name": "Electrode",
             "category": "Pokémon Bola",
             "entry_text": [ "Se lo lleva el viento si se hincha\n", "con la electricidad que almacena." ]
         },

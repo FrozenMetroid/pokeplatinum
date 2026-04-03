@@ -128,7 +128,7 @@
         "trainer_pos_m": 9,
         "pokemon_pos_m": 17,
         "en": {
-            "name": "CHIKORITA",
+            "name": "Chikorita",
             "category": "Leaf Pokémon",
             "entry_text": [
                 "It uses the leaf on its head to\n",
@@ -137,7 +137,7 @@
             ]
         },
         "fr": {
-            "name": "GERMIGNON",
+            "name": "Germignon",
             "category": "Pokémon Feuille",
             "entry_text": [
                 "Il jauge la température et\n",
@@ -146,7 +146,7 @@
             ]
         },
         "de": {
-            "name": "ENDIVIE",
+            "name": "Endivie",
             "category": "Laub",
             "entry_text": [
                 "Mit dem Blatt auf seinem Kopf\n",
@@ -155,7 +155,7 @@
             ]
         },
         "it": {
-            "name": "CHIKORITA",
+            "name": "Chikorita",
             "category": "Pokémon Foglia",
             "entry_text": [
                 "Usa la foglia sulla sua testa\n",
@@ -164,7 +164,7 @@
             ]
         },
         "es": {
-            "name": "CHIKORITA",
+            "name": "Chikorita",
             "category": "Pokémon Hoja",
             "entry_text": [
                 "Con la hoja de su cabeza puede\n",

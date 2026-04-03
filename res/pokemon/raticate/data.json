@@ -125,7 +125,7 @@
         "trainer_pos_m": 9,
         "pokemon_pos_m": 21,
         "en": {
-            "name": "RATICATE",
+            "name": "Raticate",
             "category": "Mouse Pokémon",
             "entry_text": [
                 "It whittles its constantly growing\n",
@@ -134,7 +134,7 @@
             ]
         },
         "fr": {
-            "name": "RATTATAC",
+            "name": "Rattatac",
             "category": "Pokémon Souris",
             "entry_text": [
                 "Il grignote sans cesse pour apaiser\n",
@@ -143,7 +143,7 @@
             ]
         },
         "de": {
-            "name": "RATTIKARL",
+            "name": "Rattikarl",
             "category": "Maus",
             "entry_text": [
                 "Es wetzt seine ständig wachsenden\n",
@@ -152,7 +152,7 @@
             ]
         },
         "it": {
-            "name": "RATICATE",
+            "name": "Raticate",
             "category": "Pokémon Topo",
             "entry_text": [
                 "Si affila le zanne in perenne\n",
@@ -161,7 +161,7 @@
             ]
         },
         "es": {
-            "name": "RATICATE",
+            "name": "Raticate",
             "category": "Pokémon Ratón",
             "entry_text": [
                 "Lima sus colmillos royendo objetos\n",

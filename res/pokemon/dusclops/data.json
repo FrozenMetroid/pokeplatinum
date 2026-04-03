@@ -143,7 +143,7 @@
         "trainer_pos_m": 9,
         "pokemon_pos_m": 2,
         "en": {
-            "name": "DUSCLOPS",
+            "name": "Dusclops",
             "category": "Beckon Pokémon",
             "entry_text": [
                 "It seeks drifting will-o’-the-wisps\n",
@@ -152,7 +152,7 @@
             ]
         },
         "fr": {
-            "name": "TERACLOPE",
+            "name": "Teraclope",
             "category": "Pokémon Appel",
             "entry_text": [
                 "Son corps est creux. On raconte\n",
@@ -161,7 +161,7 @@
             ]
         },
         "de": {
-            "name": "ZWIRRKLOP",
+            "name": "Zwirrklop",
             "category": "Wink",
             "entry_text": [
                 "Sein Körper ist hohl. Man sagt,\n",
@@ -170,7 +170,7 @@
             ]
         },
         "it": {
-            "name": "DUSCLOPS",
+            "name": "Dusclops",
             "category": "Pokémon Ipnosguardo",
             "entry_text": [
                 "Il suo corpo è vuoto. Pare che\n",
@@ -179,7 +179,7 @@
             ]
         },
         "es": {
-            "name": "DUSCLOPS",
+            "name": "Dusclops",
             "category": "Pokémon Atrayente",
             "entry_text": [
                 "Su cuerpo está hueco. Se dice\n",

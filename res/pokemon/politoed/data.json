@@ -109,7 +109,7 @@
         "trainer_pos_m": 9,
         "pokemon_pos_m": 14,
         "en": {
-            "name": "POLITOED",
+            "name": "Politoed",
             "category": "Frog Pokémon",
             "entry_text": [
                 "It gathers groups of others as\n",
@@ -118,7 +118,7 @@
             ]
         },
         "fr": {
-            "name": "TARPAUD",
+            "name": "Tarpaud",
             "category": "Pokémon Grenouille",
             "entry_text": [
                 "Il rassemble ses pairs pour les\n",
@@ -127,7 +127,7 @@
             ]
         },
         "de": {
-            "name": "QUAXO",
+            "name": "Quaxo",
             "category": "Frosch",
             "entry_text": [
                 "Es versammelt andere PKMN um sich\n",
@@ -136,7 +136,7 @@
             ]
         },
         "it": {
-            "name": "POLITOED",
+            "name": "Politoed",
             "category": "Pokémon Rana",
             "entry_text": [
                 "Ama radunare gruppi e atteggiarsi\n",
@@ -145,7 +145,7 @@
             ]
         },
         "es": {
-            "name": "POLITOED",
+            "name": "Politoed",
             "category": "Pokémon Rana",
             "entry_text": [
                 "Agrupa a otros Pokémon para\n",

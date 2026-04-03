@@ -128,7 +128,7 @@
         "trainer_pos_m": 9,
         "pokemon_pos_m": 17,
         "en": {
-            "name": "VULPIX",
+            "name": "Vulpix",
             "category": "Fox Pokémon",
             "entry_text": [
                 "It controls balls of fire. As it\n",
@@ -137,7 +137,7 @@
             ]
         },
         "fr": {
-            "name": "GOUPIX",
+            "name": "Goupix",
             "category": "Pokémon Renard",
             "entry_text": [
                 "Il envoie des boules de feu. Avec\n",
@@ -146,7 +146,7 @@
             ]
         },
         "de": {
-            "name": "VULPIX",
+            "name": "Vulpix",
             "category": "Fuchs",
             "entry_text": [
                 "Es beherrscht Feuerbälle. Während\n",
@@ -155,7 +155,7 @@
             ]
         },
         "it": {
-            "name": "VULPIX",
+            "name": "Vulpix",
             "category": "Pokémon Volpe",
             "entry_text": [
                 "Controlla palle infuocate. Via via\n",
@@ -164,7 +164,7 @@
             ]
         },
         "es": {
-            "name": "VULPIX",
+            "name": "Vulpix",
             "category": "Pokémon Zorro",
             "entry_text": [
                 "Controla bolas de fuego. A medida\n",

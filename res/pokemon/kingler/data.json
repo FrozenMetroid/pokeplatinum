@@ -122,7 +122,7 @@
         "trainer_pos_m": 9,
         "pokemon_pos_m": 11,
         "en": {
-            "name": "KINGLER",
+            "name": "Kingler",
             "category": "Pincer Pokémon",
             "entry_text": [
                 "The larger pincer has 10,000-\n",
@@ -131,7 +131,7 @@
             ]
         },
         "fr": {
-            "name": "KRABBOSS",
+            "name": "Krabboss",
             "category": "Pokémon Pince",
             "entry_text": [
                 "Sa grande pince possède une\n",
@@ -140,7 +140,7 @@
             ]
         },
         "de": {
-            "name": "KINGLER",
+            "name": "Kingler",
             "category": "Kneifer",
             "entry_text": [
                 "Die großen Scheren haben eine\n",
@@ -149,7 +149,7 @@
             ]
         },
         "it": {
-            "name": "KINGLER",
+            "name": "Kingler",
             "category": "Pokémon Chela",
             "entry_text": [
                 "La chela più grande ha una potenza\n",
@@ -158,7 +158,7 @@
             ]
         },
         "es": {
-            "name": "KINGLER",
+            "name": "Kingler",
             "category": "Pokémon Tenaza",
             "entry_text": [
                 "La pinza mayor tiene 10000\n",

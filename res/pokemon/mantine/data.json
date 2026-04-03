@@ -134,7 +134,7 @@
         "trainer_pos_m": 16,
         "pokemon_pos_m": 65535,
         "en": {
-            "name": "MANTINE",
+            "name": "Mantine",
             "category": "Kite Pokémon",
             "entry_text": [
                 "While elegantly swimming in the sea,\n",
@@ -143,7 +143,7 @@
             ]
         },
         "fr": {
-            "name": "DEMANTA",
+            "name": "Demanta",
             "category": "Pokémon Cervolant",
             "entry_text": [
                 "Lorsque la mer est calme, il arrive\n",
@@ -152,7 +152,7 @@
             ]
         },
         "de": {
-            "name": "MANTAX",
+            "name": "Mantax",
             "category": "Flugrochen",
             "entry_text": [
                 "Wenn das Meer ruhig ist, kann man\n",
@@ -161,7 +161,7 @@
             ]
         },
         "it": {
-            "name": "MANTINE",
+            "name": "Mantine",
             "category": "Pokémon Aquilone",
             "entry_text": [
                 "Quando il mare è calmo, è possibile\n",
@@ -170,7 +170,7 @@
             ]
         },
         "es": {
-            "name": "MANTINE",
+            "name": "Mantine",
             "category": "Pokémon Milano",
             "entry_text": [
                 "Cuando el mar está en calma, se\n",

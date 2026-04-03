@@ -124,7 +124,7 @@
         "trainer_pos_m": 9,
         "pokemon_pos_m": 65533,
         "en": {
-            "name": "TENTACOOL",
+            "name": "Tentacool",
             "category": "Jellyfish Pokémon",
             "entry_text": [
                 "Because its body is almost entirely\n",
@@ -133,7 +133,7 @@
             ]
         },
         "fr": {
-            "name": "TENTACOOL",
+            "name": "Tentacool",
             "category": "Pokémon Mollusque",
             "entry_text": [
                 "Son corps est principalement\n",
@@ -142,7 +142,7 @@
             ]
         },
         "de": {
-            "name": "TENTACHA",
+            "name": "Tentacha",
             "category": "Qualle",
             "entry_text": [
                 "Sein Körper besteht aus Wasser.\n",
@@ -151,7 +151,7 @@
             ]
         },
         "it": {
-            "name": "TENTACOOL",
+            "name": "Tentacool",
             "category": "Pokémon Medusa",
             "entry_text": [
                 "Il suo corpo è quasi interamente\n",
@@ -160,7 +160,7 @@
             ]
         },
         "es": {
-            "name": "TENTACOOL",
+            "name": "Tentacool",
             "category": "Pokémon Medusa",
             "entry_text": [
                 "Su cuerpo se compone casi en\n",

@@ -117,7 +117,7 @@
         "trainer_pos_m": 9,
         "pokemon_pos_m": 65529,
         "en": {
-            "name": "MAGNEZONE",
+            "name": "Magnezone",
             "category": "Magnet Area Pokémon",
             "entry_text": [
                 "A group tried to use scientific\n",
@@ -126,7 +126,7 @@
             ]
         },
         "fr": {
-            "name": "MAGNEZONE",
+            "name": "Magnezone",
             "category": "Pokémon Aimant",
             "entry_text": [
                 "Il a évolué suite à son exposition\n",
@@ -135,7 +135,7 @@
             ]
         },
         "de": {
-            "name": "MAGNEZONE",
+            "name": "Magnezone",
             "category": "Magnetgebiet",
             "entry_text": [
                 "Es entwickelte sich, als es einem\n",
@@ -144,7 +144,7 @@
             ]
         },
         "it": {
-            "name": "MAGNEZONE",
+            "name": "Magnezone",
             "category": "Pokémon Magnetico",
             "entry_text": [
                 "Si è evoluto in seguito all’esposi-\n",
@@ -153,7 +153,7 @@
             ]
         },
         "es": {
-            "name": "MAGNEZONE",
+            "name": "Magnezone",
             "category": "Pokémon Magnético",
             "entry_text": [
                 "Evolucionó por la exposición a\n",

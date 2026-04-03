@@ -117,7 +117,7 @@
         "trainer_pos_m": 7,
         "pokemon_pos_m": 0,
         "en": {
-            "name": "ARTICUNO",
+            "name": "Articuno",
             "category": "Freeze Pokémon",
             "entry_text": [
                 "A legendary bird Pokémon.\n",
@@ -126,7 +126,7 @@
             ]
         },
         "fr": {
-            "name": "ARTIKODIN",
+            "name": "Artikodin",
             "category": "Pokémon Glaciaire",
             "entry_text": [
                 "Un Pokémon Oiseau légendaire.\n",
@@ -135,7 +135,7 @@
             ]
         },
         "de": {
-            "name": "ARKTOS",
+            "name": "Arktos",
             "category": "Eis",
             "entry_text": [
                 "Ein Legendäres Vogel-Pokémon.\n",
@@ -144,7 +144,7 @@
             ]
         },
         "it": {
-            "name": "ARTICUNO",
+            "name": "Articuno",
             "category": "Pokémon Gelo",
             "entry_text": [
                 "Un Pokémon uccello leggendario.\n",
@@ -153,7 +153,7 @@
             ]
         },
         "es": {
-            "name": "ARTICUNO",
+            "name": "Articuno",
             "category": "Pokémon Congelar",
             "entry_text": [
                 "Legendario Pokémon pájaro capaz\n",

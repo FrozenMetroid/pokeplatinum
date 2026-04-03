@@ -128,7 +128,7 @@
         "trainer_pos_m": 9,
         "pokemon_pos_m": 17,
         "en": {
-            "name": "COMBUSKEN",
+            "name": "Combusken",
             "category": "Young Fowl Pokémon",
             "entry_text": [
                 "Its kicking mastery lets it loose\n",
@@ -137,7 +137,7 @@
             ]
         },
         "fr": {
-            "name": "GALIFEU",
+            "name": "Galifeu",
             "category": "Pokémon Poulet",
             "entry_text": [
                 "Ce maître du coup de pied peut\n",
@@ -146,7 +146,7 @@
             ]
         },
         "de": {
-            "name": "JUNGGLUT",
+            "name": "Jungglut",
             "category": "Kleinhahn",
             "entry_text": [
                 "Es kann 10 Tritte pro Sekunde aus-\n",
@@ -155,7 +155,7 @@
             ]
         },
         "it": {
-            "name": "COMBUSKEN",
+            "name": "Combusken",
             "category": "Pokémon Rampollo",
             "entry_text": [
                 "Possiede l’abilità di sferrare anche\n",
@@ -164,7 +164,7 @@
             ]
         },
         "es": {
-            "name": "COMBUSKEN",
+            "name": "Combusken",
             "category": "Pokémon Ave Corral",
             "entry_text": [
                 "Su habilidad le permite dar diez\n",

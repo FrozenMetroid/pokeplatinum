@@ -128,7 +128,7 @@
         "trainer_pos_m": 9,
         "pokemon_pos_m": 29,
         "en": {
-            "name": "ROSELIA",
+            "name": "Roselia",
             "category": "Thorn Pokémon",
             "entry_text": [
                 "The more healthy the ROSELIA, the\n",
@@ -137,7 +137,7 @@
             ]
         },
         "fr": {
-            "name": "ROSELIA",
+            "name": "Roselia",
             "category": "Pokémon Epine",
             "entry_text": [
                 "Les ROSELIA élevés avec une\n",
@@ -146,7 +146,7 @@
             ]
         },
         "de": {
-            "name": "ROSELIA",
+            "name": "Roselia",
             "category": "Dorn",
             "entry_text": [
                 "ROSELIA, die mit klarem Wasser\n",
@@ -155,7 +155,7 @@
             ]
         },
         "it": {
-            "name": "ROSELIA",
+            "name": "Roselia",
             "category": "Pokémon Spina",
             "entry_text": [
                 "ROSELIA, cresciuto bevendo acqua\n",
@@ -164,7 +164,7 @@
             ]
         },
         "es": {
-            "name": "ROSELIA",
+            "name": "Roselia",
             "category": "Pokémon Espina",
             "entry_text": [
                 "Si este Pokémon crece con agua\n",

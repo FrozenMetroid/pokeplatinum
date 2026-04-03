@@ -136,7 +136,7 @@
         "trainer_pos_m": 9,
         "pokemon_pos_m": 24,
         "en": {
-            "name": "SQUIRTLE",
+            "name": "Squirtle",
             "category": "Tiny Turtle Pokémon",
             "entry_text": [
                 "It shelters itself in its shell,\n",
@@ -145,7 +145,7 @@
             ]
         },
         "fr": {
-            "name": "CARAPUCE",
+            "name": "Carapuce",
             "category": "Pokémon Minitortue",
             "entry_text": [
                 "Il se réfugie dans sa carapace\n",
@@ -154,7 +154,7 @@
             ]
         },
         "de": {
-            "name": "SCHIGGY",
+            "name": "Schiggy",
             "category": "Minikröte",
             "entry_text": [
                 "Es zieht sich in seinen Panzer\n",
@@ -163,7 +163,7 @@
             ]
         },
         "it": {
-            "name": "SQUIRTLE",
+            "name": "Squirtle",
             "category": "Pokémon Tartaghina",
             "entry_text": [
                 "Si ritira nel suo guscio e, alla prima\n",
@@ -172,7 +172,7 @@
             ]
         },
         "es": {
-            "name": "SQUIRTLE",
+            "name": "Squirtle",
             "category": "Pokémon Tortuguita",
             "entry_text": [
                 "Se protege con su caparazón y\n",

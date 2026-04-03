@@ -118,7 +118,7 @@
         "trainer_pos_m": 5,
         "pokemon_pos_m": 0,
         "en": {
-            "name": "ZAPDOS",
+            "name": "Zapdos",
             "category": "Electric Pokémon",
             "entry_text": [
                 "A legendary Pokémon that is said\n",
@@ -127,7 +127,7 @@
             ]
         },
         "fr": {
-            "name": "ELECTHOR",
+            "name": "Electhor",
             "category": "Pokémon Electrique",
             "entry_text": [
                 "Un Pokémon Oiseau légendaire dont\n",
@@ -136,7 +136,7 @@
             ]
         },
         "de": {
-            "name": "ZAPDOS",
+            "name": "Zapdos",
             "category": "Elektro",
             "entry_text": [
                 "Ein Legendäres Vogel-Pokémon,\n",
@@ -145,7 +145,7 @@
             ]
         },
         "it": {
-            "name": "ZAPDOS",
+            "name": "Zapdos",
             "category": "Pokémon Elettrico",
             "entry_text": [
                 "Un Pokémon uccello leggendario.\n",
@@ -154,7 +154,7 @@
             ]
         },
         "es": {
-            "name": "ZAPDOS",
+            "name": "Zapdos",
             "category": "Pokémon Eléctrico",
             "entry_text": [
                 "Legendario Pokémon pájaro del que\n",

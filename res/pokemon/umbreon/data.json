@@ -114,7 +114,7 @@
         "trainer_pos_m": 9,
         "pokemon_pos_m": 15,
         "en": {
-            "name": "UMBREON",
+            "name": "Umbreon",
             "category": "Moonlight Pokémon",
             "entry_text": [
                 "When exposed to the moon’s aura,\n",
@@ -123,7 +123,7 @@
             ]
         },
         "fr": {
-            "name": "NOCTALI",
+            "name": "Noctali",
             "category": "Pokémon Lune",
             "entry_text": [
                 "La lumière de la lune a modifié\n",
@@ -132,7 +132,7 @@
             ]
         },
         "de": {
-            "name": "NACHTARA",
+            "name": "Nachtara",
             "category": "Mondschein",
             "entry_text": [
                 "Mondlicht hat die genetische\n",
@@ -141,7 +141,7 @@
             ]
         },
         "it": {
-            "name": "UMBREON",
+            "name": "Umbreon",
             "category": "Pokémon Lucelunare",
             "entry_text": [
                 "La luce lunare ha mutato la\n",
@@ -150,7 +150,7 @@
             ]
         },
         "es": {
-            "name": "UMBREON",
+            "name": "Umbreon",
             "category": "Pokémon Luz Lunar",
             "entry_text": [
                 "Creado cuando la luz lunar alteró\n",

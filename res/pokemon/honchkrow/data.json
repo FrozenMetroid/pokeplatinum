@@ -117,7 +117,7 @@
         "trainer_pos_m": 9,
         "pokemon_pos_m": 18,
         "en": {
-            "name": "HONCHKROW",
+            "name": "Honchkrow",
             "category": "Big Boss Pokémon",
             "entry_text": [
                 "If one utters a deep cry, many\n",
@@ -126,7 +126,7 @@
             ]
         },
         "fr": {
-            "name": "CORBOSS",
+            "name": "Corboss",
             "category": "Pokémon Big Boss",
             "entry_text": [
                 "Ce Pokémon nocturne évolue en\n",
@@ -135,7 +135,7 @@
             ]
         },
         "de": {
-            "name": "KRAMSHEF",
+            "name": "Kramshef",
             "category": "Anführer",
             "entry_text": [
                 "Ein nachtaktives PKMN, das sich in\n",
@@ -144,7 +144,7 @@
             ]
         },
         "it": {
-            "name": "HONCHKROW",
+            "name": "Honchkrow",
             "category": "Pokémon Grancapo",
             "entry_text": [
                 "Diventa attivo di notte e lo si vede\n",
@@ -153,7 +153,7 @@
             ]
         },
         "es": {
-            "name": "HONCHKROW",
+            "name": "Honchkrow",
             "category": "Pokémon Gran Jefe",
             "entry_text": [
                 "Está activo por la noche y\n",

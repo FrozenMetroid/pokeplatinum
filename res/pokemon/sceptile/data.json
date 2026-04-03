@@ -132,7 +132,7 @@
         "trainer_pos_m": 9,
         "pokemon_pos_m": 1,
         "en": {
-            "name": "SCEPTILE",
+            "name": "Sceptile",
             "category": "Forest Pokémon",
             "entry_text": [
                 "The leaves that grow on its arms\n",
@@ -141,7 +141,7 @@
             ]
         },
         "fr": {
-            "name": "JUNGKO",
+            "name": "Jungko",
             "category": "Pokémon Forêt",
             "entry_text": [
                 "Les feuilles sur ses bras peuvent\n",
@@ -150,7 +150,7 @@
             ]
         },
         "de": {
-            "name": "GEWALDRO",
+            "name": "Gewaldro",
             "category": "Dschungel",
             "entry_text": [
                 "Die Blätter an seinen Armen können\n",
@@ -159,7 +159,7 @@
             ]
         },
         "it": {
-            "name": "SCEPTILE",
+            "name": "Sceptile",
             "category": "Pokémon Foresta",
             "entry_text": [
                 "Le foglie che crescono sulle sue\n",
@@ -168,7 +168,7 @@
             ]
         },
         "es": {
-            "name": "SCEPTILE",
+            "name": "Sceptile",
             "category": "Pokémon Monte",
             "entry_text": [
                 "Las hojas de sus brazos pueden\n",

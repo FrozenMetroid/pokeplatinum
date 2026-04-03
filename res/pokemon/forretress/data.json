@@ -121,7 +121,7 @@
         "trainer_pos_m": 9,
         "pokemon_pos_m": 9,
         "en": {
-            "name": "FORRETRESS",
+            "name": "Forretress",
             "category": "Bagworm Pokémon",
             "entry_text": [
                 "It is encased in a steel shell. Its\n",
@@ -130,7 +130,7 @@
             ]
         },
         "fr": {
-            "name": "FORETRESS",
+            "name": "Foretress",
             "category": "Pokémon Ver Caché",
             "entry_text": [
                 "Il est prisonnier d’une coquille \n",
@@ -139,7 +139,7 @@
             ]
         },
         "de": {
-            "name": "FORSTELLKA",
+            "name": "Forstellka",
             "category": "Beutelwurm",
             "entry_text": [
                 "Dieses PKMN ist von einer Stahlhülle\n",
@@ -148,7 +148,7 @@
             ]
         },
         "it": {
-            "name": "FORRETRESS",
+            "name": "Forretress",
             "category": "Pokémon Larva",
             "entry_text": [
                 "È incassato in una conchiglia d’ac-\n",
@@ -157,7 +157,7 @@
             ]
         },
         "es": {
-            "name": "FORRETRESS",
+            "name": "Forretress",
             "category": "Pokémon Larva",
             "entry_text": [
                 "Se protege con su concha de\n",

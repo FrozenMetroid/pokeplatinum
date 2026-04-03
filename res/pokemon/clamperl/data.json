@@ -112,7 +112,7 @@
         "trainer_pos_m": 9,
         "pokemon_pos_m": 25,
         "en": {
-            "name": "CLAMPERL",
+            "name": "Clamperl",
             "category": "Bivalve Pokémon",
             "entry_text": [
                 "It makes a single pearl during\n",
@@ -121,7 +121,7 @@
             ]
         },
         "fr": {
-            "name": "COQUIPERL",
+            "name": "Coquiperl",
             "category": "Pokémon Bivalve",
             "entry_text": [
                 "Il ne produit qu’une perle durant\n",
@@ -130,7 +130,7 @@
             ]
         },
         "de": {
-            "name": "PERLU",
+            "name": "Perlu",
             "category": "Muschel",
             "entry_text": [
                 "In seinem Leben erschafft es eine\n",
@@ -139,7 +139,7 @@
             ]
         },
         "it": {
-            "name": "CLAMPERL",
+            "name": "Clamperl",
             "category": "Pokémon Bivalve",
             "entry_text": [
                 "Crea una sola perla in tutta la\n",
@@ -148,7 +148,7 @@
             ]
         },
         "es": {
-            "name": "CLAMPERL",
+            "name": "Clamperl",
             "category": "Pokémon Bivalvo",
             "entry_text": [
                 "Durante toda su vida, crea una\n",

@@ -125,7 +125,7 @@
         "trainer_pos_m": 9,
         "pokemon_pos_m": 65530,
         "en": {
-            "name": "HOPPIP",
+            "name": "Hoppip",
             "category": "Cottonweed Pokémon",
             "entry_text": [
                 "It drifts on winds. It is said that\n",
@@ -134,7 +134,7 @@
             ]
         },
         "fr": {
-            "name": "GRANIVOL",
+            "name": "Granivol",
             "category": "Pokémon Pissenlit",
             "entry_text": [
                 "Il dérive avec le vent. Sa présence\n",
@@ -143,7 +143,7 @@
             ]
         },
         "de": {
-            "name": "HOPPSPROSS",
+            "name": "Hoppspross",
             "category": "Löwenzahn",
             "entry_text": [
                 "Es reitet auf dem Wind. Man sagt,\n",
@@ -152,7 +152,7 @@
             ]
         },
         "it": {
-            "name": "HOPPIP",
+            "name": "Hoppip",
             "category": "Pokémon Gramigna",
             "entry_text": [
                 "Giunge sospinto dai venti. Si dice\n",
@@ -161,7 +161,7 @@
             ]
         },
         "es": {
-            "name": "HOPPIP",
+            "name": "Hoppip",
             "category": "Pokémon Algadón",
             "entry_text": [
                 "Flotan en el aire. Se dice que\n",

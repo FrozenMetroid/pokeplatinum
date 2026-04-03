@@ -154,7 +154,7 @@
         "trainer_pos_m": 15,
         "pokemon_pos_m": 6,
         "en": {
-            "name": "AGGRON",
+            "name": "Aggron",
             "category": "Iron Armor Pokémon",
             "entry_text": [
                 "While seeking iron for food, it\n",
@@ -163,7 +163,7 @@
             ]
         },
         "fr": {
-            "name": "GALEKING",
+            "name": "Galeking",
             "category": "Pokémon Armurfer",
             "entry_text": [
                 "Il creuse des galeries à travers la\n",
@@ -172,7 +172,7 @@
             ]
         },
         "de": {
-            "name": "STOLLOSS",
+            "name": "Stolloss",
             "category": "Eisenpanzer",
             "entry_text": [
                 "Auf der Suche nach Eisen, seiner\n",
@@ -181,7 +181,7 @@
             ]
         },
         "it": {
-            "name": "AGGRON",
+            "name": "Aggron",
             "category": "Pokémon Corazza",
             "entry_text": [
                 "Cerca ferro da mangiare scavando\n",
@@ -190,7 +190,7 @@
             ]
         },
         "es": {
-            "name": "AGGRON",
+            "name": "Aggron",
             "category": "Pokémon Cor. Férrea",
             "entry_text": [
                 "Mientras busca hierro para comer,\n",

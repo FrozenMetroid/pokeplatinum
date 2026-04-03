@@ -126,7 +126,7 @@
         "trainer_pos_m": 9,
         "pokemon_pos_m": 6,
         "en": {
-            "name": "MUK",
+            "name": "Muk",
             "category": "Sludge Pokémon",
             "entry_text": [
                 "A toxic fluid seeps from its body.\n",
@@ -135,7 +135,7 @@
             ]
         },
         "fr": {
-            "name": "GROTADMORV",
+            "name": "Grotadmorv",
             "category": "Pokémon Dégueu",
             "entry_text": [
                 "Son corps exsude un fluide toxique\n",
@@ -144,7 +144,7 @@
             ]
         },
         "de": {
-            "name": "SLEIMOK",
+            "name": "Sleimok",
             "category": "Schlamm",
             "entry_text": [
                 "Sein Körper sondert eine giftige\n",
@@ -153,7 +153,7 @@
             ]
         },
         "it": {
-            "name": "MUK",
+            "name": "Muk",
             "category": "Pokémon Melma",
             "entry_text": [
                 "Dal suo corpo filtra un fluido tos-\n",
@@ -162,7 +162,7 @@
             ]
         },
         "es": {
-            "name": "MUK",
+            "name": "Muk",
             "category": "Pokémon Lodo",
             "entry_text": [
                 "Su cuerpo segrega un fluido\n",

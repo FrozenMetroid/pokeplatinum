@@ -141,7 +141,7 @@
         "trainer_pos_m": 9,
         "pokemon_pos_m": 26,
         "en": {
-            "name": "MUNCHLAX",
+            "name": "Munchlax",
             "category": "Big Eater Pokémon",
             "entry_text": [
                 "In its desperation to gulp down\n",
@@ -150,7 +150,7 @@
             ]
         },
         "fr": {
-            "name": "GOINFREX",
+            "name": "Goinfrex",
             "category": "Pokémon Goinfre",
             "entry_text": [
                 "Il avale son poids en nourriture\n",
@@ -159,7 +159,7 @@
             ]
         },
         "de": {
-            "name": "MAMPFAXO",
+            "name": "Mampfaxo",
             "category": "Nimmersatt",
             "entry_text": [
                 "Einmal am Tag verschlingt es eine\n",
@@ -168,7 +168,7 @@
             ]
         },
         "it": {
-            "name": "MUNCHLAX",
+            "name": "Munchlax",
             "category": "Pokémon Ghiottone",
             "entry_text": [
                 "Divora quotidianamente una quantità\n",
@@ -177,7 +177,7 @@
             ]
         },
         "es": {
-            "name": "MUNCHLAX",
+            "name": "Munchlax",
             "category": "Pokémon Comilón",
             "entry_text": [
                 "Engulle su peso en comida una\n",

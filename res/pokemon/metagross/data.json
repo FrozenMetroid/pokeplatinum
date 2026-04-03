@@ -130,7 +130,7 @@
         "trainer_pos_m": 14,
         "pokemon_pos_m": 9,
         "en": {
-            "name": "METAGROSS",
+            "name": "Metagross",
             "category": "Iron Leg Pokémon",
             "entry_text": [
                 "METANG combined to form it.\n",
@@ -139,7 +139,7 @@
             ]
         },
         "fr": {
-            "name": "METALOSSE",
+            "name": "Metalosse",
             "category": "Pokémon Pattefer",
             "entry_text": [
                 "Il est né de la fusion de plusieurs\n",
@@ -148,7 +148,7 @@
             ]
         },
         "de": {
-            "name": "METAGROSS",
+            "name": "Metagross",
             "category": "Eisenfuß",
             "entry_text": [
                 "Mehrere METANG bilden dieses PKMN.\n",
@@ -157,7 +157,7 @@
             ]
         },
         "it": {
-            "name": "METAGROSS",
+            "name": "Metagross",
             "category": "Pokémon Ferrarto",
             "entry_text": [
                 "È formato dalla fusione di due\n",
@@ -166,7 +166,7 @@
             ]
         },
         "es": {
-            "name": "METAGROSS",
+            "name": "Metagross",
             "category": "Pokémon Pata Hierro",
             "entry_text": [
                 "Está formado por varios METANG.\n",

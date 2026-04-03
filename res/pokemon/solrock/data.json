@@ -129,7 +129,7 @@
         "trainer_pos_m": 9,
         "pokemon_pos_m": 65528,
         "en": {
-            "name": "SOLROCK",
+            "name": "Solrock",
             "category": "Meteorite Pokémon",
             "entry_text": [
                 "A new Pokémon species, rumored\n",
@@ -138,7 +138,7 @@
             ]
         },
         "fr": {
-            "name": "SOLAROC",
+            "name": "Solaroc",
             "category": "Pokémon Météorite",
             "entry_text": [
                 "Le bruit court que cette nouvelle\n",
@@ -147,7 +147,7 @@
             ]
         },
         "de": {
-            "name": "SONNFEL",
+            "name": "Sonnfel",
             "category": "Meteorit",
             "entry_text": [
                 "Eine neue PKMN-Spezies, von der\n",
@@ -156,7 +156,7 @@
             ]
         },
         "it": {
-            "name": "SOLROCK",
+            "name": "Solrock",
             "category": "Pokémon Meteorite",
             "entry_text": [
                 "Nuova specie di Pokémon che si\n",
@@ -165,7 +165,7 @@
             ]
         },
         "es": {
-            "name": "SOLROCK",
+            "name": "Solrock",
             "category": "Pokémon Meteorito",
             "entry_text": [
                 "Una nueva especie de Pokémon\n",

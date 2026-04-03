@@ -126,7 +126,7 @@
         "trainer_pos_m": 16,
         "pokemon_pos_m": 1,
         "en": {
-            "name": "FLYGON",
+            "name": "Flygon",
             "category": "Mystic Pokémon",
             "entry_text": [
                 "It whips up sandstorms with\n",
@@ -135,7 +135,7 @@
             ]
         },
         "fr": {
-            "name": "LIBEGON",
+            "name": "Libegon",
             "category": "Pokémon Mystique",
             "entry_text": [
                 "Son puissant battement d’ailes\n",
@@ -144,7 +144,7 @@
             ]
         },
         "de": {
-            "name": "LIBELLDRA",
+            "name": "Libelldra",
             "category": "Mystik",
             "entry_text": [
                 "Mit mächtigem Flügelschlag verur-\n",
@@ -153,7 +153,7 @@
             ]
         },
         "it": {
-            "name": "FLYGON",
+            "name": "Flygon",
             "category": "Pokémon Magico",
             "entry_text": [
                 "Genera tempeste di sabbia con il\n",
@@ -162,7 +162,7 @@
             ]
         },
         "es": {
-            "name": "FLYGON",
+            "name": "Flygon",
             "category": "Pokémon Místico",
             "entry_text": [
                 "Levanta tormentas de arena con\n",

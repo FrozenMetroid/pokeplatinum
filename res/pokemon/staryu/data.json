@@ -120,7 +120,7 @@
         "trainer_pos_m": 9,
         "pokemon_pos_m": 19,
         "en": {
-            "name": "STARYU",
+            "name": "Staryu",
             "category": "Star Shape Pokémon",
             "entry_text": [
                 "If its body is torn, it can grow\n",
@@ -129,7 +129,7 @@
             ]
         },
         "fr": {
-            "name": "STARI",
+            "name": "Stari",
             "category": "Pokémon Etoile",
             "entry_text": [
                 "Même amoché, son corps se régé-\n",
@@ -138,7 +138,7 @@
             ]
         },
         "de": {
-            "name": "STERNDU",
+            "name": "Sterndu",
             "category": "Sternform",
             "entry_text": [
                 "Wird sein Körper verletzt, kann\n",
@@ -147,7 +147,7 @@
             ]
         },
         "it": {
-            "name": "STARYU",
+            "name": "Staryu",
             "category": "Pokémon Stella",
             "entry_text": [
                 "Se il corpo è lacerato, si rigenera\n",
@@ -156,7 +156,7 @@
             ]
         },
         "es": {
-            "name": "STARYU",
+            "name": "Staryu",
             "category": "Pokémon Estrellada",
             "entry_text": [
                 "Puede recuperar las extremidades\n",

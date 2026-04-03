@@ -118,7 +118,7 @@
         "trainer_pos_m": 9,
         "pokemon_pos_m": 12,
         "en": {
-            "name": "DODUO",
+            "name": "Doduo",
             "category": "Twin Bird Pokémon",
             "entry_text": [
                 "The brains in its two heads appear\n",
@@ -127,7 +127,7 @@
             ]
         },
         "fr": {
-            "name": "DODUO",
+            "name": "Doduo",
             "category": "Pokémon Duoiseau",
             "entry_text": [
                 "Ses deux cerveaux semblent\n",
@@ -136,7 +136,7 @@
             ]
         },
         "de": {
-            "name": "DODU",
+            "name": "Dodu",
             "category": "Duovogel",
             "entry_text": [
                 "Die Gehirne der beiden Köpfe\n",
@@ -145,7 +145,7 @@
             ]
         },
         "it": {
-            "name": "DODUO",
+            "name": "Doduo",
             "category": "Pokémon Biuccello",
             "entry_text": [
                 "I suoi due cervelli si comunicano\n",
@@ -154,7 +154,7 @@
             ]
         },
         "es": {
-            "name": "DODUO",
+            "name": "Doduo",
             "category": "Pokémon Ave Gemela",
             "entry_text": [
                 "Parece que los cerebros de sus\n",

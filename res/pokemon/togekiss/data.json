@@ -125,7 +125,7 @@
         "trainer_pos_m": 9,
         "pokemon_pos_m": 65534,
         "en": {
-            "name": "TOGEKISS",
+            "name": "Togekiss",
             "category": "Jubilee Pokémon",
             "entry_text": [
                 "It shares many blessings with\n",
@@ -134,7 +134,7 @@
             ]
         },
         "fr": {
-            "name": "TOGEKISS",
+            "name": "Togekiss",
             "category": "Pokémon Célébration",
             "entry_text": [
                 "Il n’apparaît jamais en temps\n",
@@ -143,7 +143,7 @@
             ]
         },
         "de": {
-            "name": "TOGEKISS",
+            "name": "Togekiss",
             "category": "Jubilierer",
             "entry_text": [
                 "Es zeigt sich niemals dort, wo\n",
@@ -152,7 +152,7 @@
             ]
         },
         "it": {
-            "name": "TOGEKISS",
+            "name": "Togekiss",
             "category": "Pokémon Festa",
             "entry_text": [
                 "Non si presenta mai dove c’è un\n",
@@ -161,7 +161,7 @@
             ]
         },
         "es": {
-            "name": "TOGEKISS",
+            "name": "Togekiss",
             "category": "Pokémon Festejo",
             "entry_text": [
                 "Nunca aparece donde hay peleas.\n",

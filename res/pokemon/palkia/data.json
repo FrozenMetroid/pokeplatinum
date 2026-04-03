@@ -133,7 +133,7 @@
         "trainer_pos_m": 26,
         "pokemon_pos_m": 2,
         "en": {
-            "name": "PALKIA",
+            "name": "Palkia",
             "category": "Spatial Pokémon",
             "entry_text": [
                 "A legendary Pokémon of Sinnoh.\n",
@@ -142,7 +142,7 @@
             ]
         },
         "fr": {
-            "name": "PALKIA",
+            "name": "Palkia",
             "category": "Pokémon Espace",
             "entry_text": [
                 "Il peut modeler l’espace. Les\n",
@@ -151,7 +151,7 @@
             ]
         },
         "de": {
-            "name": "PALKIA",
+            "name": "Palkia",
             "category": "Räumlich",
             "entry_text": [
                 "Es hat die Macht, den Raum zu\n",
@@ -160,7 +160,7 @@
             ]
         },
         "it": {
-            "name": "PALKIA",
+            "name": "Palkia",
             "category": "Pokémon Spazio",
             "entry_text": [
                 "Ha l’abilità di distorcere lo spazio.\n",
@@ -169,7 +169,7 @@
             ]
         },
         "es": {
-            "name": "PALKIA",
+            "name": "Palkia",
             "category": "Pokémon Espacial",
             "entry_text": [
                 "Tiene la habilidad de distorsionar\n",

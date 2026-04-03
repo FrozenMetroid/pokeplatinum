@@ -150,7 +150,7 @@
         "trainer_pos_m": 9,
         "pokemon_pos_m": 10,
         "en": {
-            "name": "LICKITUNG",
+            "name": "Lickitung",
             "category": "Licking Pokémon",
             "entry_text": [
                 "When it extends its over-six-foot-\n",
@@ -159,7 +159,7 @@
             ]
         },
         "fr": {
-            "name": "EXCELANGUE",
+            "name": "Excelangue",
             "category": "Pokémon Lécheur",
             "entry_text": [
                 "Il n’utilise pas ses mains mais sa\n",
@@ -168,7 +168,7 @@
             ]
         },
         "de": {
-            "name": "SCHLURP",
+            "name": "Schlurp",
             "category": "Schlecker",
             "entry_text": [
                 "Statt Händen verwendet es seine\n",
@@ -177,7 +177,7 @@
             ]
         },
         "it": {
-            "name": "LICKITUNG",
+            "name": "Lickitung",
             "category": "Pokémon Linguaccia",
             "entry_text": [
                 "Al posto delle mani usa la sua lingua\n",
@@ -186,7 +186,7 @@
             ]
         },
         "es": {
-            "name": "LICKITUNG",
+            "name": "Lickitung",
             "category": "Pokémon Lametazo",
             "entry_text": [
                 "En vez de manos usa la lengua,\n",

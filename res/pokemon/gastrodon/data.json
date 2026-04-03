@@ -118,7 +118,7 @@
         "trainer_pos_m": 9,
         "pokemon_pos_m": 17,
         "en": {
-            "name": "GASTRODON",
+            "name": "Gastrodon",
             "category": "Sea Slug Pokémon",
             "entry_text": [
                 "Long ago, its entire back was\n",
@@ -127,7 +127,7 @@
             ]
         },
         "fr": {
-            "name": "TRITOSOR",
+            "name": "Tritosor",
             "category": "Pokémon Aqualimace",
             "entry_text": [
                 "Son corps pliable est dépourvu\n",
@@ -136,7 +136,7 @@
             ]
         },
         "de": {
-            "name": "GASTRODON",
+            "name": "Gastrodon",
             "category": "Seeschnecke",
             "entry_text": [
                 "Es hat einen biegsamen Körper ohne\n",
@@ -145,7 +145,7 @@
             ]
         },
         "it": {
-            "name": "GASTRODON",
+            "name": "Gastrodon",
             "category": "Pokémon Lumacomare",
             "entry_text": [
                 "Ha un corpo flessibile e senza ossa.\n",
@@ -154,7 +154,7 @@
             ]
         },
         "es": {
-            "name": "GASTRODON",
+            "name": "Gastrodon",
             "category": "Pokémon Babosa Mar.",
             "entry_text": [
                 "Posee un cuerpo flexible sin\n",

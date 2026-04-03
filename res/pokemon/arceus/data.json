@@ -172,7 +172,7 @@
         "trainer_pos_m": 23,
         "pokemon_pos_m": 0,
         "en": {
-            "name": "ARCEUS",
+            "name": "Arceus",
             "category": "Alpha Pokémon",
             "entry_text": [
                 "It is said to have emerged from an\n",
@@ -181,7 +181,7 @@
             ]
         },
         "fr": {
-            "name": "ARCEUS",
+            "name": "Arceus",
             "category": "Pokémon Alpha",
             "entry_text": [
                 "La mythologie le décrit comme\n",
@@ -190,7 +190,7 @@
             ]
         },
         "de": {
-            "name": "ARCEUS",
+            "name": "Arceus",
             "category": "Alpha",
             "entry_text": [
                 "Die Mythologie nennt dieses PKMN\n",
@@ -199,7 +199,7 @@
             ]
         },
         "it": {
-            "name": "ARCEUS",
+            "name": "Arceus",
             "category": "Pokémon Primevo",
             "entry_text": [
                 "Nella mitologia è descritto come il\n",
@@ -208,7 +208,7 @@
             ]
         },
         "es": {
-            "name": "ARCEUS",
+            "name": "Arceus",
             "category": "Pokémon Alfa",
             "entry_text": [
                 "La mitología lo describe como\n",

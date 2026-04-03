@@ -132,7 +132,7 @@
         "trainer_pos_m": 9,
         "pokemon_pos_m": 21,
         "en": {
-            "name": "DUSKULL",
+            "name": "Duskull",
             "category": "Requiem Pokémon",
             "entry_text": [
                 "It loves the crying of children. It\n",
@@ -141,7 +141,7 @@
             ]
         },
         "fr": {
-            "name": "SKELENOX",
+            "name": "Skelenox",
             "category": "Pokémon Requiem",
             "entry_text": [
                 "Il poursuit assidûment sa proie, où\n",
@@ -150,7 +150,7 @@
             ]
         },
         "de": {
-            "name": "ZWIRRLICHT",
+            "name": "Zwirrlicht",
             "category": "Requiem",
             "entry_text": [
                 "Verbissen verfolgt es seine Beute\n",
@@ -159,7 +159,7 @@
             ]
         },
         "it": {
-            "name": "DUSKULL",
+            "name": "Duskull",
             "category": "Pokémon Requiem",
             "entry_text": [
                 "Segue ostinatamente la preda\n",
@@ -168,7 +168,7 @@
             ]
         },
         "es": {
-            "name": "DUSKULL",
+            "name": "Duskull",
             "category": "Pokémon Réquiem",
             "entry_text": [
                 "Persigue a su presa como un perro\n",

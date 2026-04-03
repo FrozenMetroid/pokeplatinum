@@ -137,7 +137,7 @@
         "trainer_pos_m": 9,
         "pokemon_pos_m": 25,
         "en": {
-            "name": "ARON",
+            "name": "Aron",
             "category": "Iron Armor Pokémon",
             "entry_text": [
                 "It usually lives deep in mountains.\n",
@@ -146,7 +146,7 @@
             ]
         },
         "fr": {
-            "name": "GALEKID",
+            "name": "Galekid",
             "category": "Pokémon Armurfer",
             "entry_text": [
                 "Il vit habituellement au cœur des\n",
@@ -155,7 +155,7 @@
             ]
         },
         "de": {
-            "name": "STOLLUNIOR",
+            "name": "Stollunior",
             "category": "Eisenpanzer",
             "entry_text": [
                 "Normalerweise lebt es in dunklen\n",
@@ -164,7 +164,7 @@
             ]
         },
         "it": {
-            "name": "ARON",
+            "name": "Aron",
             "category": "Pokémon Corazza",
             "entry_text": [
                 "Vive generalmente sui monti ma,\n",
@@ -173,7 +173,7 @@
             ]
         },
         "es": {
-            "name": "ARON",
+            "name": "Aron",
             "category": "Pokémon Cor. Férrea",
             "entry_text": [
                 "Suele vivir en lugares inaccesibles\n",

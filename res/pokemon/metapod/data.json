@@ -66,7 +66,7 @@
         "trainer_pos_m": 9,
         "pokemon_pos_m": 23,
         "en": {
-            "name": "METAPOD",
+            "name": "Metapod",
             "category": "Cocoon Pokémon",
             "entry_text": [
                 "A steel-hard shell protects its\n",
@@ -75,7 +75,7 @@
             ]
         },
         "fr": {
-            "name": "CHRYSACIER",
+            "name": "Chrysacier",
             "category": "Pokémon Cocon",
             "entry_text": [
                 "Son corps frêle est protégé par sa\n",
@@ -84,7 +84,7 @@
             ]
         },
         "de": {
-            "name": "SAFCON",
+            "name": "Safcon",
             "category": "Kokon",
             "entry_text": [
                 "Der stahlharte Panzer schützt\n",
@@ -93,7 +93,7 @@
             ]
         },
         "it": {
-            "name": "METAPOD",
+            "name": "Metapod",
             "category": "Pokémon Bozzolo",
             "entry_text": [
                 "Ha una corazza dura come l’acciaio\n",
@@ -102,7 +102,7 @@
             ]
         },
         "es": {
-            "name": "METAPOD",
+            "name": "Metapod",
             "category": "Pokémon Capullo",
             "entry_text": [
                 "Su frágil cuerpo está recubierto\n",

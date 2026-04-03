@@ -121,7 +121,7 @@
         "trainer_pos_m": 26,
         "pokemon_pos_m": 0,
         "en": {
-            "name": "KYOGRE",
+            "name": "Kyogre",
             "category": "Sea Basin Pokémon",
             "entry_text": [
                 "It is said to have widened the\n",
@@ -130,7 +130,7 @@
             ]
         },
         "fr": {
-            "name": "KYOGRE",
+            "name": "Kyogre",
             "category": "Pokémon Bassinmarin",
             "entry_text": [
                 "On dit qu’il a fait monter les eaux\n",
@@ -139,7 +139,7 @@
             ]
         },
         "de": {
-            "name": "KYOGRE",
+            "name": "Kyogre",
             "category": "Seegründler",
             "entry_text": [
                 "Man sagt, es habe die Meere ver-\n",
@@ -148,7 +148,7 @@
             ]
         },
         "it": {
-            "name": "KYOGRE",
+            "name": "Kyogre",
             "category": "Pokémon Oceano",
             "entry_text": [
                 "Si dice che abbia ampliato i mari\n",
@@ -157,7 +157,7 @@
             ]
         },
         "es": {
-            "name": "KYOGRE",
+            "name": "Kyogre",
             "category": "Pokémon Cuenca Mar",
             "entry_text": [
                 "Se dice que aumentó el nivel del\n",

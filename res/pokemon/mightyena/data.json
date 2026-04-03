@@ -115,7 +115,7 @@
         "trainer_pos_m": 9,
         "pokemon_pos_m": 10,
         "en": {
-            "name": "MIGHTYENA",
+            "name": "Mightyena",
             "category": "Bite Pokémon",
             "entry_text": [
                 "It chases down prey in a pack.\n",
@@ -124,7 +124,7 @@
             ]
         },
         "fr": {
-            "name": "GRAHYENA",
+            "name": "Grahyena",
             "category": "Pokémon Morsure",
             "entry_text": [
                 "Il traque ses proies en groupe.\n",
@@ -133,7 +133,7 @@
             ]
         },
         "de": {
-            "name": "MAGNAYEN",
+            "name": "Magnayen",
             "category": "Biss",
             "entry_text": [
                 "Es jagt seine Beute im Rudel. Den\n",
@@ -142,7 +142,7 @@
             ]
         },
         "it": {
-            "name": "MIGHTYENA",
+            "name": "Mightyena",
             "category": "Pokémon Morso",
             "entry_text": [
                 "Caccia le prede in branco. Non\n",
@@ -151,7 +151,7 @@
             ]
         },
         "es": {
-            "name": "MIGHTYENA",
+            "name": "Mightyena",
             "category": "Pokémon Mordisco",
             "entry_text": [
                 "Ataca a sus presas en manada.\n",

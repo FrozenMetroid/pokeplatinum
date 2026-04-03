@@ -134,7 +134,7 @@
         "trainer_pos_m": 9,
         "pokemon_pos_m": 12,
         "en": {
-            "name": "LUCARIO",
+            "name": "Lucario",
             "category": "Aura Pokémon",
             "entry_text": [
                 "A well-trained one can sense auras\n",
@@ -143,12 +143,12 @@
             ]
         },
         "fr": {
-            "name": "LUCARIO",
+            "name": "Lucario",
             "category": "Pokémon Aura",
             "entry_text": [ "Il ressent les auras de tout. Il \n", "comprend le langage humain." ]
         },
         "de": {
-            "name": "LUCARIO",
+            "name": "Lucario",
             "category": "Aura",
             "entry_text": [
                 "Es besitzt die Fähigkeit, die Aura\n",
@@ -157,7 +157,7 @@
             ]
         },
         "it": {
-            "name": "LUCARIO",
+            "name": "Lucario",
             "category": "Pokémon Aura",
             "entry_text": [
                 "È in grado di avvertire l’aura di\n",
@@ -166,7 +166,7 @@
             ]
         },
         "es": {
-            "name": "LUCARIO",
+            "name": "Lucario",
             "category": "Pokémon Aura",
             "entry_text": [
                 "Puede sentir el aura de todas\n",

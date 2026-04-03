@@ -72,7 +72,7 @@
         "trainer_pos_m": 9,
         "pokemon_pos_m": 28,
         "en": {
-            "name": "KRICKETOT",
+            "name": "Kricketot",
             "category": "Cricket Pokémon",
             "entry_text": [
                 "Its legs are short. Whenever it\n",
@@ -81,7 +81,7 @@
             ]
         },
         "fr": {
-            "name": "CRIKZIK",
+            "name": "Crikzik",
             "category": "Pokémon Criquet",
             "entry_text": [
                 "Quand il bascule sa tête d’avant \n",
@@ -90,7 +90,7 @@
             ]
         },
         "de": {
-            "name": "ZIRPURZE",
+            "name": "Zirpurze",
             "category": "Zirper",
             "entry_text": [
                 "Es schüttelt seinen Kopf, so dass\n",
@@ -99,7 +99,7 @@
             ]
         },
         "it": {
-            "name": "KRICKETOT",
+            "name": "Kricketot",
             "category": "Pokémon Grillo",
             "entry_text": [
                 "Muove la testa avanti e indietro\n",
@@ -108,7 +108,7 @@
             ]
         },
         "es": {
-            "name": "KRICKETOT",
+            "name": "Kricketot",
             "category": "Pokémon Grillo",
             "entry_text": [
                 "Al agitar la cabeza de atrás hacia\n",

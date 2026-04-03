@@ -118,7 +118,7 @@
         "trainer_pos_m": 9,
         "pokemon_pos_m": 2,
         "en": {
-            "name": "WHISCASH",
+            "name": "Whiscash",
             "category": "Whiskers Pokémon",
             "entry_text": [
                 "It is extremely protective of its\n",
@@ -127,7 +127,7 @@
             ]
         },
         "fr": {
-            "name": "BARBICHA",
+            "name": "Barbicha",
             "category": "Pokémon Barbillon",
             "entry_text": [
                 "Il est attaché à son territoire.\n",
@@ -136,7 +136,7 @@
             ]
         },
         "de": {
-            "name": "WELSAR",
+            "name": "Welsar",
             "category": "Barthaar",
             "entry_text": [
                 "Es verteidigt sein Revier, indem es\n",
@@ -145,7 +145,7 @@
             ]
         },
         "it": {
-            "name": "WHISCASH",
+            "name": "Whiscash",
             "category": "Pokémon Baffetti",
             "entry_text": [
                 "Ha un senso del territorio molto\n",
@@ -154,7 +154,7 @@
             ]
         },
         "es": {
-            "name": "WHISCASH",
+            "name": "Whiscash",
             "category": "Pokémon Bigotudo",
             "entry_text": [
                 "Es muy territorial. Expulsa a los\n",

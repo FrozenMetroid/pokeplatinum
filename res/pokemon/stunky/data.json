@@ -129,7 +129,7 @@
         "trainer_pos_m": 9,
         "pokemon_pos_m": 9,
         "en": {
-            "name": "STUNKY",
+            "name": "Stunky",
             "category": "Skunk Pokémon",
             "entry_text": [
                 "It sprays a foul fluid from its\n",
@@ -138,7 +138,7 @@
             ]
         },
         "fr": {
-            "name": "MOUFOUETTE",
+            "name": "Moufouette",
             "category": "Pokémon Moufette",
             "entry_text": [
                 "Il se protège en expulsant un \n",
@@ -147,7 +147,7 @@
             ]
         },
         "de": {
-            "name": "SKUNKAPUH",
+            "name": "Skunkapuh",
             "category": "Stinktier",
             "entry_text": [
                 "Um sich zu schützen, versprüht es\n",
@@ -156,7 +156,7 @@
             ]
         },
         "it": {
-            "name": "STUNKY",
+            "name": "Stunky",
             "category": "Pokémon Moffetta",
             "entry_text": [
                 "Si protegge spruzzando un\n",
@@ -165,7 +165,7 @@
             ]
         },
         "es": {
-            "name": "STUNKY",
+            "name": "Stunky",
             "category": "Pokémon Mofeta",
             "entry_text": [
                 "Se protege expulsando un fluido\n",

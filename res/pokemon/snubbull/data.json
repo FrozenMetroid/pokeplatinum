@@ -144,7 +144,7 @@
         "trainer_pos_m": 9,
         "pokemon_pos_m": 22,
         "en": {
-            "name": "SNUBBULL",
+            "name": "Snubbull",
             "category": "Fairy Pokémon",
             "entry_text": [
                 "Small Pokémon flee from its scary\n",
@@ -153,7 +153,7 @@
             ]
         },
         "fr": {
-            "name": "SNUBBULL",
+            "name": "Snubbull",
             "category": "Pokémon Fée",
             "entry_text": [
                 "Son visage horrible fait fuir les\n",
@@ -162,7 +162,7 @@
             ]
         },
         "de": {
-            "name": "SNUBBULL",
+            "name": "Snubbull",
             "category": "Fee",
             "entry_text": [
                 "Kleine PKMN fliehen beim Anblick\n",
@@ -171,7 +171,7 @@
             ]
         },
         "it": {
-            "name": "SNUBBULL",
+            "name": "Snubbull",
             "category": "Pokémon Fata",
             "entry_text": [
                 "I Pokémon più piccoli fuggono alla\n",
@@ -180,7 +180,7 @@
             ]
         },
         "es": {
-            "name": "SNUBBULL",
+            "name": "Snubbull",
             "category": "Pokémon Hada",
             "entry_text": [
                 "Los Pokémon pequeños huyen al\n",

@@ -110,7 +110,7 @@
         "trainer_pos_m": 9,
         "pokemon_pos_m": 18,
         "en": {
-            "name": "SUNFLORA",
+            "name": "Sunflora",
             "category": "Sun Pokémon",
             "entry_text": [
                 "It gets energy from warm sunlight\n",
@@ -119,7 +119,7 @@
             ]
         },
         "fr": {
-            "name": "HELIATRONC",
+            "name": "Heliatronc",
             "category": "Pokémon Soleil",
             "entry_text": [
                 "Les rayons du soleil lui donnent de\n",
@@ -128,7 +128,7 @@
             ]
         },
         "de": {
-            "name": "SONNFLORA",
+            "name": "Sonnflora",
             "category": "Sonne",
             "entry_text": [
                 "Warmes Sonnenlicht gibt ihm\n",
@@ -137,7 +137,7 @@
             ]
         },
         "it": {
-            "name": "SUNFLORA",
+            "name": "Sunflora",
             "category": "Pokémon Sole",
             "entry_text": [
                 "Trae energia dalla luce del sole e\n",
@@ -146,7 +146,7 @@
             ]
         },
         "es": {
-            "name": "SUNFLORA",
+            "name": "Sunflora",
             "category": "Pokémon Sol",
             "entry_text": [
                 "Obtiene energía de la luz solar.\n",

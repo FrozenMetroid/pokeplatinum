@@ -138,7 +138,7 @@
         "trainer_pos_m": 9,
         "pokemon_pos_m": 21,
         "en": {
-            "name": "PSYDUCK",
+            "name": "Psyduck",
             "category": "Duck Pokémon",
             "entry_text": [
                 "Overwhelmed by enigmatic abilities,\n",
@@ -147,7 +147,7 @@
             ]
         },
         "fr": {
-            "name": "PSYKOKWAK",
+            "name": "Psykokwak",
             "category": "Pokémon Canard",
             "entry_text": [
                 "Quand son mal de crâne empire,\n",
@@ -156,7 +156,7 @@
             ]
         },
         "de": {
-            "name": "ENTON",
+            "name": "Enton",
             "category": "Ente",
             "entry_text": [
                 "Werden seine konstant vorhandenen\n",
@@ -165,7 +165,7 @@
             ]
         },
         "it": {
-            "name": "PSYDUCK",
+            "name": "Psyduck",
             "category": "Pokémon Papero",
             "entry_text": [
                 "Se la sua costante emicrania\n",
@@ -174,7 +174,7 @@
             ]
         },
         "es": {
-            "name": "PSYDUCK",
+            "name": "Psyduck",
             "category": "Pokémon Pato",
             "entry_text": [
                 "Cuando su jaqueca empeora, usa\n",

@@ -125,7 +125,7 @@
         "trainer_pos_m": 9,
         "pokemon_pos_m": 20,
         "en": {
-            "name": "MARSHTOMP",
+            "name": "Marshtomp",
             "category": "Mud Fish Pokémon",
             "entry_text": [
                 "Its sturdy legs give it sure\n",
@@ -134,7 +134,7 @@
             ]
         },
         "fr": {
-            "name": "FLOBIO",
+            "name": "Flobio",
             "category": "Pokémon Poissonboue",
             "entry_text": [
                 "Ses jambes robustes lui donnent\n",
@@ -143,7 +143,7 @@
             ]
         },
         "de": {
-            "name": "MOORABBEL",
+            "name": "Moorabbel",
             "category": "Lehmhüpfer",
             "entry_text": [
                 "Seine kräftigen Beine geben ihm\n",
@@ -152,7 +152,7 @@
             ]
         },
         "it": {
-            "name": "MARSHTOMP",
+            "name": "Marshtomp",
             "category": "Pokémon Fango Pesce",
             "entry_text": [
                 "Grazie alle zampe vigorose, si muove\n",
@@ -161,7 +161,7 @@
             ]
         },
         "es": {
-            "name": "MARSHTOMP",
+            "name": "Marshtomp",
             "category": "Pokémon Pez Lodo",
             "entry_text": [
                 "Sus piernas robustas impiden que\n",

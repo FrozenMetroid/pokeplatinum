@@ -110,7 +110,7 @@
         "trainer_pos_m": 12,
         "pokemon_pos_m": 2,
         "en": {
-            "name": "DODRIO",
+            "name": "Dodrio",
             "category": "Triple Bird Pokémon",
             "entry_text": [
                 "When DODUO evolves into this odd\n",
@@ -119,7 +119,7 @@
             ]
         },
         "fr": {
-            "name": "DODRIO",
+            "name": "Dodrio",
             "category": "Pokémon Trioiseau",
             "entry_text": [
                 "Quand DODUO connaît cette étrange\n",
@@ -128,7 +128,7 @@
             ]
         },
         "de": {
-            "name": "DODRI",
+            "name": "Dodri",
             "category": "Trivogel",
             "entry_text": [
                 "Entwickelt sich DODU, teilt sich\n",
@@ -137,7 +137,7 @@
             ]
         },
         "it": {
-            "name": "DODRIO",
+            "name": "Dodrio",
             "category": "Pokémon Triuccello",
             "entry_text": [
                 "Quando DODUO si evolve in questo\n",
@@ -146,7 +146,7 @@
             ]
         },
         "es": {
-            "name": "DODRIO",
+            "name": "Dodrio",
             "category": "Pokémon Ave Triple",
             "entry_text": [
                 "Cuando un DODUO evoluciona, una de\n",

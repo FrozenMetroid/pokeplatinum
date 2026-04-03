@@ -127,7 +127,7 @@
         "trainer_pos_m": 9,
         "pokemon_pos_m": 24,
         "en": {
-            "name": "HAPPINY",
+            "name": "Happiny",
             "category": "Playhouse Pokémon",
             "entry_text": [
                 "It likes to carry around a small\n",
@@ -136,7 +136,7 @@
             ]
         },
         "fr": {
-            "name": "PTIRAVI",
+            "name": "Ptiravi",
             "category": "Pokémon Maisonjouet",
             "entry_text": [
                 "Ce Pokémon aime ce qui est rond et\n",
@@ -145,7 +145,7 @@
             ]
         },
         "de": {
-            "name": "WONNEIRA",
+            "name": "Wonneira",
             "category": "Spielhaus",
             "entry_text": [
                 "Es liebt runde, weiße Dinge. Es\n",
@@ -154,7 +154,7 @@
             ]
         },
         "it": {
-            "name": "HAPPINY",
+            "name": "Happiny",
             "category": "Pokémon Ovettino",
             "entry_text": [
                 "Ama gli oggetti bianchi e tondi.\n",
@@ -163,7 +163,7 @@
             ]
         },
         "es": {
-            "name": "HAPPINY",
+            "name": "Happiny",
             "category": "Pokémon Casita",
             "entry_text": [
                 "Le encantan las cosas blancas y\n",

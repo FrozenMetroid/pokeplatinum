@@ -134,7 +134,7 @@
         "trainer_pos_m": 9,
         "pokemon_pos_m": 17,
         "en": {
-            "name": "MONFERNO",
+            "name": "Monferno",
             "category": "Playful Pokémon",
             "entry_text": [
                 "It skillfully controls the intensity\n",
@@ -143,7 +143,7 @@
             ]
         },
         "fr": {
-            "name": "CHIMPENFEU",
+            "name": "Chimpenfeu",
             "category": "Pokémon Garnement",
             "entry_text": [
                 "Pour intimider ses agresseurs, il\n",
@@ -152,7 +152,7 @@
             ]
         },
         "de": {
-            "name": "PANPYRO",
+            "name": "Panpyro",
             "category": "Verspielt",
             "entry_text": [
                 "Um Angreifer abzuschrecken,\n",
@@ -161,7 +161,7 @@
             ]
         },
         "it": {
-            "name": "MONFERNO",
+            "name": "Monferno",
             "category": "Pokémon Briccone",
             "entry_text": [
                 "Per intimorire i nemici che\n",
@@ -170,7 +170,7 @@
             ]
         },
         "es": {
-            "name": "MONFERNO",
+            "name": "Monferno",
             "category": "Pokémon Juguetón",
             "entry_text": [
                 "Intimida a sus enemigos\n",

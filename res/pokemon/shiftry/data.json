@@ -127,7 +127,7 @@
         "trainer_pos_m": 9,
         "pokemon_pos_m": 8,
         "en": {
-            "name": "SHIFTRY",
+            "name": "Shiftry",
             "category": "Wicked Pokémon",
             "entry_text": [
                 "By flapping its leafy fan, it can\n",
@@ -136,7 +136,7 @@
             ]
         },
         "fr": {
-            "name": "TENGALICE",
+            "name": "Tengalice",
             "category": "Pokémon Malveillant",
             "entry_text": [
                 "D’un coup de sa feuille éventail, il\n",
@@ -145,7 +145,7 @@
             ]
         },
         "de": {
-            "name": "TENGULIST",
+            "name": "Tengulist",
             "category": "Verschlagen",
             "entry_text": [
                 "Seine großen Fächer erzeugen Böen,\n",
@@ -154,7 +154,7 @@
             ]
         },
         "it": {
-            "name": "SHIFTRY",
+            "name": "Shiftry",
             "category": "Pokémon Burbero",
             "entry_text": [
                 "Con le sue foglie provoca raffiche\n",
@@ -163,7 +163,7 @@
             ]
         },
         "es": {
-            "name": "SHIFTRY",
+            "name": "Shiftry",
             "category": "Pokémon Malvado",
             "entry_text": [
                 "Con sus abanicos puede provocar\n",

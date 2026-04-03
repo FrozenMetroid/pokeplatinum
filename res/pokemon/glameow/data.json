@@ -130,7 +130,7 @@
         "trainer_pos_m": 9,
         "pokemon_pos_m": 24,
         "en": {
-            "name": "GLAMEOW",
+            "name": "Glameow",
             "category": "Catty Pokémon",
             "entry_text": [
                 "It hides its spiteful tendency of\n",
@@ -139,7 +139,7 @@
             ]
         },
         "fr": {
-            "name": "CHAGLAM",
+            "name": "Chaglam",
             "category": "Pokémon Chafouin",
             "entry_text": [
                 "Il griffe quand il est en colère et\n",
@@ -148,7 +148,7 @@
             ]
         },
         "de": {
-            "name": "CHARMIAN",
+            "name": "Charmian",
             "category": "Fies",
             "entry_text": [
                 "Es schlägt mit Krallen zu oder\n",
@@ -157,7 +157,7 @@
             ]
         },
         "it": {
-            "name": "GLAMEOW",
+            "name": "Glameow",
             "category": "Pokémon Felide",
             "entry_text": [
                 "Se disturbato, tira fuori gli arti-\n",
@@ -166,7 +166,7 @@
             ]
         },
         "es": {
-            "name": "GLAMEOW",
+            "name": "Glameow",
             "category": "Pokémon Gastuto",
             "entry_text": [
                 "Araña cuando está enfadado y\n",

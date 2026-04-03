@@ -114,7 +114,7 @@
         "trainer_pos_m": 9,
         "pokemon_pos_m": 5,
         "en": {
-            "name": "MANECTRIC",
+            "name": "Manectric",
             "category": "Discharge Pokémon",
             "entry_text": [
                 "It discharges electricity from its\n",
@@ -123,7 +123,7 @@
             ]
         },
         "fr": {
-            "name": "ELECSPRINT",
+            "name": "Elecsprint",
             "category": "Pokémon Décharge",
             "entry_text": [
                 "Il libère l’électricité par sa\n",
@@ -132,7 +132,7 @@
             ]
         },
         "de": {
-            "name": "VOLTENSO",
+            "name": "Voltenso",
             "category": "Entladung",
             "entry_text": [
                 "Aus seiner Mähne entlädt es Elekt-\n",
@@ -141,7 +141,7 @@
             ]
         },
         "it": {
-            "name": "MANECTRIC",
+            "name": "Manectric",
             "category": "Pokémon Scossa",
             "entry_text": [
                 "Scarica elettricità dalla criniera.\n",
@@ -150,7 +150,7 @@
             ]
         },
         "es": {
-            "name": "MANECTRIC",
+            "name": "Manectric",
             "category": "Pokémon Descarga",
             "entry_text": [
                 "Descarga electricidad desde su\n",

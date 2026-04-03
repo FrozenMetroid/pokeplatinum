@@ -120,7 +120,7 @@
         "trainer_pos_m": 9,
         "pokemon_pos_m": 17,
         "en": {
-            "name": "DONPHAN",
+            "name": "Donphan",
             "category": "Armor Pokémon",
             "entry_text": [
                 "It attacks by curling up, then\n",
@@ -129,7 +129,7 @@
             ]
         },
         "fr": {
-            "name": "DONPHAN",
+            "name": "Donphan",
             "category": "Pokémon Armure",
             "entry_text": [
                 "Il attaque en se roulant en boule\n",
@@ -138,7 +138,7 @@
             ]
         },
         "de": {
-            "name": "DONPHAN",
+            "name": "Donphan",
             "category": "Panzer",
             "entry_text": [
                 "Wenn es angreift, rollt es sich\n",
@@ -147,7 +147,7 @@
             ]
         },
         "it": {
-            "name": "DONPHAN",
+            "name": "Donphan",
             "category": "Pokémon Armatura",
             "entry_text": [
                 "Si arrotola a palla e attacca il\n",
@@ -156,7 +156,7 @@
             ]
         },
         "es": {
-            "name": "DONPHAN",
+            "name": "Donphan",
             "category": "Pokémon Coraza",
             "entry_text": [
                 "Se enrolla sobre sí mismo y se\n",

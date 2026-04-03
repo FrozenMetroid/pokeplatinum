@@ -116,7 +116,7 @@
         "trainer_pos_m": 18,
         "pokemon_pos_m": 1,
         "en": {
-            "name": "WAILORD",
+            "name": "Wailord",
             "category": "Float Whale Pokémon",
             "entry_text": [
                 "The biggest of all Pokémon.\n",
@@ -125,7 +125,7 @@
             ]
         },
         "fr": {
-            "name": "WAILORD",
+            "name": "Wailord",
             "category": "Pokémon Cachabouée",
             "entry_text": [
                 "Le plus grand des Pokémon. Il peut\n",
@@ -134,7 +134,7 @@
             ]
         },
         "de": {
-            "name": "WAILORD",
+            "name": "Wailord",
             "category": "Flutwal",
             "entry_text": [
                 "Das größte PKMN. Es kann mit nur\n",
@@ -143,7 +143,7 @@
             ]
         },
         "it": {
-            "name": "WAILORD",
+            "name": "Wailord",
             "category": "Pokémon Megabalena",
             "entry_text": [
                 "Il Pokémon più grande che esista.\n",
@@ -152,7 +152,7 @@
             ]
         },
         "es": {
-            "name": "WAILORD",
+            "name": "Wailord",
             "category": "Pokémon Ballenaflot",
             "entry_text": [
                 "Es el más grande de los Pokémon.\n",

@@ -110,7 +110,7 @@
         "trainer_pos_m": 9,
         "pokemon_pos_m": 8,
         "en": {
-            "name": "LUXRAY",
+            "name": "Luxray",
             "category": "Gleam Eyes Pokémon",
             "entry_text": [
                 "It can see clearly through walls\n",
@@ -119,7 +119,7 @@
             ]
         },
         "fr": {
-            "name": "LUXRAY",
+            "name": "Luxray",
             "category": "Pokémon Brilloeil",
             "entry_text": [
                 "Ses yeux voient à travers tout. Il\n",
@@ -128,7 +128,7 @@
             ]
         },
         "de": {
-            "name": "LUXTRA",
+            "name": "Luxtra",
             "category": "Glühauge",
             "entry_text": [
                 "Mit seinen Augen kann es durch\n",
@@ -137,7 +137,7 @@
             ]
         },
         "it": {
-            "name": "LUXRAY",
+            "name": "Luxray",
             "category": "Pokémon Occhiluce",
             "entry_text": [
                 "Vede attraverso qualsiasi cosa.\n",
@@ -146,7 +146,7 @@
             ]
         },
         "es": {
-            "name": "LUXRAY",
+            "name": "Luxray",
             "category": "Pokémon Chispa Ojos",
             "entry_text": [
                 "Sus ojos pueden ver a través\n",

@@ -74,7 +74,7 @@
         "trainer_pos_m": 9,
         "pokemon_pos_m": 65528,
         "en": {
-            "name": "COMBEE",
+            "name": "Combee",
             "category": "Tiny Bee Pokémon",
             "entry_text": [
                 "The trio is together from birth.\n",
@@ -83,7 +83,7 @@
             ]
         },
         "fr": {
-            "name": "APITRINI",
+            "name": "Apitrini",
             "category": "Pokémon Miniabeille",
             "entry_text": [
                 "Un Pokémon qui en regroupe trois\n",
@@ -92,7 +92,7 @@
             ]
         },
         "de": {
-            "name": "WADRIBIE",
+            "name": "Wadribie",
             "category": "Kleinbiene",
             "entry_text": [
                 "Ein PKMN, geformt aus 3 einzelnen\n",
@@ -101,7 +101,7 @@
             ]
         },
         "it": {
-            "name": "COMBEE",
+            "name": "Combee",
             "category": "Pokémon Apetta",
             "entry_text": [
                 "Pokémon formato da altri tre.\n",
@@ -110,7 +110,7 @@
             ]
         },
         "es": {
-            "name": "COMBEE",
+            "name": "Combee",
             "category": "Pokémon Abejita",
             "entry_text": [
                 "Está formado por otros tres\n",

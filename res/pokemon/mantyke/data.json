@@ -124,7 +124,7 @@
         "trainer_pos_m": 9,
         "pokemon_pos_m": 65529,
         "en": {
-            "name": "MANTYKE",
+            "name": "Mantyke",
             "category": "Kite Pokémon",
             "entry_text": [
                 "People organize tours to see this\n",
@@ -133,7 +133,7 @@
             ]
         },
         "fr": {
-            "name": "BABIMANTA",
+            "name": "Babimanta",
             "category": "Pokémon Cervolant",
             "entry_text": [
                 "Un Pokémon amical qui analyse\n",
@@ -142,7 +142,7 @@
             ]
         },
         "de": {
-            "name": "MANTIRPS",
+            "name": "Mantirps",
             "category": "Flugrochen",
             "entry_text": [
                 "Ein freundliches PKMN, das mit\n",
@@ -151,7 +151,7 @@
             ]
         },
         "it": {
-            "name": "MANTYKE",
+            "name": "Mantyke",
             "category": "Pokémon Aquilone",
             "entry_text": [
                 "Pokémon amichevole che con le\n",
@@ -160,7 +160,7 @@
             ]
         },
         "es": {
-            "name": "MANTYKE",
+            "name": "Mantyke",
             "category": "Pokémon Milano",
             "entry_text": [
                 "Un Pokémon amable que captura\n",

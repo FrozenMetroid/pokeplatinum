@@ -134,7 +134,7 @@
         "trainer_pos_m": 9,
         "pokemon_pos_m": 7,
         "en": {
-            "name": "AMBIPOM",
+            "name": "Ambipom",
             "category": "Long Tail Pokémon",
             "entry_text": [
                 "Split into two, the tails are so\n",
@@ -143,7 +143,7 @@
             ]
         },
         "fr": {
-            "name": "CAPIDEXTRE",
+            "name": "Capidextre",
             "category": "Pokémon Longqueue",
             "entry_text": [
                 "Il se nourrit de noix qu’il épluche\n",
@@ -152,7 +152,7 @@
             ]
         },
         "de": {
-            "name": "AMBIDIFFEL",
+            "name": "Ambidiffel",
             "category": "Langschweif",
             "entry_text": [
                 "Wenn es hungrig ist, knackt es\n",
@@ -161,7 +161,7 @@
             ]
         },
         "it": {
-            "name": "AMBIPOM",
+            "name": "Ambipom",
             "category": "Pokémon Lungacoda",
             "entry_text": [
                 "Si nutre di nocciole che sbuccia con\n",
@@ -170,7 +170,7 @@
             ]
         },
         "es": {
-            "name": "AMBIPOM",
+            "name": "Ambipom",
             "category": "Pokémon Cola Larga",
             "entry_text": [
                 "Para comer, rompe nueces\n",

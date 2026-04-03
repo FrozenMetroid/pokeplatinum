@@ -123,7 +123,7 @@
         "trainer_pos_m": 9,
         "pokemon_pos_m": 23,
         "en": {
-            "name": "WHISMUR",
+            "name": "Whismur",
             "category": "Whisper Pokémon",
             "entry_text": [
                 "Usually, its cries are like quiet\n",
@@ -132,7 +132,7 @@
             ]
         },
         "fr": {
-            "name": "CHUCHMUR",
+            "name": "Chuchmur",
             "category": "Pokémon Chuchoteur",
             "entry_text": [
                 "En temps normal, son cri est pareil\n",
@@ -141,7 +141,7 @@
             ]
         },
         "de": {
-            "name": "FLURMEL",
+            "name": "Flurmel",
             "category": "Flüster",
             "entry_text": [
                 "Normalerweise klingen seine Rufe\n",
@@ -150,7 +150,7 @@
             ]
         },
         "it": {
-            "name": "WHISMUR",
+            "name": "Whismur",
             "category": "Pokémon Sussurro",
             "entry_text": [
                 "Di solito ha una voce molto tenue,\n",
@@ -159,7 +159,7 @@
             ]
         },
         "es": {
-            "name": "WHISMUR",
+            "name": "Whismur",
             "category": "Pokémon Susurro",
             "entry_text": [
                 "Suele murmurar a un volumen casi\n",

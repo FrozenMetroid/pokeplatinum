@@ -124,7 +124,7 @@
         "trainer_pos_m": 9,
         "pokemon_pos_m": 17,
         "en": {
-            "name": "POLIWHIRL",
+            "name": "Poliwhirl",
             "category": "Tadpole Pokémon",
             "entry_text": [
                 "The spiral pattern on its belly\n",
@@ -133,7 +133,7 @@
             ]
         },
         "fr": {
-            "name": "TETARTE",
+            "name": "Tetarte",
             "category": "Pokémon Têtard",
             "entry_text": [
                 "La spirale qui orne son ventre\n",
@@ -142,7 +142,7 @@
             ]
         },
         "de": {
-            "name": "QUAPUTZI",
+            "name": "Quaputzi",
             "category": "Kaulquappe",
             "entry_text": [
                 "Das Spiralmuster auf seinem Bauch\n",
@@ -151,7 +151,7 @@
             ]
         },
         "it": {
-            "name": "POLIWHIRL",
+            "name": "Poliwhirl",
             "category": "Pokémon Girino",
             "entry_text": [
                 "Il disegno spiraliforme sulla pancia\n",
@@ -160,7 +160,7 @@
             ]
         },
         "es": {
-            "name": "POLIWHIRL",
+            "name": "Poliwhirl",
             "category": "Pokémon Renacuajo",
             "entry_text": [
                 "El dibujo espiral de su panza ondea\n",

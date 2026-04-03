@@ -126,7 +126,7 @@
         "trainer_pos_m": 9,
         "pokemon_pos_m": 16,
         "en": {
-            "name": "NOSEPASS",
+            "name": "Nosepass",
             "category": "Compass Pokémon",
             "entry_text": [
                 "When endangered, it may protect\n",
@@ -135,7 +135,7 @@
             ]
         },
         "fr": {
-            "name": "TARINOR",
+            "name": "Tarinor",
             "category": "Pokémon Boussole",
             "entry_text": [
                 "Son nez est un aimant, c’est\n",
@@ -144,12 +144,12 @@
             ]
         },
         "de": {
-            "name": "NASGNET",
+            "name": "Nasgnet",
             "category": "Kompass",
             "entry_text": [ "Seine Nase ist ein Magnet. Daher\n", "sieht das PKMN immer nach Norden." ]
         },
         "it": {
-            "name": "NOSEPASS",
+            "name": "Nosepass",
             "category": "Pokémon Bussola",
             "entry_text": [
                 "Il suo naso è magnetico. Per questo\n",
@@ -158,7 +158,7 @@
             ]
         },
         "es": {
-            "name": "NOSEPASS",
+            "name": "Nosepass",
             "category": "Pokémon Brújula",
             "entry_text": [
                 "Su nariz es un imán. Por eso el\n",

@@ -138,7 +138,7 @@
         "trainer_pos_m": 9,
         "pokemon_pos_m": 25,
         "en": {
-            "name": "TOTODILE",
+            "name": "Totodile",
             "category": "Big Jaw Pokémon",
             "entry_text": [
                 "It has the habit of biting anything\n",
@@ -147,7 +147,7 @@
             ]
         },
         "fr": {
-            "name": "KAIMINUS",
+            "name": "Kaiminus",
             "category": "Pokémon Mâchoire",
             "entry_text": [
                 "Il broie tout ce qu’il trouve avec\n",
@@ -156,7 +156,7 @@
             ]
         },
         "de": {
-            "name": "KARNIMANI",
+            "name": "Karnimani",
             "category": "Großmaul",
             "entry_text": [
                 "Es hat die Angewohnheit, nach allem\n",
@@ -165,7 +165,7 @@
             ]
         },
         "it": {
-            "name": "TOTODILE",
+            "name": "Totodile",
             "category": "Pokémon Mascellone",
             "entry_text": [
                 "Ha l’abitudine di mordere ogni cosa\n",
@@ -174,7 +174,7 @@
             ]
         },
         "es": {
-            "name": "TOTODILE",
+            "name": "Totodile",
             "category": "Pokémon Fauces",
             "entry_text": [
                 "Tiene costumbre de morderlo todo\n",

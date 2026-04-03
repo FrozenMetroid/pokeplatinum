@@ -132,7 +132,7 @@
         "trainer_pos_m": 9,
         "pokemon_pos_m": 16,
         "en": {
-            "name": "BUNEARY",
+            "name": "Buneary",
             "category": "Rabbit Pokémon",
             "entry_text": [
                 "Its ears are always rolled up. They\n",
@@ -141,7 +141,7 @@
             ]
         },
         "fr": {
-            "name": "LAPOREILLE",
+            "name": "Laporeille",
             "category": "Pokémon Lapin",
             "entry_text": [
                 "Il frappe l’ennemi en déroulant\n",
@@ -150,7 +150,7 @@
             ]
         },
         "de": {
-            "name": "HASPIROR",
+            "name": "Haspiror",
             "category": "Hase",
             "entry_text": [
                 "Es entrollt seine Ohren sehr\n",
@@ -159,7 +159,7 @@
             ]
         },
         "it": {
-            "name": "BUNEARY",
+            "name": "Buneary",
             "category": "Pokémon Coniglio",
             "entry_text": [
                 "Sbaraglia i nemici dispiegando con\n",
@@ -168,7 +168,7 @@
             ]
         },
         "es": {
-            "name": "BUNEARY",
+            "name": "Buneary",
             "category": "Pokémon Conejo",
             "entry_text": [
                 "Ataca a sus enemigos con un\n",

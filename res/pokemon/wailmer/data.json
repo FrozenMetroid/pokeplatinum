@@ -128,7 +128,7 @@
         "trainer_pos_m": 16,
         "pokemon_pos_m": 9,
         "en": {
-            "name": "WAILMER",
+            "name": "Wailmer",
             "category": "Ball Whale Pokémon",
             "entry_text": [
                 "On sunny days, it lands on beaches\n",
@@ -137,7 +137,7 @@
             ]
         },
         "fr": {
-            "name": "WAILMER",
+            "name": "Wailmer",
             "category": "Pokémon Baleinboule",
             "entry_text": [
                 "Par beau temps, il se pose sur les\n",
@@ -146,7 +146,7 @@
             ]
         },
         "de": {
-            "name": "WAILMER",
+            "name": "Wailmer",
             "category": "Kugelwal",
             "entry_text": [
                 "An sonnigen Tagen trifft man diese\n",
@@ -155,7 +155,7 @@
             ]
         },
         "it": {
-            "name": "WAILMER",
+            "name": "Wailmer",
             "category": "Pokémon Balenottero",
             "entry_text": [
                 "In giornate soleggiate, gioca\n",
@@ -164,7 +164,7 @@
             ]
         },
         "es": {
-            "name": "WAILMER",
+            "name": "Wailmer",
             "category": "Pokémon Ballenabola",
             "entry_text": [
                 "En días soleados se tumba en las\n",

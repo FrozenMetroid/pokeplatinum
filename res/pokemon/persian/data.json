@@ -130,7 +130,7 @@
         "trainer_pos_m": 9,
         "pokemon_pos_m": 16,
         "en": {
-            "name": "PERSIAN",
+            "name": "Persian",
             "category": "Classy Cat Pokémon",
             "entry_text": [
                 "A very haughty Pokémon. Among\n",
@@ -139,7 +139,7 @@
             ]
         },
         "fr": {
-            "name": "PERSIAN",
+            "name": "Persian",
             "category": "Pokémon Chadeville",
             "entry_text": [
                 "Un Pokémon très snob. La taille du\n",
@@ -148,7 +148,7 @@
             ]
         },
         "de": {
-            "name": "SNOBILIKAT",
+            "name": "Snobilikat",
             "category": "Rassekatze",
             "entry_text": [
                 "Ein sehr stolzes Pokémon. Für Fans\n",
@@ -157,7 +157,7 @@
             ]
         },
         "it": {
-            "name": "PERSIAN",
+            "name": "Persian",
             "category": "Pokémon Nobilgatto",
             "entry_text": [
                 "Un Pokémon molto altezzoso. I fan\n",
@@ -166,7 +166,7 @@
             ]
         },
         "es": {
-            "name": "PERSIAN",
+            "name": "Persian",
             "category": "Pokémon Gato Fino",
             "entry_text": [
                 "Es un Pokémon muy arrogante. El\n",

@@ -116,7 +116,7 @@
         "trainer_pos_m": 9,
         "pokemon_pos_m": 65522,
         "en": {
-            "name": "MAGNEMITE",
+            "name": "Magnemite",
             "category": "Magnet Pokémon",
             "entry_text": [
                 "The faster the units at its sides\n",
@@ -125,7 +125,7 @@
             ]
         },
         "fr": {
-            "name": "MAGNETI",
+            "name": "Magneti",
             "category": "Pokémon Magnétique",
             "entry_text": [
                 "Ses extrémités génèrent les vagues\n",
@@ -134,7 +134,7 @@
             ]
         },
         "de": {
-            "name": "MAGNETILO",
+            "name": "Magnetilo",
             "category": "Magnet",
             "entry_text": [
                 "Die Vorrichtungen an seinem Körper\n",
@@ -143,7 +143,7 @@
             ]
         },
         "it": {
-            "name": "MAGNEMITE",
+            "name": "Magnemite",
             "category": "Pokémon Calamita",
             "entry_text": [
                 "Gli elementi laterali generano onde\n",
@@ -152,7 +152,7 @@
             ]
         },
         "es": {
-            "name": "MAGNEMITE",
+            "name": "Magnemite",
             "category": "Pokémon Imán",
             "entry_text": [
                 "Las unidades laterales crean ondas\n",

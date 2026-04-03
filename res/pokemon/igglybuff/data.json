@@ -123,7 +123,7 @@
         "trainer_pos_m": 9,
         "pokemon_pos_m": 29,
         "en": {
-            "name": "IGGLYBUFF",
+            "name": "Igglybuff",
             "category": "Balloon Pokémon",
             "entry_text": [
                 "It has a soft and bouncy body.\n",
@@ -132,7 +132,7 @@
             ]
         },
         "fr": {
-            "name": "TOUDOUDOU",
+            "name": "Toudoudou",
             "category": "Pokémon Bouboule",
             "entry_text": [
                 "Son corps est doux et élastique.\n",
@@ -141,7 +141,7 @@
             ]
         },
         "de": {
-            "name": "FLUFFELUFF",
+            "name": "Fluffeluff",
             "category": "Ballon",
             "entry_text": [
                 "Es hat einen weichen, elastischen\n",
@@ -150,7 +150,7 @@
             ]
         },
         "it": {
-            "name": "IGGLYBUFF",
+            "name": "Igglybuff",
             "category": "Pokémon Pallone",
             "entry_text": [
                 "Ha un corpo morbido ed elastico.\n",
@@ -159,7 +159,7 @@
             ]
         },
         "es": {
-            "name": "IGGLYBUFF",
+            "name": "Igglybuff",
             "category": "Pokémon Globo",
             "entry_text": [
                 "Su cuerpo es suave y está\n",

@@ -67,7 +67,7 @@
         "trainer_pos_m": 9,
         "pokemon_pos_m": 28,
         "en": {
-            "name": "CATERPIE",
+            "name": "Caterpie",
             "category": "Worm Pokémon",
             "entry_text": [
                 "It releases a stench from its red\n",
@@ -76,7 +76,7 @@
             ]
         },
         "fr": {
-            "name": "CHENIPAN",
+            "name": "Chenipan",
             "category": "Pokémon Ver",
             "entry_text": [
                 "Ses antennes rouges libèrent une\n",
@@ -85,7 +85,7 @@
             ]
         },
         "de": {
-            "name": "RAUPY",
+            "name": "Raupy",
             "category": "Wurm",
             "entry_text": [
                 "Seine roten Antennen sondern einen\n",
@@ -94,7 +94,7 @@
             ]
         },
         "it": {
-            "name": "CATERPIE",
+            "name": "Caterpie",
             "category": "Pokémon Baco",
             "entry_text": [
                 "Dalle antenne rosse emana un puzzo\n",
@@ -103,7 +103,7 @@
             ]
         },
         "es": {
-            "name": "CATERPIE",
+            "name": "Caterpie",
             "category": "Pokémon Gusano",
             "entry_text": [
                 "Su antena roja desprende un gran\n",

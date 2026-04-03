@@ -112,7 +112,7 @@
         "trainer_pos_m": 9,
         "pokemon_pos_m": 17,
         "en": {
-            "name": "LUXIO",
+            "name": "Luxio",
             "category": "Spark Pokémon",
             "entry_text": [
                 "Strong electricity courses through\n",
@@ -121,7 +121,7 @@
             ]
         },
         "fr": {
-            "name": "LUXIO",
+            "name": "Luxio",
             "category": "Pokémon Etincelle",
             "entry_text": [
                 "L’électricité libérée par ses\n",
@@ -130,7 +130,7 @@
             ]
         },
         "de": {
-            "name": "LUXIO",
+            "name": "Luxio",
             "category": "Funken",
             "entry_text": [
                 "Seine Krallen geben Elektrizität ab,\n",
@@ -139,7 +139,7 @@
             ]
         },
         "it": {
-            "name": "LUXIO",
+            "name": "Luxio",
             "category": "Pokémon Favilla",
             "entry_text": [
                 "Dagli artigli rilascia un’elettricità\n",
@@ -148,7 +148,7 @@
             ]
         },
         "es": {
-            "name": "LUXIO",
+            "name": "Luxio",
             "category": "Pokémon Chispa",
             "entry_text": [
                 "Sus garras emiten electricidad\n",

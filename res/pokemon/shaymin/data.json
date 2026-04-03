@@ -108,7 +108,7 @@
         "trainer_pos_m": 9,
         "pokemon_pos_m": 32,
         "en": {
-            "name": "SHAYMIN",
+            "name": "Shaymin",
             "category": "Gratitude Pokémon",
             "entry_text": [
                 "The flowers all over its body burst\n",
@@ -117,7 +117,7 @@
             ]
         },
         "fr": {
-            "name": "SHAYMIN",
+            "name": "Shaymin",
             "category": "Pokémon Gratitude",
             "entry_text": [
                 "Il vit dans les champs de fleurs et\n",
@@ -126,7 +126,7 @@
             ]
         },
         "de": {
-            "name": "SHAYMIN",
+            "name": "Shaymin",
             "category": "Dankbarkeit",
             "entry_text": [
                 "Es lebt auf Blumenwiesen und rollt\n",
@@ -135,7 +135,7 @@
             ]
         },
         "it": {
-            "name": "SHAYMIN",
+            "name": "Shaymin",
             "category": "Pokémon Gratitudine",
             "entry_text": [
                 "Vive nei campi di fiori e cerca di\n",
@@ -144,7 +144,7 @@
             ]
         },
         "es": {
-            "name": "SHAYMIN",
+            "name": "Shaymin",
             "category": "Pokémon Gratitud",
             "entry_text": [
                 "Vive entre las flores. Para evitar\n",

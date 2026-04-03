@@ -119,7 +119,7 @@
         "trainer_pos_m": 9,
         "pokemon_pos_m": 7,
         "en": {
-            "name": "MACHOKE",
+            "name": "Machoke",
             "category": "Superpower Pokémon",
             "entry_text": [
                 "It happily carries heavy cargo to\n",
@@ -128,7 +128,7 @@
             ]
         },
         "fr": {
-            "name": "MACHOPEUR",
+            "name": "Machopeur",
             "category": "Pokémon Colosse",
             "entry_text": [
                 "La force herculéenne du MACHOPEUR\n",
@@ -137,7 +137,7 @@
             ]
         },
         "de": {
-            "name": "MASCHOCK",
+            "name": "Maschock",
             "category": "Kraftprotz",
             "entry_text": [
                 "MASCHOCKs unbegrenzte Kraft ist\n",
@@ -146,7 +146,7 @@
             ]
         },
         "it": {
-            "name": "MACHOKE",
+            "name": "Machoke",
             "category": "Pokémon Megaforza",
             "entry_text": [
                 "La sua incredibile forza può essere\n",
@@ -155,7 +155,7 @@
             ]
         },
         "es": {
-            "name": "MACHOKE",
+            "name": "Machoke",
             "category": "Pokémon Superpoder",
             "entry_text": [
                 "La gran fortaleza de MACHOKE es\n",

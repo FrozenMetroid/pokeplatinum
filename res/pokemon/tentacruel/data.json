@@ -112,7 +112,7 @@
         "trainer_pos_m": 4,
         "pokemon_pos_m": 65535,
         "en": {
-            "name": "TENTACRUEL",
+            "name": "Tentacruel",
             "category": "Jellyfish Pokémon",
             "entry_text": [
                 "It extends its 80 tentacles to\n",
@@ -121,7 +121,7 @@
             ]
         },
         "fr": {
-            "name": "TENTACRUEL",
+            "name": "Tentacruel",
             "category": "Pokémon Mollusque",
             "entry_text": [
                 "Ses 80 tentacules ligotent ses\n",
@@ -130,7 +130,7 @@
             ]
         },
         "de": {
-            "name": "TENTOXA",
+            "name": "Tentoxa",
             "category": "Qualle",
             "entry_text": [
                 "Es besitzt 80 Tentakel, um Beute zu\n",
@@ -139,7 +139,7 @@
             ]
         },
         "it": {
-            "name": "TENTACRUEL",
+            "name": "Tentacruel",
             "category": "Pokémon Medusa",
             "entry_text": [
                 "Ha 80 tentacoli per intrappolare\n",
@@ -148,7 +148,7 @@
             ]
         },
         "es": {
-            "name": "TENTACRUEL",
+            "name": "Tentacruel",
             "category": "Pokémon Medusa",
             "entry_text": [
                 "Posee 80 tentáculos con los que\n",

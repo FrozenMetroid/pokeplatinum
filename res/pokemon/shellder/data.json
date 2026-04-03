@@ -118,7 +118,7 @@
         "trainer_pos_m": 9,
         "pokemon_pos_m": 29,
         "en": {
-            "name": "SHELLDER",
+            "name": "Shellder",
             "category": "Bivalve Pokémon",
             "entry_text": [
                 "It swims backward by opening and\n",
@@ -127,7 +127,7 @@
             ]
         },
         "fr": {
-            "name": "KOKIYAS",
+            "name": "Kokiyas",
             "category": "Pokémon Bivalve",
             "entry_text": [
                 "Il nage à reculons en ouvrant et en\n",
@@ -136,7 +136,7 @@
             ]
         },
         "de": {
-            "name": "MUSCHAS",
+            "name": "Muschas",
             "category": "Muschel",
             "entry_text": [
                 "Es schwimmt rückwärts, indem es\n",
@@ -145,7 +145,7 @@
             ]
         },
         "it": {
-            "name": "SHELLDER",
+            "name": "Shellder",
             "category": "Pokémon Bivalve",
             "entry_text": [
                 "Nuota all’indietro aprendo e\n",
@@ -154,7 +154,7 @@
             ]
         },
         "es": {
-            "name": "SHELLDER",
+            "name": "Shellder",
             "category": "Pokémon Bivalvo",
             "entry_text": [
                 "Nada hacia atrás abriendo y\n",

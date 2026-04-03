@@ -121,7 +121,7 @@
         "trainer_pos_m": 9,
         "pokemon_pos_m": 6,
         "en": {
-            "name": "ARMALDO",
+            "name": "Armaldo",
             "category": "Plate Pokémon",
             "entry_text": [
                 "It went ashore after evolving.\n",
@@ -130,7 +130,7 @@
             ]
         },
         "fr": {
-            "name": "ARMALDO",
+            "name": "Armaldo",
             "category": "Pokémon Blindage",
             "entry_text": [
                 "Il a gagné la côte après son \n",
@@ -139,7 +139,7 @@
             ]
         },
         "de": {
-            "name": "ARMALDO",
+            "name": "Armaldo",
             "category": "Schild",
             "entry_text": [
                 "Nach seiner Entwicklung ging es an\n",
@@ -148,7 +148,7 @@
             ]
         },
         "it": {
-            "name": "ARMALDO",
+            "name": "Armaldo",
             "category": "Pokémon Piastre",
             "entry_text": [
                 "Dopo essersi evoluto, è andato a\n",
@@ -157,7 +157,7 @@
             ]
         },
         "es": {
-            "name": "ARMALDO",
+            "name": "Armaldo",
             "category": "Pokémon Armadura",
             "entry_text": [
                 "Tras evolucionar, este Pokémon\n",

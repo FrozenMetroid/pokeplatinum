@@ -133,7 +133,7 @@
         "trainer_pos_m": 9,
         "pokemon_pos_m": 21,
         "en": {
-            "name": "RIOLU",
+            "name": "Riolu",
             "category": "Emanation Pokémon",
             "entry_text": [
                 "It has the peculiar power of being\n",
@@ -142,7 +142,7 @@
             ]
         },
         "fr": {
-            "name": "RIOLU",
+            "name": "Riolu",
             "category": "Pokémon Emanation",
             "entry_text": [
                 "Son aura s’intensifie pour\n",
@@ -151,7 +151,7 @@
             ]
         },
         "de": {
-            "name": "RIOLU",
+            "name": "Riolu",
             "category": "Wellenspiel",
             "entry_text": [
                 "Die Aura, die dieses PKMN umgibt,\n",
@@ -160,7 +160,7 @@
             ]
         },
         "it": {
-            "name": "RIOLU",
+            "name": "Riolu",
             "category": "Pokémon Emanazione",
             "entry_text": [
                 "L’aura che emana si intensifica\n",
@@ -169,7 +169,7 @@
             ]
         },
         "es": {
-            "name": "RIOLU",
+            "name": "Riolu",
             "category": "Pokémon Emanación",
             "entry_text": [
                 "Su aura se intensifica para alertar\n",

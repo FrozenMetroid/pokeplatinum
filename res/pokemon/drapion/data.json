@@ -126,7 +126,7 @@
         "trainer_pos_m": 9,
         "pokemon_pos_m": 10,
         "en": {
-            "name": "DRAPION",
+            "name": "Drapion",
             "category": "Ogre Scorp Pokémon",
             "entry_text": [
                 "Possessing a sturdy build, it takes\n",
@@ -135,7 +135,7 @@
             ]
         },
         "fr": {
-            "name": "DRASCORE",
+            "name": "Drascore",
             "category": "Pokémon Scorpogre",
             "entry_text": [
                 "Il peut réduire une voiture en \n",
@@ -144,7 +144,7 @@
             ]
         },
         "de": {
-            "name": "PIONDRAGI",
+            "name": "Piondragi",
             "category": "Ogerskorpion",
             "entry_text": [
                 "In seinen Armen steckt so viel\n",
@@ -153,7 +153,7 @@
             ]
         },
         "it": {
-            "name": "DRAPION",
+            "name": "Drapion",
             "category": "Pokémon Scorpiaccio",
             "entry_text": [
                 "Con le zampe può accartocciare una\n",
@@ -162,7 +162,7 @@
             ]
         },
         "es": {
-            "name": "DRAPION",
+            "name": "Drapion",
             "category": "Pokémon Escorpiogro",
             "entry_text": [
                 "Sus brazos tienen fuerza para\n",

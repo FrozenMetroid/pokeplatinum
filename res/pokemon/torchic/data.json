@@ -128,7 +128,7 @@
         "trainer_pos_m": 9,
         "pokemon_pos_m": 27,
         "en": {
-            "name": "TORCHIC",
+            "name": "Torchic",
             "category": "Chick Pokémon",
             "entry_text": [
                 "A fire burns inside, so it feels\n",
@@ -137,7 +137,7 @@
             ]
         },
         "fr": {
-            "name": "POUSSIFEU",
+            "name": "Poussifeu",
             "category": "Pokémon Poussin",
             "entry_text": [
                 "Ses câlins réchauffent car il\n",
@@ -146,7 +146,7 @@
             ]
         },
         "de": {
-            "name": "FLEMMLI",
+            "name": "Flemmli",
             "category": "Küken",
             "entry_text": [
                 "In seinem Inneren lodert ein Feuer.\n",
@@ -155,7 +155,7 @@
             ]
         },
         "it": {
-            "name": "TORCHIC",
+            "name": "Torchic",
             "category": "Pokémon Pulcino",
             "entry_text": [
                 "Nel suo corpo brucia una fiamma e\n",
@@ -164,7 +164,7 @@
             ]
         },
         "es": {
-            "name": "TORCHIC",
+            "name": "Torchic",
             "category": "Pokémon Polluelo",
             "entry_text": [
                 "En su interior arde una llama que\n",

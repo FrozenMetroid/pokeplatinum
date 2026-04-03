@@ -130,7 +130,7 @@
         "trainer_pos_m": 9,
         "pokemon_pos_m": 65525,
         "en": {
-            "name": "ZUBAT",
+            "name": "Zubat",
             "category": "Bat Pokémon",
             "entry_text": [
                 "It checks its surroundings and\n",
@@ -139,7 +139,7 @@
             ]
         },
         "fr": {
-            "name": "NOSFERAPTI",
+            "name": "Nosferapti",
             "category": "Pokémon Chovsouris",
             "entry_text": [
                 "Bien que dépourvu d’yeux, il\n",
@@ -148,7 +148,7 @@
             ]
         },
         "de": {
-            "name": "ZUBAT",
+            "name": "Zubat",
             "category": "Fledermaus",
             "entry_text": [
                 "Obwohl es keine Augen hat, kann es\n",
@@ -157,7 +157,7 @@
             ]
         },
         "it": {
-            "name": "ZUBAT",
+            "name": "Zubat",
             "category": "Pokémon Pipistrello",
             "entry_text": [
                 "Non ha occhi, ma avverte gli\n",
@@ -166,7 +166,7 @@
             ]
         },
         "es": {
-            "name": "ZUBAT",
+            "name": "Zubat",
             "category": "Pokémon Murciélago",
             "entry_text": [
                 "Aunque carezca de ojos, puede\n",

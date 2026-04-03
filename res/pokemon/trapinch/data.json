@@ -116,7 +116,7 @@
         "trainer_pos_m": 9,
         "pokemon_pos_m": 21,
         "en": {
-            "name": "TRAPINCH",
+            "name": "Trapinch",
             "category": "Ant Pit Pokémon",
             "entry_text": [
                 "It makes a conical pit in desert\n",
@@ -125,7 +125,7 @@
             ]
         },
         "fr": {
-            "name": "KRAKNOIX",
+            "name": "Kraknoix",
             "category": "Pokémon Piégeur",
             "entry_text": [
                 "Il creuse un trou conique dans le\n",
@@ -134,7 +134,7 @@
             ]
         },
         "de": {
-            "name": "KNACKLION",
+            "name": "Knacklion",
             "category": "Ameisenlöwe",
             "entry_text": [
                 "Es baut im Wüstensand eine\n",
@@ -143,7 +143,7 @@
             ]
         },
         "it": {
-            "name": "TRAPINCH",
+            "name": "Trapinch",
             "category": "Pokémon Trappola",
             "entry_text": [
                 "Scava fosse coniche nella sabbia\n",
@@ -152,7 +152,7 @@
             ]
         },
         "es": {
-            "name": "TRAPINCH",
+            "name": "Trapinch",
             "category": "Pokémon Hormigaleón",
             "entry_text": [
                 "Cava fosas cóncavas en el desierto\n",

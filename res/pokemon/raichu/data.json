@@ -109,7 +109,7 @@
         "trainer_pos_m": 9,
         "pokemon_pos_m": 21,
         "en": {
-            "name": "RAICHU",
+            "name": "Raichu",
             "category": "Mouse Pokémon",
             "entry_text": [
                 "Its tail discharges electricity into\n",
@@ -118,7 +118,7 @@
             ]
         },
         "fr": {
-            "name": "RAICHU",
+            "name": "Raichu",
             "category": "Pokémon Souris",
             "entry_text": [
                 "Il devient agressif lorsque son\n",
@@ -127,7 +127,7 @@
             ]
         },
         "de": {
-            "name": "RAICHU",
+            "name": "Raichu",
             "category": "Maus",
             "entry_text": [
                 "Bei zu viel Elektrizität im Körper\n",
@@ -136,7 +136,7 @@
             ]
         },
         "it": {
-            "name": "RAICHU",
+            "name": "Raichu",
             "category": "Pokémon Topo",
             "entry_text": [
                 "Diventa aggressivo se accumula\n",
@@ -145,7 +145,7 @@
             ]
         },
         "es": {
-            "name": "RAICHU",
+            "name": "Raichu",
             "category": "Pokémon Ratón",
             "entry_text": [
                 "Se vuelve agresivo si su cuerpo\n",

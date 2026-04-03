@@ -129,7 +129,7 @@
         "trainer_pos_m": 9,
         "pokemon_pos_m": 13,
         "en": {
-            "name": "CROCONAW",
+            "name": "Croconaw",
             "category": "Big Jaw Pokémon",
             "entry_text": [
                 "Once it bites down, it won’t let go\n",
@@ -138,7 +138,7 @@
             ]
         },
         "fr": {
-            "name": "CROCRODIL",
+            "name": "Crocrodil",
             "category": "Pokémon Mâchoire",
             "entry_text": [
                 "Quand il mord, il ne lâche pas prise\n",
@@ -147,7 +147,7 @@
             ]
         },
         "de": {
-            "name": "TYRACROC",
+            "name": "Tyracroc",
             "category": "Großmaul",
             "entry_text": [
                 "Hat es einmal zugebissen, lässt es\n",
@@ -156,7 +156,7 @@
             ]
         },
         "it": {
-            "name": "CROCONAW",
+            "name": "Croconaw",
             "category": "Pokémon Mascellone",
             "entry_text": [
                 "Quando azzanna il nemico, non molla\n",
@@ -165,7 +165,7 @@
             ]
         },
         "es": {
-            "name": "CROCONAW",
+            "name": "Croconaw",
             "category": "Pokémon Fauces",
             "entry_text": [
                 "Cuando muerde algo, no lo suelta\n",

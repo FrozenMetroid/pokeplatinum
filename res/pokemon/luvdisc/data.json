@@ -112,7 +112,7 @@
         "trainer_pos_m": 9,
         "pokemon_pos_m": 65527,
         "en": {
-            "name": "LUVDISC",
+            "name": "Luvdisc",
             "category": "Rendezvous Pokémon",
             "entry_text": [
                 "It lives in warm seas. It is said\n",
@@ -121,7 +121,7 @@
             ]
         },
         "fr": {
-            "name": "LOVDISC",
+            "name": "Lovdisc",
             "category": "Pokémon Rendezvous",
             "entry_text": [
                 "Un habitant des mers chaudes. On\n",
@@ -130,7 +130,7 @@
             ]
         },
         "de": {
-            "name": "LIEBISKUS",
+            "name": "Liebiskus",
             "category": "Rendezvous",
             "entry_text": [
                 "Es lebt in warmen Meeren. Man sagt,\n",
@@ -139,7 +139,7 @@
             ]
         },
         "it": {
-            "name": "LUVDISC",
+            "name": "Luvdisc",
             "category": "Pokémon Rendezvous",
             "entry_text": [
                 "Vive nei mari caldi. Si dice che le\n",
@@ -148,7 +148,7 @@
             ]
         },
         "es": {
-            "name": "LUVDISC",
+            "name": "Luvdisc",
             "category": "Pokémon Cita",
             "entry_text": [
                 "Vive en mares cálidos. Se dice\n",

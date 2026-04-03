@@ -130,7 +130,7 @@
         "trainer_pos_m": 9,
         "pokemon_pos_m": 1,
         "en": {
-            "name": "URSARING",
+            "name": "Ursaring",
             "category": "Hibernator Pokémon",
             "entry_text": [
                 "In its territory, it leaves\n",
@@ -139,7 +139,7 @@
             ]
         },
         "fr": {
-            "name": "URSARING",
+            "name": "Ursaring",
             "category": "Pokémon Hibernant",
             "entry_text": [
                 "Il marque de ses griffes les\n",
@@ -148,7 +148,7 @@
             ]
         },
         "de": {
-            "name": "URSARING",
+            "name": "Ursaring",
             "category": "Schläfer",
             "entry_text": [
                 "Es durchstreift sein Revier und\n",
@@ -157,7 +157,7 @@
             ]
         },
         "it": {
-            "name": "URSARING",
+            "name": "Ursaring",
             "category": "Pokémon Letargo",
             "entry_text": [
                 "Nel suo territorio, lascia graffi\n",
@@ -166,7 +166,7 @@
             ]
         },
         "es": {
-            "name": "URSARING",
+            "name": "Ursaring",
             "category": "Pokémon Hibernante",
             "entry_text": [
                 "Araña los árboles de su territorio\n",

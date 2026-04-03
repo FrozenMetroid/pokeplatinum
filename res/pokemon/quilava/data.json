@@ -115,7 +115,7 @@
         "trainer_pos_m": 9,
         "pokemon_pos_m": 19,
         "en": {
-            "name": "QUILAVA",
+            "name": "Quilava",
             "category": "Volcano Pokémon",
             "entry_text": [
                 "It intimidates foes with the heat\n",
@@ -124,7 +124,7 @@
             ]
         },
         "fr": {
-            "name": "FEURISSON",
+            "name": "Feurisson",
             "category": "Pokémon Volcan",
             "entry_text": [
                 "La chaleur de ses flammes intimide\n",
@@ -133,7 +133,7 @@
             ]
         },
         "de": {
-            "name": "IGELAVAR",
+            "name": "Igelavar",
             "category": "Vulkan",
             "entry_text": [
                 "Es bedroht seine Gegner mit der\n",
@@ -142,7 +142,7 @@
             ]
         },
         "it": {
-            "name": "QUILAVA",
+            "name": "Quilava",
             "category": "Pokémon Vulcano",
             "entry_text": [
                 "Intimorisce i nemici con il calore\n",
@@ -151,7 +151,7 @@
             ]
         },
         "es": {
-            "name": "QUILAVA",
+            "name": "Quilava",
             "category": "Pokémon Volcán",
             "entry_text": [
                 "Intimida a sus enemigos con el\n",

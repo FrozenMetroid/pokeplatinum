@@ -120,7 +120,7 @@
         "trainer_pos_m": 9,
         "pokemon_pos_m": 27,
         "en": {
-            "name": "PIKACHU",
+            "name": "Pikachu",
             "category": "Mouse Pokémon",
             "entry_text": [
                 "It occasionally uses an electric\n",
@@ -129,7 +129,7 @@
             ]
         },
         "fr": {
-            "name": "PIKACHU",
+            "name": "Pikachu",
             "category": "Pokémon Souris",
             "entry_text": [
                 "Il vit en forêt avec ses pairs.\n",
@@ -138,7 +138,7 @@
             ]
         },
         "de": {
-            "name": "PIKACHU",
+            "name": "Pikachu",
             "category": "Maus",
             "entry_text": [
                 "Es lebt zusammen mit anderen\n",
@@ -147,7 +147,7 @@
             ]
         },
         "it": {
-            "name": "PIKACHU",
+            "name": "Pikachu",
             "category": "Pokémon Topo",
             "entry_text": [
                 "Vive nelle foreste insieme agli\n",
@@ -156,7 +156,7 @@
             ]
         },
         "es": {
-            "name": "PIKACHU",
+            "name": "Pikachu",
             "category": "Pokémon Ratón",
             "entry_text": [
                 "Vive en grupo en los bosques.\n",

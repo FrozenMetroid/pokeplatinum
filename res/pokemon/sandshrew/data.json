@@ -135,7 +135,7 @@
         "trainer_pos_m": 9,
         "pokemon_pos_m": 22,
         "en": {
-            "name": "SANDSHREW",
+            "name": "Sandshrew",
             "category": "Mouse Pokémon",
             "entry_text": [
                 "To protect itself from attackers,\n",
@@ -144,7 +144,7 @@
             ]
         },
         "fr": {
-            "name": "SABELETTE",
+            "name": "Sabelette",
             "category": "Pokémon Souris",
             "entry_text": [
                 "Il vit sur des terres arides\n",
@@ -153,7 +153,7 @@
             ]
         },
         "de": {
-            "name": "SANDAN",
+            "name": "Sandan",
             "category": "Maus",
             "entry_text": [
                 "Es lebt in trockenen Regionen mit\n",
@@ -162,7 +162,7 @@
             ]
         },
         "it": {
-            "name": "SANDSHREW",
+            "name": "Sandshrew",
             "category": "Pokémon Topo",
             "entry_text": [
                 "Vive in zone aride con precipitazioni\n",
@@ -171,7 +171,7 @@
             ]
         },
         "es": {
-            "name": "SANDSHREW",
+            "name": "Sandshrew",
             "category": "Pokémon Ratón",
             "entry_text": [
                 "Vive en zonas áridas donde casi\n",

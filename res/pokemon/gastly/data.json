@@ -140,7 +140,7 @@
         "trainer_pos_m": 9,
         "pokemon_pos_m": 65534,
         "en": {
-            "name": "GASTLY",
+            "name": "Gastly",
             "category": "Gas Pokémon",
             "entry_text": [
                 "Born from gases, anyone would\n",
@@ -149,7 +149,7 @@
             ]
         },
         "fr": {
-            "name": "FANTOMINUS",
+            "name": "Fantominus",
             "category": "Pokémon Gaz",
             "entry_text": [
                 "Le corps de ce Pokémon est\n",
@@ -158,7 +158,7 @@
             ]
         },
         "de": {
-            "name": "NEBULAK",
+            "name": "Nebulak",
             "category": "Gas",
             "entry_text": [
                 "Der Körper des Pokémon besteht zu\n",
@@ -167,7 +167,7 @@
             ]
         },
         "it": {
-            "name": "GASTLY",
+            "name": "Gastly",
             "category": "Pokémon Gas",
             "entry_text": [
                 "Il corpo di questo Pokémon è costi-\n",
@@ -176,7 +176,7 @@
             ]
         },
         "es": {
-            "name": "GASTLY",
+            "name": "Gastly",
             "category": "Pokémon Gas",
             "entry_text": [
                 "El cuerpo de este Pokémon está\n",

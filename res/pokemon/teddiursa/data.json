@@ -143,7 +143,7 @@
         "trainer_pos_m": 9,
         "pokemon_pos_m": 23,
         "en": {
-            "name": "TEDDIURSA",
+            "name": "Teddiursa",
             "category": "Little Bear Pokémon",
             "entry_text": [
                 "It lets honey soak into its paws\n",
@@ -152,7 +152,7 @@
             ]
         },
         "fr": {
-            "name": "TEDDIURSA",
+            "name": "Teddiursa",
             "category": "Pokémon Mini Ours",
             "entry_text": [
                 "Il baigne ses griffes dans le miel \n",
@@ -161,7 +161,7 @@
             ]
         },
         "de": {
-            "name": "TEDDIURSA",
+            "name": "Teddiursa",
             "category": "Kleinbär",
             "entry_text": [
                 "Es lässt Honig in seine Pranken\n",
@@ -170,7 +170,7 @@
             ]
         },
         "it": {
-            "name": "TEDDIURSA",
+            "name": "Teddiursa",
             "category": "Pokémon Orsetto",
             "entry_text": [
                 "Si impregna le zampe di miele per\n",
@@ -179,7 +179,7 @@
             ]
         },
         "es": {
-            "name": "TEDDIURSA",
+            "name": "Teddiursa",
             "category": "Pokémon Osito",
             "entry_text": [
                 "Deja que la miel se le pegue a las\n",

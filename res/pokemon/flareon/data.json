@@ -111,7 +111,7 @@
         "trainer_pos_m": 9,
         "pokemon_pos_m": 16,
         "en": {
-            "name": "FLAREON",
+            "name": "Flareon",
             "category": "Flame Pokémon",
             "entry_text": [
                 "Inhaled air is heated in the flame\n",
@@ -120,7 +120,7 @@
             ]
         },
         "fr": {
-            "name": "PYROLI",
+            "name": "Pyroli",
             "category": "Pokémon Flamme",
             "entry_text": [
                 "Son corps contient une glande\n",
@@ -129,7 +129,7 @@
             ]
         },
         "de": {
-            "name": "FLAMARA",
+            "name": "Flamara",
             "category": "Feuer",
             "entry_text": [
                 "In seinem Körper befindet sich eine\n",
@@ -138,7 +138,7 @@
             ]
         },
         "it": {
-            "name": "FLAREON",
+            "name": "Flareon",
             "category": "Pokémon Fiamma",
             "entry_text": [
                 "Nel corpo conserva una tasca\n",
@@ -147,7 +147,7 @@
             ]
         },
         "es": {
-            "name": "FLAREON",
+            "name": "Flareon",
             "category": "Pokémon Llama",
             "entry_text": [
                 "Almacena llamas en su cuerpo, que\n",

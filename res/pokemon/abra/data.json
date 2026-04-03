@@ -129,7 +129,7 @@
         "trainer_pos_m": 9,
         "pokemon_pos_m": 25,
         "en": {
-            "name": "ABRA",
+            "name": "Abra",
             "category": "Psi Pokémon",
             "entry_text": [
                 "Using its psychic power is such a\n",
@@ -138,7 +138,7 @@
             ]
         },
         "fr": {
-            "name": "ABRA",
+            "name": "Abra",
             "category": "Pokémon Psy",
             "entry_text": [
                 "Il dort 18 heures par jour. Même\n",
@@ -147,7 +147,7 @@
             ]
         },
         "de": {
-            "name": "ABRA",
+            "name": "Abra",
             "category": "Psi",
             "entry_text": [
                 "18 Stunden am Tag schläft es. Und\n",
@@ -156,7 +156,7 @@
             ]
         },
         "it": {
-            "name": "ABRA",
+            "name": "Abra",
             "category": "Pokémon Psico",
             "entry_text": [
                 "Dorme per 18 ore al giorno.\n",
@@ -165,7 +165,7 @@
             ]
         },
         "es": {
-            "name": "ABRA",
+            "name": "Abra",
             "category": "Pokémon Psi",
             "entry_text": [
                 "Duerme 18 horas al día. Cuando\n",

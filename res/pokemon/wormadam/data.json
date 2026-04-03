@@ -113,7 +113,7 @@
         "trainer_pos_m": 9,
         "pokemon_pos_m": 65524,
         "en": {
-            "name": "WORMADAM",
+            "name": "Wormadam",
             "category": "Bagworm Pokémon",
             "entry_text": [
                 "When evolving, its body takes in\n",
@@ -122,7 +122,7 @@
             ]
         },
         "fr": {
-            "name": "CHENISELLE",
+            "name": "Cheniselle",
             "category": "Pokémon Ver Caché",
             "entry_text": [
                 "Quand CHENITI a évolué, sa\n",
@@ -131,7 +131,7 @@
             ]
         },
         "de": {
-            "name": "BURMADAME",
+            "name": "Burmadame",
             "category": "Beutelwurm",
             "entry_text": [
                 "Als sich BURMY entwickelte,\n",
@@ -140,7 +140,7 @@
             ]
         },
         "it": {
-            "name": "WORMADAM",
+            "name": "Wormadam",
             "category": "Pokémon Larva",
             "entry_text": [
                 "Con l’evoluzione, il manto di BURMY\n",
@@ -149,7 +149,7 @@
             ]
         },
         "es": {
-            "name": "WORMADAM",
+            "name": "Wormadam",
             "category": "Pokémon Larva",
             "entry_text": [
                 "Cuando BURMY evolucionó,\n",

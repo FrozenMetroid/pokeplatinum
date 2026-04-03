@@ -141,7 +141,7 @@
         "trainer_pos_m": 9,
         "pokemon_pos_m": 25,
         "en": {
-            "name": "CHIMCHAR",
+            "name": "Chimchar",
             "category": "Chimp Pokémon",
             "entry_text": [
                 "It is very agile. Before going to\n",
@@ -150,7 +150,7 @@
             ]
         },
         "fr": {
-            "name": "OUISTICRAM",
+            "name": "Ouisticram",
             "category": "Pokémon Chimpanzé",
             "entry_text": [
                 "Il escalade prestement les falaises\n",
@@ -159,7 +159,7 @@
             ]
         },
         "de": {
-            "name": "PANFLAM",
+            "name": "Panflam",
             "category": "Schimpanse",
             "entry_text": [
                 "Es klettert behände steile Felsen\n",
@@ -168,7 +168,7 @@
             ]
         },
         "it": {
-            "name": "CHIMCHAR",
+            "name": "Chimchar",
             "category": "Pokémon Scimpanzé",
             "entry_text": [
                 "Scala agilmente le rocce scoscese\n",
@@ -177,7 +177,7 @@
             ]
         },
         "es": {
-            "name": "CHIMCHAR",
+            "name": "Chimchar",
             "category": "Pokémon Chimpancé",
             "entry_text": [
                 "Escala acantilados escarpados con\n",

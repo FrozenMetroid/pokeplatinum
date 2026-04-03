@@ -103,7 +103,7 @@
         "trainer_pos_m": 9,
         "pokemon_pos_m": 16,
         "en": {
-            "name": "ROSERADE",
+            "name": "Roserade",
             "category": "Bouquet Pokémon",
             "entry_text": [
                 "Each of its hands contains\n",
@@ -112,7 +112,7 @@
             ]
         },
         "fr": {
-            "name": "ROSERADE",
+            "name": "Roserade",
             "category": "Pokémon Bouquet",
             "entry_text": [
                 "Il attire ses proies avec son doux\n",
@@ -121,7 +121,7 @@
             ]
         },
         "de": {
-            "name": "ROSERADE",
+            "name": "Roserade",
             "category": "Blumenstrauß",
             "entry_text": [
                 "Mit einem süßen Duft lockt es Beute\n",
@@ -130,7 +130,7 @@
             ]
         },
         "it": {
-            "name": "ROSERADE",
+            "name": "Roserade",
             "category": "Pokémon Floreale",
             "entry_text": [
                 "Attira la preda con un dolce aroma,\n",
@@ -139,7 +139,7 @@
             ]
         },
         "es": {
-            "name": "ROSERADE",
+            "name": "Roserade",
             "category": "Pokémon Ramillete",
             "entry_text": [
                 "Atrae a las presas con un dulce\n",

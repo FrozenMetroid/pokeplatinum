@@ -128,7 +128,7 @@
         "trainer_pos_m": 9,
         "pokemon_pos_m": 14,
         "en": {
-            "name": "GROVYLE",
+            "name": "Grovyle",
             "category": "Wood Gecko Pokémon",
             "entry_text": [
                 "It lives in dense jungles. While \n",
@@ -137,7 +137,7 @@
             ]
         },
         "fr": {
-            "name": "MASSKO",
+            "name": "Massko",
             "category": "Pokémon Bois Gecko",
             "entry_text": [
                 "Il vit dans les jungles denses. \n",
@@ -146,7 +146,7 @@
             ]
         },
         "de": {
-            "name": "REPTAIN",
+            "name": "Reptain",
             "category": "Waldgecko",
             "entry_text": [
                 "Es lebt im dichten Dschungel.\n",
@@ -155,12 +155,12 @@
             ]
         },
         "it": {
-            "name": "GROVYLE",
+            "name": "Grovyle",
             "category": "Pokémon Legnogeco",
             "entry_text": [ "Vive in giungle fitte. Si avvicina\n", "alle prede saltando di ramo in ramo." ]
         },
         "es": {
-            "name": "GROVYLE",
+            "name": "Grovyle",
             "category": "Pokémon Geco Bosque",
             "entry_text": [
                 "Vive en selvas frondosas. Salta de\n",

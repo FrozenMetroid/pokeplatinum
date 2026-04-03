@@ -118,7 +118,7 @@
         "trainer_pos_m": 8,
         "pokemon_pos_m": 1,
         "en": {
-            "name": "VENUSAUR",
+            "name": "Venusaur",
             "category": "Seed Pokémon",
             "entry_text": [
                 "After a rainy day, the flower on\n",
@@ -127,7 +127,7 @@
             ]
         },
         "fr": {
-            "name": "FLORIZARRE",
+            "name": "Florizarre",
             "category": "Pokémon Graine",
             "entry_text": [
                 "Le parfum de sa fleur se fait plus\n",
@@ -136,7 +136,7 @@
             ]
         },
         "de": {
-            "name": "BISAFLOR",
+            "name": "Bisaflor",
             "category": "Samen",
             "entry_text": [
                 "Nach einem Regentag riecht die\n",
@@ -145,7 +145,7 @@
             ]
         },
         "it": {
-            "name": "VENUSAUR",
+            "name": "Venusaur",
             "category": "Pokémon Seme",
             "entry_text": [
                 "Dopo la pioggia, il fiore sul suo\n",
@@ -154,7 +154,7 @@
             ]
         },
         "es": {
-            "name": "VENUSAUR",
+            "name": "Venusaur",
             "category": "Pokémon Semilla",
             "entry_text": [
                 "Después de un día de lluvia, la flor\n",

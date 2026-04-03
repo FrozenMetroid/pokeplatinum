@@ -113,7 +113,7 @@
         "trainer_pos_m": 9,
         "pokemon_pos_m": 19,
         "en": {
-            "name": "GLACEON",
+            "name": "Glaceon",
             "category": "Fresh Snow Pokémon",
             "entry_text": [
                 "By controlling its body heat, it can\n",
@@ -122,7 +122,7 @@
             ]
         },
         "fr": {
-            "name": "GIVRALI",
+            "name": "Givrali",
             "category": "Pokémon Poudreuse",
             "entry_text": [
                 "Il peut geler sa fourrure pour se\n",
@@ -131,7 +131,7 @@
             ]
         },
         "de": {
-            "name": "GLAZIOLA",
+            "name": "Glaziola",
             "category": "Neuschnee",
             "entry_text": [
                 "Will es sich schützen, kann es sein\n",
@@ -140,7 +140,7 @@
             ]
         },
         "it": {
-            "name": "GLACEON",
+            "name": "Glaceon",
             "category": "Pokémon Nevefresca",
             "entry_text": [
                 "Come tecnica di difesa, congela\n",
@@ -149,7 +149,7 @@
             ]
         },
         "es": {
-            "name": "GLACEON",
+            "name": "Glaceon",
             "category": "Pokémon Nievefresca",
             "entry_text": [
                 "Para protegerse, puede congelar\n",

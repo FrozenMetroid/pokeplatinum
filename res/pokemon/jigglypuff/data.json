@@ -139,7 +139,7 @@
         "trainer_pos_m": 9,
         "pokemon_pos_m": 22,
         "en": {
-            "name": "JIGGLYPUFF",
+            "name": "Jigglypuff",
             "category": "Balloon Pokémon",
             "entry_text": [
                 "When it wavers its big, round\n",
@@ -148,7 +148,7 @@
             ]
         },
         "fr": {
-            "name": "RONDOUDOU",
+            "name": "Rondoudou",
             "category": "Pokémon Bouboule",
             "entry_text": [
                 "Lorsqu’il roule ses grands yeux\n",
@@ -157,7 +157,7 @@
             ]
         },
         "de": {
-            "name": "PUMMELUFF",
+            "name": "Pummeluff",
             "category": "Ballon",
             "entry_text": [
                 "Sobald es mit seinen großen, runden\n",
@@ -166,7 +166,7 @@
             ]
         },
         "it": {
-            "name": "JIGGLYPUFF",
+            "name": "Jigglypuff",
             "category": "Pokémon Pallone",
             "entry_text": [
                 "Muove le pupille e comincia a\n",
@@ -175,7 +175,7 @@
             ]
         },
         "es": {
-            "name": "JIGGLYPUFF",
+            "name": "Jigglypuff",
             "category": "Pokémon Globo",
             "entry_text": [
                 "Cuando mueve sus grandes ojos\n",

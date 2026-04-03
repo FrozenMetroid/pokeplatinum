@@ -136,7 +136,7 @@
         "trainer_pos_m": 9,
         "pokemon_pos_m": 23,
         "en": {
-            "name": "CORPHISH",
+            "name": "Corphish",
             "category": "Ruffian Pokémon",
             "entry_text": [
                 "Its hardy vitality enables it to\n",
@@ -145,7 +145,7 @@
             ]
         },
         "fr": {
-            "name": "ECRAPINCE",
+            "name": "Ecrapince",
             "category": "Pokémon Brute",
             "entry_text": [
                 "Sa nature robuste lui permet de\n",
@@ -154,7 +154,7 @@
             ]
         },
         "de": {
-            "name": "KREBSCORPS",
+            "name": "Krebscorps",
             "category": "Grobian",
             "entry_text": [
                 "Ein robustes PKMN, das sich jeder\n",
@@ -163,7 +163,7 @@
             ]
         },
         "it": {
-            "name": "CORPHISH",
+            "name": "Corphish",
             "category": "Pokémon Birbone",
             "entry_text": [
                 "La sua grande vitalità gli permette\n",
@@ -172,7 +172,7 @@
             ]
         },
         "es": {
-            "name": "CORPHISH",
+            "name": "Corphish",
             "category": "Pokémon Rufián",
             "entry_text": [
                 "Su organismo le permite adaptarse\n",

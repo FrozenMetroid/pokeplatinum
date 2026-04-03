@@ -124,7 +124,7 @@
         "trainer_pos_m": 9,
         "pokemon_pos_m": 20,
         "en": {
-            "name": "TORKOAL",
+            "name": "Torkoal",
             "category": "Coal Pokémon",
             "entry_text": [
                 "It burns coal inside its shell for\n",
@@ -133,7 +133,7 @@
             ]
         },
         "fr": {
-            "name": "CHARTOR",
+            "name": "Chartor",
             "category": "Pokémon Charbon",
             "entry_text": [
                 "Il tire son énergie du charbon qu’il\n",
@@ -142,7 +142,7 @@
             ]
         },
         "de": {
-            "name": "QURTEL",
+            "name": "Qurtel",
             "category": "Kohle",
             "entry_text": [
                 "In seinem Panzer verbrennt es\n",
@@ -151,7 +151,7 @@
             ]
         },
         "it": {
-            "name": "TORKOAL",
+            "name": "Torkoal",
             "category": "Pokémon Carbone",
             "entry_text": [
                 "Genera energia bruciando carbone\n",
@@ -160,7 +160,7 @@
             ]
         },
         "es": {
-            "name": "TORKOAL",
+            "name": "Torkoal",
             "category": "Pokémon Carbón",
             "entry_text": [
                 "Quema carbón en su caparazón\n",

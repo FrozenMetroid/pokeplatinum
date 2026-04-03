@@ -71,7 +71,7 @@
         "trainer_pos_m": 9,
         "pokemon_pos_m": 24,
         "en": {
-            "name": "WYNAUT",
+            "name": "Wynaut",
             "category": "Bright Pokémon",
             "entry_text": [
                 "It grows strong by pushing up\n",
@@ -80,7 +80,7 @@
             ]
         },
         "fr": {
-            "name": "OKEOKE",
+            "name": "Okeoke",
             "category": "Pokémon Ravi",
             "entry_text": [
                 "Il se muscle en bousculant ses\n",
@@ -89,7 +89,7 @@
             ]
         },
         "de": {
-            "name": "ISSO",
+            "name": "Isso",
             "category": "Strahlekind",
             "entry_text": [
                 "Es wird stärker, indem es andere\n",
@@ -98,7 +98,7 @@
             ]
         },
         "it": {
-            "name": "WYNAUT",
+            "name": "Wynaut",
             "category": "Pokémon Brillante",
             "entry_text": [
                 "Questi Pokémon si allenano in\n",
@@ -107,7 +107,7 @@
             ]
         },
         "es": {
-            "name": "WYNAUT",
+            "name": "Wynaut",
             "category": "Pokémon Radiante",
             "entry_text": [
                 "Se fortalecen empujándose unos\n",

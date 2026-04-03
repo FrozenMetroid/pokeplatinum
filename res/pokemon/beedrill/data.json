@@ -116,7 +116,7 @@
         "trainer_pos_m": 9,
         "pokemon_pos_m": 65529,
         "en": {
-            "name": "BEEDRILL",
+            "name": "Beedrill",
             "category": "Poison Bee Pokémon",
             "entry_text": [
                 "Its best attack involves flying\n",
@@ -125,7 +125,7 @@
             ]
         },
         "fr": {
-            "name": "DARDARGNAN",
+            "name": "Dardargnan",
             "category": "Pokémon Guêpoison",
             "entry_text": [
                 "Il virevolte rapidement autour de\n",
@@ -134,7 +134,7 @@
             ]
         },
         "de": {
-            "name": "BIBOR",
+            "name": "Bibor",
             "category": "Giftbiene",
             "entry_text": [
                 "Sein bester Angriff: Schnell auf den\n",
@@ -143,7 +143,7 @@
             ]
         },
         "it": {
-            "name": "BEEDRILL",
+            "name": "Beedrill",
             "category": "Pokémon Velenape",
             "entry_text": [
                 "Vola intorno al nemico ad alta\n",
@@ -152,7 +152,7 @@
             ]
         },
         "es": {
-            "name": "BEEDRILL",
+            "name": "Beedrill",
             "category": "Pokémon Abeja Ven.",
             "entry_text": [
                 "Atacan volando alrededor del\n",

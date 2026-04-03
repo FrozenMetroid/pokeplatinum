@@ -117,7 +117,7 @@
         "trainer_pos_m": 9,
         "pokemon_pos_m": 19,
         "en": {
-            "name": "MAREEP",
+            "name": "Mareep",
             "category": "Wool Pokémon",
             "entry_text": [
                 "Its fluffy coat swells to double\n",
@@ -126,7 +126,7 @@
             ]
         },
         "fr": {
-            "name": "WATTOUAT",
+            "name": "Wattouat",
             "category": "Pokémon Laine",
             "entry_text": [
                 "Sa laine fournie enfle lorsqu’il\n",
@@ -135,7 +135,7 @@
             ]
         },
         "de": {
-            "name": "VOLTILAMM",
+            "name": "Voltilamm",
             "category": "Wolle",
             "entry_text": [
                 "Sein weiches Fell wird doppelt so\n",
@@ -144,7 +144,7 @@
             ]
         },
         "it": {
-            "name": "MAREEP",
+            "name": "Mareep",
             "category": "Pokémon Lana",
             "entry_text": [
                 "Se il manto è carico d’elettricità,\n",
@@ -153,7 +153,7 @@
             ]
         },
         "es": {
-            "name": "MAREEP",
+            "name": "Mareep",
             "category": "Pokémon Lana",
             "entry_text": [
                 "Su pelaje lanudo dobla su volumen\n",

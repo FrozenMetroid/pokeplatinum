@@ -119,7 +119,7 @@
         "trainer_pos_m": 9,
         "pokemon_pos_m": 8,
         "en": {
-            "name": "WALREIN",
+            "name": "Walrein",
             "category": "Ice Break Pokémon",
             "entry_text": [
                 "It shatters ice with its big tusks.\n",
@@ -128,7 +128,7 @@
             ]
         },
         "fr": {
-            "name": "KAIMORSE",
+            "name": "Kaimorse",
             "category": "Pokémon Brise Glace",
             "entry_text": [
                 "Il brise la glace avec ses grosses\n",
@@ -137,7 +137,7 @@
             ]
         },
         "de": {
-            "name": "WALRAISA",
+            "name": "Walraisa",
             "category": "Eisbrecher",
             "entry_text": [
                 "Mit seinen Stoßzähnen bricht es\n",
@@ -146,7 +146,7 @@
             ]
         },
         "it": {
-            "name": "WALREIN",
+            "name": "Walrein",
             "category": "Pokémon Spaccagelo",
             "entry_text": [
                 "Frantuma il ghiaccio con le zanne.\n",
@@ -155,7 +155,7 @@
             ]
         },
         "es": {
-            "name": "WALREIN",
+            "name": "Walrein",
             "category": "Pokémon Rompehielo",
             "entry_text": [
                 "Rompe el hielo con sus colmillos.\n",

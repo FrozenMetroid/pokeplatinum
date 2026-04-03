@@ -113,7 +113,7 @@
         "trainer_pos_m": 9,
         "pokemon_pos_m": 23,
         "en": {
-            "name": "DUGTRIO",
+            "name": "Dugtrio",
             "category": "Mole Pokémon",
             "entry_text": [
                 "Its three heads move alternately,\n",
@@ -122,7 +122,7 @@
             ]
         },
         "fr": {
-            "name": "TRIOPIKEUR",
+            "name": "Triopikeur",
             "category": "Pokémon Taupe",
             "entry_text": [
                 "Ses trois têtes creusent le sol à\n",
@@ -131,7 +131,7 @@
             ]
         },
         "de": {
-            "name": "DIGDRI",
+            "name": "Digdri",
             "category": "Maulwurf",
             "entry_text": [
                 "Die drei Köpfe bewegen sich abwech-\n",
@@ -140,7 +140,7 @@
             ]
         },
         "it": {
-            "name": "DUGTRIO",
+            "name": "Dugtrio",
             "category": "Pokémon Talpa",
             "entry_text": [
                 "Le sue tre teste si muovono a\n",
@@ -149,7 +149,7 @@
             ]
         },
         "es": {
-            "name": "DUGTRIO",
+            "name": "Dugtrio",
             "category": "Pokémon Topo",
             "entry_text": [
                 "Sus tres cabezas se mueven por\n",

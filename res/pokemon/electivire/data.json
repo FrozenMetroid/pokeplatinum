@@ -128,7 +128,7 @@
         "trainer_pos_m": 13,
         "pokemon_pos_m": 7,
         "en": {
-            "name": "ELECTIVIRE",
+            "name": "Electivire",
             "category": "Thunderbolt Pokémon",
             "entry_text": [
                 "Heedless of enemy attacks, it\n",
@@ -137,7 +137,7 @@
             ]
         },
         "fr": {
-            "name": "ELEKABLE",
+            "name": "Elekable",
             "category": "Pokémon Foudrélec",
             "entry_text": [
                 "Il place le bout de ses deux \n",
@@ -146,7 +146,7 @@
             ]
         },
         "de": {
-            "name": "ELEVOLTEK",
+            "name": "Elevoltek",
             "category": "Donnerkeil",
             "entry_text": [
                 "Es berührt den Gegner mit seinen\n",
@@ -155,7 +155,7 @@
             ]
         },
         "it": {
-            "name": "ELECTIVIRE",
+            "name": "Electivire",
             "category": "Pokémon Saetta",
             "entry_text": [
                 "Tocca il nemico con le sue due\n",
@@ -164,7 +164,7 @@
             ]
         },
         "es": {
-            "name": "ELECTIVIRE",
+            "name": "Electivire",
             "category": "Pokémon Rayo",
             "entry_text": [
                 "Toca a su enemigo con las puntas\n",

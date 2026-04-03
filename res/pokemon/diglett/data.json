@@ -123,7 +123,7 @@
         "trainer_pos_m": 9,
         "pokemon_pos_m": 32,
         "en": {
-            "name": "DIGLETT",
+            "name": "Diglett",
             "category": "Mole Pokémon",
             "entry_text": [
                 "A Pokémon that lives underground.\n",
@@ -132,7 +132,7 @@
             ]
         },
         "fr": {
-            "name": "TAUPIQUEUR",
+            "name": "Taupiqueur",
             "category": "Pokémon Taupe",
             "entry_text": [
                 "Un Pokémon qui vit sous terre.\n",
@@ -141,7 +141,7 @@
             ]
         },
         "de": {
-            "name": "DIGDA",
+            "name": "Digda",
             "category": "Maulwurf",
             "entry_text": [
                 "Dieses Pokémon lebt unterirdisch.\n",
@@ -150,7 +150,7 @@
             ]
         },
         "it": {
-            "name": "DIGLETT",
+            "name": "Diglett",
             "category": "Pokémon Talpa",
             "entry_text": [
                 "Un Pokémon che vive sottoterra.\n",
@@ -159,7 +159,7 @@
             ]
         },
         "es": {
-            "name": "DIGLETT",
+            "name": "Diglett",
             "category": "Pokémon Topo",
             "entry_text": [
                 "Este Pokémon vive a oscuras\n",

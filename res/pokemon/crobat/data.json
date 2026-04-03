@@ -120,7 +120,7 @@
         "trainer_pos_m": 13,
         "pokemon_pos_m": 65533,
         "en": {
-            "name": "CROBAT",
+            "name": "Crobat",
             "category": "Bat Pokémon",
             "entry_text": [
                 "The transformation of its legs into\n",
@@ -129,7 +129,7 @@
             ]
         },
         "fr": {
-            "name": "NOSTENFER",
+            "name": "Nostenfer",
             "category": "Pokémon Chovsouris",
             "entry_text": [
                 "Il vole rapidement et sans faire\n",
@@ -138,7 +138,7 @@
             ]
         },
         "de": {
-            "name": "IKSBAT",
+            "name": "Iksbat",
             "category": "Fledermaus",
             "entry_text": [
                 "Seine vier Flügel erlauben es dem\n",
@@ -147,7 +147,7 @@
             ]
         },
         "it": {
-            "name": "CROBAT",
+            "name": "Crobat",
             "category": "Pokémon Pipistrello",
             "entry_text": [
                 "Le sue quattro ali gli permettono\n",
@@ -156,7 +156,7 @@
             ]
         },
         "es": {
-            "name": "CROBAT",
+            "name": "Crobat",
             "category": "Pokémon Murciélago",
             "entry_text": [
                 "Sus cuatro alas le permiten volar\n",

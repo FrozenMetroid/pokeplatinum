@@ -128,7 +128,7 @@
         "trainer_pos_m": 9,
         "pokemon_pos_m": 65526,
         "en": {
-            "name": "KOFFING",
+            "name": "Koffing",
             "category": "Poison Gas Pokémon",
             "entry_text": [
                 "Lighter-than-air gases in its body\n",
@@ -137,7 +137,7 @@
             ]
         },
         "fr": {
-            "name": "SMOGO",
+            "name": "Smogo",
             "category": "Pokémon Gaz Mortel",
             "entry_text": [
                 "Il flotte en retenant des gaz plus\n",
@@ -146,7 +146,7 @@
             ]
         },
         "de": {
-            "name": "SMOGON",
+            "name": "Smogon",
             "category": "Giftwolke",
             "entry_text": [
                 "Gase, die leichter als Luft sind,\n",
@@ -155,7 +155,7 @@
             ]
         },
         "it": {
-            "name": "KOFFING",
+            "name": "Koffing",
             "category": "Pokémon Velenuvola",
             "entry_text": [
                 "Fluttua a mezz’aria grazie ai gas\n",
@@ -164,7 +164,7 @@
             ]
         },
         "es": {
-            "name": "KOFFING",
+            "name": "Koffing",
             "category": "Pokémon Gas Veneno",
             "entry_text": [
                 "Los gases de su cuerpo le permiten\n",

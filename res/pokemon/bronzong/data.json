@@ -130,7 +130,7 @@
         "trainer_pos_m": 9,
         "pokemon_pos_m": 7,
         "en": {
-            "name": "BRONZONG",
+            "name": "Bronzong",
             "category": "Bronze Bell Pokémon",
             "entry_text": [
                 "It brought rains by opening portals\n",
@@ -139,7 +139,7 @@
             ]
         },
         "fr": {
-            "name": "ARCHEODONG",
+            "name": "Archeodong",
             "category": "Pokémon Clochebronze",
             "entry_text": [
                 "La découverte d’un de ces Pokémon\n",
@@ -148,7 +148,7 @@
             ]
         },
         "de": {
-            "name": "BRONZONG",
+            "name": "Bronzong",
             "category": "Bronzeglocke",
             "entry_text": [
                 "Dieses PKMN fand man bei Grabungen\n",
@@ -157,7 +157,7 @@
             ]
         },
         "it": {
-            "name": "BRONZONG",
+            "name": "Bronzong",
             "category": "Pokémon Squibronzo",
             "entry_text": [
                 "Il suo ritrovamento in un cantiere\n",
@@ -166,7 +166,7 @@
             ]
         },
         "es": {
-            "name": "BRONZONG",
+            "name": "Bronzong",
             "category": "Pokémon Cam. Bronce",
             "entry_text": [
                 "Se produjo un gran revuelo cuando\n",

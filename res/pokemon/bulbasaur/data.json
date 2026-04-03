@@ -128,7 +128,7 @@
         "trainer_pos_m": 9,
         "pokemon_pos_m": 22,
         "en": {
-            "name": "BULBASAUR",
+            "name": "Bulbasaur",
             "category": "Seed Pokémon",
             "entry_text": [
                 "For some time after its birth, it\n",
@@ -137,7 +137,7 @@
             ]
         },
         "fr": {
-            "name": "BULBIZARRE",
+            "name": "Bulbizarre",
             "category": "Pokémon Graine",
             "entry_text": [
                 "Au matin de sa vie, la graine sur\n",
@@ -146,7 +146,7 @@
             ]
         },
         "de": {
-            "name": "BISASAM",
+            "name": "Bisasam",
             "category": "Samen",
             "entry_text": [
                 "Nach der Geburt nimmt es für eine\n",
@@ -155,7 +155,7 @@
             ]
         },
         "it": {
-            "name": "BULBASAUR",
+            "name": "Bulbasaur",
             "category": "Pokémon Seme",
             "entry_text": [
                 "Dopo la nascita, cresce traendo\n",
@@ -164,7 +164,7 @@
             ]
         },
         "es": {
-            "name": "BULBASAUR",
+            "name": "Bulbasaur",
             "category": "Pokémon Semilla",
             "entry_text": [
                 "Después de nacer, crece\n",

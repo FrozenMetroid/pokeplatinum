@@ -128,7 +128,7 @@
         "trainer_pos_m": 9,
         "pokemon_pos_m": 19,
         "en": {
-            "name": "EKANS",
+            "name": "Ekans",
             "category": "Snake Pokémon",
             "entry_text": [
                 "It sneaks through grass without\n",
@@ -137,7 +137,7 @@
             ]
         },
         "fr": {
-            "name": "ABO",
+            "name": "Abo",
             "category": "Pokémon Serpent",
             "entry_text": [
                 "Il se faufile dans l’herbe sans un\n",
@@ -146,7 +146,7 @@
             ]
         },
         "de": {
-            "name": "RETTAN",
+            "name": "Rettan",
             "category": "Schlange",
             "entry_text": [
                 "Es bewegt sich ohne einen Laut\n",
@@ -155,7 +155,7 @@
             ]
         },
         "it": {
-            "name": "EKANS",
+            "name": "Ekans",
             "category": "Pokémon Serpente",
             "entry_text": [
                 "Striscia nell’erba senza fare il\n",
@@ -164,7 +164,7 @@
             ]
         },
         "es": {
-            "name": "EKANS",
+            "name": "Ekans",
             "category": "Pokémon Serpiente",
             "entry_text": [
                 "Se mueve por la hierba en silencio\n",

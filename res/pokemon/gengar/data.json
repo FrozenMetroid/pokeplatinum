@@ -136,7 +136,7 @@
         "trainer_pos_m": 9,
         "pokemon_pos_m": 65535,
         "en": {
-            "name": "GENGAR",
+            "name": "Gengar",
             "category": "Shadow Pokémon",
             "entry_text": [
                 "The leer that floats in darkness\n",
@@ -145,7 +145,7 @@
             ]
         },
         "fr": {
-            "name": "ECTOPLASMA",
+            "name": "Ectoplasma",
             "category": "Pokémon Ombre",
             "entry_text": [
                 "On dit que lorsqu’ECTOPLASMA se \n",
@@ -154,7 +154,7 @@
             ]
         },
         "de": {
-            "name": "GENGAR",
+            "name": "Gengar",
             "category": "Schatten",
             "entry_text": [
                 "Es versteckt sich im Schatten. Man\n",
@@ -163,7 +163,7 @@
             ]
         },
         "it": {
-            "name": "GENGAR",
+            "name": "Gengar",
             "category": "Pokémon Ombra",
             "entry_text": [
                 "Si nasconde nell’ombra. Pare che\n",
@@ -172,7 +172,7 @@
             ]
         },
         "es": {
-            "name": "GENGAR",
+            "name": "Gengar",
             "category": "Pokémon Sombra",
             "entry_text": [
                 "Se esconde entre las sombras.\n",

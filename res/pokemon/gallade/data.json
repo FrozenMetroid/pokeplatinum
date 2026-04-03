@@ -150,7 +150,7 @@
         "trainer_pos_m": 9,
         "pokemon_pos_m": 4,
         "en": {
-            "name": "GALLADE",
+            "name": "Gallade",
             "category": "Blade Pokémon",
             "entry_text": [
                 "When trying to protect someone,\n",
@@ -159,7 +159,7 @@
             ]
         },
         "fr": {
-            "name": "GALLAME",
+            "name": "Gallame",
             "category": "Pokémon Lame",
             "entry_text": [
                 "Il frappe avec les grandes lames à\n",
@@ -168,7 +168,7 @@
             ]
         },
         "de": {
-            "name": "GALAGLADI",
+            "name": "Galagladi",
             "category": "Klinge",
             "entry_text": [
                 "Es kämpft, indem es die Schwerter\n",
@@ -177,7 +177,7 @@
             ]
         },
         "it": {
-            "name": "GALLADE",
+            "name": "Gallade",
             "category": "Pokémon Lama",
             "entry_text": [
                 "Pokémon elegante e ottimo\n",
@@ -186,7 +186,7 @@
             ]
         },
         "es": {
-            "name": "GALLADE",
+            "name": "Gallade",
             "category": "Pokémon Cuchilla",
             "entry_text": [
                 "Lucha con las espadas que salen\n",

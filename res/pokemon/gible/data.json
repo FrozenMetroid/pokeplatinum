@@ -132,7 +132,7 @@
         "trainer_pos_m": 9,
         "pokemon_pos_m": 18,
         "en": {
-            "name": "GIBLE",
+            "name": "Gible",
             "category": "Land Shark Pokémon",
             "entry_text": [
                 "It attacks using its huge mouth.\n",
@@ -141,7 +141,7 @@
             ]
         },
         "fr": {
-            "name": "GRIKNOT",
+            "name": "Griknot",
             "category": "Pokémon Terrequin",
             "entry_text": [
                 "Il niche dans les petits trous\n",
@@ -150,7 +150,7 @@
             ]
         },
         "de": {
-            "name": "KAUMALAT",
+            "name": "Kaumalat",
             "category": "Landhai",
             "entry_text": [
                 "Es nistet in kleinen Löchern in\n",
@@ -159,7 +159,7 @@
             ]
         },
         "it": {
-            "name": "GIBLE",
+            "name": "Gible",
             "category": "Pokémon Squaloterra",
             "entry_text": [
                 "Nidifica in piccole cavità orizzontali\n",
@@ -168,7 +168,7 @@
             ]
         },
         "es": {
-            "name": "GIBLE",
+            "name": "Gible",
             "category": "Pokémon Terrascualo",
             "entry_text": [
                 "Anida en pequeños agujeros en las\n",

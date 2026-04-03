@@ -132,7 +132,7 @@
         "trainer_pos_m": 9,
         "pokemon_pos_m": 23,
         "en": {
-            "name": "CHARMANDER",
+            "name": "Charmander",
             "category": "Lizard Pokémon",
             "entry_text": [
                 "The fire on the tip of its tail is a\n",
@@ -141,7 +141,7 @@
             ]
         },
         "fr": {
-            "name": "SALAMECHE",
+            "name": "Salameche",
             "category": "Pokémon Lézard",
             "entry_text": [
                 "La flamme de sa queue symbolise sa\n",
@@ -150,7 +150,7 @@
             ]
         },
         "de": {
-            "name": "GLUMANDA",
+            "name": "Glumanda",
             "category": "Echse",
             "entry_text": [
                 "Lodert die Flamme auf seiner\n",
@@ -159,7 +159,7 @@
             ]
         },
         "it": {
-            "name": "CHARMANDER",
+            "name": "Charmander",
             "category": "Pokémon Lucertola",
             "entry_text": [
                 "La fiamma sulla punta della coda\n",
@@ -168,7 +168,7 @@
             ]
         },
         "es": {
-            "name": "CHARMANDER",
+            "name": "Charmander",
             "category": "Pokémon Lagartija",
             "entry_text": [
                 "La llama de la punta de su cola\n",

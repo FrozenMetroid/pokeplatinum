@@ -125,7 +125,7 @@
         "trainer_pos_m": 9,
         "pokemon_pos_m": 7,
         "en": {
-            "name": "GOLEM",
+            "name": "Golem",
             "category": "Megaton Pokémon",
             "entry_text": [
                 "Even dynamite can’t harm its hard,\n",
@@ -134,7 +134,7 @@
             ]
         },
         "fr": {
-            "name": "GROLEM",
+            "name": "Grolem",
             "category": "Pokémon Titanesque",
             "entry_text": [
                 "Il mue une fois par an. Son corps\n",
@@ -143,7 +143,7 @@
             ]
         },
         "de": {
-            "name": "GEOWAZ",
+            "name": "Geowaz",
             "category": "Urgestein",
             "entry_text": [
                 "Einmal im Jahr wechselt es seine\n",
@@ -152,7 +152,7 @@
             ]
         },
         "it": {
-            "name": "GOLEM",
+            "name": "Golem",
             "category": "Pokémon Megatone",
             "entry_text": [
                 "Muta il guscio una volta all’anno. Il\n",
@@ -161,7 +161,7 @@
             ]
         },
         "es": {
-            "name": "GOLEM",
+            "name": "Golem",
             "category": "Pokémon Megatón",
             "entry_text": [
                 "Muda su piel una vez al año.\n",

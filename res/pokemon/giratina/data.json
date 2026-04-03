@@ -134,7 +134,7 @@
         "trainer_pos_m": 26,
         "pokemon_pos_m": 3,
         "en": {
-            "name": "GIRATINA",
+            "name": "Giratina",
             "category": "Renegade Pokémon",
             "entry_text": [
                 "It was banished for its violence.\n",
@@ -143,7 +143,7 @@
             ]
         },
         "fr": {
-            "name": "GIRATINA",
+            "name": "Giratina",
             "category": "Pokémon Renégat",
             "entry_text": [
                 "Un Pokémon censé vivre dans un\n",
@@ -152,7 +152,7 @@
             ]
         },
         "de": {
-            "name": "GIRATINA",
+            "name": "Giratina",
             "category": "Rebell",
             "entry_text": [
                 "Ein PKMN, von dem man sagt, es lebt\n",
@@ -161,7 +161,7 @@
             ]
         },
         "it": {
-            "name": "GIRATINA",
+            "name": "Giratina",
             "category": "Pokémon Ribelle",
             "entry_text": [
                 "Pokémon che vive in un mondo sul\n",
@@ -170,7 +170,7 @@
             ]
         },
         "es": {
-            "name": "GIRATINA",
+            "name": "Giratina",
             "category": "Pokémon Renegado",
             "entry_text": [
                 "Se dice que vive en un mundo\n",

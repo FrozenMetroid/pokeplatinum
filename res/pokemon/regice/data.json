@@ -124,7 +124,7 @@
         "trainer_pos_m": 12,
         "pokemon_pos_m": 2,
         "en": {
-            "name": "REGICE",
+            "name": "Regice",
             "category": "Iceberg Pokémon",
             "entry_text": [
                 "Its body is made of ice from the\n",
@@ -133,7 +133,7 @@
             ]
         },
         "fr": {
-            "name": "REGICE",
+            "name": "Regice",
             "category": "Pokémon Iceberg",
             "entry_text": [
                 "Son corps est fait de glace datant\n",
@@ -142,7 +142,7 @@
             ]
         },
         "de": {
-            "name": "REGICE",
+            "name": "Regice",
             "category": "Eisberg",
             "entry_text": [
                 "Sein Körper besteht aus Eis aus der\n",
@@ -151,7 +151,7 @@
             ]
         },
         "it": {
-            "name": "REGICE",
+            "name": "Regice",
             "category": "Pokémon Iceberg",
             "entry_text": [
                 "Il suo corpo è costituito da ghiac-\n",
@@ -160,7 +160,7 @@
             ]
         },
         "es": {
-            "name": "REGICE",
+            "name": "Regice",
             "category": "Pokémon Iceberg",
             "entry_text": [
                 "Su cuerpo está hecho con hielo\n",

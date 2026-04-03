@@ -128,7 +128,7 @@
         "trainer_pos_m": 9,
         "pokemon_pos_m": 15,
         "en": {
-            "name": "BIBAREL",
+            "name": "Bibarel",
             "category": "Beaver Pokémon",
             "entry_text": [
                 "A river dammed by BIBAREL will\n",
@@ -137,7 +137,7 @@
             ]
         },
         "fr": {
-            "name": "CASTORNO",
+            "name": "Castorno",
             "category": "Pokémon Castor",
             "entry_text": [
                 "Il construit des barrages de boue\n",
@@ -146,7 +146,7 @@
             ]
         },
         "de": {
-            "name": "BIDIFAS",
+            "name": "Bidifas",
             "category": "Biber",
             "entry_text": [
                 "Es baut sein Nest, indem es in\n",
@@ -155,7 +155,7 @@
             ]
         },
         "it": {
-            "name": "BIBAREL",
+            "name": "Bibarel",
             "category": "Pokémon Castoro",
             "entry_text": [
                 "Sbarra il corso dei fiumi con cor-\n",
@@ -164,7 +164,7 @@
             ]
         },
         "es": {
-            "name": "BIBAREL",
+            "name": "Bibarel",
             "category": "Pokémon Castor",
             "entry_text": [
                 "Para anidar, crea presas en los\n",

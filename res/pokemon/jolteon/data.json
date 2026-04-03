@@ -114,7 +114,7 @@
         "trainer_pos_m": 9,
         "pokemon_pos_m": 16,
         "en": {
-            "name": "JOLTEON",
+            "name": "Jolteon",
             "category": "Lightning Pokémon",
             "entry_text": [
                 "If agitated, it uses electricity to\n",
@@ -123,7 +123,7 @@
             ]
         },
         "fr": {
-            "name": "VOLTALI",
+            "name": "Voltali",
             "category": "Pokémon Orage",
             "entry_text": [
                 "Il contrôle une puissance de 10 000\n",
@@ -132,7 +132,7 @@
             ]
         },
         "de": {
-            "name": "BLITZA",
+            "name": "Blitza",
             "category": "Blitz",
             "entry_text": [
                 "Es kontrolliert 10 000 Volt. Es\n",
@@ -141,7 +141,7 @@
             ]
         },
         "it": {
-            "name": "JOLTEON",
+            "name": "Jolteon",
             "category": "Pokémon Luminoso",
             "entry_text": [
                 "Scarica elettricità a 10000 volt e\n",
@@ -150,7 +150,7 @@
             ]
         },
         "es": {
-            "name": "JOLTEON",
+            "name": "Jolteon",
             "category": "Pokémon Relámpago",
             "entry_text": [
                 "Lanza rayos de 10000 voltios.\n",

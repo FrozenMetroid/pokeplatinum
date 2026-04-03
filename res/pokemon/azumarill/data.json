@@ -119,7 +119,7 @@
         "trainer_pos_m": 9,
         "pokemon_pos_m": 19,
         "en": {
-            "name": "AZUMARILL",
+            "name": "Azumarill",
             "category": "Aqua Rabbit Pokémon",
             "entry_text": [
                 "It can spend all day in water,\n",
@@ -128,7 +128,7 @@
             ]
         },
         "fr": {
-            "name": "AZUMARILL",
+            "name": "Azumarill",
             "category": "Pokémon Aqualapin",
             "entry_text": [
                 "Il peuple les lacs et les mers. Sous\n",
@@ -137,7 +137,7 @@
             ]
         },
         "de": {
-            "name": "AZUMARILL",
+            "name": "Azumarill",
             "category": "Aquahase",
             "entry_text": [
                 "Es lebt in Flüssen und Seen. Im\n",
@@ -146,7 +146,7 @@
             ]
         },
         "it": {
-            "name": "AZUMARILL",
+            "name": "Azumarill",
             "category": "Pokémon Acquniglio",
             "entry_text": [
                 "Vive nei fiumi e nei laghi. Il suo\n",
@@ -155,7 +155,7 @@
             ]
         },
         "es": {
-            "name": "AZUMARILL",
+            "name": "Azumarill",
             "category": "Pokémon Conejoagua",
             "entry_text": [
                 "Vive en ríos y lagos. En el agua,\n",

@@ -121,7 +121,7 @@
         "trainer_pos_m": 9,
         "pokemon_pos_m": 65533,
         "en": {
-            "name": "CARNIVINE",
+            "name": "Carnivine",
             "category": "Bug Catcher Pokémon",
             "entry_text": [
                 "It binds itself to trees in marshes.\n",
@@ -130,7 +130,7 @@
             ]
         },
         "fr": {
-            "name": "VORTENTE",
+            "name": "Vortente",
             "category": "Pokémon Chopinsecte",
             "entry_text": [
                 "Il attire sa proie avec sa salive\n",
@@ -139,7 +139,7 @@
             ]
         },
         "de": {
-            "name": "VENUFLIBIS",
+            "name": "Venuflibis",
             "category": "Käfertot",
             "entry_text": [
                 "Sein süßlich riechender Speichel\n",
@@ -148,7 +148,7 @@
             ]
         },
         "it": {
-            "name": "CARNIVINE",
+            "name": "Carnivine",
             "category": "Pokémon Insettivoro",
             "entry_text": [
                 "Attira le prede con il dolce aroma\n",
@@ -157,7 +157,7 @@
             ]
         },
         "es": {
-            "name": "CARNIVINE",
+            "name": "Carnivine",
             "category": "Pokémon Caza Bichos",
             "entry_text": [
                 "Atrae a sus presas con saliva de\n",

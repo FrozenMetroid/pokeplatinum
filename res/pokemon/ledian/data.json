@@ -123,7 +123,7 @@
         "trainer_pos_m": 9,
         "pokemon_pos_m": 65529,
         "en": {
-            "name": "LEDIAN",
+            "name": "Ledian",
             "category": "Five Star Pokémon",
             "entry_text": [
                 "It uses starlight as energy. When\n",
@@ -132,7 +132,7 @@
             ]
         },
         "fr": {
-            "name": "COXYCLAQUE",
+            "name": "Coxyclaque",
             "category": "Pokémon 5 Etoiles",
             "entry_text": [
                 "Il tire sa force de la lumière des\n",
@@ -141,7 +141,7 @@
             ]
         },
         "de": {
-            "name": "LEDIAN",
+            "name": "Ledian",
             "category": "Fünf-Punkt",
             "entry_text": [
                 "Es zieht Energie aus dem Licht der\n",
@@ -150,7 +150,7 @@
             ]
         },
         "it": {
-            "name": "LEDIAN",
+            "name": "Ledian",
             "category": "Pokémon Pentastra",
             "entry_text": [
                 "La luce delle stelle è la sua fonte\n",
@@ -159,7 +159,7 @@
             ]
         },
         "es": {
-            "name": "LEDIAN",
+            "name": "Ledian",
             "category": "Pokémon 5estrellas",
             "entry_text": [
                 "Se nutre de la luz de las estrellas.\n",

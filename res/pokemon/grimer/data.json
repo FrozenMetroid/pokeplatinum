@@ -136,7 +136,7 @@
         "trainer_pos_m": 9,
         "pokemon_pos_m": 17,
         "en": {
-            "name": "GRIMER",
+            "name": "Grimer",
             "category": "Sludge Pokémon",
             "entry_text": [
                 "It was born when sludge in a dirty\n",
@@ -145,7 +145,7 @@
             ]
         },
         "fr": {
-            "name": "TADMORV",
+            "name": "Tadmorv",
             "category": "Pokémon Dégueu",
             "entry_text": [
                 "Il est né d’un torrent de boue\n",
@@ -154,7 +154,7 @@
             ]
         },
         "de": {
-            "name": "SLEIMA",
+            "name": "Sleima",
             "category": "Schlamm",
             "entry_text": [
                 "Es wurde geboren, als Schlamm von\n",
@@ -163,7 +163,7 @@
             ]
         },
         "it": {
-            "name": "GRIMER",
+            "name": "Grimer",
             "category": "Pokémon Melma",
             "entry_text": [
                 "Nacque quando il fango di un fiume\n",
@@ -172,7 +172,7 @@
             ]
         },
         "es": {
-            "name": "GRIMER",
+            "name": "Grimer",
             "category": "Pokémon Lodo",
             "entry_text": [
                 "Emergió del lodo que se formó en\n",

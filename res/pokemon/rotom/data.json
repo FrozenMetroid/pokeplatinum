@@ -112,7 +112,7 @@
         "trainer_pos_m": 9,
         "pokemon_pos_m": 65528,
         "en": {
-            "name": "ROTOM",
+            "name": "Rotom",
             "category": "Plasma Pokémon",
             "entry_text": [
                 "Its electric-like body can enter\n",
@@ -121,7 +121,7 @@
             ]
         },
         "fr": {
-            "name": "MOTISMA",
+            "name": "Motisma",
             "category": "Pokémon Plasma",
             "entry_text": [
                 "Son corps est fait de plasma. Il\n",
@@ -130,7 +130,7 @@
             ]
         },
         "de": {
-            "name": "ROTOM",
+            "name": "Rotom",
             "category": "Plasma",
             "entry_text": [
                 "Sein Körper besteht aus Plasma. Mit\n",
@@ -139,7 +139,7 @@
             ]
         },
         "it": {
-            "name": "ROTOM",
+            "name": "Rotom",
             "category": "Pokémon Plasma",
             "entry_text": [
                 "Il suo corpo è composto di plasma.\n",
@@ -148,7 +148,7 @@
             ]
         },
         "es": {
-            "name": "ROTOM",
+            "name": "Rotom",
             "category": "Pokémon Plasma",
             "entry_text": [
                 "Su cuerpo está hecho de plasma.\n",

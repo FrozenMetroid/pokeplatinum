@@ -126,7 +126,7 @@
         "trainer_pos_m": 9,
         "pokemon_pos_m": 23,
         "en": {
-            "name": "ILLUMISE",
+            "name": "Illumise",
             "category": "Firefly Pokémon",
             "entry_text": [
                 "With its sweet aroma, it guides\n",
@@ -135,7 +135,7 @@
             ]
         },
         "fr": {
-            "name": "LUMIVOLE",
+            "name": "Lumivole",
             "category": "Pokémon Luciole",
             "entry_text": [
                 "Il utilise son doux parfum pour\n",
@@ -144,7 +144,7 @@
             ]
         },
         "de": {
-            "name": "ILLUMISE",
+            "name": "Illumise",
             "category": "Libelle",
             "entry_text": [
                 "Sein süßer Duft leitet VOLBEAT an,\n",
@@ -153,7 +153,7 @@
             ]
         },
         "it": {
-            "name": "ILLUMISE",
+            "name": "Illumise",
             "category": "Pokémon Lucciola",
             "entry_text": [
                 "Con il suo dolce aroma dirige il volo\n",
@@ -162,7 +162,7 @@
             ]
         },
         "es": {
-            "name": "ILLUMISE",
+            "name": "Illumise",
             "category": "Pokémon Luciérnaga",
             "entry_text": [
                 "Su suave aroma guía a VOLBEAT\n",

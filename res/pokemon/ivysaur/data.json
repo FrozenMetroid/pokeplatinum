@@ -116,7 +116,7 @@
         "trainer_pos_m": 9,
         "pokemon_pos_m": 17,
         "en": {
-            "name": "IVYSAUR",
+            "name": "Ivysaur",
             "category": "Seed Pokémon",
             "entry_text": [
                 "When the bud on its back starts\n",
@@ -125,7 +125,7 @@
             ]
         },
         "fr": {
-            "name": "HERBIZARRE",
+            "name": "Herbizarre",
             "category": "Pokémon Graine",
             "entry_text": [
                 "Lorsque le bourgeon sur son dos\n",
@@ -134,7 +134,7 @@
             ]
         },
         "de": {
-            "name": "BISAKNOSP",
+            "name": "Bisaknosp",
             "category": "Samen",
             "entry_text": [
                 "Sobald die Knospe auf seinem Rücken\n",
@@ -143,7 +143,7 @@
             ]
         },
         "it": {
-            "name": "IVYSAUR",
+            "name": "Ivysaur",
             "category": "Pokémon Seme",
             "entry_text": [
                 "Quando il bocciolo che ha sul dorso\n",
@@ -152,7 +152,7 @@
             ]
         },
         "es": {
-            "name": "IVYSAUR",
+            "name": "Ivysaur",
             "category": "Pokémon Semilla",
             "entry_text": [
                 "Cuando el bulbo de su lomo se\n",

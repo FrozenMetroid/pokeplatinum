@@ -131,7 +131,7 @@
         "trainer_pos_m": 9,
         "pokemon_pos_m": 19,
         "en": {
-            "name": "MAROWAK",
+            "name": "Marowak",
             "category": "Bone Keeper Pokémon",
             "entry_text": [
                 "From its birth, this savage Pokémon\n",
@@ -140,7 +140,7 @@
             ]
         },
         "fr": {
-            "name": "OSSATUEUR",
+            "name": "Ossatueur",
             "category": "Pokémon Gard’Os",
             "entry_text": [
                 "Ce Pokémon sauvage possède des os\n",
@@ -149,7 +149,7 @@
             ]
         },
         "de": {
-            "name": "KNOGGA",
+            "name": "Knogga",
             "category": "Knochenfan",
             "entry_text": [
                 "Von Geburt an trägt dieses wilde\n",
@@ -158,7 +158,7 @@
             ]
         },
         "it": {
-            "name": "MAROWAK",
+            "name": "Marowak",
             "category": "Pokémon Guardaossi",
             "entry_text": [
                 "Pokémon selvatico che tiene in\n",
@@ -167,7 +167,7 @@
             ]
         },
         "es": {
-            "name": "MAROWAK",
+            "name": "Marowak",
             "category": "Pokémon Apilahueso",
             "entry_text": [
                 "Este Pokémon salvaje maneja\n",

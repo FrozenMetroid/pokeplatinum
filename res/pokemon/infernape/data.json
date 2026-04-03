@@ -136,7 +136,7 @@
         "trainer_pos_m": 9,
         "pokemon_pos_m": 13,
         "en": {
-            "name": "INFERNAPE",
+            "name": "Infernape",
             "category": "Flame Pokémon",
             "entry_text": [
                 "It uses unique fighting moves with\n",
@@ -145,7 +145,7 @@
             ]
         },
         "fr": {
-            "name": "SIMIABRAZ",
+            "name": "Simiabraz",
             "category": "Pokémon Flamme",
             "entry_text": [
                 "Il pratique un art martial spécial\n",
@@ -154,7 +154,7 @@
             ]
         },
         "de": {
-            "name": "PANFERNO",
+            "name": "Panferno",
             "category": "Flamme",
             "entry_text": [
                 "Es kämpft auf besondere Art, indem\n",
@@ -163,7 +163,7 @@
             ]
         },
         "it": {
-            "name": "INFERNAPE",
+            "name": "Infernape",
             "category": "Pokémon Fiamma",
             "entry_text": [
                 "Usa un tipo speciale di arte marzia-\n",
@@ -172,7 +172,7 @@
             ]
         },
         "es": {
-            "name": "INFERNAPE",
+            "name": "Infernape",
             "category": "Pokémon Llama",
             "entry_text": [
                 "Utiliza un tipo especial de artes\n",

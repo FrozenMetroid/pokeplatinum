@@ -127,7 +127,7 @@
         "trainer_pos_m": 15,
         "pokemon_pos_m": 2,
         "en": {
-            "name": "TANGROWTH",
+            "name": "Tangrowth",
             "category": "Vine Pokémon",
             "entry_text": [
                 "Its arms are made of plants that\n",
@@ -136,7 +136,7 @@
             ]
         },
         "fr": {
-            "name": "BOULDENEU",
+            "name": "Bouldeneu",
             "category": "Pokémon Vigne",
             "entry_text": [
                 "Il ligote sa proie en étirant ses\n",
@@ -145,7 +145,7 @@
             ]
         },
         "de": {
-            "name": "TANGOLOSS",
+            "name": "Tangoloss",
             "category": "Ranke",
             "entry_text": [
                 "Es umwickelt Beute, indem es seine\n",
@@ -154,7 +154,7 @@
             ]
         },
         "it": {
-            "name": "TANGROWTH",
+            "name": "Tangrowth",
             "category": "Pokémon Liana",
             "entry_text": [
                 "Intrappola le prede con gli arti,\n",
@@ -163,7 +163,7 @@
             ]
         },
         "es": {
-            "name": "TANGROWTH",
+            "name": "Tangrowth",
             "category": "Pokémon Enredadera",
             "entry_text": [
                 "Atrapa a su presa desplegando las\n",

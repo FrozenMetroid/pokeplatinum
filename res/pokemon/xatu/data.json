@@ -129,7 +129,7 @@
         "trainer_pos_m": 9,
         "pokemon_pos_m": 4,
         "en": {
-            "name": "XATU",
+            "name": "Xatu",
             "category": "Mystic Pokémon",
             "entry_text": [
                 "This odd Pokémon can see both\n",
@@ -138,7 +138,7 @@
             ]
         },
         "fr": {
-            "name": "XATU",
+            "name": "Xatu",
             "category": "Pokémon Mystique",
             "entry_text": [
                 "Cet étrange Pokémon peut voir\n",
@@ -147,7 +147,7 @@
             ]
         },
         "de": {
-            "name": "XATU",
+            "name": "Xatu",
             "category": "Mystik",
             "entry_text": [
                 "Dieses PKMN kann die Vergangenheit\n",
@@ -156,7 +156,7 @@
             ]
         },
         "it": {
-            "name": "XATU",
+            "name": "Xatu",
             "category": "Pokémon Magico",
             "entry_text": [
                 "Pokémon enigmatico che vede il\n",
@@ -165,7 +165,7 @@
             ]
         },
         "es": {
-            "name": "XATU",
+            "name": "Xatu",
             "category": "Pokémon Místico",
             "entry_text": [
                 "Este extraño Pokémon puede ver\n",

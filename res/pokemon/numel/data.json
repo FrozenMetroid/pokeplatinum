@@ -124,7 +124,7 @@
         "trainer_pos_m": 9,
         "pokemon_pos_m": 22,
         "en": {
-            "name": "NUMEL",
+            "name": "Numel",
             "category": "Numb Pokémon",
             "entry_text": [
                 "Its humped back stores intensely\n",
@@ -133,7 +133,7 @@
             ]
         },
         "fr": {
-            "name": "CHAMALLOT",
+            "name": "Chamallot",
             "category": "Pokémon Engourdi",
             "entry_text": [
                 "Son dos bossu renferme une lave\n",
@@ -142,7 +142,7 @@
             ]
         },
         "de": {
-            "name": "CAMAUB",
+            "name": "Camaub",
             "category": "Taubheit",
             "entry_text": [
                 "In seinem Rücken speichert es sehr\n",
@@ -151,7 +151,7 @@
             ]
         },
         "it": {
-            "name": "NUMEL",
+            "name": "Numel",
             "category": "Pokémon Torpore",
             "entry_text": [
                 "Nella gobba accumula magma. Quando\n",
@@ -160,7 +160,7 @@
             ]
         },
         "es": {
-            "name": "NUMEL",
+            "name": "Numel",
             "category": "Pokémon Torpe",
             "entry_text": [
                 "En su joroba almacena magma\n",

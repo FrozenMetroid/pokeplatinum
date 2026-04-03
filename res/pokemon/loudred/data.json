@@ -127,7 +127,7 @@
         "trainer_pos_m": 9,
         "pokemon_pos_m": 13,
         "en": {
-            "name": "LOUDRED",
+            "name": "Loudred",
             "category": "Big Voice Pokémon",
             "entry_text": [
                 "The shock waves from its cries can\n",
@@ -136,7 +136,7 @@
             ]
         },
         "fr": {
-            "name": "RAMBOUM",
+            "name": "Ramboum",
             "category": "Pokémon Grosse Voix",
             "entry_text": [
                 "L’onde de choc provoquée par son\n",
@@ -145,7 +145,7 @@
             ]
         },
         "de": {
-            "name": "KRAKEELO",
+            "name": "Krakeelo",
             "category": "Lauthals",
             "entry_text": [
                 "Die Schockwellen, die durch sein\n",
@@ -154,7 +154,7 @@
             ]
         },
         "it": {
-            "name": "LOUDRED",
+            "name": "Loudred",
             "category": "Pokémon Vocione",
             "entry_text": [
                 "Le onde d’urto dei suoi versi\n",
@@ -163,7 +163,7 @@
             ]
         },
         "es": {
-            "name": "LOUDRED",
+            "name": "Loudred",
             "category": "Pokémon Chillón",
             "entry_text": [
                 "Las ondas de sus gritos pueden\n",

@@ -125,7 +125,7 @@
         "trainer_pos_m": 9,
         "pokemon_pos_m": 13,
         "en": {
-            "name": "SEEL",
+            "name": "Seel",
             "category": "Sea Lion Pokémon",
             "entry_text": [
                 "A Pokémon that lives on icebergs.\n",
@@ -134,7 +134,7 @@
             ]
         },
         "fr": {
-            "name": "OTARIA",
+            "name": "Otaria",
             "category": "Pokémon Otarie",
             "entry_text": [
                 "Un habitant des icebergs. \n",
@@ -143,7 +143,7 @@
             ]
         },
         "de": {
-            "name": "JUROB",
+            "name": "Jurob",
             "category": "Seehund",
             "entry_text": [
                 "Dieses Pokémon lebt auf Eisbergen.\n",
@@ -152,7 +152,7 @@
             ]
         },
         "it": {
-            "name": "SEEL",
+            "name": "Seel",
             "category": "Pokémon Otaria",
             "entry_text": [
                 "Pokémon che vive sugli iceberg.\n",
@@ -161,7 +161,7 @@
             ]
         },
         "es": {
-            "name": "SEEL",
+            "name": "Seel",
             "category": "Pokémon León Mar.",
             "entry_text": [
                 "Este Pokémon vive en icebergs.\n",

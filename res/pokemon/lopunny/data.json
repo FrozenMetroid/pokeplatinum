@@ -128,7 +128,7 @@
         "trainer_pos_m": 9,
         "pokemon_pos_m": 12,
         "en": {
-            "name": "LOPUNNY",
+            "name": "Lopunny",
             "category": "Rabbit Pokémon",
             "entry_text": [
                 "The ears appear to be delicate. If\n",
@@ -137,7 +137,7 @@
             ]
         },
         "fr": {
-            "name": "LOCKPIN",
+            "name": "Lockpin",
             "category": "Pokémon Lapin",
             "entry_text": [
                 "Un Pokémon extrêmement prudent.\n",
@@ -146,7 +146,7 @@
             ]
         },
         "de": {
-            "name": "SCHLAPOR",
+            "name": "Schlapor",
             "category": "Hase",
             "entry_text": [
                 "Ein sehr vorsichtiges PKMN. Nimmt\n",
@@ -155,7 +155,7 @@
             ]
         },
         "it": {
-            "name": "LOPUNNY",
+            "name": "Lopunny",
             "category": "Pokémon Coniglio",
             "entry_text": [
                 "Pokémon molto cauto. Se percepisce\n",
@@ -164,7 +164,7 @@
             ]
         },
         "es": {
-            "name": "LOPUNNY",
+            "name": "Lopunny",
             "category": "Pokémon Conejo",
             "entry_text": [
                 "Es un Pokémon muy precavido.\n",

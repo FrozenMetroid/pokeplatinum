@@ -123,7 +123,7 @@
         "trainer_pos_m": 9,
         "pokemon_pos_m": 15,
         "en": {
-            "name": "PURUGLY",
+            "name": "Purugly",
             "category": "Tiger Cat Pokémon",
             "entry_text": [
                 "It binds its body with its tails to\n",
@@ -132,7 +132,7 @@
             ]
         },
         "fr": {
-            "name": "CHAFFREUX",
+            "name": "Chaffreux",
             "category": "Pokémon Chatigre",
             "entry_text": [
                 "Cette brute arrogante n’hésite pas\n",
@@ -141,7 +141,7 @@
             ]
         },
         "de": {
-            "name": "SHNURGARST",
+            "name": "Shnurgarst",
             "category": "Tigerkatze",
             "entry_text": [
                 "Dieses PKMN ist ein Grobian, der\n",
@@ -150,7 +150,7 @@
             ]
         },
         "it": {
-            "name": "PURUGLY",
+            "name": "Purugly",
             "category": "Pokémon Gattotigre",
             "entry_text": [
                 "Si introduce sfacciatamente\n",
@@ -159,7 +159,7 @@
             ]
         },
         "es": {
-            "name": "PURUGLY",
+            "name": "Purugly",
             "category": "Pokémon Tigre Gato",
             "entry_text": [
                 "Es un bruto descarado que\n",

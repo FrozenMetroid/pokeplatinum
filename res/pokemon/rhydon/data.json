@@ -149,7 +149,7 @@
         "trainer_pos_m": 16,
         "pokemon_pos_m": 4,
         "en": {
-            "name": "RHYDON",
+            "name": "Rhydon",
             "category": "Drill Pokémon",
             "entry_text": [
                 "Standing on its hind legs freed its\n",
@@ -158,7 +158,7 @@
             ]
         },
         "fr": {
-            "name": "RHINOFEROS",
+            "name": "Rhinoferos",
             "category": "Pokémon Perceur",
             "entry_text": [
                 "Son cerveau s’est développé depuis\n",
@@ -167,7 +167,7 @@
             ]
         },
         "de": {
-            "name": "RIZEROS",
+            "name": "Rizeros",
             "category": "Bohrer",
             "entry_text": [
                 "Sein Gehirn entwickelt sich, wenn es\n",
@@ -176,7 +176,7 @@
             ]
         },
         "it": {
-            "name": "RHYDON",
+            "name": "Rhydon",
             "category": "Pokémon Trapano",
             "entry_text": [
                 "Si è alzato sulle zampe posteriori\n",
@@ -185,7 +185,7 @@
             ]
         },
         "es": {
-            "name": "RHYDON",
+            "name": "Rhydon",
             "category": "Pokémon Taladro",
             "entry_text": [
                 "Su cerebro se desarrolló cuando\n",

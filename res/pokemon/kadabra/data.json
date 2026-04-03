@@ -128,7 +128,7 @@
         "trainer_pos_m": 9,
         "pokemon_pos_m": 11,
         "en": {
-            "name": "KADABRA",
+            "name": "Kadabra",
             "category": "Psi Pokémon",
             "entry_text": [
                 "It stares at its silver spoon to\n",
@@ -137,7 +137,7 @@
             ]
         },
         "fr": {
-            "name": "KADABRA",
+            "name": "Kadabra",
             "category": "Pokémon Psy",
             "entry_text": [
                 "Une ombre inquiétante obscurcit\n",
@@ -146,7 +146,7 @@
             ]
         },
         "de": {
-            "name": "KADABRA",
+            "name": "Kadabra",
             "category": "Psi",
             "entry_text": [
                 "Wenn sich auf deinem Fernsehbild-\n",
@@ -155,7 +155,7 @@
             ]
         },
         "it": {
-            "name": "KADABRA",
+            "name": "Kadabra",
             "category": "Pokémon Psico",
             "entry_text": [
                 "Se lo si avvicina, fa apparire alla\n",
@@ -164,7 +164,7 @@
             ]
         },
         "es": {
-            "name": "KADABRA",
+            "name": "Kadabra",
             "category": "Pokémon Psi",
             "entry_text": [
                 "Si se acerca uno, una extraña\n",

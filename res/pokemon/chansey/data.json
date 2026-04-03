@@ -154,7 +154,7 @@
         "trainer_pos_m": 9,
         "pokemon_pos_m": 10,
         "en": {
-            "name": "CHANSEY",
+            "name": "Chansey",
             "category": "Egg Pokémon",
             "entry_text": [
                 "A kindly Pokémon that lays highly\n",
@@ -163,7 +163,7 @@
             ]
         },
         "fr": {
-            "name": "LEVEINARD",
+            "name": "Leveinard",
             "category": "Pokémon Oeuf",
             "entry_text": [
                 "Il est censé apporter la joie. Ce\n",
@@ -172,7 +172,7 @@
             ]
         },
         "de": {
-            "name": "CHANEIRA",
+            "name": "Chaneira",
             "category": "Ei",
             "entry_text": [
                 "Man sagt, es bringe Glück. Es ist\n",
@@ -181,7 +181,7 @@
             ]
         },
         "it": {
-            "name": "CHANSEY",
+            "name": "Chansey",
             "category": "Pokémon Uovo",
             "entry_text": [
                 "Si dice che porti felicità.\n",
@@ -190,7 +190,7 @@
             ]
         },
         "es": {
-            "name": "CHANSEY",
+            "name": "Chansey",
             "category": "Pokémon Huevo",
             "entry_text": [
                 "Se dice que reparte felicidad.\n",

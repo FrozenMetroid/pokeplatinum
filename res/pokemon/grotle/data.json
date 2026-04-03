@@ -118,7 +118,7 @@
         "trainer_pos_m": 9,
         "pokemon_pos_m": 14,
         "en": {
-            "name": "GROTLE",
+            "name": "Grotle",
             "category": "Grove Pokémon",
             "entry_text": [
                 "It knows where pure water wells\n",
@@ -127,7 +127,7 @@
             ]
         },
         "fr": {
-            "name": "BOSKARA",
+            "name": "Boskara",
             "category": "Pokémon Bosquet",
             "entry_text": [
                 "Il vit en forêt près de l’eau.\n",
@@ -136,7 +136,7 @@
             ]
         },
         "de": {
-            "name": "CHELCARAIN",
+            "name": "Chelcarain",
             "category": "Hain",
             "entry_text": [
                 "Es lebt in der Nähe von Wasser in\n",
@@ -145,7 +145,7 @@
             ]
         },
         "it": {
-            "name": "GROTLE",
+            "name": "Grotle",
             "category": "Pokémon Boschetto",
             "entry_text": [
                 "Vive nelle foreste vicino all’acqua,\n",
@@ -154,7 +154,7 @@
             ]
         },
         "es": {
-            "name": "GROTLE",
+            "name": "Grotle",
             "category": "Pokémon Arboleda",
             "entry_text": [
                 "Vive en los bosques cerca del\n",

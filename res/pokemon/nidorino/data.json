@@ -116,7 +116,7 @@
         "trainer_pos_m": 9,
         "pokemon_pos_m": 16,
         "en": {
-            "name": "NIDORINO",
+            "name": "Nidorino",
             "category": "Poison Pin Pokémon",
             "entry_text": [
                 "It has a violent disposition and\n",
@@ -125,7 +125,7 @@
             ]
         },
         "fr": {
-            "name": "NIDORINO",
+            "name": "Nidorino",
             "category": "Pokémon Venepic",
             "entry_text": [
                 "D’un tempérament violent, il\n",
@@ -134,7 +134,7 @@
             ]
         },
         "de": {
-            "name": "NIDORINO",
+            "name": "Nidorino",
             "category": "Giftdorn",
             "entry_text": [
                 "Es ist aggressiv und greift seine\n",
@@ -143,7 +143,7 @@
             ]
         },
         "it": {
-            "name": "NIDORINO",
+            "name": "Nidorino",
             "category": "Pokémon Velenago",
             "entry_text": [
                 "Ha un temperamento violento e\n",
@@ -152,7 +152,7 @@
             ]
         },
         "es": {
-            "name": "NIDORINO",
+            "name": "Nidorino",
             "category": "Pokémon Pin Veneno",
             "entry_text": [
                 "Se muestra violento y ataca\n",

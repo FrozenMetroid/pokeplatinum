@@ -133,7 +133,7 @@
         "trainer_pos_m": 9,
         "pokemon_pos_m": 29,
         "en": {
-            "name": "TOGEPI",
+            "name": "Togepi",
             "category": "Spike Ball Pokémon",
             "entry_text": [
                 "It transforms the kindness and joy\n",
@@ -142,7 +142,7 @@
             ]
         },
         "fr": {
-            "name": "TOGEPI",
+            "name": "Togepi",
             "category": "Pokémon Balle Pic",
             "entry_text": [
                 "On prétend que sa coquille est\n",
@@ -151,7 +151,7 @@
             ]
         },
         "de": {
-            "name": "TOGEPI",
+            "name": "Togepi",
             "category": "Zackenball",
             "entry_text": [
                 "Seine Schale ist mit Glücksgefühlen\n",
@@ -160,7 +160,7 @@
             ]
         },
         "it": {
-            "name": "TOGEPI",
+            "name": "Togepi",
             "category": "Pokémon Pallapunte",
             "entry_text": [
                 "Pare che il suo guscio immagazzini\n",
@@ -169,7 +169,7 @@
             ]
         },
         "es": {
-            "name": "TOGEPI",
+            "name": "Togepi",
             "category": "Pokémon Bolaclavos",
             "entry_text": [
                 "Se dice que su cascarón está\n",

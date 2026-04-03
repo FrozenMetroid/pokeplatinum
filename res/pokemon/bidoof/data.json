@@ -132,7 +132,7 @@
         "trainer_pos_m": 9,
         "pokemon_pos_m": 25,
         "en": {
-            "name": "BIDOOF",
+            "name": "Bidoof",
             "category": "Plump Mouse Pokémon",
             "entry_text": [
                 "A comparison revealed that\n",
@@ -141,7 +141,7 @@
             ]
         },
         "fr": {
-            "name": "KEUNOTOR",
+            "name": "Keunotor",
             "category": "Pokémon Souridodue",
             "entry_text": [
                 "Rien ne peut perturber ses nerfs\n",
@@ -150,7 +150,7 @@
             ]
         },
         "de": {
-            "name": "BIDIZA",
+            "name": "Bidiza",
             "category": "Dickmaus",
             "entry_text": [
                 "Es hat Nerven wie Drahtseile,\n",
@@ -159,7 +159,7 @@
             ]
         },
         "it": {
-            "name": "BIDOOF",
+            "name": "Bidoof",
             "category": "Pokémon Topaffuto",
             "entry_text": [
                 "Ha i nervi d’acciaio e niente può\n",
@@ -168,7 +168,7 @@
             ]
         },
         "es": {
-            "name": "BIDOOF",
+            "name": "Bidoof",
             "category": "Pokémon Gran Ratón",
             "entry_text": [
                 "Tiene nervios de acero y nada\n",

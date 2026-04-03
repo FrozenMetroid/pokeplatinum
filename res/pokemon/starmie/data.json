@@ -113,7 +113,7 @@
         "trainer_pos_m": 9,
         "pokemon_pos_m": 13,
         "en": {
-            "name": "STARMIE",
+            "name": "Starmie",
             "category": "Mysterious Pokémon",
             "entry_text": [
                 "At the center of its body is a red\n",
@@ -122,7 +122,7 @@
             ]
         },
         "fr": {
-            "name": "STAROSS",
+            "name": "Staross",
             "category": "Pokémon Mystérieux",
             "entry_text": [
                 "Un noyau rouge trône en son\n",
@@ -131,7 +131,7 @@
             ]
         },
         "de": {
-            "name": "STARMIE",
+            "name": "Starmie",
             "category": "Mysteriös",
             "entry_text": [
                 "In der Körpermitte befindet sich\n",
@@ -140,7 +140,7 @@
             ]
         },
         "it": {
-            "name": "STARMIE",
+            "name": "Starmie",
             "category": "Pokémon Misterioso",
             "entry_text": [
                 "Al centro del corpo ha un nucleo\n",
@@ -149,7 +149,7 @@
             ]
         },
         "es": {
-            "name": "STARMIE",
+            "name": "Starmie",
             "category": "Pokémon Misterioso",
             "entry_text": [
                 "El centro de su cuerpo alberga un\n",

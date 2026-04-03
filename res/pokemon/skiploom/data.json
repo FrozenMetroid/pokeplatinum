@@ -117,7 +117,7 @@
         "trainer_pos_m": 9,
         "pokemon_pos_m": 1,
         "en": {
-            "name": "SKIPLOOM",
+            "name": "Skiploom",
             "category": "Cottonweed Pokémon",
             "entry_text": [
                 "It blooms when the weather warms.\n",
@@ -126,7 +126,7 @@
             ]
         },
         "fr": {
-            "name": "FLORAVOL",
+            "name": "Floravol",
             "category": "Pokémon Pissenlit",
             "entry_text": [
                 "Il fleurit lorsque les températures\n",
@@ -135,7 +135,7 @@
             ]
         },
         "de": {
-            "name": "HUBELUPF",
+            "name": "Hubelupf",
             "category": "Löwenzahn",
             "entry_text": [
                 "Sobald es wärmer wird, blüht es\n",
@@ -144,7 +144,7 @@
             ]
         },
         "it": {
-            "name": "SKIPLOOM",
+            "name": "Skiploom",
             "category": "Pokémon Gramigna",
             "entry_text": [
                 "Il suo fiore sboccia appena l’aria\n",
@@ -153,7 +153,7 @@
             ]
         },
         "es": {
-            "name": "SKIPLOOM",
+            "name": "Skiploom",
             "category": "Pokémon Algadón",
             "entry_text": [
                 "Florece en épocas cálidas. Flota\n",

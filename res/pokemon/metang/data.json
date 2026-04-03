@@ -134,7 +134,7 @@
         "trainer_pos_m": 9,
         "pokemon_pos_m": 65534,
         "en": {
-            "name": "METANG",
+            "name": "Metang",
             "category": "Iron Claw Pokémon",
             "entry_text": [
                 "It is formed by two BELDUM joining\n",
@@ -143,7 +143,7 @@
             ]
         },
         "fr": {
-            "name": "METANG",
+            "name": "Metang",
             "category": "Pokémon Pincefer",
             "entry_text": [
                 "Il est formé de deux TERHAL\n",
@@ -152,7 +152,7 @@
             ]
         },
         "de": {
-            "name": "METANG",
+            "name": "Metang",
             "category": "Eisenklaue",
             "entry_text": [
                 "Das PKMN besteht aus zwei TANHEL.\n",
@@ -161,7 +161,7 @@
             ]
         },
         "it": {
-            "name": "METANG",
+            "name": "Metang",
             "category": "Pokémon Ferrunghia",
             "entry_text": [
                 "È sorto dalla fusione di due BELDUM.\n",
@@ -170,7 +170,7 @@
             ]
         },
         "es": {
-            "name": "METANG",
+            "name": "Metang",
             "category": "Pokémon Garrahierro",
             "entry_text": [
                 "Lo forman dos BELDUM unidos. Puede\n",

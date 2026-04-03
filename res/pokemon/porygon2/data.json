@@ -125,7 +125,7 @@
         "trainer_pos_m": 9,
         "pokemon_pos_m": 65529,
         "en": {
-            "name": "PORYGON2",
+            "name": "Porygon2",
             "category": "Virtual Pokémon",
             "entry_text": [
                 "It was upgraded to enable the\n",
@@ -134,7 +134,7 @@
             ]
         },
         "fr": {
-            "name": "PORYGON2",
+            "name": "Porygon2",
             "category": "Pokémon Virtuel",
             "entry_text": [
                 "On lui a installé un logiciel de\n",
@@ -143,7 +143,7 @@
             ]
         },
         "de": {
-            "name": "PORYGON2",
+            "name": "Porygon2",
             "category": "Virtuell",
             "entry_text": [
                 "Interstellare Software wurde\n",
@@ -152,7 +152,7 @@
             ]
         },
         "it": {
-            "name": "PORYGON2",
+            "name": "Porygon2",
             "category": "Pokémon Virtuale",
             "entry_text": [
                 "Gli è stato installato un programma\n",
@@ -161,7 +161,7 @@
             ]
         },
         "es": {
-            "name": "PORYGON2",
+            "name": "Porygon2",
             "category": "Pokémon Virtual",
             "entry_text": [
                 "Tiene instalado un avanzado\n",

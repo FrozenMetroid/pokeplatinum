@@ -126,7 +126,7 @@
         "trainer_pos_m": 9,
         "pokemon_pos_m": 65522,
         "en": {
-            "name": "SWABLU",
+            "name": "Swablu",
             "category": "Cotton Bird Pokémon",
             "entry_text": [
                 "It can’t relax if it or its\n",
@@ -135,7 +135,7 @@
             ]
         },
         "fr": {
-            "name": "TYLTON",
+            "name": "Tylton",
             "category": "Pokémon Oiseaucoton",
             "entry_text": [
                 "Ses ailes sont comme des balles\n",
@@ -144,7 +144,7 @@
             ]
         },
         "de": {
-            "name": "WABLU",
+            "name": "Wablu",
             "category": "Wollvogel",
             "entry_text": [
                 "Seine Flügel sehen aus wie Baum-\n",
@@ -153,7 +153,7 @@
             ]
         },
         "it": {
-            "name": "SWABLU",
+            "name": "Swablu",
             "category": "Pokémon Alidicotone",
             "entry_text": [
                 "Le sue ali sono come batuffoli. Se si\n",
@@ -162,7 +162,7 @@
             ]
         },
         "es": {
-            "name": "SWABLU",
+            "name": "Swablu",
             "category": "Pokémon Ave Algodón",
             "entry_text": [
                 "Sus alas parecen nubes de\n",

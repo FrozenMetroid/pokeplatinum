@@ -128,7 +128,7 @@
         "trainer_pos_m": 9,
         "pokemon_pos_m": 27,
         "en": {
-            "name": "GULPIN",
+            "name": "Gulpin",
             "category": "Stomach Pokémon",
             "entry_text": [
                 "Almost all its body is its stomach.\n",
@@ -137,7 +137,7 @@
             ]
         },
         "fr": {
-            "name": "GLOUPTI",
+            "name": "Gloupti",
             "category": "Pokémon Estomac",
             "entry_text": [
                 "Il est principalement composé d’un\n",
@@ -146,7 +146,7 @@
             ]
         },
         "de": {
-            "name": "SCHLUPPUCK",
+            "name": "Schluppuck",
             "category": "Magen",
             "entry_text": [
                 "Sein Körper besteht fast nur aus\n",
@@ -155,7 +155,7 @@
             ]
         },
         "it": {
-            "name": "GULPIN",
+            "name": "Gulpin",
             "category": "Pokémon Stomaco",
             "entry_text": [
                 "La maggior parte del suo corpo è\n",
@@ -164,7 +164,7 @@
             ]
         },
         "es": {
-            "name": "GULPIN",
+            "name": "Gulpin",
             "category": "Pokémon Estómago",
             "entry_text": [
                 "Casi todo su cuerpo es estómago.\n",

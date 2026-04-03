@@ -69,7 +69,7 @@
         "trainer_pos_m": 9,
         "pokemon_pos_m": 65529,
         "en": {
-            "name": "BELDUM",
+            "name": "Beldum",
             "category": "Iron Ball Pokémon",
             "entry_text": [
                 "It converses with others by using\n",
@@ -78,7 +78,7 @@
             ]
         },
         "fr": {
-            "name": "TERHAL",
+            "name": "Terhal",
             "category": "Pokémon Boulefer",
             "entry_text": [
                 "Il dialogue avec les siens par \n",
@@ -87,7 +87,7 @@
             ]
         },
         "de": {
-            "name": "TANHEL",
+            "name": "Tanhel",
             "category": "Eisenkugel",
             "entry_text": [
                 "Es kommuniziert mit anderen durch\n",
@@ -96,7 +96,7 @@
             ]
         },
         "it": {
-            "name": "BELDUM",
+            "name": "Beldum",
             "category": "Pokémon Ferrosfera",
             "entry_text": [
                 "Comunica con i suoi simili mediante\n",
@@ -105,7 +105,7 @@
             ]
         },
         "es": {
-            "name": "BELDUM",
+            "name": "Beldum",
             "category": "Pokémon Bola Hierro",
             "entry_text": [
                 "Se comunican mediante pulsos\n",

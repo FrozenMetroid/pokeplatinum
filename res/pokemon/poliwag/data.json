@@ -121,7 +121,7 @@
         "trainer_pos_m": 9,
         "pokemon_pos_m": 21,
         "en": {
-            "name": "POLIWAG",
+            "name": "Poliwag",
             "category": "Tadpole Pokémon",
             "entry_text": [
                 "Its skin is so thin, its internal\n",
@@ -130,7 +130,7 @@
             ]
         },
         "fr": {
-            "name": "PTITARD",
+            "name": "Ptitard",
             "category": "Pokémon Têtard",
             "entry_text": [
                 "Sa peau est si mince qu’on\n",
@@ -139,7 +139,7 @@
             ]
         },
         "de": {
-            "name": "QUAPSEL",
+            "name": "Quapsel",
             "category": "Kaulquappe",
             "entry_text": [
                 "Seine Haut ist so dünn, dass man die\n",
@@ -148,7 +148,7 @@
             ]
         },
         "it": {
-            "name": "POLIWAG",
+            "name": "Poliwag",
             "category": "Pokémon Girino",
             "entry_text": [
                 "La sua pelle è così sottile che si\n",
@@ -157,7 +157,7 @@
             ]
         },
         "es": {
-            "name": "POLIWAG",
+            "name": "Poliwag",
             "category": "Pokémon Renacuajo",
             "entry_text": [
                 "Su piel es tan fina que permite\n",

@@ -122,7 +122,7 @@
         "trainer_pos_m": 9,
         "pokemon_pos_m": 65530,
         "en": {
-            "name": "HORSEA",
+            "name": "Horsea",
             "category": "Dragon Pokémon",
             "entry_text": [
                 "It makes its nest in the shade of\n",
@@ -131,7 +131,7 @@
             ]
         },
         "fr": {
-            "name": "HYPOTREMPE",
+            "name": "Hypotrempe",
             "category": "Pokémon Dragon",
             "entry_text": [
                 "Il niche à l’ombre du corail. Quand\n",
@@ -140,7 +140,7 @@
             ]
         },
         "de": {
-            "name": "SEEPER",
+            "name": "Seeper",
             "category": "Drache",
             "entry_text": [
                 "Im Schatten von Korallen legt es\n",
@@ -149,7 +149,7 @@
             ]
         },
         "it": {
-            "name": "HORSEA",
+            "name": "Horsea",
             "category": "Pokémon Drago",
             "entry_text": [
                 "Crea la sua tana all’ombra dei\n",
@@ -158,7 +158,7 @@
             ]
         },
         "es": {
-            "name": "HORSEA",
+            "name": "Horsea",
             "category": "Pokémon Dragón",
             "entry_text": [
                 "Hace su nido entre los corales.\n",

@@ -149,7 +149,7 @@
         "trainer_pos_m": 9,
         "pokemon_pos_m": 15,
         "en": {
-            "name": "AIPOM",
+            "name": "Aipom",
             "category": "Long Tail Pokémon",
             "entry_text": [
                 "It lives high among the treetops.\n",
@@ -158,7 +158,7 @@
             ]
         },
         "fr": {
-            "name": "CAPUMAIN",
+            "name": "Capumain",
             "category": "Pokémon Longqueue",
             "entry_text": [
                 "Il utilise sa queue pour cueillir les\n",
@@ -167,7 +167,7 @@
             ]
         },
         "de": {
-            "name": "GRIFFEL",
+            "name": "Griffel",
             "category": "Langschweif",
             "entry_text": [
                 "Mit dem Schweif pflückt es hochhän-\n",
@@ -176,7 +176,7 @@
             ]
         },
         "it": {
-            "name": "AIPOM",
+            "name": "Aipom",
             "category": "Pokémon Lungacoda",
             "entry_text": [
                 "Usa la coda per raccogliere i\n",
@@ -185,7 +185,7 @@
             ]
         },
         "es": {
-            "name": "AIPOM",
+            "name": "Aipom",
             "category": "Pokémon Cola Larga",
             "entry_text": [
                 "Usa su cola para recoger la fruta\n",

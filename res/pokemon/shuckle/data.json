@@ -116,7 +116,7 @@
         "trainer_pos_m": 9,
         "pokemon_pos_m": 25,
         "en": {
-            "name": "SHUCKLE",
+            "name": "Shuckle",
             "category": "Mold Pokémon",
             "entry_text": [
                 "It stores berries in its shell.\n",
@@ -125,7 +125,7 @@
             ]
         },
         "fr": {
-            "name": "CARATROC",
+            "name": "Caratroc",
             "category": "Pokémon Pourri",
             "entry_text": [
                 "Il stocke des Baies sous sa\n",
@@ -134,7 +134,7 @@
             ]
         },
         "de": {
-            "name": "POTTROTT",
+            "name": "Pottrott",
             "category": "Schimmel",
             "entry_text": [
                 "In seiner Schale bewahrt es Beeren\n",
@@ -143,7 +143,7 @@
             ]
         },
         "it": {
-            "name": "SHUCKLE",
+            "name": "Shuckle",
             "category": "Pokémon Muffa",
             "entry_text": [
                 "Conserva nel guscio delle bacche\n",
@@ -152,7 +152,7 @@
             ]
         },
         "es": {
-            "name": "SHUCKLE",
+            "name": "Shuckle",
             "category": "Pokémon Moho",
             "entry_text": [
                 "Almacena bayas en su caparazón,\n",

@@ -119,7 +119,7 @@
         "trainer_pos_m": 9,
         "pokemon_pos_m": 14,
         "en": {
-            "name": "OMASTAR",
+            "name": "Omastar",
             "category": "Spiral Pokémon",
             "entry_text": [
                 "It is thought that this Pokémon\n",
@@ -128,7 +128,7 @@
             ]
         },
         "fr": {
-            "name": "AMONISTAR",
+            "name": "Amonistar",
             "category": "Pokémon Spirale",
             "entry_text": [
                 "On pense que ce Pokémon a\n",
@@ -137,7 +137,7 @@
             ]
         },
         "de": {
-            "name": "AMOROSO",
+            "name": "Amoroso",
             "category": "Spirale",
             "entry_text": [
                 "Man geht davon aus, dass das PKMN\n",
@@ -146,7 +146,7 @@
             ]
         },
         "it": {
-            "name": "OMASTAR",
+            "name": "Omastar",
             "category": "Pokémon Spirale",
             "entry_text": [
                 "Si pensa che questo Pokémon si\n",
@@ -155,7 +155,7 @@
             ]
         },
         "es": {
-            "name": "OMASTAR",
+            "name": "Omastar",
             "category": "Pokémon Espiral",
             "entry_text": [
                 "Se cree que este Pokémon se\n",

@@ -110,7 +110,7 @@
         "trainer_pos_m": 9,
         "pokemon_pos_m": 65531,
         "en": {
-            "name": "GOREBYSS",
+            "name": "Gorebyss",
             "category": "South Sea Pokémon",
             "entry_text": [
                 "It lives at the bottom of the sea.\n",
@@ -119,7 +119,7 @@
             ]
         },
         "fr": {
-            "name": "ROSABYSS",
+            "name": "Rosabyss",
             "category": "Pokémon Mer Du Sud",
             "entry_text": [
                 "Au printemps, son corps rose se\n",
@@ -128,7 +128,7 @@
             ]
         },
         "de": {
-            "name": "SAGANABYSS",
+            "name": "Saganabyss",
             "category": "Südsee",
             "entry_text": [
                 "Es lebt auf dem Grund des Meeres.\n",
@@ -137,7 +137,7 @@
             ]
         },
         "it": {
-            "name": "GOREBYSS",
+            "name": "Gorebyss",
             "category": "Pokémon Sudmarino",
             "entry_text": [
                 "Vive sui fondali marini. In primavera\n",
@@ -146,7 +146,7 @@
             ]
         },
         "es": {
-            "name": "GOREBYSS",
+            "name": "Gorebyss",
             "category": "Pokémon Mar Del Sur",
             "entry_text": [
                 "Vive en el fondo del mar. En\n",

@@ -115,7 +115,7 @@
         "trainer_pos_m": 9,
         "pokemon_pos_m": 17,
         "en": {
-            "name": "PONYTA",
+            "name": "Ponyta",
             "category": "Fire Horse Pokémon",
             "entry_text": [
                 "As a newborn, it can barely stand.\n",
@@ -124,7 +124,7 @@
             ]
         },
         "fr": {
-            "name": "PONYTA",
+            "name": "Ponyta",
             "category": "Pokémon Cheval Feu",
             "entry_text": [
                 "La crinière et la queue ardentes\n",
@@ -133,7 +133,7 @@
             ]
         },
         "de": {
-            "name": "PONITA",
+            "name": "Ponita",
             "category": "Feuerpferd",
             "entry_text": [
                 "Bereits eine Stunde nach seiner\n",
@@ -142,7 +142,7 @@
             ]
         },
         "it": {
-            "name": "PONYTA",
+            "name": "Ponyta",
             "category": "Pokémon Cavalfuoco",
             "entry_text": [
                 "Un’ora dopo la nascita, gli\n",
@@ -151,7 +151,7 @@
             ]
         },
         "es": {
-            "name": "PONYTA",
+            "name": "Ponyta",
             "category": "Pokémon Caballo F.",
             "entry_text": [
                 "Sus impresionantes cola y crin\n",

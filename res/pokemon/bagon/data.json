@@ -125,7 +125,7 @@
         "trainer_pos_m": 9,
         "pokemon_pos_m": 23,
         "en": {
-            "name": "BAGON",
+            "name": "Bagon",
             "category": "Rock Head Pokémon",
             "entry_text": [
                 "Dreaming of one day flying, it\n",
@@ -134,7 +134,7 @@
             ]
         },
         "fr": {
-            "name": "DRABY",
+            "name": "Draby",
             "category": "Pokémon Tête de Roc",
             "entry_text": [
                 "Il rêve de pouvoir voler un jour. \n",
@@ -143,7 +143,7 @@
             ]
         },
         "de": {
-            "name": "KINDWURM",
+            "name": "Kindwurm",
             "category": "Steinhaupt",
             "entry_text": [
                 "Es träumt davon, eines Tages\n",
@@ -152,7 +152,7 @@
             ]
         },
         "it": {
-            "name": "BAGON",
+            "name": "Bagon",
             "category": "Pokémon Rocciotesta",
             "entry_text": [
                 "Sogna di poter volare un giorno e,\n",
@@ -161,7 +161,7 @@
             ]
         },
         "es": {
-            "name": "BAGON",
+            "name": "Bagon",
             "category": "Pokémon Cabeza Roca",
             "entry_text": [
                 "Sueña con volar algún día,\n",

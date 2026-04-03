@@ -133,7 +133,7 @@
         "trainer_pos_m": 23,
         "pokemon_pos_m": 3,
         "en": {
-            "name": "GROUDON",
+            "name": "Groudon",
             "category": "Continent Pokémon",
             "entry_text": [
                 "It had been asleep in underground\n",
@@ -142,7 +142,7 @@
             ]
         },
         "fr": {
-            "name": "GROUDON",
+            "name": "Groudon",
             "category": "Pokémon Continent",
             "entry_text": [
                 "Il dormait dans le magma souterrain\n",
@@ -151,7 +151,7 @@
             ]
         },
         "de": {
-            "name": "GROUDON",
+            "name": "Groudon",
             "category": "Kontinent",
             "entry_text": [
                 "Es hat seit dem Kampf gegen\n",
@@ -160,7 +160,7 @@
             ]
         },
         "it": {
-            "name": "GROUDON",
+            "name": "Groudon",
             "category": "Pokémon Continente",
             "entry_text": [
                 "Dopo una lotta colossale contro\n",
@@ -169,7 +169,7 @@
             ]
         },
         "es": {
-            "name": "GROUDON",
+            "name": "Groudon",
             "category": "Pokémon Continente",
             "entry_text": [
                 "Ha estado durmiendo en magma\n",

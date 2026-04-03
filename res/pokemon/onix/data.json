@@ -137,7 +137,7 @@
         "trainer_pos_m": 25,
         "pokemon_pos_m": 1,
         "en": {
-            "name": "ONIX",
+            "name": "Onix",
             "category": "Rock Snake Pokémon",
             "entry_text": [
                 "It burrows through the ground\n",
@@ -146,7 +146,7 @@
             ]
         },
         "fr": {
-            "name": "ONIX",
+            "name": "Onix",
             "category": "Pokémon Serpenroc",
             "entry_text": [
                 "Il provoque des secousses\n",
@@ -155,7 +155,7 @@
             ]
         },
         "de": {
-            "name": "ONIX",
+            "name": "Onix",
             "category": "Felsnatter",
             "entry_text": [
                 "Wenn es sich unter dem Boden mit\n",
@@ -164,7 +164,7 @@
             ]
         },
         "it": {
-            "name": "ONIX",
+            "name": "Onix",
             "category": "Pokémon Serpesasso",
             "entry_text": [
                 "Si muove sottoterra provocando\n",
@@ -173,7 +173,7 @@
             ]
         },
         "es": {
-            "name": "ONIX",
+            "name": "Onix",
             "category": "Pokémon Serp. Roca",
             "entry_text": [
                 "Cuando viaja bajo tierra causa\n",

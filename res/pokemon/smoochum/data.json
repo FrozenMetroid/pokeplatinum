@@ -134,7 +134,7 @@
         "trainer_pos_m": 9,
         "pokemon_pos_m": 28,
         "en": {
-            "name": "SMOOCHUM",
+            "name": "Smoochum",
             "category": "Kiss Pokémon",
             "entry_text": [
                 "It tests everything by touching\n",
@@ -143,7 +143,7 @@
             ]
         },
         "fr": {
-            "name": "LIPPOUTI",
+            "name": "Lippouti",
             "category": "Pokémon Bisou",
             "entry_text": [
                 "Il goûte à tout du bout des lèvres.\n",
@@ -152,7 +152,7 @@
             ]
         },
         "de": {
-            "name": "KUSSILLA",
+            "name": "Kussilla",
             "category": "Kuss",
             "entry_text": [
                 "Dieses PKMN berührt alles mit den\n",
@@ -161,7 +161,7 @@
             ]
         },
         "it": {
-            "name": "SMOOCHUM",
+            "name": "Smoochum",
             "category": "Pokémon Bacio",
             "entry_text": [
                 "Analizza tutto con le labbra e con\n",
@@ -170,7 +170,7 @@
             ]
         },
         "es": {
-            "name": "SMOOCHUM",
+            "name": "Smoochum",
             "category": "Pokémon Beso",
             "entry_text": [
                 "Analiza todo tocándolo con los\n",

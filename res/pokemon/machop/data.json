@@ -136,7 +136,7 @@
         "trainer_pos_m": 9,
         "pokemon_pos_m": 19,
         "en": {
-            "name": "MACHOP",
+            "name": "Machop",
             "category": "Superpower Pokémon",
             "entry_text": [
                 "Though small in stature, it is\n",
@@ -145,7 +145,7 @@
             ]
         },
         "fr": {
-            "name": "MACHOC",
+            "name": "Machoc",
             "category": "Pokémon Colosse",
             "entry_text": [
                 "Il muscle son corps en soulevant\n",
@@ -154,7 +154,7 @@
             ]
         },
         "de": {
-            "name": "MACHOLLO",
+            "name": "Machollo",
             "category": "Kraftprotz",
             "entry_text": [
                 "Es hebt GEOROK hoch, um seinen\n",
@@ -163,7 +163,7 @@
             ]
         },
         "it": {
-            "name": "MACHOP",
+            "name": "Machop",
             "category": "Pokémon Megaforza",
             "entry_text": [
                 "Solleva GRAVELER ripetutamente\n",
@@ -172,7 +172,7 @@
             ]
         },
         "es": {
-            "name": "MACHOP",
+            "name": "Machop",
             "category": "Pokémon Superpoder",
             "entry_text": [
                 "Levanta un GRAVELER para mantener\n",

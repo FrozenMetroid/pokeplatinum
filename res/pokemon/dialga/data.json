@@ -131,7 +131,7 @@
         "trainer_pos_m": 26,
         "pokemon_pos_m": 2,
         "en": {
-            "name": "DIALGA",
+            "name": "Dialga",
             "category": "Temporal Pokémon",
             "entry_text": [
                 "A legendary Pokémon of Sinnoh.\n",
@@ -140,7 +140,7 @@
             ]
         },
         "fr": {
-            "name": "DIALGA",
+            "name": "Dialga",
             "category": "Pokémon Temps",
             "entry_text": [
                 "Il peut contrôler le temps. Les\n",
@@ -149,7 +149,7 @@
             ]
         },
         "de": {
-            "name": "DIALGA",
+            "name": "Dialga",
             "category": "Zeitweilig",
             "entry_text": [
                 "Es besitzt die Macht, die Zeit zu\n",
@@ -158,7 +158,7 @@
             ]
         },
         "it": {
-            "name": "DIALGA",
+            "name": "Dialga",
             "category": "Pokémon Tempo",
             "entry_text": [
                 "Ha il potere di controllare il tempo.\n",
@@ -167,7 +167,7 @@
             ]
         },
         "es": {
-            "name": "DIALGA",
+            "name": "Dialga",
             "category": "Pokémon Temporal",
             "entry_text": [
                 "Tiene el poder de controlar el\n",

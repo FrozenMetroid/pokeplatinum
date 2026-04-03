@@ -104,7 +104,7 @@
         "trainer_pos_m": 9,
         "pokemon_pos_m": 9,
         "en": {
-            "name": "NINETALES",
+            "name": "Ninetales",
             "category": "Fox Pokémon",
             "entry_text": [
                 "Its nine tails are said to be\n",
@@ -113,7 +113,7 @@
             ]
         },
         "fr": {
-            "name": "FEUNARD",
+            "name": "Feunard",
             "category": "Pokémon Renard",
             "entry_text": [
                 "On raconte que ses neuf queues\n",
@@ -122,7 +122,7 @@
             ]
         },
         "de": {
-            "name": "VULNONA",
+            "name": "Vulnona",
             "category": "Fuchs",
             "entry_text": [
                 "Seine neun Schweife sollen\n",
@@ -131,7 +131,7 @@
             ]
         },
         "it": {
-            "name": "NINETALES",
+            "name": "Ninetales",
             "category": "Pokémon Volpe",
             "entry_text": [
                 "Si dice che le sue nove code\n",
@@ -140,7 +140,7 @@
             ]
         },
         "es": {
-            "name": "NINETALES",
+            "name": "Ninetales",
             "category": "Pokémon Zorro",
             "entry_text": [
                 "Se dice que sus nueve colas están\n",

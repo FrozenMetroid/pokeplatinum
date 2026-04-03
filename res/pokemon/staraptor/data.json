@@ -110,7 +110,7 @@
         "trainer_pos_m": 9,
         "pokemon_pos_m": 12,
         "en": {
-            "name": "STARAPTOR",
+            "name": "Staraptor",
             "category": "Predator Pokémon",
             "entry_text": [
                 "It never stops attacking even\n",
@@ -119,7 +119,7 @@
             ]
         },
         "fr": {
-            "name": "ETOURAPTOR",
+            "name": "Etouraptor",
             "category": "Pokémon Rapace",
             "entry_text": [
                 "Un Pokémon sauvage qui a le\n",
@@ -128,7 +128,7 @@
             ]
         },
         "de": {
-            "name": "STARAPTOR",
+            "name": "Staraptor",
             "category": "Raubtier",
             "entry_text": [
                 "Es hat ein wildes Wesen. Mutig\n",
@@ -137,7 +137,7 @@
             ]
         },
         "it": {
-            "name": "STARAPTOR",
+            "name": "Staraptor",
             "category": "Pokémon Rapace",
             "entry_text": [
                 "Ha un’indole selvaggia. Sfida\n",
@@ -146,7 +146,7 @@
             ]
         },
         "es": {
-            "name": "STARAPTOR",
+            "name": "Staraptor",
             "category": "Pokémon Depredador",
             "entry_text": [
                 "Tiene un carácter salvaje.\n",

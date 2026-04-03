@@ -138,7 +138,7 @@
         "trainer_pos_m": 15,
         "pokemon_pos_m": 6,
         "en": {
-            "name": "DUSKNOIR",
+            "name": "Dusknoir",
             "category": "Gripper Pokémon",
             "entry_text": [
                 "It is said to take lost spirits\n",
@@ -147,7 +147,7 @@
             ]
         },
         "fr": {
-            "name": "NOCTUNOIR",
+            "name": "Noctunoir",
             "category": "Pokémon Mainpince",
             "entry_text": [
                 "L’antenne sur sa tête capte les\n",
@@ -156,7 +156,7 @@
             ]
         },
         "de": {
-            "name": "ZWIRRFINST",
+            "name": "Zwirrfinst",
             "category": "Greifer",
             "entry_text": [
                 "Die Antenne auf seinem Kopf\n",
@@ -165,7 +165,7 @@
             ]
         },
         "it": {
-            "name": "DUSKNOIR",
+            "name": "Dusknoir",
             "category": "Pokémon Pinza",
             "entry_text": [
                 "Capta con l’antenna onde che arri-\n",
@@ -174,7 +174,7 @@
             ]
         },
         "es": {
-            "name": "DUSKNOIR",
+            "name": "Dusknoir",
             "category": "Pokémon Grilletes",
             "entry_text": [
                 "La antena de la cabeza captura\n",

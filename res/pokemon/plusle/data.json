@@ -119,7 +119,7 @@
         "trainer_pos_m": 9,
         "pokemon_pos_m": 28,
         "en": {
-            "name": "PLUSLE",
+            "name": "Plusle",
             "category": "Cheering Pokémon",
             "entry_text": [
                 "It cheers on friends with pom-poms\n",
@@ -128,7 +128,7 @@
             ]
         },
         "fr": {
-            "name": "POSIPI",
+            "name": "Posipi",
             "category": "Pokémon Acclameur",
             "entry_text": [
                 "Il absorbe l’énergie des poteaux\n",
@@ -137,7 +137,7 @@
             ]
         },
         "de": {
-            "name": "PLUSLE",
+            "name": "Plusle",
             "category": "Jubel",
             "entry_text": [
                 "Es feuert Freunde mit Pompons an,\n",
@@ -146,7 +146,7 @@
             ]
         },
         "it": {
-            "name": "PLUSLE",
+            "name": "Plusle",
             "category": "Pokémon Incitamento",
             "entry_text": [
                 "Incoraggia gli amici con un vivace\n",
@@ -155,7 +155,7 @@
             ]
         },
         "es": {
-            "name": "PLUSLE",
+            "name": "Plusle",
             "category": "Pokémon Ánimo",
             "entry_text": [
                 "Anima a sus compañeros con\n",

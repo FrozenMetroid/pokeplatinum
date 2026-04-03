@@ -125,7 +125,7 @@
         "trainer_pos_m": 9,
         "pokemon_pos_m": 25,
         "en": {
-            "name": "PHANPY",
+            "name": "Phanpy",
             "category": "Long Nose Pokémon",
             "entry_text": [
                 "It is strong despite its compact\n",
@@ -134,7 +134,7 @@
             ]
         },
         "fr": {
-            "name": "PHANPY",
+            "name": "Phanpy",
             "category": "Pokémon Long-Nez",
             "entry_text": [
                 "Il est fort malgré son aspect\n",
@@ -143,7 +143,7 @@
             ]
         },
         "de": {
-            "name": "PHANPY",
+            "name": "Phanpy",
             "category": "Langrüssel",
             "entry_text": [
                 "Trotz seiner geringen Größe ist es\n",
@@ -152,7 +152,7 @@
             ]
         },
         "it": {
-            "name": "PHANPY",
+            "name": "Phanpy",
             "category": "Pokémon Nasone",
             "entry_text": [
                 "Non è molto grande, ma è forte.\n",
@@ -161,7 +161,7 @@
             ]
         },
         "es": {
-            "name": "PHANPY",
+            "name": "Phanpy",
             "category": "Pokémon Narizotas",
             "entry_text": [
                 "A pesar de su tamaño reducido,\n",

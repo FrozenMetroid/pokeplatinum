@@ -126,7 +126,7 @@
         "trainer_pos_m": 9,
         "pokemon_pos_m": 25,
         "en": {
-            "name": "NIDORAN♂",
+            "name": "Nidoran♂",
             "category": "Poison Pin Pokémon",
             "entry_text": [
                 "It scans its surroundings by\n",
@@ -135,7 +135,7 @@
             ]
         },
         "fr": {
-            "name": "NIDORAN♂",
+            "name": "Nidoran♂",
             "category": "Pokémon Venepic",
             "entry_text": [
                 "Il jauge le terrain en laissant\n",
@@ -144,7 +144,7 @@
             ]
         },
         "de": {
-            "name": "NIDORAN♂",
+            "name": "Nidoran♂",
             "category": "Giftdorn",
             "entry_text": [
                 "Es untersucht die Umgebung, indem\n",
@@ -153,7 +153,7 @@
             ]
         },
         "it": {
-            "name": "NIDORAN♂",
+            "name": "Nidoran♂",
             "category": "Pokémon Velenago",
             "entry_text": [
                 "Esamina l’ambiente circostante ten-\n",
@@ -162,7 +162,7 @@
             ]
         },
         "es": {
-            "name": "NIDORAN♂",
+            "name": "Nidoran♂",
             "category": "Pokémon Pin Veneno",
             "entry_text": [
                 "Saca las orejas por encima de la\n",

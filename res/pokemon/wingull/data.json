@@ -127,7 +127,7 @@
         "trainer_pos_m": 9,
         "pokemon_pos_m": 65534,
         "en": {
-            "name": "WINGULL",
+            "name": "Wingull",
             "category": "Seagull Pokémon",
             "entry_text": [
                 "It soars high in the sky, riding on\n",
@@ -136,7 +136,7 @@
             ]
         },
         "fr": {
-            "name": "GOELISE",
+            "name": "Goelise",
             "category": "Pokémon Mouette",
             "entry_text": [
                 "Il niche sur les falaises escarpées\n",
@@ -145,7 +145,7 @@
             ]
         },
         "de": {
-            "name": "WINGULL",
+            "name": "Wingull",
             "category": "Seemöwe",
             "entry_text": [
                 "Es baut sein Nest auf steilen\n",
@@ -154,7 +154,7 @@
             ]
         },
         "it": {
-            "name": "WINGULL",
+            "name": "Wingull",
             "category": "Pokémon Gabbiano",
             "entry_text": [
                 "Nidifica su scogliere a picco sul\n",
@@ -163,7 +163,7 @@
             ]
         },
         "es": {
-            "name": "WINGULL",
+            "name": "Wingull",
             "category": "Pokémon Gaviota",
             "entry_text": [
                 "Anida en acantilados y alcanza\n",

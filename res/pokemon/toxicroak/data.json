@@ -135,7 +135,7 @@
         "trainer_pos_m": 9,
         "pokemon_pos_m": 11,
         "en": {
-            "name": "TOXICROAK",
+            "name": "Toxicroak",
             "category": "Toxic Mouth Pokémon",
             "entry_text": [
                 "It has a poison sac at its throat.\n",
@@ -144,7 +144,7 @@
             ]
         },
         "fr": {
-            "name": "COATOX",
+            "name": "Coatox",
             "category": "Pokémon Toxique",
             "entry_text": [
                 "Les griffes de ses poings sécrètent\n",
@@ -153,7 +153,7 @@
             ]
         },
         "de": {
-            "name": "TOXIQUAK",
+            "name": "Toxiquak",
             "category": "Giftmund",
             "entry_text": [
                 "Die Gelenke an seinen Klauen geben\n",
@@ -162,7 +162,7 @@
             ]
         },
         "it": {
-            "name": "TOXICROAK",
+            "name": "Toxicroak",
             "category": "Pokémon Inveieleno",
             "entry_text": [
                 "I suoi artigli secernono una tossina\n",
@@ -171,7 +171,7 @@
             ]
         },
         "es": {
-            "name": "TOXICROAK",
+            "name": "Toxicroak",
             "category": "Pokémon Boca Tóxica",
             "entry_text": [
                 "Sus garras segregan una toxina\n",

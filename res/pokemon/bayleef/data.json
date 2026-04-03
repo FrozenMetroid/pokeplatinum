@@ -119,7 +119,7 @@
         "trainer_pos_m": 9,
         "pokemon_pos_m": 7,
         "en": {
-            "name": "BAYLEEF",
+            "name": "Bayleef",
             "category": "Leaf Pokémon",
             "entry_text": [
                 "The buds that ring its neck give\n",
@@ -128,7 +128,7 @@
             ]
         },
         "fr": {
-            "name": "MACRONIUM",
+            "name": "Macronium",
             "category": "Pokémon Feuille",
             "entry_text": [
                 "Le collier de bourgeons à son cou\n",
@@ -137,7 +137,7 @@
             ]
         },
         "de": {
-            "name": "LORBLATT",
+            "name": "Lorblatt",
             "category": "Laub",
             "entry_text": [
                 "Die Knospen an seinem Hals\n",
@@ -146,7 +146,7 @@
             ]
         },
         "it": {
-            "name": "BAYLEEF",
+            "name": "Bayleef",
             "category": "Pokémon Foglia",
             "entry_text": [
                 "Le foglie attorno al suo collo\n",
@@ -155,7 +155,7 @@
             ]
         },
         "es": {
-            "name": "BAYLEEF",
+            "name": "Bayleef",
             "category": "Pokémon Hoja",
             "entry_text": [
                 "Su cuello desprende un dulce\n",

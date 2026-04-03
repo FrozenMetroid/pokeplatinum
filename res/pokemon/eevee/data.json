@@ -128,7 +128,7 @@
         "trainer_pos_m": 9,
         "pokemon_pos_m": 29,
         "en": {
-            "name": "EEVEE",
+            "name": "Eevee",
             "category": "Evolution Pokémon",
             "entry_text": [
                 "Because its genetic makeup is\n",
@@ -137,7 +137,7 @@
             ]
         },
         "fr": {
-            "name": "EVOLI",
+            "name": "Evoli",
             "category": "Pokémon Evolutif",
             "entry_text": [
                 "Un Pokémon rare qui s’adapte\n",
@@ -146,7 +146,7 @@
             ]
         },
         "de": {
-            "name": "EVOLI",
+            "name": "Evoli",
             "category": "Evolution",
             "entry_text": [
                 "Ein seltenes PKMN, das sich seiner\n",
@@ -155,7 +155,7 @@
             ]
         },
         "it": {
-            "name": "EEVEE",
+            "name": "Eevee",
             "category": "Pokémon Evoluzione",
             "entry_text": [
                 "Un Pokémon raro che si adatta\n",
@@ -164,7 +164,7 @@
             ]
         },
         "es": {
-            "name": "EEVEE",
+            "name": "Eevee",
             "category": "Pokémon Evolución",
             "entry_text": [
                 "Un extraño Pokémon que se adapta\n",

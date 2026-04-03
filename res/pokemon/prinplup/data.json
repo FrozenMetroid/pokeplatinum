@@ -123,7 +123,7 @@
         "trainer_pos_m": 9,
         "pokemon_pos_m": 18,
         "en": {
-            "name": "PRINPLUP",
+            "name": "Prinplup",
             "category": "Penguin Pokémon",
             "entry_text": [
                 "Because every PRINPLUP considers\n",
@@ -132,7 +132,7 @@
             ]
         },
         "fr": {
-            "name": "PRINPLOUF",
+            "name": "Prinplouf",
             "category": "Pokémon Pingouin",
             "entry_text": [
                 "Il vit seul, à l’écart de ses pairs.\n",
@@ -141,7 +141,7 @@
             ]
         },
         "de": {
-            "name": "PLIPRIN",
+            "name": "Pliprin",
             "category": "Pinguin",
             "entry_text": [
                 "Es lebt allein, entfernt von\n",
@@ -150,7 +150,7 @@
             ]
         },
         "it": {
-            "name": "PRINPLUP",
+            "name": "Prinplup",
             "category": "Pokémon Pinguino",
             "entry_text": [
                 "Vive da solo lontano dagli altri.\n",
@@ -159,7 +159,7 @@
             ]
         },
         "es": {
-            "name": "PRINPLUP",
+            "name": "Prinplup",
             "category": "Pokémon Pingüino",
             "entry_text": [
                 "Vive solo, alejado de los demás.\n",
