@@ -4866,6 +4866,11 @@
             "MD5": "bb62e801b1e7ea23910622692215c4f8"
         },
         {
+            "name": "SEQ_SE_PL_ASHIOTO_CAVE.sseq",
+            "type": "SEQ",
+            "MD5": "bb62e801b1e7ea23910622692215c4f8"
+        },
+        {
             "name": "BANK_PV001.sbnk",
             "type": "BANK",
             "MD5": "0b957e3b8d070b82138ba5e79ac59bca"
@@ -11705,7 +11710,8 @@
                 "17.swav",
                 "18.swav",
                 "19.swav",
-                "1A.swav"
+                "1A.swav",
+                "1B.swav"
             ]
         },
         {

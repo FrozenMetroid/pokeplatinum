@@ -286,6 +286,7 @@ static const Sound_TileBehaviorFootStep Sound_TileBehaviorFootStepData[] = {
     {TILE_BEHAVIOR_TALL_GRASS,          SEQ_SE_DP_KUSA},
     {TILE_BEHAVIOR_VERY_TALL_GRASS,     SEQ_SE_DP_KUSA},
     {TILE_BEHAVIOR_SAND,                SEQ_SE_PL_ASHIOTO_SAND},
+    {TILE_BEHAVIOR_CAVE_FLOOR,          SEQ_SE_PL_ASHIOTO_CAVE},
     {TILE_BEHAVIOR_FLAT_GRASS,          SEQ_SE_PL_ASHIOTO_GRASS}, // haven't defined this behavior on any maps because we can't edit map data in the decomp yet
     {TILE_BEHAVIOR_METAL,               SEQ_SE_PL_ASHIOTO_METAL}, // haven't defined this behavior on any maps because we can't edit map data in the decomp yet
     {TILE_BEHAVIOR_WOOD,                SEQ_SE_PL_ASHIOTO_WOOD}, // haven't defined this behavior on any maps because we can't edit map data in the decomp yet
@@ -356,7 +357,7 @@ static void PlayerAvatar_PlayWalkSE(PlayerAvatar *playerAvatar)
             }
             if (!foundUniqueSoundEffect) { // default to these two if there was nothing special above
                 if (IsMovementRunning(code)) {
-                    seq = SEQ_SE_PL_ASHIOTO_RUN;
+                    seq = SEQ_SE_PL_ASHIOTO_CAVE;
                 } else {
                     seq = SEQ_SE_PL_ASHIOTO_WALK;
                 }

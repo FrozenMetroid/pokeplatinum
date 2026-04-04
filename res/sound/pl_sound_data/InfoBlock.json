@@ -12328,6 +12328,17 @@
             "ppr": 54,
             "ply": "PLAYER_SE_2",
             "unkB": [0,0]
+        },
+        {
+            "name": "SEQ_SE_PL_ASHIOTO_CAVE",
+            "fileName": "SEQ_SE_PL_ASHIOTO_CAVE.sseq",
+            "unkA": 0,
+            "bnk": "BANK_SE_FIELD",
+            "vol": 126,
+            "cpr": 64,
+            "ppr": 54,
+            "ply": "PLAYER_SE_2",
+            "unkB": [0,0]
         }
     ],
     "seqarcInfo": [],
