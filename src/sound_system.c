@@ -266,8 +266,9 @@ void *SoundSystem_GetParam(enum SoundSystemParam param)
         return &soundSys->allowTwoPokemonCries;
     case SOUND_SYSTEM_PARAM_54:
         return &soundSys->unk_BCDD3;
+    case SOUND_SYSTEM_PARAM_FOOT_STEP_COUNTER:
+        return &soundSys->footStepCount;
     }
-
     GF_ASSERT(FALSE);
     return NULL;
 }

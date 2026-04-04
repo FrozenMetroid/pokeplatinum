@@ -4836,6 +4836,21 @@
             "MD5": "974ca487894f0e8aafc277f57a9d069a"
         },
         {
+            "name": "SEQ_SE_PL_ASHIOTO_WALK.sseq",
+            "type": "SEQ",
+            "MD5": "347cf5ab0573c2c8074ad1388cefc176"
+        },
+        {
+            "name": "SEQ_SE_PL_ASHIOTO_RUN.sseq",
+            "type": "SEQ",
+            "MD5": "f802f450dbae04361f364f6d68daf897"
+        },
+        {
+            "name": "SEQ_SE_PL_ASHIOTO_SAND.sseq",
+            "type": "SEQ",
+            "MD5": "bb62e801b1e7ea23910622692215c4f8"
+        },
+        {
             "name": "BANK_PV001.sbnk",
             "type": "BANK",
             "MD5": "0b957e3b8d070b82138ba5e79ac59bca"
@@ -11647,7 +11662,7 @@
         {
             "name": "WAVE_ARC_SE_FIELD.swar",
             "type": "WAVARC",
-            "MD5": "aade5093aaa41a4b717b572b9974b3ae",
+            "MD5": "574443d6404999b4d294d947c55613f9",
             "subFile": [
                 "00.swav",
                 "01.swav",
@@ -11673,7 +11688,9 @@
                 "15.swav",
                 "16.swav",
                 "17.swav",
-                "18.swav"
+                "18.swav",
+                "19.swav",
+                "1A.swav"
             ]
         },
         {

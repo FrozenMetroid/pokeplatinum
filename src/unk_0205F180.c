@@ -4,6 +4,8 @@
 #include <string.h>
 
 #include "constants/field/dynamic_map_features.h"
+#include "constants/field/map_tile_behaviors.h"
+#include "constants/field/movement.h"
 #include "generated/game_records.h"
 #include "generated/movement_actions.h"
 
@@ -258,47 +260,109 @@ static void sub_0205F378(PlayerAvatar *playerAvatar)
     }
 }
 
+typedef struct Sound_FootStep {
+    u8 pitch;
+    u8 volume;
+} Sound_FootStep;
+
+typedef struct Sound_TileBehaviorFootStep {
+    u16 tileBehavior;
+    u16 seq;
+} Sound_TileBehaviorFootStep;
+
+static const Sound_TileBehaviorFootStep Sound_TileBehaviorFootStepData[] = {
+    {TILE_BEHAVIOR_SNOW_DEEP,           SEQ_SE_PL_YUKI},
+    {TILE_BEHAVIOR_SNOW_DEEPER,         SEQ_SE_PL_YUKI},
+    {TILE_BEHAVIOR_SNOW_DEEPEST,        SEQ_SE_PL_YUKI},
+    {TILE_BEHAVIOR_SNOW_SHALLOW,        SEQ_SE_PL_YUKI},
+    {TILE_BEHAVIOR_SNOW_WITH_SHADOWS,   SEQ_SE_PL_YUKI},
+    {TILE_BEHAVIOR_PUDDLE,              SEQ_SE_DP_FOOT3_0},
+    {TILE_BEHAVIOR_PUDDLE_NO_SPLASHING, SEQ_SE_DP_FOOT3_0},
+    {TILE_BEHAVIOR_SHALLOW_WATER,       SEQ_SE_DP_FOOT3_1},
+    {TILE_BEHAVIOR_MUD,                 SEQ_SE_DP_MARSH_WALK},
+    {TILE_BEHAVIOR_MUD_DEEP,            SEQ_SE_DP_MARSH_WALK},
+    {TILE_BEHAVIOR_MUD_WITH_GRASS,      SEQ_SE_DP_MARSH_WALK},
+    {TILE_BEHAVIOR_MUD_DEEP_WITH_GRASS, SEQ_SE_DP_MARSH_WALK},
+    {TILE_BEHAVIOR_TALL_GRASS,          SEQ_SE_DP_KUSA},
+    {TILE_BEHAVIOR_VERY_TALL_GRASS,     SEQ_SE_DP_KUSA},
+    {TILE_BEHAVIOR_SAND,                SEQ_SE_PL_ASHIOTO_SAND},
+};
+
+static const Sound_FootStep Sound_FootStepData[] = {
+    {0,     42},
+	{64,    107},
+	{32,    47},
+	{64,    119},
+	{0,     62},
+	{48,    127},
+	{0,     52},
+	{48,    117},
+};
+
+void Sound_ControlFootstepCounter(u16 seq) {
+    u8 *footStepCounter = SoundSystem_GetParam(SOUND_SYSTEM_PARAM_FOOT_STEP_COUNTER);
+
+    Sound_SetInitialVolumeForSequence(seq, Sound_FootStepData[*footStepCounter].volume);
+    Sound_SetPitchForHandle(SOUND_HANDLE_TYPE_SFX_2, 0xFFFF, Sound_FootStepData[*footStepCounter].pitch);
+
+    *footStepCounter++;
+    if (*footStepCounter >= NELEMS(Sound_FootStepData)) {
+        *footStepCounter = 0;
+    }
+    return;
+}
+// BOOL IsMovementWalkOnSpot(u16 code) {
+//     return (code >= MOVEMENT_WalkOnSpotNorth8 && code <= MOVEMENT_WalkOnSpotEast8);
+// }
+
+BOOL IsMovementRunning(u16 code) {
+    return (code >= MOVEMENT_RunNorth && code <= MOVEMENT_RunEast);
+}
+
 static void PlayerAvatar_PlayWalkSE(PlayerAvatar *playerAvatar)
 {
-    if (PlayerAvatar_MoveState(playerAvatar) == 1) {
-        MapObject *mapObj = Player_MapObject(playerAvatar);
-        u8 v1, v2 = MapObject_GetCurrTileBehavior(mapObj);
+    int moveState = Player_MoveState(playerAvatar);
+    int avatarState = PlayerAvatar_MoveState(playerAvatar);
+    u16 seq = 0xFFFF;
+    if (moveState == PLAYER_MOVE_STATE_NONE) {
+        playerAvatar->stepsSE = 0;
+    } else {
+        playerAvatar->stepsSE = playerAvatar->stepsSE + 1 & 0x01; // alternate between zero and one
+    }
+    if (playerAvatar->stepsSE == 0 && avatarState == AVATAR_MOVE_STATE_MOVING ) { // don't play the sound effect in you turn in place
+        MapObject *player = Player_MapObject(playerAvatar);
+        int code = MapObject_GetMovementAction(player);
+        u8 next, now = MapObject_GetCurrTileBehavior(player);
 
-        int animationCode = MapObject_GetMovementAction(mapObj);
-        int v4 = MovementAction_GetDirFromAction(animationCode);
-        if (v4 == -1) {
-            v1 = v2;
+        int direction = MovementAction_GetDirFromAction(code);
+        if (direction == -1) {
+            next = now;
         } else {
-            v1 = MapObject_GetTileBehaviorFromDir(mapObj, v4);
+            next = MapObject_GetTileBehaviorFromDir(player, direction);
         }
-        int code = MapObject_GetMovementAction(mapObj);
-
-        if ((MapObject_IsOnSnow(mapObj, v2)) || (TileBehavior_IsSnowWithShadows(v2))) {
-            Sound_PlayEffect(SEQ_SE_PL_YUKI);
-        } 
-        else if (TileBehavior_IsPuddle(v2)) {
-            Sound_PlayEffect(SEQ_SE_DP_FOOT3_0);
-        } 
-        else if (TileBehavior_IsShallowWater(v2)) {
-            Sound_PlayEffect(SEQ_SE_DP_FOOT3_1);
-        }
-        else if (TileBehavior_IsSand(v2)) {
-            Sound_PlayEffect(SEQ_SE_PL_YUKI); // same as snow for now, sounds fitting enough
-        }
-        else if ((TileBehavior_IsMud(v2)) && (!TileBehavior_IsDeepMud(v2))) {
-            Sound_PlayEffect(SEQ_SE_DP_MARSH_WALK);
-        }
-        else if (TileBehavior_IsTallGrass(v2)) {
-            Sound_PlayEffect(SEQ_SE_DP_KUSA);
-        }
-        else if (!IsMovementWalkOnSpotSlow(code) && ((TileBehavior_IsTallGrass(v2)) || (TileBehavior_IsVeryTallGrass(v2)))) {
-                Sound_PlayEffect(SEQ_SE_DP_KUSA);
-        }
-        else {
-            // haven't been able to add this sseq just yet
-            // Sound_PlayEffect(SEQ_SE_PL_ASHIOTO);
+        u8 playerState = PlayerAvatar_GetPlayerState(playerAvatar);
+        if (playerState != PLAYER_STATE_CYCLING && playerState != PLAYER_STATE_SURFING) {
+            BOOL foundUniqueSoundEffect = FALSE;
+            // first check if the tile permission already has a sound
+            for (int i = 0; i < NELEMS(Sound_TileBehaviorFootStepData); i++) {
+                if (Sound_TileBehaviorFootStepData[i].tileBehavior == next || Sound_TileBehaviorFootStepData[i].tileBehavior == now) {
+                    seq = Sound_TileBehaviorFootStepData[i].seq;
+                    foundUniqueSoundEffect = TRUE;
+                    break;
+                }
+            }
+            if (!foundUniqueSoundEffect) { // default to these two if there was nothing special above
+                if (IsMovementRunning(code)) {
+                    seq = SEQ_SE_PL_ASHIOTO_RUN;
+                } else {
+                    seq = SEQ_SE_PL_ASHIOTO_WALK;
+                }
+            }
+            Sound_PlayEffect(seq);
+            Sound_ControlFootstepCounter(seq);
         }
     }
+    return;
 }
 
 void sub_0205F490(PlayerAvatar *playerAvatar)

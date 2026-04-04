@@ -53,6 +53,7 @@ typedef struct PlayerAvatar {
     OverworldAnimManager *surfMountAnimMan;
     PlayerData *player;
     const PlayerData *playerConst;
+    u32 stepsSE; // number of steps taken while playing step SE, resets when step SE stops
 } PlayerAvatar;
 
 PlayerAvatar *PlayerAvatar_Init(const MapObjectManager *param0, int param1, int param2, int param3, int param4, int param5, int param6, PlayerData *param7);

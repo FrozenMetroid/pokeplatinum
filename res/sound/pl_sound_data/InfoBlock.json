@@ -1090,7 +1090,7 @@
             "fileName": "SEQ_TOWN02_D.sseq",
             "unkA": 0,
             "bnk": "BANK_BGM_FIELD",
-            "vol": 90,
+            "vol": 0,
             "cpr": 30,
             "ppr": 64,
             "ply": "PLAYER_FIELD",
@@ -1266,7 +1266,7 @@
             "fileName": "SEQ_ROAD_A_D.sseq",
             "unkA": 0,
             "bnk": "BANK_BGM_FIELD",
-            "vol": 127,
+            "vol": 0,
             "cpr": 30,
             "ppr": 64,
             "ply": "PLAYER_FIELD",
@@ -12261,6 +12261,39 @@
             "cpr": 0,
             "ppr": 0,
             "ply": "PLAYER_PV",
+            "unkB": [0,0]
+        },
+        {
+            "name": "SEQ_SE_PL_ASHIOTO_WALK",
+            "fileName": "SEQ_SE_PL_ASHIOTO_WALK.sseq",
+            "unkA": 0,
+            "bnk": "BANK_SE_FIELD",
+            "vol": 127,
+            "cpr": 64,
+            "ppr": 54,
+            "ply": "PLAYER_SE_2",
+            "unkB": [0,0]
+        },
+        {
+            "name": "SEQ_SE_PL_ASHIOTO_RUN",
+            "fileName": "SEQ_SE_PL_ASHIOTO_RUN.sseq",
+            "unkA": 0,
+            "bnk": "BANK_SE_FIELD",
+            "vol": 115,
+            "cpr": 64,
+            "ppr": 54,
+            "ply": "PLAYER_SE_2",
+            "unkB": [0,0]
+        },
+        {
+            "name": "SEQ_SE_PL_ASHIOTO_SAND",
+            "fileName": "SEQ_SE_PL_ASHIOTO_SAND.sseq",
+            "unkA": 0,
+            "bnk": "BANK_SE_FIELD",
+            "vol": 92,
+            "cpr": 64,
+            "ppr": 54,
+            "ply": "PLAYER_SE_2",
             "unkB": [0,0]
         }
     ],

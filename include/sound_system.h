@@ -129,6 +129,7 @@ enum SoundSystemParam {
     SOUND_SYSTEM_PARAM_ALLOW_2_POKEMON_CRIES,           // Whether to allow 2 simultaneous pokemon cries playing
 
     SOUND_SYSTEM_PARAM_54,
+    SOUND_SYSTEM_PARAM_FOOT_STEP_COUNTER,
 };
 // clang-format on
 
@@ -182,6 +183,7 @@ typedef struct SoundSystem {
     u8 pokemonCryDelay[2];
     u8 allowTwoPokemonCries;
     u8 unk_BCDD3;
+    u8 footStepCount; // for footstep SE
 } SoundSystem;
 
 void SoundSystem_Init(ChatotCry *chatotCry, Options *options);
