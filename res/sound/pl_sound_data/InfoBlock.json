@@ -12317,6 +12317,17 @@
             "ppr": 54,
             "ply": "PLAYER_SE_2",
             "unkB": [0,0]
+        },
+        {
+            "name": "SEQ_SE_PL_ASHIOTO_WOOD",
+            "fileName": "SEQ_SE_PL_ASHIOTO_WOOD.sseq",
+            "unkA": 0,
+            "bnk": "BANK_SE_FIELD",
+            "vol": 98,
+            "cpr": 64,
+            "ppr": 54,
+            "ply": "PLAYER_SE_2",
+            "unkB": [0,0]
         }
     ],
     "seqarcInfo": [],

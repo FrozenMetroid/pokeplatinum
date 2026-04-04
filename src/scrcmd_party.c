@@ -25,9 +25,11 @@
 #include "unk_02017038.h"
 #include "unk_02054884.h"
 #include "unk_0205DFC4.h"
+#include "global/testing.h"
 
 BOOL ScrCmd_GivePokemon(ScriptContext *ctx)
-{
+{   
+    #ifndef TESTING_GIVE_PERFECT_STARTERS
     int metLocation = MapHeader_GetMapLabelTextID(ctx->fieldSystem->location->mapId);
     int metTerrain = TERRAIN_MAX;
     FieldSystem *fieldSystem = ctx->fieldSystem;
@@ -38,6 +40,82 @@ BOOL ScrCmd_GivePokemon(ScriptContext *ctx)
 
     Party *unused = SaveData_GetParty(fieldSystem->saveData);
     *success = Pokemon_GiveMonFromScript(HEAP_ID_FIELD2, fieldSystem->saveData, species, level, heldItem, metLocation, metTerrain);
+    #endif
+
+    #ifdef TESTING_GIVE_PERFECT_STARTERS
+    int metLocation = MapHeader_GetMapLabelTextID(ctx->fieldSystem->location->mapId);
+    int metTerrain = TERRAIN_MAX;
+    FieldSystem *fieldSystem = ctx->fieldSystem;
+    u16 species = ScriptContext_GetVar(ctx);
+    u16 level = ScriptContext_GetVar(ctx);
+    u16 heldItem = ScriptContext_GetVar(ctx);
+    u16 *success = ScriptContext_GetVarPointer(ctx);
+
+    if (ctx->fieldSystem->location->mapId == MAP_HEADER_ROUTE_201 && (species == SPECIES_PIPLUP || species == SPECIES_TURTWIG || species == SPECIES_CHIMCHAR)) {
+        u8 statToMaxEV, secondStatToMaxEV, desiredNature;
+        u16 move1, move2, move3, move4;
+        u32 monPersonality;
+        switch (species) {
+            case SPECIES_TURTWIG:
+                statToMaxEV = MON_DATA_HP_EV;
+                secondStatToMaxEV = MON_DATA_ATK_EV;
+                move1 = MOVE_WOOD_HAMMER;
+                move2 = MOVE_GIGA_DRAIN;
+                move3 = MOVE_EARTHQUAKE;
+                move4 = MOVE_LEECH_SEED;
+                desiredNature = NATURE_ADAMANT;
+                break;
+            case SPECIES_CHIMCHAR:
+                statToMaxEV = MON_DATA_SPATK_EV;
+                secondStatToMaxEV = MON_DATA_ATK_EV;
+                move1 = MOVE_FLAMETHROWER;
+                move2 = MOVE_CLOSE_COMBAT;
+                move3 = MOVE_THUNDER_PUNCH;
+                move4 = MOVE_GRASS_KNOT;
+                desiredNature = NATURE_HASTY;
+                break;
+            case SPECIES_PIPLUP:
+                statToMaxEV = MON_DATA_SPATK_EV;
+                secondStatToMaxEV = MON_DATA_HP_EV;
+                move1 = MOVE_SURF;
+                move2 = MOVE_ICE_BEAM;
+                move3 = MOVE_FLASH_CANNON;
+                move4 = MOVE_ROOST;
+                desiredNature = NATURE_MODEST;
+                break;
+        }
+        u16 moveArray[] = {move1, move2, move3, move4};
+        do {
+            monPersonality = (LCRNG_Next() | (LCRNG_Next() << 16));
+        } while (desiredNature != Pokemon_GetNatureOf(monPersonality));
+
+        Pokemon *mon = Pokemon_New(HEAP_ID_FIELD2);
+        Party *party = SaveData_GetParty(ctx->fieldSystem->saveData);
+        TrainerInfo *trainerInfo = SaveData_GetTrainerInfo(ctx->fieldSystem->saveData);
+        Pokemon_Init(mon);
+        Pokemon_InitWith(mon, species, level, 31, TRUE, monPersonality, OTID_NOT_SET, 0); // gives 31 IVs and a personality that results in the desired nature
+        Pokemon_SetCatchData(mon, trainerInfo, ITEM_POKE_BALL, metLocation, metTerrain, HEAP_ID_FIELD2);
+        
+        u8 ev = 252;
+        Pokemon_SetValue(mon, statToMaxEV, &ev);
+        Pokemon_SetValue(mon, secondStatToMaxEV, &ev);
+        Pokemon_CalcStats(mon);
+        u8 maxPPUPs = 3;
+        for (int i = 0; i < 4; i++) {
+            Pokemon_SetValue(mon, MON_DATA_MOVE1 + i, &moveArray[i]);
+            Pokemon_SetValue(mon, MON_DATA_MOVE1_PP_UPS + i, &maxPPUPs);
+        }
+        BoxPokemon_RestorePP(&mon->box);
+
+        if (Party_AddPokemon(party, mon)) {
+            SaveData_UpdateCatchRecords(ctx->fieldSystem->saveData, mon);
+        }
+
+        Heap_Free(mon);
+    } else {
+        *success = Pokemon_GiveMonFromScript(HEAP_ID_FIELD2, fieldSystem->saveData, species, level, heldItem, metLocation, metTerrain);
+    }
+    #endif
 
     return FALSE;
 }

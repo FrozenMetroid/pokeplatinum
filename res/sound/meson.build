@@ -795,6 +795,7 @@ sdat_resources = files([
     seq_folder / 'SEQ_SE_PL_ASHIOTO_SAND.mid',
     seq_folder / 'SEQ_SE_PL_ASHIOTO_GRASS.mid',
     seq_folder / 'SEQ_SE_PL_ASHIOTO_METAL.mid',
+    seq_folder / 'SEQ_SE_PL_ASHIOTO_WOOD.mid',
     seq_folder / 'SEQ_SE_PL_BAG3.mid',
     seq_folder / 'SEQ_SE_PL_BALLOON01.mid',
     seq_folder / 'SEQ_SE_PL_BALLOON02.mid',

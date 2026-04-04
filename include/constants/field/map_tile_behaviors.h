@@ -13,7 +13,7 @@ enum TileBehavior {
     TILE_BEHAVIOR_TALL_GRASS,
     TILE_BEHAVIOR_VERY_TALL_GRASS,
     TILE_BEHAVIOR_METAL, // solely for the metal sound effect
-    TILE_BEHAVIOR_UNUSED_x05,
+    TILE_BEHAVIOR_WOOD, // solely for the wood sound effect
     TILE_BEHAVIOR_UNUSED_x06,
     TILE_BEHAVIOR_UNUSED_x07,
     TILE_BEHAVIOR_CAVE_FLOOR,
