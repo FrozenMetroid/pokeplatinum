@@ -485,7 +485,7 @@
       "id": "BattleHall_Text_PachirisusACutie",
       "en_US": [
         "Pachipachi...\r",
-        "My PACHIRISU is a cutie, but he’s even\n",
+        "My Pachirisu is a cutie, but he’s even\n",
         "battled the Brain here.\r",
         "The Brain will take your Pokémon on at\n",
         "the same level, to be fair."
@@ -493,7 +493,7 @@
     },
     {
       "id": "BattleHall_Text_Pachirisu",
-      "en_US": "PACHIRISU: Pachipachi pacchipachii!"
+      "en_US": "Pachirisu: Pachipachi pacchipachii!"
     },
     {
       "id": "BattleHall_Text_TryDifferentPokemon",
@@ -520,7 +520,7 @@
     {
       "id": "BattleHall_Text_CroagunkHasTwoTypes",
       "en_US": [
-        "You know how CROAGUNK has two types:\n",
+        "You know how Croagunk has two types:\n",
         "Poison and Fighting?\r",
         "That means it can appear as a Poison\n",
         "type and as a Fighting type."

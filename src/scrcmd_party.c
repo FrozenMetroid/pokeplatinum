@@ -59,8 +59,8 @@ BOOL ScrCmd_GivePokemon(ScriptContext *ctx)
             case SPECIES_TURTWIG:
                 statToMaxEV = MON_DATA_HP_EV;
                 secondStatToMaxEV = MON_DATA_ATK_EV;
-                move1 = MOVE_WOOD_HAMMER;
-                move2 = MOVE_GIGA_DRAIN;
+                move1 = MOVE_LEAF_BLADE;
+                move2 = MOVE_CRUNCH;
                 move3 = MOVE_EARTHQUAKE;
                 move4 = MOVE_LEECH_SEED;
                 desiredNature = NATURE_ADAMANT;

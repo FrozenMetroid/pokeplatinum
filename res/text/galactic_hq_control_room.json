@@ -132,21 +132,21 @@
     {
       "id": "pl_msg_00000288_00013",
       "en_US": [
-        "UXIE is sealed inside! It appears to\n",
+        "Uxie is sealed inside! It appears to\n",
         "be suffering, with eyes squeezed shut."
       ]
     },
     {
       "id": "pl_msg_00000288_00014",
       "en_US": [
-        "MESPRIT is sealed inside! It seems to\n",
+        "Mesprit is sealed inside! It seems to\n",
         "be suffering, with its tail twitching."
       ]
     },
     {
       "id": "pl_msg_00000288_00015",
       "en_US": [
-        "AZELF is sealed inside! It appears to\n",
+        "Azelf is sealed inside! It appears to\n",
         "be suffering, with wracking shudders."
       ]
     },
@@ -154,21 +154,21 @@
       "id": "pl_msg_00000288_00016",
       "en_US": [
         "It’s Team Galactic’s sinister machine.\n",
-        "UXIE had been sealed inside it."
+        "Uxie had been sealed inside it."
       ]
     },
     {
       "id": "pl_msg_00000288_00017",
       "en_US": [
         "It’s Team Galactic’s sinister machine.\n",
-        "MESPRIT had been sealed inside it."
+        "Mesprit had been sealed inside it."
       ]
     },
     {
       "id": "pl_msg_00000288_00018",
       "en_US": [
         "It’s Team Galactic’s sinister machine.\n",
-        "AZELF had been sealed inside it."
+        "Azelf had been sealed inside it."
       ]
     }
   ]

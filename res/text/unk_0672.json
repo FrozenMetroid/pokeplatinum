@@ -196,7 +196,7 @@
       "en_US": [
         "{STRVAR_6 0, 0, 0}\r",
         "Flick Berries into the mouth of a\n",
-        "rotating SWALOT.\r",
+        "rotating Swalot.\r",
         "Score bonus points for getting Berries\n",
         "in consecutively.\r",
         "Score even more during Fever Time.\r",
@@ -228,11 +228,11 @@
         "Pop balloons until time runs out.\r",
         "Pressing the pump hard will make it\n",
         "turn red, increasing its capacity.\r",
-        "The circling WYNAUT can also help.\r",
-        "Line a WYNAUT up with the pump to\n",
+        "The circling Wynaut can also help.\r",
+        "Line a Wynaut up with the pump to\n",
         "boost the air volume, but beware:\r",
         "lining up the pump with a skinny\n",
-        "WYNAUT reduces the air volume.\r"
+        "Wynaut reduces the air volume.\r"
       ]
     }
   ]

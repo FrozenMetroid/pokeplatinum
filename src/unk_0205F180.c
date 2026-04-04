@@ -357,7 +357,7 @@ static void PlayerAvatar_PlayWalkSE(PlayerAvatar *playerAvatar)
             }
             if (!foundUniqueSoundEffect) { // default to these two if there was nothing special above
                 if (IsMovementRunning(code)) {
-                    seq = SEQ_SE_PL_ASHIOTO_CAVE;
+                    seq = SEQ_SE_PL_ASHIOTO_RUN;
                 } else {
                     seq = SEQ_SE_PL_ASHIOTO_WALK;
                 }

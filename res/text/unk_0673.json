@@ -162,7 +162,7 @@
         "Plaza Games.\r",
         "Up to four players can take part.\r",
         "The rule is simple: just flick Berries\n",
-        "into the mouth of a rotating SWALOT.\r",
+        "into the mouth of a rotating Swalot.\r",
         "The player with the highest score will\n",
         "be rewarded with a Tap Toy upgrade.\r"
       ]
@@ -292,13 +292,13 @@
       "id": "pl_msg_00000673_00042",
       "en_US": [
         "Toss Berries into the mouth of a\n",
-        "rotating SWALOT."
+        "rotating Swalot."
       ]
     },
     {
       "id": "pl_msg_00000673_00043",
       "en_US": [
-        "Press the WOBBUFFET pump and pop\n",
+        "Press the Wobbuffet pump and pop\n",
         "balloons with the other players."
       ]
     },

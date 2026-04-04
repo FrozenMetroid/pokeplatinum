@@ -946,7 +946,7 @@
     },
     {
       "id": "pl_msg_00000662_00155",
-      "en_US": "SWALOT Plop"
+      "en_US": "Swalot Plop"
     },
     {
       "id": "pl_msg_00000662_00156",
@@ -954,7 +954,7 @@
     },
     {
       "id": "pl_msg_00000662_00157",
-      "en_US": "WOBBUFFET Pop"
+      "en_US": "Wobbuffet Pop"
     },
     {
       "id": "pl_msg_00000662_00158",
@@ -1554,7 +1554,7 @@
       "id": "pl_msg_00000662_00276",
       "en_US": [
         "{STRVAR_1 3, 0, 0}:\n",
-        "I’d say SWALOT Plop.\r"
+        "I’d say Swalot Plop.\r"
       ]
     },
     {
@@ -1568,7 +1568,7 @@
       "id": "pl_msg_00000662_00278",
       "en_US": [
         "{STRVAR_1 3, 0, 0}:\n",
-        "I’d say WOBBUFFET Pop.\r"
+        "I’d say Wobbuffet Pop.\r"
       ]
     },
     {
@@ -2403,7 +2403,7 @@
       "id": "pl_msg_00000662_00397",
       "en_US": [
         "{STRVAR_1 3, 0, 0}:\n",
-        "Oh, you’re good at SWALOT Plop!\r"
+        "Oh, you’re good at Swalot Plop!\r"
       ]
     },
     {
@@ -2417,7 +2417,7 @@
       "id": "pl_msg_00000662_00399",
       "en_US": [
         "{STRVAR_1 3, 0, 0}:\n",
-        "Oh, you’re good at WOBBUFFET Pop!\r"
+        "Oh, you’re good at Wobbuffet Pop!\r"
       ]
     },
     {
@@ -4680,7 +4680,7 @@
       "id": "pl_msg_00000662_00729",
       "en_US": [
         "{COLOR 2}{STRVAR_1 3, 0, 0}{COLOR 0}:\n",
-        "I’d say SWALOT Plop.\r"
+        "I’d say Swalot Plop.\r"
       ]
     },
     {
@@ -4694,7 +4694,7 @@
       "id": "pl_msg_00000662_00731",
       "en_US": [
         "{COLOR 2}{STRVAR_1 3, 0, 0}{COLOR 0}:\n",
-        "I’d say WOBBUFFET Pop.\r"
+        "I’d say Wobbuffet Pop.\r"
       ]
     },
     {
@@ -5240,7 +5240,7 @@
       "id": "pl_msg_00000662_00809",
       "en_US": [
         "{COLOR 2}{STRVAR_1 3, 0, 0}{COLOR 0}:\n",
-        "Oh, you’re good at SWALOT Plop!\r"
+        "Oh, you’re good at Swalot Plop!\r"
       ]
     },
     {
@@ -5254,7 +5254,7 @@
       "id": "pl_msg_00000662_00811",
       "en_US": [
         "{COLOR 2}{STRVAR_1 3, 0, 0}{COLOR 0}:\n",
-        "Oh, you’re good at WOBBUFFET Pop!\r"
+        "Oh, you’re good at Wobbuffet Pop!\r"
       ]
     },
     {

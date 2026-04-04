@@ -896,7 +896,7 @@
     {
       "id": "pl_msg_00000391_00112",
       "en_US": [
-        "A glowing orb to be held by GIRATINA.\n",
+        "A glowing orb to be held by Giratina.\n",
         "It boosts the power of Dragon- and\n",
         "Ghost-type moves."
       ]
@@ -993,7 +993,7 @@
       "id": "pl_msg_00000391_00135",
       "en_US": [
         "A brightly gleaming orb to be held by\n",
-        "DIALGA. It boosts the power of Dragon-\n",
+        "Dialga. It boosts the power of Dragon-\n",
         "and Steel-type moves."
       ]
     },
@@ -1001,7 +1001,7 @@
       "id": "pl_msg_00000391_00136",
       "en_US": [
         "A beautifully glowing orb to be held by\n",
-        "PALKIA. It boosts the power of Dragon-\n",
+        "Palkia. It boosts the power of Dragon-\n",
         "and Water-type moves."
       ]
     },
@@ -1711,15 +1711,15 @@
     {
       "id": "pl_msg_00000391_00225",
       "en_US": [
-        "A wondrous orb to be held by LATIOS or\n",
-        "LATIAS. It raises both the Sp. Atk and\n",
+        "A wondrous orb to be held by Latios or\n",
+        "Latias. It raises both the Sp. Atk and\n",
         "Sp. Def stats."
       ]
     },
     {
       "id": "pl_msg_00000391_00226",
       "en_US": [
-        "An item to be held by CLAMPERL.\n",
+        "An item to be held by Clamperl.\n",
         "A fang that gleams a sharp silver, it\n",
         "raises the Sp. Atk stat."
       ]
@@ -1727,7 +1727,7 @@
     {
       "id": "pl_msg_00000391_00227",
       "en_US": [
-        "An item to be held by CLAMPERL.\n",
+        "An item to be held by Clamperl.\n",
         "A scale that shines a faint pink, it\n",
         "raises the Sp. Def stat."
       ]
@@ -1799,7 +1799,7 @@
     {
       "id": "pl_msg_00000391_00236",
       "en_US": [
-        "An item to be held by PIKACHU.\n",
+        "An item to be held by Pikachu.\n",
         "It is a puzzling orb that raises\n",
         "the Attack and Sp. Atk stat."
       ]
@@ -1959,15 +1959,15 @@
     {
       "id": "pl_msg_00000391_00256",
       "en_US": [
-        "An item to be held by CHANSEY. It is a\n",
-        "pair of gloves that boosts CHANSEY’s\n",
+        "An item to be held by Chansey. It is a\n",
+        "pair of gloves that boosts Chansey’s\n",
         "critical-hit ratio."
       ]
     },
     {
       "id": "pl_msg_00000391_00257",
       "en_US": [
-        "An item to be held by DITTO.\n",
+        "An item to be held by Ditto.\n",
         "Extremely fine yet hard, this odd\n",
         "powder boosts the Defense stat."
       ]
@@ -1975,8 +1975,8 @@
     {
       "id": "pl_msg_00000391_00258",
       "en_US": [
-        "An item to be held by CUBONE or\n",
-        "MAROWAK. It is a hard bone of some\n",
+        "An item to be held by Cubone or\n",
+        "Marowak. It is a hard bone of some\n",
         "sort that boosts the Attack stat."
       ]
     },
@@ -2103,7 +2103,7 @@
     {
       "id": "pl_msg_00000391_00274",
       "en_US": [
-        "An item to be held by DITTO.\n",
+        "An item to be held by Ditto.\n",
         "Extremely fine yet hard, this odd\n",
         "powder boosts the Speed stat."
       ]
@@ -3491,7 +3491,7 @@
     {
       "id": "pl_msg_00000391_00448",
       "en_US": [
-        "A watering can shaped like a PSYDUCK.\n",
+        "A watering can shaped like a Psyduck.\n",
         "It helps promote healthy growth of\n",
         "Berries planted in soft soil."
       ]

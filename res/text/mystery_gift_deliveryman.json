@@ -103,7 +103,7 @@
       "id": "MysteryGiftDeliveryman_Text_ReceivedManaphyEgg",
       "en_US": [
         "{STRVAR_1 3, 0, 0} received\n",
-        "the {COLOR 1}MANAPHY Egg{COLOR 0}!\r"
+        "the {COLOR 1}Manaphy Egg{COLOR 0}!\r"
       ]
     },
     {
