@@ -9,10 +9,10 @@
 
 enum TileBehavior {
     TILE_BEHAVIOR_NONE = 0,
-    TILE_BEHAVIOR_UNUSED_x01,
+    TILE_BEHAVIOR_FLAT_GRASS, // solely for the grass sound effect
     TILE_BEHAVIOR_TALL_GRASS,
     TILE_BEHAVIOR_VERY_TALL_GRASS,
-    TILE_BEHAVIOR_UNUSED_x04,
+    TILE_BEHAVIOR_METAL, // solely for the metal sound effect
     TILE_BEHAVIOR_UNUSED_x05,
     TILE_BEHAVIOR_UNUSED_x06,
     TILE_BEHAVIOR_UNUSED_x07,

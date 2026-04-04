@@ -5,10 +5,10 @@
 // clang-format off
 static const u8 sTileBehaviorFlags[] = {
     [TILE_BEHAVIOR_NONE]                       =  TILE_BEHAVIOR_FLAG_NONE,
-    [TILE_BEHAVIOR_UNUSED_x01]                 =  TILE_BEHAVIOR_FLAG_NONE,
+    [TILE_BEHAVIOR_FLAT_GRASS]                 =  TILE_BEHAVIOR_FLAG_NONE,
     [TILE_BEHAVIOR_TALL_GRASS]                 =  TILE_BEHAVIOR_FLAG_ENCOUNTER,
     [TILE_BEHAVIOR_VERY_TALL_GRASS]            =  TILE_BEHAVIOR_FLAG_ENCOUNTER,
-    [TILE_BEHAVIOR_UNUSED_x04]                 =  TILE_BEHAVIOR_FLAG_NONE,
+    [TILE_BEHAVIOR_METAL]                      =  TILE_BEHAVIOR_FLAG_NONE,
     [TILE_BEHAVIOR_UNUSED_x05]                 =  TILE_BEHAVIOR_FLAG_ENCOUNTER,
     [TILE_BEHAVIOR_UNUSED_x06]                 =  TILE_BEHAVIOR_FLAG_ENCOUNTER,
     [TILE_BEHAVIOR_UNUSED_x07]                 =  TILE_BEHAVIOR_FLAG_NONE,

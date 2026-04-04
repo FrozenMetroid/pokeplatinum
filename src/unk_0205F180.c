@@ -286,6 +286,8 @@ static const Sound_TileBehaviorFootStep Sound_TileBehaviorFootStepData[] = {
     {TILE_BEHAVIOR_TALL_GRASS,          SEQ_SE_DP_KUSA},
     {TILE_BEHAVIOR_VERY_TALL_GRASS,     SEQ_SE_DP_KUSA},
     {TILE_BEHAVIOR_SAND,                SEQ_SE_PL_ASHIOTO_SAND},
+    {TILE_BEHAVIOR_FLAT_GRASS,          SEQ_SE_PL_ASHIOTO_GRASS}, // haven't defined this behavior on any maps because we can't edit map data in the decomp yet
+    {TILE_BEHAVIOR_METAL,               SEQ_SE_PL_ASHIOTO_METAL}, // haven't defined this behavior on any maps because we can't edit map data in the decomp yet
 };
 
 static const Sound_FootStep Sound_FootStepData[] = {
