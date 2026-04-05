@@ -37,7 +37,7 @@
             [ 0, "MOVE_AIR_SLASH" ],
             [ 1, "MOVE_SKY_ATTACK" ],
             [ 1, "MOVE_EXTREME_SPEED" ],
-            [ 1, "MOVE_AURA_SPHERE" ],
+            [ 1, "MOVE_AURA_SPHERE" ]
         ],
         "by_tm": [
             "TM01",

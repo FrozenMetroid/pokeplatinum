@@ -1184,23 +1184,28 @@ static BOOL TryGenerateWildMon(Pokemon *firstPartyMon, const int fishingRodType,
         level = encounterTable[encounterSlot].maxLevel;
         break;
     case ENCOUNTER_TYPE_SURF:
-        // BUG: Magnet Pull doesn't function in water because its encounter slot gets overwritten when the Static check returns FALSE.
+        // FIX: Magnet Pull doesn't function in water because its encounter slot gets overwritten when the Static check returns FALSE in vanilla
         forcedSlot = TryGetSlotForTypeMatchAbility(firstPartyMon, encounterFieldParams, encounterTable, MAX_WATER_ENCOUNTERS, TYPE_STEEL, ABILITY_MAGNET_PULL, &encounterSlot);
-        forcedSlot = TryGetSlotForTypeMatchAbility(firstPartyMon, encounterFieldParams, encounterTable, MAX_WATER_ENCOUNTERS, TYPE_ELECTRIC, ABILITY_STATIC, &encounterSlot);
 
         if (!forcedSlot) {
-            encounterSlot = GetWaterEncounterSlot();
+          forcedSlot = TryGetSlotForTypeMatchAbility(firstPartyMon, encounterFieldParams, encounterTable, MAX_WATER_ENCOUNTERS, TYPE_ELECTRIC, ABILITY_STATIC, &encounterSlot);
+
+          if (!forcedSlot) {
+              encounterSlot = GetWaterEncounterSlot();
+          }
         }
 
         level = GetWildMonLevel(&encounterTable[encounterSlot], encounterFieldParams);
         break;
     case ENCOUNTER_TYPE_FISHING:
-        // BUG: Magnet Pull doesn't function in water because its encounter slot gets overwritten when the Static check returns FALSE.
+        // FIX: Magnet Pull doesn't function in water because its encounter slot gets overwritten when the Static check returns FALSE in vanilla
         forcedSlot = TryGetSlotForTypeMatchAbility(firstPartyMon, encounterFieldParams, encounterTable, MAX_WATER_ENCOUNTERS, TYPE_STEEL, ABILITY_MAGNET_PULL, &encounterSlot);
-        forcedSlot = TryGetSlotForTypeMatchAbility(firstPartyMon, encounterFieldParams, encounterTable, MAX_WATER_ENCOUNTERS, TYPE_ELECTRIC, ABILITY_STATIC, &encounterSlot);
 
         if (!forcedSlot) {
-            encounterSlot = GetRodEncounterSlot(fishingRodType);
+          forcedSlot = TryGetSlotForTypeMatchAbility(firstPartyMon, encounterFieldParams, encounterTable, MAX_WATER_ENCOUNTERS, TYPE_ELECTRIC, ABILITY_STATIC, &encounterSlot);
+          if (!forcedSlot) {
+              encounterSlot = GetRodEncounterSlot(fishingRodType);
+          }
         }
 
         level = GetWildMonLevel(&encounterTable[encounterSlot], encounterFieldParams);
@@ -1406,7 +1411,7 @@ static u8 ModifyEncounterRateWithFieldParams(const BOOL isFishingEncounter, cons
     if (!encounterFieldParams->isFirstMonEgg) {
         if (isFishingEncounter) {
             if (encounterFieldParams->firstMonAbility == ABILITY_STICKY_HOLD || encounterFieldParams->firstMonAbility == ABILITY_SUCTION_CUPS) {
-                newEncRate * 2; // BUG: Abilities do not Increase Fishing Encounter Rate (see docs/bugs_and_glitches.md)
+                newEncRate *= 2; // FIX: Abilities do not Increase Fishing Encounter Rate
             }
         } else {
             if (encounterFieldParams->firstMonAbility == ABILITY_ARENA_TRAP || encounterFieldParams->firstMonAbility == ABILITY_NO_GUARD || encounterFieldParams->firstMonAbility == ABILITY_ILLUMINATE) {

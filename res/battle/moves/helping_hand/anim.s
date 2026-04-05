@@ -16,8 +16,8 @@ L_0:
     Func_MoveBattlerX2 2, -12, BATTLE_ANIM_BATTLER_SPRITE_ATTACKER
     Delay 2
     PlaySoundEffectC SEQ_SE_DP_W227
-    EndLoop
     Delay 1
+    EndLoop
     Func_MoveBattlerX2 2, 12, BATTLE_ANIM_BATTLER_SPRITE_ATTACKER
     Func_Shake 1, 0, 1, 2, BATTLE_ANIM_BATTLER_SPRITE_ATTACKER_PARTNER
     Delay 3

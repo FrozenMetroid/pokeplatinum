@@ -15,7 +15,7 @@ L_0:
     Func_FadeBattlerSprite BATTLE_ANIM_DEFENDER, 0, 2, BATTLE_COLOR_DARK_RED2, 14, 0
     Func_ShakeBg 5, 0, 1, 6, 0
     PlayLoopedSoundEffectR SEQ_SE_DP_W120, 4, 6
-    Delay 3
+    Delay 4
     Func_Shake 4, 0, 1, 10, BATTLE_ANIM_BATTLER_SPRITE_DEFENDER
     WaitForAllEmitters
     UnloadParticleSystem 0

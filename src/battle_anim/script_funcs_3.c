@@ -2283,6 +2283,10 @@ static void BattleAnimTask_ShakeAndScaleAttacker(SysTask *task, void *param)
             s16 offset = BattleAnimUtil_GetGroundAnchoredScaleOffset(ctx->spriteY, ctx->spriteHeight, ctx->scale.data[XY_PARAM_CUR_Y]);
             PokemonSprite_SetAttribute(ctx->sprite, MON_SPRITE_Y_CENTER, ctx->spriteY + offset);
         } else {
+            // FIX: sprite getting moved permanently
+            Point2D *pos;
+            BattleAnimUtil_GetBattlerDefaultPos(ctx->battleAnimSys, BattleAnimSystem_GetAttacker(ctx->battleAnimSys), pos);
+            PokemonSprite_SetAttribute(ctx->sprite, MON_SPRITE_X_CENTER, pos->x);
             ctx->state++;
         }
         break;
