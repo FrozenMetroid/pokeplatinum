@@ -430,7 +430,7 @@ static void sub_02073E18(BoxPokemon *boxMon, int monSpecies, int monLevel, int m
             #endif 
             for (int i = 0; i < 2; i++) { // get two extra rolls
                 if (!BoxPokemon_IsShiny(boxMon)) { // don't reroll if you already have a shiny
-                    if (LCRNG_Next() > SHINY_ODDS) {
+                    if (LCRNG_Next() < SHINY_ODDS) {
                         #ifdef DEBUG_SHINY_CHARM
                         EmulatorLog("Generating Shiny Personality");
                         EmulatorLog("Old: %u", monPersonality);
