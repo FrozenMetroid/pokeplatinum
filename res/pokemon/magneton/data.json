@@ -34,7 +34,7 @@
     "icon_palette": 0,
     "learnset": {
         "by_level": [
-            [ 1, "MOVE_TRI_ATTACK" ],
+            [ 0, "MOVE_TRI_ATTACK" ],
             [ 1, "MOVE_METAL_SOUND" ],
             [ 1, "MOVE_TACKLE" ],
             [ 1, "MOVE_THUNDER_SHOCK" ],

@@ -34,6 +34,7 @@
     "icon_palette": 2,
     "learnset": {
         "by_level": [
+            [ 0, "MOVE_CONFUSION" ],
             [ 1, "MOVE_TAIL_WHIP" ],
             [ 1, "MOVE_TACKLE" ],
             [ 1, "MOVE_HELPING_HAND" ],

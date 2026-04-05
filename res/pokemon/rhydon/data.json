@@ -34,6 +34,7 @@
     "icon_palette": 1,
     "learnset": {
         "by_level": [
+            [ 0, "MOVE_HAMMER_ARM" ],
             [ 1, "MOVE_HORN_ATTACK" ],
             [ 1, "MOVE_TAIL_WHIP" ],
             [ 1, "MOVE_STOMP" ],

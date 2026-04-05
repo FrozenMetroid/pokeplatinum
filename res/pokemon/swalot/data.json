@@ -34,6 +34,7 @@
     "icon_palette": 2,
     "learnset": {
         "by_level": [
+            [ 0, "MOVE_BODY_SLAM" ],
             [ 1, "MOVE_POUND" ],
             [ 1, "MOVE_YAWN" ],
             [ 1, "MOVE_POISON_GAS" ],

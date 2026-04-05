@@ -34,6 +34,7 @@
     "icon_palette": 0,
     "learnset": {
         "by_level": [
+            [ 0, "MOVE_SLASH" ],
             [ 1, "MOVE_FEINT" ],
             [ 1, "MOVE_LEER" ],
             [ 1, "MOVE_BITE" ],

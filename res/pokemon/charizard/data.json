@@ -34,9 +34,9 @@
     "icon_palette": 0,
     "learnset": {
         "by_level": [
+            [ 0, "MOVE_AIR_SLASH" ],
             [ 1, "MOVE_DRAGON_CLAW" ],
             [ 1, "MOVE_SHADOW_CLAW" ],
-            [ 1, "MOVE_AIR_SLASH" ],
             [ 1, "MOVE_SCRATCH" ],
             [ 1, "MOVE_GROWL" ],
             [ 1, "MOVE_EMBER" ],
@@ -47,7 +47,7 @@
             [ 21, "MOVE_SCARY_FACE" ],
             [ 28, "MOVE_FIRE_FANG" ],
             [ 32, "MOVE_SLASH" ],
-            [ 36, "MOVE_WING_ATTACK" ],
+            [ 36, "MOVE_AIR_SLASH" ],
             [ 42, "MOVE_FLAMETHROWER" ],
             [ 49, "MOVE_FIRE_SPIN" ],
             [ 59, "MOVE_HEAT_WAVE" ],

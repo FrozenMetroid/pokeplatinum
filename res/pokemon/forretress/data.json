@@ -34,6 +34,7 @@
     "icon_palette": 2,
     "learnset": {
         "by_level": [
+            [ 0, "MOVE_MIRROR_SHOT" ],
             [ 1, "MOVE_TOXIC_SPIKES" ],
             [ 1, "MOVE_TACKLE" ],
             [ 1, "MOVE_PROTECT" ],

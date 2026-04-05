@@ -34,6 +34,7 @@
     "icon_palette": 0,
     "learnset": {
         "by_level": [
+            [ 0, "MOVE_IRON_DEFENSE" ],
             [ 1, "MOVE_BITE" ],
             [ 1, "MOVE_LEER" ],
             [ 1, "MOVE_SANDSTORM" ],

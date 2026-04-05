@@ -34,6 +34,7 @@
     "icon_palette": 2,
     "learnset": {
         "by_level": [
+            [ 0, "MOVE_SWAGGER" ],
             [ 1, "MOVE_POWDER_SNOW" ],
             [ 1, "MOVE_GROWL" ],
             [ 1, "MOVE_WATER_GUN" ],

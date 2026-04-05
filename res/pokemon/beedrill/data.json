@@ -34,10 +34,9 @@
     "icon_palette": 2,
     "learnset": {
         "by_level": [
-            [ 1, "MOVE_FURY_ATTACK" ],
-            [ 10, "MOVE_FURY_ATTACK" ],
-            [ 13, "MOVE_FOCUS_ENERGY" ],
-            [ 16, "MOVE_TWINEEDLE" ],
+            [ 0, "MOVE_TWINEEDLE" ],
+            [ 13, "MOVE_FURY_ATTACK" ],
+            [ 17, "MOVE_FOCUS_ENERGY" ],
             [ 19, "MOVE_RAGE" ],
             [ 22, "MOVE_PURSUIT" ],
             [ 25, "MOVE_TOXIC_SPIKES" ],

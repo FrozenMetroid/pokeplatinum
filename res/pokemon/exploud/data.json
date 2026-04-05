@@ -34,6 +34,7 @@
     "icon_palette": 2,
     "learnset": {
         "by_level": [
+            [ 0, "MOVE_CRUNCH" ],
             [ 1, "MOVE_ICE_FANG" ],
             [ 1, "MOVE_FIRE_FANG" ],
             [ 1, "MOVE_THUNDER_FANG" ],

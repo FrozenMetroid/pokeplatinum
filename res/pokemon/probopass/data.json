@@ -34,6 +34,7 @@
     "icon_palette": 0,
     "learnset": {
         "by_level": [
+            [ 0, "MOVE_TRI_ATTACK" ],
             [ 1, "MOVE_MAGNET_RISE" ],
             [ 1, "MOVE_GRAVITY" ],
             [ 1, "MOVE_TACKLE" ],

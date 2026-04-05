@@ -34,6 +34,7 @@
     "icon_palette": 1,
     "learnset": {
         "by_level": [
+            [ 0, "MOVE_SCARY_FACE" ],
             [ 1, "MOVE_SWORDS_DANCE" ],
             [ 1, "MOVE_TACKLE" ],
             [ 1, "MOVE_TAIL_WHIP" ],
@@ -45,7 +46,6 @@
             [ 13, "MOVE_PURSUIT" ],
             [ 16, "MOVE_HYPER_FANG" ],
             [ 19, "MOVE_SUCKER_PUNCH" ],
-            [ 20, "MOVE_SCARY_FACE" ],
             [ 24, "MOVE_CRUNCH" ],
             [ 29, "MOVE_ASSURANCE" ],
             [ 34, "MOVE_SUPER_FANG" ],

@@ -34,6 +34,7 @@
     "icon_palette": 2,
     "learnset": {
         "by_level": [
+            [ 0, "MOVE_OMINOUS_WIND" ],
             [ 1, "MOVE_POWDER_SNOW" ],
             [ 1, "MOVE_LEER" ],
             [ 1, "MOVE_DOUBLE_TEAM" ],

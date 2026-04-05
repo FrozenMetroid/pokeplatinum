@@ -34,6 +34,7 @@
     "icon_palette": 2,
     "learnset": {
         "by_level": [
+            [ 0, "MOVE_CROSS_POISON" ],
             [ 1, "MOVE_CROSS_POISON" ],
             [ 1, "MOVE_SCREECH" ],
             [ 1, "MOVE_LEECH_LIFE" ],

@@ -34,6 +34,7 @@
     "icon_palette": 2,
     "learnset": {
         "by_level": [
+            [ 0, "MOVE_ICICLE_SPEAR" ],
             [ 1, "MOVE_TOXIC_SPIKES" ],
             [ 1, "MOVE_WITHDRAW" ],
             [ 1, "MOVE_SUPERSONIC" ],

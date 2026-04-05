@@ -34,6 +34,7 @@
     "icon_palette": 0,
     "learnset": {
         "by_level": [
+            [ 0, "MOVE_FURY_ATTACK" ],
             [ 1, "MOVE_POISON_JAB" ],
             [ 1, "MOVE_MEGAHORN" ],
             [ 1, "MOVE_GROWL" ],

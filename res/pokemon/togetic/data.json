@@ -34,6 +34,7 @@
     "icon_palette": 2,
     "learnset": {
         "by_level": [
+            [ 0, "MOVE_AIR_CUTTER" ],
             [ 1, "MOVE_MAGICAL_LEAF" ],
             [ 1, "MOVE_GROWL" ],
             [ 1, "MOVE_CHARM" ],

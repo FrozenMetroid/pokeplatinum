@@ -34,6 +34,7 @@
     "icon_palette": 0,
     "learnset": {
         "by_level": [
+            [ 0, "MOVE_STRENGTH" ],
             [ 1, "MOVE_LOW_KICK" ],
             [ 1, "MOVE_LEER" ],
             [ 1, "MOVE_FOCUS_ENERGY" ],

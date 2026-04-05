@@ -34,6 +34,7 @@
     "icon_palette": 0,
     "learnset": {
         "by_level": [
+            [ 0, "MOVE_THRASH" ],
             [ 1, "MOVE_ZEN_HEADBUTT" ],
             [ 1, "MOVE_TICKLE" ],
             [ 1, "MOVE_MUD_SLAP" ],

@@ -34,6 +34,7 @@
     "icon_palette": 1,
     "learnset": {
         "by_level": [
+            [ 0, "MOVE_POWER_GEM" ],
             [ 1, "MOVE_SWITCHEROO" ],
             [ 1, "MOVE_SCRATCH" ],
             [ 1, "MOVE_GROWL" ],

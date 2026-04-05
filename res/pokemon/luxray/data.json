@@ -34,6 +34,7 @@
     "icon_palette": 0,
     "learnset": {
         "by_level": [
+            [ 0, "MOVE_EXTRASENSORY" ],
             [ 1, "MOVE_TACKLE" ],
             [ 1, "MOVE_LEER" ],
             [ 1, "MOVE_CHARGE" ],

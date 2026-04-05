@@ -34,6 +34,7 @@
     "icon_palette": 0,
     "learnset": {
         "by_level": [
+            [ 0, "MOVE_SUBMISSION" ],
             [ 1, "MOVE_BUBBLE_BEAM" ],
             [ 1, "MOVE_HYPNOSIS" ],
             [ 1, "MOVE_DOUBLE_SLAP" ],

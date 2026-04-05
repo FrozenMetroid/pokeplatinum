@@ -34,7 +34,7 @@
     "icon_palette": 0,
     "learnset": {
         "by_level": [
-            [ 1, "MOVE_KNOCK_OFF" ],
+            [ 0, "MOVE_KNOCK_OFF" ],
             [ 1, "MOVE_SCREECH" ],
             [ 1, "MOVE_NIGHT_SHADE" ],
             [ 1, "MOVE_CURSE" ],

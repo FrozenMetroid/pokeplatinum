@@ -34,6 +34,7 @@
     "icon_palette": 0,
     "learnset": {
         "by_level": [
+            [ 0, "MOVE_PETAL_DANCE" ],
             [ 1, "MOVE_MEGA_DRAIN" ],
             [ 1, "MOVE_AROMATHERAPY" ],
             [ 1, "MOVE_STUN_SPORE" ],

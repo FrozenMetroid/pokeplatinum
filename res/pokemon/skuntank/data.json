@@ -34,6 +34,7 @@
     "icon_palette": 2,
     "learnset": {
         "by_level": [
+            [ 0, "MOVE_FLAMETHROWER" ],
             [ 1, "MOVE_SCRATCH" ],
             [ 1, "MOVE_FOCUS_ENERGY" ],
             [ 1, "MOVE_POISON_GAS" ],

@@ -34,6 +34,7 @@
     "icon_palette": 0,
     "learnset": {
         "by_level": [
+            [ 0, "MOVE_BITE" ],
             [ 1, "MOVE_THRASH" ],
             [ 20, "MOVE_BITE" ],
             [ 23, "MOVE_DRAGON_RAGE" ],

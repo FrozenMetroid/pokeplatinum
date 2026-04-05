@@ -34,7 +34,7 @@
     "icon_palette": 2,
     "learnset": {
         "by_level": [
-            [ 1, "MOVE_HARDEN" ],
+            [ 0, "MOVE_HARDEN" ],
             [ 7, "MOVE_HARDEN" ]
         ],
         "by_tm": [  ],

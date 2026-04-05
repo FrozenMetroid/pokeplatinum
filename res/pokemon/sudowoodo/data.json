@@ -34,6 +34,7 @@
     "icon_palette": 1,
     "learnset": {
         "by_level": [
+            [ 0, "MOVE_SLAM" ],
             [ 1, "MOVE_WOOD_HAMMER" ],
             [ 1, "MOVE_COPYCAT" ],
             [ 1, "MOVE_FLAIL" ],

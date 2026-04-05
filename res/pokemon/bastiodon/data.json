@@ -34,6 +34,7 @@
     "icon_palette": 1,
     "learnset": {
         "by_level": [
+            [ 0, "MOVE_BLOCK" ],
             [ 1, "MOVE_TACKLE" ],
             [ 1, "MOVE_PROTECT" ],
             [ 1, "MOVE_TAUNT" ],

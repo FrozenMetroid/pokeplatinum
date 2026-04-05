@@ -34,6 +34,7 @@
     "icon_palette": 2,
     "learnset": {
         "by_level": [
+            [ 0, "MOVE_RETURN" ],
             [ 1, "MOVE_MIRROR_COAT" ],
             [ 1, "MOVE_MAGIC_COAT" ],
             [ 1, "MOVE_SPLASH" ],

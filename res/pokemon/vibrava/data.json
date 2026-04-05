@@ -34,6 +34,7 @@
     "icon_palette": 1,
     "learnset": {
         "by_level": [
+            [ 0, "MOVE_DRAGON_BREATH" ],
             [ 1, "MOVE_SONIC_BOOM" ],
             [ 1, "MOVE_SAND_ATTACK" ],
             [ 1, "MOVE_FAINT_ATTACK" ],

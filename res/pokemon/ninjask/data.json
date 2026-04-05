@@ -34,6 +34,9 @@
     "icon_palette": 1,
     "learnset": {
         "by_level": [
+            [ 0, "MOVE_DOUBLE_TEAM" ],
+            [ 0, "MOVE_SCREECH" ],
+            [ 0, "MOVE_FURY_CUTTER" ],
             [ 1, "MOVE_BUG_BITE" ],
             [ 1, "MOVE_SCRATCH" ],
             [ 1, "MOVE_HARDEN" ],

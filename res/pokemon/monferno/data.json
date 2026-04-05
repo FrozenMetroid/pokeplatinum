@@ -34,6 +34,7 @@
     "icon_palette": 0,
     "learnset": {
         "by_level": [
+            [ 0, "MOVE_MACH_PUNCH" ],
             [ 1, "MOVE_SCRATCH" ],
             [ 1, "MOVE_LEER" ],
             [ 1, "MOVE_EMBER" ],

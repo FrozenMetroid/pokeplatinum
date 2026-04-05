@@ -34,6 +34,7 @@
     "icon_palette": 2,
     "learnset": {
         "by_level": [
+            [ 0, "MOVE_TRI_ATTACK" ],
             [ 1, "MOVE_PLUCK" ],
             [ 1, "MOVE_PECK" ],
             [ 1, "MOVE_GROWL" ],

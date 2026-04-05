@@ -34,6 +34,7 @@
     "icon_palette": 2,
     "learnset": {
         "by_level": [
+            [ 0, "MOVE_GUST" ],
             [ 1, "MOVE_SILVER_WIND" ],
             [ 1, "MOVE_TACKLE" ],
             [ 1, "MOVE_DISABLE" ],

@@ -34,6 +34,7 @@
     "icon_palette": 1,
     "learnset": {
         "by_level": [
+            [ 0, "MOVE_STOMP" ],
             [ 1, "MOVE_SEED_BOMB" ],
             [ 1, "MOVE_BARRAGE" ],
             [ 1, "MOVE_HYPNOSIS" ],

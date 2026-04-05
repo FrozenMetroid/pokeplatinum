@@ -34,7 +34,7 @@
     "icon_palette": 0,
     "learnset": {
         "by_level": [
-            [ 1, "MOVE_BULLET_PUNCH" ],
+            [ 0, "MOVE_BULLET_PUNCH" ],
             [ 1, "MOVE_QUICK_ATTACK" ],
             [ 1, "MOVE_LEER" ],
             [ 5, "MOVE_FOCUS_ENERGY" ],

@@ -34,7 +34,7 @@
     "icon_palette": 2,
     "learnset": {
         "by_level": [
-            [ 1, "MOVE_FLASH_CANNON" ],
+            [ 0, "MOVE_FLASH_CANNON" ],
             [ 1, "MOVE_TACKLE" ],
             [ 1, "MOVE_TAIL_WHIP" ],
             [ 1, "MOVE_BUBBLE" ],

@@ -34,6 +34,7 @@
     "icon_palette": 2,
     "learnset": {
         "by_level": [
+            [ 0, "MOVE_SHEER_COLD" ],
             [ 1, "MOVE_HEADBUTT" ],
             [ 1, "MOVE_GROWL" ],
             [ 1, "MOVE_SIGNAL_BEAM" ],

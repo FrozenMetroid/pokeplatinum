@@ -34,6 +34,7 @@
     "icon_palette": 0,
     "learnset": {
         "by_level": [
+            [ 0, "MOVE_SWIFT" ],
             [ 1, "MOVE_BUBBLE" ],
             [ 1, "MOVE_HARDEN" ],
             [ 1, "MOVE_VICE_GRIP" ],

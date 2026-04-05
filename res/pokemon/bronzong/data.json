@@ -34,6 +34,7 @@
     "icon_palette": 0,
     "learnset": {
         "by_level": [
+            [ 0, "MOVE_BLOCK" ],
             [ 1, "MOVE_SUNNY_DAY" ],
             [ 1, "MOVE_RAIN_DANCE" ],
             [ 1, "MOVE_TACKLE" ],

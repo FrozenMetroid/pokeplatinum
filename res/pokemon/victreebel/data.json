@@ -34,6 +34,7 @@
     "icon_palette": 1,
     "learnset": {
         "by_level": [
+            [ 0, "MOVE_SLUDGE_BOMB" ],
             [ 1, "MOVE_STOCKPILE" ],
             [ 1, "MOVE_SWALLOW" ],
             [ 1, "MOVE_SPIT_UP" ],

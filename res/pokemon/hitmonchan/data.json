@@ -34,6 +34,7 @@
     "icon_palette": 2,
     "learnset": {
         "by_level": [
+            [ 0, "MOVE_DRAIN_PUNCH" ],
             [ 1, "MOVE_REVENGE" ],
             [ 1, "MOVE_COMET_PUNCH" ],
             [ 6, "MOVE_AGILITY" ],

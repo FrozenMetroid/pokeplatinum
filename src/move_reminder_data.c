@@ -5,8 +5,10 @@
 
 #include "heap.h"
 #include "pokemon.h"
+#include "species.h"
 
-#define MAX_NUMBER_REMINDER_MOVES 22
+#define MAX_NUMBER_REMINDER_MOVES_OLD 22 // 2 more than learnsets
+#define MAX_NUMBER_REMINDER_MOVES (MAX_LEARNSET_ENTRIES + 2)
 
 #define GET_LEVEL(move) ((move & LEVEL_UP_LEARNSET_LEVEL_MASK) >> LEVEL_UP_LEARNSET_LEVEL_SHIFT)
 #define GET_MOVE(move)  (move & LEVEL_UP_LEARNSET_MOVE_MASK)

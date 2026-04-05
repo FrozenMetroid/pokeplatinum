@@ -34,6 +34,7 @@
     "icon_palette": 2,
     "learnset": {
         "by_level": [
+            [ 0, "MOVE_CRUSH_CLAW" ],
             [ 1, "MOVE_SCRATCH" ],
             [ 1, "MOVE_DEFENSE_CURL" ],
             [ 1, "MOVE_SAND_ATTACK" ],
