@@ -56,6 +56,8 @@
 #include "unk_020559DC.h"
 #include "vars_flags.h"
 
+#include "global/testing.h"
+
 typedef struct RadarEncounterData {
     int shakeType;
     BOOL preserveChain;
@@ -1044,6 +1046,51 @@ static void CreateWildMonShinyWithGenderOrNature(const u16 species, const u8 lev
     Heap_Free(newEncounter);
 }
 
+
+void Array_ReturnHighestAndSecondHighestSlots(u8 array[6], u8 *highest, u8 *secondHighest)
+{
+    u8 candidates[6];
+    u8 count = 0;
+    u8 maxValue = array[0];
+
+    // Find highest value
+    for (int i = 1; i < 6; i++) {
+        if (array[i] > maxValue) {
+            maxValue = array[i];
+        }
+    }
+    // Collect all indices with highest value
+    for (int i = 0; i < 6; i++) {
+        if (array[i] == maxValue) {
+            candidates[count++] = i;
+        }
+    }
+    // Pick one at random
+    *highest = candidates[LCRNG_RandMod(count)];
+
+    // Find next highest value among remaining indices
+    BOOL foundSecond = FALSE;
+    u8 secondValue = 0;
+    for (int i = 0; i < 6; i++) {
+        if (i == *highest) {
+            continue;
+        }
+        if (!foundSecond || array[i] > secondValue) {
+            secondValue = array[i];
+            foundSecond = TRUE;
+        }
+    }
+    // Collect all indices with secondValue, excluding highest
+    count = 0;
+    for (int i = 0; i < 6; i++) {
+        if (i != *highest && array[i] == secondValue) {
+            candidates[count++] = i;
+        }
+    }
+    // Pick one at random
+    *secondHighest = candidates[LCRNG_RandMod(count)];
+}
+
 static void CreateWildMon(u16 species, u8 level, const int partyDest, const WildEncounters_FieldParams *encounterFieldParams, Pokemon *firstPartyMon, FieldBattleDTO *battleParams)
 {
     Pokemon *newEncounter = Pokemon_New(HEAP_ID_FIELD2);
@@ -1072,15 +1119,44 @@ static void CreateWildMon(u16 species, u8 level, const int partyDest, const Wild
         }
 
         sub_02074088(newEncounter, species, level, 32, gender, GetNatureForWildMon(firstPartyMon, encounterFieldParams), 0);
-        Pokemon_SetValue(newEncounter, MON_DATA_OT_ID, &encounterFieldParams->trainerID);
 
-        GF_ASSERT(AddWildMonToParty(partyDest, encounterFieldParams, newEncounter, battleParams));
-        Heap_Free(newEncounter);
-        return;
+    } else {
+        sub_02074044(newEncounter, species, level, 32, GetNatureForWildMon(firstPartyMon, encounterFieldParams));
     }
-
-    sub_02074044(newEncounter, species, level, 32, GetNatureForWildMon(firstPartyMon, encounterFieldParams));
     Pokemon_SetValue(newEncounter, MON_DATA_OT_ID, &encounterFieldParams->trainerID);
+
+    #ifdef TESTING_GIVE_PERFECT_ENCOUNTERS // make the wild mon have perfect IVs and two max EVs based on their highest stats
+    // give the mon perfect IVs
+    u8 iv = 31;
+    for (int i = MON_DATA_HP_IV; i < MON_DATA_IS_EGG; i++) {
+        Pokemon_SetValue(newEncounter, i, &iv);
+    }
+    // give the mon EVs based on its highest stats
+    u8 baseStats[6];
+    SpeciesData *speciesData;
+    u8 form = Pokemon_GetValue(newEncounter, MON_DATA_FORM, NULL);
+    if (form != 0) {
+        speciesData = SpeciesData_FromMonForm(species, form, HEAP_ID_FIELD2);
+    } else {
+        speciesData = SpeciesData_FromMonSpecies(species, HEAP_ID_FIELD2);
+    }
+    for (int i = SPECIES_DATA_BASE_HP; i < SPECIES_DATA_TYPE_1; i++) {
+        baseStats[i] = SpeciesData_GetValue(speciesData, i);
+    }
+    u8 statIds[6] = {
+        MON_DATA_HP_EV,
+        MON_DATA_ATK_EV,
+        MON_DATA_DEF_EV,
+        MON_DATA_SPEED_EV,
+        MON_DATA_SPATK_EV,
+        MON_DATA_SPDEF_EV
+    };
+    u8 highest, secondHighest = 0;
+    u8 ev = 252;
+    Array_ReturnHighestAndSecondHighestSlots(baseStats, &highest, &secondHighest);
+    Pokemon_SetValue(newEncounter, statIds[highest], &ev);
+    Pokemon_SetValue(newEncounter, statIds[secondHighest], &ev);
+    #endif
 
     GF_ASSERT(AddWildMonToParty(partyDest, encounterFieldParams, newEncounter, battleParams));
     Heap_Free(newEncounter);

@@ -435,6 +435,13 @@ static SpeciesEvolutionList proc_evolutions(datafile_t *df) {
 }
 
 static SpeciesLearnsetSized proc_lvlearnset(datafile_t *df) {
+
+    // FILE *log = fopen("/tmp/speciesproc.log", "a");
+    // if (log != NULL) {
+    //     fprintf(log, "proc_lvlearnset ran\n");
+    //     fflush(log);
+    // }
+
     SpeciesLearnsetSized result = { 0 };
 
     datanode_t lv_learnset  = dp_get(df, ".learnset.by_level");
@@ -451,17 +458,43 @@ static SpeciesLearnsetSized proc_lvlearnset(datafile_t *df) {
         datanode_t level = dp_arrelem(entry, 0);
         datanode_t move  = dp_arrelem(entry, 1);
 
-        result.data.entries[result.size].move  = (u16)(dp_u16(dp_lookup(move, "Move")) & maxbit(9));
-        result.data.entries[result.size].level = (u16)(dp_u8(level) & maxbit(7));
+        // if (log != NULL) {
+        //     fprintf(log, "parsed entry %zu: level=%u move=%u\n",
+        //             i,
+        //             (unsigned)dp_u16(level),
+        //             (unsigned)dp_u16(dp_lookup(move, "Move")));
+        //     fflush(log);
+        // }
+
+        result.data.entries[result.size].move  = dp_u16(dp_lookup(move, "Move"));
+        result.data.entries[result.size].level = dp_u16(level);
+
+        // if (log != NULL) {
+        //     fprintf(log, "stored entry %zu: level=%u move=%u\n",
+        //             (size_t)result.size,
+        //             (unsigned)result.data.entries[result.size].level,
+        //             (unsigned)result.data.entries[result.size].move);
+        //     fflush(log);
+        // }
+
         result.size++;
     }
 
-    result.data.entries[result.size].move  = (u16)UINT16_MAX & maxbit(9);
-    result.data.entries[result.size].level = (u16)UINT16_MAX & maxbit(7);
+    result.data.entries[result.size].move  = UINT16_MAX;
+    result.data.entries[result.size].level = UINT16_MAX;
+
+    // fprintf(stderr, "stored terminator %zu: level=%u move=%u\n",
+    //         (size_t)result.size,
+    //         (unsigned)result.data.entries[result.size].level,
+    //         (unsigned)result.data.entries[result.size].move);
+
     result.size++;
 
     result.size *= sizeof(SpeciesLearnsetEntry);
     result.size += (-result.size & 3);
+    // if (log != NULL) {
+    //     fclose(log);
+    // }
     return result;
 }
 

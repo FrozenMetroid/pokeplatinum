@@ -8,8 +8,8 @@
 
 #define MAX_NUMBER_REMINDER_MOVES 22
 
-#define GET_LEVEL(move) ((move & 0xfe00) >> 9)
-#define GET_MOVE(move)  ((move & 0x1ff) >> 0)
+#define GET_LEVEL(move) ((move & LEVEL_UP_LEARNSET_LEVEL_MASK) >> LEVEL_UP_LEARNSET_LEVEL_SHIFT)
+#define GET_MOVE(move)  (move & LEVEL_UP_LEARNSET_MOVE_MASK)
 
 MoveReminderData *MoveReminderData_Alloc(enum HeapID heapID)
 {
@@ -36,8 +36,8 @@ u16 *MoveReminderData_GetMoves(Pokemon *mon, enum HeapID heapID)
         currentMoves[i] = Pokemon_GetValue(mon, MON_DATA_MOVE1 + i, NULL);
     }
 
-    u16 *levelUpMoves = Heap_Alloc(heapID, MAX_NUMBER_REMINDER_MOVES * sizeof(u16));
-    u16 *reminderMoves = Heap_Alloc(heapID, MAX_NUMBER_REMINDER_MOVES * sizeof(u16));
+    u32 *levelUpMoves = Heap_Alloc(heapID, MAX_NUMBER_REMINDER_MOVES * sizeof(u32));
+    u32 *reminderMoves = Heap_Alloc(heapID, MAX_NUMBER_REMINDER_MOVES * sizeof(u32));
 
     Pokemon_LoadLevelUpMovesOf(species, form, levelUpMoves);
 

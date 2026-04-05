@@ -154,7 +154,7 @@ static void ov5_021E63E0(Pokemon *param0)
         if (Pokemon_ShouldLevelUp(param0)) {
             v1 = 0;
 
-            while ((v4 = Pokemon_LevelUpMove(param0, &v1, &v3)) != 0) {
+            while ((v4 = Pokemon_LevelUpMove(param0, &v1, &v3, FALSE)) != 0) {
                 if (v4 == 0xffff) {
                     Pokemon_ReplaceMove(param0, v3);
                 }

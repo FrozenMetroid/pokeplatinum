@@ -3819,7 +3819,7 @@ u16 Pokemon_GetBaseSpeciesForBattle(const u16 species)
 static void BoxPokemon_SetDefaultMoves(BoxPokemon *boxMon)
 {
     BOOL reencrypt; // must pre-declare to match
-    u16 *monLevelUpMoves = Heap_Alloc(HEAP_ID_SYSTEM, sizeof(SpeciesLearnset));
+    u32 *monLevelUpMoves = Heap_Alloc(HEAP_ID_SYSTEM, sizeof(SpeciesLearnset));
     reencrypt = BoxPokemon_EnterDecryptionContext(boxMon);
 
     u16 monSpecies = BoxPokemon_GetValue(boxMon, MON_DATA_SPECIES, NULL);
@@ -3829,8 +3829,8 @@ static void BoxPokemon_SetDefaultMoves(BoxPokemon *boxMon)
     Pokemon_LoadLevelUpMovesOf(monSpecies, monForm, monLevelUpMoves);
 
     for (int i = 0; monLevelUpMoves[i] != LEARNSET_SENTINEL_ENTRY; i++) {
-        if ((monLevelUpMoves[i] & 0xFE00) <= monLevel << 9) {
-            u16 monLevelUpMoveID = monLevelUpMoves[i] & 0x1FF;
+        if (LEVEL_UP_LEARNSET_LEVEL(monLevelUpMoves[i]) <= monLevel) {
+            u16 monLevelUpMoveID = LEVEL_UP_LEARNSET_MOVE(monLevelUpMoves[i]);
             if (BoxPokemon_AddMove(boxMon, monLevelUpMoveID) == LEARNSET_ALL_SLOTS_FILLED) {
                 BoxPokemon_ReplaceMove(boxMon, monLevelUpMoveID);
             }
@@ -3932,31 +3932,46 @@ static void BoxPokemon_SetMoveSlot(BoxPokemon *boxMon, u16 moveID, u8 moveSlot)
     BoxPokemon_SetValue(boxMon, MON_DATA_MOVE1_PP + moveSlot, &moveMaxPP);
 }
 
-u16 Pokemon_LevelUpMove(Pokemon *mon, int *index, u16 *moveID)
+u16 Pokemon_LevelUpMove(Pokemon *mon, int *index, u16 *moveID, BOOL tryLearnOnEvolution)
 {
     u16 result = MOVE_NONE;
-    u16 *monLevelUpMoves = Heap_Alloc(HEAP_ID_SYSTEM, sizeof(SpeciesLearnset));
+    u32 *monLevelUpMoves = Heap_Alloc(HEAP_ID_SYSTEM, MAX_LEARNSET_ENTRIES * sizeof(u32));
     u16 monSpecies = Pokemon_GetValue(mon, MON_DATA_SPECIES, NULL);
     int monForm = Pokemon_GetValue(mon, MON_DATA_FORM, NULL);
     u8 monLevel = Pokemon_GetValue(mon, MON_DATA_LEVEL, NULL);
 
     Pokemon_LoadLevelUpMovesOf(monSpecies, monForm, monLevelUpMoves);
 
-    if (monLevelUpMoves[*index] == LEARNSET_SENTINEL_ENTRY) {
+    if (tryLearnOnEvolution && LEVEL_UP_LEARNSET_LEVEL(monLevelUpMoves[*index]) == 0) { // when evolving, try to learn moves at level 0
+        monLevel = 0;
+    }
+    if (monLevelUpMoves[*index] == LEVEL_UP_LEARNSET_END) {
         Heap_Free(monLevelUpMoves);
         return MOVE_NONE;
     }
 
-    while ((monLevelUpMoves[*index] & 0xFE00) != monLevel << 9) {
+    while ((monLevelUpMoves[*index] & LEVEL_UP_LEARNSET_LEVEL_MASK) != monLevel << LEVEL_UP_LEARNSET_LEVEL_SHIFT) { // keep advancing the slot until you find the one at that level or the end
         (*index)++;
-        if (monLevelUpMoves[*index] == LEARNSET_SENTINEL_ENTRY) {
+        if (monLevelUpMoves[*index] == LEVEL_UP_LEARNSET_END) {
             Heap_Free(monLevelUpMoves);
             return MOVE_NONE;
         }
+        if (tryLearnOnEvolution) // if a mon is evolving, it is possible that the current level move also corresponds with a move that it learns on evolution.  need to skip the entry if it has already been attempted to learn a move
+        {
+            u32 currMove = LEVEL_UP_LEARNSET_MOVE(monLevelUpMoves[*index]);
+            for (s32 i = 0; i < *index; i++)
+            {
+                if (LEVEL_UP_LEARNSET_MOVE(monLevelUpMoves[i]) == currMove && LEVEL_UP_LEARNSET_LEVEL(monLevelUpMoves[i]) == 0)
+                {
+                    (*index)++;
+                    break;
+                }
+            }
+        }
     }
 
-    if ((monLevelUpMoves[*index] & 0xFE00) == monLevel << 9) {
-        *moveID = monLevelUpMoves[*index] & 0x1FF;
+    if ((monLevelUpMoves[*index] & LEVEL_UP_LEARNSET_LEVEL_MASK) == (monLevel << LEVEL_UP_LEARNSET_LEVEL_SHIFT)) {
+        *moveID = LEVEL_UP_LEARNSET_MOVE(monLevelUpMoves[*index]);
         (*index)++;
         result = Pokemon_AddMove(mon, *moveID);
     }
@@ -4131,14 +4146,14 @@ s8 Pokemon_GetFlavorAffinityOf(u32 monPersonality, enum Flavor flavor)
 
 int Pokemon_LoadLevelUpMoveIdsOf(int monSpecies, int monForm, u16 *monLevelUpMoveIDs)
 {
-    u16 *monLevelUpMoves = Heap_Alloc(HEAP_ID_SYSTEM, sizeof(SpeciesLearnset));
+    u32  *monLevelUpMoves = Heap_Alloc(HEAP_ID_SYSTEM, sizeof(SpeciesLearnset));
 
     Pokemon_LoadLevelUpMovesOf(monSpecies, monForm, monLevelUpMoves);
 
     int result = 0;
 
     while (monLevelUpMoves[result] != LEARNSET_ALL_SLOTS_FILLED) {
-        monLevelUpMoveIDs[result] = monLevelUpMoves[result] & 0x1FF;
+        monLevelUpMoveIDs[result] = LEVEL_UP_LEARNSET_MOVE(monLevelUpMoves[result]);
         result++;
     }
 

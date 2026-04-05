@@ -283,7 +283,7 @@ Route201_Briefcase:
     FadeScreenIn
     WaitFadeScreen
     GetPlayerStarterSpecies VAR_0x8000
-    // ifdef TESTING_GIVE_PERFECT_STARTERS will give you perfect starters here
+    // ifdef TESTING_GIVE_PERFECT_ENCOUNTERS will give you perfect starters here
     GivePokemon VAR_0x8000, 5, ITEM_NONE, VAR_RESULT
     ApplyMovement LOCALID_PROF_ROWAN, Route201_Movement_ProfRowanFacePlayerSouth
     ApplyMovement LOCALID_RIVAL, Route201_Movement_RivalFaceWest

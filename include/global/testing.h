@@ -14,9 +14,9 @@ TESTING_SPEED_UP_TEXT
 #define TESTING_SPEED_UP_TEXT
 
 /*
-TESTING_GIVE_PERFECT_STARTERS
+TESTING_GIVE_PERFECT_ENCOUNTERS
     Gives the player perfect starters (IVs, nature, ability, and held item) at the start of the game. Does not affect the starter selection process itself, so it can be used to test starter selection and early game content faster.
 */
-#define TESTING_GIVE_PERFECT_STARTERS
+#define TESTING_GIVE_PERFECT_ENCOUNTERS
 
 #endif
