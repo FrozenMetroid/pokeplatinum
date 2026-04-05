@@ -1872,6 +1872,10 @@
     {
       "id": "pl_msg_00000393_00467",
       "en_US": "a {COLOR 255}Secret Key{COLOR 0}"
+    },
+    {
+      "id": "pl_msg_00000393_00468",
+      "en_US": "a {COLOR 255}Shiny Charm{COLOR 0}"
     }
   ]
 }

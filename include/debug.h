@@ -23,3 +23,9 @@ __attribute__((format(printf, 1, 2))) void EmulatorLog(const char *text, ...);
 #endif
 
 #endif
+
+/*
+DEBUG_SHINY_CHARM
+    Shows debug information about the Shiny Charm when generating a Pokemon
+*/
+// #define DEBUG_SHINY_CHARM

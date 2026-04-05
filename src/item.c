@@ -2833,6 +2833,12 @@ const ItemArchiveIDs sItemArchiveIDs[] = {
         .paletteID = secret_key_NCLR,
         .gen3ID = GBA_ITEM_SECRET_KEY,
     },
+    [ITEM_SHINY_CHARM] = {
+        .dataID = 0x1BE,
+        .iconID = shiny_charm_NCGR,
+        .paletteID = shiny_charm_NCLR,
+        .gen3ID = GBA_ITEM_NONE,
+    },
 };
 
 static const u16 sTMHMMoves[] = {
@@ -3392,6 +3398,11 @@ u8 Item_IsHerbalMedicine(u16 item)
         || item == ITEM_ENERGY_ROOT
         || item == ITEM_HEAL_POWDER
         || item == ITEM_REVIVAL_HERB;
+}
+
+BOOL Item_IsPokeBall(u16 itemId)
+{
+    return (itemId >= ITEM_MASTER_BALL && itemId <= ITEM_CHERISH_BALL);
 }
 
 void *ItemTable_Load(enum HeapID heapID)

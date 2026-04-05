@@ -109,6 +109,19 @@ PokedexRatings_RateNationalDex:
     LoadNationalDexRating VAR_RESULT
     BufferPlayerName 0
     MessageVar VAR_RESULT
+    GoToIfEq VAR_RESULT, PokedexRatings_Text_OakCompleteNationalDex_GiveShinyCharm, PokedexRatings_GiveShinySharm
+    WaitABPress
+    Return
+
+PokedexRatings_GiveShinySharm:
+    AddItem ITEM_SHINY_CHARM, 1, VAR_RESULT
+    BufferPlayerName 0
+    BufferItemName 1, ITEM_SHINY_CHARM
+    PlayFanfare SEQ_FANFA3
+    Message PokedexRatings_Text_OakCompleteNationalDex_ReceiveShinyCharm
+    WaitButton
+    WaitFanfare
+    Message PokedexRatings_Text_OakCompleteNationalDex_AfterShinyCharm
     WaitABPress
     Return
 

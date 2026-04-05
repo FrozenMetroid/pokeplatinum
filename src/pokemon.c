@@ -56,6 +56,8 @@
 
 #include "res/trainers/classes/trbgra.naix"
 
+#include "debug.h"
+
 #define FATEFUL_ENCOUNTER_LOCATION 3002
 
 static const s8 sNatureFlavorAffinities[][5] = {
@@ -419,7 +421,30 @@ static void sub_02073E18(BoxPokemon *boxMon, int monSpecies, int monLevel, int m
             monOTID = (LCRNG_Next() | (LCRNG_Next() << 16));
         } while (Pokemon_InlineIsPersonalityShiny(monOTID, monPersonality));
     } else if (monOTIDSource != OTID_SET) {
-        monOTID = 0;
+        // monOTID = 0;
+        monOTID = TrainerInfo_ID(SaveData_GetTrainerInfo(SaveData_Ptr()));
+        if (Bag_GetItemQuantity(SaveData_GetBag(SaveData_Ptr()), ITEM_SHINY_CHARM, HEAP_ID_SYSTEM) > 0) { // it being in this logic tree makes it so that shiny charm shinies are only generated for wild and gift mons
+        // add additional rolls for shinies with the shiny charm
+            #ifdef DEBUG_SHINY_CHARM
+            EmulatorLog("Have Shiny Charm");
+            #endif 
+            for (int i = 0; i < 2; i++) { // get two extra rolls
+                if (!BoxPokemon_IsShiny(boxMon)) { // don't reroll if you already have a shiny
+                    if (LCRNG_Next() > SHINY_ODDS) {
+                        #ifdef DEBUG_SHINY_CHARM
+                        EmulatorLog("Generating Shiny Personality");
+                        EmulatorLog("Old: %u", monPersonality);
+                        #endif
+                        monPersonality = Pokemon_FindShinyPersonality(monOTID);
+                        #ifdef DEBUG_SHINY_CHARM
+                        EmulatorLog("New: %u", monPersonality);
+                        #endif
+                        BoxPokemon_SetValue(boxMon, MON_DATA_PERSONALITY, &monPersonality);
+                        break;
+                    }
+                }
+            }
+        }
     }
 
     BoxPokemon_SetValue(boxMon, MON_DATA_OT_ID, &monOTID);
@@ -470,6 +495,7 @@ static void sub_02073E18(BoxPokemon *boxMon, int monSpecies, int monLevel, int m
         BoxPokemon_SetValue(boxMon, MON_DATA_SPDEF_IV, &v2);
     }
 
+    // determine ability
     v1 = SpeciesData_GetSpeciesValue(monSpecies, SPECIES_DATA_ABILITY_1);
     v2 = SpeciesData_GetSpeciesValue(monSpecies, SPECIES_DATA_ABILITY_2);
 
@@ -482,10 +508,10 @@ static void sub_02073E18(BoxPokemon *boxMon, int monSpecies, int monLevel, int m
     } else {
         BoxPokemon_SetValue(boxMon, MON_DATA_ABILITY, &v1);
     }
-
+    // determine gender
     v1 = BoxPokemon_GetGender(boxMon);
-
     BoxPokemon_SetValue(boxMon, MON_DATA_GENDER, &v1);
+
     BoxPokemon_SetDefaultMoves(boxMon);
     BoxPokemon_ExitDecryptionContext(boxMon, reencrypt);
 }

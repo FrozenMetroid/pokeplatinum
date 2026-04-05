@@ -359,7 +359,7 @@
       ]
     },
     {
-      "id": "PokedexRatings_Text_OakCompleteNationalDex_Male",
+      "id": "PokedexRatings_Text_OakCompleteNationalDex_GiveShinyCharm",
       "en_US": [
         "{STRVAR_1 3, 0, 0}!\n",
         "You’ve finally done it!\r",
@@ -370,22 +370,36 @@
         "I feel blessed to have become friends\n",
         "with a Trainer like you!\r",
         "Sincerely, I thank you from the\n",
-        "bottom of my heart!"
+        "bottom of my heart!\r",
+        "I have something special\n",
+        "for you...\r"
       ]
     },
     {
-      "id": "PokedexRatings_Text_OakCompleteNationalDex_Female",
+      "id": "PokedexRatings_Text_OakCompleteNationalDex",
       "en_US": [
         "{STRVAR_1 3, 0, 0}!\n",
-        "You’ve finally done it!\r",
-        "You’ve finally completed\n",
-        "the National Pokédex!\r",
-        "This is better than meeting any\n",
-        "exotic Pokémon for the first time!\r",
-        "I feel blessed to have become friends\n",
-        "with a Trainer like you!\r",
+        "You completed the National Pokédex!\r",
+        "My life’s work has been completed\n",
+        "with your help!\r",
         "Sincerely, I thank you from the\n",
-        "bottom of my heart!"
+        "bottom of my heart!\r"
+      ]
+    },
+    {
+      "id": "PokedexRatings_Text_OakCompleteNationalDex_AfterShinyCharm",
+      "en_US": [
+        "Rowan: As a reward for all your hard\n",
+        "work, use this {COLOR 255}Shiny Charm{COLOR 0}!\r",
+        "It should help you find even rarer\n",
+        "Pokémon throughout Sinnoh..."
+      ]
+    },
+    {
+      "id": "PokedexRatings_Text_OakCompleteNationalDex_ReceiveShinyCharm",
+      "en_US": [
+        "{STRVAR_1 3, 0, 0} obtained\n",
+        "the {COLOR 2}{STRVAR_1 8, 1, 0}{COLOR 0}!\r"
       ]
     },
     {

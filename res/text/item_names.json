@@ -1872,6 +1872,10 @@
     {
       "id": "pl_msg_00000392_00467",
       "en_US": "Secret Key"
+    },
+    {
+      "id": "pl_msg_00000392_00468",
+      "en_US": "Shiny Charm"
     }
   ]
 }

@@ -34,6 +34,8 @@
 
 #define BATTLE_FRONTIER_BANLIST_SIZE 18
 
+#define SHINY_ODDS 8
+
 enum FriendshipEvents {
     FRIENDSHIP_EVENT_LEVEL_UP,
     FRIENDSHIP_EVENT_UNK_1,

@@ -134,7 +134,7 @@ u16 Pokedex_GetRatingMessageID_Local(u16 pokemonSeen, u16 reachedEternaCity)
     }
 }
 
-u16 Pokedex_GetRatingMessageID_National(u16 pokemonCaught, u16 playerGender)
+u16 Pokedex_GetRatingMessageID_National(u16 pokemonCaught, u16 playerGender, BOOL hasShinyCharm)
 {
     if (pokemonCaught <= 39) {
         return PokedexRatings_Text_OakPokemonCaughtUnder40;
@@ -211,11 +211,12 @@ u16 Pokedex_GetRatingMessageID_National(u16 pokemonCaught, u16 playerGender)
     if (pokemonCaught <= 481) {
         return PokedexRatings_Text_OakPokemonCaught476;
     }
-
-    if (playerGender) {
-        return PokedexRatings_Text_OakCompleteNationalDex_Female;
-    } else {
-        return PokedexRatings_Text_OakCompleteNationalDex_Male;
+    
+    if (!hasShinyCharm) { // only reaches this point if you have finished the national dex
+        return PokedexRatings_Text_OakCompleteNationalDex_GiveShinyCharm;
+    }
+    else {
+        return PokedexRatings_Text_OakCompleteNationalDex_AfterShinyCharm;
     }
 }
 

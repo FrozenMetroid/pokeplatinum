@@ -3987,7 +3987,11 @@ static BOOL ScrCmd_LoadPokedexRating(ScriptContext *ctx)
         *destVar = Pokedex_GetRatingMessageID_Local(pokemonCount, SystemFlag_HandleFirstArrivalToZone(SaveData_GetVarsFlags(ctx->fieldSystem->saveData), HANDLE_FLAG_CHECK, FIRST_ARRIVAL_ETERNA_CITY));
     } else {
         pokemonCount = Pokedex_NumCaught_National(pokedex);
-        *destVar = Pokedex_GetRatingMessageID_National(pokemonCount, TrainerInfo_Gender(trainerInfo));
+        BOOL hasShinyCharm = FALSE; 
+        if (Bag_GetItemQuantity(SaveData_GetBag(SaveData_Ptr()), ITEM_SHINY_CHARM, HEAP_ID_SYSTEM) > 0) {
+            hasShinyCharm = TRUE;
+        }
+        *destVar = Pokedex_GetRatingMessageID_National(pokemonCount, TrainerInfo_Gender(trainerInfo), hasShinyCharm);
     }
 
     return FALSE;
