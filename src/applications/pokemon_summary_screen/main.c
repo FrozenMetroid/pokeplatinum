@@ -55,6 +55,7 @@
 #include "unk_02094EDC.h"
 #include "vars_flags.h"
 #include "vram_transfer.h"
+#include "senate_features.h"
 
 #include "constdata/const_020F410C.h"
 #include "res/graphics/pokemon_summary_screen/pl_pst_gra.naix"
@@ -812,12 +813,14 @@ static int HandleInput_SelectMove(PokemonSummaryScreen *summaryScreen)
         Sound_PlayEffect(SEQ_SE_DP_DECIDE);
 
         if (summaryScreen->cursor != LEARNED_MOVES_MAX) {
+            #ifndef REMOVABLE_HMS
             if (Item_IsHMMove(summaryScreen->monData.moves[summaryScreen->cursor]) == TRUE && summaryScreen->data->move != MOVE_NONE) {
                 Sprite_SetDrawFlag2(summaryScreen->sprites[SUMMARY_SPRITE_MOVE_CATEGORY_ICON], FALSE);
                 DrawEmptyHearts(summaryScreen);
                 PokemonSummaryScreen_PrintHMMovesCantBeForgotten(summaryScreen);
                 return SUMMARY_STATE_WAIT_HM_MSG_INPUT;
             }
+            #endif
         }
 
         summaryScreen->data->selectedMoveSlot = summaryScreen->cursor;

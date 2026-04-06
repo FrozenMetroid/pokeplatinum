@@ -44,6 +44,8 @@
 
 #include "res/text/bank/battle_party.h"
 
+#include "senate_features.h"
+
 #define TASK_STATE_INITIALIZE                          0
 #define TASK_STATE_PARTY_POKEMON_SCREEN                1
 #define TASK_STATE_SELECT_POKEMON_SCREEN               2
@@ -1731,7 +1733,13 @@ static BOOL CheckSelectedMoveIsHM(BattleParty *battleParty)
         move = battleParty->partyPokemon[battleParty->context->selectedPartyIndex].moves[battleParty->context->selectedMoveSlot].move;
     }
 
+    #ifndef REMOVABLE_HMS 
+    // if you do not have removable HMs, then you can return TRUE here and it will print that you can't remove the move
     return Item_IsHMMove(move);
+    #else
+    // always return FALSE if you have REMOVABLE_HMs to tell further instructions that the move being an HM doesn't matter, delete it anyway
+    return FALSE;
+    #endif
 }
 
 static void ClearMoveStats(BattleParty *battleParty)

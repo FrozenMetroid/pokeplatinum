@@ -69,7 +69,8 @@ BOOL ScrCmd_GetItemQuantity(ScriptContext *ctx)
 
 BOOL ScrCmd_IsItemTMHM(ScriptContext *ctx)
 {
-    FieldSystem *fieldSystem = ctx->fieldSystem;
+    // unused, why is this here
+    // FieldSystem *fieldSystem = ctx->fieldSystem;
     u16 item = ScriptContext_GetVar(ctx);
     u16 *destVar = ScriptContext_GetVarPointer(ctx);
 

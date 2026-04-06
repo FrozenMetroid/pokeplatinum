@@ -123,4 +123,7 @@ _0006:
     SetFlag FLAG_UNK_0x01E3
     SetFlag FLAG_UNK_0x02C5
     SetFlag FLAG_UNK_0x02C7
+    .ifdef DEBUG_GIVE_SHINY_CHARM_FROM_START
+    AddItem ITEM_SHINY_CHARM, 1, VAR_RESULT
+    .endif
     End

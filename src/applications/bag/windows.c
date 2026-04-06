@@ -31,6 +31,8 @@
 #include "res/graphics/bag/bag_graphics.naix"
 #include "res/text/bank/bag.h"
 
+#include "senate_features.h"
+
 #define ITEM_LIST_WINDOW_WIDTH         17
 #define ITEM_LIST_WINDOW_HEIGHT        TEXT_LINES_TILES(BAG_UI_NUM_VISIBLE_ITEMS)
 #define ITEM_DESCRIPTION_WINDOW_WIDTH  (HW_LCD_WIDTH / TILE_WIDTH_PIXELS)
@@ -329,7 +331,9 @@ void BagUI_PrintTMHMNumber(BagController *controller, BagItem *itemSlot, u32 yOf
     if (item < ITEM_HM01) {
         item = item - ITEM_TM01 + 1;
         FontSpecialChars_DrawPartyScreenText(controller->specialChars, SPECIAL_CHAR_NUMBER, item, 2, PADDING_MODE_ZEROES, &controller->windows[BAG_UI_WINDOW_ITEM_LIST], 0, yOffset + 5);
+        #ifndef REMOVABLE_HMS
         BagUI_PrintItemCount(controller, itemSlot->quantity, yOffset, TEXT_COLOR(1, 2, 0));
+        #endif
     } else {
         item = item - ITEM_HM01 + 1;
         FontSpecialChars_DrawPartyScreenHPText(controller->specialChars, item, 2, PADDING_MODE_SPACES, &controller->windows[BAG_UI_WINDOW_ITEM_LIST], 16, yOffset + 5);

@@ -29,3 +29,10 @@ DEBUG_SHINY_CHARM
     Shows debug information about the Shiny Charm when generating a Pokemon
 */
 // #define DEBUG_SHINY_CHARM
+
+/*
+DEBUG_GIVE_SHINY_CHARM_FROM_START
+    Gives you a Shiny Charm at the start of the game,
+    can also just be used for fun
+*/
+#define DEBUG_GIVE_SHINY_CHARM_FROM_START
