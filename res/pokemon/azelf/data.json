@@ -1,10 +1,10 @@
 {
     "base_stats": {
-        "hp": 75,
-        "attack": 125,
+        "hp": 90,
+        "attack": 130,
         "defense": 70,
-        "speed": 115,
-        "special_attack": 125,
+        "speed": 120,
+        "special_attack": 130,
         "special_defense": 70
     },
     "types": [ "TYPE_PSYCHIC", "TYPE_PSYCHIC" ],
@@ -34,18 +34,21 @@
     "icon_palette": 0,
     "learnset": {
         "by_level": [
-            [ 1, "MOVE_REST" ],
-            [ 1, "MOVE_CONFUSION" ],
-            [ 6, "MOVE_IMPRISON" ],
-            [ 16, "MOVE_DETECT" ],
-            [ 21, "MOVE_SWIFT" ],
-            [ 31, "MOVE_UPROAR" ],
-            [ 36, "MOVE_FUTURE_SIGHT" ],
-            [ 46, "MOVE_NASTY_PLOT" ],
-            [ 51, "MOVE_EXTRASENSORY" ],
-            [ 61, "MOVE_LAST_RESORT" ],
-            [ 66, "MOVE_NATURAL_GIFT" ],
-            [ 76, "MOVE_EXPLOSION" ]
+            [1, "MOVE_CONFUSION"],
+            [1, "MOVE_REST"],
+            [6, "MOVE_IMPRISON"],
+            [16, "MOVE_DETECT"],
+            [20, "MOVE_SWIFT"],
+            [24, "MOVE_EXTRASENSORY"],
+            [28, "MOVE_UPROAR"],
+            [32, "MOVE_LIGHT_SCREEN"],
+            [32, "MOVE_REFLECT"],
+            [36, "MOVE_FUTURE_SIGHT"],
+            [46, "MOVE_NASTY_PLOT"],
+            [50, "MOVE_PSYCHIC"],
+            [61, "MOVE_LAST_RESORT"],
+            [66, "MOVE_NATURAL_GIFT"],
+            [76, "MOVE_EXPLOSION"]
         ],
         "by_tm": [
             "TM03",

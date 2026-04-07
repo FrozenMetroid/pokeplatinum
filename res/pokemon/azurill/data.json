@@ -1,11 +1,11 @@
 {
     "base_stats": {
-        "hp": 50,
-        "attack": 20,
-        "defense": 40,
+        "hp": 60,
+        "attack": 30,
+        "defense": 45,
         "speed": 20,
-        "special_attack": 20,
-        "special_defense": 40
+        "special_attack": 40,
+        "special_defense": 45
     },
     "types": [ "TYPE_NORMAL", "TYPE_NORMAL" ],
     "catch_rate": 150,
@@ -34,12 +34,16 @@
     "icon_palette": 2,
     "learnset": {
         "by_level": [
-            [ 1, "MOVE_SPLASH" ],
-            [ 2, "MOVE_CHARM" ],
-            [ 7, "MOVE_TAIL_WHIP" ],
-            [ 10, "MOVE_BUBBLE" ],
-            [ 15, "MOVE_SLAM" ],
-            [ 18, "MOVE_WATER_GUN" ]
+            [1, "MOVE_TACKLE"],
+            [1, "MOVE_SPLASH"],
+            [1, "MOVE_FAKE_TEARS"],
+            [3, "MOVE_CHARM"],
+            [5, "MOVE_TAIL_WHIP"],
+            [7, "MOVE_BUBBLE"],
+            [11, "MOVE_SING"],
+            [15, "MOVE_WATER_GUN"],
+            [18, "MOVE_SLAM"],
+            [21, "MOVE_BUBBLE_BEAM"]
         ],
         "by_tm": [
             "TM03",

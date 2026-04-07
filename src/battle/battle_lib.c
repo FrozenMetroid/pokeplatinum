@@ -44,12 +44,18 @@
 #include "unk_020366A0.h"
 #include "unk_0208C098.h"
 
+#include "senate_features.h"
+
 #include "res/battle/scripts/sub_seq.naix"
 #include "res/text/bank/battle_strings.h"
 
 #define TRMSG_ACTIVE_BATTLER_HALF_HP_FLAG 2
 #define TRMSG_LAST_BATTLER_FLAG           3
 #define TRMSG_LAST_BATTLER_HALF_HP_FLAG   4
+
+#define BATTLER_ALLY(client) (client ^ 2)
+#define BATTLER_OPPONENT(client) (client ^ 1)
+#define BATTLER_ACROSS(client) (client ^ 3)
 
 static BOOL BasicTypeMulApplies(BattleContext *battleCtx, int attacker, int defender, int chartEntry);
 static int MapSideEffectToSubscript(BattleContext *battleCtx, enum BattleSideEffectType type, u32 effect);
@@ -64,6 +70,7 @@ static void BattleAI_ClearKnownItem(BattleContext *battleCtx, u8 battler);
 static int ChooseTraceTarget(BattleSystem *battleSys, BattleContext *battleCtx, int defender1, int defender2);
 static BOOL MoveCannotTriggerAnticipation(BattleContext *battleCtx, int move);
 static int CalcMoveType(BattleSystem *battleSys, BattleContext *battleCtx, int item, int move);
+static BOOL IntimidateCheckHelper(BattleContext *battleCtx, u32 client);
 
 static const Fraction sStatStageBoosts[];
 
@@ -1760,31 +1767,35 @@ void BattleSystem_CheckRedirectionAbilities(BattleSystem *battleSys, BattleConte
             if (Battler_Ability(battleCtx, battler) == ABILITY_LIGHTNING_ROD
                 && battleCtx->battleMons[battler].curHP
                 && attacker != battler) {
+                battleCtx->selfTurnFlags[battler].lightningRodActivated = TRUE;
                 break;
             }
         }
 
         if (battler != battleCtx->defender) {
-            battleCtx->selfTurnFlags[battler].lightningRodActivated = TRUE;
+            battleCtx->selfTurnFlags[battler].lightningRodActivated = FALSE;
             battleCtx->defender = battler;
         }
-    } else if (moveType == TYPE_WATER
+    } else if (moveType == TYPE_WATER) {
+        if (moveType == TYPE_ELECTRIC
         && (MOVE_DATA(move).range == RANGE_SINGLE_TARGET || MOVE_DATA(move).range == RANGE_RANDOM_OPPONENT)
         && (battleCtx->battleStatusMask & SYSCTL_FIRST_OF_MULTI_TURN) == FALSE
         && BattleSystem_CountAbility(battleSys, battleCtx, COUNT_ALIVE_BATTLERS_EXCEPT_ME, attacker, ABILITY_STORM_DRAIN)) {
-        for (int i = 0; i < maxBattlers; i++) {
-            battler = battleCtx->monSpeedOrder[i];
-
-            if (Battler_Ability(battleCtx, battler) == ABILITY_STORM_DRAIN
-                && battleCtx->battleMons[battler].curHP
-                && attacker != battler) {
-                break;
+            for (int i = 0; i < maxBattlers; i++) {
+                battler = battleCtx->monSpeedOrder[i];
+            
+                if (Battler_Ability(battleCtx, battler) == ABILITY_STORM_DRAIN
+                    && battleCtx->battleMons[battler].curHP
+                    && attacker != battler) {
+                    battleCtx->selfTurnFlags[battler].stormDrainActivated = TRUE;
+                    break;
+                }
             }
-        }
-
-        if (battler != battleCtx->defender) {
-            battleCtx->selfTurnFlags[battler].stormDrainActivated = TRUE;
-            battleCtx->defender = battler;
+            
+            if (battler != battleCtx->defender) {
+                battleCtx->selfTurnFlags[battler].stormDrainActivated = FALSE;
+                battleCtx->defender = battler;
+            }
         }
     }
 }
@@ -1792,7 +1803,7 @@ void BattleSystem_CheckRedirectionAbilities(BattleSystem *battleSys, BattleConte
 BOOL BattleSystem_TriggerRedirectionAbilities(BattleSystem *battleSys, BattleContext *battleCtx)
 {
     BOOL result = FALSE;
-
+    EmulatorLog("Checking Trigger RedirectionAbilities");
     if ((battleCtx->moveStatusFlags & MOVE_STATUS_NO_EFFECTS) == FALSE && DEFENDER_SELF_TURN_FLAGS.lightningRodActivated) {
         battleCtx->selfTurnFlags[battleCtx->defender].lightningRodActivated = FALSE;
 
@@ -1804,6 +1815,7 @@ BOOL BattleSystem_TriggerRedirectionAbilities(BattleSystem *battleSys, BattleCon
     }
 
     if ((battleCtx->moveStatusFlags & MOVE_STATUS_NO_EFFECTS) == FALSE && DEFENDER_SELF_TURN_FLAGS.stormDrainActivated) {
+        EmulatorLog("Storm Drain Activated");
         battleCtx->selfTurnFlags[battleCtx->defender].stormDrainActivated = FALSE;
 
         LOAD_SUBSEQ(subscript_lightning_rod_redirected);
@@ -3543,6 +3555,20 @@ int BattleSystem_TriggerImmunityAbility(BattleContext *battleCtx, int attacker, 
         subscript = subscript_ability_restores_hp;
     }
 
+    if (Battler_IgnorableAbility(battleCtx, attacker, defender, ABILITY_STORM_DRAIN) == TRUE
+        && moveType == TYPE_WATER
+        && (battleCtx->battleStatusMask & SYSCTL_FIRST_OF_MULTI_TURN) == FALSE
+        && CURRENT_MOVE_DATA.power) {
+        subscript = subscript_null; // ends the move, all of this occurs after the special attack raise
+    }
+
+    if (Battler_IgnorableAbility(battleCtx, attacker, defender, ABILITY_LIGHTNING_ROD) == TRUE
+        && moveType == TYPE_ELECTRIC
+        && (battleCtx->battleStatusMask & SYSCTL_FIRST_OF_MULTI_TURN) == FALSE
+        && CURRENT_MOVE_DATA.power) {
+        subscript = subscript_null; // ends the move, all of this occurs after the special attack raise
+    }
+
     return subscript;
 }
 
@@ -3795,7 +3821,19 @@ int BattleSystem_TriggerEffectOnSwitch(BattleSystem *battleSys, BattleContext *b
         case SWITCH_IN_CHECK_STATE_INTIMIDATE:
             for (i = 0; i < maxBattlers; i++) {
                 battler = battleCtx->monSpeedOrder[i];
-
+                #ifdef BATTLE_UPDATE_INTIMIDATE_INTERACTIONS
+                if (battleCtx->battleMons[battler].intimidateAnnounced == FALSE
+                    && battleCtx->battleMons[battler].curHP
+                    && Battler_Ability(battleCtx, battler) == ABILITY_INTIMIDATE) {
+                    battleCtx->battleMons[battler].intimidateAnnounced = TRUE;
+                    if (IntimidateCheckHelper(battleCtx, battler)) { // only apply if they don't have an ability that blocks Intimidate
+                        battleCtx->msgBattlerTemp = battler;
+                        subscript = subscript_intimidate;
+                        result = TRUE;
+                        break;
+                    }
+                }
+                #else
                 if (battleCtx->battleMons[battler].intimidateAnnounced == FALSE
                     && battleCtx->battleMons[battler].curHP
                     && Battler_Ability(battleCtx, battler) == ABILITY_INTIMIDATE) {
@@ -3805,6 +3843,7 @@ int BattleSystem_TriggerEffectOnSwitch(BattleSystem *battleSys, BattleContext *b
                     result = TRUE;
                     break;
                 }
+                #endif
             }
 
             if (i == maxBattlers) {
@@ -4358,6 +4397,9 @@ BOOL BattleSystem_TriggerAbilityOnHit(BattleSystem *battleSys, BattleContext *ba
     case ABILITY_AFTERMATH:
         if (battleCtx->defender == battleCtx->faintedMon
             && Battler_Ability(battleCtx, battleCtx->attacker) != ABILITY_MAGIC_GUARD
+            #ifdef BATTLE_BUFF_DAMP
+            && Battler_Ability(battleCtx, battleCtx->attacker) != ABILITY_DAMP
+            #endif
             && BattleSystem_CountAbility(battleSys, battleCtx, COUNT_ALIVE_BATTLERS, 0, ABILITY_DAMP) == 0
             && (battleCtx->battleStatusMask2 & SYSCTL_UTURN_ACTIVE) == FALSE
             && ATTACKING_MON.curHP
@@ -6817,6 +6859,7 @@ int BattleSystem_CalcMoveDamage(BattleSystem *battleSys,
         movePower /= 2;
     }
 
+    #ifndef BATTLE_BUFF_PINCH_ABILITIES
     if (moveType == TYPE_GRASS
         && attackerParams.ability == ABILITY_OVERGROW
         && attackerParams.curHP <= (attackerParams.maxHP / 3)) {
@@ -6837,6 +6880,20 @@ int BattleSystem_CalcMoveDamage(BattleSystem *battleSys,
         && attackerParams.curHP <= (attackerParams.maxHP / 3)) {
         movePower = movePower * 150 / 100;
     }
+    #else
+    if (moveType == TYPE_GRASS && attackerParams.ability == ABILITY_OVERGROW) {
+        movePower = movePower * 130 / 100;
+    }
+    if (moveType == TYPE_FIRE && attackerParams.ability == ABILITY_BLAZE) {
+        movePower = movePower * 130 / 100;
+    }
+    if (moveType == TYPE_WATER && attackerParams.ability == ABILITY_TORRENT) {
+        movePower = movePower * 130 / 100;
+    }
+    if (moveType == TYPE_BUG && attackerParams.ability == ABILITY_SWARM) {
+        movePower = movePower * 130 / 100;
+    }
+    #endif
 
     if (moveType == TYPE_FIRE
         && Battler_IgnorableAbility(battleCtx, attacker, defender, ABILITY_HEATPROOF) == TRUE) {
@@ -6927,6 +6984,13 @@ int BattleSystem_CalcMoveDamage(BattleSystem *battleSys,
             && (defenderParams.type1 == TYPE_ROCK || defenderParams.type2 == TYPE_ROCK)) {
             spDefenseStat = spDefenseStat * 15 / 10;
         }
+
+        #ifdef BATTLE_HAIL_DEFENSE_BOOST
+        if ((fieldConditions & FIELD_CONDITION_HAILING)
+            && (defenderParams.type1 == TYPE_ICE || defenderParams.type2 == TYPE_ICE)) {
+            defenseStat = defenseStat * 15 / 10;
+        }
+        #endif
 
         if ((fieldConditions & FIELD_CONDITION_SUNNY)
             && BattleSystem_CountAbility(battleSys, battleCtx, COUNT_ALIVE_BATTLERS_OUR_SIDE, attacker, ABILITY_FLOWER_GIFT)) {
@@ -8203,3 +8267,32 @@ int Move_CalcVariableType(BattleSystem *battleSys, BattleContext *battleCtx, Pok
 
     return type;
 }
+
+#ifdef BATTLE_UPDATE_INTIMIDATE_INTERACTIONS
+static BOOL IntimidateCheckHelper(struct BattleContext *battleCtx, u32 client)
+{
+    u32 clientCheck;
+    for (int i = 0; i < 2; i++)
+    {
+        clientCheck = i ? BATTLER_ACROSS(client) : BATTLER_OPPONENT(client);
+        if (battleCtx->battleMons[clientCheck].curHP
+         && battleCtx->battleMons[clientCheck].statBoosts[BATTLE_STAT_ATTACK] > 0)
+        {
+            u32 ability = Battler_Ability(battleCtx, clientCheck);
+            switch (ability)
+            {
+                // should maybe move these to the battle script like clear body
+            case ABILITY_INNER_FOCUS:
+            case ABILITY_SCRAPPY:
+            case ABILITY_OBLIVIOUS:
+            case ABILITY_OWN_TEMPO:
+            // case ABILITY_FULL_METAL_BODY:
+                break;
+            default: // intimidate can affect at least one opposing battler
+                return TRUE;
+            }
+        }
+    }
+    return FALSE; // neither opposing battler has an ability that intimidate can activate on
+}
+#endif 

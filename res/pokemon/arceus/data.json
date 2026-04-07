@@ -47,7 +47,10 @@
             [ 70, "MOVE_RECOVER" ],
             [ 80, "MOVE_HYPER_BEAM" ],
             [ 90, "MOVE_PERISH_SONG" ],
-            [ 100, "MOVE_JUDGMENT" ]
+            [ 100, "MOVE_JUDGMENT" ],
+            [ 100, "MOVE_SHADOW_FORCE" ],
+            [ 100, "MOVE_ROAR_OF_TIME" ],
+            [ 100, "MOVE_SPACIAL_REND" ]
         ],
         "by_tm": [
             "TM02",

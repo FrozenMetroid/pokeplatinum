@@ -1,11 +1,11 @@
 {
     "base_stats": {
         "hp": 50,
-        "attack": 70,
+        "attack": 90,
         "defense": 100,
         "speed": 30,
-        "special_attack": 40,
-        "special_defense": 40
+        "special_attack": 45,
+        "special_defense": 45
     },
     "types": [ "TYPE_STEEL", "TYPE_ROCK" ],
     "catch_rate": 180,
@@ -34,20 +34,24 @@
     "icon_palette": 2,
     "learnset": {
         "by_level": [
-            [ 1, "MOVE_TACKLE" ],
-            [ 4, "MOVE_HARDEN" ],
-            [ 8, "MOVE_MUD_SLAP" ],
-            [ 11, "MOVE_HEADBUTT" ],
-            [ 15, "MOVE_METAL_CLAW" ],
-            [ 18, "MOVE_IRON_DEFENSE" ],
-            [ 22, "MOVE_ROAR" ],
-            [ 25, "MOVE_TAKE_DOWN" ],
-            [ 29, "MOVE_IRON_HEAD" ],
-            [ 32, "MOVE_PROTECT" ],
-            [ 36, "MOVE_METAL_SOUND" ],
-            [ 39, "MOVE_IRON_TAIL" ],
-            [ 43, "MOVE_DOUBLE_EDGE" ],
-            [ 46, "MOVE_METAL_BURST" ]
+            [1, "MOVE_TACKLE"],
+            [1, "MOVE_METAL_CLAW"],
+            [4, "MOVE_HARDEN"],
+            [8, "MOVE_MUD_SLAP"],
+            [11, "MOVE_HEADBUTT"],
+            [15, "MOVE_ROCK_TOMB"],
+            [18, "MOVE_IRON_DEFENSE"],
+            [21, "MOVE_ROAR"],
+            [24, "MOVE_TAKE_DOWN"],
+            [28, "MOVE_IRON_HEAD"],
+            [31, "MOVE_ROCK_SLIDE"],
+            [34, "MOVE_PROTECT"],
+            [37, "MOVE_METAL_SOUND"],
+            [40, "MOVE_IRON_TAIL"],
+            [43, "MOVE_DOUBLE_EDGE"],
+            [46, "MOVE_METAL_BURST"],
+            [50, "MOVE_STONE_EDGE"],
+            [55, "MOVE_HEAD_SMASH"]
         ],
         "by_tm": [
             "TM03",
@@ -114,7 +118,7 @@
     "evolutions": [
         [
             "EVO_LEVEL",
-            32,
+            30,
             "SPECIES_LAIRON"
         ]
     ],
