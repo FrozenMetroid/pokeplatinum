@@ -10,6 +10,7 @@
     ScriptEntry SunyshoreMarket_PokefanM
     ScriptEntry SunyshoreMarket_Dummy
     ScriptEntry SunyshoreMarket_BattleGirl
+    ScriptEntry SunyshoreMarket_StoneSeller
 
 SunyshoreMarket_Dummy:
     End
@@ -138,6 +139,7 @@ SunyshoreMarket_PokefanM_FirstWeekHalfMessage:
 
 SunyshoreMarket_PokefanM_SecondWeekHalfMessage:
     Message SunyshoreMarket_Text_CameThroughWithDifferentSeals
+_EndDialogue:
     WaitButton
     CloseMessage
     ReleaseAll
@@ -146,5 +148,21 @@ SunyshoreMarket_PokefanM_SecondWeekHalfMessage:
 SunyshoreMarket_BattleGirl:
     NPCMessage SunyshoreMarket_Text_HugeFanOfWiFiPlaza
     End
+
+SunyshoreMarket_StoneSeller:
+    PlaySE SEQ_SE_CONFIRM
+    LockAll
+    FacePlayer
+    Message SunyshoreMarket_Text_StoneSellerIntro
+    ShowYesNoMenu VAR_RESULT
+    GoToIfEq VAR_RESULT, MENU_NO, SunyshoreMarket_DeclinedStoneSeller
+    CloseMessageWithoutErasing
+    PokeMartSpecialties MART_SPECIALTIES_ID_SUNYSHORE_MARKET_STONES
+    ReleaseAll
+    End
+
+SunyshoreMarket_DeclinedStoneSeller:
+    Message SunyshoreMarket_Text_StoneSellerDeclined
+    GoTo _EndDialogue
 
     .balign 4, 0

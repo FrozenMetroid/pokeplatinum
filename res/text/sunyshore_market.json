@@ -97,6 +97,23 @@
         "I’m a huge fan of the Wi-Fi Plaza, so\n",
         "I’m promoting it on my own."
       ]
+    },
+    {
+      "id": "SunyshoreMarket_Text_StoneSellerIntro",
+      "en_US": [
+        "Why, hello there!\n",
+        "You have a cool glint in your\f",
+        "eyes, just like my stones!\r",
+        "Could I interest you in\n",
+        "a valuable stone I came across?"
+      ]
+    },
+    {
+      "id": "SunyshoreMarket_Text_StoneSellerDeclined",
+      "en_US": [
+        "Well... I suppose I was\n",
+        "wrong about you then."
+      ]
     }
   ]
 }
