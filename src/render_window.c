@@ -96,7 +96,7 @@ static PokemonPreview *CreatePokemonPreviewTask(BgConfig *bgConfig, u8 bgLayer, 
 static void sub_0200ED50(PokemonPreview *preview, u32 heapID);
 static void LoadPokemonPreviewResources(PokemonPreview *preview);
 static void CreatePokemonPreviewSprite(PokemonPreview *preview, u8 x, u8 y);
-static void LoadAndDrawPokemonPreviewSprite(SpriteResourceManager *param0, u16 species, u8 gender);
+static void LoadAndDrawPokemonPreviewSprite(SpriteResourceManager *param0, u16 species, u8 gender, u8 form);
 static void LoadAndDrawPokemonPreviewSpriteFromStruct(SpriteResourceManager *param0, Pokemon *mon);
 static void DrawPokemonPreviewSprite(SpriteResourceManager *param0, PokemonSpriteTemplate *spriteTemplate);
 static void DrawPokemonPreviewWindow(PokemonPreview *preview, u8 palette, u16 tile);
@@ -733,14 +733,14 @@ void DestroyWaitDialTaskOnly(void *taskData)
     dial->deleteMode = DIAL_DELETE_MODE_DESTROY;
 }
 
-u8 *DrawPokemonPreview(BgConfig *bgConfig, u8 bgLayer, u8 x, u8 y, u8 palette, u16 baseTile, u16 species, u8 gender, enum HeapID heapID)
+u8 *DrawPokemonPreview(BgConfig *bgConfig, u8 bgLayer, u8 x, u8 y, u8 palette, u16 baseTile, u16 species, u8 gender, u8 form, enum HeapID heapID)
 {
     PokemonPreview *preview = CreatePokemonPreviewTask(bgConfig, bgLayer, x, y, heapID);
 
     sub_0200ED50(preview, heapID);
     LoadPokemonPreviewResources(preview);
     CreatePokemonPreviewSprite(preview, x, y);
-    LoadAndDrawPokemonPreviewSprite(&preview->spriteManager, species, gender);
+    LoadAndDrawPokemonPreviewSprite(&preview->spriteManager, species, gender, form);
     DrawPokemonPreviewWindow(preview, palette, baseTile);
     Bg_CopyTilemapBufferToVRAM(bgConfig, bgLayer);
 
@@ -847,12 +847,12 @@ static void CreatePokemonPreviewSprite(PokemonPreview *preview, u8 x, u8 y)
     GXLayers_EngineBToggleLayers(GX_PLANEMASK_OBJ, TRUE);
 }
 
-static void LoadAndDrawPokemonPreviewSprite(SpriteResourceManager *param0, u16 species, u8 gender)
+static void LoadAndDrawPokemonPreviewSprite(SpriteResourceManager *param0, u16 species, u8 gender, u8 form)
 {
     void *buf = PokemonSpriteManager_New(param0->heapID);
 
     PokemonSpriteTemplate sprite;
-    BuildPokemonSpriteTemplate(&sprite, species, gender, FACE_FRONT, FALSE, NULL, NULL);
+    BuildPokemonSpriteTemplate(&sprite, species, gender, FACE_FRONT, FALSE, form, NULL);
     DrawPokemonPreviewSprite(param0, &sprite);
     PokemonSpriteManager_Free(buf);
 }

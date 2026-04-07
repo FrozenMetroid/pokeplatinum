@@ -303,7 +303,7 @@ PokemonMansionOffice_ReadBook:
     GoToIfSet FLAG_SKIP_POKEMON_MANSION_OFFICE_BOOK_SEEN_MANAPHY_CHECK, PokemonMansionOffice_PutBookBack
     CheckHasSeenSpecies SPECIES_MANAPHY, VAR_RESULT
     GoToIfEq VAR_RESULT, TRUE, PokemonMansionOffice_AlreadySawManaphy
-    DrawPokemonPreview SPECIES_MANAPHY, GENDER_MALE
+    DrawPokemonPreview SPECIES_MANAPHY, GENDER_MALE, 0
     WaitABPress
     RemovePokemonPreview
     SetFlag FLAG_SKIP_POKEMON_MANSION_OFFICE_BOOK_SEEN_MANAPHY_CHECK

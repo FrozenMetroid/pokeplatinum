@@ -1557,6 +1557,7 @@ void BattleSystem_DexFlagSeen(BattleSystem *battleSys, int battler)
     int selectedSlot = BattleContext_Get(battleSys, battleSys->battleCtx, BATTLECTX_SELECTED_PARTY_SLOT, battler);
     Pokemon *mon = BattleSystem_GetPartyPokemon(battleSys, battler, selectedSlot);
 
+    #ifndef SEENPOKEMON_FRONTIER
     if ((battleSys->battleType & (BATTLE_TYPE_LINK | BATTLE_TYPE_FRONTIER)) == FALSE) {
         if ((battlerType & BATTLER_THEM)
             || battleSys->battleType == BATTLE_TYPE_AI_PARTNER
@@ -1564,6 +1565,13 @@ void BattleSystem_DexFlagSeen(BattleSystem *battleSys, int battler)
             Pokedex_Encounter(battleSys->pokedex, mon);
         }
     }
+    #else // let Pokemon you encounter in the Frontier be added as seen in the dex
+    if ((battlerType & BATTLER_THEM)
+        || battleSys->battleType == BATTLE_TYPE_AI_PARTNER
+        || battleSys->battleType == (BATTLE_TYPE_TRAINER_DOUBLES | BATTLE_TYPE_2vs2 | BATTLE_TYPE_AI)) {
+        Pokedex_Encounter(battleSys->pokedex, mon);
+    }
+    #endif
 
     if (((battlerType & BATTLER_THEM) == FALSE)
         && (Pokemon_GetValue(mon, MON_DATA_SPECIES_OR_EGG, NULL) == SPECIES_BURMY)) {

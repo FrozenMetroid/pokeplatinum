@@ -38,6 +38,8 @@ Route202_Youngster:
     End
 
 Route202_ArrowSignpostSandgemTown:
+    SetSpeciesSeen SPECIES_AGGRON, 0, 0
+    SetSpeciesSeen SPECIES_GIRATINA, 1, 0
     ShowArrowSign Route202_Text_Rt202SandgemTown
     End
 

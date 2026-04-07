@@ -393,8 +393,8 @@ _0567:
     ClearFlag FLAG_UNK_0x01C7
     SetFlag FLAG_SPEAR_PILLAR_IS_DISTORTED
     SetVar VAR_UNK_0x40C3, 1
-    SetSpeciesSeen SPECIES_DIALGA
-    SetSpeciesSeen SPECIES_PALKIA
+    SetSpeciesSeen SPECIES_DIALGA, 0, 0
+    SetSpeciesSeen SPECIES_PALKIA, 0, 0
     RestoreCamera
     Warp MAP_HEADER_SPEAR_PILLAR_DISTORTED, 0, 30, 30, 0
     End

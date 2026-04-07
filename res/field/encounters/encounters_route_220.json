@@ -155,17 +155,17 @@
         {
             "level_max": 20,
             "level_min": 15,
-            "species": "SPECIES_MAGIKARP"
+            "species": "SPECIES_FINNEON"
         },
         {
             "level_max": 20,
             "level_min": 15,
-            "species": "SPECIES_FINNEON"
+            "species": "SPECIES_HORSEA"
         },
         {
             "level_max": 25,
             "level_min": 10,
-            "species": "SPECIES_MAGIKARP"
+            "species": "SPECIES_HORSEA"
         },
         {
             "level_max": 35,

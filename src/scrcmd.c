@@ -366,7 +366,7 @@ static BOOL ScrCmd_0A3(ScriptContext *ctx);
 static BOOL ScrCmd_Unused_0A4(ScriptContext *ctx);
 static BOOL ScrCmd_GetCurNetID(ScriptContext *ctx);
 static BOOL ScrCmd_DrawPokemonPreview(ScriptContext *ctx);
-static void FieldSystem_WriteSpeciesSeen(FieldSystem *fieldSystem, u16 param1);
+static void FieldSystem_WriteSpeciesSeen(FieldSystem *fieldSystem, u16 species, u16 form, u16 gender);
 static BOOL ScrCmd_RemovePokemonPreview(ScriptContext *ctx);
 static BOOL ScrCmd_20A(ScriptContext *ctx);
 static BOOL ScrCmd_20B(ScriptContext *ctx);
@@ -2998,10 +2998,11 @@ static BOOL ScrCmd_DrawPokemonPreview(ScriptContext *ctx)
     void **dataPtr = FieldSystem_GetScriptMemberPtr(ctx->fieldSystem, SCRIPT_MANAGER_DATA_PTR);
     u16 species = ScriptContext_GetVar(ctx);
     u16 gender = ScriptContext_GetVar(ctx);
+    u8 form = ScriptContext_GetVar(ctx);
 
     LoadStandardWindowGraphics(ctx->fieldSystem->bgConfig, BG_LAYER_MAIN_3, 1024 - (18 + 12) - 9, 11, 0, HEAP_ID_FIELD1);
-    *dataPtr = DrawPokemonPreview(ctx->fieldSystem->bgConfig, BG_LAYER_MAIN_3, 10, 5, 11, 1024 - (18 + 12) - 9, species, gender, HEAP_ID_FIELD1);
-    FieldSystem_WriteSpeciesSeen(ctx->fieldSystem, species);
+    *dataPtr = DrawPokemonPreview(ctx->fieldSystem->bgConfig, BG_LAYER_MAIN_3, 10, 5, 11, 1024 - (18 + 12) - 9, species, gender, form, HEAP_ID_FIELD1);
+    FieldSystem_WriteSpeciesSeen(ctx->fieldSystem, species, form, gender);
 
     return FALSE;
 }
@@ -3015,7 +3016,7 @@ static BOOL ScrCmd_DrawPokemonPreviewFromPartySlot(ScriptContext *ctx)
     LoadStandardWindowGraphics(ctx->fieldSystem->bgConfig, BG_LAYER_MAIN_3, 1024 - (18 + 12) - 9, 11, 0, HEAP_ID_FIELD1);
 
     *dataPtr = DrawPokemonPreviewFromStruct(ctx->fieldSystem->bgConfig, BG_LAYER_MAIN_3, 10, 5, 11, 1024 - (18 + 12) - 9, mon, HEAP_ID_FIELD1);
-    FieldSystem_WriteSpeciesSeen(ctx->fieldSystem, Pokemon_GetValue(mon, MON_DATA_SPECIES, NULL));
+    FieldSystem_WriteSpeciesSeen(ctx->fieldSystem, Pokemon_GetValue(mon, MON_DATA_SPECIES, NULL), Pokemon_GetValue(mon, MON_DATA_FORM, NULL), Pokemon_GetValue(mon, MON_DATA_GENDER, NULL));
 
     return FALSE;
 }
@@ -5642,24 +5643,29 @@ static BOOL ScrCmd_PlayPCShutDownAnimation(ScriptContext *ctx)
     return FALSE;
 }
 
-static void FieldSystem_WriteSpeciesSeen(FieldSystem *fieldSystem, u16 species)
+static void FieldSystem_WriteSpeciesSeen(FieldSystem *fieldSystem, u16 species, u16 form, u16 gender)
 {
     Pokedex *pokedex = SaveData_GetPokedex(fieldSystem->saveData);
     Pokemon *mon = Pokemon_New(HEAP_ID_FIELD3);
 
     Pokemon_Init(mon);
     Pokemon_InitWith(mon, species, 50, INIT_IVS_RANDOM, FALSE, 0, OTID_NOT_SET, 0);
+    Pokemon_SetValue(mon, MON_DATA_FORM, &form);
+    Pokemon_SetValue(mon, MON_DATA_GENDER, &gender);
     Pokedex_Encounter(pokedex, mon);
     Heap_Free(mon);
 
     return;
 }
 
-static BOOL ScrCmd_SetSpeciesSeen(ScriptContext *ctx)
+static BOOL ScrCmd_SetSpeciesSeen(ScriptContext *ctx) // expanded to work with form and gender
 {
     u16 species = ScriptContext_GetVar(ctx);
+    u16 form = ScriptContext_GetVar(ctx);
+    u16 gender = ScriptContext_GetVar(ctx);
 
-    FieldSystem_WriteSpeciesSeen(ctx->fieldSystem, species);
+
+    FieldSystem_WriteSpeciesSeen(ctx->fieldSystem, species, form, gender);
     return FALSE;
 }
 

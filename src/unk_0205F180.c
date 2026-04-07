@@ -323,48 +323,54 @@ BOOL IsMovementRunning(u16 code) {
     return (code >= MOVEMENT_RunNorth && code <= MOVEMENT_RunEast);
 }
 
+/*
+BUG:
+    Small bug, but it won't play a sound effect
+    when moving to a tile of a different direction
+    you're currently facing.
+    E.g. if I am standing still and facing right and 
+    I move up, it won't play a sound effect.
+*/
 static void PlayerAvatar_PlayWalkSE(PlayerAvatar *playerAvatar)
 {
     int moveState = Player_MoveState(playerAvatar);
     int avatarState = PlayerAvatar_MoveState(playerAvatar);
-    u16 seq = 0xFFFF;
+    u8 playerState = PlayerAvatar_GetPlayerState(playerAvatar);
     if (moveState == PLAYER_MOVE_STATE_NONE) {
         playerAvatar->stepsSE = 0;
     } else {
         playerAvatar->stepsSE = playerAvatar->stepsSE + 1 & 0x01; // alternate between zero and one
     }
-    if (playerAvatar->stepsSE == 0 && avatarState == AVATAR_MOVE_STATE_MOVING ) { // don't play the sound effect in you turn in place
+    if (playerAvatar->stepsSE == 0 && avatarState == AVATAR_MOVE_STATE_MOVING && playerState != PLAYER_STATE_CYCLING && playerState != PLAYER_STATE_SURFING) { // don't play the sound effect in you turn in place
         MapObject *player = Player_MapObject(playerAvatar);
         int code = MapObject_GetMovementAction(player);
         u8 next, now = MapObject_GetCurrTileBehavior(player);
 
         int direction = MovementAction_GetDirFromAction(code);
-        if (direction == -1) {
+        if (direction == -1) { // erroneously passed in a movement code that doesn't have a direction associated with it
             next = now;
         } else {
             next = MapObject_GetTileBehaviorFromDir(player, direction);
         }
-        u8 playerState = PlayerAvatar_GetPlayerState(playerAvatar);
-        if (playerState != PLAYER_STATE_CYCLING && playerState != PLAYER_STATE_SURFING) {
-            BOOL foundUniqueSoundEffect = FALSE;
-            // first check if the tile permission already has a sound
-            for (int i = 0; i < NELEMS(Sound_TileBehaviorFootStepData); i++) {
-                if (Sound_TileBehaviorFootStepData[i].tileBehavior == next || Sound_TileBehaviorFootStepData[i].tileBehavior == now) {
-                    seq = Sound_TileBehaviorFootStepData[i].seq;
-                    foundUniqueSoundEffect = TRUE;
-                    break;
-                }
+        BOOL foundUniqueSoundEffect = FALSE;
+        u16 seq;
+        // first check if the tile permission already has a sound
+        for (int i = 0; i < NELEMS(Sound_TileBehaviorFootStepData); i++) {
+            if (Sound_TileBehaviorFootStepData[i].tileBehavior == next || Sound_TileBehaviorFootStepData[i].tileBehavior == now) {
+                seq = Sound_TileBehaviorFootStepData[i].seq;
+                foundUniqueSoundEffect = TRUE;
+                break;
             }
-            if (!foundUniqueSoundEffect) { // default to these two if there was nothing special above
-                if (IsMovementRunning(code)) {
-                    seq = SEQ_SE_PL_ASHIOTO_RUN;
-                } else {
-                    seq = SEQ_SE_PL_ASHIOTO_WALK;
-                }
-            }
-            Sound_PlayEffect(seq);
-            Sound_ControlFootstepCounter(seq);
         }
+        if (!foundUniqueSoundEffect) { // default to these two if there was nothing special above
+            if (IsMovementRunning(code)) {
+                seq = SEQ_SE_PL_ASHIOTO_RUN;
+            } else {
+                seq = SEQ_SE_PL_ASHIOTO_WALK;
+            }
+        }
+        Sound_PlayEffect(seq);
+        Sound_ControlFootstepCounter(seq);       
     }
     return;
 }

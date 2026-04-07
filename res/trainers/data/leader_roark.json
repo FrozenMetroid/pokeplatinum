@@ -13,26 +13,15 @@
     "double_battle": false,
     "party": [
         {
-            "species": "SPECIES_GEODUDE",
-            "form": 0,
-            "level": 12,
-            "item": null,
-            "moves": [
-                "MOVE_STEALTH_ROCK",
-                "MOVE_ROCK_THROW"
-            ],
-            "iv_scale": 50,
-            "ball_seal": 0
-        },
-        {
-            "species": "SPECIES_ONIX",
+            "species": "SPECIES_ARON",
             "form": 0,
             "level": 12,
             "item": null,
             "moves": [
                 "MOVE_STEALTH_ROCK",
                 "MOVE_ROCK_THROW",
-                "MOVE_SCREECH"
+                "MOVE_TACKLE",
+                "MOVE_METAL_CLAW"
             ],
             "iv_scale": 50,
             "ball_seal": 0
@@ -45,7 +34,8 @@
             "moves": [
                 "MOVE_HEADBUTT",
                 "MOVE_PURSUIT",
-                "MOVE_LEER"
+                "MOVE_STEALTH_ROCK",
+                "MOVE_ROCK_THROW"
             ],
             "iv_scale": 50,
             "ball_seal": 0

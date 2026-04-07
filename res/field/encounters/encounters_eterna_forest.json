@@ -23,23 +23,23 @@
         },
         {
             "level": 12,
-            "species": "SPECIES_BIDOOF"
+            "species": "SPECIES_SHROOMISH"
         },
         {
             "level": 12,
-            "species": "SPECIES_SILCOON"
+            "species": "SPECIES_HOOTHOOT"
         },
         {
             "level": 12,
-            "species": "SPECIES_CASCOON"
+            "species": "SPECIES_WURMPLE"
         },
         {
             "level": 13,
-            "species": "SPECIES_BUNEARY"
+            "species": "SPECIES_BEAUTIFLY"
         },
         {
             "level": 13,
-            "species": "SPECIES_GASTLY"
+            "species": "SPECIES_DUSTOX"
         },
         {
             "level": 14,
@@ -59,8 +59,8 @@
         "SPECIES_BUDEW"
     ],
     "night": [
-        "SPECIES_KRICKETOT",
-        "SPECIES_HOOTHOOT"
+        "SPECIES_MISDREAVUS",
+        "SPECIES_MURKROW"
     ],
     "radar": [
         "SPECIES_NINCADA",

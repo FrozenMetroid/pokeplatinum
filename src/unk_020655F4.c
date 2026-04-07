@@ -339,7 +339,7 @@ int MovementAction_GetDirFromAction(enum MovementAction movementAction)
     const int *const *movementActionCodes = gMovementActionCodes;
 
     while (*movementActionCodes) {
-        dir = DIR_NORTH;
+        dir = DIR_NORTH; // start checking North first, and then increment to check the other three
         const int *movementActions = *movementActionCodes;
 
         do {

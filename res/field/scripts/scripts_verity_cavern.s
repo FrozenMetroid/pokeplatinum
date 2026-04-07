@@ -15,7 +15,7 @@ VerityCavern_Mesprit:
     PlaySE SEQ_SE_CONFIRM
     LockAll
     FacePlayer
-    DrawPokemonPreview SPECIES_MESPRIT, GENDER_MALE
+    DrawPokemonPreview SPECIES_MESPRIT, GENDER_MALE, 0
     WaitABPress
     RemovePokemonPreview
     PlayCry SPECIES_MESPRIT

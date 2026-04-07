@@ -14,7 +14,7 @@ FullmoonIslandForest_Cresselia:
     PlaySE SEQ_SE_CONFIRM
     LockAll
     FacePlayer
-    DrawPokemonPreview SPECIES_CRESSELIA, GENDER_FEMALE
+    DrawPokemonPreview SPECIES_CRESSELIA, GENDER_FEMALE, 0
     WaitABPress
     RemovePokemonPreview
     PlayCry SPECIES_CRESSELIA

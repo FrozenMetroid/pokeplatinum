@@ -3007,10 +3007,11 @@
     .short \destVarID
     .endm
 
-    .macro DrawPokemonPreview species, gender
+    .macro DrawPokemonPreview species, gender, form
     .short SCRCMD_DRAWPOKEMONPREVIEW
     .short \species
     .short \gender
+    .short \form
     .endm
 
     .macro RemovePokemonPreview
@@ -4724,9 +4725,11 @@
     .short \level
     .endm
 
-    .macro SetSpeciesSeen species
+    .macro SetSpeciesSeen species, form, gender
     .short SCRCMD_SETSPECIESSEEN
     .short \species
+    .short \form
+    .short \gender
     .endm
 
     .macro GetCurrentSafariGameCaughtNum destVar
