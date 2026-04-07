@@ -4993,6 +4993,15 @@
     .byte \floor
     .endm
 
+    // new script commands
+
+    .macro ReplaceMove slot, move, moveSlot // same as PokeHeartGold
+    .short SCRCMD_REPLACEMOVE
+    .short \slot
+    .short \move
+    .short \moveSlot
+    .endm
+
 
 
     .macro GoToIfLt varID, valueOrVarID, offset

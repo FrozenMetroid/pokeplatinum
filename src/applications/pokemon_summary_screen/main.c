@@ -55,7 +55,7 @@
 #include "unk_02094EDC.h"
 #include "vars_flags.h"
 #include "vram_transfer.h"
-#include "senate_features.h"
+#include "senate_config.h"
 
 #include "constdata/const_020F410C.h"
 #include "res/graphics/pokemon_summary_screen/pl_pst_gra.naix"

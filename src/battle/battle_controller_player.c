@@ -2935,7 +2935,7 @@ static int BattleControllerPlayer_CheckMoveHitAccuracy(BattleSystem *battleSys, 
         }
 
         if (battleCtx->fieldConditionsMask & FIELD_CONDITION_DEEP_FOG) {
-            hitRate = hitRate * 6 / 10;
+            hitRate = hitRate * 8 / 10; // die
         }
     }
 

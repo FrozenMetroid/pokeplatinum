@@ -34,7 +34,7 @@
 #include "string_template.h"
 #include "system.h"
 #include "text.h"
-#include "senate_features.h"
+#include "senate_config.h"
 
 #include "res/text/bank/party_menu.h"
 

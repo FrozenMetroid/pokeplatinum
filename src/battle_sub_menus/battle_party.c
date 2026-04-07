@@ -44,7 +44,7 @@
 
 #include "res/text/bank/battle_party.h"
 
-#include "senate_features.h"
+#include "senate_config.h"
 
 #define TASK_STATE_INITIALIZE                          0
 #define TASK_STATE_PARTY_POKEMON_SCREEN                1

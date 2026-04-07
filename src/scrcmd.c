@@ -7145,3 +7145,16 @@ static BOOL ScrCmd_CheckPartyHasFatefulEncounterRegigigas(ScriptContext *ctx)
 
     return FALSE;
 }
+
+// unused currently, was used for testing Defog + Stealth Rock on both sides
+static BOOL ScrCmd_ReplaceMove(ScriptContext *ctx)
+{
+    u16 partySlot = ScriptContext_GetVar(ctx);
+    u16 move = ScriptContext_GetVar(ctx);
+    u16 moveSlot = ScriptContext_GetVar(ctx);
+
+    Pokemon *mon = Party_GetPokemonBySlotIndex(SaveData_GetParty(ctx->fieldSystem->saveData), partySlot);
+    Pokemon_ResetMoveSlot(mon, move, moveSlot);
+
+    return FALSE;
+}

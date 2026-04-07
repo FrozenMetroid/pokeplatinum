@@ -18,7 +18,7 @@ _000:
 
 _032:
     // {0}’s {1} made {2} useless!
-    PrintMessage BattleStrings_Text_PokemonsAbilityTookTheAttack_Ally, TAG_NICKNAME_ABILITY_MOVE, BTLSCR_DEFENDER, BTLSCR_DEFENDER, BTLSCR_ATTACKER
+    PrintMessage BattleStrings_Text_PokemonsAbilityMadeMoveUseless_Ally, TAG_NICKNAME_ABILITY_MOVE, BTLSCR_DEFENDER, BTLSCR_DEFENDER, BTLSCR_ATTACKER
     Wait 
     WaitButtonABTime 30
     End 

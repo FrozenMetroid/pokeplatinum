@@ -44,7 +44,7 @@
 #include "unk_020366A0.h"
 #include "unk_0208C098.h"
 
-#include "senate_features.h"
+#include "senate_config.h"
 
 #include "res/battle/scripts/sub_seq.naix"
 #include "res/text/bank/battle_strings.h"
@@ -1776,8 +1776,7 @@ void BattleSystem_CheckRedirectionAbilities(BattleSystem *battleSys, BattleConte
             battleCtx->selfTurnFlags[battler].lightningRodActivated = FALSE;
             battleCtx->defender = battler;
         }
-    } else if (moveType == TYPE_WATER) {
-        if (moveType == TYPE_ELECTRIC
+    } else if (moveType == TYPE_WATER
         && (MOVE_DATA(move).range == RANGE_SINGLE_TARGET || MOVE_DATA(move).range == RANGE_RANDOM_OPPONENT)
         && (battleCtx->battleStatusMask & SYSCTL_FIRST_OF_MULTI_TURN) == FALSE
         && BattleSystem_CountAbility(battleSys, battleCtx, COUNT_ALIVE_BATTLERS_EXCEPT_ME, attacker, ABILITY_STORM_DRAIN)) {
@@ -1791,19 +1790,17 @@ void BattleSystem_CheckRedirectionAbilities(BattleSystem *battleSys, BattleConte
                     break;
                 }
             }
-            
+
             if (battler != battleCtx->defender) {
                 battleCtx->selfTurnFlags[battler].stormDrainActivated = FALSE;
                 battleCtx->defender = battler;
             }
         }
     }
-}
 
 BOOL BattleSystem_TriggerRedirectionAbilities(BattleSystem *battleSys, BattleContext *battleCtx)
 {
     BOOL result = FALSE;
-    EmulatorLog("Checking Trigger RedirectionAbilities");
     if ((battleCtx->moveStatusFlags & MOVE_STATUS_NO_EFFECTS) == FALSE && DEFENDER_SELF_TURN_FLAGS.lightningRodActivated) {
         battleCtx->selfTurnFlags[battleCtx->defender].lightningRodActivated = FALSE;
 
@@ -1815,7 +1812,6 @@ BOOL BattleSystem_TriggerRedirectionAbilities(BattleSystem *battleSys, BattleCon
     }
 
     if ((battleCtx->moveStatusFlags & MOVE_STATUS_NO_EFFECTS) == FALSE && DEFENDER_SELF_TURN_FLAGS.stormDrainActivated) {
-        EmulatorLog("Storm Drain Activated");
         battleCtx->selfTurnFlags[battleCtx->defender].stormDrainActivated = FALSE;
 
         LOAD_SUBSEQ(subscript_lightning_rod_redirected);
@@ -3559,6 +3555,7 @@ int BattleSystem_TriggerImmunityAbility(BattleContext *battleCtx, int attacker, 
         && moveType == TYPE_WATER
         && (battleCtx->battleStatusMask & SYSCTL_FIRST_OF_MULTI_TURN) == FALSE
         && CURRENT_MOVE_DATA.power) {
+        battleCtx->moveStatusFlags &= MOVE_STATUS_FAILED; // avoids activating the special attack raise and then showing that the move missed anyway
         subscript = subscript_null; // ends the move, all of this occurs after the special attack raise
     }
 
@@ -3566,6 +3563,7 @@ int BattleSystem_TriggerImmunityAbility(BattleContext *battleCtx, int attacker, 
         && moveType == TYPE_ELECTRIC
         && (battleCtx->battleStatusMask & SYSCTL_FIRST_OF_MULTI_TURN) == FALSE
         && CURRENT_MOVE_DATA.power) {
+        battleCtx->moveStatusFlags &= MOVE_STATUS_FAILED; // avoids activating the special attack raise and then showing that the move missed anyway
         subscript = subscript_null; // ends the move, all of this occurs after the special attack raise
     }
 

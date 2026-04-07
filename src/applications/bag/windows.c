@@ -31,7 +31,7 @@
 #include "res/graphics/bag/bag_graphics.naix"
 #include "res/text/bank/bag.h"
 
-#include "senate_features.h"
+#include "senate_config.h"
 
 #define ITEM_LIST_WINDOW_WIDTH         17
 #define ITEM_LIST_WINDOW_HEIGHT        TEXT_LINES_TILES(BAG_UI_NUM_VISIBLE_ITEMS)
