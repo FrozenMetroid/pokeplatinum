@@ -228,6 +228,7 @@ const u16 SunyshoreMarket_EvolutionStones[] = {
     ITEM_SHINY_STONE,
     ITEM_DAWN_STONE,
     ITEM_DUSK_STONE,
+    ITEM_OVAL_STONE,
     SHOP_ITEM_END
 };
 

@@ -1008,7 +1008,7 @@ void Pokedex_Encounter(Pokedex *pokedexData, Pokemon *mon)
     u16 species = Pokemon_GetValue(mon, MON_DATA_SPECIES, NULL);
     u32 personality = Pokemon_GetValue(mon, MON_DATA_PERSONALITY, NULL);
     u32 gender = Pokemon_GetGender(mon);
-
+    
     CheckPokedexIntegrity(pokedexData);
 
     if (SpeciesInvalid(species)) {
