@@ -118,7 +118,7 @@
             "category": "Mushroom Pokémon",
             "entry_text": [
                 "A mushroom grown larger than the\n",
-                "host’s body controls PARASECT.\n",
+                "host’s body controls Parasect.\n",
                 "It scatters poisonous spores."
             ]
         },
@@ -127,7 +127,7 @@
             "category": "Pokémon Champignon",
             "entry_text": [
                 "Un champignon parasite plus gros\n",
-                "que PARASECT contrôle son corps.\n",
+                "que Parasect contrôle son corps.\n",
                 "Il répand des spores empoisonnées."
             ]
         },
@@ -135,7 +135,7 @@
             "name": "Parasek",
             "category": "Pilz",
             "entry_text": [
-                "PARASEK wird von einem Pilz, der\n",
+                "Parasek wird von einem Pilz, der\n",
                 "größer als das Pokémon ist,\n",
                 "kontrolliert. Er gibt Giftsporen ab."
             ]
@@ -144,7 +144,7 @@
             "name": "Parasect",
             "category": "Pokémon Fungo",
             "entry_text": [
-                "PARASECT è controllato da un fungo\n",
+                "Parasect è controllato da un fungo\n",
                 "ancora più grosso del suo corpo.\n",
                 "Diffonde spore velenose."
             ]
@@ -153,7 +153,7 @@
             "name": "Parasect",
             "category": "Pokémon Hongo",
             "entry_text": [
-                "PARASECT está dominado por un\n",
+                "Parasect está dominado por un\n",
                 "hongo parásito mayor que él.\n",
                 "Dispersa esporas venenosas."
             ]
