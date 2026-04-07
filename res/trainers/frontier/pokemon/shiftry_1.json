@@ -2,7 +2,7 @@
     "species": "SPECIES_SHIFTRY",
     "moves": [
         "MOVE_SEED_BOMB",
-        "MOVE_FAINT_ATTACK",
+        "MOVE_FEINT_ATTACK",
         "MOVE_X_SCISSOR",
         "MOVE_FAKE_OUT"
     ],

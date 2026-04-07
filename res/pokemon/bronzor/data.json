@@ -1,11 +1,11 @@
 {
     "base_stats": {
-        "hp": 57,
-        "attack": 24,
-        "defense": 86,
-        "speed": 23,
-        "special_attack": 24,
-        "special_defense": 86
+        "hp": 65,
+        "attack": 45,
+        "defense": 90,
+        "speed": 25,
+        "special_attack": 45,
+        "special_defense": 90
     },
     "types": [ "TYPE_STEEL", "TYPE_PSYCHIC" ],
     "catch_rate": 255,
@@ -34,19 +34,24 @@
     "icon_palette": 0,
     "learnset": {
         "by_level": [
-            [ 1, "MOVE_TACKLE" ],
-            [ 1, "MOVE_CONFUSION" ],
-            [ 7, "MOVE_HYPNOSIS" ],
-            [ 12, "MOVE_IMPRISON" ],
-            [ 14, "MOVE_CONFUSE_RAY" ],
-            [ 19, "MOVE_EXTRASENSORY" ],
-            [ 26, "MOVE_IRON_DEFENSE" ],
-            [ 30, "MOVE_SAFEGUARD" ],
-            [ 35, "MOVE_GYRO_BALL" ],
-            [ 37, "MOVE_FUTURE_SIGHT" ],
-            [ 41, "MOVE_FAINT_ATTACK" ],
-            [ 49, "MOVE_PAYBACK" ],
-            [ 52, "MOVE_HEAL_BLOCK" ]
+            [1, "MOVE_TACKLE"],
+            [1, "MOVE_CONFUSION"],
+            [7, "MOVE_HYPNOSIS"],
+            [12, "MOVE_IMPRISON"],
+            [14, "MOVE_CONFUSE_RAY"],
+            [17, "MOVE_EXTRASENSORY"],
+            [21, "MOVE_METAL_SOUND"],
+            [24, "MOVE_IRON_DEFENSE"],
+            [27, "MOVE_ZEN_HEADBUTT"],
+            [30, "MOVE_SAFEGUARD"],
+            [35, "MOVE_GYRO_BALL"],
+            [37, "MOVE_FUTURE_SIGHT"],
+            [40, "MOVE_FEINT_ATTACK"],
+            [43, "MOVE_PAYBACK"],
+            [47, "MOVE_PSYCHIC"],
+            [50, "MOVE_HEAL_BLOCK"],
+            [54, "MOVE_IRON_HEAD"],
+            [58, "MOVE_TRICK_ROOM"]
         ],
         "by_tm": [
             "TM04",

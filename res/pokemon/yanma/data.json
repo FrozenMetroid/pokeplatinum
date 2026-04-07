@@ -99,7 +99,7 @@
             "MOVE_SIGNAL_BEAM",
             "MOVE_SILVER_WIND",
             "MOVE_FEINT",
-            "MOVE_FAINT_ATTACK",
+            "MOVE_FEINT_ATTACK",
             "MOVE_PURSUIT"
         ]
     },

@@ -14,7 +14,7 @@
             "item": null,
             "moves": [
                 "MOVE_FURY_SWIPES",
-                "MOVE_FAINT_ATTACK",
+                "MOVE_FEINT_ATTACK",
                 "MOVE_GROWL",
                 "MOVE_FAKE_OUT"
             ],
@@ -41,7 +41,7 @@
             "level": 36,
             "item": null,
             "moves": [
-                "MOVE_FAINT_ATTACK",
+                "MOVE_FEINT_ATTACK",
                 "MOVE_NIGHT_SHADE",
                 "MOVE_WING_ATTACK"
             ],

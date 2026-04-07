@@ -40,7 +40,7 @@
             [ 11, "MOVE_VINE_WHIP" ],
             [ 17, "MOVE_SWEET_SCENT" ],
             [ 21, "MOVE_INGRAIN" ],
-            [ 27, "MOVE_FAINT_ATTACK" ],
+            [ 27, "MOVE_FEINT_ATTACK" ],
             [ 31, "MOVE_STOCKPILE" ],
             [ 31, "MOVE_SPIT_UP" ],
             [ 31, "MOVE_SWALLOW" ],

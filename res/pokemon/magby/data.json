@@ -38,7 +38,7 @@
             [ 1, "MOVE_LEER" ],
             [ 7, "MOVE_EMBER" ],
             [ 10, "MOVE_SMOKE_SCREEN" ],
-            [ 16, "MOVE_FAINT_ATTACK" ],
+            [ 16, "MOVE_FEINT_ATTACK" ],
             [ 19, "MOVE_FIRE_SPIN" ],
             [ 25, "MOVE_CONFUSE_RAY" ],
             [ 28, "MOVE_FIRE_PUNCH" ],

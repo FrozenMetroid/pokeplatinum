@@ -88,7 +88,7 @@
         ],
         "egg_moves": [
             "MOVE_PURSUIT",
-            "MOVE_FAINT_ATTACK",
+            "MOVE_FEINT_ATTACK",
             "MOVE_FORESIGHT",
             "MOVE_STEEL_WING",
             "MOVE_AIR_CUTTER",

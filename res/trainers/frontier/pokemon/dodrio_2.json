@@ -3,7 +3,7 @@
     "moves": [
         "MOVE_DRILL_PECK",
         "MOVE_FRUSTRATION",
-        "MOVE_FAINT_ATTACK",
+        "MOVE_FEINT_ATTACK",
         "MOVE_ACUPRESSURE"
     ],
     "evFlags": {

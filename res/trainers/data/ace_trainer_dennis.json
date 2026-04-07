@@ -16,7 +16,7 @@
             "item": null,
             "moves": [
                 "MOVE_SCREECH",
-                "MOVE_FAINT_ATTACK",
+                "MOVE_FEINT_ATTACK",
                 "MOVE_QUICK_ATTACK",
                 "MOVE_POISON_STING"
             ],

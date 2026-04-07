@@ -31,7 +31,7 @@
             "moves": [
                 "MOVE_WRING_OUT",
                 "MOVE_CRUNCH",
-                "MOVE_FAINT_ATTACK",
+                "MOVE_FEINT_ATTACK",
                 "MOVE_INGRAIN"
             ],
             "iv_scale": 50,

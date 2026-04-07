@@ -2,7 +2,7 @@
     "species": "SPECIES_SUDOWOODO",
     "moves": [
         "MOVE_ROCK_SLIDE",
-        "MOVE_FAINT_ATTACK",
+        "MOVE_FEINT_ATTACK",
         "MOVE_SANDSTORM",
         "MOVE_BLOCK"
     ],

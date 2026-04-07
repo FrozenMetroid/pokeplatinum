@@ -17,7 +17,7 @@
             "moves": [
                 "MOVE_FAKE_OUT",
                 "MOVE_CAPTIVATE",
-                "MOVE_FAINT_ATTACK",
+                "MOVE_FEINT_ATTACK",
                 "MOVE_DOUBLE_EDGE"
             ],
             "iv_scale": 50,

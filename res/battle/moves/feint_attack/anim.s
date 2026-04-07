@@ -1,7 +1,7 @@
 #include "macros/btlanimcmd.inc"
 
 L_0:
-    LoadParticleResource 0, faint_attack_spa
+    LoadParticleResource 0, feint_attack_spa
     Func_FadeBg FADE_BG_TYPE_BASE, 1, 0, 12, BATTLE_COLOR_BLACK
     WaitForAnimTasks
     PlaySoundEffectL SEQ_SE_DP_061

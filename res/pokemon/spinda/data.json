@@ -37,7 +37,7 @@
             [ 1, "MOVE_TACKLE" ],
             [ 5, "MOVE_UPROAR" ],
             [ 10, "MOVE_COPYCAT" ],
-            [ 14, "MOVE_FAINT_ATTACK" ],
+            [ 14, "MOVE_FEINT_ATTACK" ],
             [ 19, "MOVE_PSYBEAM" ],
             [ 23, "MOVE_HYPNOSIS" ],
             [ 28, "MOVE_DIZZY_PUNCH" ],

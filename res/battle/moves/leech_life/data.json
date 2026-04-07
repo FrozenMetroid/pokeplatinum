@@ -2,7 +2,7 @@
     "name": "Leech Life",
     "class": "CLASS_PHYSICAL",
     "type": "TYPE_BUG",
-    "power": 20,
+    "power": 80,
     "accuracy": 100,
     "pp": 15,
     "effect": {

@@ -41,7 +41,7 @@
             [ 8, "MOVE_POISON_STING" ],
             [ 10, "MOVE_TAUNT" ],
             [ 15, "MOVE_PURSUIT" ],
-            [ 17, "MOVE_FAINT_ATTACK" ],
+            [ 17, "MOVE_FEINT_ATTACK" ],
             [ 22, "MOVE_REVENGE" ],
             [ 24, "MOVE_SWAGGER" ],
             [ 29, "MOVE_MUD_BOMB" ],

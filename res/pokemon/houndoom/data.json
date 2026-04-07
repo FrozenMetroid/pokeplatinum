@@ -46,7 +46,7 @@
             [ 22, "MOVE_ODOR_SLEUTH" ],
             [ 28, "MOVE_BEAT_UP" ],
             [ 32, "MOVE_FIRE_FANG" ],
-            [ 38, "MOVE_FAINT_ATTACK" ],
+            [ 38, "MOVE_FEINT_ATTACK" ],
             [ 44, "MOVE_EMBARGO" ],
             [ 48, "MOVE_FLAMETHROWER" ],
             [ 54, "MOVE_CRUNCH" ],

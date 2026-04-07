@@ -46,7 +46,7 @@
                 "MOVE_POISON_JAB",
                 "MOVE_REVENGE",
                 "MOVE_MUD_BOMB",
-                "MOVE_FAINT_ATTACK"
+                "MOVE_FEINT_ATTACK"
             ],
             "iv_scale": 200,
             "ball_seal": 0

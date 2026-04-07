@@ -1,11 +1,11 @@
 {
     "base_stats": {
-        "hp": 79,
-        "attack": 85,
-        "defense": 60,
+        "hp": 89,
+        "attack": 90,
+        "defense": 75,
         "speed": 71,
-        "special_attack": 55,
-        "special_defense": 60
+        "special_attack": 65,
+        "special_defense": 70
     },
     "types": [ "TYPE_NORMAL", "TYPE_WATER" ],
     "catch_rate": 127,
@@ -34,21 +34,25 @@
     "icon_palette": 2,
     "learnset": {
         "by_level": [
-            [ 0, "MOVE_WATER_PULSE" ],
-            [ 1, "MOVE_TACKLE" ],
-            [ 1, "MOVE_GROWL" ],
-            [ 5, "MOVE_GROWL" ],
-            [ 9, "MOVE_DEFENSE_CURL" ],
-            [ 13, "MOVE_ROLLOUT" ],
-            [ 15, "MOVE_WATER_GUN" ],
-            [ 18, "MOVE_HEADBUTT" ],
-            [ 23, "MOVE_HYPER_FANG" ],
-            [ 28, "MOVE_YAWN" ],
-            [ 33, "MOVE_AMNESIA" ],
-            [ 38, "MOVE_TAKE_DOWN" ],
-            [ 43, "MOVE_SUPER_FANG" ],
-            [ 48, "MOVE_SUPERPOWER" ],
-            [ 53, "MOVE_CURSE" ]
+            [0, "MOVE_WATER_PULSE"],
+            [1, "MOVE_TACKLE"],
+            [1, "MOVE_WATER_GUN"],
+            [3, "MOVE_GROWL"],
+            [6, "MOVE_DEFENSE_CURL"],
+            [11, "MOVE_WATER_SPORT"],
+            [13, "MOVE_ROLLOUT"],
+            [18, "MOVE_HEADBUTT"],
+            [21, "MOVE_HYPER_FANG"],
+            [24, "MOVE_YAWN"],
+            [27, "MOVE_AQUA_JET"],
+            [30, "MOVE_AMNESIA"],
+            [33, "MOVE_TAKE_DOWN"],
+            [36, "MOVE_AQUA_TAIL"],
+            [43, "MOVE_SUPER_FANG"],
+            [48, "MOVE_SUPERPOWER"],
+            [51, "MOVE_CURSE"],
+            [54, "MOVE_HYDRO_PUMP"],
+            [58, "MOVE_WOOD_HAMMER"]
         ],
         "by_tm": [
             "TM01",

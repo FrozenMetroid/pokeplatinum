@@ -42,7 +42,7 @@
             [ 21, "MOVE_NIGHT_SHADE" ],
             [ 25, "MOVE_ASSURANCE" ],
             [ 31, "MOVE_TAUNT" ],
-            [ 35, "MOVE_FAINT_ATTACK" ],
+            [ 35, "MOVE_FEINT_ATTACK" ],
             [ 41, "MOVE_MEAN_LOOK" ],
             [ 45, "MOVE_SUCKER_PUNCH" ]
         ],
@@ -108,7 +108,7 @@
             "MOVE_PERISH_SONG",
             "MOVE_PSYCHO_SHIFT",
             "MOVE_SCREECH",
-            "MOVE_FAINT_ATTACK"
+            "MOVE_FEINT_ATTACK"
         ]
     },
     "evolutions": [

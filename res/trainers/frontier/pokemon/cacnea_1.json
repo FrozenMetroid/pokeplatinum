@@ -2,7 +2,7 @@
     "species": "SPECIES_CACNEA",
     "moves": [
         "MOVE_NEEDLE_ARM",
-        "MOVE_FAINT_ATTACK",
+        "MOVE_FEINT_ATTACK",
         "MOVE_COTTON_SPORE",
         "MOVE_GRASS_WHISTLE"
     ],

@@ -45,7 +45,7 @@
             [ 17, "MOVE_SAND_ATTACK" ],
             [ 21, "MOVE_PIN_MISSILE" ],
             [ 25, "MOVE_INGRAIN" ],
-            [ 29, "MOVE_FAINT_ATTACK" ],
+            [ 29, "MOVE_FEINT_ATTACK" ],
             [ 35, "MOVE_SPIKES" ],
             [ 41, "MOVE_SUCKER_PUNCH" ],
             [ 47, "MOVE_PAYBACK" ],

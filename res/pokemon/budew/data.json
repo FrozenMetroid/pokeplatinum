@@ -1,10 +1,10 @@
 {
     "base_stats": {
-        "hp": 40,
+        "hp": 50,
         "attack": 30,
-        "defense": 35,
+        "defense": 40,
         "speed": 55,
-        "special_attack": 50,
+        "special_attack": 55,
         "special_defense": 70
     },
     "types": [ "TYPE_GRASS", "TYPE_POISON" ],
@@ -34,12 +34,16 @@
     "icon_palette": 1,
     "learnset": {
         "by_level": [
-            [ 1, "MOVE_ABSORB" ],
-            [ 4, "MOVE_GROWTH" ],
-            [ 7, "MOVE_WATER_SPORT" ],
-            [ 10, "MOVE_STUN_SPORE" ],
-            [ 13, "MOVE_MEGA_DRAIN" ],
-            [ 16, "MOVE_WORRY_SEED" ]
+            [1, "MOVE_ABSORB"],
+            [1, "MOVE_POISON_STING"],
+            [4, "MOVE_GROWTH"],
+            [7, "MOVE_WATER_SPORT"],
+            [10, "MOVE_STUN_SPORE"],
+            [10, "MOVE_POISON_POWDER"],
+            [10, "MOVE_SLEEP_POWDER"],
+            [13, "MOVE_MEGA_DRAIN"],
+            [16, "MOVE_WORRY_SEED"],
+            [20, "MOVE_ACID"]
         ],
         "by_tm": [
             "TM06",

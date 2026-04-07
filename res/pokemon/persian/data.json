@@ -44,7 +44,7 @@
             [ 9, "MOVE_FAKE_OUT" ],
             [ 14, "MOVE_FURY_SWIPES" ],
             [ 17, "MOVE_SCREECH" ],
-            [ 22, "MOVE_FAINT_ATTACK" ],
+            [ 22, "MOVE_FEINT_ATTACK" ],
             [ 25, "MOVE_TAUNT" ],
             [ 32, "MOVE_POWER_GEM" ],
             [ 37, "MOVE_SLASH" ],

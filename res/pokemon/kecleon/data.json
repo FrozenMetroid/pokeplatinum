@@ -40,7 +40,7 @@
             [ 1, "MOVE_LICK" ],
             [ 1, "MOVE_SCRATCH" ],
             [ 4, "MOVE_BIND" ],
-            [ 7, "MOVE_FAINT_ATTACK" ],
+            [ 7, "MOVE_FEINT_ATTACK" ],
             [ 10, "MOVE_FURY_SWIPES" ],
             [ 14, "MOVE_FEINT" ],
             [ 18, "MOVE_PSYBEAM" ],

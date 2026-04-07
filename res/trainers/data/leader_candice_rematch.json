@@ -20,7 +20,7 @@
             "moves": [
                 "MOVE_AVALANCHE",
                 "MOVE_SLASH",
-                "MOVE_FAINT_ATTACK",
+                "MOVE_FEINT_ATTACK",
                 "MOVE_TAUNT"
             ],
             "iv_scale": 200,

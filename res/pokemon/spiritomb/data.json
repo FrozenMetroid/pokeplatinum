@@ -39,7 +39,7 @@
             [ 1, "MOVE_CONFUSE_RAY" ],
             [ 1, "MOVE_SPITE" ],
             [ 1, "MOVE_SHADOW_SNEAK" ],
-            [ 7, "MOVE_FAINT_ATTACK" ],
+            [ 7, "MOVE_FEINT_ATTACK" ],
             [ 13, "MOVE_HYPNOSIS" ],
             [ 19, "MOVE_DREAM_EATER" ],
             [ 25, "MOVE_OMINOUS_WIND" ],

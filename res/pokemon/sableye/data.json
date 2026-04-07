@@ -44,7 +44,7 @@
             [ 22, "MOVE_DETECT" ],
             [ 25, "MOVE_SHADOW_SNEAK" ],
             [ 29, "MOVE_KNOCK_OFF" ],
-            [ 32, "MOVE_FAINT_ATTACK" ],
+            [ 32, "MOVE_FEINT_ATTACK" ],
             [ 36, "MOVE_PUNISHMENT" ],
             [ 39, "MOVE_SHADOW_CLAW" ],
             [ 43, "MOVE_POWER_GEM" ],

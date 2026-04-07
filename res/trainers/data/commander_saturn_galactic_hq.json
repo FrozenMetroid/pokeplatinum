@@ -46,7 +46,7 @@
                 "MOVE_POISON_JAB",
                 "MOVE_BRICK_BREAK",
                 "MOVE_X_SCISSOR",
-                "MOVE_FAINT_ATTACK"
+                "MOVE_FEINT_ATTACK"
             ],
             "iv_scale": 200,
             "ball_seal": 0

@@ -3,7 +3,7 @@
     "moves": [
         "MOVE_DIZZY_PUNCH",
         "MOVE_DRAIN_PUNCH",
-        "MOVE_FAINT_ATTACK",
+        "MOVE_FEINT_ATTACK",
         "MOVE_TEETER_DANCE"
     ],
     "evFlags": {

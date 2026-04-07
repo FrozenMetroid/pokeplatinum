@@ -18,7 +18,7 @@
                 "MOVE_ICY_WIND",
                 "MOVE_SLASH",
                 "MOVE_SCREECH",
-                "MOVE_FAINT_ATTACK"
+                "MOVE_FEINT_ATTACK"
             ],
             "iv_scale": 60,
             "ball_seal": 0
@@ -32,7 +32,7 @@
                 "MOVE_ICY_WIND",
                 "MOVE_SLASH",
                 "MOVE_SCREECH",
-                "MOVE_FAINT_ATTACK"
+                "MOVE_FEINT_ATTACK"
             ],
             "iv_scale": 60,
             "ball_seal": 0

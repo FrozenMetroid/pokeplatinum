@@ -31,7 +31,7 @@
             "moves": [
                 "MOVE_DRAGON_BREATH",
                 "MOVE_EARTHQUAKE",
-                "MOVE_FAINT_ATTACK",
+                "MOVE_FEINT_ATTACK",
                 "MOVE_SCREECH"
             ],
             "iv_scale": 50,

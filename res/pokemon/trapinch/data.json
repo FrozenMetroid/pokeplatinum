@@ -36,7 +36,7 @@
         "by_level": [
             [ 1, "MOVE_BITE" ],
             [ 9, "MOVE_SAND_ATTACK" ],
-            [ 17, "MOVE_FAINT_ATTACK" ],
+            [ 17, "MOVE_FEINT_ATTACK" ],
             [ 25, "MOVE_SAND_TOMB" ],
             [ 33, "MOVE_CRUNCH" ],
             [ 41, "MOVE_DIG" ],

@@ -96,7 +96,7 @@
         "egg_moves": [
             "MOVE_MIRROR_MOVE",
             "MOVE_SUPERSONIC",
-            "MOVE_FAINT_ATTACK",
+            "MOVE_FEINT_ATTACK",
             "MOVE_WING_ATTACK",
             "MOVE_WHIRLWIND",
             "MOVE_SKY_ATTACK",

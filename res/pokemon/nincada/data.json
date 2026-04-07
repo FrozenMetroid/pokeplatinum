@@ -81,7 +81,7 @@
         ],
         "egg_moves": [
             "MOVE_ENDURE",
-            "MOVE_FAINT_ATTACK",
+            "MOVE_FEINT_ATTACK",
             "MOVE_GUST",
             "MOVE_SILVER_WIND",
             "MOVE_BUG_BUZZ",

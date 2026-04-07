@@ -3881,21 +3881,21 @@
       "id": "pl_msg_00000000_00555",
       "en_US": [
         "{STRVAR_1 1, 0, 0} used\n",
-        "Faint Attack!"
+        "Feint Attack!"
       ]
     },
     {
       "id": "pl_msg_00000000_00556",
       "en_US": [
         "The wild {STRVAR_1 1, 0, 0} used\n",
-        "Faint Attack!"
+        "Feint Attack!"
       ]
     },
     {
       "id": "pl_msg_00000000_00557",
       "en_US": [
         "The foe’s {STRVAR_1 1, 0, 0} used\n",
-        "Faint Attack!"
+        "Feint Attack!"
       ]
     },
     {

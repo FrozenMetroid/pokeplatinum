@@ -129,7 +129,7 @@
         ],
         "egg_moves": [
             "MOVE_BATON_PASS",
-            "MOVE_FAINT_ATTACK",
+            "MOVE_FEINT_ATTACK",
             "MOVE_DOUBLE_EDGE",
             "MOVE_MAGIC_COAT",
             "MOVE_CURSE",

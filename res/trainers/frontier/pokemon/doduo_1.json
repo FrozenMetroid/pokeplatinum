@@ -3,7 +3,7 @@
     "moves": [
         "MOVE_AERIAL_ACE",
         "MOVE_QUICK_ATTACK",
-        "MOVE_FAINT_ATTACK",
+        "MOVE_FEINT_ATTACK",
         "MOVE_ACUPRESSURE"
     ],
     "evFlags": {

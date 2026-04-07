@@ -16,7 +16,7 @@
             "moves": [
                 "MOVE_SWAGGER",
                 "MOVE_REVENGE",
-                "MOVE_FAINT_ATTACK"
+                "MOVE_FEINT_ATTACK"
             ],
             "iv_scale": 40,
             "ball_seal": 0

@@ -348,7 +348,7 @@ typedef struct {
 } UnkStruct_ov12_022310D4;
 
 // -------------------------------------------------------------------
-// Faint Attack
+// Feint Attack
 // -------------------------------------------------------------------
 typedef struct FaintAttackContext {
     BattleAnimSystem *battleAnimSys;

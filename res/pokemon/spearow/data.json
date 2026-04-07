@@ -84,7 +84,7 @@
             "MOVE_SWIFT"
         ],
         "egg_moves": [
-            "MOVE_FAINT_ATTACK",
+            "MOVE_FEINT_ATTACK",
             "MOVE_FALSE_SWIPE",
             "MOVE_SCARY_FACE",
             "MOVE_QUICK_ATTACK",

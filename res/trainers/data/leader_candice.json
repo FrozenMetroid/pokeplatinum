@@ -20,7 +20,7 @@
             "moves": [
                 "MOVE_SLASH",
                 "MOVE_AERIAL_ACE",
-                "MOVE_FAINT_ATTACK",
+                "MOVE_FEINT_ATTACK",
                 "MOVE_ICE_SHARD"
             ],
             "iv_scale": 250,

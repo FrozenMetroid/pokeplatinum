@@ -17,7 +17,7 @@
             "moves": [
                 "MOVE_EXTRASENSORY",
                 "MOVE_FAKE_OUT",
-                "MOVE_FAINT_ATTACK",
+                "MOVE_FEINT_ATTACK",
                 "MOVE_RAZOR_LEAF"
             ],
             "iv_scale": 50,

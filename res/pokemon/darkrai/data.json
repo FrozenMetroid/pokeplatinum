@@ -38,7 +38,7 @@
             [ 1, "MOVE_DISABLE" ],
             [ 11, "MOVE_QUICK_ATTACK" ],
             [ 20, "MOVE_HYPNOSIS" ],
-            [ 29, "MOVE_FAINT_ATTACK" ],
+            [ 29, "MOVE_FEINT_ATTACK" ],
             [ 38, "MOVE_NIGHTMARE" ],
             [ 47, "MOVE_DOUBLE_TEAM" ],
             [ 57, "MOVE_HAZE" ],

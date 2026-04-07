@@ -38,7 +38,7 @@
             [ 1, "MOVE_YAWN" ],
             [ 7, "MOVE_ENCORE" ],
             [ 13, "MOVE_SLACK_OFF" ],
-            [ 19, "MOVE_FAINT_ATTACK" ],
+            [ 19, "MOVE_FEINT_ATTACK" ],
             [ 25, "MOVE_AMNESIA" ],
             [ 31, "MOVE_COVET" ],
             [ 37, "MOVE_COUNTER" ],

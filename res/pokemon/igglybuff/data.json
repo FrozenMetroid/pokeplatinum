@@ -93,7 +93,7 @@
         "egg_moves": [
             "MOVE_PERISH_SONG",
             "MOVE_PRESENT",
-            "MOVE_FAINT_ATTACK",
+            "MOVE_FEINT_ATTACK",
             "MOVE_WISH",
             "MOVE_FAKE_TEARS",
             "MOVE_LAST_RESORT",

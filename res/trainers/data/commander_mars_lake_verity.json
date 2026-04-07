@@ -44,7 +44,7 @@
             "item": "ITEM_SITRUS_BERRY",
             "moves": [
                 "MOVE_SLASH",
-                "MOVE_FAINT_ATTACK",
+                "MOVE_FEINT_ATTACK",
                 "MOVE_HYPNOSIS",
                 "MOVE_FAKE_OUT"
             ],

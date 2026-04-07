@@ -31,7 +31,7 @@
             "moves": [
                 "MOVE_ICY_WIND",
                 "MOVE_SLASH",
-                "MOVE_FAINT_ATTACK",
+                "MOVE_FEINT_ATTACK",
                 "MOVE_QUICK_ATTACK"
             ],
             "iv_scale": 60,

@@ -44,7 +44,7 @@
             "item": null,
             "moves": [
                 "MOVE_LEAF_STORM",
-                "MOVE_FAINT_ATTACK",
+                "MOVE_FEINT_ATTACK",
                 "MOVE_EXTRASENSORY",
                 "MOVE_QUICK_ATTACK"
             ],

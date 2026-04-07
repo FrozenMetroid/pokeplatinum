@@ -1,7 +1,7 @@
 {
     "species": "SPECIES_SABLEYE",
     "moves": [
-        "MOVE_FAINT_ATTACK",
+        "MOVE_FEINT_ATTACK",
         "MOVE_SHADOW_SNEAK",
         "MOVE_FAKE_OUT",
         "MOVE_DETECT"

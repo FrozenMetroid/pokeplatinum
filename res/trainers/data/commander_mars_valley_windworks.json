@@ -28,7 +28,7 @@
             "level": 17,
             "item": "ITEM_ORAN_BERRY",
             "moves": [
-                "MOVE_FAINT_ATTACK",
+                "MOVE_FEINT_ATTACK",
                 "MOVE_SCRATCH",
                 "MOVE_FAKE_OUT"
             ],

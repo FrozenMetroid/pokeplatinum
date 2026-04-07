@@ -2,7 +2,7 @@
     "species": "SPECIES_DELCATTY",
     "moves": [
         "MOVE_SECRET_POWER",
-        "MOVE_FAINT_ATTACK",
+        "MOVE_FEINT_ATTACK",
         "MOVE_FAKE_OUT",
         "MOVE_FORESIGHT"
     ],

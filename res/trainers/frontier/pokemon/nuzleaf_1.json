@@ -2,7 +2,7 @@
     "species": "SPECIES_NUZLEAF",
     "moves": [
         "MOVE_RAZOR_LEAF",
-        "MOVE_FAINT_ATTACK",
+        "MOVE_FEINT_ATTACK",
         "MOVE_SWAGGER",
         "MOVE_HARDEN"
     ],

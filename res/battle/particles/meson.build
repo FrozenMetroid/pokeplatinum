@@ -205,7 +205,7 @@ battle_particle_files = files(
     'protect.spa',
     'mach_punch.spa',
     'scary_face.spa',
-    'faint_attack.spa',
+    'feint_attack.spa',
     'sweet_kiss.spa',
     'belly_drum.spa',
     'sludge_bomb.spa',

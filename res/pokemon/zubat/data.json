@@ -94,7 +94,7 @@
         "egg_moves": [
             "MOVE_QUICK_ATTACK",
             "MOVE_PURSUIT",
-            "MOVE_FAINT_ATTACK",
+            "MOVE_FEINT_ATTACK",
             "MOVE_GUST",
             "MOVE_WHIRLWIND",
             "MOVE_CURSE",

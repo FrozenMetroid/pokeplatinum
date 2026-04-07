@@ -35,7 +35,7 @@
     "learnset": {
         "by_level": [
             [ 0, "MOVE_LEAF_BLADE" ],
-            [ 1, "MOVE_FAINT_ATTACK" ],
+            [ 1, "MOVE_FEINT_ATTACK" ],
             [ 1, "MOVE_WHIRLWIND" ],
             [ 1, "MOVE_NASTY_PLOT" ],
             [ 1, "MOVE_RAZOR_LEAF" ],

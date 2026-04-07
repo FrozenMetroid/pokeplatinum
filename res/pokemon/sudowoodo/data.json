@@ -45,7 +45,7 @@
             [ 14, "MOVE_ROCK_THROW" ],
             [ 17, "MOVE_MIMIC" ],
             [ 22, "MOVE_BLOCK" ],
-            [ 25, "MOVE_FAINT_ATTACK" ],
+            [ 25, "MOVE_FEINT_ATTACK" ],
             [ 30, "MOVE_ROCK_TOMB" ],
             [ 33, "MOVE_ROCK_SLIDE" ],
             [ 38, "MOVE_SLAM" ],

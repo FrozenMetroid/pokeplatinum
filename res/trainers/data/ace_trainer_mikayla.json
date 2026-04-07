@@ -31,7 +31,7 @@
             "moves": [
                 "MOVE_NIGHT_SLASH",
                 "MOVE_POWER_GEM",
-                "MOVE_FAINT_ATTACK",
+                "MOVE_FEINT_ATTACK",
                 "MOVE_FAKE_OUT"
             ],
             "iv_scale": 50,

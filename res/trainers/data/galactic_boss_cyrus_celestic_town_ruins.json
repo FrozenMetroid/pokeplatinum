@@ -48,7 +48,7 @@
                 "MOVE_DRILL_PECK",
                 "MOVE_NIGHT_SHADE",
                 "MOVE_ASTONISH",
-                "MOVE_FAINT_ATTACK"
+                "MOVE_FEINT_ATTACK"
             ],
             "iv_scale": 250,
             "ball_seal": 0

@@ -4,7 +4,7 @@
     "type": "TYPE_BUG",
     "power": 60,
     "accuracy": 100,
-    "pp": 5,
+    "pp": 15,
     "effect": {
         "type": "BATTLE_EFFECT_RAISE_ALL_STATS_HIT",
         "chance": 10

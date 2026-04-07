@@ -2,7 +2,7 @@
     "species": "SPECIES_SNEASEL",
     "moves": [
         "MOVE_ICE_PUNCH",
-        "MOVE_FAINT_ATTACK",
+        "MOVE_FEINT_ATTACK",
         "MOVE_CRUSH_CLAW",
         "MOVE_SPITE"
     ],

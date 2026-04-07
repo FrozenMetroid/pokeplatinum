@@ -97,7 +97,7 @@
             "MOVE_KNOCK_OFF"
         ],
         "egg_moves": [
-            "MOVE_FAINT_ATTACK",
+            "MOVE_FEINT_ATTACK",
             "MOVE_SCREECH",
             "MOVE_SAND_ATTACK",
             "MOVE_SLASH",

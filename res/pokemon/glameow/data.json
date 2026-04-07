@@ -38,7 +38,7 @@
             [ 5, "MOVE_SCRATCH" ],
             [ 8, "MOVE_GROWL" ],
             [ 13, "MOVE_HYPNOSIS" ],
-            [ 17, "MOVE_FAINT_ATTACK" ],
+            [ 17, "MOVE_FEINT_ATTACK" ],
             [ 20, "MOVE_FURY_SWIPES" ],
             [ 25, "MOVE_CHARM" ],
             [ 29, "MOVE_ASSIST" ],

@@ -45,7 +45,7 @@
             [ 18, "MOVE_COPYCAT" ],
             [ 22, "MOVE_ASSIST" ],
             [ 25, "MOVE_CHARM" ],
-            [ 29, "MOVE_FAINT_ATTACK" ],
+            [ 29, "MOVE_FEINT_ATTACK" ],
             [ 32, "MOVE_WAKE_UP_SLAP" ],
             [ 36, "MOVE_COVET" ],
             [ 39, "MOVE_HEAL_BELL" ],

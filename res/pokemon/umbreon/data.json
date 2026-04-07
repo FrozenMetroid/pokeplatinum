@@ -42,7 +42,7 @@
             [ 15, "MOVE_PURSUIT" ],
             [ 22, "MOVE_QUICK_ATTACK" ],
             [ 29, "MOVE_CONFUSE_RAY" ],
-            [ 36, "MOVE_FAINT_ATTACK" ],
+            [ 36, "MOVE_FEINT_ATTACK" ],
             [ 43, "MOVE_ASSURANCE" ],
             [ 50, "MOVE_LAST_RESORT" ],
             [ 57, "MOVE_MEAN_LOOK" ],

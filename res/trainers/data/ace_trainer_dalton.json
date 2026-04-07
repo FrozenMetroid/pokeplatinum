@@ -30,7 +30,7 @@
             "item": null,
             "moves": [
                 "MOVE_FLAMETHROWER",
-                "MOVE_FAINT_ATTACK",
+                "MOVE_FEINT_ATTACK",
                 "MOVE_SMOG",
                 "MOVE_WILL_O_WISP"
             ],
