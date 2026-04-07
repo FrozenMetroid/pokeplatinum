@@ -8488,6 +8488,27 @@
         "The Distortion World’s {STRVAR_1 1, 0, 0}\n",
         "appeared!\r"
       ]
+    },
+    {
+      "id": "BattleStrings_Text_PokemonEnduredTheHit_Sturdy_Ally",
+      "en_US": [
+        "{STRVAR_1 1, 0, 0} hung on\n",
+        "with Sturdy!"
+      ]
+    },
+    {
+      "id": "BattleStrings_Text_PokemonEnduredTheHit_Sturdy_Wild",
+      "en_US": [
+        "The wild {STRVAR_1 1, 0, 0} hung on\n",
+        "with Sturdy!"
+      ]
+    },
+    {
+      "id": "BattleStrings_Text_PokemonEnduredTheHit_Sturdy_Foe",
+      "en_US": [
+        "The foe’s {STRVAR_1 1, 0, 0} hung on\n",
+        "with Sturdy!"
+      ]
     }
   ]
 }

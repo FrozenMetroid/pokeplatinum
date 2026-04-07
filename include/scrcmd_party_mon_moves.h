@@ -13,5 +13,7 @@ BOOL ScrCmd_222(ScriptContext *ctx);
 BOOL ScrCmd_CheckLearnedReminderMove(ScriptContext *ctx);
 BOOL ScrCmd_OpenMoveTutorMenu(ScriptContext *ctx);
 BOOL ScrCmd_CheckLearnedTutorMove(ScriptContext *ctx);
+BOOL ScrCmd_ReplaceMove(ScriptContext *ctx);
+BOOL ScrCmd_ReplaceAbility(ScriptContext *ctx);
 
 #endif // POKEPLATINUM_PARTY_MON_MOVES_H

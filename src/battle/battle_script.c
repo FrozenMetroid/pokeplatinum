@@ -9329,19 +9329,28 @@ static BOOL BtlCmd_CheckHoldOnWith1HP(BattleSystem *battleSys, BattleContext *ba
     int itemEffect = Battler_HeldItemEffect(battleCtx, battler);
     int itemPower = Battler_HeldItemPower(battleCtx, battler, ITEM_POWER_CHECK_ALL);
 
+    if (Battler_Ability(battleCtx, battleCtx->defender) == ABILITY_STURDY
+        && battleCtx->battleMons[battler].curHP == battleCtx->battleMons[battler].maxHP) {
+        endure = 2;
+    }
+
     if (itemEffect == HOLD_EFFECT_MAYBE_ENDURE
         && BattleSystem_RandNext(battleSys) % 100 < itemPower) {
-        endure = TRUE;
+        endure = 1;
     }
 
     if (itemEffect == HOLD_EFFECT_ENDURE
         && battleCtx->battleMons[battler].curHP == battleCtx->battleMons[battler].maxHP) {
-        endure = TRUE;
+        endure = 1;
     }
 
     if (endure && battleCtx->battleMons[battler].curHP + battleCtx->hpCalcTemp <= 0) {
         battleCtx->hpCalcTemp = (battleCtx->battleMons[battler].curHP - 1) * -1;
-        battleCtx->moveStatusFlags |= MOVE_STATUS_ENDURED_ITEM;
+        if (endure != 2) {
+            battleCtx->moveStatusFlags |= MOVE_STATUS_ENDURED_ITEM;
+        } else {
+            battleCtx->moveStatusFlags |= MOVE_STATUS_ENDURED;
+        }
     }
 
     return FALSE;

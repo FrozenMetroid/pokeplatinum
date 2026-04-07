@@ -7158,3 +7158,16 @@ static BOOL ScrCmd_ReplaceMove(ScriptContext *ctx)
 
     return FALSE;
 }
+
+// unused currently, was used for testing Sturdy
+static BOOL ScrCmd_ReplaceAbility(ScriptContext *ctx)
+{
+    u16 partySlot = ScriptContext_GetVar(ctx);
+    u16 ability = ScriptContext_GetVar(ctx);
+
+    Pokemon *mon = Party_GetPokemonBySlotIndex(SaveData_GetParty(ctx->fieldSystem->saveData), partySlot);
+
+    Pokemon_SetValue(mon, MON_DATA_ABILITY, &ability);
+
+    return FALSE;
+}   

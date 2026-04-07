@@ -37,8 +37,23 @@ in the Pokedex if you fought it in the Frontier
 
 #define BATTLE_BUFF_DAMP // blocks Aftermath
 
+#define BATTLE_POISON_TYPE_TOXIC // always accurate
+
+#define BATTLE_MICLE_BERRY_ACCURACY // always accurate
+
+
 // The following are always applied because they deal with some subscripts
-//
-// 1) Storm Drain and Lightning Rod are modernized
+// Modernization:
+// 1) Storm Drain and Lightning Rod
+// 2) Rapid Spin
+// 3) Sturdy
+
+
+
+
+/*
+            TO-DO ONCE MORE IS EXPOSED IN THE DECOMP
+*/
+// #define BATTLE_GRASS_TYPES_IMMUNE_TO_POWDER
 
 #endif

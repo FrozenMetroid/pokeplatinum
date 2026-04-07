@@ -1,3 +1,4 @@
+#include "generated/abilities.h"
 #include "constants/accessories.h"
 #include "generated/badges.h"
 #include "generated/battle_tower_modes.h"
@@ -5000,6 +5001,12 @@
     .short \slot
     .short \move
     .short \moveSlot
+    .endm
+
+    .macro ReplaceAbility slot, ability
+    .short SCRCMD_REPLACEABILITY
+    .short \slot
+    .short \ability
     .endm
 
 

@@ -71,6 +71,7 @@ static int ChooseTraceTarget(BattleSystem *battleSys, BattleContext *battleCtx, 
 static BOOL MoveCannotTriggerAnticipation(BattleContext *battleCtx, int move);
 static int CalcMoveType(BattleSystem *battleSys, BattleContext *battleCtx, int item, int move);
 static BOOL IntimidateCheckHelper(BattleContext *battleCtx, u32 client);
+static BOOL IsPowderMove(u16 moveID);
 
 static const Fraction sStatStageBoosts[];
 
@@ -2614,7 +2615,11 @@ int BattleSystem_ApplyTypeChart(BattleSystem *battleSys, BattleContext *battleCt
         && moveType == TYPE_GROUND
         && defenderItemEffect != HOLD_EFFECT_SPEED_DOWN_GROUNDED) {
         *moveStatusMask |= MOVE_STATUS_MAGNET_RISE;
-    } else {
+    } /* else if ( BattleMon_Get(battleCtx, defender, BATTLEMON_TYPE_1, NULL) == TYPE_GRASS
+        || BattleMon_Get(battleCtx, defender, BATTLEMON_TYPE_2, NULL) == TYPE_GRASS
+        && IsPowderMove(move)) {
+        *moveStatusMask |= MOVE_STATUS_INEFFECTIVE;
+    } */ else {
         chartEntry = 0;
 
         while (sTypeMatchupMultipliers[chartEntry][0] != 0xFF) {
@@ -8267,7 +8272,7 @@ int Move_CalcVariableType(BattleSystem *battleSys, BattleContext *battleCtx, Pok
 }
 
 #ifdef BATTLE_UPDATE_INTIMIDATE_INTERACTIONS
-static BOOL IntimidateCheckHelper(struct BattleContext *battleCtx, u32 client)
+static BOOL IntimidateCheckHelper(BattleContext *battleCtx, u32 client)
 {
     u32 clientCheck;
     for (int i = 0; i < 2; i++)
@@ -8294,3 +8299,28 @@ static BOOL IntimidateCheckHelper(struct BattleContext *battleCtx, u32 client)
     return FALSE; // neither opposing battler has an ability that intimidate can activate on
 }
 #endif 
+
+#ifdef BATTLE_GRASS_TYPES_IMMUNE_TO_POWDER
+const u16 PowderMovesList[] = {
+    MOVE_COTTON_SPORE,
+    MOVE_POISON_POWDER,
+    MOVE_SLEEP_POWDER,
+    MOVE_STUN_SPORE,
+    MOVE_SPORE,
+    // MOVE_POWDER,
+    // MOVE_RAGE_POWDER,
+    // MOVE_MAGIC_POWDER,
+};
+
+static BOOL IsPowderMove(u16 moveID)
+{
+    BOOL output = FALSE;
+    for (int i = 0; i < NELEMS(PowderMovesList); i++) {
+        if (moveIndex == PowderMovesList[i]) {
+            output = TRUE;
+            break;
+        }
+    }
+    return output;
+}
+#endif

@@ -2968,12 +2968,26 @@ static int BattleControllerPlayer_CheckMoveHitAccuracy(BattleSystem *battleSys, 
 
     if (battleCtx->battleMons[attacker].moveEffectsData.micleBerry) {
         battleCtx->battleMons[attacker].moveEffectsData.micleBerry = FALSE;
+        #ifndef BATTLE_MICLE_BERRY_ACCURACY
         hitRate = hitRate * 120 / 100;
+        #else
+        return 0;
+        #endif
     }
 
     if (battleCtx->fieldConditionsMask & FIELD_CONDITION_GRAVITY) {
         hitRate = hitRate * 10 / 6;
     }
+
+    #ifdef BATTLE_POISON_TYPE_TOXIC
+    // Toxic when used by a Poison-type
+    if (move == MOVE_TOXIC) {
+        if (BattleMon_Get(battleCtx, defender, BATTLEMON_TYPE_1, NULL) == TYPE_POISON
+        || BattleMon_Get(battleCtx, defender, BATTLEMON_TYPE_2, NULL) == TYPE_POISON) {
+            return 0;
+        }
+    }
+    #endif
 
     if ((BattleSystem_RandNext(battleSys) % 100) + 1 > hitRate) {
         battleCtx->moveStatusFlags |= MOVE_STATUS_MISSED;
@@ -3388,12 +3402,23 @@ static void BattleControllerPlayer_UpdateHP(BattleSystem *battleSys, BattleConte
         if (DEFENDER_TURN_FLAGS.enduring == 0) {
             if (itemEffect == HOLD_EFFECT_MAYBE_ENDURE && (BattleSystem_RandNext(battleSys) % 100) < itemPower) {
                 DEFENDER_SELF_TURN_FLAGS.focusItemActivated = TRUE;
-            }
-
-            if (itemEffect == HOLD_EFFECT_ENDURE && DEFENDING_MON.curHP == DEFENDING_MON.maxHP) {
+            } else if (itemEffect == HOLD_EFFECT_ENDURE && DEFENDING_MON.curHP == DEFENDING_MON.maxHP) {
                 DEFENDER_SELF_TURN_FLAGS.focusItemActivated = TRUE;
+            } else {
+                DEFENDER_SELF_TURN_FLAGS.focusItemActivated = FALSE;
             }
         }
+
+        // handle sturdy--prevent one-hit ko's if hp == maxhp
+            if ((Battler_Ability(battleCtx, battleCtx->defender) == ABILITY_STURDY ) && (DEFENDING_MON.curHP == DEFENDING_MON.maxHP))
+            {
+                DEFENDER_SELF_TURN_FLAGS.focusItemActivated = TRUE;
+            }
+            // make sure to cancel sturdy if hp != maxhp.  necessary for multi-hit moves
+            else if ((Battler_Ability(battleCtx, battleCtx->defender) == ABILITY_STURDY ) && (DEFENDING_MON.curHP != DEFENDING_MON.maxHP))
+            {
+                DEFENDER_SELF_TURN_FLAGS.focusItemActivated = FALSE;
+            }
 
         if ((DEFENDER_TURN_FLAGS.enduring || DEFENDER_SELF_TURN_FLAGS.focusItemActivated)
             && DEFENDING_MON.curHP + battleCtx->damage <= 0) {
