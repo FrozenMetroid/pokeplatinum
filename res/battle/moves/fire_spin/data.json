@@ -2,8 +2,8 @@
     "name": "Fire Spin",
     "class": "CLASS_SPECIAL",
     "type": "TYPE_FIRE",
-    "power": 15,
-    "accuracy": 70,
+    "power": 50,
+    "accuracy": 90,
     "pp": 15,
     "effect": {
         "type": "BATTLE_EFFECT_BIND_HIT",

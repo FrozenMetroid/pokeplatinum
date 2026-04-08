@@ -2,9 +2,9 @@
     "name": "Jump Kick",
     "class": "CLASS_PHYSICAL",
     "type": "TYPE_FIGHTING",
-    "power": 85,
+    "power": 100,
     "accuracy": 95,
-    "pp": 25,
+    "pp": 15,
     "effect": {
         "type": "BATTLE_EFFECT_CRASH_ON_MISS",
         "chance": 0

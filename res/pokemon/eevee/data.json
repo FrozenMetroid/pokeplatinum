@@ -1,10 +1,10 @@
 {
     "base_stats": {
         "hp": 55,
-        "attack": 55,
+        "attack": 65,
         "defense": 50,
-        "speed": 55,
-        "special_attack": 45,
+        "speed": 65,
+        "special_attack": 55,
         "special_defense": 65
     },
     "types": [ "TYPE_NORMAL", "TYPE_NORMAL" ],
@@ -34,17 +34,22 @@
     "icon_palette": 2,
     "learnset": {
         "by_level": [
-            [ 1, "MOVE_TAIL_WHIP" ],
-            [ 1, "MOVE_TACKLE" ],
-            [ 1, "MOVE_HELPING_HAND" ],
-            [ 8, "MOVE_SAND_ATTACK" ],
-            [ 15, "MOVE_GROWL" ],
-            [ 22, "MOVE_QUICK_ATTACK" ],
-            [ 29, "MOVE_BITE" ],
-            [ 36, "MOVE_BATON_PASS" ],
-            [ 43, "MOVE_TAKE_DOWN" ],
-            [ 50, "MOVE_LAST_RESORT" ],
-            [ 57, "MOVE_TRUMP_CARD" ]
+            [1, "MOVE_TACKLE"],
+            [1, "MOVE_TAIL_WHIP"],
+            [1, "MOVE_HELPING_HAND"],
+            [8, "MOVE_SAND_ATTACK"],
+            [11, "MOVE_GROWL"],
+            [13, "MOVE_QUICK_ATTACK"],
+            [16, "MOVE_BITE"],
+            [19, "MOVE_CHARM"],
+            [22, "MOVE_COVET"],
+            [25, "MOVE_HEADBUTT"],
+            [29, "MOVE_TAKE_DOWN"],
+            [32, "MOVE_BATON_PASS"],
+            [35, "MOVE_BODY_SLAM"],
+            [40, "MOVE_CRUNCH"],
+            [44, "MOVE_LAST_RESORT"],
+            [48, "MOVE_TRUMP_CARD"]
         ],
         "by_tm": [
             "TM06",

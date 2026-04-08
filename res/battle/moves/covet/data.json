@@ -2,7 +2,7 @@
     "name": "Covet",
     "class": "CLASS_PHYSICAL",
     "type": "TYPE_NORMAL",
-    "power": 40,
+    "power": 60,
     "accuracy": 100,
     "pp": 40,
     "effect": {

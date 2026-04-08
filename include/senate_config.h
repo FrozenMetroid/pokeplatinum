@@ -43,6 +43,8 @@ in the Pokedex if you fought it in the Frontier
 
 #define BATTLE_BUFF_IRON_FIST // 1.2 -> 1.5 like Strong Jaw
 
+#define BATTLE_60_POWER_HIDDEN_POWER
+
 
 // The following are always applied because they deal with some subscripts
 // Modernization:

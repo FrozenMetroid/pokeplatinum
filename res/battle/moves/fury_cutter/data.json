@@ -2,7 +2,7 @@
     "name": "Fury Cutter",
     "class": "CLASS_PHYSICAL",
     "type": "TYPE_BUG",
-    "power": 10,
+    "power": 40,
     "accuracy": 95,
     "pp": 20,
     "effect": {

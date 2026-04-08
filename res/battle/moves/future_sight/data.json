@@ -2,8 +2,8 @@
     "name": "Future Sight",
     "class": "CLASS_SPECIAL",
     "type": "TYPE_PSYCHIC",
-    "power": 80,
-    "accuracy": 90,
+    "power": 120,
+    "accuracy": 100,
     "pp": 15,
     "effect": {
         "type": "BATTLE_EFFECT_HIT_IN_3_TURNS",

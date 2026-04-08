@@ -2,9 +2,9 @@
     "name": "Icicle Spear",
     "class": "CLASS_PHYSICAL",
     "type": "TYPE_ICE",
-    "power": 10,
+    "power": 25,
     "accuracy": 100,
-    "pp": 30,
+    "pp": 20,
     "effect": {
         "type": "BATTLE_EFFECT_MULTI_HIT",
         "chance": 0

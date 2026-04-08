@@ -44,6 +44,8 @@
 #include "sound_playback.h"
 #include "trainer_info.h"
 
+#include "senate_config.h"
+
 #include "res/battle/scripts/sub_seq.naix"
 
 enum BattleControllerState {

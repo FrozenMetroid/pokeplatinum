@@ -2,7 +2,7 @@
     "name": "Lick",
     "class": "CLASS_PHYSICAL",
     "type": "TYPE_GHOST",
-    "power": 20,
+    "power": 30,
     "accuracy": 100,
     "pp": 30,
     "effect": {

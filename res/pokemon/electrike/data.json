@@ -1,11 +1,11 @@
 {
     "base_stats": {
-        "hp": 40,
-        "attack": 45,
-        "defense": 40,
-        "speed": 65,
-        "special_attack": 65,
-        "special_defense": 40
+        "hp": 50,
+        "attack": 70,
+        "defense": 60,
+        "speed": 85,
+        "special_attack": 80,
+        "special_defense": 60
     },
     "types": [ "TYPE_ELECTRIC", "TYPE_ELECTRIC" ],
     "catch_rate": 120,
@@ -34,19 +34,21 @@
     "icon_palette": 1,
     "learnset": {
         "by_level": [
-            [ 1, "MOVE_TACKLE" ],
-            [ 4, "MOVE_THUNDER_WAVE" ],
-            [ 9, "MOVE_LEER" ],
-            [ 12, "MOVE_HOWL" ],
-            [ 17, "MOVE_QUICK_ATTACK" ],
-            [ 20, "MOVE_SPARK" ],
-            [ 25, "MOVE_ODOR_SLEUTH" ],
-            [ 28, "MOVE_BITE" ],
-            [ 33, "MOVE_THUNDER_FANG" ],
-            [ 36, "MOVE_ROAR" ],
-            [ 41, "MOVE_DISCHARGE" ],
-            [ 44, "MOVE_CHARGE" ],
-            [ 49, "MOVE_THUNDER" ]
+            [1, "MOVE_TACKLE"],
+            [1, "MOVE_CHARGE"],
+            [4, "MOVE_THUNDER_WAVE"],
+            [7, "MOVE_LEER"],
+            [10, "MOVE_HOWL"],
+            [14, "MOVE_SPARK"],
+            [17, "MOVE_QUICK_ATTACK"],
+            [20, "MOVE_BITE"],
+            [25, "MOVE_ODOR_SLEUTH"],
+            [28, "MOVE_DISCHARGE"],
+            [33, "MOVE_ROAR"],
+            [36, "MOVE_CRUNCH"],
+            [41, "MOVE_THUNDER_FANG"],
+            [44, "MOVE_THUNDERBOLT"],
+            [49, "MOVE_THUNDER"]
         ],
         "by_tm": [
             "TM05",

@@ -2,7 +2,7 @@
     "name": "Fire Fang",
     "class": "CLASS_PHYSICAL",
     "type": "TYPE_FIRE",
-    "power": 65,
+    "power": 75,
     "accuracy": 95,
     "pp": 15,
     "effect": {

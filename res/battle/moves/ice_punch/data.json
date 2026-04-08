@@ -2,7 +2,7 @@
     "name": "Ice Punch",
     "class": "CLASS_PHYSICAL",
     "type": "TYPE_ICE",
-    "power": 75,
+    "power": 85,
     "accuracy": 100,
     "pp": 15,
     "effect": {

@@ -2,7 +2,7 @@
     "name": "Lava Plume",
     "class": "CLASS_SPECIAL",
     "type": "TYPE_FIRE",
-    "power": 80,
+    "power": 70,
     "accuracy": 100,
     "pp": 15,
     "effect": {

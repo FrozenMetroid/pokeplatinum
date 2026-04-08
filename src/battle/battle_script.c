@@ -77,6 +77,8 @@
 #include "res/battle/scripts/sub_seq.naix"
 #include "res/text/bank/battle_strings.h"
 
+#include "senate_config.h"
+
 typedef BOOL (*BtlCmd)(BattleSystem *, BattleContext *);
 
 typedef struct BattleMessageParams {
@@ -5931,6 +5933,10 @@ static BOOL BtlCmd_CalcFuryCutterPower(BattleSystem *battleSys, BattleContext *b
     battleCtx->movePower = CURRENT_MOVE_DATA.power;
 
     for (int i = 1; i < ATTACKING_MON.moveEffectsData.furyCutterCount; i++) {
+        if (battleCtx->movePower * 2 > 160) {
+            battleCtx->movePower = 160;
+            break;
+        }
         battleCtx->movePower *= 2;
     }
 
@@ -6231,12 +6237,14 @@ static BOOL BtlCmd_CalcHiddenPowerParams(BattleSystem *battleSys, BattleContext 
 {
     BattleScript_Iter(battleCtx, 1);
 
+    #ifndef BATTLE_60_POWER_HIDDEN_POWER
     battleCtx->movePower = ((ATTACKING_MON.hpIV & 2) >> 1)
         | (ATTACKING_MON.attackIV & 2)
         | ((ATTACKING_MON.defenseIV & 2) << 1)
         | ((ATTACKING_MON.speedIV & 2) << 2)
         | ((ATTACKING_MON.spAttackIV & 2) << 3)
         | ((ATTACKING_MON.spDefenseIV & 2) << 4);
+    #endif
 
     battleCtx->moveType = (ATTACKING_MON.hpIV & 1)
         | ((ATTACKING_MON.attackIV & 1) << 1)
@@ -6245,7 +6253,11 @@ static BOOL BtlCmd_CalcHiddenPowerParams(BattleSystem *battleSys, BattleContext 
         | ((ATTACKING_MON.spAttackIV & 1) << 4)
         | ((ATTACKING_MON.spDefenseIV & 1) << 5);
 
+    #ifndef BATTLE_60_POWER_HIDDEN_POWER
     battleCtx->movePower = battleCtx->movePower * 40 / 63 + 30;
+    #else
+    battleCtx->movePower = 60;
+    #endif
     battleCtx->moveType = battleCtx->moveType * 15 / 63 + 1;
 
     if (battleCtx->moveType >= TYPE_MYSTERY) {

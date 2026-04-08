@@ -2590,7 +2590,7 @@ const ItemArchiveIDs sItemArchiveIDs[] = {
     [ITEM_HM08] = {
         .dataID = 0x195,
         .iconID = hm_NCGR,
-        .paletteID = tm_normal_NCLR,
+        .paletteID = tm_rock_NCLR,
         .gen3ID = GBA_ITEM_HM08,
     },
     [ITEM_EXPLORER_KIT] = {
