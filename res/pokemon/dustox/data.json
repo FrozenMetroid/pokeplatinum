@@ -1,11 +1,11 @@
 {
     "base_stats": {
-        "hp": 60,
-        "attack": 50,
-        "defense": 70,
+        "hp": 80,
+        "attack": 40,
+        "defense": 85,
         "speed": 65,
-        "special_attack": 50,
-        "special_defense": 90
+        "special_attack": 75,
+        "special_defense": 100
     },
     "types": [ "TYPE_BUG", "TYPE_POISON" ],
     "catch_rate": 45,
@@ -36,17 +36,21 @@
         "by_level": [
             [0, "MOVE_GUST"],
             [0, "MOVE_CONFUSION"],
+            [1, "MOVE_TACKLE"],
+            [1, "MOVE_HARDEN"],
+            [0, "MOVE_POISON_STING"],
             [13, "MOVE_POISON_POWDER"],
             [16, "MOVE_PROTECT"],
             [19, "MOVE_MOONLIGHT"],
             [22, "MOVE_SILVER_WIND"],
             [24, "MOVE_PSYBEAM"],
-            [27, "MOVE_SLUDGE"],
+            [27, "MOVE_VENOSHOCK"],
             [31, "MOVE_LIGHT_SCREEN"],
             [31, "MOVE_REFLECT"],
             [34, "MOVE_EXTRASENSORY"],
             [38, "MOVE_TOXIC"],
             [41, "MOVE_BUG_BUZZ"],
+            [44, "MOVE_POWDER"],
             [44, "MOVE_SLEEP_POWDER"],
             [47, "MOVE_SLUDGE_BOMB"],
             [51, "MOVE_AIR_SLASH"]

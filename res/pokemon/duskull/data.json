@@ -1,11 +1,11 @@
 {
     "base_stats": {
-        "hp": 20,
-        "attack": 40,
-        "defense": 90,
+        "hp": 35,
+        "attack": 60,
+        "defense": 100,
         "speed": 25,
-        "special_attack": 30,
-        "special_defense": 90
+        "special_attack": 50,
+        "special_defense": 100
     },
     "types": [ "TYPE_GHOST", "TYPE_GHOST" ],
     "catch_rate": 190,
@@ -34,19 +34,23 @@
     "icon_palette": 0,
     "learnset": {
         "by_level": [
-            [ 1, "MOVE_LEER" ],
-            [ 1, "MOVE_NIGHT_SHADE" ],
-            [ 6, "MOVE_DISABLE" ],
-            [ 9, "MOVE_FORESIGHT" ],
-            [ 14, "MOVE_ASTONISH" ],
-            [ 17, "MOVE_CONFUSE_RAY" ],
-            [ 22, "MOVE_SHADOW_SNEAK" ],
-            [ 25, "MOVE_PURSUIT" ],
-            [ 30, "MOVE_CURSE" ],
-            [ 33, "MOVE_WILL_O_WISP" ],
-            [ 38, "MOVE_MEAN_LOOK" ],
-            [ 41, "MOVE_PAYBACK" ],
-            [ 46, "MOVE_FUTURE_SIGHT" ]
+            [1, "MOVE_ASTONISH"],
+            [1, "MOVE_LEER"],
+            [1, "MOVE_NIGHT_SHADE"],
+            [6, "MOVE_DISABLE"],
+            [9, "MOVE_FORESIGHT"],
+            [14, "MOVE_SHADOW_SNEAK"],
+            [17, "MOVE_CONFUSE_RAY"],
+            [21, "MOVE_OMINOUS_WIND"],
+            [24, "MOVE_PURSUIT"],
+            [27, "MOVE_SPITE"],
+            [30, "MOVE_CURSE"],
+            [33, "MOVE_WILL_O_WISP"],
+            [35, "MOVE_MEAN_LOOK"],
+            [38, "MOVE_SHADOW_BALL"],
+            [41, "MOVE_PAYBACK"],
+            [44, "MOVE_FUTURE_SIGHT"],
+            [48, "MOVE_PAIN_SPLIT"]
         ],
         "by_tm": [
             "TM04",
