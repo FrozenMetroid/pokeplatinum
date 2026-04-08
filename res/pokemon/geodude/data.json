@@ -1,9 +1,9 @@
 {
     "base_stats": {
-        "hp": 40,
+        "hp": 45,
         "attack": 80,
         "defense": 100,
-        "speed": 20,
+        "speed": 30,
         "special_attack": 30,
         "special_defense": 30
     },
@@ -34,19 +34,22 @@
     "icon_palette": 1,
     "learnset": {
         "by_level": [
-            [ 1, "MOVE_TACKLE" ],
-            [ 1, "MOVE_DEFENSE_CURL" ],
-            [ 4, "MOVE_MUD_SPORT" ],
-            [ 8, "MOVE_ROCK_POLISH" ],
-            [ 11, "MOVE_ROCK_THROW" ],
-            [ 15, "MOVE_MAGNITUDE" ],
-            [ 18, "MOVE_SELFDESTRUCT" ],
-            [ 22, "MOVE_ROLLOUT" ],
-            [ 25, "MOVE_ROCK_BLAST" ],
-            [ 29, "MOVE_EARTHQUAKE" ],
-            [ 32, "MOVE_EXPLOSION" ],
-            [ 36, "MOVE_DOUBLE_EDGE" ],
-            [ 39, "MOVE_STONE_EDGE" ]
+            [1, "MOVE_TACKLE"],
+            [1, "MOVE_DEFENSE_CURL"],
+            [4, "MOVE_MUD_SPORT"],
+            [8, "MOVE_ROCK_THROW"],
+            [12, "MOVE_FLAIL"],
+            [15, "MOVE_MAGNITUDE"],
+            [18, "MOVE_ROLLOUT"],
+            [21, "MOVE_SELF_DESTRUCT"],
+            [24, "MOVE_ROCK_BLAST"],
+            [26, "MOVE_ROCK_POLISH"],
+            [29, "MOVE_EARTHQUAKE"],
+            [32, "MOVE_EXPLOSION"],
+            [36, "MOVE_ROCK_SLIDE"],
+            [39, "MOVE_DOUBLE_EDGE"],
+            [42, "MOVE_HAMMER_ARM"],
+            [45, "MOVE_STONE_EDGE"]
         ],
         "by_tm": [
             "TM01",

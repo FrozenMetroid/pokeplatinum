@@ -6637,6 +6637,25 @@ static const u16 sStrongJawMoves[] = {
     MOVE_THUNDER_FANG,
 };
 
+static const u16 sSharpnessMoves[] = {
+    MOVE_AERIAL_ACE,
+    MOVE_AIR_CUTTER,
+    MOVE_AIR_SLASH,
+    // MOVE_AQUA_CUTTER,
+    // MOVE_CEASELESS_EDHE
+    MOVE_FURY_CUTTER,
+    MOVE_LEAF_BLADE,
+    MOVE_NIGHT_SLASH,
+    MOVE_PSYCHO_CUT,
+    // MOVE_RAZOR_SHELL,
+    // MOVE_SACRED_SWORD,
+    MOVE_SHADOW_CLAW,
+    MOVE_SLASH,
+    // MOVE_SOLAR_BLADE
+    // MOVE_STONE_AXE,
+    MOVE_X_SCISSOR,
+};
+
 typedef struct DamageCalcParams {
     u16 species;
     s16 curHP;
@@ -6995,6 +7014,13 @@ int BattleSystem_CalcMoveDamage(BattleSystem *battleSys,
 
     for (i = 0; i < NELEMS(sStrongJawMoves); i++) {
         if (sStrongJawMoves[i] == move && attackerParams.ability == ABILITY_STRONG_JAW) {
+            movePower = movePower * 15 / 10;
+            break;
+        }
+    }
+
+    for (i = 0; i < NELEMS(sSharpnessMoves); i++) {
+        if (sSharpnessMoves[i] == move && attackerParams.ability == ABILITY_SHARPNESS) {
             movePower = movePower * 15 / 10;
             break;
         }

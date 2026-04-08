@@ -1,11 +1,11 @@
 {
     "base_stats": {
         "hp": 111,
-        "attack": 83,
-        "defense": 68,
+        "attack": 80,
+        "defense": 70,
         "speed": 39,
         "special_attack": 92,
-        "special_defense": 82
+        "special_defense": 83
     },
     "types": [ "TYPE_WATER", "TYPE_GROUND" ],
     "catch_rate": 75,
@@ -37,19 +37,30 @@
     ],
     "learnset": {
         "by_level": [
-            [ 1, "MOVE_MUD_SLAP" ],
-            [ 1, "MOVE_MUD_SPORT" ],
-            [ 1, "MOVE_HARDEN" ],
-            [ 1, "MOVE_WATER_PULSE" ],
-            [ 2, "MOVE_MUD_SPORT" ],
-            [ 4, "MOVE_HARDEN" ],
-            [ 7, "MOVE_WATER_PULSE" ],
-            [ 11, "MOVE_MUD_BOMB" ],
-            [ 16, "MOVE_HIDDEN_POWER" ],
-            [ 22, "MOVE_RAIN_DANCE" ],
-            [ 29, "MOVE_BODY_SLAM" ],
-            [ 41, "MOVE_MUDDY_WATER" ],
-            [ 54, "MOVE_RECOVER" ]
+            [1, "MOVE_MUD_SLAP"],
+            [1, "MOVE_WATER_GUN"],
+            [1, "MOVE_MUD_SPORT"],
+            [1, "MOVE_HARDEN"],
+            [1, "MOVE_WATER_PULSE"],
+            [2, "MOVE_MUD_SPORT"],
+            [4, "MOVE_HARDEN"],
+            [10, "MOVE_SLUDGE"],
+            [13, "MOVE_WATER_PULSE"],
+            [16, "MOVE_HIDDEN_POWER"],
+            [20, "MOVE_RAIN_DANCE"],
+            [23, "MOVE_MUD_SHOT"],
+            [25, "MOVE_BODY_SLAM"],
+            [27, "MOVE_STOCKPILE"],
+            [27, "MOVE_SWALLOW"],
+            [27, "MOVE_SPIT_UP"],
+            [30, "MOVE_MUD_BOMB"],
+            [34, "MOVE_MUDDY_WATER"],
+            [38, "MOVE_AMNESIA"],
+            [41, "MOVE_RECOVER"],
+            [44, "MOVE_SLUDGE_BOMB"],
+            [48, "MOVE_ANCIENT_POWER"],
+            [52, "MOVE_EARTH_POWER"],
+            [56, "MOVE_HYDRO_PUMP"]
         ],
         "by_tm": [
             "TM03",

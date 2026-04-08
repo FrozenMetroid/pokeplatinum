@@ -1,11 +1,11 @@
 {
     "base_stats": {
-        "hp": 45,
-        "attack": 67,
-        "defense": 60,
-        "speed": 63,
-        "special_attack": 35,
-        "special_defense": 50
+        "hp": 60,
+        "attack": 77,
+        "defense": 70,
+        "speed": 65,
+        "special_attack": 60,
+        "special_defense": 60
     },
     "types": [ "TYPE_WATER", "TYPE_WATER" ],
     "catch_rate": 225,
@@ -34,19 +34,25 @@
     "icon_palette": 0,
     "learnset": {
         "by_level": [
-            [ 1, "MOVE_PECK" ],
-            [ 1, "MOVE_TAIL_WHIP" ],
-            [ 1, "MOVE_WATER_SPORT" ],
-            [ 7, "MOVE_SUPERSONIC" ],
-            [ 11, "MOVE_HORN_ATTACK" ],
-            [ 17, "MOVE_WATER_PULSE" ],
-            [ 21, "MOVE_FLAIL" ],
-            [ 27, "MOVE_AQUA_RING" ],
-            [ 31, "MOVE_FURY_ATTACK" ],
-            [ 37, "MOVE_WATERFALL" ],
-            [ 41, "MOVE_HORN_DRILL" ],
-            [ 47, "MOVE_AGILITY" ],
-            [ 51, "MOVE_MEGAHORN" ]
+            [1, "MOVE_PECK"],
+            [1, "MOVE_TAIL_WHIP"],
+            [1, "MOVE_WATER_SPORT"],
+            [1, "MOVE_BUBBLE"],
+            [5, "MOVE_SUPERSONIC"],
+            [8, "MOVE_WATER_GUN"],
+            [11, "MOVE_HORN_ATTACK"],
+            [14, "MOVE_FURY_ATTACK"],
+            [17, "MOVE_WATER_PULSE"],
+            [21, "MOVE_FLAIL"],
+            [24, "MOVE_AQUA_JET"],
+            [27, "MOVE_AQUA_RING"],
+            [31, "MOVE_BOUNCE"],
+            [34, "MOVE_WATERFALL"],
+            [38, "MOVE_BODY_SLAM"],
+            [41, "MOVE_HORN_DRILL"],
+            [45, "MOVE_AGILITY"],
+            [48, "MOVE_AQUA_TAIL"],
+            [52, "MOVE_MEGAHORN"]
         ],
         "by_tm": [
             "TM03",
@@ -98,7 +104,7 @@
     "evolutions": [
         [
             "EVO_LEVEL",
-            33,
+            30,
             "SPECIES_SEAKING"
         ]
     ],

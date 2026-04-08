@@ -1,11 +1,11 @@
 {
     "base_stats": {
-        "hp": 55,
-        "attack": 70,
-        "defense": 45,
-        "speed": 60,
-        "special_attack": 70,
-        "special_defense": 50
+        "hp": 65,
+        "attack": 80,
+        "defense": 55,
+        "speed": 70,
+        "special_attack": 80,
+        "special_defense": 60
     },
     "types": [ "TYPE_FIRE", "TYPE_FIRE" ],
     "catch_rate": 190,
@@ -34,21 +34,21 @@
     "icon_palette": 0,
     "learnset": {
         "by_level": [
-            [ 1, "MOVE_BITE" ],
-            [ 1, "MOVE_ROAR" ],
-            [ 6, "MOVE_EMBER" ],
-            [ 9, "MOVE_LEER" ],
-            [ 14, "MOVE_ODOR_SLEUTH" ],
-            [ 17, "MOVE_HELPING_HAND" ],
-            [ 20, "MOVE_FLAME_WHEEL" ],
-            [ 25, "MOVE_REVERSAL" ],
-            [ 28, "MOVE_FIRE_FANG" ],
-            [ 31, "MOVE_TAKE_DOWN" ],
-            [ 34, "MOVE_FLAMETHROWER" ],
-            [ 39, "MOVE_AGILITY" ],
-            [ 42, "MOVE_CRUNCH" ],
-            [ 45, "MOVE_HEAT_WAVE" ],
-            [ 48, "MOVE_FLARE_BLITZ" ]
+            [1, "MOVE_BITE"],
+            [1, "MOVE_ROAR"],
+            [6, "MOVE_EMBER"],
+            [9, "MOVE_LEER"],
+            [14, "MOVE_ODOR_SLEUTH"],
+            [17, "MOVE_HELPING_HAND"],
+            [20, "MOVE_FLAME_WHEEL"],
+            [23, "MOVE_REVERSAL"],
+            [26, "MOVE_FIRE_FANG"],
+            [29, "MOVE_TAKE_DOWN"],
+            [32, "MOVE_FLAMETHROWER"],
+            [36, "MOVE_AGILITY"],
+            [40, "MOVE_CRUNCH"],
+            [43, "MOVE_HEAT_WAVE"],
+            [46, "MOVE_FLARE_BLITZ"]
         ],
         "by_tm": [
             "TM05",

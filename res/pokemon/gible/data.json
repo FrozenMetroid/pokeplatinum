@@ -1,11 +1,11 @@
 {
     "base_stats": {
-        "hp": 58,
-        "attack": 70,
-        "defense": 45,
-        "speed": 42,
+        "hp": 60,
+        "attack": 85,
+        "defense": 65,
+        "speed": 52,
         "special_attack": 40,
-        "special_defense": 45
+        "special_defense": 55
     },
     "types": [ "TYPE_DRAGON", "TYPE_GROUND" ],
     "catch_rate": 45,
@@ -27,23 +27,27 @@
     "base_friendship": 70,
     "exp_rate": "EXP_RATE_SLOW",
     "egg_groups": [ "EGG_GROUP_MONSTER", "EGG_GROUP_DRAGON" ],
-    "abilities": [ "ABILITY_SAND_VEIL", "ABILITY_NONE" ],
+    "abilities": [ "ABILITY_SAND_VEIL", "ABILITY_ROUGH_SKIN" ],
     "safari_flee_rate": 0,
     "body_color": "MON_COLOR_BLUE",
     "flip_sprite": false,
     "icon_palette": 0,
     "learnset": {
         "by_level": [
-            [ 1, "MOVE_TACKLE" ],
-            [ 3, "MOVE_SAND_ATTACK" ],
-            [ 7, "MOVE_DRAGON_RAGE" ],
-            [ 13, "MOVE_SANDSTORM" ],
-            [ 15, "MOVE_TAKE_DOWN" ],
-            [ 19, "MOVE_SAND_TOMB" ],
-            [ 25, "MOVE_SLASH" ],
-            [ 27, "MOVE_DRAGON_CLAW" ],
-            [ 31, "MOVE_DIG" ],
-            [ 37, "MOVE_DRAGON_RUSH" ]
+            [1, "MOVE_TACKLE"],
+            [3, "MOVE_SAND_TOMB"],
+            [7, "MOVE_DRAGON_RAGE"],
+            [13, "MOVE_SANDSTORM"],
+            [15, "MOVE_TAKE_DOWN"],
+            [19, "MOVE_BITE"],
+            [22, "MOVE_SLASH"],
+            [25, "MOVE_MAGNITUDE"],
+            [28, "MOVE_DRAGON_CLAW"],
+            [31, "MOVE_DIG"],
+            [35, "MOVE_DRAGON_RUSH"],
+            [38, "MOVE_CRUNCH"],
+            [44, "MOVE_EARTHQUAKE"],
+            [48, "MOVE_OUTRAGE"]
         ],
         "by_tm": [
             "TM02",

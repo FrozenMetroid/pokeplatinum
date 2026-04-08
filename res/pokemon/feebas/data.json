@@ -1,11 +1,11 @@
 {
     "base_stats": {
-        "hp": 20,
-        "attack": 15,
-        "defense": 20,
+        "hp": 50,
+        "attack": 35,
+        "defense": 40,
         "speed": 80,
-        "special_attack": 10,
-        "special_defense": 55
+        "special_attack": 30,
+        "special_defense": 75
     },
     "types": [ "TYPE_WATER", "TYPE_WATER" ],
     "catch_rate": 255,
@@ -35,8 +35,8 @@
     "learnset": {
         "by_level": [
             [ 1, "MOVE_SPLASH" ],
-            [ 15, "MOVE_TACKLE" ],
-            [ 30, "MOVE_FLAIL" ]
+            [ 10, "MOVE_TACKLE" ],
+            [ 15, "MOVE_FLAIL" ]
         ],
         "by_tm": [
             "TM03",

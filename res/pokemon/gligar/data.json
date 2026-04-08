@@ -1,11 +1,11 @@
 {
     "base_stats": {
-        "hp": 65,
-        "attack": 75,
+        "hp": 70,
+        "attack": 70,
         "defense": 105,
         "speed": 85,
         "special_attack": 35,
-        "special_defense": 65
+        "special_defense": 70
     },
     "types": [ "TYPE_GROUND", "TYPE_FLYING" ],
     "catch_rate": 60,
@@ -34,19 +34,26 @@
     "icon_palette": 2,
     "learnset": {
         "by_level": [
-            [ 1, "MOVE_POISON_STING" ],
-            [ 5, "MOVE_SAND_ATTACK" ],
-            [ 9, "MOVE_HARDEN" ],
-            [ 12, "MOVE_KNOCK_OFF" ],
-            [ 16, "MOVE_QUICK_ATTACK" ],
-            [ 20, "MOVE_FURY_CUTTER" ],
-            [ 23, "MOVE_FEINT_ATTACK" ],
-            [ 27, "MOVE_SCREECH" ],
-            [ 31, "MOVE_SLASH" ],
-            [ 34, "MOVE_SWORDS_DANCE" ],
-            [ 38, "MOVE_U_TURN" ],
-            [ 42, "MOVE_X_SCISSOR" ],
-            [ 45, "MOVE_GUILLOTINE" ]
+            [1, "MOVE_POISON_STING"],
+            [1, "MOVE_MUD_SLAP"],
+            [1, "MOVE_FURY_CUTTER"],
+            [5, "MOVE_SAND_ATTACK"],
+            [8, "MOVE_HARDEN"],
+            [11, "MOVE_AERIAL_ACE"],
+            [14, "MOVE_KNOCK_OFF"],
+            [17, "MOVE_QUICK_ATTACK"],
+            [20, "MOVE_SAND_TOMB"],
+            [23, "MOVE_POISON_TAIL"],
+            [27, "MOVE_SCREECH"],
+            [29, "MOVE_MAGNITUDE"],
+            [31, "MOVE_SLASH"],
+            [34, "MOVE_SWORDS_DANCE"],
+            [36, "MOVE_EARTHQUAKE"],
+            [38, "MOVE_U_TURN"],
+            [42, "MOVE_X_SCISSOR"],
+            [45, "MOVE_GUILLOTINE"],
+            [49, "MOVE_POISON_JAB"],
+            [53, "MOVE_NIGHT_SLASH"]
         ],
         "by_tm": [
             "TM06",
