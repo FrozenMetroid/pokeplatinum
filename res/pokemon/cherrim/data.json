@@ -1,11 +1,11 @@
 {
     "base_stats": {
         "hp": 70,
-        "attack": 60,
+        "attack": 90,
         "defense": 70,
         "speed": 85,
-        "special_attack": 87,
-        "special_defense": 78
+        "special_attack": 80,
+        "special_defense": 95
     },
     "types": [ "TYPE_GRASS", "TYPE_GRASS" ],
     "catch_rate": 75,
@@ -34,19 +34,25 @@
     "icon_palette": 0,
     "learnset": {
         "by_level": [
-            [ 0, "MOVE_SUNNY_DAY" ],
-            [ 1, "MOVE_TACKLE" ],
-            [ 1, "MOVE_GROWTH" ],
-            [ 7, "MOVE_GROWTH" ],
-            [ 10, "MOVE_LEECH_SEED" ],
-            [ 13, "MOVE_HELPING_HAND" ],
-            [ 19, "MOVE_MAGICAL_LEAF" ],
-            [ 22, "MOVE_SUNNY_DAY" ],
-            [ 25, "MOVE_PETAL_DANCE" ],
-            [ 30, "MOVE_WORRY_SEED" ],
-            [ 35, "MOVE_TAKE_DOWN" ],
-            [ 43, "MOVE_SOLAR_BEAM" ],
-            [ 48, "MOVE_LUCKY_CHANT" ]
+            [0, "MOVE_SUNNY_DAY"],
+            [0, "MOVE_SYNTHESIS"],
+            [1, "MOVE_TACKLE"],
+            [1, "MOVE_GROWTH"],
+            [8, "MOVE_ABSORB"],
+            [10, "MOVE_LEECH_SEED"],
+            [13, "MOVE_HELPING_HAND"],
+            [16, "MOVE_MAGICAL_LEAF"],
+            [19, "MOVE_GRASS_WHISTLE"],
+            [25, "MOVE_RAZOR_LEAF"],
+            [28, "MOVE_WORRY_SEED"],
+            [31, "MOVE_TAKE_DOWN"],
+            [34, "MOVE_AROMATHERAPY"],
+            [37, "MOVE_GIGA_DRAIN"],
+            [40, "MOVE_LUCKY_CHANT"],
+            [43, "MOVE_LEAF_BLADE"],
+            [47, "MOVE_DOUBLE_EDGE"],
+            [54, "MOVE_WEATHER_BALL"],
+            [58, "MOVE_LEAF_STORM"]
         ],
         "by_tm": [
             "TM06",

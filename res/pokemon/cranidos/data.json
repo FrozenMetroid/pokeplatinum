@@ -1,10 +1,10 @@
 {
     "base_stats": {
-        "hp": 67,
+        "hp": 60,
         "attack": 125,
         "defense": 40,
-        "speed": 58,
-        "special_attack": 30,
+        "speed": 70,
+        "special_attack": 25,
         "special_defense": 30
     },
     "types": [ "TYPE_ROCK", "TYPE_ROCK" ],
@@ -27,24 +27,27 @@
     "base_friendship": 70,
     "exp_rate": "EXP_RATE_ERRATIC",
     "egg_groups": [ "EGG_GROUP_MONSTER", "EGG_GROUP_MONSTER" ],
-    "abilities": [ "ABILITY_MOLD_BREAKER", "ABILITY_NONE" ],
+    "abilities": [ "ABILITY_MOLD_BREAKER", "ABILITY_ROCK_HEAD" ],
     "safari_flee_rate": 0,
     "body_color": "MON_COLOR_BLUE",
     "flip_sprite": false,
     "icon_palette": 0,
     "learnset": {
         "by_level": [
-            [ 1, "MOVE_HEADBUTT" ],
-            [ 1, "MOVE_LEER" ],
-            [ 6, "MOVE_FOCUS_ENERGY" ],
-            [ 10, "MOVE_PURSUIT" ],
-            [ 15, "MOVE_TAKE_DOWN" ],
-            [ 19, "MOVE_SCARY_FACE" ],
-            [ 24, "MOVE_ASSURANCE" ],
-            [ 28, "MOVE_ANCIENT_POWER" ],
-            [ 33, "MOVE_ZEN_HEADBUTT" ],
-            [ 37, "MOVE_SCREECH" ],
-            [ 43, "MOVE_HEAD_SMASH" ]
+            [1, "MOVE_HEADBUTT"],
+            [1, "MOVE_LEER"],
+            [6, "MOVE_FOCUS_ENERGY"],
+            [10, "MOVE_PURSUIT"],
+            [13, "MOVE_TAKE_DOWN"],
+            [16, "MOVE_ROCK_TOMB"],
+            [19, "MOVE_SCARY_FACE"],
+            [22, "MOVE_ASSURANCE"],
+            [25, "MOVE_ANCIENT_POWER"],
+            [29, "MOVE_ROCK_SLIDE"],
+            [32, "MOVE_ZEN_HEADBUTT"],
+            [36, "MOVE_SCREECH"],
+            [39, "MOVE_IRON_HEAD"],
+            [43, "MOVE_HEAD_SMASH"]
         ],
         "by_tm": [
             "TM05",

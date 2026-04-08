@@ -1,11 +1,11 @@
 {
     "base_stats": {
-        "hp": 30,
-        "attack": 30,
-        "defense": 42,
-        "speed": 70,
-        "special_attack": 30,
-        "special_defense": 42
+        "hp": 75,
+        "attack": 50,
+        "defense": 80,
+        "speed": 60,
+        "special_attack": 50,
+        "special_defense": 80
     },
     "types": [ "TYPE_BUG", "TYPE_FLYING" ],
     "catch_rate": 120,
@@ -27,16 +27,18 @@
     "base_friendship": 70,
     "exp_rate": "EXP_RATE_MEDIUM_SLOW",
     "egg_groups": [ "EGG_GROUP_BUG", "EGG_GROUP_BUG" ],
-    "abilities": [ "ABILITY_HONEY_GATHER", "ABILITY_NONE" ],
+    "abilities": [ "ABILITY_HONEY_GATHER", "ABILITY_SWARM" ],
     "safari_flee_rate": 0,
     "body_color": "MON_COLOR_YELLOW",
     "flip_sprite": false,
     "icon_palette": 0,
     "learnset": {
         "by_level": [
-            [ 1, "MOVE_SWEET_SCENT" ],
-            [ 1, "MOVE_GUST" ],
-            [ 13, "MOVE_BUG_BITE" ]
+            [1, "MOVE_SWEET_SCENT"],
+            [1, "MOVE_GUST"],
+            [5, "MOVE_BUG_BITE"],
+            [10, "MOVE_SILVER_WIND"],
+            [15, "MOVE_AIR_CUTTER"]
         ],
         "by_tm": [  ],
         "by_tutor": [

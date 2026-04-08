@@ -4,7 +4,7 @@
         "attack": 70,
         "defense": 73,
         "speed": 60,
-        "special_attack": 85,
+        "special_attack": 95,
         "special_defense": 90
     },
     "types": [ "TYPE_NORMAL", "TYPE_NORMAL" ],
@@ -34,11 +34,29 @@
     "icon_palette": 0,
     "learnset": {
         "by_level": [
-            [ 0, "MOVE_METRONOME" ],
-            [ 1, "MOVE_SING" ],
-            [ 1, "MOVE_DOUBLE_SLAP" ],
-            [ 1, "MOVE_MINIMIZE" ],
-            [ 1, "MOVE_METRONOME" ]
+            [0, "MOVE_METRONOME"],
+            [1, "MOVE_POUND"],
+            [1, "MOVE_GROWL"],
+            [1, "MOVE_COPYCAT"],
+            [1, "MOVE_CHARM"],
+            [1, "MOVE_MAGICAL_LEAF"],
+            [1, "MOVE_ENCORE"],
+            [1, "MOVE_SING"],
+            [1, "MOVE_DOUBLE_SLAP"],
+            [1, "MOVE_DEFENSE_CURL"],
+            [1, "MOVE_SWIFT"],
+            [1, "MOVE_FOLLOW_ME"],
+            [1, "MOVE_MINIMIZE"],
+            [1, "MOVE_WAKE_UP_SLAP"],
+            [1, "MOVE_COSMIC_POWER"],
+            [1, "MOVE_LUCKY_CHANT"],
+            [1, "MOVE_HYPER_VOICE"],
+            [35, "MOVE_HYPER_VOICE"],
+            [38, "MOVE_GRAVITY"],
+            [41, "MOVE_MOONLIGHT"],
+            [44, "MOVE_LIGHT_SCREEN"],
+            [47, "MOVE_METEOR_MASH"],
+            [50, "MOVE_HEALING_WISH"]
         ],
         "by_tm": [
             "TM01",

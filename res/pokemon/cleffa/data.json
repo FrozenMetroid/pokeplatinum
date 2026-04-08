@@ -1,11 +1,11 @@
 {
     "base_stats": {
-        "hp": 50,
-        "attack": 25,
-        "defense": 28,
-        "speed": 15,
-        "special_attack": 45,
-        "special_defense": 55
+        "hp": 60,
+        "attack": 30,
+        "defense": 40,
+        "speed": 25,
+        "special_attack": 50,
+        "special_defense": 65
     },
     "types": [ "TYPE_NORMAL", "TYPE_NORMAL" ],
     "catch_rate": 150,
@@ -34,13 +34,17 @@
     "icon_palette": 0,
     "learnset": {
         "by_level": [
-            [ 1, "MOVE_POUND" ],
-            [ 1, "MOVE_CHARM" ],
-            [ 4, "MOVE_ENCORE" ],
-            [ 7, "MOVE_SING" ],
-            [ 10, "MOVE_SWEET_KISS" ],
-            [ 13, "MOVE_COPYCAT" ],
-            [ 16, "MOVE_MAGICAL_LEAF" ]
+            [1, "MOVE_POUND"],
+            [1, "MOVE_CHARM"],
+            [4, "MOVE_ENCORE"],
+            [7, "MOVE_SING"],
+            [10, "MOVE_SWEET_KISS"],
+            [12, "MOVE_UPROAR"],
+            [15, "MOVE_COPYCAT"],
+            [17, "MOVE_MAGICAL_LEAF"],
+            [20, "MOVE_MOONLIGHT"],
+            [23, "MOVE_PSYBEAM"],
+            [26, "MOVE_WISH"]
         ],
         "by_tm": [
             "TM03",

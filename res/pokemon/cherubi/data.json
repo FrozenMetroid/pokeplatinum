@@ -1,11 +1,11 @@
 {
     "base_stats": {
-        "hp": 45,
-        "attack": 35,
-        "defense": 45,
-        "speed": 35,
-        "special_attack": 62,
-        "special_defense": 53
+        "hp": 55,
+        "attack": 75,
+        "defense": 50,
+        "speed": 65,
+        "special_attack": 65,
+        "special_defense": 65
     },
     "types": [ "TYPE_GRASS", "TYPE_GRASS" ],
     "catch_rate": 190,
@@ -34,16 +34,25 @@
     "icon_palette": 1,
     "learnset": {
         "by_level": [
-            [ 1, "MOVE_TACKLE" ],
-            [ 7, "MOVE_GROWTH" ],
-            [ 10, "MOVE_LEECH_SEED" ],
-            [ 13, "MOVE_HELPING_HAND" ],
-            [ 19, "MOVE_MAGICAL_LEAF" ],
-            [ 22, "MOVE_SUNNY_DAY" ],
-            [ 28, "MOVE_WORRY_SEED" ],
-            [ 31, "MOVE_TAKE_DOWN" ],
-            [ 37, "MOVE_SOLAR_BEAM" ],
-            [ 40, "MOVE_LUCKY_CHANT" ]
+            [1, "MOVE_TACKLE"],
+            [1, "MOVE_GROWTH"],
+            [5, "MOVE_ABSORB"],
+            [7, "MOVE_LEECH_SEED"],
+            [11, "MOVE_HELPING_HAND"],
+            [16, "MOVE_MAGICAL_LEAF"],
+            [19, "MOVE_MEGA_DRAIN"],
+            [22, "MOVE_SUNNY_DAY"],
+            [25, "MOVE_RAZOR_LEAF"],
+            [28, "MOVE_WORRY_SEED"],
+            [31, "MOVE_TAKE_DOWN"],
+            [34, "MOVE_AROMATHERAPY"],
+            [37, "MOVE_SOLAR_BEAM"],
+            [40, "MOVE_LUCKY_CHANT"],
+            [43, "MOVE_GIGA_DRAIN"],
+            [47, "MOVE_LEAF_BLADE"],
+            [50, "MOVE_GRASS_WHISTLE"],
+            [54, "MOVE_WEATHER_BALL"],
+            [58, "MOVE_LEAF_STORM"]
         ],
         "by_tm": [
             "TM06",

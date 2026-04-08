@@ -34,18 +34,21 @@
     "icon_palette": 0,
     "learnset": {
         "by_level": [
-            [ 1, "MOVE_PECK" ],
-            [ 5, "MOVE_GROWL" ],
-            [ 9, "MOVE_MIRROR_MOVE" ],
-            [ 13, "MOVE_SING" ],
-            [ 17, "MOVE_FURY_ATTACK" ],
-            [ 21, "MOVE_CHATTER" ],
-            [ 25, "MOVE_TAUNT" ],
-            [ 29, "MOVE_MIMIC" ],
-            [ 33, "MOVE_ROOST" ],
-            [ 37, "MOVE_UPROAR" ],
-            [ 41, "MOVE_FEATHER_DANCE" ],
-            [ 45, "MOVE_HYPER_VOICE" ]
+            [1, "MOVE_PECK"],
+            [1, "MOVE_GROWL"],
+            [5, "MOVE_MIRROR_MOVE"],
+            [7, "MOVE_SING"],
+            [11, "MOVE_UPROAR"],
+            [14, "MOVE_ENCORE"],
+            [17, "MOVE_SUPERSONIC"],
+            [21, "MOVE_CHATTER"],
+            [25, "MOVE_TAUNT"],
+            [29, "MOVE_MIMIC"],
+            [33, "MOVE_ROOST"],
+            [37, "MOVE_HYPER_VOICE"],
+            [41, "MOVE_FEATHER_DANCE"],
+            [45, "MOVE_NASTY_PLOT"],
+            [48, "MOVE_AIR_SLASH"]
         ],
         "by_tm": [
             "TM06",

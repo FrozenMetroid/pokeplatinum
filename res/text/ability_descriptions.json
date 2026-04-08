@@ -865,6 +865,13 @@
         "Reduces a sleeping foe’s\n",
         "HP."
       ]
+    },
+    {
+      "id": "pl_msg_00000612_00124",
+      "en_US": [
+        "Boosts the power of\n",
+        "biting moves."
+      ]
     }
   ]
 }

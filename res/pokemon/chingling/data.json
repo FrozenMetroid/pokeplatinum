@@ -2,10 +2,10 @@
     "base_stats": {
         "hp": 45,
         "attack": 30,
-        "defense": 50,
+        "defense": 60,
         "speed": 45,
-        "special_attack": 65,
-        "special_defense": 50
+        "special_attack": 70,
+        "special_defense": 60
     },
     "types": [ "TYPE_PSYCHIC", "TYPE_PSYCHIC" ],
     "catch_rate": 120,
@@ -34,12 +34,16 @@
     "icon_palette": 0,
     "learnset": {
         "by_level": [
-            [ 1, "MOVE_WRAP" ],
-            [ 6, "MOVE_GROWL" ],
-            [ 9, "MOVE_ASTONISH" ],
-            [ 14, "MOVE_CONFUSION" ],
-            [ 17, "MOVE_UPROAR" ],
-            [ 22, "MOVE_LAST_RESORT" ]
+            [1, "MOVE_WRAP"],
+            [1, "MOVE_CONFUSION"],
+            [6, "MOVE_GROWL"],
+            [9, "MOVE_ASTONISH"],
+            [14, "MOVE_CONFUSE_RAY"],
+            [17, "MOVE_UPROAR"],
+            [20, "MOVE_PSYBEAM"],
+            [23, "MOVE_SCREECH"],
+            [27, "MOVE_HYPER_VOICE"],
+            [30, "MOVE_LAST_RESORT"]
         ],
         "by_tm": [
             "TM04",

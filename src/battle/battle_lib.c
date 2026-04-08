@@ -6626,6 +6626,17 @@ static const u16 sPunchingMoves[] = {
     MOVE_SKY_UPPERCUT
 };
 
+static const u16 sStrongJawMoves[] = {
+    MOVE_BITE,
+    MOVE_BUG_BITE, // custom
+    MOVE_CRUNCH,
+    MOVE_FIRE_FANG,
+    MOVE_HYPER_FANG,
+    MOVE_ICE_FANG,
+    MOVE_POISON_FANG,
+    MOVE_THUNDER_FANG,
+};
+
 typedef struct DamageCalcParams {
     u16 species;
     s16 curHP;
@@ -6973,7 +6984,18 @@ int BattleSystem_CalcMoveDamage(BattleSystem *battleSys,
 
     for (i = 0; i < NELEMS(sPunchingMoves); i++) {
         if (sPunchingMoves[i] == move && attackerParams.ability == ABILITY_IRON_FIST) {
+            #ifndef BATTLE_BUFF_IRON_FIST
             movePower = movePower * 12 / 10;
+            #else
+            movePower = movePower * 15 / 10;
+            #endif
+            break;
+        }
+    }
+
+    for (i = 0; i < NELEMS(sStrongJawMoves); i++) {
+        if (sStrongJawMoves[i] == move && attackerParams.ability == ABILITY_STRONG_JAW) {
+            movePower = movePower * 15 / 10;
             break;
         }
     }

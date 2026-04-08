@@ -1,11 +1,11 @@
 {
     "base_stats": {
-        "hp": 48,
-        "attack": 61,
-        "defense": 40,
-        "speed": 50,
+        "hp": 88,
+        "attack": 91,
+        "defense": 55,
+        "speed": 65,
         "special_attack": 61,
-        "special_defense": 40
+        "special_defense": 55
     },
     "types": [ "TYPE_POISON", "TYPE_FIGHTING" ],
     "catch_rate": 140,
@@ -34,20 +34,26 @@
     "icon_palette": 0,
     "learnset": {
         "by_level": [
-            [ 1, "MOVE_ASTONISH" ],
-            [ 3, "MOVE_MUD_SLAP" ],
-            [ 8, "MOVE_POISON_STING" ],
-            [ 10, "MOVE_TAUNT" ],
-            [ 15, "MOVE_PURSUIT" ],
-            [ 17, "MOVE_FEINT_ATTACK" ],
-            [ 22, "MOVE_REVENGE" ],
-            [ 24, "MOVE_SWAGGER" ],
-            [ 29, "MOVE_MUD_BOMB" ],
-            [ 31, "MOVE_SUCKER_PUNCH" ],
-            [ 36, "MOVE_NASTY_PLOT" ],
-            [ 38, "MOVE_POISON_JAB" ],
-            [ 43, "MOVE_SLUDGE_BOMB" ],
-            [ 45, "MOVE_FLATTER" ]
+            [1, "MOVE_ASTONISH"],
+            [1, "MOVE_POISON_STING"],
+            [3, "MOVE_MUD_SLAP"],
+            [8, "MOVE_FORCE_PALM"],
+            [10, "MOVE_TAUNT"],
+            [13, "MOVE_PURSUIT"],
+            [17, "MOVE_KNOCK_OFF"],
+            [20, "MOVE_FAKE_OUT"],
+            [22, "MOVE_REVENGE"],
+            [24, "MOVE_SWAGGER"],
+            [27, "MOVE_POISON_FANG"],
+            [29, "MOVE_MUD_BOMB"],
+            [31, "MOVE_SUCKER_PUNCH"],
+            [34, "MOVE_DRAIN_PUNCH"],
+            [36, "MOVE_NASTY_PLOT"],
+            [38, "MOVE_POISON_JAB"],
+            [42, "MOVE_SLUDGE_BOMB"],
+            [46, "MOVE_CLOSE_COMBAT"],
+            [49, "MOVE_FLATTER"],
+            [55, "MOVE_GUNK_SHOT"]
         ],
         "by_tm": [
             "TM01",

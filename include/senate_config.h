@@ -41,6 +41,8 @@ in the Pokedex if you fought it in the Frontier
 
 #define BATTLE_MICLE_BERRY_ACCURACY // always accurate
 
+#define BATTLE_BUFF_IRON_FIST // 1.2 -> 1.5 like Strong Jaw
+
 
 // The following are always applied because they deal with some subscripts
 // Modernization:
