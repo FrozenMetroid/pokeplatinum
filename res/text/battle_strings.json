@@ -8509,6 +8509,27 @@
         "The foe’s {STRVAR_1 1, 0, 0} hung on\n",
         "with Sturdy!"
       ]
+    },
+    {
+      "id": "BattleStrings_Text_SupremeOverlord_Ally",
+      "en_US": [
+        "{STRVAR_1 1, 0, 0} gained strength\n",
+        "from the fallen!"
+      ]
+    },
+    {
+      "id": "BattleStrings_Text_SupremeOverlord_Wild",
+      "en_US": [
+        "The wild {STRVAR_1 1, 0, 0} gained\n",
+        "strength from the fallen!"
+      ]
+    },
+    {
+      "id": "BattleStrings_Text_SupremeOverlord_Foe",
+      "en_US": [
+        "The foe’s {STRVAR_1 1, 0, 0} gained\n",
+        "strength from the fallen!"
+      ]
     }
   ]
 }

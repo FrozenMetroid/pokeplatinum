@@ -192,7 +192,7 @@ struct BattleContext {
     u32 battlerStatusFlags[MAX_BATTLERS];
     u32 payDayCount;
     int totalTurns;
-    int totalFainted[MAX_BATTLERS];
+    int totalFainted[MAX_BATTLERS]; // for battle records, not supreme overlord
     int totalDamage[MAX_BATTLERS];
     int meFirstTurnOrder;
 
@@ -310,6 +310,8 @@ struct BattleContext {
 
     u32 battleProgressFlag : 1;
     u32 padding3154_01 : 31;
+
+    u32 totalFaintedTeammates[MAX_BATTLERS]; // for Supreme Overlord; u32 for alignment perhaps
 };
 
 #endif // POKEPLATINUM_BATTLE_CONTEXT_H

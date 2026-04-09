@@ -72,6 +72,7 @@ static BOOL MoveCannotTriggerAnticipation(BattleContext *battleCtx, int move);
 static int CalcMoveType(BattleSystem *battleSys, BattleContext *battleCtx, int item, int move);
 static BOOL IntimidateCheckHelper(BattleContext *battleCtx, u32 client);
 static BOOL IsPowderMove(u16 moveID);
+static BOOL Battler_HasFallenTeammates(BattleContext *battleCtx, u32 client);
 
 static const Fraction sStatStageBoosts[];
 
@@ -1269,7 +1270,7 @@ u8 BattleSystem_CompareBattlerSpeed(BattleSystem *battleSys, BattleContext *batt
     }
 
     if (battler1Ability == ABILITY_SLOW_START
-        && battleCtx->totalTurns - battleCtx->battleMons[battler1].moveEffectsData.slowStartTurnNumber < 5) {
+        && battleCtx->totalTurns - battleCtx->battleMons[battler1].moveEffectsData.slowStartTurnNumber < 3) {
         battler1Speed /= 2;
     }
 
@@ -1335,7 +1336,7 @@ u8 BattleSystem_CompareBattlerSpeed(BattleSystem *battleSys, BattleContext *batt
     }
 
     if (battler2Ability == ABILITY_SLOW_START
-        && battleCtx->totalTurns - battleCtx->battleMons[battler2].moveEffectsData.slowStartTurnNumber < 5) {
+        && battleCtx->totalTurns - battleCtx->battleMons[battler2].moveEffectsData.slowStartTurnNumber < 3) {
         battler2Speed /= 2;
     }
 
@@ -3661,6 +3662,9 @@ enum SwitchInCheckState {
     SWITCH_IN_CHECK_STATE_SLOW_START,
     SWITCH_IN_CHECK_STATE_MOLD_BREAKER,
     SWITCH_IN_CHECK_STATE_PRESSURE,
+    #ifdef BATTLE_ADD_SUPREME_OVERLORD
+    SWITCH_IN_CHECK_STATE_SUPREME_OVERLORD,
+    #endif
     SWITCH_IN_CHECK_STATE_FORM_CHANGE,
     SWITCH_IN_CHECK_STATE_AMULET_COIN,
     SWITCH_IN_CHECK_STATE_FORBIDDEN_STATUS,
@@ -4100,7 +4104,7 @@ int BattleSystem_TriggerEffectOnSwitch(BattleSystem *battleSys, BattleContext *b
                 if (battleCtx->battleMons[battler].slowStartFinished == 0
                     && battleCtx->battleMons[battler].curHP
                     && Battler_Ability(battleCtx, battler) == ABILITY_SLOW_START
-                    && (battleCtx->totalTurns - battleCtx->battleMons[battler].moveEffectsData.slowStartTurnNumber) == 5) {
+                    && (battleCtx->totalTurns - battleCtx->battleMons[battler].moveEffectsData.slowStartTurnNumber) == 3) {
                     battleCtx->battleMons[battler].slowStartFinished = 1;
                     battleCtx->msgBattlerTemp = battler;
                     subscript = subscript_slow_start_end;
@@ -4144,6 +4148,27 @@ int BattleSystem_TriggerEffectOnSwitch(BattleSystem *battleSys, BattleContext *b
                     battleCtx->battleMons[battler].pressureAnnounced = TRUE;
                     battleCtx->msgBattlerTemp = battler;
                     subscript = subscript_pressure;
+                    result = SWITCH_IN_CHECK_RESULT_BREAK;
+                    break;
+                }
+            }
+
+            if (i == maxBattlers) {
+                battleCtx->switchInCheckState++;
+            }
+            break;
+
+        case SWITCH_IN_CHECK_STATE_SUPREME_OVERLORD:
+            for (i = 0; i < maxBattlers; i++) {
+                battler = battleCtx->monSpeedOrder[i];
+
+                if (battleCtx->battleMons[battler].supremeOverlordAnnounced == FALSE
+                    && battleCtx->battleMons[battler].curHP
+                    && Battler_Ability(battleCtx, battler) == ABILITY_SUPREME_OVERLORD
+                    && Battler_HasFallenTeammates(battleCtx, battler)) {
+                    battleCtx->battleMons[battler].supremeOverlordAnnounced = TRUE;
+                    battleCtx->msgBattlerTemp = battler;
+                    subscript = subscript_supreme_overlord;
                     result = SWITCH_IN_CHECK_RESULT_BREAK;
                     break;
                 }
@@ -7025,6 +7050,21 @@ int BattleSystem_CalcMoveDamage(BattleSystem *battleSys,
             break;
         }
     }
+    EmulatorLog("Move Power Before Supreme Overlord: %d", movePower);
+    if (attackerParams.ability == ABILITY_SUPREME_OVERLORD) {
+        if (battleCtx->totalFaintedTeammates[attacker] == 1) {
+            movePower = movePower * 11 / 10;
+        } else if (battleCtx->totalFaintedTeammates[attacker] == 2) {
+            movePower = movePower * 12 / 10;
+        } else if (battleCtx->totalFaintedTeammates[attacker] == 3) {
+            movePower = movePower * 13 / 10;
+        } else if (battleCtx->totalFaintedTeammates[attacker] == 4) {
+            movePower = movePower * 14 / 10;
+        } else if (battleCtx->totalFaintedTeammates[attacker] >= 5) {
+            movePower = movePower * 15 / 10;
+        }
+    }
+    EmulatorLog("Move Power After Supreme Overlord: %d", movePower);
 
     if (NO_CLOUD_NINE) {
         if ((fieldConditions & FIELD_CONDITION_SUNNY) && attackerParams.ability == ABILITY_SOLAR_POWER) {
@@ -8370,5 +8410,22 @@ static BOOL IsPowderMove(u16 moveID)
         }
     }
     return output;
+}
+#endif
+
+#ifdef BATTLE_ADD_SUPREME_OVERLORD
+/**
+ *  @brief see if the client has any fainted teammates
+ *
+ *  @param ctx global battle structure
+ *  @param client battler to check if they have any fainted teammates
+ *  @return TRUE if there are fainted teammates
+ */
+static BOOL Battler_HasFallenTeammates(BattleContext *ctx, u32 client)
+{
+    if (ctx->totalFaintedTeammates[client] > 0) {
+        return TRUE;
+    }
+    return FALSE;
 }
 #endif

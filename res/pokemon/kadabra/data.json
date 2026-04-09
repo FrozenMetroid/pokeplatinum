@@ -5,7 +5,7 @@
         "defense": 30,
         "speed": 105,
         "special_attack": 120,
-        "special_defense": 70
+        "special_defense": 80
     },
     "types": [ "TYPE_PSYCHIC", "TYPE_PSYCHIC" ],
     "catch_rate": 100,
@@ -34,21 +34,22 @@
     "icon_palette": 2,
     "learnset": {
         "by_level": [
-            [ 0, "MOVE_CONFUSION" ],
-            [ 1, "MOVE_TELEPORT" ],
-            [ 1, "MOVE_KINESIS" ],
-            [ 1, "MOVE_CONFUSION" ],
-            [ 16, "MOVE_CONFUSION" ],
-            [ 18, "MOVE_DISABLE" ],
-            [ 22, "MOVE_MIRACLE_EYE" ],
-            [ 24, "MOVE_PSYBEAM" ],
-            [ 28, "MOVE_REFLECT" ],
-            [ 30, "MOVE_RECOVER" ],
-            [ 34, "MOVE_PSYCHO_CUT" ],
-            [ 36, "MOVE_ROLE_PLAY" ],
-            [ 40, "MOVE_PSYCHIC" ],
-            [ 42, "MOVE_FUTURE_SIGHT" ],
-            [ 46, "MOVE_TRICK" ]
+            [0, "MOVE_KINESIS"],
+            [1, "MOVE_TELEPORT"],
+            [1, "MOVE_CONFUSION"],
+            [16, "MOVE_CONFUSION"],
+            [18, "MOVE_DISABLE"],
+            [20, "MOVE_HIDDEN_POWER"],
+            [22, "MOVE_MIRACLE_EYE"],
+            [24, "MOVE_PSYBEAM"],
+            [28, "MOVE_REFLECT"],
+            [30, "MOVE_RECOVER"],
+            [34, "MOVE_EXTRASENSORY"],
+            [36, "MOVE_ROLE_PLAY"],
+            [40, "MOVE_PSYCHIC"],
+            [42, "MOVE_FUTURE_SIGHT"],
+            [46, "MOVE_TRICK"],
+            [50, "MOVE_LIGHT_SCREEN"]
         ],
         "by_tm": [
             "TM01",

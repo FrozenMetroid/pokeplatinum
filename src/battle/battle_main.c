@@ -1370,6 +1370,25 @@ static void BattleSys_New(BattleSystem *battleSys, FieldBattleDTO *dto)
             }
         }
     }
+
+    // =====For Supreme Overlord initialization=====
+    // You can start a battle and need Supreme Overlord to
+    // proc immediately because you start with a fainted mon
+    u8 numFainted, partyCount;
+    u16 hp;
+    int j; // i declared above
+    for (i = 0; i < MAX_BATTLERS; i++) {
+        numFainted = 0;
+        partyCount = Party_GetCurrentCount(BattleSystem_GetParty(battleSys, i));
+        for (j = 0; j < (partyCount - 1); j++) {
+            Pokemon *mon = BattleSystem_GetPartyPokemon(battleSys, i, j);
+            hp = Pokemon_GetValue(mon, MON_DATA_HP, NULL);
+            if (hp == 0) {
+                numFainted++;
+            }
+        }
+        battleSys->battleCtx->totalFaintedTeammates[i] = numFainted;
+    }
 }
 
 static BOOL TrainerIsGymLeaderE4OrChampion(u16 trainerClass)

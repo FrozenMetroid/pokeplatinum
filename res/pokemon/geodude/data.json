@@ -41,7 +41,7 @@
             [12, "MOVE_FLAIL"],
             [15, "MOVE_MAGNITUDE"],
             [18, "MOVE_ROLLOUT"],
-            [21, "MOVE_SELF_DESTRUCT"],
+            [21, "MOVE_SELFDESTRUCT"],
             [24, "MOVE_ROCK_BLAST"],
             [26, "MOVE_ROCK_POLISH"],
             [29, "MOVE_EARTHQUAKE"],

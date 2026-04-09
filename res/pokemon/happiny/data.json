@@ -1,10 +1,10 @@
 {
     "base_stats": {
-        "hp": 100,
+        "hp": 150,
         "attack": 5,
         "defense": 5,
         "speed": 30,
-        "special_attack": 15,
+        "special_attack": 30,
         "special_defense": 65
     },
     "types": [ "TYPE_NORMAL", "TYPE_NORMAL" ],
@@ -34,11 +34,16 @@
     "icon_palette": 0,
     "learnset": {
         "by_level": [
-            [ 1, "MOVE_POUND" ],
-            [ 1, "MOVE_CHARM" ],
-            [ 5, "MOVE_COPYCAT" ],
-            [ 9, "MOVE_REFRESH" ],
-            [ 12, "MOVE_SWEET_KISS" ]
+            [1, "MOVE_POUND"],
+            [1, "MOVE_CHARM"],
+            [5, "MOVE_COPYCAT"],
+            [9, "MOVE_REFRESH"],
+            [12, "MOVE_SWEET_KISS"],
+            [15, "MOVE_UPROAR"],
+            [18, "MOVE_HELPING_HAND"],
+            [21, "MOVE_HYPER_VOICE"],
+            [24, "MOVE_LAST_RESORT"],
+            [30, "MOVE_SOFTBOILED"]
         ],
         "by_tm": [
             "TM03",

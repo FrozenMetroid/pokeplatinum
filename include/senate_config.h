@@ -45,6 +45,8 @@ in the Pokedex if you fought it in the Frontier
 
 #define BATTLE_60_POWER_HIDDEN_POWER
 
+#define BATTLE_ADD_SUPREME_OVERLORD
+
 
 // The following are always applied because they deal with some subscripts
 // Modernization:

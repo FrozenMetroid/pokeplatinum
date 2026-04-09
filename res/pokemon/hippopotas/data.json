@@ -1,11 +1,11 @@
 {
     "base_stats": {
-        "hp": 68,
-        "attack": 72,
-        "defense": 78,
-        "speed": 32,
-        "special_attack": 38,
-        "special_defense": 42
+        "hp": 85,
+        "attack": 90,
+        "defense": 100,
+        "speed": 35,
+        "special_attack": 40,
+        "special_defense": 45
     },
     "types": [ "TYPE_GROUND", "TYPE_GROUND" ],
     "catch_rate": 140,
@@ -34,16 +34,20 @@
     "icon_palette": 1,
     "learnset": {
         "by_level": [
-            [ 1, "MOVE_TACKLE" ],
-            [ 1, "MOVE_SAND_ATTACK" ],
-            [ 7, "MOVE_BITE" ],
-            [ 13, "MOVE_YAWN" ],
-            [ 19, "MOVE_TAKE_DOWN" ],
-            [ 25, "MOVE_SAND_TOMB" ],
-            [ 31, "MOVE_CRUNCH" ],
-            [ 37, "MOVE_EARTHQUAKE" ],
-            [ 44, "MOVE_DOUBLE_EDGE" ],
-            [ 50, "MOVE_FISSURE" ]
+            [1, "MOVE_TACKLE"],
+            [1, "MOVE_SAND_TOMB"],
+            [1, "MOVE_SAND_ATTACK"],
+            [7, "MOVE_BITE"],
+            [13, "MOVE_YAWN"],
+            [19, "MOVE_TAKE_DOWN"],
+            [22, "MOVE_DIG"],
+            [25, "MOVE_CURSE"],
+            [29, "MOVE_CRUNCH"],
+            [32, "MOVE_ROAR"],
+            [35, "MOVE_EARTHQUAKE"],
+            [38, "MOVE_SLACK_OFF"],
+            [41, "MOVE_DOUBLE_EDGE"],
+            [45, "MOVE_FISSURE"]
         ],
         "by_tm": [
             "TM03",

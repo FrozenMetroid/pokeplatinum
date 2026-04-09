@@ -872,6 +872,20 @@
         "Boosts the power of\n",
         "biting moves."
       ]
+    },
+    {
+      "id": "pl_msg_00000612_00125",
+      "en_US": [
+        "Boosts the power of\n",
+        "slicing moves."
+      ]
+    },
+    {
+      "id": "pl_msg_00000612_00126",
+      "en_US": [
+        "Ups Attack and Sp. Atk\n",
+        "if allies were defeated."
+      ]
     }
   ]
 }

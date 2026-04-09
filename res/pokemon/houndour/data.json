@@ -1,11 +1,11 @@
 {
     "base_stats": {
-        "hp": 45,
-        "attack": 60,
-        "defense": 30,
-        "speed": 65,
-        "special_attack": 80,
-        "special_defense": 50
+        "hp": 55,
+        "attack": 75,
+        "defense": 50,
+        "speed": 85,
+        "special_attack": 90,
+        "special_defense": 65
     },
     "types": [ "TYPE_DARK", "TYPE_FIRE" ],
     "catch_rate": 120,
@@ -27,27 +27,31 @@
     "base_friendship": 35,
     "exp_rate": "EXP_RATE_SLOW",
     "egg_groups": [ "EGG_GROUP_FIELD", "EGG_GROUP_FIELD" ],
-    "abilities": [ "ABILITY_EARLY_BIRD", "ABILITY_FLASH_FIRE" ],
+    "abilities": [ "ABILITY_SOLAR_POWER", "ABILITY_FLASH_FIRE" ],
     "safari_flee_rate": 0,
     "body_color": "MON_COLOR_BLACK",
     "flip_sprite": false,
     "icon_palette": 0,
     "learnset": {
         "by_level": [
-            [ 1, "MOVE_LEER" ],
-            [ 1, "MOVE_EMBER" ],
-            [ 4, "MOVE_HOWL" ],
-            [ 9, "MOVE_SMOG" ],
-            [ 14, "MOVE_ROAR" ],
-            [ 17, "MOVE_BITE" ],
-            [ 22, "MOVE_ODOR_SLEUTH" ],
-            [ 27, "MOVE_BEAT_UP" ],
-            [ 30, "MOVE_FIRE_FANG" ],
-            [ 35, "MOVE_FEINT_ATTACK" ],
-            [ 40, "MOVE_EMBARGO" ],
-            [ 43, "MOVE_FLAMETHROWER" ],
-            [ 48, "MOVE_CRUNCH" ],
-            [ 53, "MOVE_NASTY_PLOT" ]
+            [1, "MOVE_LEER"],
+            [1, "MOVE_EMBER"],
+            [1, "MOVE_BEAT_UP"],
+            [1, "MOVE_RAGE"],
+            [4, "MOVE_HOWL"],
+            [8, "MOVE_SMOG"],
+            [11, "MOVE_BITE"],
+            [14, "MOVE_ROAR"],
+            [17, "MOVE_FIRE_SPIN"],
+            [19, "MOVE_ODOR_SLEUTH"],
+            [21, "MOVE_SCARY_FACE"],
+            [24, "MOVE_WILL_O_WISP"],
+            [27, "MOVE_CRUNCH"],
+            [30, "MOVE_FIRE_FANG"],
+            [35, "MOVE_EMBARGO"],
+            [38, "MOVE_FLAMETHROWER"],
+            [42, "MOVE_DARK_PULSE"],
+            [46, "MOVE_NASTY_PLOT"]
         ],
         "by_tm": [
             "TM05",
@@ -113,7 +117,7 @@
     "evolutions": [
         [
             "EVO_LEVEL",
-            24,
+            35,
             "SPECIES_HOUNDOOM"
         ]
     ],

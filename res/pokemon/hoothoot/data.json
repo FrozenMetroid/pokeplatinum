@@ -1,11 +1,11 @@
 {
     "base_stats": {
         "hp": 60,
-        "attack": 30,
-        "defense": 30,
+        "attack": 40,
+        "defense": 35,
         "speed": 50,
-        "special_attack": 36,
-        "special_defense": 56
+        "special_attack": 50,
+        "special_defense": 60
     },
     "types": [ "TYPE_NORMAL", "TYPE_FLYING" ],
     "catch_rate": 255,
@@ -34,21 +34,25 @@
     "icon_palette": 2,
     "learnset": {
         "by_level": [
-            [ 1, "MOVE_TACKLE" ],
-            [ 1, "MOVE_GROWL" ],
-            [ 1, "MOVE_FORESIGHT" ],
-            [ 5, "MOVE_HYPNOSIS" ],
-            [ 9, "MOVE_PECK" ],
-            [ 13, "MOVE_UPROAR" ],
-            [ 17, "MOVE_REFLECT" ],
-            [ 21, "MOVE_CONFUSION" ],
-            [ 25, "MOVE_TAKE_DOWN" ],
-            [ 29, "MOVE_AIR_SLASH" ],
-            [ 33, "MOVE_ZEN_HEADBUTT" ],
-            [ 37, "MOVE_EXTRASENSORY" ],
-            [ 41, "MOVE_PSYCHO_SHIFT" ],
-            [ 45, "MOVE_ROOST" ],
-            [ 49, "MOVE_DREAM_EATER" ]
+            [1, "MOVE_TACKLE"],
+            [1, "MOVE_GROWL"],
+            [1, "MOVE_FORESIGHT"],
+            [5, "MOVE_PECK"],
+            [7, "MOVE_HYPNOSIS"],
+            [9, "MOVE_GUST"],
+            [11, "MOVE_UPROAR"],
+            [13, "MOVE_CONFUSION"],
+            [15, "MOVE_REFLECT"],
+            [18, "MOVE_AIR_CUTTER"],
+            [21, "MOVE_ROOST"],
+            [25, "MOVE_TAKE_DOWN"],
+            [29, "MOVE_AIR_SLASH"],
+            [33, "MOVE_EXTRASENSORY"],
+            [36, "MOVE_FEATHER_DANCE"],
+            [39, "MOVE_PSYCHIC"],
+            [41, "MOVE_PSYCHO_SHIFT"],
+            [45, "MOVE_DREAM_EATER"],
+            [47, "MOVE_HYPER_VOICE"]
         ],
         "by_tm": [
             "TM06",

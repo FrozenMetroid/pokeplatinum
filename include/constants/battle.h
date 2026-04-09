@@ -166,4 +166,7 @@
 #define COMPARE_SPEED_SLOWER 1
 #define COMPARE_SPEED_TIE    2
 
+// Supreme Overlord and Last Respects
+#define MAX_CLIENT_DEATHS (101) // Last Respects damage caps at 5050, so 101 deaths
+
 #endif // POKEPLATINUM_CONSTANTS_BATTLE_H
