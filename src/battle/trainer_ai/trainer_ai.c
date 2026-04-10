@@ -3079,12 +3079,14 @@ static s32 TrainerAI_CalcDamage(BattleSystem *battleSys, BattleContext *battleCt
         break;
 
     case MOVE_HIDDEN_POWER:
+        #ifndef BATTLE_60_POWER_HIDDEN_POWER
         power = ((ivs[STAT_HP] & 2) >> 1)
             | ((ivs[STAT_ATTACK] & 2) >> 0)
             | ((ivs[STAT_DEFENSE] & 2) << 1)
             | ((ivs[STAT_SPEED] & 2) << 2)
             | ((ivs[STAT_SPECIAL_ATTACK] & 2) << 3)
             | ((ivs[STAT_SPECIAL_DEFENSE] & 2) << 4);
+        #endif
         type = ((ivs[STAT_HP] & 1) >> 0)
             | ((ivs[STAT_ATTACK] & 1) << 1)
             | ((ivs[STAT_DEFENSE] & 1) << 2)
@@ -3092,7 +3094,11 @@ static s32 TrainerAI_CalcDamage(BattleSystem *battleSys, BattleContext *battleCt
             | ((ivs[STAT_SPECIAL_ATTACK] & 1) << 4)
             | ((ivs[STAT_SPECIAL_DEFENSE] & 1) << 5);
 
+        #ifndef BATTLE_60_POWER_HIDDEN_POWER
         power = power * 40 / 63 + 30;
+        #else
+        power = 60;
+        #endif
         type = (type * 15 / 63) + 1;
 
         if (type >= TYPE_MYSTERY) {

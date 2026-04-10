@@ -4158,7 +4158,8 @@ int BattleSystem_TriggerEffectOnSwitch(BattleSystem *battleSys, BattleContext *b
                 battleCtx->switchInCheckState++;
             }
             break;
-
+        
+        #ifdef BATTLE_ADD_SUPREME_OVERLORD
         case SWITCH_IN_CHECK_STATE_SUPREME_OVERLORD:
             for (i = 0; i < maxBattlers; i++) {
                 battler = battleCtx->monSpeedOrder[i];
@@ -4179,7 +4180,7 @@ int BattleSystem_TriggerEffectOnSwitch(BattleSystem *battleSys, BattleContext *b
                 battleCtx->switchInCheckState++;
             }
             break;
-
+        #endif
         case SWITCH_IN_CHECK_STATE_FORM_CHANGE:
             if (BattleSystem_TriggerFormChange(battleSys, battleCtx, &subscript) == TRUE) {
                 result = SWITCH_IN_CHECK_RESULT_BREAK;
@@ -7052,6 +7053,7 @@ int BattleSystem_CalcMoveDamage(BattleSystem *battleSys,
         }
     }
 
+    #ifdef BATTLE_ADD_SUPREME_OVERLORD
     if (attackerParams.ability == ABILITY_SUPREME_OVERLORD) {
         #ifdef DEBUG_SUPREME_OVERLORD
         EmulatorLog("Move Power Before Supreme Overlord: %d", movePower);
@@ -7063,6 +7065,7 @@ int BattleSystem_CalcMoveDamage(BattleSystem *battleSys,
         EmulatorLog("Move Power After Supreme Overlord: %d. Fainted teammates: %d", movePower, (faintedTeammateCount - 10));
         #endif
     }
+    #endif
 
     if (NO_CLOUD_NINE) {
         if ((fieldConditions & FIELD_CONDITION_SUNNY) && attackerParams.ability == ABILITY_SOLAR_POWER) {
