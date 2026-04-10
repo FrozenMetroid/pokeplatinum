@@ -1,11 +1,11 @@
 {
     "base_stats": {
-        "hp": 64,
-        "attack": 78,
-        "defense": 52,
-        "speed": 81,
-        "special_attack": 78,
-        "special_defense": 52
+        "hp": 68,
+        "attack": 82,
+        "defense": 55,
+        "speed": 83,
+        "special_attack": 82,
+        "special_defense": 55
     },
     "types": [ "TYPE_FIRE", "TYPE_FIGHTING" ],
     "catch_rate": 45,
@@ -34,21 +34,25 @@
     "icon_palette": 0,
     "learnset": {
         "by_level": [
-            [ 0, "MOVE_MACH_PUNCH" ],
-            [ 1, "MOVE_SCRATCH" ],
-            [ 1, "MOVE_LEER" ],
-            [ 1, "MOVE_EMBER" ],
-            [ 7, "MOVE_EMBER" ],
-            [ 9, "MOVE_TAUNT" ],
-            [ 14, "MOVE_MACH_PUNCH" ],
-            [ 16, "MOVE_FURY_SWIPES" ],
-            [ 19, "MOVE_FLAME_WHEEL" ],
-            [ 26, "MOVE_FEINT" ],
-            [ 29, "MOVE_TORMENT" ],
-            [ 36, "MOVE_CLOSE_COMBAT" ],
-            [ 39, "MOVE_FIRE_SPIN" ],
-            [ 46, "MOVE_SLACK_OFF" ],
-            [ 49, "MOVE_FLARE_BLITZ" ]
+            [0, "MOVE_MACH_PUNCH"],
+            [1, "MOVE_SCRATCH"],
+            [1, "MOVE_BRICK_BREAK"],
+            [1, "MOVE_LEER"],
+            [1, "MOVE_EMBER"],
+            [6, "MOVE_EMBER"],
+            [9, "MOVE_TAUNT"],
+            [12, "MOVE_FURY_SWIPES"],
+            [15, "MOVE_FLAME_WHEEL"],
+            [19, "MOVE_FAKE_OUT"],
+            [23, "MOVE_FIRE_SPIN"],
+            [26, "MOVE_FEINT"],
+            [29, "MOVE_TORMENT"],
+            [31, "MOVE_VACUUM_WAVE"],
+            [36, "MOVE_CLOSE_COMBAT"],
+            [39, "MOVE_FIRE_PUNCH"],
+            [43, "MOVE_SLACK_OFF"],
+            [47, "MOVE_FLARE_BLITZ"],
+            [51, "MOVE_OVERHEAT"]
         ],
         "by_tm": [
             "TM01",

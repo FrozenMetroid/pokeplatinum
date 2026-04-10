@@ -1,11 +1,11 @@
 {
     "base_stats": {
         "hp": 60,
-        "attack": 85,
-        "defense": 42,
+        "attack": 90,
+        "defense": 43,
         "speed": 91,
-        "special_attack": 85,
-        "special_defense": 42
+        "special_attack": 90,
+        "special_defense": 45
     },
     "types": [ "TYPE_DARK", "TYPE_FLYING" ],
     "catch_rate": 30,
@@ -34,17 +34,23 @@
     "icon_palette": 2,
     "learnset": {
         "by_level": [
-            [ 1, "MOVE_PECK" ],
-            [ 1, "MOVE_ASTONISH" ],
-            [ 5, "MOVE_PURSUIT" ],
-            [ 11, "MOVE_HAZE" ],
-            [ 15, "MOVE_WING_ATTACK" ],
-            [ 21, "MOVE_NIGHT_SHADE" ],
-            [ 25, "MOVE_ASSURANCE" ],
-            [ 31, "MOVE_TAUNT" ],
-            [ 35, "MOVE_FEINT_ATTACK" ],
-            [ 41, "MOVE_MEAN_LOOK" ],
-            [ 45, "MOVE_SUCKER_PUNCH" ]
+            [1, "MOVE_ASTONISH"],
+            [1, "MOVE_PECK"],
+            [5, "MOVE_PURSUIT"],
+            [11, "MOVE_HAZE"],
+            [13, "MOVE_FEINT_ATTACK"],
+            [16, "MOVE_WING_ATTACK"],
+            [19, "MOVE_OMINOUS_WIND"],
+            [22, "MOVE_NIGHT_SHADE"],
+            [25, "MOVE_ASSURANCE"],
+            [28, "MOVE_AIR_CUTTER"],
+            [30, "MOVE_TAUNT"],
+            [32, "MOVE_FEATHER_DANCE"],
+            [35, "MOVE_DRILL_PECK"],
+            [39, "MOVE_MEAN_LOOK"],
+            [42, "MOVE_NIGHT_SLASH"],
+            [46, "MOVE_SUCKER_PUNCH"],
+            [51, "MOVE_BRAVE_BIRD"]
         ],
         "by_tm": [
             "TM04",

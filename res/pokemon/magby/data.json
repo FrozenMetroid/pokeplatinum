@@ -1,11 +1,11 @@
 {
     "base_stats": {
-        "hp": 45,
-        "attack": 75,
+        "hp": 50,
+        "attack": 60,
         "defense": 37,
         "speed": 83,
-        "special_attack": 70,
-        "special_defense": 55
+        "special_attack": 85,
+        "special_defense": 60
     },
     "types": [ "TYPE_FIRE", "TYPE_FIRE" ],
     "catch_rate": 45,
@@ -27,25 +27,26 @@
     "base_friendship": 70,
     "exp_rate": "EXP_RATE_MEDIUM_FAST",
     "egg_groups": [ "EGG_GROUP_UNDISCOVERED", "EGG_GROUP_UNDISCOVERED" ],
-    "abilities": [ "ABILITY_FLAME_BODY", "ABILITY_NONE" ],
+    "abilities": [ "ABILITY_FLAME_BODY", "ABILITY_MAGMA_ARMOR" ],
     "safari_flee_rate": 0,
     "body_color": "MON_COLOR_RED",
     "flip_sprite": true,
     "icon_palette": 1,
     "learnset": {
         "by_level": [
-            [ 1, "MOVE_SMOG" ],
-            [ 1, "MOVE_LEER" ],
-            [ 7, "MOVE_EMBER" ],
-            [ 10, "MOVE_SMOKE_SCREEN" ],
-            [ 16, "MOVE_FEINT_ATTACK" ],
-            [ 19, "MOVE_FIRE_SPIN" ],
-            [ 25, "MOVE_CONFUSE_RAY" ],
-            [ 28, "MOVE_FIRE_PUNCH" ],
-            [ 34, "MOVE_LAVA_PLUME" ],
-            [ 37, "MOVE_FLAMETHROWER" ],
-            [ 43, "MOVE_SUNNY_DAY" ],
-            [ 46, "MOVE_FIRE_BLAST" ]
+            [1, "MOVE_SMOG"],
+            [1, "MOVE_LEER"],
+            [5, "MOVE_EMBER"],
+            [10, "MOVE_SMOKE_SCREEN"],
+            [16, "MOVE_FEINT_ATTACK"],
+            [19, "MOVE_FIRE_SPIN"],
+            [22, "MOVE_WILL_O_WISP"],
+            [25, "MOVE_CONFUSE_RAY"],
+            [28, "MOVE_FIRE_PUNCH"],
+            [34, "MOVE_LAVA_PLUME"],
+            [37, "MOVE_FLAMETHROWER"],
+            [43, "MOVE_SUNNY_DAY"],
+            [46, "MOVE_FIRE_BLAST"]
         ],
         "by_tm": [
             "TM01",

@@ -1,11 +1,11 @@
 {
     "base_stats": {
-        "hp": 25,
+        "hp": 35,
         "attack": 35,
         "defense": 70,
         "speed": 45,
         "special_attack": 95,
-        "special_defense": 55
+        "special_defense": 65
     },
     "types": [ "TYPE_ELECTRIC", "TYPE_STEEL" ],
     "catch_rate": 190,
@@ -34,21 +34,22 @@
     "icon_palette": 0,
     "learnset": {
         "by_level": [
-            [ 1, "MOVE_METAL_SOUND" ],
-            [ 1, "MOVE_TACKLE" ],
-            [ 6, "MOVE_THUNDER_SHOCK" ],
-            [ 11, "MOVE_SUPERSONIC" ],
-            [ 14, "MOVE_SONIC_BOOM" ],
-            [ 17, "MOVE_THUNDER_WAVE" ],
-            [ 22, "MOVE_SPARK" ],
-            [ 27, "MOVE_LOCK_ON" ],
-            [ 30, "MOVE_MAGNET_BOMB" ],
-            [ 33, "MOVE_SCREECH" ],
-            [ 38, "MOVE_DISCHARGE" ],
-            [ 43, "MOVE_MIRROR_SHOT" ],
-            [ 46, "MOVE_MAGNET_RISE" ],
-            [ 49, "MOVE_GYRO_BALL" ],
-            [ 54, "MOVE_ZAP_CANNON" ]
+            [1, "MOVE_SCREECH"],
+            [1, "MOVE_TACKLE"],
+            [6, "MOVE_THUNDER_SHOCK"],
+            [11, "MOVE_SUPERSONIC"],
+            [14, "MOVE_SONIC_BOOM"],
+            [17, "MOVE_THUNDER_WAVE"],
+            [20, "MOVE_CHARGE_BEAM"],
+            [23, "MOVE_MAGNET_BOMB"],
+            [27, "MOVE_LOCK_ON"],
+            [30, "MOVE_MIRROR_SHOT"],
+            [33, "MOVE_DISCHARGE"],
+            [38, "MOVE_METAL_SOUND"],
+            [43, "MOVE_FLASH_CANNON"],
+            [46, "MOVE_MAGNET_RISE"],
+            [49, "MOVE_THUNDERBOLT"],
+            [55, "MOVE_ZAP_CANNON"]
         ],
         "by_tm": [
             "TM06",

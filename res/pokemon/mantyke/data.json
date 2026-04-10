@@ -1,10 +1,10 @@
 {
     "base_stats": {
-        "hp": 45,
+        "hp": 50,
         "attack": 20,
         "defense": 50,
         "speed": 50,
-        "special_attack": 60,
+        "special_attack": 70,
         "special_defense": 120
     },
     "types": [ "TYPE_WATER", "TYPE_FLYING" ],
@@ -34,19 +34,24 @@
     "icon_palette": 0,
     "learnset": {
         "by_level": [
-            [ 1, "MOVE_TACKLE" ],
-            [ 1, "MOVE_BUBBLE" ],
-            [ 4, "MOVE_SUPERSONIC" ],
-            [ 10, "MOVE_BUBBLE_BEAM" ],
-            [ 13, "MOVE_HEADBUTT" ],
-            [ 19, "MOVE_AGILITY" ],
-            [ 22, "MOVE_WING_ATTACK" ],
-            [ 28, "MOVE_WATER_PULSE" ],
-            [ 31, "MOVE_TAKE_DOWN" ],
-            [ 37, "MOVE_CONFUSE_RAY" ],
-            [ 40, "MOVE_BOUNCE" ],
-            [ 46, "MOVE_AQUA_RING" ],
-            [ 49, "MOVE_HYDRO_PUMP" ]
+            [1, "MOVE_PSYBEAM"],
+            [1, "MOVE_SIGNAL_BEAM"],
+            [1, "MOVE_TACKLE"],
+            [1, "MOVE_BUBBLE"],
+            [1, "MOVE_SUPERSONIC"],
+            [4, "MOVE_SUPERSONIC"],
+            [10, "MOVE_BUBBLE_BEAM"],
+            [13, "MOVE_HEADBUTT"],
+            [19, "MOVE_AGILITY"],
+            [22, "MOVE_WING_ATTACK"],
+            [25, "MOVE_AIR_CUTTER"],
+            [28, "MOVE_WATER_PULSE"],
+            [31, "MOVE_TAKE_DOWN"],
+            [37, "MOVE_CONFUSE_RAY"],
+            [40, "MOVE_BOUNCE"],
+            [43, "MOVE_AIR_SLASH"],
+            [46, "MOVE_AQUA_RING"],
+            [49, "MOVE_HYDRO_PUMP"]
         ],
         "by_tm": [
             "TM03",
@@ -66,6 +71,7 @@
             "TM43",
             "TM44",
             "TM45",
+            "TM51",
             "TM58",
             "TM78",
             "TM82",

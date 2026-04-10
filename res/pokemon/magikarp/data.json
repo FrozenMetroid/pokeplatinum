@@ -1,11 +1,11 @@
 {
     "base_stats": {
-        "hp": 20,
-        "attack": 10,
+        "hp": 30,
+        "attack": 30,
         "defense": 55,
         "speed": 80,
-        "special_attack": 15,
-        "special_defense": 20
+        "special_attack": 30,
+        "special_defense": 30
     },
     "types": [ "TYPE_WATER", "TYPE_WATER" ],
     "catch_rate": 255,
@@ -27,7 +27,7 @@
     "base_friendship": 70,
     "exp_rate": "EXP_RATE_SLOW",
     "egg_groups": [ "EGG_GROUP_WATER_2", "EGG_GROUP_DRAGON" ],
-    "abilities": [ "ABILITY_SWIFT_SWIM", "ABILITY_NONE" ],
+    "abilities": [ "ABILITY_SWIFT_SWIM", "ABILITY_SIMPLE" ],
     "safari_flee_rate": 90,
     "body_color": "MON_COLOR_RED",
     "flip_sprite": false,
@@ -35,8 +35,8 @@
     "learnset": {
         "by_level": [
             [ 1, "MOVE_SPLASH" ],
-            [ 15, "MOVE_TACKLE" ],
-            [ 30, "MOVE_FLAIL" ]
+            [ 10, "MOVE_TACKLE" ],
+            [ 15, "MOVE_FLAIL" ]
         ],
         "by_tm": [  ],
         "by_tutor": [ "MOVE_BOUNCE" ]

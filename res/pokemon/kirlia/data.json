@@ -1,11 +1,11 @@
 {
     "base_stats": {
-        "hp": 38,
-        "attack": 35,
-        "defense": 35,
+        "hp": 45,
+        "attack": 45,
+        "defense": 45,
         "speed": 50,
-        "special_attack": 65,
-        "special_defense": 55
+        "special_attack": 85,
+        "special_defense": 80
     },
     "types": [ "TYPE_PSYCHIC", "TYPE_PSYCHIC" ],
     "catch_rate": 120,
@@ -34,22 +34,22 @@
     "icon_palette": 1,
     "learnset": {
         "by_level": [
-            [ 1, "MOVE_GROWL" ],
-            [ 1, "MOVE_CONFUSION" ],
-            [ 1, "MOVE_DOUBLE_TEAM" ],
-            [ 1, "MOVE_TELEPORT" ],
-            [ 6, "MOVE_CONFUSION" ],
-            [ 10, "MOVE_DOUBLE_TEAM" ],
-            [ 12, "MOVE_TELEPORT" ],
-            [ 17, "MOVE_LUCKY_CHANT" ],
-            [ 22, "MOVE_MAGICAL_LEAF" ],
-            [ 25, "MOVE_CALM_MIND" ],
-            [ 31, "MOVE_PSYCHIC" ],
-            [ 36, "MOVE_IMPRISON" ],
-            [ 39, "MOVE_FUTURE_SIGHT" ],
-            [ 45, "MOVE_CHARM" ],
-            [ 50, "MOVE_HYPNOSIS" ],
-            [ 53, "MOVE_DREAM_EATER" ]
+            [1, "MOVE_GROWL"],
+            [1, "MOVE_CONFUSION"],
+            [1, "MOVE_DOUBLE_TEAM"],
+            [1, "MOVE_TELEPORT"],
+            [6, "MOVE_CONFUSION"],
+            [10, "MOVE_DOUBLE_TEAM"],
+            [12, "MOVE_TELEPORT"],
+            [15, "MOVE_LUCKY_CHANT"],
+            [19, "MOVE_MAGICAL_LEAF"],
+            [24, "MOVE_CALM_MIND"],
+            [28, "MOVE_PSYCHIC"],
+            [34, "MOVE_IMPRISON"],
+            [38, "MOVE_FUTURE_SIGHT"],
+            [41, "MOVE_CHARM"],
+            [43, "MOVE_HYPNOSIS"],
+            [47, "MOVE_DREAM_EATER"]
         ],
         "by_tm": [
             "TM04",

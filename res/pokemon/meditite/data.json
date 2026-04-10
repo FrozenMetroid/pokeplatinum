@@ -1,11 +1,11 @@
 {
     "base_stats": {
-        "hp": 30,
-        "attack": 40,
-        "defense": 55,
-        "speed": 60,
-        "special_attack": 40,
-        "special_defense": 55
+        "hp": 50,
+        "attack": 60,
+        "defense": 70,
+        "speed": 70,
+        "special_attack": 60,
+        "special_defense": 70
     },
     "types": [ "TYPE_FIGHTING", "TYPE_PSYCHIC" ],
     "catch_rate": 180,
@@ -34,20 +34,24 @@
     "icon_palette": 0,
     "learnset": {
         "by_level": [
-            [ 1, "MOVE_BIDE" ],
-            [ 4, "MOVE_MEDITATE" ],
-            [ 8, "MOVE_CONFUSION" ],
-            [ 11, "MOVE_DETECT" ],
-            [ 15, "MOVE_HIDDEN_POWER" ],
-            [ 18, "MOVE_MIND_READER" ],
-            [ 22, "MOVE_FEINT" ],
-            [ 25, "MOVE_CALM_MIND" ],
-            [ 29, "MOVE_FORCE_PALM" ],
-            [ 32, "MOVE_HI_JUMP_KICK" ],
-            [ 36, "MOVE_PSYCH_UP" ],
-            [ 39, "MOVE_POWER_TRICK" ],
-            [ 43, "MOVE_REVERSAL" ],
-            [ 46, "MOVE_RECOVER" ]
+            [1, "MOVE_BIDE"],
+            [1, "MOVE_LOW_KICK"],
+            [4, "MOVE_MEDITATE"],
+            [8, "MOVE_CONFUSION"],
+            [11, "MOVE_DETECT"],
+            [14, "MOVE_HIDDEN_POWER"],
+            [17, "MOVE_FORCE_PALM"],
+            [19, "MOVE_MIND_READER"],
+            [22, "MOVE_FEINT"],
+            [25, "MOVE_CALM_MIND"],
+            [28, "MOVE_BRICK_BREAK"],
+            [31, "MOVE_PSYCHIC"],
+            [33, "MOVE_PSYCH_UP"],
+            [36, "MOVE_ZEN_HEADBUTT"],
+            [39, "MOVE_POWER_TRICK"],
+            [43, "MOVE_REVERSAL"],
+            [46, "MOVE_HI_JUMP_KICK"],
+            [50, "MOVE_RECOVER"]
         ],
         "by_tm": [
             "TM01",

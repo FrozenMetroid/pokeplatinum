@@ -35,7 +35,6 @@
     "learnset": {
         "by_level": [
             [0, "MOVE_CLOSE_COMBAT"],
-            [1, "MOVE_NASTY_PLOT"],
             [1, "MOVE_BRICK_BREAK"],
             [1, "MOVE_SLACK_OFF"],
             [1, "MOVE_SCRATCH"],

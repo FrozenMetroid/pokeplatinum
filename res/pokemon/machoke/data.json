@@ -1,11 +1,11 @@
 {
     "base_stats": {
-        "hp": 80,
-        "attack": 100,
-        "defense": 70,
+        "hp": 85,
+        "attack": 110,
+        "defense": 75,
         "speed": 45,
         "special_attack": 50,
-        "special_defense": 60
+        "special_defense": 75
     },
     "types": [ "TYPE_FIGHTING", "TYPE_FIGHTING" ],
     "catch_rate": 90,
@@ -34,20 +34,23 @@
     "icon_palette": 2,
     "learnset": {
         "by_level": [
-            [ 1, "MOVE_LOW_KICK" ],
-            [ 1, "MOVE_LEER" ],
-            [ 1, "MOVE_FOCUS_ENERGY" ],
-            [ 7, "MOVE_FOCUS_ENERGY" ],
-            [ 10, "MOVE_KARATE_CHOP" ],
-            [ 13, "MOVE_FORESIGHT" ],
-            [ 19, "MOVE_SEISMIC_TOSS" ],
-            [ 22, "MOVE_REVENGE" ],
-            [ 25, "MOVE_VITAL_THROW" ],
-            [ 32, "MOVE_SUBMISSION" ],
-            [ 36, "MOVE_WAKE_UP_SLAP" ],
-            [ 40, "MOVE_CROSS_CHOP" ],
-            [ 44, "MOVE_SCARY_FACE" ],
-            [ 51, "MOVE_DYNAMIC_PUNCH" ]
+            [1, "MOVE_LOW_KICK"],
+            [1, "MOVE_LEER"],
+            [1, "MOVE_FOCUS_ENERGY"],
+            [7, "MOVE_KARATE_CHOP"],
+            [10, "MOVE_FOCUS_ENERGY"],
+            [13, "MOVE_FORESIGHT"],
+            [16, "MOVE_SEISMIC_TOSS"],
+            [20, "MOVE_REVENGE"],
+            [24, "MOVE_VITAL_THROW"],
+            [28, "MOVE_STRENGTH"],
+            [32, "MOVE_SUBMISSION"],
+            [36, "MOVE_KNOCK_OFF"],
+            [40, "MOVE_CROSS_CHOP"],
+            [44, "MOVE_SCARY_FACE"],
+            [51, "MOVE_DYNAMIC_PUNCH"],
+            [57, "MOVE_BULLET_PUNCH"],
+            [61, "MOVE_CLOSE_COMBAT"]
         ],
         "by_tm": [
             "TM01",

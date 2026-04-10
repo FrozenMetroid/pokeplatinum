@@ -1,11 +1,11 @@
 {
     "base_stats": {
-        "hp": 60,
-        "attack": 90,
+        "hp": 70,
+        "attack": 100,
         "defense": 140,
         "speed": 40,
-        "special_attack": 50,
-        "special_defense": 50
+        "special_attack": 55,
+        "special_defense": 55
     },
     "types": [ "TYPE_STEEL", "TYPE_ROCK" ],
     "catch_rate": 90,
@@ -34,23 +34,27 @@
     "icon_palette": 2,
     "learnset": {
         "by_level": [
-            [ 1, "MOVE_TACKLE" ],
-            [ 1, "MOVE_HARDEN" ],
-            [ 1, "MOVE_MUD_SLAP" ],
-            [ 1, "MOVE_HEADBUTT" ],
-            [ 4, "MOVE_HARDEN" ],
-            [ 8, "MOVE_MUD_SLAP" ],
-            [ 11, "MOVE_HEADBUTT" ],
-            [ 15, "MOVE_METAL_CLAW" ],
-            [ 18, "MOVE_IRON_DEFENSE" ],
-            [ 22, "MOVE_ROAR" ],
-            [ 25, "MOVE_TAKE_DOWN" ],
-            [ 29, "MOVE_IRON_HEAD" ],
-            [ 34, "MOVE_PROTECT" ],
-            [ 40, "MOVE_METAL_SOUND" ],
-            [ 45, "MOVE_IRON_TAIL" ],
-            [ 51, "MOVE_DOUBLE_EDGE" ],
-            [ 56, "MOVE_METAL_BURST" ]
+            [1, "MOVE_TACKLE"],
+            [1, "MOVE_HARDEN"],
+            [1, "MOVE_METAL_CLAW"],
+            [1, "MOVE_MUD_SLAP"],
+            [1, "MOVE_HEADBUTT"],
+            [4, "MOVE_HARDEN"],
+            [8, "MOVE_MUD_SLAP"],
+            [11, "MOVE_HEADBUTT"],
+            [15, "MOVE_ROCK_TOMB"],
+            [18, "MOVE_IRON_DEFENSE"],
+            [22, "MOVE_ROAR"],
+            [25, "MOVE_TAKE_DOWN"],
+            [28, "MOVE_IRON_HEAD"],
+            [31, "MOVE_ROCK_SLIDE"],
+            [34, "MOVE_PROTECT"],
+            [38, "MOVE_METAL_SOUND"],
+            [42, "MOVE_IRON_TAIL"],
+            [45, "MOVE_DOUBLE_EDGE"],
+            [48, "MOVE_METAL_BURST"],
+            [52, "MOVE_STONE_EDGE"],
+            [59, "MOVE_HEAD_SMASH"]
         ],
         "by_tm": [
             "TM03",
@@ -108,7 +112,7 @@
     "evolutions": [
         [
             "EVO_LEVEL",
-            42,
+            40,
             "SPECIES_AGGRON"
         ]
     ],
