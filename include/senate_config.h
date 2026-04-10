@@ -47,6 +47,10 @@ in the Pokedex if you fought it in the Frontier
 
 #define BATTLE_ADD_SUPREME_OVERLORD
 
+#define BATTLE_ADD_PIERCING_EYE
+
+#define BATTLE_ADD_ARTILLERY
+
 
 // The following are always applied because they deal with some subscripts
 // Modernization:

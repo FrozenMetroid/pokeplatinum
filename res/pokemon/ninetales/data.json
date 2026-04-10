@@ -1,10 +1,10 @@
 {
     "base_stats": {
-        "hp": 73,
-        "attack": 76,
+        "hp": 75,
+        "attack": 65,
         "defense": 75,
         "speed": 100,
-        "special_attack": 81,
+        "special_attack": 95,
         "special_defense": 100
     },
     "types": [ "TYPE_FIRE", "TYPE_FIRE" ],
@@ -34,11 +34,22 @@
     "icon_palette": 1,
     "learnset": {
         "by_level": [
-            [ 1, "MOVE_NASTY_PLOT" ],
-            [ 1, "MOVE_EMBER" ],
-            [ 1, "MOVE_QUICK_ATTACK" ],
-            [ 1, "MOVE_CONFUSE_RAY" ],
-            [ 1, "MOVE_SAFEGUARD" ]
+            [1, "MOVE_EMBER"],
+            [1, "MOVE_QUICK_ATTACK"],
+            [1, "MOVE_CONFUSE_RAY"],
+            [1, "MOVE_SAFEGUARD"],
+            [1, "MOVE_FIRE_SPIN"],
+            [1, "MOVE_CONFUSE_RAY"],
+            [1, "MOVE_WILL_O_WISP"],
+            [35, "MOVE_WILL_O_WISP"], 
+            [38, "MOVE_FLAMETHROWER"], 
+            [41, "MOVE_EXTRASENSORY"], 
+            [44, "MOVE_SPITE"], 
+            [46, "MOVE_PAIN_SPLIT"], 
+            [48, "MOVE_GRUDGE"], 
+            [51, "MOVE_SHADOW_BALL"], 
+            [55, "MOVE_FIRE_BLAST"], 
+            [59, "MOVE_NASTY_PLOT"]
         ],
         "by_tm": [
             "TM04",

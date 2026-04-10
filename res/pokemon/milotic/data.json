@@ -51,7 +51,9 @@
             [40, "MOVE_AQUA_RING"],
             [44, "MOVE_SAFEGUARD"],
             [44, "MOVE_MIST"],
-            [48, "MOVE_HYDRO_PUMP"]
+            [48, "MOVE_BRINE"],
+            [52, "MOVE_DRAGON_PULSE"],
+            [57, "MOVE_HYDRO_PUMP"]
         ],
         "by_tm": [
             "TM03",

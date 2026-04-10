@@ -3666,6 +3666,9 @@ enum SwitchInCheckState {
     #ifdef BATTLE_ADD_SUPREME_OVERLORD
     SWITCH_IN_CHECK_STATE_SUPREME_OVERLORD,
     #endif
+    #ifdef BATTLE_ADD_PIERCING_EYE
+    SWITCH_IN_CHECK_STATE_PIERCING_EYE,
+    #endif
     SWITCH_IN_CHECK_STATE_FORM_CHANGE,
     SWITCH_IN_CHECK_STATE_AMULET_COIN,
     SWITCH_IN_CHECK_STATE_FORBIDDEN_STATUS,
@@ -4171,6 +4174,27 @@ int BattleSystem_TriggerEffectOnSwitch(BattleSystem *battleSys, BattleContext *b
                     battleCtx->battleMons[battler].supremeOverlordAnnounced = TRUE;
                     battleCtx->msgBattlerTemp = battler;
                     subscript = subscript_supreme_overlord;
+                    result = SWITCH_IN_CHECK_RESULT_BREAK;
+                    break;
+                }
+            }
+
+            if (i == maxBattlers) {
+                battleCtx->switchInCheckState++;
+            }
+            break;
+        #endif
+        #ifdef BATTLE_ADD_PIERCING_EYE
+        case SWITCH_IN_CHECK_STATE_PIERCING_EYE:
+            for (i = 0; i < maxBattlers; i++) {
+                battler = battleCtx->monSpeedOrder[i];
+
+                if (battleCtx->battleMons[battler].piercingEyeAnnounced == FALSE
+                    && battleCtx->battleMons[battler].curHP
+                    && Battler_Ability(battleCtx, battler) == ABILITY_PIERCING_EYE) {
+                    battleCtx->battleMons[battler].piercingEyeAnnounced = TRUE;
+                    battleCtx->msgBattlerTemp = battler;
+                    subscript = subscript_piercing_eye;
                     result = SWITCH_IN_CHECK_RESULT_BREAK;
                     break;
                 }
@@ -6669,11 +6693,14 @@ static const u16 sSharpnessMoves[] = {
     MOVE_AIR_CUTTER,
     MOVE_AIR_SLASH,
     // MOVE_AQUA_CUTTER,
-    // MOVE_CEASELESS_EDHE
+    // MOVE_CEASELESS_EDGE
+    MOVE_CUT,
+    MOVE_DRAGON_CLAW, // from Champions
     MOVE_FURY_CUTTER,
     MOVE_LEAF_BLADE,
     MOVE_NIGHT_SLASH,
     MOVE_PSYCHO_CUT,
+    MOVE_RAZOR_LEAF,
     // MOVE_RAZOR_SHELL,
     // MOVE_SACRED_SWORD,
     MOVE_SHADOW_CLAW,
@@ -6681,6 +6708,18 @@ static const u16 sSharpnessMoves[] = {
     // MOVE_SOLAR_BLADE
     // MOVE_STONE_AXE,
     MOVE_X_SCISSOR,
+};
+
+static const u16 sArtilleryMoves[] = {
+    MOVE_AURORA_BEAM,
+    MOVE_BUBBLE_BEAM,
+    MOVE_CHARGE_BEAM,
+    MOVE_HYPER_BEAM,
+    MOVE_ICE_BEAM,
+    // MOVE_OCTAZOOKA, not an energy beam unfortunately
+    MOVE_PSYBEAM,
+    MOVE_SIGNAL_BEAM,
+    MOVE_SOLAR_BEAM,
 };
 
 typedef struct DamageCalcParams {
@@ -7028,28 +7067,43 @@ int BattleSystem_CalcMoveDamage(BattleSystem *battleSys,
         movePower = movePower * 75 / 100;
     }
 
-    for (i = 0; i < NELEMS(sPunchingMoves); i++) {
-        if (sPunchingMoves[i] == move && attackerParams.ability == ABILITY_IRON_FIST) {
-            #ifndef BATTLE_BUFF_IRON_FIST
-            movePower = movePower * 12 / 10;
-            #else
-            movePower = movePower * 15 / 10;
-            #endif
-            break;
+    if (attackerParams.ability == ABILITY_IRON_FIST) {
+        for (i = 0; i < NELEMS(sPunchingMoves); i++) {
+            if (sPunchingMoves[i] == move) {
+                #ifndef BATTLE_BUFF_IRON_FIST
+                movePower = movePower * 12 / 10;
+                #else
+                movePower = movePower * 15 / 10;
+                #endif
+                break;
+            }
         }
     }
 
-    for (i = 0; i < NELEMS(sStrongJawMoves); i++) {
-        if (sStrongJawMoves[i] == move && attackerParams.ability == ABILITY_STRONG_JAW) {
-            movePower = movePower * 15 / 10;
-            break;
+    if (attackerParams.ability == ABILITY_STRONG_JAW) {
+        for (i = 0; i < NELEMS(sStrongJawMoves); i++) {
+            if (sStrongJawMoves[i] == move) {
+                movePower = movePower * 15 / 10;
+                break;
+            }
         }
     }
 
-    for (i = 0; i < NELEMS(sSharpnessMoves); i++) {
-        if (sSharpnessMoves[i] == move && attackerParams.ability == ABILITY_SHARPNESS) {
-            movePower = movePower * 15 / 10;
-            break;
+    if (attackerParams.ability == ABILITY_SHARPNESS) {
+        for (i = 0; i < NELEMS(sSharpnessMoves); i++) {
+            if (sSharpnessMoves[i] == move) {
+                movePower = movePower * 15 / 10;
+                break;
+            }
+        }
+    }
+
+    if (attackerParams.ability == ABILITY_ARTILLERY) {
+        for (i = 0; i < NELEMS(sArtilleryMoves); i++) {
+            if (sArtilleryMoves[i] == move) {
+                movePower = movePower * 15 / 10;
+                break;
+            }
         }
     }
 

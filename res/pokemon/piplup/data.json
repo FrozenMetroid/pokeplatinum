@@ -1,11 +1,11 @@
 {
     "base_stats": {
-        "hp": 53,
+        "hp": 54,
         "attack": 51,
-        "defense": 53,
+        "defense": 55,
         "speed": 40,
-        "special_attack": 61,
-        "special_defense": 56
+        "special_attack": 65,
+        "special_defense": 60
     },
     "types": [ "TYPE_WATER", "TYPE_WATER" ],
     "catch_rate": 45,
@@ -34,19 +34,23 @@
     "icon_palette": 2,
     "learnset": {
         "by_level": [
-            [ 1, "MOVE_POUND" ],
-            [ 4, "MOVE_GROWL" ],
-            [ 8, "MOVE_BUBBLE" ],
-            [ 11, "MOVE_WATER_SPORT" ],
-            [ 15, "MOVE_PECK" ],
-            [ 18, "MOVE_BUBBLE_BEAM" ],
-            [ 22, "MOVE_BIDE" ],
-            [ 25, "MOVE_FURY_ATTACK" ],
-            [ 29, "MOVE_BRINE" ],
-            [ 32, "MOVE_WHIRLPOOL" ],
-            [ 36, "MOVE_MIST" ],
-            [ 39, "MOVE_DRILL_PECK" ],
-            [ 43, "MOVE_HYDRO_PUMP" ]
+            [1, "MOVE_POUND"],
+            [4, "MOVE_GROWL"],
+            [6, "MOVE_BUBBLE"],
+            [9, "MOVE_WATER_SPORT"],
+            [12, "MOVE_PECK"],
+            [15, "MOVE_FURY_ATTACK"],
+            [18, "MOVE_BUBBLE_BEAM"],
+            [21, "MOVE_SWAGGER"],
+            [24, "MOVE_ICY_WIND"],
+            [27, "MOVE_BRINE"],
+            [29, "MOVE_PLUCK"],
+            [32, "MOVE_WHIRLPOOL"],
+            [35, "MOVE_MIST"],
+            [39, "MOVE_DRILL_PECK"],
+            [44, "MOVE_ICE_BEAM"],
+            [48, "MOVE_FEATHER_DANCE"],
+            [52, "MOVE_HYDRO_PUMP"]
         ],
         "by_tm": [
             "TM03",

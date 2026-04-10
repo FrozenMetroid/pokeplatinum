@@ -1,8 +1,8 @@
 {
     "base_stats": {
-        "hp": 50,
-        "attack": 85,
-        "defense": 55,
+        "hp": 60,
+        "attack": 90,
+        "defense": 60,
         "speed": 90,
         "special_attack": 65,
         "special_defense": 65
@@ -34,18 +34,21 @@
     "icon_palette": 0,
     "learnset": {
         "by_level": [
-            [ 1, "MOVE_GROWL" ],
-            [ 1, "MOVE_TACKLE" ],
-            [ 6, "MOVE_TAIL_WHIP" ],
-            [ 10, "MOVE_EMBER" ],
-            [ 15, "MOVE_FLAME_WHEEL" ],
-            [ 19, "MOVE_STOMP" ],
-            [ 24, "MOVE_FIRE_SPIN" ],
-            [ 28, "MOVE_TAKE_DOWN" ],
-            [ 33, "MOVE_AGILITY" ],
-            [ 37, "MOVE_FIRE_BLAST" ],
-            [ 42, "MOVE_BOUNCE" ],
-            [ 46, "MOVE_FLARE_BLITZ" ]
+            [1, "MOVE_GROWL"],
+            [1, "MOVE_TACKLE"],
+            [6, "MOVE_TAIL_WHIP"],
+            [10, "MOVE_EMBER"],
+            [15, "MOVE_FLAME_WHEEL"],
+            [19, "MOVE_STOMP"],
+            [22, "MOVE_DOUBLE_KICK"],
+            [25, "MOVE_FIRE_SPIN"],
+            [28, "MOVE_TAKE_DOWN"],
+            [32, "MOVE_BLAZE_KICK"],
+            [36, "MOVE_AGILITY"],
+            [40, "MOVE_BOUNCE"],
+            [43, "MOVE_JUMP_KICK"],
+            [46, "MOVE_FIRE_BLAST"],
+            [50, "MOVE_FLARE_BLITZ"]
         ],
         "by_tm": [
             "TM06",
@@ -92,7 +95,7 @@
     "evolutions": [
         [
             "EVO_LEVEL",
-            40,
+            30,
             "SPECIES_RAPIDASH"
         ]
     ],

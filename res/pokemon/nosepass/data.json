@@ -1,10 +1,10 @@
 {
     "base_stats": {
-        "hp": 30,
-        "attack": 45,
+        "hp": 50,
+        "attack": 60,
         "defense": 135,
         "speed": 30,
-        "special_attack": 45,
+        "special_attack": 70,
         "special_defense": 90
     },
     "types": [ "TYPE_ROCK", "TYPE_ROCK" ],
@@ -34,20 +34,25 @@
     "icon_palette": 0,
     "learnset": {
         "by_level": [
-            [ 1, "MOVE_TACKLE" ],
-            [ 7, "MOVE_HARDEN" ],
-            [ 13, "MOVE_ROCK_THROW" ],
-            [ 19, "MOVE_BLOCK" ],
-            [ 25, "MOVE_THUNDER_WAVE" ],
-            [ 31, "MOVE_ROCK_SLIDE" ],
-            [ 37, "MOVE_SANDSTORM" ],
-            [ 43, "MOVE_REST" ],
-            [ 49, "MOVE_POWER_GEM" ],
-            [ 55, "MOVE_DISCHARGE" ],
-            [ 61, "MOVE_STONE_EDGE" ],
-            [ 67, "MOVE_ZAP_CANNON" ],
-            [ 73, "MOVE_LOCK_ON" ],
-            [ 79, "MOVE_EARTH_POWER" ]
+            [1, "MOVE_TACKLE"],
+            [7, "MOVE_HARDEN"],
+            [10, "MOVE_ROCK_THROW"],
+            [14, "MOVE_THUNDER_SHOCK"],
+            [19, "MOVE_BLOCK"],
+            [23, "MOVE_THUNDER_WAVE"],
+            [26, "MOVE_ROCK_TOMB"],
+            [29, "MOVE_STEALTH_ROCK"],
+            [32, "MOVE_ROCK_SLIDE"],
+            [35, "MOVE_SHOCK_WAVE"],
+            [39, "MOVE_SANDSTORM"],
+            [42, "MOVE_REST"],
+            [42, "MOVE_SLEEP_TALK"],
+            [45, "MOVE_POWER_GEM"],
+            [48, "MOVE_DISCHARGE"],
+            [54, "MOVE_STONE_EDGE"],
+            [60, "MOVE_ZAP_CANNON"],
+            [63, "MOVE_LOCK_ON"],
+            [67, "MOVE_EARTH_POWER"]
         ],
         "by_tm": [
             "TM06",

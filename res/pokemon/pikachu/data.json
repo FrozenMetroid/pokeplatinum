@@ -1,11 +1,11 @@
 {
     "base_stats": {
-        "hp": 35,
-        "attack": 55,
-        "defense": 30,
+        "hp": 45,
+        "attack": 60,
+        "defense": 50,
         "speed": 90,
-        "special_attack": 50,
-        "special_defense": 40
+        "special_attack": 60,
+        "special_defense": 55
     },
     "types": [ "TYPE_ELECTRIC", "TYPE_ELECTRIC" ],
     "catch_rate": 190,
@@ -27,26 +27,27 @@
     "base_friendship": 70,
     "exp_rate": "EXP_RATE_MEDIUM_FAST",
     "egg_groups": [ "EGG_GROUP_FIELD", "EGG_GROUP_FAIRY" ],
-    "abilities": [ "ABILITY_STATIC", "ABILITY_NONE" ],
+    "abilities": [ "ABILITY_STATIC", "ABILITY_LIGHTNING_ROD" ],
     "safari_flee_rate": 0,
     "body_color": "MON_COLOR_YELLOW",
     "flip_sprite": false,
     "icon_palette": 2,
     "learnset": {
         "by_level": [
-            [ 1, "MOVE_THUNDER_SHOCK" ],
-            [ 1, "MOVE_GROWL" ],
-            [ 5, "MOVE_TAIL_WHIP" ],
-            [ 10, "MOVE_THUNDER_WAVE" ],
-            [ 13, "MOVE_QUICK_ATTACK" ],
-            [ 18, "MOVE_DOUBLE_TEAM" ],
-            [ 21, "MOVE_SLAM" ],
-            [ 26, "MOVE_THUNDERBOLT" ],
-            [ 29, "MOVE_FEINT" ],
-            [ 34, "MOVE_AGILITY" ],
-            [ 37, "MOVE_DISCHARGE" ],
-            [ 42, "MOVE_LIGHT_SCREEN" ],
-            [ 45, "MOVE_THUNDER" ]
+            [1, "MOVE_THUNDER_SHOCK"],
+            [1, "MOVE_GROWL"],
+            [1, "MOVE_CHARM"],
+            [5, "MOVE_TAIL_WHIP"],
+            [10, "MOVE_THUNDER_WAVE"],
+            [13, "MOVE_QUICK_ATTACK"],
+            [16, "MOVE_SPARK"],
+            [19, "MOVE_SLAM"],
+            [22, "MOVE_DOUBLE_TEAM"],
+            [26, "MOVE_DISCHARGE"],
+            [29, "MOVE_AGILITY"],
+            [32, "MOVE_THUNDERBOLT"],
+            [35, "MOVE_LIGHT_SCREEN"],
+            [38, "MOVE_THUNDER"]
         ],
         "by_tm": [
             "TM01",

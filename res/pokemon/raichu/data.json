@@ -27,7 +27,7 @@
     "base_friendship": 70,
     "exp_rate": "EXP_RATE_MEDIUM_FAST",
     "egg_groups": [ "EGG_GROUP_FIELD", "EGG_GROUP_FAIRY" ],
-    "abilities": [ "ABILITY_STATIC", "ABILITY_NONE" ],
+    "abilities": [ "ABILITY_STATIC", "ABILITY_LIGHTNING_ROD" ],
     "safari_flee_rate": 0,
     "body_color": "MON_COLOR_YELLOW",
     "flip_sprite": false,

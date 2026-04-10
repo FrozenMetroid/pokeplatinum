@@ -2,7 +2,7 @@
     "name": "Knock Off",
     "class": "CLASS_PHYSICAL",
     "type": "TYPE_DARK",
-    "power": 40,
+    "power": 30,
     "accuracy": 100,
     "pp": 20,
     "effect": {

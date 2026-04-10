@@ -300,4 +300,5 @@ subscript_files = files(
     'subscript_giratina_form_change.s',
     'subscript_null.s',
     'subscript_supreme_overlord.s',
+    'subscript_piercing_eye.s',
 )

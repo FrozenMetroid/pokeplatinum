@@ -886,6 +886,20 @@
         "Ups Attack and Sp. Atk\n",
         "if allies were defeated."
       ]
+    },
+    {
+      "id": "pl_msg_00000612_00127",
+      "en_US": [
+        "Lowers the foe’s Evasion\n",
+        "stat."
+      ]
+    },
+    {
+      "id": "pl_msg_00000612_00128",
+      "en_US": [
+        "Boosts the power of\n",
+        "beam moves."
+      ]
     }
   ]
 }

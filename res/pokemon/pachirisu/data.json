@@ -1,11 +1,11 @@
 {
     "base_stats": {
-        "hp": 60,
+        "hp": 70,
         "attack": 45,
         "defense": 70,
         "speed": 95,
-        "special_attack": 45,
-        "special_defense": 90
+        "special_attack": 75,
+        "special_defense": 110
     },
     "types": [ "TYPE_ELECTRIC", "TYPE_ELECTRIC" ],
     "catch_rate": 200,
@@ -27,24 +27,30 @@
     "base_friendship": 100,
     "exp_rate": "EXP_RATE_MEDIUM_FAST",
     "egg_groups": [ "EGG_GROUP_FIELD", "EGG_GROUP_FAIRY" ],
-    "abilities": [ "ABILITY_RUN_AWAY", "ABILITY_PICKUP" ],
+    "abilities": [ "ABILITY_LIGHTNING_ROD", "ABILITY_PICKUP" ],
     "safari_flee_rate": 0,
     "body_color": "MON_COLOR_WHITE",
     "flip_sprite": false,
     "icon_palette": 0,
     "learnset": {
         "by_level": [
-            [ 1, "MOVE_GROWL" ],
-            [ 1, "MOVE_BIDE" ],
-            [ 5, "MOVE_QUICK_ATTACK" ],
-            [ 9, "MOVE_CHARM" ],
-            [ 13, "MOVE_SPARK" ],
-            [ 17, "MOVE_ENDURE" ],
-            [ 21, "MOVE_SWIFT" ],
-            [ 25, "MOVE_SWEET_KISS" ],
-            [ 29, "MOVE_DISCHARGE" ],
-            [ 33, "MOVE_SUPER_FANG" ],
-            [ 37, "MOVE_LAST_RESORT" ]
+            [1, "MOVE_GROWL"],
+            [1, "MOVE_BIDE"],
+            [4, "MOVE_QUICK_ATTACK"],
+            [7, "MOVE_THUNDER_SHOCK"],
+            [9, "MOVE_CHARM"],
+            [12, "MOVE_SPARK"],
+            [14, "MOVE_HELPING_HAND"],
+            [17, "MOVE_ENDURE"],
+            [20, "MOVE_SWIFT"],
+            [23, "MOVE_FLATTER"],
+            [25, "MOVE_DISCHARGE"],
+            [29, "MOVE_SWEET_KISS"],
+            [32, "MOVE_SUPER_FANG"],
+            [35, "MOVE_COVET"],
+            [38, "MOVE_THUNDERBOLT"],
+            [41, "MOVE_LAST_RESORT"],
+            [45, "MOVE_HYPER_FANG"]
         ],
         "by_tm": [
             "TM06",
