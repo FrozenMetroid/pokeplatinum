@@ -36,3 +36,9 @@ DEBUG_GIVE_SHINY_CHARM_FROM_START
     can also just be used for fun
 */
 #define DEBUG_GIVE_SHINY_CHARM_FROM_START
+
+/*
+DEBUG_SUPREME_OVERLORD
+    Debug damage changes when Supreme Overlord is active
+*/
+#define DEBUG_SUPREME_OVERLORD

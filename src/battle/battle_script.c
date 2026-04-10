@@ -1995,7 +1995,6 @@ static BOOL BtlCmd_TryFaintMon(BattleSystem *battleSys, BattleContext *battleCtx
         battleCtx->faintedMon = battler;
         battleCtx->battleStatusMask |= (FlagIndex(battler) << SYSCTL_MON_FAINTED_SHIFT);
         battleCtx->totalFainted[battler]++;
-        battleCtx->totalFaintedTeammates[battler]++; // for supreme overlord
 
         BattleScript_UpdateFriendship(battleSys, battleCtx, battler);
     }

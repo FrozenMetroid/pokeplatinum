@@ -45,6 +45,7 @@
 #include "unk_0208C098.h"
 
 #include "senate_config.h"
+#include "debug.h"
 
 #include "res/battle/scripts/sub_seq.naix"
 #include "res/text/bank/battle_strings.h"
@@ -72,7 +73,7 @@ static BOOL MoveCannotTriggerAnticipation(BattleContext *battleCtx, int move);
 static int CalcMoveType(BattleSystem *battleSys, BattleContext *battleCtx, int item, int move);
 static BOOL IntimidateCheckHelper(BattleContext *battleCtx, u32 client);
 static BOOL IsPowderMove(u16 moveID);
-static BOOL Battler_HasFallenTeammates(BattleContext *battleCtx, u32 client);
+static u32 BattleSystem_GetFaintedTeammateCount(BattleSystem *battleSys, u32 client);
 
 static const Fraction sStatStageBoosts[];
 
@@ -4165,7 +4166,7 @@ int BattleSystem_TriggerEffectOnSwitch(BattleSystem *battleSys, BattleContext *b
                 if (battleCtx->battleMons[battler].supremeOverlordAnnounced == FALSE
                     && battleCtx->battleMons[battler].curHP
                     && Battler_Ability(battleCtx, battler) == ABILITY_SUPREME_OVERLORD
-                    && Battler_HasFallenTeammates(battleCtx, battler)) {
+                    && (BattleSystem_GetFaintedTeammateCount(battleSys, battler) > 0)) {
                     battleCtx->battleMons[battler].supremeOverlordAnnounced = TRUE;
                     battleCtx->msgBattlerTemp = battler;
                     subscript = subscript_supreme_overlord;
@@ -7050,21 +7051,18 @@ int BattleSystem_CalcMoveDamage(BattleSystem *battleSys,
             break;
         }
     }
-    EmulatorLog("Move Power Before Supreme Overlord: %d", movePower);
+
     if (attackerParams.ability == ABILITY_SUPREME_OVERLORD) {
-        if (battleCtx->totalFaintedTeammates[attacker] == 1) {
-            movePower = movePower * 11 / 10;
-        } else if (battleCtx->totalFaintedTeammates[attacker] == 2) {
-            movePower = movePower * 12 / 10;
-        } else if (battleCtx->totalFaintedTeammates[attacker] == 3) {
-            movePower = movePower * 13 / 10;
-        } else if (battleCtx->totalFaintedTeammates[attacker] == 4) {
-            movePower = movePower * 14 / 10;
-        } else if (battleCtx->totalFaintedTeammates[attacker] >= 5) {
-            movePower = movePower * 15 / 10;
-        }
+        #ifdef DEBUG_SUPREME_OVERLORD
+        EmulatorLog("Move Power Before Supreme Overlord: %d", movePower);
+        #endif
+        u32 faintedTeammateCount = BattleSystem_GetFaintedTeammateCount(battleSys, attacker); // always update fainted teammate count anytime Supreme Overlord damage calc needs to occur since mons can be revived, and thus incrementing whenever a mon faints would be wrong
+        faintedTeammateCount += 10; // to form the numerator without using a new variable
+        movePower = movePower * faintedTeammateCount / 10;
+        #ifdef DEBUG_SUPREME_OVERLORD
+        EmulatorLog("Move Power After Supreme Overlord: %d. Fainted teammates: %d", movePower, (faintedTeammateCount - 10));
+        #endif
     }
-    EmulatorLog("Move Power After Supreme Overlord: %d", movePower);
 
     if (NO_CLOUD_NINE) {
         if ((fieldConditions & FIELD_CONDITION_SUNNY) && attackerParams.ability == ABILITY_SOLAR_POWER) {
@@ -8414,18 +8412,19 @@ static BOOL IsPowderMove(u16 moveID)
 #endif
 
 #ifdef BATTLE_ADD_SUPREME_OVERLORD
-/**
- *  @brief see if the client has any fainted teammates
- *
- *  @param ctx global battle structure
- *  @param client battler to check if they have any fainted teammates
- *  @return TRUE if there are fainted teammates
- */
-static BOOL Battler_HasFallenTeammates(BattleContext *ctx, u32 client)
-{
-    if (ctx->totalFaintedTeammates[client] > 0) {
-        return TRUE;
+
+static u32 BattleSystem_GetFaintedTeammateCount(BattleSystem *battleSys, u32 client) // fills out fainted teammates for specified client
+{ 
+    u16 hp;
+    u8 numFainted = 0;
+    u8 partyCount = Party_GetCurrentCount(BattleSystem_GetParty(battleSys, client));
+    for (int i = 0; i < (partyCount - 1); i++) {
+        Pokemon *mon = BattleSystem_GetPartyPokemon(battleSys, client, i);
+        hp = Pokemon_GetValue(mon, MON_DATA_HP, NULL);
+        if (hp == 0) {
+            numFainted++;
+        }
     }
-    return FALSE;
+    return numFainted;
 }
 #endif

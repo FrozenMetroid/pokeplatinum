@@ -311,7 +311,6 @@ struct BattleContext {
     u32 battleProgressFlag : 1;
     u32 padding3154_01 : 31;
 
-    u32 totalFaintedTeammates[MAX_BATTLERS]; // for Supreme Overlord; u32 for alignment perhaps
 };
 
 #endif // POKEPLATINUM_BATTLE_CONTEXT_H
