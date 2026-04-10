@@ -1,10 +1,10 @@
 {
     "base_stats": {
-        "hp": 30,
+        "hp": 42,
         "attack": 42,
         "defense": 118,
         "speed": 30,
-        "special_attack": 42,
+        "special_attack": 30,
         "special_defense": 88
     },
     "types": [ "TYPE_ROCK", "TYPE_STEEL" ],
@@ -34,17 +34,21 @@
     "icon_palette": 1,
     "learnset": {
         "by_level": [
-            [ 1, "MOVE_TACKLE" ],
-            [ 1, "MOVE_PROTECT" ],
-            [ 6, "MOVE_TAUNT" ],
-            [ 10, "MOVE_METAL_SOUND" ],
-            [ 15, "MOVE_TAKE_DOWN" ],
-            [ 19, "MOVE_IRON_DEFENSE" ],
-            [ 24, "MOVE_SWAGGER" ],
-            [ 28, "MOVE_ANCIENT_POWER" ],
-            [ 33, "MOVE_ENDURE" ],
-            [ 37, "MOVE_METAL_BURST" ],
-            [ 43, "MOVE_IRON_HEAD" ]
+            [1, "MOVE_TACKLE"],
+            [1, "MOVE_PROTECT"],
+            [5, "MOVE_TAUNT"],
+            [7, "MOVE_METAL_CLAW"],
+            [10, "MOVE_METAL_SOUND"],
+            [13, "MOVE_TAKE_DOWN"],
+            [16, "MOVE_ROCK_TOMB"],
+            [19, "MOVE_IRON_DEFENSE"],
+            [22, "MOVE_SWAGGER"],
+            [25, "MOVE_ANCIENT_POWER"],
+            [28, "MOVE_ROCK_SLIDE"],
+            [31, "MOVE_ROCK_SLIDE"],
+            [34, "MOVE_ENDURE"],
+            [37, "MOVE_METAL_BURST"],
+            [40, "MOVE_IRON_HEAD"]
         ],
         "by_tm": [
             "TM05",

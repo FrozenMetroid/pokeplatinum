@@ -47,6 +47,10 @@ in the Pokedex if you fought it in the Frontier
 
 #define BATTLE_ADD_SUPREME_OVERLORD
 
+#define BATTLE_ADD_PRANKSTER
+
+#define BATTLE_ADD_ROCKY_PAYLOAD
+
 #define BATTLE_ADD_PIERCING_EYE
 
 #define BATTLE_ADD_ARTILLERY

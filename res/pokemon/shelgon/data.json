@@ -1,11 +1,11 @@
 {
     "base_stats": {
-        "hp": 65,
+        "hp": 80,
         "attack": 95,
-        "defense": 100,
+        "defense": 120,
         "speed": 50,
-        "special_attack": 60,
-        "special_defense": 50
+        "special_attack": 80,
+        "special_defense": 65
     },
     "types": [ "TYPE_DRAGON", "TYPE_DRAGON" ],
     "catch_rate": 45,
@@ -34,23 +34,23 @@
     "icon_palette": 2,
     "learnset": {
         "by_level": [
-            [ 0, "MOVE_PROTECT" ],
-            [ 1, "MOVE_RAGE" ],
-            [ 1, "MOVE_BITE" ],
-            [ 1, "MOVE_LEER" ],
-            [ 1, "MOVE_HEADBUTT" ],
-            [ 5, "MOVE_BITE" ],
-            [ 10, "MOVE_LEER" ],
-            [ 16, "MOVE_HEADBUTT" ],
-            [ 20, "MOVE_FOCUS_ENERGY" ],
-            [ 25, "MOVE_EMBER" ],
-            [ 30, "MOVE_PROTECT" ],
-            [ 32, "MOVE_DRAGON_BREATH" ],
-            [ 37, "MOVE_ZEN_HEADBUTT" ],
-            [ 43, "MOVE_SCARY_FACE" ],
-            [ 50, "MOVE_CRUNCH" ],
-            [ 55, "MOVE_DRAGON_CLAW" ],
-            [ 61, "MOVE_DOUBLE_EDGE" ]
+            [0, "MOVE_PROTECT"],
+            [1, "MOVE_RAGE"],
+            [5, "MOVE_BITE"],
+            [7, "MOVE_EMBER"],
+            [10, "MOVE_LEER"],
+            [14, "MOVE_HEADBUTT"],
+            [18, "MOVE_DRAGON_RAGE"],
+            [25, "MOVE_SCARY_FACE"],
+            [32, "MOVE_DRAGON_BREATH"],
+            [35, "MOVE_FIRE_FANG"],
+            [37, "MOVE_ZEN_HEADBUTT"],
+            [43, "MOVE_DRAGON_CLAW"],
+            [47, "MOVE_FLAMETHROWER"],
+            [50, "MOVE_CRUNCH"],
+            [55, "MOVE_DRAGON_RUSH"],
+            [61, "MOVE_DOUBLE_EDGE"],
+            [65, "MOVE_OUTRAGE"]
         ],
         "by_tm": [
             "TM02",

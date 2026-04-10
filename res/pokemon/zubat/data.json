@@ -1,9 +1,9 @@
 {
     "base_stats": {
-        "hp": 40,
-        "attack": 45,
-        "defense": 35,
-        "speed": 55,
+        "hp": 45,
+        "attack": 60,
+        "defense": 40,
+        "speed": 70,
         "special_attack": 30,
         "special_defense": 40
     },
@@ -34,17 +34,21 @@
     "icon_palette": 2,
     "learnset": {
         "by_level": [
-            [ 1, "MOVE_LEECH_LIFE" ],
-            [ 5, "MOVE_SUPERSONIC" ],
-            [ 9, "MOVE_ASTONISH" ],
-            [ 13, "MOVE_BITE" ],
-            [ 17, "MOVE_WING_ATTACK" ],
-            [ 21, "MOVE_CONFUSE_RAY" ],
-            [ 25, "MOVE_AIR_CUTTER" ],
-            [ 29, "MOVE_MEAN_LOOK" ],
-            [ 33, "MOVE_POISON_FANG" ],
-            [ 37, "MOVE_HAZE" ],
-            [ 41, "MOVE_AIR_SLASH" ]
+            [1, "MOVE_ABSORB"],
+            [1, "MOVE_POISON_STING"],
+            [5, "MOVE_SUPERSONIC"],
+            [9, "MOVE_ASTONISH"],
+            [13, "MOVE_WING_ATTACK"], 
+            [17, "MOVE_BITE"], 
+            [21, "MOVE_CONFUSE_RAY"], 
+            [24, "MOVE_POISON_FANG"], 
+            [27, "MOVE_MEAN_LOOK"], 
+            [30, "MOVE_CRUNCH"], 
+            [32, "MOVE_AIR_CUTTER"], 
+            [35, "MOVE_LEECH_LIFE"], 
+            [37, "MOVE_HAZE"], 
+            [41, "MOVE_AIR_SLASH"], 
+            [45, "MOVE_CROSS_POISON"]
         ],
         "by_tm": [
             "TM06",

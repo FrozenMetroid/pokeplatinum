@@ -166,6 +166,10 @@
 #define COMPARE_SPEED_SLOWER 1
 #define COMPARE_SPEED_TIE    2
 
+#define BATTLER_ALLY(client) (client ^ 2)
+#define BATTLER_OPPONENT(client) (client ^ 1)
+#define BATTLER_ACROSS(client) (client ^ 3)
+
 // Supreme Overlord and Last Respects
 #define MAX_CLIENT_DEATHS (101) // Last Respects damage caps at 5050, so 101 deaths
 

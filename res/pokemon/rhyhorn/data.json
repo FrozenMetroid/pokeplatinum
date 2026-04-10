@@ -1,11 +1,11 @@
 {
     "base_stats": {
-        "hp": 80,
-        "attack": 85,
-        "defense": 95,
-        "speed": 25,
-        "special_attack": 30,
-        "special_defense": 30
+        "hp": 85,
+        "attack": 100,
+        "defense": 100,
+        "speed": 30,
+        "special_attack": 40,
+        "special_defense": 40
     },
     "types": [ "TYPE_GROUND", "TYPE_ROCK" ],
     "catch_rate": 120,
@@ -27,24 +27,30 @@
     "base_friendship": 70,
     "exp_rate": "EXP_RATE_SLOW",
     "egg_groups": [ "EGG_GROUP_MONSTER", "EGG_GROUP_FIELD" ],
-    "abilities": [ "ABILITY_LIGHTNING_ROD", "ABILITY_ROCK_HEAD" ],
+    "abilities": [ "ABILITY_SOLID_ROCK", "ABILITY_ROCK_HEAD" ],
     "safari_flee_rate": 0,
     "body_color": "MON_COLOR_GRAY",
     "flip_sprite": false,
     "icon_palette": 1,
     "learnset": {
         "by_level": [
-            [ 1, "MOVE_HORN_ATTACK" ],
-            [ 1, "MOVE_TAIL_WHIP" ],
-            [ 9, "MOVE_STOMP" ],
-            [ 13, "MOVE_FURY_ATTACK" ],
-            [ 21, "MOVE_SCARY_FACE" ],
-            [ 25, "MOVE_ROCK_BLAST" ],
-            [ 33, "MOVE_TAKE_DOWN" ],
-            [ 37, "MOVE_HORN_DRILL" ],
-            [ 45, "MOVE_STONE_EDGE" ],
-            [ 49, "MOVE_EARTHQUAKE" ],
-            [ 57, "MOVE_MEGAHORN" ]
+            [1, "MOVE_HORN_ATTACK"],
+            [1, "MOVE_TAIL_WHIP"],
+            [1, "MOVE_MUD_SLAP"],
+            [9, "MOVE_SAND_TOMB"],
+            [12, "MOVE_FURY_ATTACK"],
+            [14, "MOVE_ROCK_TOMB"],
+            [17, "MOVE_BITE"],
+            [20, "MOVE_MAGNITUDE"],
+            [23, "MOVE_SCARY_FACE"],
+            [25, "MOVE_ROCK_BLAST"],
+            [28, "MOVE_TAKE_DOWN"],
+            [31, "MOVE_ROCK_SLIDE"],
+            [35, "MOVE_HORN_DRILL"],
+            [39, "MOVE_CRUNCH"],
+            [42, "MOVE_EARTHQUAKE"],
+            [45, "MOVE_STONE_EDGE"],
+            [48, "MOVE_MEGAHORN"]
         ],
         "by_tm": [
             "TM05",
@@ -122,7 +128,7 @@
     "evolutions": [
         [
             "EVO_LEVEL",
-            42,
+            38,
             "SPECIES_RHYDON"
         ]
     ],

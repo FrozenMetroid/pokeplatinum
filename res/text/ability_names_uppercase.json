@@ -516,6 +516,14 @@
     {
       "id": "pl_msg_00000611_00128",
       "en_US": "ARTILLERY"
+    },
+    {
+      "id": "pl_msg_00000611_00129",
+      "en_US": "ROCKYPAYLOAD"
+    },
+    {
+      "id": "pl_msg_00000611_00130",
+      "en_US": "Prankster"
     }
   ]
 }

@@ -27,7 +27,7 @@
     "base_friendship": 70,
     "exp_rate": "EXP_RATE_ERRATIC",
     "egg_groups": [ "EGG_GROUP_FLYING", "EGG_GROUP_DRAGON" ],
-    "abilities": [ "ABILITY_NATURAL_CURE", "ABILITY_NONE" ],
+    "abilities": [ "ABILITY_NATURAL_CURE", "ABILITY_CLOUD_NINE" ],
     "safari_flee_rate": 0,
     "body_color": "MON_COLOR_BLUE",
     "flip_sprite": false,

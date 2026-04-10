@@ -8,8 +8,8 @@
     {
       "id": "pl_msg_00000612_00001",
       "en_US": [
-        "The stench helps keep\n",
-        "wild Pokémon away."
+        "Helps keep wild Pokémon\n",
+        "away. May flinch foes."
       ]
     },
     {
@@ -899,6 +899,20 @@
       "en_US": [
         "Boosts the power of\n",
         "beam moves."
+      ]
+    },
+    {
+      "id": "pl_msg_00000612_00129",
+      "en_US": [
+        "Boosts the power of\n",
+        "Rock-type moves."
+      ]
+    },
+    {
+      "id": "pl_msg_00000612_00130",
+      "en_US": [
+        "Gives priority to\n",
+        "status moves."
       ]
     }
   ]

@@ -1,10 +1,10 @@
 {
     "base_stats": {
-        "hp": 60,
-        "attack": 62,
-        "defense": 50,
+        "hp": 80,
+        "attack": 85,
+        "defense": 60,
         "speed": 40,
-        "special_attack": 62,
+        "special_attack": 85,
         "special_defense": 60
     },
     "types": [ "TYPE_GRASS", "TYPE_ICE" ],
@@ -34,18 +34,23 @@
     "icon_palette": 1,
     "learnset": {
         "by_level": [
-            [ 1, "MOVE_POWDER_SNOW" ],
-            [ 1, "MOVE_LEER" ],
-            [ 5, "MOVE_RAZOR_LEAF" ],
-            [ 9, "MOVE_ICY_WIND" ],
-            [ 13, "MOVE_GRASS_WHISTLE" ],
-            [ 17, "MOVE_SWAGGER" ],
-            [ 21, "MOVE_MIST" ],
-            [ 26, "MOVE_ICE_SHARD" ],
-            [ 31, "MOVE_INGRAIN" ],
-            [ 36, "MOVE_WOOD_HAMMER" ],
-            [ 41, "MOVE_BLIZZARD" ],
-            [ 46, "MOVE_SHEER_COLD" ]
+            [1, "MOVE_POWDER_SNOW"],
+            [1, "MOVE_LEER"],
+            [5, "MOVE_ABSORB"],
+            [9, "MOVE_ICY_WIND"],
+            [12, "MOVE_GRASS_WHISTLE"],
+            [15, "MOVE_RAZOR_LEAF"],
+            [18, "MOVE_SWAGGER"],
+            [21, "MOVE_MIST"],
+            [24, "MOVE_ICE_SHARD"],
+            [27, "MOVE_SEED_BOMB"],
+            [30, "MOVE_INGRAIN"],
+            [34, "MOVE_AVALANCHE"],
+            [37, "MOVE_WOOD_HAMMER"],
+            [40, "MOVE_ICE_BEAM"],
+            [44, "MOVE_ENERGY_BALL"],
+            [47, "MOVE_BLIZZARD"],
+            [52, "MOVE_SHEER_COLD"]
         ],
         "by_tm": [
             "TM03",

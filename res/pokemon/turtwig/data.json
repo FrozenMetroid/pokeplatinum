@@ -1,8 +1,8 @@
 {
     "base_stats": {
-        "hp": 55,
+        "hp": 60,
         "attack": 68,
-        "defense": 64,
+        "defense": 66,
         "speed": 31,
         "special_attack": 45,
         "special_defense": 55
@@ -34,18 +34,22 @@
     "icon_palette": 1,
     "learnset": {
         "by_level": [
-            [ 1, "MOVE_TACKLE" ],
-            [ 5, "MOVE_WITHDRAW" ],
-            [ 9, "MOVE_ABSORB" ],
-            [ 13, "MOVE_RAZOR_LEAF" ],
-            [ 17, "MOVE_CURSE" ],
-            [ 21, "MOVE_BITE" ],
-            [ 25, "MOVE_MEGA_DRAIN" ],
-            [ 29, "MOVE_LEECH_SEED" ],
-            [ 33, "MOVE_SYNTHESIS" ],
-            [ 37, "MOVE_CRUNCH" ],
-            [ 41, "MOVE_GIGA_DRAIN" ],
-            [ 45, "MOVE_LEAF_STORM" ]
+            [1, "MOVE_TACKLE"],
+            [3, "MOVE_WITHDRAW"],
+            [6, "MOVE_ABSORB"],
+            [9, "MOVE_BITE"],
+            [13, "MOVE_SLAM"],
+            [16, "MOVE_CURSE"],
+            [19, "MOVE_RAZOR_LEAF"],
+            [23, "MOVE_MEGA_DRAIN"],
+            [26, "MOVE_TAKE_DOWN"],
+            [29, "MOVE_LEECH_SEED"],
+            [33, "MOVE_SYNTHESIS"],
+            [36, "MOVE_CRUNCH"],
+            [39, "MOVE_GIGA_DRAIN"],
+            [42, "MOVE_LEAF_BLADE"],
+            [46, "MOVE_BODY_SLAM"],
+            [50, "MOVE_LEAF_STORM"]
         ],
         "by_tm": [
             "TM06",

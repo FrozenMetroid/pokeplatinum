@@ -516,6 +516,14 @@
     {
       "id": "pl_msg_00000610_00128",
       "en_US": "Artillery"
+    },
+    {
+      "id": "pl_msg_00000610_00129",
+      "en_US": "RockyPayload"
+    },
+    {
+      "id": "pl_msg_00000610_00130",
+      "en_US": "Prankster"
     }
   ]
 }

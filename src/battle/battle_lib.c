@@ -54,10 +54,6 @@
 #define TRMSG_LAST_BATTLER_FLAG           3
 #define TRMSG_LAST_BATTLER_HALF_HP_FLAG   4
 
-#define BATTLER_ALLY(client) (client ^ 2)
-#define BATTLER_OPPONENT(client) (client ^ 1)
-#define BATTLER_ACROSS(client) (client ^ 3)
-
 static BOOL BasicTypeMulApplies(BattleContext *battleCtx, int attacker, int defender, int chartEntry);
 static int MapSideEffectToSubscript(BattleContext *battleCtx, enum BattleSideEffectType type, u32 effect);
 static int ApplyTypeMultiplier(BattleContext *battleCtx, int attacker, int mul, int damage, BOOL update, u32 *moveStatus);
@@ -1406,6 +1402,14 @@ u8 BattleSystem_CompareBattlerSpeed(BattleSystem *battleSys, BattleContext *batt
 
         battler1Priority = MOVE_DATA(battler1Move).priority;
         battler2Priority = MOVE_DATA(battler2Move).priority;
+
+        #ifdef BATTLE_ADD_PRANKSTER
+        if ((Battler_Ability(battleCtx, battler1) == ABILITY_PRANKSTER) && (MOVE_DATA(battler1Move).class == CLASS_STATUS)) {
+            battler1Priority++;
+        } else if ((Battler_Ability(battleCtx, battler2) == ABILITY_PRANKSTER) && (MOVE_DATA(battler2Move).class == CLASS_STATUS)) {
+            battler2Priority++;
+        }
+        #endif
     }
 
     if (battler1Priority == battler2Priority) {
@@ -7002,6 +7006,11 @@ int BattleSystem_CalcMoveDamage(BattleSystem *battleSys,
         && Battler_IgnorableAbility(battleCtx, attacker, defender, ABILITY_DRY_SKIN) == TRUE) {
         movePower = movePower * 125 / 100;
     }
+    #ifdef BATTLE_ADD_ROCKY_PAYLOAD
+    if (moveType == TYPE_ROCK && attackerParams.ability == ABILITY_ROCKY_PAYLOAD) {
+        movePower = movePower * 150 / 100;
+    }
+    #endif
 
     if (attackerParams.ability == ABILITY_SIMPLE) {
         attackStage *= 2;

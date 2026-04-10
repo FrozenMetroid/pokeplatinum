@@ -55,11 +55,14 @@ Additional Abilities:
     Absol and Gallade
 - Strong Jaw: Raises the power of biting moves (Crunch, Fire Fang, etc.)
     Carnivine
+- Prankster: Gives priority to status moves (Sand-Attack, Growl, etc.)
+    Murkrow and Sableye
 
 Ability Modernizations:
 - Lightning Rod
 - Sturdy
 - Storm Drain
+- Stench
 
 Move Modernizations and Changes:
 - Toxic when used by a Poison-type is perfectly accurate

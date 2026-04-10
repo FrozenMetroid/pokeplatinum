@@ -1,11 +1,11 @@
 {
     "base_stats": {
-        "hp": 48,
-        "attack": 72,
-        "defense": 48,
-        "speed": 48,
-        "special_attack": 72,
-        "special_defense": 48
+        "hp": 80,
+        "attack": 85,
+        "defense": 70,
+        "speed": 90,
+        "special_attack": 85,
+        "special_defense": 70
     },
     "types": [ "TYPE_PSYCHIC", "TYPE_PSYCHIC" ],
     "catch_rate": 225,
@@ -64,7 +64,17 @@
     ],
     "learnset": {
         "by_level": [
-            [ 1, "MOVE_HIDDEN_POWER" ]
+            [1, "MOVE_HIDDEN_POWER"],
+            [15, "MOVE_SLAM"],
+            [20, "MOVE_PSYBEAM"],
+            [25, "MOVE_COSMIC_POWER"],
+            [30, "MOVE_TRICK_ROOM"],
+            [35, "MOVE_ANCIENT_POWER"],
+            [40, "MOVE_EXTRASENSORY"],
+            [45, "MOVE_EARTH_POWER"],
+            [50, "MOVE_PSYCHIC"],
+            [55, "MOVE_POWER_GEM"],
+            [60, "MOVE_SUPERPOWER"]
         ],
         "by_tm": [  ],
         "by_tutor": [  ]

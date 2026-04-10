@@ -1,11 +1,11 @@
 {
     "base_stats": {
-        "hp": 63,
-        "attack": 63,
-        "defense": 47,
-        "speed": 74,
-        "special_attack": 41,
-        "special_defense": 41
+        "hp": 80,
+        "attack": 80,
+        "defense": 65,
+        "speed": 75,
+        "special_attack": 50,
+        "special_defense": 55
     },
     "types": [ "TYPE_POISON", "TYPE_DARK" ],
     "catch_rate": 225,
@@ -34,18 +34,26 @@
     "icon_palette": 2,
     "learnset": {
         "by_level": [
-            [ 1, "MOVE_SCRATCH" ],
-            [ 1, "MOVE_FOCUS_ENERGY" ],
-            [ 4, "MOVE_POISON_GAS" ],
-            [ 7, "MOVE_SCREECH" ],
-            [ 10, "MOVE_FURY_SWIPES" ],
-            [ 14, "MOVE_SMOKE_SCREEN" ],
-            [ 18, "MOVE_FEINT" ],
-            [ 22, "MOVE_SLASH" ],
-            [ 27, "MOVE_TOXIC" ],
-            [ 32, "MOVE_NIGHT_SLASH" ],
-            [ 38, "MOVE_MEMENTO" ],
-            [ 44, "MOVE_EXPLOSION" ]
+            [1, "MOVE_SCRATCH"],
+            [1, "MOVE_FOCUS_ENERGY"],
+            [1, "MOVE_POISON_GAS"],
+            [1, "MOVE_SMOG"],
+            [7, "MOVE_SCREECH"],
+            [10, "MOVE_FURY_SWIPES"],
+            [13, "MOVE_SMOKE_SCREEN"],
+            [15, "MOVE_BITE"],
+            [18, "MOVE_FEINT"],
+            [21, "MOVE_SLASH"],
+            [24, "MOVE_PURSUIT"],
+            [27, "MOVE_SLUDGE"],
+            [29, "MOVE_FEINT_ATTACK"],
+            [32, "MOVE_POISON_TAIL"],
+            [35, "MOVE_SUCKER_PUNCH"],
+            [38, "MOVE_MEMENTO"],
+            [41, "MOVE_EXPLOSION"],
+            [44, "MOVE_NIGHT_SLASH"],
+            [47, "MOVE_POISON_JAB"],
+            [50, "MOVE_TOXIC"]
         ],
         "by_tm": [
             "TM05",
@@ -106,7 +114,7 @@
     "evolutions": [
         [
             "EVO_LEVEL",
-            34,
+            30,
             "SPECIES_SKUNTANK"
         ]
     ],

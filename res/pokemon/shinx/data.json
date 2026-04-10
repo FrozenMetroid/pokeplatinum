@@ -1,6 +1,6 @@
 {
     "base_stats": {
-        "hp": 45,
+        "hp": 52,
         "attack": 65,
         "defense": 34,
         "speed": 45,
@@ -34,17 +34,19 @@
     "icon_palette": 0,
     "learnset": {
         "by_level": [
-            [ 1, "MOVE_TACKLE" ],
-            [ 5, "MOVE_LEER" ],
-            [ 9, "MOVE_CHARGE" ],
-            [ 13, "MOVE_SPARK" ],
-            [ 17, "MOVE_BITE" ],
-            [ 21, "MOVE_ROAR" ],
-            [ 25, "MOVE_SWAGGER" ],
-            [ 29, "MOVE_THUNDER_FANG" ],
-            [ 33, "MOVE_CRUNCH" ],
-            [ 37, "MOVE_SCARY_FACE" ],
-            [ 41, "MOVE_DISCHARGE" ]
+            [1, "MOVE_TACKLE"],
+            [2, "MOVE_LEER"],
+            [5, "MOVE_CHARGE"],
+            [8, "MOVE_THUNDER_SHOCK"],
+            [12, "MOVE_SPARK"],
+            [15, "MOVE_BITE"],
+            [18, "MOVE_DOUBLE_KICK"],
+            [21, "MOVE_ROAR"],
+            [24, "MOVE_SWAGGER"],
+            [27, "MOVE_THUNDER_FANG"],
+            [33, "MOVE_CRUNCH"],
+            [37, "MOVE_SCARY_FACE"],
+            [41, "MOVE_DISCHARGE"]
         ],
         "by_tm": [
             "TM05",

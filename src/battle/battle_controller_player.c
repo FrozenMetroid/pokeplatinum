@@ -2876,6 +2876,22 @@ static int BattleControllerPlayer_CheckMoveHitAccuracy(BattleSystem *battleSys, 
     u8 moveClass = MOVE_DATA(move).class;
     s8 accStages = battleCtx->battleMons[attacker].statBoosts[BATTLE_STAT_ACCURACY] - 6;
     s8 evaStages = 6 - battleCtx->battleMons[defender].statBoosts[BATTLE_STAT_EVASION];
+    u8 defenderType1 = BattleMon_Get(battleCtx, defender, BATTLEMON_TYPE_1, NULL);
+    u8 defenderType2 = BattleMon_Get(battleCtx, defender, BATTLEMON_TYPE_2, NULL);
+    u8 attackerType1 = BattleMon_Get(battleCtx, attacker, BATTLEMON_TYPE_1, NULL);
+    u8 attackerType2 = BattleMon_Get(battleCtx, attacker, BATTLEMON_TYPE_2, NULL);
+
+    #ifdef BATTLE_ADD_PRANKSTER
+    if (Battler_Ability(battleCtx, attacker) == ABILITY_PRANKSTER
+     && (defenderType1 == TYPE_DARK
+     || defenderType2 == TYPE_DARK)
+     && moveClass == CLASS_STATUS
+     && ((attacker & 1) != (defender & 1))) // used on an enemy
+    {
+        battleCtx->moveStatusFlags |= MOVE_STATUS_INEFFECTIVE;
+        return 0;
+    }
+    #endif
 
     if (Battler_Ability(battleCtx, attacker) == ABILITY_SIMPLE) {
         accStages *= 2;
@@ -2984,8 +3000,7 @@ static int BattleControllerPlayer_CheckMoveHitAccuracy(BattleSystem *battleSys, 
     #ifdef BATTLE_POISON_TYPE_TOXIC
     // Toxic when used by a Poison-type
     if (move == MOVE_TOXIC) {
-        if (BattleMon_Get(battleCtx, defender, BATTLEMON_TYPE_1, NULL) == TYPE_POISON
-        || BattleMon_Get(battleCtx, defender, BATTLEMON_TYPE_2, NULL) == TYPE_POISON) {
+        if (attackerType1 == TYPE_POISON || attackerType2 == TYPE_POISON) {
             return 0;
         }
     }
@@ -4650,7 +4665,7 @@ static BOOL BattleControllerPlayer_RageBuilding(BattleSystem *battleSys, BattleC
 
 /**
  * @brief Check if an additional flinch effect should be applied due to King's
- * Rock.
+ * Rock and/or Stench. Also include Serene Grace affecting it
  *
  * @param battleSys
  * @param battleCtx
@@ -4661,12 +4676,22 @@ static BOOL BattleControllerPlayer_CheckExtraFlinch(BattleSystem *battleSys, Bat
     BOOL result = FALSE;
     int itemEffect = Battler_HeldItemEffect(battleCtx, battleCtx->attacker);
     int itemPower = Battler_HeldItemPower(battleCtx, battleCtx->attacker, 0);
+    int sereneGraceShift = 0;
+
+    if (Battler_Ability(battleCtx, battleCtx->attacker) == ABILITY_STENCH) {
+        itemPower += 10;
+        itemEffect = HOLD_EFFECT_SOMETIMES_FLINCH; // doesn't permanently change the hold effect, just for this function
+    }
+
+    if (Battler_Ability(battleCtx, battleCtx->attacker) == ABILITY_SERENE_GRACE) {
+        sereneGraceShift = 1;
+    }
 
     if (battleCtx->defender != BATTLER_NONE
         && itemEffect == HOLD_EFFECT_SOMETIMES_FLINCH
         && (battleCtx->moveStatusFlags & MOVE_STATUS_NO_EFFECTS) == FALSE
         && (DEFENDER_SELF_TURN_FLAGS.physicalDamageTaken || DEFENDER_SELF_TURN_FLAGS.specialDamageTaken)
-        && (BattleSystem_RandNext(battleSys) % 100) < itemPower
+        && (((BattleSystem_RandNext(battleSys) % 100) << sereneGraceShift) < itemPower)
         && (CURRENT_MOVE_DATA.flags & MOVE_FLAG_TRIGGERS_KINGS_ROCK)
         && DEFENDING_MON.curHP) {
         battleCtx->sideEffectMon = battleCtx->defender;

@@ -1,11 +1,11 @@
 {
     "base_stats": {
-        "hp": 35,
-        "attack": 65,
-        "defense": 35,
-        "speed": 65,
-        "special_attack": 65,
-        "special_defense": 35
+        "hp": 55,
+        "attack": 80,
+        "defense": 60,
+        "speed": 75,
+        "special_attack": 80,
+        "special_defense": 60
     },
     "types": [ "TYPE_WATER", "TYPE_WATER" ],
     "catch_rate": 190,
@@ -34,17 +34,18 @@
     "icon_palette": 0,
     "learnset": {
         "by_level": [
-            [ 1, "MOVE_WATER_GUN" ],
-            [ 6, "MOVE_LOCK_ON" ],
-            [ 10, "MOVE_PSYBEAM" ],
-            [ 14, "MOVE_AURORA_BEAM" ],
-            [ 19, "MOVE_BUBBLE_BEAM" ],
-            [ 23, "MOVE_FOCUS_ENERGY" ],
-            [ 27, "MOVE_BULLET_SEED" ],
-            [ 32, "MOVE_WATER_PULSE" ],
-            [ 36, "MOVE_SIGNAL_BEAM" ],
-            [ 40, "MOVE_ICE_BEAM" ],
-            [ 45, "MOVE_HYPER_BEAM" ]
+            [1, "MOVE_WATER_GUN"],
+            [6, "MOVE_LOCK_ON"],
+            [10, "MOVE_PSYBEAM"],
+            [14, "MOVE_AURORA_BEAM"],
+            [16, "MOVE_BULLET_SEED"],
+            [19, "MOVE_BUBBLE_BEAM"],
+            [23, "MOVE_FOCUS_ENERGY"],
+            [27, "MOVE_AGILITY"],
+            [32, "MOVE_WATER_PULSE"],
+            [36, "MOVE_SIGNAL_BEAM"],
+            [40, "MOVE_ICE_BEAM"],
+            [45, "MOVE_HYPER_BEAM"]
         ],
         "by_tm": [
             "TM03",

@@ -1,11 +1,11 @@
 {
     "base_stats": {
-        "hp": 40,
-        "attack": 55,
-        "defense": 30,
-        "speed": 60,
-        "special_attack": 30,
-        "special_defense": 30
+        "hp": 45,
+        "attack": 60,
+        "defense": 35,
+        "speed": 65,
+        "special_attack": 35,
+        "special_defense": 35
     },
     "types": [ "TYPE_NORMAL", "TYPE_FLYING" ],
     "catch_rate": 255,
@@ -34,17 +34,20 @@
     "icon_palette": 0,
     "learnset": {
         "by_level": [
-            [ 1, "MOVE_TACKLE" ],
-            [ 1, "MOVE_GROWL" ],
-            [ 5, "MOVE_QUICK_ATTACK" ],
-            [ 9, "MOVE_WING_ATTACK" ],
-            [ 13, "MOVE_DOUBLE_TEAM" ],
-            [ 17, "MOVE_ENDEAVOR" ],
-            [ 21, "MOVE_WHIRLWIND" ],
-            [ 25, "MOVE_AERIAL_ACE" ],
-            [ 29, "MOVE_TAKE_DOWN" ],
-            [ 33, "MOVE_AGILITY" ],
-            [ 37, "MOVE_BRAVE_BIRD" ]
+            [1, "MOVE_TACKLE"],
+            [1, "MOVE_GROWL"],
+            [5, "MOVE_QUICK_ATTACK"],
+            [9, "MOVE_WING_ATTACK"],
+            [13, "MOVE_DOUBLE_TEAM"],
+            [17, "MOVE_ENDEAVOR"],
+            [21, "MOVE_WHIRLWIND"],
+            [25, "MOVE_AERIAL_ACE"],
+            [29, "MOVE_TAKE_DOWN"],
+            [33, "MOVE_AGILITY"],
+            [37, "MOVE_PLUCK"],
+            [40, "MOVE_SWAGGER"],
+            [44, "MOVE_DOUBLE_EDGE"],
+            [48, "MOVE_BRAVE_BIRD"]
         ],
         "by_tm": [
             "TM06",
