@@ -7,7 +7,7 @@
 #include "savedata.h"
 
 #define ITEM_POCKET_SIZE        165
-#define KEY_ITEM_POCKET_SIZE    (50 + 1) // plus Shiny Charm
+#define KEY_ITEM_POCKET_SIZE    (50 + 3) // plus Shiny, Oval, and Catching Charms
 #define TMHM_POCKET_SIZE        100
 #define MAIL_POCKET_SIZE        12
 #define MEDICINE_POCKET_SIZE    40

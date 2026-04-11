@@ -3871,12 +3871,18 @@ static BOOL BtlCmd_PrintTrainerMessage(BattleSystem *battleSys, BattleContext *b
 static u32 BattleScript_CalcPrizeMoney(BattleSystem *battleSys, BattleContext *battleCtx, int battler)
 {
     u8 lastLevel = 0;
+    #ifndef BATTLE_EXPANDED_TRAINER_STRUCT
     void *rawParty = Heap_Alloc(HEAP_ID_BATTLE, sizeof(TrainerMonWithMovesAndItem) * MAX_PARTY_SIZE);
+    #else
+    // sizeof(ExpandedTrainerMonData)
+    u8 *rawParty = (u8 *)Heap_Alloc(HEAP_ID_BATTLE, 0x56 * MAX_PARTY_SIZE);
+    #endif
 
     Trainer trainer;
     Trainer_Load(battleSys->trainerIDs[battler], &trainer);
     Trainer_LoadParty(battleSys->trainerIDs[battler], rawParty);
 
+    #ifndef BATTLE_EXPANDED_TRAINER_STRUCT
     switch (trainer.header.monDataType) {
     default:
     case TRDATATYPE_BASE: {
@@ -3903,6 +3909,12 @@ static u32 BattleScript_CalcPrizeMoney(BattleSystem *battleSys, BattleContext *b
         break;
     }
     }
+    #else
+
+    lastLevel = rawParty[2] | (rawParty[3] << 8);
+
+    #endif
+
 
     u32 prize;
     if ((battleSys->battleType & BATTLE_TYPE_TAG) || battleSys->battleType == BATTLE_TYPE_TRAINER_WITH_AI_PARTNER) {

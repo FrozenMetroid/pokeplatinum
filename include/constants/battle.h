@@ -170,6 +170,31 @@
 #define BATTLER_OPPONENT(client) (client ^ 1)
 #define BATTLER_ACROSS(client) (client ^ 3)
 
+/**Trainer Data File Bitfield**/
+#define TRAINER_DATA_TYPE_NOTHING (1 << 0)
+#define TRAINER_DATA_TYPE_MOVES (1 << 1)
+#define TRAINER_DATA_TYPE_ITEMS (1 << 2)
+#define TRAINER_DATA_TYPE_ABILITY (1 << 3)
+#define TRAINER_DATA_TYPE_BALL (1 << 4)
+#define TRAINER_DATA_TYPE_IV_EV_SET (1 << 5)
+#define TRAINER_DATA_TYPE_NATURE_SET (1 << 6)
+#define TRAINER_DATA_TYPE_SHINY_LOCK (1 << 7)
+#define TRAINER_DATA_TYPE_ADDITIONAL_FLAGS (1 << 8) // unused
+
+
+/**Trainer Pokemon File Extra Bitfield**/
+#define TRAINER_DATA_EXTRA_TYPE_NOTHING 0x00
+#define TRAINER_DATA_EXTRA_TYPE_STATUS 0x01
+#define TRAINER_DATA_EXTRA_TYPE_HP 0x02
+#define TRAINER_DATA_EXTRA_TYPE_ATK 0x04
+#define TRAINER_DATA_EXTRA_TYPE_DEF 0x08
+#define TRAINER_DATA_EXTRA_TYPE_SPEED 0x10
+#define TRAINER_DATA_EXTRA_TYPE_SP_ATK 0x20
+#define TRAINER_DATA_EXTRA_TYPE_SP_DEF 0x40
+#define TRAINER_DATA_EXTRA_TYPE_TYPES 0x80
+#define TRAINER_DATA_EXTRA_TYPE_PP_COUNTS 0x100
+#define TRAINER_DATA_EXTRA_TYPE_NICKNAME 0x200
+
 // Supreme Overlord and Last Respects
 #define MAX_CLIENT_DEATHS (101) // Last Respects damage caps at 5050, so 101 deaths
 

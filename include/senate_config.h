@@ -29,6 +29,8 @@ in the Pokedex if you fought it in the Frontier
 ===============BATTLE==============
 */
 
+#define BATTLE_EXPANDED_TRAINER_STRUCT // this is the big one
+
 #define BATTLE_HAIL_DEFENSE_BOOST // for ice types
 
 #define BATTLE_BUFF_PINCH_ABILITIES // always active, 1.3x boost; Torrent, Overgrow, Swarm, and Blaze

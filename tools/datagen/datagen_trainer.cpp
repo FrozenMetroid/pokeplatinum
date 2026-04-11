@@ -1,3 +1,6 @@
+#include "senate_config.h"
+
+#ifndef BATTLE_EXPANDED_TRAINER_STRUCT
 /*
  * datagen-trainer
  *
@@ -108,7 +111,7 @@ static TrainerHeader ParseTrainerData(const rapidjson::Document &doc)
     bool partyMoves = AnyMemberHasValue(party, "moves");
     if (partyItems) {
         if (partyMoves) {
-            trdata.monDataType = TRDATATYPE_WITH_MOVES_AND_ITEM;
+            trdata.monDataType = 3; // TRDATATYPE_WITH_MOVES_AND_ITEM;
         } else {
             trdata.monDataType = TRDATATYPE_WITH_ITEM;
         }
@@ -392,3 +395,576 @@ int main(int argc, char **argv)
     delete[] messagesArr;
     return EXIT_SUCCESS;
 }
+
+#else
+
+// ==============================
+// EXPANDED TRAINER STRUCT VERSION
+// ==============================
+
+#include <array>
+#include <cstddef>
+#include <cstdlib>
+#include <cstring>
+#include <exception>
+#include <functional>
+#include <iostream>
+
+#include "datagen_trainer.h"
+#include "datagen.h"
+
+#define POKEPLATINUM_GENERATED_LOOKUP
+#define POKEPLATINUM_GENERATED_LOOKUP_IMPL
+
+// C++ does not like the math expressions used in this enum,
+// so use the preprocessor version instead.
+#include "generated/ai_flags.h"
+
+#define POKEPLATINUM_GENERATED_ENUM
+
+#include "constants/battle.h"
+#include "generated/items.h"
+#include "generated/moves.h"
+#include "generated/species.h"
+#include "generated/trainer_classes.h"
+#include "generated/trainer_message_types.h"
+
+#include "struct_defs/trainer_data.h"
+
+struct __attribute__((packed)) PackedPackedExpandedTrainerMonData
+{
+    u8 ivs;
+    u8 abilityslot;
+    u16 level;
+    u16 monsno;
+    u16 itemno;
+    u16 moves[4];
+    u16 ability;
+    u16 ball;
+    u8 ivnums[6];
+    u8 evnums[6];
+    u8 nature;
+    u8 shinyLock;
+    u8 padding[2];
+    u32 additionalflags;
+    u32 status;
+    u16 hp;
+    u16 atk;
+    u16 def;
+    u16 speed;
+    u16 spatk;
+    u16 spdef;
+    u8 types[2];
+    u8 ppcounts[4];
+    u16 nickname[11];
+    u16 ballSeal;
+};
+
+#include "generated/abilities.h"
+#include "generated/natures.h"
+#include "generated/pokemon_types.h"
+
+static void Usage(std::ostream &ostr)
+{
+    ostr << "Usage: datagen-species OUT_DIR ROOT_DIR" << std::endl;
+    ostr << std::endl;
+    ostr << "Generates data archives from trainer data files (res/trainers/data/*.json)" << std::endl;
+    ostr << "Trainer data files to be polled for packing are drawn from the environment var\n"
+         << "TRAINERS, which must be a semicolon-delimited list of file-stems to be polled\n"
+         << "at execution." << std::endl;
+}
+
+static std::string ParseMessages(const rapidjson::Document &doc, int trainerID, std::string stem, rapidjson::Value *outMessages, rapidjson::Document *messagesTextBank)
+{
+    rapidjson::Value trainerMessages(rapidjson::kArrayType);
+    std::string ret = "";
+    for (const auto &member : doc["messages"].GetArray()) {
+        std::string type = member["type"].GetString();
+        ret += (char)(trainerID & 0xFF);
+        ret += (char)(trainerID >> 8);
+        ret += (char)LookupConst(type, TrainerMessageType);
+        ret += (char)0;
+
+        rapidjson::Value message(rapidjson::kObjectType);
+        std::string id = "NPCTrainerMessages_Text_" + stem + "_" + type;
+        rapidjson::Value idValue(rapidjson::kStringType);
+        idValue.SetString(id.c_str(), static_cast<rapidjson::SizeType>(id.length()), messagesTextBank->GetAllocator());
+        message.AddMember("id", idValue, messagesTextBank->GetAllocator());
+
+        CopyMessage(member, message, messagesTextBank->GetAllocator());
+
+        trainerMessages.PushBack(message, messagesTextBank->GetAllocator());
+    }
+    *outMessages = trainerMessages;
+    return ret;
+}
+
+static std::string ParseName(const rapidjson::Document &doc, int trainerID)
+{
+    std::string name = doc["name"].GetString();
+    u8 trClass = LookupConst(doc["class"].GetString(), TrainerClass);
+
+    static constexpr std::array<u8, 6> noTrNameClasses = {
+        TRAINER_CLASS_RIVAL,
+        TRAINER_CLASS_TOWER_TYCOON,
+        TRAINER_CLASS_HALL_MATRON,
+        TRAINER_CLASS_FACTORY_HEAD,
+        TRAINER_CLASS_ARCADE_STAR,
+        TRAINER_CLASS_CASTLE_VALET
+    };
+    static constexpr std::array<int, 5> noTrNameIDs = {
+        861,
+        862,
+        863,
+        864,
+        865
+    };
+
+    if (std::find(std::begin(noTrNameClasses), std::end(noTrNameClasses), trClass) == std::end(noTrNameClasses) &&
+        std::find(std::begin(noTrNameIDs), std::end(noTrNameIDs), trainerID) == std::end(noTrNameIDs)) {
+        name = "{TRNAME}" + name;
+    }
+    return name;
+}
+
+static const rapidjson::Value *FindMemberOpt(const rapidjson::Value &obj, const char *key)
+{
+    auto it = obj.FindMember(key);
+    if (it == obj.MemberEnd()) return nullptr;
+    return &it->value;
+}
+
+static u32 GetUintOr(const rapidjson::Value &obj, const char *key, u32 fallback)
+{
+    const rapidjson::Value *v = FindMemberOpt(obj, key);
+    if (v == nullptr || v->IsNull()) {
+        return fallback;
+    }
+    if (v->IsUint()) {
+        return v->GetUint();
+    }
+    if (v->IsInt() && v->GetInt() >= 0) {
+        return (u32)v->GetInt();
+    }
+    return fallback;
+}
+
+static bool GetBoolOr(const rapidjson::Value &obj, const char *key, bool fallback)
+{
+    const rapidjson::Value *v = FindMemberOpt(obj, key);
+    if (!v || v->IsNull()) return fallback;
+    return v->GetBool();
+}
+
+static void FillU8Array(const rapidjson::Value &obj, const char *key, u8 *dst, size_t count)
+{
+    const rapidjson::Value *v = FindMemberOpt(obj, key);
+    if (v == nullptr || !v->IsArray()) {
+        return;
+    }
+
+    size_t i = 0;
+    for (const auto &e : v->GetArray()) {
+        if (i >= count) break;
+
+        if (e.IsUint()) {
+            dst[i++] = (u8)e.GetUint();
+        } else if (e.IsInt() && e.GetInt() >= 0) {
+            dst[i++] = (u8)e.GetInt();
+        } else {
+            dst[i++] = 0;
+        }
+    }
+}
+
+static void FillU16Array(const rapidjson::Value &obj, const char *key, u16 *dst, size_t count)
+{
+    const rapidjson::Value *v = FindMemberOpt(obj, key);
+    if (v == nullptr || !v->IsArray()) {
+        return;
+    }
+
+    size_t i = 0;
+    for (const auto &e : v->GetArray()) {
+        if (i >= count) break;
+
+        if (e.IsUint()) {
+            dst[i++] = (u16)e.GetUint();
+        } else if (e.IsInt() && e.GetInt() >= 0) {
+            dst[i++] = (u16)e.GetInt();
+        } else {
+            dst[i++] = 0;
+        }
+    }
+}
+
+static TrainerHeader ParseTrainerData(const rapidjson::Document &doc)
+{
+    TrainerHeader trdata = {};
+
+    trdata.trainerType = LookupConst(doc["class"].GetString(), TrainerClass);
+    trdata.battleType = GetBoolOr(doc, "double_battle", false) ? BATTLE_TYPE_DOUBLES : 0;
+
+    int i = 0;
+    for (const auto &itemVal : doc["items"].GetArray()) {
+        trdata.items[i++] = LookupConst(itemVal.GetString(), Item);
+    }
+
+    for (const auto &aiFlagsVal : doc["ai_flags"].GetArray()) {
+        trdata.aiMask |= LookupConst(aiFlagsVal.GetString(), AIFlag);
+    }
+
+    trdata.partySize = doc["party"].GetArray().Size();
+    trdata.monDataType = (u8)GetUintOr(doc, "data_type", 0); // not actually using this currently
+
+    return trdata;
+}
+
+static void WriteU8(std::byte *dst, std::size_t &offset, u8 value)
+{
+    dst[offset++] = static_cast<std::byte>(value);
+}
+
+static void WriteU16(std::byte *dst, std::size_t &offset, u16 value)
+{
+    dst[offset++] = static_cast<std::byte>(value & 0xFF);
+    dst[offset++] = static_cast<std::byte>((value >> 8) & 0xFF);
+}
+
+static void WriteU32(std::byte *dst, std::size_t &offset, u32 value)
+{
+    dst[offset++] = static_cast<std::byte>(value & 0xFF);
+    dst[offset++] = static_cast<std::byte>((value >> 8) & 0xFF);
+    dst[offset++] = static_cast<std::byte>((value >> 16) & 0xFF);
+    dst[offset++] = static_cast<std::byte>((value >> 24) & 0xFF);
+}
+
+static u32 ParseTrainerStatus(const rapidjson::Value &obj, const char *key, u32 fallback)
+{
+    const rapidjson::Value *v = FindMemberOpt(obj, key);
+    if (v == nullptr || v->IsNull()) {
+        return fallback;
+    }
+
+    if (v->IsUint()) {
+        return v->GetUint();
+    }
+
+    if (v->IsInt() && v->GetInt() >= 0) {
+        return (u32)v->GetInt();
+    }
+
+    if (v->IsString()) {
+        const char *s = v->GetString();
+
+        if (std::strcmp(s, "STATUS_NONE") == 0)   return 0;
+        if (std::strcmp(s, "STATUS_SLEEP") == 0)  return STATUS_SLEEP;
+        if (std::strcmp(s, "STATUS_POISON") == 0) return STATUS_POISON;
+        if (std::strcmp(s, "STATUS_BURN") == 0)   return STATUS_BURN;
+        if (std::strcmp(s, "STATUS_FREEZE") == 0) return STATUS_FREEZE;
+        if (std::strcmp(s, "STATUS_PARALYSIS") == 0) return STATUS_PARALYSIS;
+        if (std::strcmp(s, "STATUS_BAD_POISON") == 0) return STATUS_BAD_POISON;
+
+        std::cerr << "Unknown trainer status constant: " << s << std::endl;
+    }
+
+    return fallback;
+}
+
+static void ParseAndPackParty(const rapidjson::Document &doc, size_t partySize, NarcBuilder &trpokeBuilder)
+{
+    static constexpr std::size_t EXPANDED_TRAINER_MON_SIZE = 0x56;
+
+    if (partySize == 0) {
+        static constexpr std::array<std::byte, 8> empty{};
+        trpokeBuilder.append(const_cast<std::byte *>(empty.data()), empty.size());
+        return;
+    }
+
+    std::size_t bufSize = EXPANDED_TRAINER_MON_SIZE * partySize;
+    bufSize = bufSize + (-bufSize & 3);
+
+    std::byte *buf = new std::byte[bufSize];
+    std::memset(buf, 0, bufSize);
+
+    std::size_t monIndex = 0;
+    for (const auto &m : doc["party"].GetArray()) {
+        std::size_t offset = monIndex * EXPANDED_TRAINER_MON_SIZE;
+        monIndex++;
+
+        u8 ivs = static_cast<u8>(GetUintOr(m, "iv_scale", GetUintOr(m, "ivs", 0)));
+        u8 abilityslot = static_cast<u8>(GetUintOr(m, "ability_slot", 0));
+        u16 level = static_cast<u16>(GetUintOr(m, "level", 1));
+
+        u16 monsno = static_cast<u16>(LookupConst(m["species"].GetString(), Species));
+        monsno |= static_cast<u16>(GetUintOr(m, "form", 0) << TRAINER_MON_FORM_SHIFT);
+
+
+        u16 moves[4] = {};
+        if (auto v = FindMemberOpt(m, "moves"); v && v->IsArray()) {
+            int j = 0;
+            for (const auto &mv : v->GetArray()) {
+                if (j >= 4) break;
+                if (mv.IsString()) {
+                    moves[j++] = static_cast<u16>(LookupConst(mv.GetString(), Move));
+                } else if (mv.IsUint()) {
+                    moves[j++] = static_cast<u16>(mv.GetUint());
+                }
+            }
+        }
+
+        u16 itemno = 0;
+        if (auto v = FindMemberOpt(m, "item"); v && !v->IsNull()) {
+            if (v->IsString()) {
+                itemno = static_cast<u16>(LookupConst(v->GetString(), Item));
+            } else if (v->IsUint()) {
+                itemno = static_cast<u16>(v->GetUint());
+            }
+        }
+
+        u16 ability = 0;
+        if (auto v = FindMemberOpt(m, "ability"); v && !v->IsNull()) {
+            if (v->IsString()) {
+                ability = static_cast<u16>(LookupConst(v->GetString(), Ability));
+            } else if (v->IsUint()) {
+                ability = static_cast<u16>(v->GetUint());
+            }
+        }
+
+        u16 ball = 0;
+        if (auto v = FindMemberOpt(m, "ball"); v && !v->IsNull()) {
+            if (v->IsString()) {
+                ball = static_cast<u16>(LookupConst(v->GetString(), Item));
+            } else if (v->IsUint()) {
+                ball = static_cast<u16>(v->GetUint());
+            }
+        }
+
+        u8 nature = 0xFF; // set it to this in the trainer data file if not specified since a nature of 0 is valid
+        if (auto v = FindMemberOpt(m, "nature"); v && !v->IsNull()) {
+            if (v->IsString()) {
+                nature = static_cast<u8>(LookupConst(v->GetString(), Nature));
+            } else if (v->IsUint()) {
+                nature = static_cast<u8>(v->GetUint());
+            }
+        }
+
+        u8 types[2] = {};
+        if (auto v = FindMemberOpt(m, "types"); v && v->IsArray()) {
+            int j = 0;
+            for (const auto &t : v->GetArray()) {
+                if (j >= 2) break;
+                if (t.IsString()) {
+                    types[j++] = (static_cast<u8>(LookupConst(t.GetString(), PokemonType)) + 1);
+                } else if (t.IsUint()) {
+                    types[j++] = (static_cast<u8>(t.GetUint()) + 1);
+                }
+            }
+        }
+
+        u8 ivnums[6] = {};
+        u8 evnums[6] = {};
+        FillU8Array(m, "ivnums", ivnums, 6);
+        FillU8Array(m, "evnums", evnums, 6);
+
+        u8 shinyLock = static_cast<u8>(GetUintOr(m, "shinyLock", 0));
+        u32 status = ParseTrainerStatus(m, "status", 0);
+
+        u16 hp = static_cast<u16>(GetUintOr(m, "hp", 0));
+        u16 atk = static_cast<u16>(GetUintOr(m, "atk", 0));
+        u16 def = static_cast<u16>(GetUintOr(m, "def", 0));
+        u16 speed = static_cast<u16>(GetUintOr(m, "speed", 0));
+        u16 spatk = static_cast<u16>(GetUintOr(m, "spatk", 0));
+        u16 spdef = static_cast<u16>(GetUintOr(m, "spdef", 0));
+
+        u8 ppcounts[4] = {};
+        FillU8Array(m, "ppcounts", ppcounts, 4);
+
+        u16 nickname[11] = {};
+        FillU16Array(m, "nickname", nickname, 11); // doesn't work with strings
+
+        u16 ballSeal = static_cast<u16>(GetUintOr(m, "ballSeal", 0));
+
+        // now start writing everything into the file
+        WriteU8(buf, offset, ivs);                // 0x00
+        WriteU8(buf, offset, abilityslot);        // 0x01
+        WriteU16(buf, offset, level);             // 0x02
+        WriteU16(buf, offset, monsno);            // 0x04
+        WriteU16(buf, offset, itemno);            // 0x06
+        for (int j = 0; j < 4; j++) {             // 0x08
+            WriteU16(buf, offset, moves[j]);
+        }
+        WriteU16(buf, offset, ability);           // 0x10
+        WriteU16(buf, offset, ball);              // 0x12
+        for (int j = 0; j < 6; j++) {             // 0x14
+            WriteU8(buf, offset, ivnums[j]);
+        }
+        for (int j = 0; j < 6; j++) {             // 0x1A
+            WriteU8(buf, offset, evnums[j]);
+        }
+        WriteU8(buf, offset, nature);             // 0x20
+        WriteU8(buf, offset, shinyLock);          // 0x21
+        WriteU8(buf, offset, 0);                  // 0x22 padding
+        WriteU8(buf, offset, 0);                  // 0x23 padding
+        WriteU32(buf, offset, 0);                 // 0x24 additionalFlags padding since we're not using it rn
+        WriteU32(buf, offset, status);            // 0x28
+        WriteU16(buf, offset, hp);                // 0x2C
+        WriteU16(buf, offset, atk);               // 0x2E
+        WriteU16(buf, offset, def);               // 0x30
+        WriteU16(buf, offset, speed);             // 0x32
+        WriteU16(buf, offset, spatk);             // 0x34
+        WriteU16(buf, offset, spdef);             // 0x36
+        WriteU8(buf, offset, types[0]);           // 0x38
+        WriteU8(buf, offset, types[1]);           // 0x39
+        for (int j = 0; j < 4; j++) {             // 0x3A
+            WriteU8(buf, offset, ppcounts[j]);
+        }
+        for (int j = 0; j < 11; j++) {            // 0x3E
+            WriteU16(buf, offset, nickname[j]);
+        }
+        WriteU16(buf, offset, ballSeal);          // 0x54
+        // final size: 0x56 bytes
+    }
+    trpokeBuilder.append(buf, bufSize);
+    delete[] buf;
+}
+
+int main(int argc, char **argv) // same as the one above but with one line changed
+{
+    if (argc == 1) {
+        Usage(std::cout);
+        return EXIT_SUCCESS;
+    }
+
+    fs::path outputRoot = argv[1];
+    fs::path dataRoot = argv[2];
+
+    std::vector<std::string> trainerRegistry = ReadRegistryEnvVar("TRAINERS");
+    const std::size_t trainerCount = trainerRegistry.size();
+    std::string *trMsgs = new std::string[trainerCount];
+    short *trMsgOffsets = new short[trainerCount];
+    int *order = new int[trainerCount];
+    rapidjson::Value *messagesArr = new rapidjson::Value[trainerCount];
+
+    NarcBuilder trdataBuilder { trainerCount };
+    NarcBuilder trpokeBuilder { trainerCount };
+    NarcBuilder trtblBuilder { 1 };
+    NarcBuilder trtblofsBuilder { 1 };
+
+    rapidjson::Document doc;
+    rapidjson::Document messagesTextBank(rapidjson::kObjectType);
+    rapidjson::Document namesTextBank(rapidjson::kObjectType);
+    messagesTextBank.AddMember("key", 6120, messagesTextBank.GetAllocator());
+    namesTextBank.AddMember("key", 55533, namesTextBank.GetAllocator());
+
+    int trainerID = 0;
+    int newTrainerIndex = 0;
+    rapidjson::Value nameMessages(rapidjson::kArrayType);
+    for (auto &trainerStem : trainerRegistry) {
+        fs::path trainerDataPath = dataRoot / (trainerStem + ".json");
+        std::string json = ReadWholeFile(trainerDataPath);
+        rapidjson::ParseResult ok = doc.Parse(json.c_str(), json.length());
+        if (!ok) {
+            ReportJsonError(ok, json, trainerDataPath);
+            std::exit(EXIT_FAILURE);
+        }
+
+        try {
+            TrainerHeader trdata = ParseTrainerData(doc);
+            trdataBuilder.append(reinterpret_cast<std::byte*>(&trdata), sizeof(trdata));
+            ParseAndPackParty(doc, trdata.partySize, trpokeBuilder);
+        } catch (const std::exception &e) {
+            std::cerr << e.what() << std::endl;
+            std::exit(EXIT_FAILURE);
+        }
+
+        rapidjson::Value trainerMessages;
+        std::string trMsg = ParseMessages(doc, trainerID, trainerStem, &trainerMessages, &messagesTextBank);
+
+        std::string trName = ParseName(doc, trainerID);
+        rapidjson::Value nameMessage(rapidjson::kObjectType);
+
+        std::string id = "NPCTrainerNames_Text_" + trainerStem;
+        rapidjson::Value idValue(rapidjson::kStringType);
+        idValue.SetString(id.c_str(), static_cast<rapidjson::SizeType>(id.length()), namesTextBank.GetAllocator());
+        nameMessage.AddMember("id", idValue, namesTextBank.GetAllocator());
+
+        rapidjson::Value string(rapidjson::kStringType);
+        string.SetString(trName.c_str(), static_cast<rapidjson::SizeType>(trName.length()), namesTextBank.GetAllocator());
+        nameMessage.AddMember("en_US", string, namesTextBank.GetAllocator());
+
+        nameMessages.PushBack(nameMessage, namesTextBank.GetAllocator());
+
+        if (trMsg.length()) {
+            if (trainerID < VANILLA_TRAINER_COUNT && trtblIndices[trainerID] != -1) {
+                trMsgs[trtblIndices[trainerID]] = trMsg;
+                order[trtblIndices[trainerID]] = trainerID;
+                messagesArr[trtblIndices[trainerID]] = trainerMessages;
+            } else {
+                trMsgs[VANILLA_TRAINERS_WITH_MESSAGES + newTrainerIndex] = trMsg;
+                order[VANILLA_TRAINERS_WITH_MESSAGES + newTrainerIndex] = trainerID;
+                messagesArr[VANILLA_TRAINERS_WITH_MESSAGES + newTrainerIndex] = trainerMessages;
+                newTrainerIndex++;
+            }
+        } else {
+            trMsgOffsets[trainerID] = 0;
+        }
+
+        trainerID++;
+    }
+
+    namesTextBank.AddMember("messages", nameMessages, namesTextBank.GetAllocator());
+
+    std::string str = "";
+    std::size_t offset = 0;
+    rapidjson::Value messages(rapidjson::kArrayType);
+    for (int i = 0; i < trainerCount; i++) {
+        str += trMsgs[i];
+        int length = trMsgs[i].length();
+        if (length) {
+            trMsgOffsets[order[i]] = offset;
+            offset += length;
+            for (const auto &member : messagesArr[i].GetArray()) {
+                rapidjson::Value tmp;
+                tmp.CopyFrom(member, messagesTextBank.GetAllocator());
+                messages.PushBack(tmp, messagesTextBank.GetAllocator());
+            }
+        }
+    }
+    messagesTextBank.AddMember("messages", messages, messagesTextBank.GetAllocator());
+
+    char *chars = const_cast<char *>(str.c_str());
+    trtblBuilder.append(reinterpret_cast<std::byte *>(chars), offset);
+    trtblofsBuilder.append(reinterpret_cast<std::byte *>(trMsgOffsets), trainerCount * sizeof(short));
+
+    trdataBuilder.write(outputRoot / "trdata.narc");
+    trpokeBuilder.write(outputRoot / "trpoke.narc");
+    trtblBuilder.write(outputRoot / "trtbl.narc");
+    trtblofsBuilder.write(outputRoot / "trtblofs.narc");
+
+    char writeBuffer[65536];
+
+    FILE *fp = fopen((outputRoot / "npc_trainer_messages.json").string().c_str(), "w");
+    rapidjson::FileWriteStream messagesStream(fp, writeBuffer, sizeof(writeBuffer));
+    rapidjson::Writer<rapidjson::FileWriteStream> messagesWriter(messagesStream);
+    messagesTextBank.Accept(messagesWriter);
+    fclose(fp);
+
+    fp = fopen((outputRoot / "npc_trainer_names.json").string().c_str(), "w");
+    rapidjson::FileWriteStream namesStream(fp, writeBuffer, sizeof(writeBuffer));
+    rapidjson::Writer<rapidjson::FileWriteStream> namesWriter(namesStream);
+    namesTextBank.Accept(namesWriter);
+    fclose(fp);
+
+    delete[] trMsgs;
+    delete[] trMsgOffsets;
+    delete[] order;
+    delete[] messagesArr;
+    return EXIT_SUCCESS;
+
+    // static_assert(sizeof(PackedExpandedTrainerMonData) == 0x56, "PackedExpandedTrainerMonData size mismatch");
+
+    // everything else identical
+}
+
+#endif
