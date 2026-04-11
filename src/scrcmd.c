@@ -7174,7 +7174,7 @@ static BOOL ScrCmd_ReplaceAbility(ScriptContext *ctx)
 
 // return TRUE if a mon in the party can learn the move and
 // return the slot as well
-static BOOL ScrCmd_CheckTMHMCompatibility(ScriptContext *ctx)
+static BOOL ScrCmd_CheckTMHMMoveCompatibility(ScriptContext *ctx)
 {
     u16 move = ScriptContext_GetVar(ctx);
     u16 *slot = ScriptContext_GetVarPointer(ctx);

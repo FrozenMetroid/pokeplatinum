@@ -3312,7 +3312,7 @@ const u16 Item_MoveForTMHM(u16 item)
     return sTMHMMoves[item];
 }
 
-const u16 Item_TMHMForMove(u16 move)
+u16 Item_TMHMForMove(u16 move)
 {
     for (int i = 0; i < NELEMS(sTMHMMoves); i++) {
         if (move == sTMHMMoves[i]) {

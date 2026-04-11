@@ -867,7 +867,7 @@ const ScrCmdFunc gFieldScriptCommands[] = {
     ScriptCommandTableEntry(SCRCMD_REPLACEMOVE,                                          ScrCmd_ReplaceMove)
     ScriptCommandTableEntry(SCRCMD_REPLACEABILITY,                                       ScrCmd_ReplaceAbility)
     ScriptCommandTableEntry(SCRCMD_QUEUENEWREPEL,                                        ScrCmd_QueueNewRepel)
-    ScriptCommandTableEntry(SCRCMD_CHECKTMHMCOMPATIBILITY,                               ScrCmd_CheckTMHMCompatibility)
+    ScriptCommandTableEntry(SCRCMD_CHECKTMHMMOVECOMPATIBILITY,                           ScrCmd_CheckTMHMMoveCompatibility)
     ScriptCommandTableEntry(SCRCMD_DEBUG_SETALLTOWNSVISITED,                             ScrCmd_Debug_SetAllTownsVisited)
 
 #ifndef INC_AS_ASM

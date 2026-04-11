@@ -43,7 +43,7 @@ FieldMoves_CutTree:
     PlaySE SEQ_SE_CONFIRM
     LockAll
     FacePlayer
-    CheckTMHMCompatibility MOVE_CUT, VAR_0x8004, VAR_RESULT
+    CheckTMHMMoveCompatibility MOVE_CUT, VAR_0x8004, VAR_RESULT
     GoToIfEQ VAR_RESULT, FALSE, _CannotUseCut
     CheckItem ITEM_HM01, 1, VAR_RESULT
     GoToIfNe VAR_RESULT, TRUE, _CannotUseCut
@@ -75,9 +75,9 @@ _UseCut:
     RemoveObject VAR_LAST_TALKED
     GetCurrentMapID VAR_0x8004
     CreateJournalEvent LOCATION_EVENT_USED_CUT, VAR_0x8004, 0, 0, 0
-_00E8:
+_CutLoop:
     WaitTime 1, VAR_RESULT
-    GoToIfEq VAR_0x8005, 0, _00E8
+    GoToIfEq VAR_0x8005, 0, _CutLoop
     GoTo _ReleaseAll
     End
 
@@ -132,7 +132,7 @@ FieldMoves_Rock:
     PlaySE SEQ_SE_CONFIRM
     LockAll
     FacePlayer
-    CheckTMHMCompatibility MOVE_ROCK_SMASH, VAR_0x8004, VAR_RESULT
+    CheckTMHMMoveCompatibility MOVE_ROCK_SMASH, VAR_0x8004, VAR_RESULT
     GoToIfEQ VAR_RESULT, FALSE, _CannotUseRockSmash
     CheckItem ITEM_HM06, 1, VAR_RESULT
     GoToIfNe VAR_RESULT, TRUE, _CannotUseRockSmash
@@ -176,7 +176,7 @@ FieldMoves_Boulder:
     FacePlayer
     Strength 2, VAR_RESULT
     GoToIfEq VAR_RESULT, TRUE, _StrengthActive
-    CheckTMHMCompatibility MOVE_STRENGTH, VAR_0x8004, VAR_RESULT
+    CheckTMHMMoveCompatibility MOVE_STRENGTH, VAR_0x8004, VAR_RESULT
     GoToIfEQ VAR_RESULT, FALSE, _CannotUseStrength
     CheckItem ITEM_HM04, 1, VAR_RESULT
     GoToIfNe VAR_RESULT, TRUE, _CannotUseStrength
@@ -222,7 +222,7 @@ _StrengthActive:
 FieldMoves_RockyWall:
     PlaySE SEQ_SE_CONFIRM
     LockAll
-    CheckTMHMCompatibility MOVE_ROCK_CLIMB, VAR_0x8004, VAR_RESULT
+    CheckTMHMMoveCompatibility MOVE_ROCK_CLIMB, VAR_0x8004, VAR_RESULT
     GoToIfEQ VAR_RESULT, FALSE, _CannotUseRockClimb
     CheckItem ITEM_HM08, 1, VAR_RESULT
     GoToIfNe VAR_RESULT, TRUE, _CannotUseRockClimb
@@ -285,7 +285,7 @@ _CannotUseSurf_Partner:
     GoTo _ReleaseAll
 
 _UseSurf:
-    CheckTMHMCompatibility MOVE_SURF, VAR_0x8004, VAR_RESULT
+    CheckTMHMMoveCompatibility MOVE_SURF, VAR_0x8004, VAR_RESULT
     // VAR_RESULT unused here because the check happens outside of the script; we just use this here to get the slot of the mon
     BufferPartyMonNickname 0, VAR_0x8004
     Message FieldMoves_Text_PokemonUsedSurf
@@ -306,7 +306,7 @@ _UsedDefogInLostTower:
 
 FieldMoves_UseDefogFromMenu:
     LockAll
-    CheckTMHMCompatibility MOVE_DEFOG, VAR_0x8004, VAR_RESULT
+    CheckTMHMMoveCompatibility MOVE_DEFOG, VAR_0x8004, VAR_RESULT
     BufferPartyMonNickname 0, VAR_0x8004
     Message FieldMoves_Text_PokemonUsedDefog
     CloseMessage
@@ -323,7 +323,7 @@ FieldMoves_UseDefogFromMenu:
 
 FieldMoves_UseFlashFromMenu:
     LockAll
-    CheckTMHMCompatibility MOVE_DEFOG, VAR_0x8004, VAR_RESULT
+    CheckTMHMMoveCompatibility MOVE_DEFOG, VAR_0x8004, VAR_RESULT
     BufferPartyMonNickname 0, VAR_0x8004
     Message FieldMoves_Text_PokemonUsedFlash
     CloseMessage
@@ -343,7 +343,7 @@ _ReleaseAll:
 FieldMoves_Waterfall:
     PlaySE SEQ_SE_CONFIRM
     LockAll
-    CheckTMHMCompatibility MOVE_WATERFALL, VAR_0x8004, VAR_RESULT
+    CheckTMHMMoveCompatibility MOVE_WATERFALL, VAR_0x8004, VAR_RESULT
     GoToIfEq VAR_RESULT, 6, _CannotUseWaterfall
     CheckItem ITEM_HM07, 1, VAR_RESULT
     GoToIfNe VAR_RESULT, TRUE, _CannotUseWaterfall

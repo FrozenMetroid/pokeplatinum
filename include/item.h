@@ -256,7 +256,7 @@ const u16 Item_MoveForTMHM(u16 item);
  * @param move
  * @return The TM or HM attributed with the move.
  */
-const u16 Item_TMHMForMove(u16 move);
+u16 Item_TMHMForMove(u16 move);
 
 /**
  * @brief Check if a given move is an HM move.

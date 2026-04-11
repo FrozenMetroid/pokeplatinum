@@ -5014,10 +5014,10 @@
     .short \var
     .endm
 
-    .macro CheckTMHMCompatibility tmhm, result_slot, result
-    .short SCRCMD_CHECKTMHMCOMPATIBILITY
-    .short \tmhm
-    .short \result_slot
+    .macro CheckTMHMMoveCompatibility move, slot, result
+    .short SCRCMD_CHECKTMHMMOVECOMPATIBILITY
+    .short \move
+    .short \slot
     .short \result
     .endm
 
