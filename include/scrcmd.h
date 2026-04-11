@@ -5,5 +5,6 @@
 
 BOOL sub_02041CC8(ScriptContext *ctx);
 BOOL ScriptContext_WaitForApplicationExit(ScriptContext *ctx);
+BOOL ScrCmd_Debug_SetAllTownsVisited(ScriptContext *ctx);
 
 #endif // POKEPLATINUM_SCRCMD_H

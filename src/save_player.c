@@ -22,6 +22,7 @@ void Player_Init(PlayerSave *player)
     TrainerInfo_Init(&player->info);
     Coins_Init(&player->coins);
     PlayTime_Init(&player->playTime);
+    player->mostRecentRepel = 0;
 }
 
 TrainerInfo *SaveData_GetTrainerInfo(SaveData *saveData)
@@ -46,4 +47,17 @@ PlayTime *SaveData_GetPlayTime(SaveData *saveData)
 {
     PlayerSave *state = SaveData_SaveTable(saveData, SAVE_TABLE_ENTRY_PLAYER);
     return &state->playTime;
+}
+
+u16 SaveData_GetMostRecentRepel(SaveData *saveData)
+{
+    PlayerSave *state = SaveData_SaveTable(saveData, SAVE_TABLE_ENTRY_PLAYER);
+    return state->mostRecentRepel;
+}
+
+void SaveData_SetMostRecentRepel(SaveData *saveData, u16 repel)
+{
+    PlayerSave *state = SaveData_SaveTable(saveData, SAVE_TABLE_ENTRY_PLAYER);
+    state->mostRecentRepel = repel;
+    return;
 }

@@ -9,6 +9,7 @@ You do not have my permission to release a playable patch of this fork for any r
 Credits:
 - Everyone who contributed to the decompilation, without which this fork would not exist.
 - Everyone who contributed to HeartGold-Engine, whose work helped me to program things such as modernized Sturdy.
+- RavePossum for multiple tutorials
 
 - Senate
 
@@ -27,7 +28,8 @@ Credits:
 - Use HMs without teaching the move (WIP)
     Must have a Pokémon capable of using the move in your party, the associated Badge if there is one, and the HM in your Bag
 - Ability Patch and Ability Capsule (WIP)
-- Nature mints
+- Nature mints (WIP)
+- Show EVs and IVs on the Summary Screen
 
 # Battle Changes
 

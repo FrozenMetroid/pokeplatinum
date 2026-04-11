@@ -190,6 +190,7 @@ static u8 SetupRibbonInfo(PokemonSummaryScreen *summaryScreen);
 static u8 HideRibbonInfo(PokemonSummaryScreen *summaryScreen);
 static void ChangeSelectedRibbon(PokemonSummaryScreen *summaryScreen, s8 delta);
 static int TryFeedPoffin(PokemonSummaryScreen *summaryScreen);
+static void CycleSkillsState(PokemonSummaryScreen *summaryScreen);
 
 const ApplicationManagerTemplate gPokemonSummaryScreenApp = {
     PokemonSummaryScreen_Init,
@@ -635,6 +636,10 @@ static int HandleInput_Main(PokemonSummaryScreen *summaryScreen)
             Sound_PlayEffect(SEQ_SE_DP_DECIDE);
             summaryScreen->data->returnMode = SUMMARY_RETURN_CANCEL;
             return SUMMARY_STATE_TRANSITION_OUT;
+        } else if (summaryScreen->page == SUMMARY_PAGE_SKILLS) {
+            Sound_PlayEffect(SEQ_SE_DP_SYU01);
+            CycleSkillsState(summaryScreen);
+            return SUMMARY_STATE_HANDLE_INPUT;
         }
     }
 
@@ -812,16 +817,16 @@ static int HandleInput_SelectMove(PokemonSummaryScreen *summaryScreen)
     if (JOY_NEW(PAD_BUTTON_A)) {
         Sound_PlayEffect(SEQ_SE_DP_DECIDE);
 
+        #ifndef REMOVABLE_HMS
         if (summaryScreen->cursor != LEARNED_MOVES_MAX) {
-            #ifndef REMOVABLE_HMS
             if (Item_IsHMMove(summaryScreen->monData.moves[summaryScreen->cursor]) == TRUE && summaryScreen->data->move != MOVE_NONE) {
                 Sprite_SetDrawFlag2(summaryScreen->sprites[SUMMARY_SPRITE_MOVE_CATEGORY_ICON], FALSE);
                 DrawEmptyHearts(summaryScreen);
                 PokemonSummaryScreen_PrintHMMovesCantBeForgotten(summaryScreen);
                 return SUMMARY_STATE_WAIT_HM_MSG_INPUT;
             }
-            #endif
         }
+        #endif
 
         summaryScreen->data->selectedMoveSlot = summaryScreen->cursor;
         summaryScreen->data->returnMode = SUMMARY_RETURN_SELECT;
@@ -1110,6 +1115,20 @@ static void SetMonDataFromMon(PokemonSummaryScreen *summaryScreen, Pokemon *mon,
     monData->ability = Pokemon_GetValue(mon, MON_DATA_ABILITY, NULL);
     monData->nature = Pokemon_GetNature(mon);
 
+    monData->evHP = Pokemon_GetValue(mon, MON_DATA_HP_EV, NULL);
+    monData->evAttack = Pokemon_GetValue(mon, MON_DATA_ATK_EV, NULL);
+    monData->evDefense = Pokemon_GetValue(mon, MON_DATA_DEF_EV, NULL);
+    monData->evSpAttack = Pokemon_GetValue(mon, MON_DATA_SPATK_EV, NULL);
+    monData->evSpDefense = Pokemon_GetValue(mon, MON_DATA_SPDEF_EV, NULL);
+    monData->evSpeed = Pokemon_GetValue(mon, MON_DATA_SPEED_EV, NULL);
+
+    monData->ivHP = Pokemon_GetValue(mon, MON_DATA_HP_IV, NULL);
+    monData->ivAttack = Pokemon_GetValue(mon, MON_DATA_ATK_IV, NULL);
+    monData->ivDefense = Pokemon_GetValue(mon, MON_DATA_DEF_IV, NULL);
+    monData->ivSpAttack = Pokemon_GetValue(mon, MON_DATA_SPATK_IV, NULL);
+    monData->ivSpDefense = Pokemon_GetValue(mon, MON_DATA_SPDEF_IV, NULL);
+    monData->ivSpeed = Pokemon_GetValue(mon, MON_DATA_SPEED_IV, NULL);
+
     u16 i;
     u8 maxPP;
     for (i = 0; i < LEARNED_MOVES_MAX; i++) {
@@ -1290,6 +1309,11 @@ static void SetupPageFromSubscreenButton(PokemonSummaryScreen *summaryScreen, u8
     // doesn't handle subscreen input
     if (summaryScreen->data->mode == SUMMARY_MODE_SELECT_MOVE) {
         ClearMoveInfoWindows(summaryScreen);
+    }
+
+    // reset skills state when switching pages
+    if (summaryScreen->page == SUMMARY_PAGE_SKILLS) {
+        summaryScreen->skillsState = SKILLS_STATE_STATS;
     }
 
     PokemonSummaryScreen_RemoveExtraWindows(summaryScreen);
@@ -2224,4 +2248,26 @@ u32 PokemonSummaryScreen_StatusIconAnimIdx(Pokemon *mon)
     }
 
     return SUMMARY_CONDITION_NONE;
+}
+
+static void CycleSkillsState(PokemonSummaryScreen *summaryScreen)
+{
+    summaryScreen->skillsState++;
+    if (summaryScreen->skillsState == MAX_SKILLS_STATE) {
+        summaryScreen->skillsState = SKILLS_STATE_STATS;
+    }
+
+    switch (summaryScreen->skillsState) {
+    case SKILLS_STATE_EVS:
+        PokemonSummaryScreen_ClearAndPrintButtonPrompt(summaryScreen, PokemonSummary_Text_EVs);
+        break;
+    case SKILLS_STATE_IVS:
+        PokemonSummaryScreen_ClearAndPrintButtonPrompt(summaryScreen, PokemonSummary_Text_IVs);
+        break;
+    case SKILLS_STATE_STATS:
+        PokemonSummaryScreen_ClearAndPrintButtonPrompt(summaryScreen, PokemonSummary_Text_Stats);
+        break;
+    }
+
+    PokemonSummaryScreen_PrintSkillsForCurrentState(summaryScreen);
 }

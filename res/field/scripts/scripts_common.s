@@ -39,7 +39,7 @@
     ScriptEntry _12E0 @ 0x7ED
     ScriptEntry _12F3 @ 0x7EE
     ScriptEntry CommonScript_HatchEgg @ 0x7EF
-    ScriptEntry _138C @ 0x7F0
+    ScriptEntry CommonScript_RepelWoreOff @ 0x7F0
     ScriptEntry _139D @ 0x7F1
     ScriptEntry _048B @ 0x7F2
     ScriptEntry _13AB @ 0x7F3
@@ -65,6 +65,7 @@
     ScriptEntry CommonScript_SetLookerBGM @ 0x807
     ScriptEntry CommonScript_FadeToDefaultMusic @ 0x808
     ScriptEntry CommonScript_GriseousOrbCouldNotBeRemoved @ 0x809
+    ScriptEntry CommonScript_AskReuseRepel @ 0x80A
     ScriptEntryEnd
 
 CommonScript_EmptyScript1:
@@ -1421,7 +1422,7 @@ CommonScript_HatchEgg:
     ReleaseAll
     End
 
-_138C:
+CommonScript_RepelWoreOff:
     PlaySE SEQ_SE_CONFIRM
     LockAll
     Message pl_msg_00000213_00079
@@ -1673,6 +1674,23 @@ CommonScript_GriseousOrbCouldNotBeRemoved:
     CloseMessage
     ReleaseAll
     ReturnCommonScript
+    End
+
+CommonScript_AskReuseRepel:
+    PlaySE SEQ_SE_CONFIRM
+    LockAll
+    Message CommonStrings_Text_AskReuseRepel
+    ShowYesNoMenu VAR_RESULT
+    GoToIfEq VAR_RESULT, MENU_NO, _EndDialogue
+    PlaySE SEQ_SE_DP_CARD2
+    QueueNewRepel VAR_RESULT
+    BufferPlayerName 0
+    BufferItemName 1, VAR_RESULT
+    Message CommonStrings_Text_ReuseRepel
+    WaitButton
+_EndDialogue:
+    CloseMessage
+    ReleaseAll
     End
 
     .balign 4, 0

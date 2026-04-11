@@ -224,6 +224,13 @@
         "You also get Premier Balls as\n",
         "an added bonus."
       ]
+    },
+    {
+      "id": "ShopMenu_Text_AlreadyHaveTM",
+      "en_US": [
+        "I’m sorry.\n",
+        "You already have this TM."
+      ]
     }
   ]
 }

@@ -412,7 +412,7 @@ static enum FieldMoveError FieldMoves_CheckSurf(const FieldMoveContext *fieldMov
         return FIELD_MOVE_ERROR_BADGE;
     }
 
-    if (PlayerAvatar_GetPlayerState(fieldMoveContext->fieldSystem->playerAvatar) == 0x2) {
+    if (PlayerAvatar_GetPlayerState(fieldMoveContext->fieldSystem->playerAvatar) == 0x2) { // if already surfing
         return FIELD_MOVE_ERROR_STATE;
     }
 

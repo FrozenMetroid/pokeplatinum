@@ -1243,9 +1243,9 @@
     .short SCRCMD_0C4
     .endm
 
-    .macro ScrCmd_0C5 arg0
-    .short SCRCMD_0C5
-    .short \arg0
+    .macro FieldMoveSummonAnim slot
+    .short SCRCMD_FIELDMOVESUMMONANIM
+    .short \slot
     .endm
 
     .macro ChangeIntoContestAttire
@@ -5007,6 +5007,22 @@
     .short SCRCMD_REPLACEABILITY
     .short \slot
     .short \ability
+    .endm
+
+    .macro QueueNewRepel, var
+    .short SCRCMD_QUEUENEWREPEL
+    .short \var
+    .endm
+
+    .macro CheckTMHMCompatibility tmhm, result_slot, result
+    .short SCRCMD_CHECKTMHMCOMPATIBILITY
+    .short \tmhm
+    .short \result_slot
+    .short \result
+    .endm
+
+    .macro Debug_SetAllTownsVisited
+    .short SCRCMD_DEBUG_SETALLTOWNSVISITED
     .endm
 
 

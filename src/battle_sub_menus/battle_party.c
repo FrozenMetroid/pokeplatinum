@@ -716,7 +716,7 @@ static u8 BattlePartyTask_ConfirmLearnMoveScreen(BattleParty *battleParty)
         } else {
             BattlePartyButtons_PressButton(battleParty, BATTLE_CONFIRM_LEARN_MOVE_SCREEN_BUTTON_OFFSET + 1);
         }
-
+        #ifndef REMOVABLE_HMS
         if (CheckSelectedMoveIsHM(battleParty) == TRUE) {
             BattlePartyText_PrintHMMovesCantBeForgottenText(battleParty);
 
@@ -730,6 +730,9 @@ static u8 BattlePartyTask_ConfirmLearnMoveScreen(BattleParty *battleParty)
         } else {
             battleParty->queuedState = TASK_STATE_EXIT;
         }
+        #else
+        battleParty->queuedState = TASK_STATE_EXIT;
+        #endif
 
         return TASK_STATE_SCREEN_TRANSITION;
     case BATTLE_CONFIRM_LEARN_MOVE_SCREEN_BUTTON_CONTEST_STATS:

@@ -2260,7 +2260,7 @@ static String *TryUseRepel(BagController *controller, u16 item)
         controller->selectedItemCount = 0;
         return MessageLoader_GetNewString(controller->bagStringsLoader, Bag_Text_RepelEffectsLinger);
     }
-
+    SaveData_SetMostRecentRepel(SaveData_Ptr(), item);
     u32 stepCount = Item_LoadParam(item, ITEM_PARAM_HOLD_EFFECT_PARAM, HEAP_ID_BAG);
     SetRepelSteps(controller, stepCount);
     controller->selectedItemCount = 1;

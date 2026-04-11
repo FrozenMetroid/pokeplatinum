@@ -1790,31 +1790,69 @@ static void sub_0207FFC8(PartyMenuApplication *application)
     Sprite_SetExplicitPalette2(application->sprites[PARTY_MENU_SPRITE_CURSOR_NORMAL], 1);
 }
 
+BOOL CheckIfInList(u16 value, u16 array[], u32 size)
+{
+    for(u32 i = 0; i < size; i++)
+    {
+        if(value == array[i])
+        {
+            return TRUE;
+        }
+    }
+    return FALSE;
+}
+
+// make it so that only Fly, Dig, Flash, and non-HM/non-TM field moves like Chatter show up
+// the ones that can be used in the overworld by interacting with something, e.g. Cut, will only be usable by interacting with the object/spot in the overworld
 static u8 GetContextMenuEntriesForPartyMon(PartyMenuApplication *application, u8 *menuEntriesBuffer)
 {
     Pokemon *mon = Party_GetPokemonBySlotIndex(application->partyMenu->party, application->currPartySlot);
+    Bag *bag = SaveData_GetBag(SaveData_Ptr());
     u16 move;
     u8 fieldMoveIndex = 0, i, count = 0, fieldEffect;
 
     menuEntriesBuffer[count] = 1;
     count++;
 
+    // TMs to include if the pokemon can learn them
+    u16 tmsToInclude[] = {ITEM_HM02, ITEM_TM70, ITEM_TM28}; // fly, flash, dig
+
+    // Moves to include only if the pokemon knows them
+    u16 movesIncludedIfLearned[] = {MOVE_SWEET_SCENT, MOVE_SOFTBOILED, MOVE_CHATTER, MOVE_TELEPORT};
+
     if (FieldSystem_IsInBattleTowerSalon(application->partyMenu->fieldSystem) == FALSE) {
         if (application->partyMembers[application->currPartySlot].isEgg == FALSE) {
-            for (i = 0; i < 4; i++) {
-                move = (u16)Pokemon_GetValue(mon, MON_DATA_MOVE1 + i, NULL);
 
-                if (move == 0) {
-                    break;
+            // add Fly, Flash, and Dig if the mon can learn the move
+            for (i = 0; i < NELEMS(tmsToInclude); i++) {
+                BOOL compatible = Pokemon_CanLearnTM(mon, Item_TMHMNumber(tmsToInclude[i]));
+                if (!compatible) {
+                    continue; // check the next index in the loop
                 }
-
+                move = Item_MoveForTMHM(tmsToInclude[i]);
                 fieldEffect = GetFieldMoveIndex(move);
+                if (fieldEffect != 0xFF) {
+                    BOOL hasTMHM = Bag_CanRemoveItem(bag, tmsToInclude[i], 1, HEAP_ID_PARTY_MENU);
+                    if (hasTMHM) {
+                        menuEntriesBuffer[count] = fieldEffect;
+                        count++;
+                        PartyMenu_SetKnownFieldMove(application, move, fieldMoveIndex);
+                        fieldMoveIndex++;
+                    }
+                }
+            }
 
-                if (fieldEffect != 0xff) {
-                    menuEntriesBuffer[count] = fieldEffect;
-                    count++;
-                    PartyMenu_SetKnownFieldMove(application, move, fieldMoveIndex);
-                    fieldMoveIndex++;
+            // add the other field moves if the pokemon knows them
+            for (i = 0; i < 4; i++) {
+                move = Pokemon_GetValue(mon, MON_DATA_MOVE1 + i, NULL);
+                if (CheckIfInList(move, movesIncludedIfLearned, NELEMS(movesIncludedIfLearned))) {
+                    fieldEffect = GetFieldMoveIndex(move);
+                    if (fieldEffect != 0xFF) {
+                        menuEntriesBuffer[count] = fieldEffect;
+                        count++;
+                        PartyMenu_SetKnownFieldMove(application, move, fieldMoveIndex);
+                        fieldMoveIndex++;
+                    }
                 }
             }
 

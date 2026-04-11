@@ -221,7 +221,7 @@ const ScrCmdFunc gFieldScriptCommands[] = {
     ScriptCommandTableEntry(SCRCMD_USEFLY,                                               ScrCmd_UseFly)
     ScriptCommandTableEntry(SCRCMD_0C3,                                                  ScrCmd_0C3)
     ScriptCommandTableEntry(SCRCMD_0C4,                                                  ScrCmd_0C4)
-    ScriptCommandTableEntry(SCRCMD_0C5,                                                  ScrCmd_0C5)
+    ScriptCommandTableEntry(SCRCMD_FIELDMOVESUMMONANIM,                                  ScrCmd_FieldMoveSummonAnim)
     ScriptCommandTableEntry(SCRCMD_CHANGEINTOCONTESTATTIRE,                              ScrCmd_ChangeIntoContestAttire)
     ScriptCommandTableEntry(SCRCMD_CHECKPLAYERONBIKE,                                    ScrCmd_CheckPlayerOnBike)
     ScriptCommandTableEntry(SCRCMD_SETPLAYERBIKE,                                        ScrCmd_SetPlayerBike)
@@ -866,6 +866,9 @@ const ScrCmdFunc gFieldScriptCommands[] = {
     ScriptCommandTableEntry(SCRCMD_BUFFERFLOORNUMBER,                                    ScrCmd_BufferFloorNumber)
     ScriptCommandTableEntry(SCRCMD_REPLACEMOVE,                                          ScrCmd_ReplaceMove)
     ScriptCommandTableEntry(SCRCMD_REPLACEABILITY,                                       ScrCmd_ReplaceAbility)
+    ScriptCommandTableEntry(SCRCMD_QUEUENEWREPEL,                                        ScrCmd_QueueNewRepel)
+    ScriptCommandTableEntry(SCRCMD_CHECKTMHMCOMPATIBILITY,                               ScrCmd_CheckTMHMCompatibility)
+    ScriptCommandTableEntry(SCRCMD_DEBUG_SETALLTOWNSVISITED,                             ScrCmd_Debug_SetAllTownsVisited)
 
 #ifndef INC_AS_ASM
 };

@@ -1,0 +1,4 @@
+=== DONE ===1: Reusable Repels
+=== DONE === 2: Use TMs without teaching the move
+3: Update Trainers
+4: Update encounters

@@ -249,6 +249,16 @@ s32 Item_Get(ItemData *itemData, enum ItemDataParam param);
 const u16 Item_MoveForTMHM(u16 item);
 
 /**
+ * @brief Get the TM or HM corresponding to a move.
+ *
+ * Returns 0xFFFF if one is not found.
+ *
+ * @param move
+ * @return The TM or HM attributed with the move.
+ */
+const u16 Item_TMHMForMove(u16 move);
+
+/**
  * @brief Check if a given move is an HM move.
  *
  * @param move      The move to check.

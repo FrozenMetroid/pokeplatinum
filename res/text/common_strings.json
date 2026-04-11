@@ -873,6 +873,20 @@
         "It will be fixed if you enter the\n",
         "Hall of Fame again.\r"
       ]
+    },
+    {
+      "id": "CommonStrings_Text_AskReuseRepel",
+      "en_US": [
+        "The repellant’s effect wore off.\n",
+        "Would you like to use another one?\r"
+      ]
+    },
+    {
+      "id": "CommonStrings_Text_ReuseRepel",
+      "en_US": [
+        "{STRVAR_1 3, 0, 0} used the\n",
+        "{STRVAR_1 8, 1, 0}."
+      ]
     }
   ]
 }

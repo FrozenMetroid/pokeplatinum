@@ -732,9 +732,10 @@ static BOOL Field_ProcessStep(FieldSystem *fieldSystem)
 
     FieldSystem_SendPoketchEvent(fieldSystem, POKETCH_EVENT_PEDOMETER, 1);
 
-    if (Field_UpdatePoison(fieldSystem) == TRUE) {
-        return TRUE;
-    }
+    // fuck you
+    // if (Field_UpdatePoison(fieldSystem) == TRUE) {
+    //     return TRUE;
+    // }
 
     if (Field_UpdateSafari(fieldSystem) == TRUE) {
         return TRUE;

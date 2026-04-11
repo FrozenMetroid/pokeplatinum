@@ -78,6 +78,7 @@
 #include "overlay006/ov6_02247F5C.h"
 #include "overlay006/ov6_02248948.h"
 #include "overlay006/pc_animation.h"
+#include "overlay006/repel_step_update.h"
 #include "overlay006/swarm.h"
 #include "overlay006/trophy_garden_daily_encounters.h"
 #include "overlay007/communication_club.h"
@@ -408,7 +409,7 @@ static BOOL ScrCmd_UseWaterfall(ScriptContext *ctx);
 static BOOL ScrCmd_UseFly(ScriptContext *ctx);
 static BOOL ScrCmd_0C3(ScriptContext *ctx);
 static BOOL ScrCmd_0C4(ScriptContext *ctx);
-static BOOL ScrCmd_0C5(ScriptContext *ctx);
+static BOOL ScrCmd_FieldMoveSummonAnim(ScriptContext *ctx);
 static BOOL sub_02042C80(ScriptContext *ctx);
 static BOOL ScrCmd_ChangeIntoContestAttire(ScriptContext *ctx);
 static BOOL ScrCmd_CheckPlayerOnBike(ScriptContext *ctx);
@@ -3673,7 +3674,7 @@ static BOOL ScrCmd_0C4(ScriptContext *ctx)
     return TRUE;
 }
 
-static BOOL ScrCmd_0C5(ScriptContext *ctx)
+static BOOL ScrCmd_FieldMoveSummonAnim(ScriptContext *ctx)
 {
     void **v1 = FieldSystem_GetScriptMemberPtr(ctx->fieldSystem, SCRIPT_MANAGER_DATA_PTR);
     u16 v2 = ScriptContext_GetVar(ctx);
@@ -7146,7 +7147,6 @@ static BOOL ScrCmd_CheckPartyHasFatefulEncounterRegigigas(ScriptContext *ctx)
     return FALSE;
 }
 
-// unused currently, was used for testing Defog + Stealth Rock on both sides
 static BOOL ScrCmd_ReplaceMove(ScriptContext *ctx)
 {
     u16 partySlot = ScriptContext_GetVar(ctx);
@@ -7154,12 +7154,12 @@ static BOOL ScrCmd_ReplaceMove(ScriptContext *ctx)
     u16 moveSlot = ScriptContext_GetVar(ctx);
 
     Pokemon *mon = Party_GetPokemonBySlotIndex(SaveData_GetParty(ctx->fieldSystem->saveData), partySlot);
+    
     Pokemon_ResetMoveSlot(mon, move, moveSlot);
 
     return FALSE;
 }
 
-// unused currently, was used for testing Sturdy
 static BOOL ScrCmd_ReplaceAbility(ScriptContext *ctx)
 {
     u16 partySlot = ScriptContext_GetVar(ctx);
@@ -7170,4 +7170,46 @@ static BOOL ScrCmd_ReplaceAbility(ScriptContext *ctx)
     Pokemon_SetValue(mon, MON_DATA_ABILITY, &ability);
 
     return FALSE;
-}   
+}
+
+// return TRUE if a mon in the party can learn the move and
+// return the slot as well
+static BOOL ScrCmd_CheckTMHMCompatibility(ScriptContext *ctx)
+{
+    u16 move = ScriptContext_GetVar(ctx);
+    u16 *slot = ScriptContext_GetVarPointer(ctx);
+    u16 *result = ScriptContext_GetVarPointer(ctx);
+
+    Party *party = SaveData_GetParty(ctx->fieldSystem->saveData);
+    for (int i = 0; i < party->currentCount; i++) {
+        Pokemon *mon = Party_GetPokemonBySlotIndex(party, i);
+        *result = Pokemon_CanLearnTM(mon, Item_TMHMForMove(move));
+        if (*result) {
+            *slot = i;
+            break;
+        }
+    }
+    return FALSE;
+}
+
+static BOOL ScrCmd_QueueNewRepel(ScriptContext *ctx)
+{
+    u16 *destVar = ScriptContext_GetVarPointer(ctx);
+
+    u16 repelID = SaveData_GetMostRecentRepel(ctx->fieldSystem->saveData);
+
+    Repel_Use(ctx->fieldSystem->saveData, repelID, HEAP_ID_FIELD1);
+
+    *destVar = repelID;
+
+    return FALSE;
+}
+
+static BOOL ScrCmd_Debug_SetAllTownsVisited(ScriptContext *ctx)
+{
+    for (int i = FLAG_FIRST_ARRIVAL_TWINLEAF_TOWN; i < FLAG_UNK_0x09F5; i++) {
+        FieldSystem_SetFlag(ctx->fieldSystem, i);
+    }
+
+    return FALSE;
+}

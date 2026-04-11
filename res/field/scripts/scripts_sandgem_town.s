@@ -679,7 +679,6 @@ SandgemTown_Unused:
     End
 
 SandgemTown_MapSign:
-    GivePokemon SPECIES_ARCEUS, 100, 0, 0x800C
     ShowMapSign SandgemTown_Text_MapSign
     End
 
