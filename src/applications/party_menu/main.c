@@ -2763,6 +2763,7 @@ static int ApplyItemEffectOnPokemon(PartyMenuApplication *app)
                 u8 desiredNature = sNatureMintMapping[i].nature;
                 SET_MON_NATURE_OVERRIDE(mon, desiredNature);
                 Bag_TryRemoveItem(app->partyMenu->bag, app->partyMenu->usedItemID, 1, HEAP_ID_PARTY_MENU);
+                Pokemon_CalcStats(mon);
                 break;
             }
         }
