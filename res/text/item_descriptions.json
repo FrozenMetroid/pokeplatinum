@@ -3653,6 +3653,22 @@
         "A shiny charm said to increase the\n",
         "chance of finding a Shiny Pokémon."
       ]
+    },
+    {
+      "id": "pl_msg_00000391_00469",
+      "en_US": [
+        "An oval charm said to increase the\n",
+        "chance of finding an Egg at the\n",
+        "Day Care."
+      ]
+    },
+    {
+      "id": "pl_msg_00000391_00470",
+      "en_US": [
+        "Holding it is said to increase the\n",
+        "chance of getting a critical catch.\n",
+        "Curiously, it doesn’t shake much."
+      ]
     }
   ]
 }

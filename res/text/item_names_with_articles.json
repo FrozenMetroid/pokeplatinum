@@ -1876,6 +1876,14 @@
     {
       "id": "pl_msg_00000393_00468",
       "en_US": "a {COLOR 255}Shiny Charm{COLOR 0}"
+    },
+    {
+      "id": "pl_msg_00000393_00469",
+      "en_US": "an {COLOR 255}Oval Charm{COLOR 0}"
+    },
+    {
+      "id": "pl_msg_00000393_00470",
+      "en_US": "a {COLOR 255}Catching Charm{COLOR 0}"
     }
   ]
 }

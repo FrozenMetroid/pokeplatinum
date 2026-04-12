@@ -11258,11 +11258,59 @@ static int BattleScript_CalcCatchShakes(BattleSystem *battleSys, BattleContext *
         catchRate = CP_GetSqrtResult32();
         catchRate = (0xFFFF << 4) / catchRate;
 
+#ifdef BATTLE_ADD_CRITICAL_CAPTURES
+
+        u32 criticalCaptureWork, caughtMons, criticalCapture = FALSE;
+
+        caughtMons = Pokedex_CountCaught_National(SaveData_GetPokedex(SaveData_Ptr()));
+        if (caughtMons > 450)
+            criticalCaptureWork = 20;
+        else if (caughtMons > 300)
+            criticalCaptureWork = 15;
+        else if (caughtMons > 150)
+            criticalCaptureWork = 10;
+        else if (caughtMons > 30)
+            criticalCaptureWork = 5;
+        else
+            criticalCaptureWork = 0;
+
+        // gonna guess how Catching Charm works because there doesn't
+        // seem to be any data on it
+        u8 catchingCharmModifier = 1;
+        Bag *bag = SaveData_GetBag(SaveData_Ptr());
+        if (Bag_CanRemoveItem(bag, ITEM_CATCHING_CHARM, 1, HEAP_ID_BATTLE)) {
+            catchingCharmModifier = 2;
+        }
+        criticalCaptureWork = catchRate * criticalCaptureWork * catchingCharmModifier / 10;
+
+        if ((BattleSystem_RandNext(battleSys) & 0xFF) < criticalCaptureWork) // return critical capture number
+            criticalCapture = TRUE;
+
+        if (criticalCapture) {
+            caughtMons = 1;
+        } else {
+            caughtMons = 4;
+        }
+
+        for (shakes = 0; shakes < caughtMons; shakes++) // there are 4 shake checks apparently
+        {
+            u32 rand = BattleSystem_RandNext(battleSys);
+            if (rand >= catchRate) {
+                break;
+            }
+        }
+
+        if (criticalCapture) { // succeeded the one chance it had
+            shakes = shakes | 0x80; // change the flow of the ball callback to make sure that critical captures only shake once then succeed.  if it shakes, it succeeds, though
+        }
+#else
+
         for (shakes = 0; shakes < BALL_3_SHAKES_SUCCESS; shakes++) {
             if (BattleSystem_RandNext(battleSys) >= catchRate) {
                 break;
             }
         }
+#endif
 
         if (battleCtx->msgItemTemp == ITEM_MASTER_BALL) {
             shakes = BALL_3_SHAKES_SUCCESS;

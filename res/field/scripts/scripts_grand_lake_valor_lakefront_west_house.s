@@ -38,6 +38,13 @@ GrandLakeValorLakefrontWestHouse_ShowLocalDexDiploma:
     ReturnToField
     FadeScreenIn
     WaitFadeScreen
+    Message GrandLakeValorLakefrontWestHouse_Text_GiveOvalCharm
+    SetVar VAR_0x8004, ITEM_OVAL_CHARM
+    SetVar VAR_0x8005, 1
+    Common_GiveItemQuantity
+    Message GrandLakeValorLakefrontWestHouse_Text_ExplainOvalCharm
+    WaitButton
+    CloseMessage
     ReleaseAll
     End
 

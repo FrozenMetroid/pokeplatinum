@@ -55,6 +55,25 @@
         "look the same, the stories they\f",
         "contain are all unique."
       ]
+    },
+    {
+      "id": "GrandLakeValorLakefrontWestHouse_Text_GiveOvalCharm",
+      "en_US": [
+        "Have you noticed that sometimes\n",
+        "Eggs take a while to appear at the\f",
+        "Day Care?\r",
+        "I have just the thing to help\n",
+        "you hatch more Eggs!\r"
+      ]
+    },
+    {
+      "id": "GrandLakeValorLakefrontWestHouse_Text_ExplainOvalCharm",
+      "en_US": [
+        "That charm will make Eggs appear\n",
+        "at the Day Care more often!\r",
+        "It may help you fill out\n",
+        "more of your Pokédex."
+      ]
     }
   ]
 }

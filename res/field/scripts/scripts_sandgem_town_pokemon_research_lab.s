@@ -563,6 +563,10 @@ SandgemTownLab_EnableNationalDex:
     SetVar VAR_0x8005, 1
     Common_GiveItemQuantity
     Message SandgemTownLab_Text_ThatsThePokemonRadar
+    SetVar VAR_0x8004, ITEM_CATCHING_CHARM
+    SetVar VAR_0x8005, 1
+    Common_GiveItemQuantity
+    Message SandgemTownLab_Text_JustGaveCatchingCharm
     WaitButton
     CloseMessage
     ReleaseAll

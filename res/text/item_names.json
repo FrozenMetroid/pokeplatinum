@@ -1876,6 +1876,14 @@
     {
       "id": "pl_msg_00000392_00468",
       "en_US": "Shiny Charm"
+    },
+    {
+      "id": "pl_msg_00000392_00469",
+      "en_US": "Oval Charm"
+    },
+    {
+      "id": "pl_msg_00000392_00470",
+      "en_US": "Catching Charm"
     }
   ]
 }

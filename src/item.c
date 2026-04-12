@@ -2839,6 +2839,18 @@ const ItemArchiveIDs sItemArchiveIDs[] = {
         .paletteID = shiny_charm_NCLR,
         .gen3ID = GBA_ITEM_NONE,
     },
+    [ITEM_OVAL_CHARM] = {
+        .dataID = 0x1BF,
+        .iconID = oval_charm_NCGR,
+        .paletteID = oval_charm_NCLR,
+        .gen3ID = GBA_ITEM_NONE,
+    },
+    [ITEM_CATCHING_CHARM] = {
+        .dataID = 0x1C0,
+        .iconID = catching_charm_NCGR,
+        .paletteID = catching_charm_NCLR,
+        .gen3ID = GBA_ITEM_NONE,
+    },
 };
 
 static const u16 sTMHMMoves[] = {

@@ -458,7 +458,9 @@
         "assistants put together the Sinnoh\f",
         "Pokédex, but you took care of that!\r",
         "I’m sure it will be useful for your\n",
-        "goal of filling the National Pokédex."
+        "goal of filling the National Pokédex.\r",
+        "I also have one more thing for you\n",
+        "to help you with the National Pokédex.\r"
       ]
     },
     {
@@ -615,6 +617,17 @@
         "make everything all right.\r",
         "I believed that you would make it, and\n",
         "here you are!"
+      ]
+    },
+    {
+      "id": "SandgemTownLab_Text_JustGaveCatchingCharm",
+      "en_US": [
+        "That’s a Catching Charm!\n",
+        "It will help you catch Pokémon\n",
+        "more frequently than without it!\r",
+        "Good luck with the Pokédex,\n",
+        "{STRVAR_1 3, 0, 0}!"
+
       ]
     }
   ]
