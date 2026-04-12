@@ -17,6 +17,8 @@
 
 #include "res/graphics/item_icons/item_icon.naix"
 
+BOOL Item_IsPokeBall(u16 itemId);
+
 typedef struct ItemArchiveIDs {
     u16 dataID; // Member file index in pl_item_data.narc; TODO: Use NAIX generated from pl_item_data
     u16 iconID; // Member file index of NCGR in item_icon.narc; TODO: Use NAIX generated from item_icon.narc
@@ -2981,14 +2983,50 @@ const ItemArchiveIDs sItemArchiveIDs[] = {
     },
     [ITEM_ABILITY_CAPSULE] = {
         .dataID = 0x1D6,
-        .iconID = neutral_mint_NCGR, // for now
-        .paletteID = neutral_mint_NCLR,
+        .iconID = ability_capsule_NCGR,
+        .paletteID = ability_capsule_NCLR,
         .gen3ID = GBA_ITEM_NONE,
     },
     [ITEM_ABILITY_PATCH] = {
         .dataID = 0x1D7,
-        .iconID = neutral_mint_NCGR, // for now
-        .paletteID = neutral_mint_NCLR,
+        .iconID = ability_patch_NCGR,
+        .paletteID = ability_patch_NCLR,
+        .gen3ID = GBA_ITEM_NONE,
+    },
+    [ITEM_BOTTLE_CAP] = {
+        .dataID = 0x1D8,
+        .iconID = bottle_cap_NCGR,
+        .paletteID = bottle_cap_NCLR,
+        .gen3ID = GBA_ITEM_NONE,
+    },
+    [ITEM_GOLD_BOTTLE_CAP] = {
+        .dataID = 0x1D9,
+        .iconID = gold_bottle_cap_NCGR,
+        .paletteID = gold_bottle_cap_NCLR,
+        .gen3ID = GBA_ITEM_NONE,
+    },
+    [ITEM_EVIOLITE] = {
+        .dataID = 0x1DA,
+        .iconID = eviolite_NCGR,
+        .paletteID = eviolite_NCLR,
+        .gen3ID = GBA_ITEM_NONE,
+    },
+    [ITEM_LINKING_CORD] = {
+        .dataID = 0x1DB,
+        .iconID = linking_cord_NCGR,
+        .paletteID = linking_cord_NCLR,
+        .gen3ID = GBA_ITEM_NONE,
+    },
+    [ITEM_PRISM_SCALE] = {
+        .dataID = 0x1DC,
+        .iconID = prism_scale_NCGR,
+        .paletteID = prism_scale_NCLR,
+        .gen3ID = GBA_ITEM_NONE,
+    },
+    [ITEM_ROCKY_HELMET] = {
+        .dataID = 0x1DD,
+        .iconID = rocky_helmet_NCGR,
+        .paletteID = rocky_helmet_NCLR,
         .gen3ID = GBA_ITEM_NONE,
     },
 };
@@ -3503,6 +3541,11 @@ u8 Item_IsMail(u16 item)
     }
 
     return FALSE;
+}
+
+u8 Item_IsPlate(u16 item)
+{
+    return (item >= ITEM_FLAME_PLATE && item <= ITEM_IRON_PLATE);
 }
 
 u8 Item_MailNumber(u16 item)

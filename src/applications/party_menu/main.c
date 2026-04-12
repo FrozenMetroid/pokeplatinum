@@ -2754,6 +2754,7 @@ static int ApplyItemEffectOnPokemon(PartyMenuApplication *app)
         PartyMenu_SetupFormChangeAnim(app);
         return 31;
     }
+
     if (Item_IsNatureMint(app->partyMenu->usedItemID)) 
     {
         Pokemon *mon;
@@ -2770,10 +2771,42 @@ static int ApplyItemEffectOnPokemon(PartyMenuApplication *app)
         Heap_Free(itemData);
         String *msg = MessageLoader_GetNewString(app->messageLoader, PartyMenu_Text_NatureMintConfirmation);
 
-        StringTemplate_SetNickname(app->template, 0, Pokemon_GetBoxPokemon(mon));
+        StringTemplate_SetNickname(app->template, 0, &mon->box);
         StringTemplate_Format(app->template, app->tmpString, msg);
         String_Free(msg);
         PartyMenu_PrintLongMessage(app, PRINT_MESSAGE_PRELOADED, TRUE);
+        app->stateAfterMessage = PARTY_MENU_STATE_32;
+        return PARTY_MENU_STATE_SHOW_MESSAGE_THEN_NEXT_STATE;
+    }
+
+    if (app->partyMenu->usedItemID == ITEM_ABILITY_CAPSULE /* || app->partyMenu->usedItemID == ITEM_ABILITY_CAPSULE*/) {
+        Pokemon *mon = Party_GetPokemonBySlotIndex(app->partyMenu->party, app->currPartySlot);
+        u16 species = Pokemon_GetValue(mon, MON_DATA_SPECIES, NULL);
+        u8 form = Pokemon_GetValue(mon, MON_DATA_FORM, NULL);
+        u8 ability1 = SpeciesData_GetFormValue(species, form, SPECIES_DATA_ABILITY_1);
+        u8 ability2 = SpeciesData_GetFormValue(species, form, SPECIES_DATA_ABILITY_2);
+        u8 currentAbility = Pokemon_GetValue(mon, MON_DATA_ABILITY, NULL);
+        String *msg;
+        BOOL success = FALSE;
+        if (currentAbility == ability1 && ability2 != 0) {
+            Pokemon_SetValue(mon, MON_DATA_ABILITY, &ability2);
+            success = TRUE;
+        } else if (currentAbility == ability2) {
+            Pokemon_SetValue(mon, MON_DATA_ABILITY, &ability1);
+            success = TRUE;
+        } else {
+            msg = MessageLoader_GetNewString(app->messageLoader, PartyMenu_Text_AbilityCapsuleFail);
+        }
+        if (success) {
+            msg = MessageLoader_GetNewString(app->messageLoader, PartyMenu_Text_AbilityCapsuleSuccess);
+            Bag_TryRemoveItem(app->partyMenu->bag, app->partyMenu->usedItemID, 1, HEAP_ID_PARTY_MENU);
+        }
+        StringTemplate_SetNickname(app->template, 0, &mon->box);
+        StringTemplate_SetAbilityName(app->template, 1, Pokemon_GetValue(mon, MON_DATA_ABILITY, NULL));
+        StringTemplate_Format(app->template, app->tmpString, msg);
+        String_Free(msg);
+        PartyMenu_PrintLongMessage(app, PRINT_MESSAGE_PRELOADED, TRUE);
+        Heap_Free(itemData);
         app->stateAfterMessage = PARTY_MENU_STATE_32;
         return PARTY_MENU_STATE_SHOW_MESSAGE_THEN_NEXT_STATE;
     }

@@ -24,6 +24,7 @@ BOOL ScrCmd_GetGameCornerPrizeData(ScriptContext *ctx)
         { ITEM_WIDE_LENS, 1000 },
         { ITEM_ZOOM_LENS, 1000 },
         { ITEM_METRONOME, 1000 },
+        { ITEM_LINKING_CORD, 1000 },
         { ITEM_TM90, 2000 },
         { ITEM_TM58, 2000 },
         { ITEM_TM75, 4000 },

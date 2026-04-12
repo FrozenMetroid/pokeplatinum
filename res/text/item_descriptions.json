@@ -3853,7 +3853,54 @@
         "the regular Ability of a Pokémon to\n",
         "a rarer Ability, or the opposite."
       ]
+    },
+    {
+      "id": "pl_msg_00000391_00494",
+      "en_US": [
+        "A beautiful bottle cap that gives off\n",
+        "a silver gleam. Some people are happy\n",
+        "to receive one."
+      ]
+    },
+    {
+      "id": "pl_msg_00000391_00495",
+      "en_US": [
+        "A beautiful bottle cap that gives off\n",
+        "a golden gleam. Some people are happy\n",
+        "to receive one."
+      ]
+    },
+    {
+      "id": "pl_msg_00000391_00496",
+      "en_US": [
+        "A mysterious Evolutionary lump. When\n",
+        "held, it raises the Defense and Sp.\n",
+        "Def of a Pokémon that can still evolve."
+      ]
+    },
+    {
+      "id": "pl_msg_00000391_00497",
+      "en_US": [
+        "A string with a mysterious energy that\n",
+        "makes you feel a sense of connection.\n",
+        "It’s loved by certain Pokémon."
+      ]
+    },
+    {
+      "id": "pl_msg_00000391_00498",
+      "en_US": [
+        "A mysterious scale that causes\n",
+        "a certain Pokémon to evolve.\n",
+        "It shines in rainbow colors."
+      ]
+    },
+    {
+      "id": "pl_msg_00000391_00499",
+      "en_US": [
+        "An item to be held by a Pokémon. If the\n",
+        "holder is hit, the attacker will also\n",
+        "be damaged upon contact."
+      ]
     }
-
   ]
 }

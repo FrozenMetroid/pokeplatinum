@@ -129,11 +129,9 @@
         ]
     },
     "evolutions": [
-        [
-            "EVO_TRADE_WITH_HELD_ITEM",
-            "ITEM_PROTECTOR",
-            "SPECIES_RHYPERIOR"
-        ]
+        ["EVO_TRADE_WITH_HELD_ITEM", "ITEM_PROTECTOR", "SPECIES_RHYPERIOR" ],
+        ["EVO_LEVEL_WITH_HELD_ITEM_DAY", "ITEM_PROTECTOR", "SPECIES_RHYPERIOR" ],
+        ["EVO_LEVEL_WITH_HELD_ITEM_NIGHT", "ITEM_PROTECTOR", "SPECIES_RHYPERIOR" ]
     ],
     "offspring": "SPECIES_RHYHORN",
     "footprint": {

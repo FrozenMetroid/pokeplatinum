@@ -1229,8 +1229,13 @@
     .long \battler
     .endm
 
-    .macro End
+    .macro CheckFlingExceptions jump_no_effect
     .long 222
+    .long (\jump_no_effect-.) / 4 - 1
+    .endm
+
+    .macro End
+    .long 223
     .endm
 
     .text

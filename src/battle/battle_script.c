@@ -310,6 +310,7 @@ static BOOL BtlCmd_CheckCurMoveIsType(BattleSystem *battleSys, BattleContext *ba
 static BOOL BtlCmd_LoadArchivedMonData(BattleSystem *battleSys, BattleContext *battleCtx);
 static BOOL BtlCmd_RefreshMonData(BattleSystem *battleSys, BattleContext *battleCtx);
 static BOOL BtlCmd_End(BattleSystem *battleSys, BattleContext *battleCtx);
+static BOOL BtlCmd_CheckFlingItem(BattleSystem *battleSys, BattleContext *battleCtx);
 
 static int BattleScript_Read(BattleContext *battleCtx);
 static void BattleScript_Iter(BattleContext *battleCtx, int i);
@@ -569,6 +570,7 @@ static const BtlCmd sBattleCommands[] = {
     BtlCmd_CheckCurMoveIsType,
     BtlCmd_LoadArchivedMonData,
     BtlCmd_RefreshMonData,
+    BtlCmd_CheckFlingItem,
     BtlCmd_End
 };
 
@@ -9700,6 +9702,50 @@ static BOOL BtlCmd_RefreshMonData(BattleSystem *battleSys, BattleContext *battle
     BattleSystem_ReloadPokemon(battleSys, battleCtx, battler, battleCtx->selectedPartySlot[battler]);
 
     return FALSE;
+}
+
+/**
+ * @brief Check if the item can be flung with Fling
+ *
+ *
+ * @param battleSys
+ * @param battleCtx
+ * @return FALSE
+ */
+ 
+static BOOL BtlCmd_CheckFlingItem(BattleSystem *battleSys, BattleContext *battleCtx)
+{
+    BattleScript_Iter(battleCtx, 1);
+    int jumpNoEffect = BattleScript_Read(battleCtx);
+
+    if (BattleSystem_CheckFlingExceptions(battleSys, battleCtx, battleCtx->attacker) != TRUE) {
+        BattleScript_Iter(battleCtx, jumpNoEffect);
+    }
+
+    return FALSE;
+}
+
+BOOL BattleSystem_CheckFlingExceptions(BattleSystem *battleSys, BattleContext *battleCtx, int battler)
+{
+    // don't need to check TMs/HMs since they can't be held items
+
+    if (battleCtx->battleMons[battler].ability == ABILITY_MULTITYPE && (Item_IsPlate(battleCtx->battleMons[battler].heldItem))) {
+        return FALSE;
+    }
+
+    if (battleCtx->battleMons[battler].species == SPECIES_GIRATINA && battleCtx->battleMons[battler].heldItem == ITEM_GRISEOUS_ORB) {
+        return FALSE;
+    }
+
+    if (Item_IsPokeBall(battleCtx->battleMons[battler].heldItem)) {
+        return FALSE;
+    }
+
+    if (Item_IsMail(battleCtx->battleMons[battler].heldItem)) {
+        return FALSE;
+    }
+    
+    return TRUE;
 }
 
 /**

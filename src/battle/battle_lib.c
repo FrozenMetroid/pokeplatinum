@@ -70,6 +70,7 @@ static int CalcMoveType(BattleSystem *battleSys, BattleContext *battleCtx, int i
 static BOOL IntimidateCheckHelper(BattleContext *battleCtx, u32 client);
 static BOOL IsPowderMove(u16 moveID);
 static u32 BattleSystem_GetFaintedTeammateCount(BattleSystem *battleSys, u32 client);
+static int BattleMon_GetAdjustedSpecies(BattleContext *battleCtx, int battler);
 
 static const Fraction sStatStageBoosts[];
 
@@ -588,6 +589,44 @@ int BattleMon_Get(BattleContext *battleCtx, int battler, enum BattleMonParam par
     }
 
     return 0;
+}
+
+static int BattleMon_GetAdjustedSpecies(BattleContext *battleCtx, int battler)
+{
+    int species = BattleMon_Get(battleCtx, battler, BATTLEMON_SPECIES, NULL);
+    int formNum = BattleMon_Get(battleCtx, battler, BATTLEMON_FORM_NUM, NULL);
+
+    switch (species) {
+        case SPECIES_DEOXYS:
+            if (formNum && formNum <= 4 - 1) {
+                species = (496 - 1) + formNum;
+            }
+            break;
+        case SPECIES_WORMADAM:
+            if (formNum && formNum <= 3 - 1) {
+                species = (499 - 1) + formNum;
+            }
+            break;
+        case SPECIES_GIRATINA:
+            if (formNum && formNum <= 2 - 1) {
+                species = (501 - 1) + formNum;
+            }
+            break;
+        case SPECIES_SHAYMIN:
+            if (formNum && formNum <= 2 - 1) {
+                species = (502 - 1) + formNum;
+            }
+            break;
+        case SPECIES_ROTOM:
+            if (formNum && formNum <= 5 - 1) {
+                species = (503 - 1) + formNum;
+            }
+            break;
+        default:
+            break;
+    }
+
+    return species;
 }
 
 void BattleMon_Set(BattleContext *battleCtx, int battler, enum BattleMonParam paramID, const void *buf)
@@ -5467,6 +5506,7 @@ BOOL Battler_MovedThisTurn(BattleContext *battleCtx, int battler)
     return battleCtx->battlerActions[battler][BATTLE_ACTION_PICK_COMMAND] == BATTLE_CONTROL_MOVE_END;
 }
 
+// CheckDefenderItemEffectOnHit in HeartGold Engine
 BOOL BattleSystem_TriggerHeldItemOnHit(BattleSystem *battleSys, BattleContext *battleCtx, int *subscript)
 {
     BOOL result = FALSE;
@@ -5527,7 +5567,17 @@ BOOL BattleSystem_TriggerHeldItemOnHit(BattleSystem *battleSys, BattleContext *b
             result = TRUE;
         }
         break;
-
+    case HOLD_EFFECT_DAMAGE_ON_CONTACT: // Rocky Helmet
+        if (ATTACKING_MON.curHP
+            && Battler_Ability(battleCtx, battleCtx->attacker) != ABILITY_MAGIC_GUARD
+            && (DEFENDER_SELF_TURN_FLAGS.physicalDamageTaken || DEFENDER_SELF_TURN_FLAGS.specialDamageTaken)
+            && (battleCtx->battleStatusMask2 & SYSCTL_UTURN_ACTIVE) == FALSE
+            && (CURRENT_MOVE_DATA.flags & MOVE_FLAG_MAKES_CONTACT)) {
+                battleCtx->hpCalcTemp = BattleSystem_Divide(ATTACKING_MON.maxHP * -1, itemPower);
+                *subscript = subscript_held_item_recoil_when_hit;
+                result = TRUE;
+        }
+        break;
     default:
         break;
     }
@@ -6728,6 +6778,7 @@ static const u16 sArtilleryMoves[] = {
 
 typedef struct DamageCalcParams {
     u16 species;
+    u16 form;
     s16 curHP;
     u16 maxHP;
     u16 _padding06;
@@ -6789,6 +6840,8 @@ int BattleSystem_CalcMoveDamage(BattleSystem *battleSys,
 
     attackerParams.species = BattleMon_Get(battleCtx, attacker, BATTLEMON_SPECIES, NULL);
     defenderParams.species = BattleMon_Get(battleCtx, defender, BATTLEMON_SPECIES, NULL);
+    attackerParams.form = BattleMon_Get(battleCtx, attacker, BATTLEMON_FORM_NUM, NULL);
+    defenderParams.form = BattleMon_Get(battleCtx, defender, BATTLEMON_FORM_NUM, NULL);
     attackerParams.curHP = BattleMon_Get(battleCtx, attacker, BATTLEMON_CUR_HP, NULL);
     defenderParams.curHP = BattleMon_Get(battleCtx, defender, BATTLEMON_CUR_HP, NULL);
     attackerParams.maxHP = BattleMon_Get(battleCtx, attacker, BATTLEMON_MAX_HP, NULL);
@@ -6897,6 +6950,18 @@ int BattleSystem_CalcMoveDamage(BattleSystem *battleSys,
     if (defenderParams.heldItemEffect == HOLD_EFFECT_DITTO_DEF_UP
         && defenderParams.species == SPECIES_DITTO) {
         defenseStat *= 2;
+    }
+    if (defenderParams.heldItemEffect == HOLD_EFFECT_EVIOLITE) {
+        u16 speciesWithForm = BattleMon_GetAdjustedSpecies(battleCtx, defender);
+
+        struct SpeciesEvolution *evoTable = Heap_Alloc(HEAP_ID_BATTLE, MAX_EVOLUTIONS * sizeof(struct SpeciesEvolution));
+        NARC_ReadWholeMemberByIndexPair(evoTable, NARC_INDEX_POKETOOL__PERSONAL__EVO, speciesWithForm);
+
+        if (evoTable[0].method != EVO_NONE) {
+            defenseStat = defenseStat * 150 / 100;
+            spDefenseStat = spDefenseStat * 150 / 100;
+        }
+        Heap_Free(evoTable);
     }
     if (attackerParams.heldItemEffect == HOLD_EFFECT_CUBONE_ATK_UP
         && (attackerParams.species == SPECIES_CUBONE || attackerParams.species == SPECIES_MAROWAK)) {
@@ -7600,6 +7665,16 @@ BOOL BattleSystem_TriggerHeldItemOnPivotMove(BattleSystem *battleSys, BattleCont
         && (DEFENDER_SELF_TURN_FLAGS.physicalDamageTaken || DEFENDER_SELF_TURN_FLAGS.specialDamageTaken)
         && (CURRENT_MOVE_DATA.flags & MOVE_FLAG_MAKES_CONTACT)) {
         *subscript = subscript_transfer_sticky_barb;
+        result = TRUE;
+    }
+
+    if (defenderItemEffect == HOLD_EFFECT_DAMAGE_ON_CONTACT // Rocky Helmet
+        && battleCtx->battleMons[battleCtx->attacker].curHP
+        && Battler_Ability(battleCtx, battleCtx->attacker) != ABILITY_MAGIC_GUARD
+        && (DEFENDER_SELF_TURN_FLAGS.physicalDamageTaken || DEFENDER_SELF_TURN_FLAGS.specialDamageTaken)
+        && (CURRENT_MOVE_DATA.flags & MOVE_FLAG_MAKES_CONTACT)) {
+        battleCtx->hpCalcTemp = BattleSystem_Divide(ATTACKING_MON.maxHP * -1, defenderItemPower);
+        *subscript = subscript_held_item_recoil_when_hit;
         result = TRUE;
     }
 

@@ -1976,6 +1976,30 @@
     {
       "id": "pl_msg_00000393_00493",
       "en_US": "an {COLOR 255}Ability Patch{COLOR 0}"
+    },
+    {
+      "id": "pl_msg_00000393_00494",
+      "en_US": "a {COLOR 255}Bottle Cap{COLOR 0}"
+    },
+    {
+      "id": "pl_msg_00000393_00495",
+      "en_US": "a {COLOR 255}Gold Bottle Cap{COLOR 0}"
+    },
+    {
+      "id": "pl_msg_00000393_00496",
+      "en_US": "an {COLOR 255}Eviolite{COLOR 0}"
+    },
+    {
+      "id": "pl_msg_00000393_00497",
+      "en_US": "a {COLOR 255}Linking Cord{COLOR 0}"
+    },
+    {
+      "id": "pl_msg_00000393_00498",
+      "en_US": "a {COLOR 255}Prism Scale{COLOR 0}"
+    },
+    {
+      "id": "pl_msg_00000393_00499",
+      "en_US": "a {COLOR 255}Rockey Helmet{COLOR 0}"
     }
   ]
 }

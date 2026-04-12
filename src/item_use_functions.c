@@ -95,7 +95,7 @@ static void UseEscapeRopeFromMenu(ItemMenuUseContext *usageContext, const ItemUs
 static void UseAzureFluteFromMenu(ItemMenuUseContext *usageContext, const ItemUseContext *additionalContext);
 static void UseVsRecorderFromMenu(ItemMenuUseContext *usageContext, const ItemUseContext *additionalContext);
 static void UseGracideaFromMenu(ItemMenuUseContext *usageContext, const ItemUseContext *additionalContext);
-static void UseNatureMintFromMenu(ItemMenuUseContext *usageContext, const ItemUseContext *additionalContext);
+static void UsePartyAffectingItem(ItemMenuUseContext *usageContext, const ItemUseContext *additionalContext);
 static BOOL UseBicycleInField(ItemFieldUseContext *usageContext);
 static BOOL UseJournalInField(ItemFieldUseContext *usageContext);
 static BOOL UseOldRodInField(ItemFieldUseContext *usageContext);
@@ -138,32 +138,32 @@ static void PrintRegisteredKeyItemError(ItemFieldUseContext *usageContext, u32 p
 
 // clang-format off
 static const ItemUseFuncDat sItemUseFuncs[] = {
-    [ITEM_USE_FUNC_NONE]         = { NULL,                   UseBagMessageItem,     NULL              },
-    [ITEM_USE_FUNC_HEALING]      = { UseHealingItemFromMenu, NULL,                  NULL              },
-    [ITEM_USE_FUNC_TOWN_MAP]     = { UseTownMapFromMenu,     UseTownMapInField,     NULL              },
-    [ITEM_USE_FUNC_EXPLORER_KIT] = { UseExplorerKitFromMenu, UseExplorerKitInField, CanUseExplorerKit },
-    [ITEM_USE_FUNC_BICYCLE]      = { UseBicycleFromMenu,     UseBicycleInField,     CanUseBicycle     },
-    [ITEM_USE_FUNC_JOURNAL]      = { UseJournalFromMenu,     UseJournalInField,     NULL              },
-    [ITEM_USE_FUNC_TM_HM]        = { UseTMHMFromMenu,        NULL,                  NULL              },
-    [ITEM_USE_FUNC_MAIL]         = { UseMailFromMenu,        NULL,                  NULL              },
-    [ITEM_USE_FUNC_BERRY]        = { UseBerryFromMenu,       NULL,                  CanUseBerry       },
-    [ITEM_USE_FUNC_POFFIN_CASE]  = { UsePoffinCaseFromMenu,  UsePoffinCaseInField,  NULL              },
-    [ITEM_USE_FUNC_PAL_PAD]      = { UsePalPadFromMenu,      UsePalPadInField,      NULL              },
-    [ITEM_USE_FUNC_POKE_RADAR]   = { UsePokeRadarFromMenu,   UsePokeRadarInField,   CanUsePokeRadar   },
-    [ITEM_USE_FUNC_SPRAYDUCK]    = { UseSprayDuckFromMenu,   UseSprayDuckInField,   CanUseSprayDuck   },
-    [ITEM_USE_FUNC_MULCH]        = { UseMulchFromMenu,       NULL,                  CanUseMulch       },
-    [ITEM_USE_FUNC_HONEY]        = { UseHoneyFromMenu,       NULL,                  NULL              },
-    [ITEM_USE_FUNC_VS_SEEKER]    = { UseVsSeekerFromMenu,    UseVsSeekerInField,    CanUseVsSeeker    },
-    [ITEM_USE_FUNC_OLD_ROD]      = { UseOldRodFromMenu,      UseOldRodInField,      CanUseFishingRod  },
-    [ITEM_USE_FUNC_GOOD_ROD]     = { UseGoodRodFromMenu,     UseGoodRodInField,     CanUseFishingRod  },
-    [ITEM_USE_FUNC_SUPER_ROD]    = { UseSuperRodFromMenu,    UseSuperRodInField,    CanUseFishingRod  },
-    [ITEM_USE_FUNC_BAG_MESSAGE]  = { NULL,                   UseBagMessageItem,     NULL              },
-    [ITEM_USE_FUNC_EVO_STONE]    = { UseEvoStoneFromMenu,    NULL,                  NULL              },
-    [ITEM_USE_FUNC_ESCAPE_ROPE]  = { UseEscapeRopeFromMenu,  NULL,                  CanUseEscapeRope  },
-    [ITEM_USE_FUNC_AZURE_FLUTE]  = { UseAzureFluteFromMenu,  UseAzureFluteInField,  CanUseAzureFlute  },
-    [ITEM_USE_FUNC_VS_RECORDER]  = { UseVsRecorderFromMenu,  UseVsRecorderInField,  NULL              },
-    [ITEM_USE_FUNC_GRACIDEA]     = { UseGracideaFromMenu,    UseGracideaInField,    NULL              },
-    [ITEM_USE_FUNC_NATURE_MINT]  = { UseNatureMintFromMenu,  NULL,                  NULL              },
+    [ITEM_USE_FUNC_NONE]                    = { NULL,                   UseBagMessageItem,     NULL              },
+    [ITEM_USE_FUNC_HEALING]                 = { UseHealingItemFromMenu, NULL,                  NULL              },
+    [ITEM_USE_FUNC_TOWN_MAP]                = { UseTownMapFromMenu,     UseTownMapInField,     NULL              },
+    [ITEM_USE_FUNC_EXPLORER_KIT]            = { UseExplorerKitFromMenu, UseExplorerKitInField, CanUseExplorerKit },
+    [ITEM_USE_FUNC_BICYCLE]                 = { UseBicycleFromMenu,     UseBicycleInField,     CanUseBicycle     },
+    [ITEM_USE_FUNC_JOURNAL]                 = { UseJournalFromMenu,     UseJournalInField,     NULL              },
+    [ITEM_USE_FUNC_TM_HM]                   = { UseTMHMFromMenu,        NULL,                  NULL              },
+    [ITEM_USE_FUNC_MAIL]                    = { UseMailFromMenu,        NULL,                  NULL              },
+    [ITEM_USE_FUNC_BERRY]                   = { UseBerryFromMenu,       NULL,                  CanUseBerry       },
+    [ITEM_USE_FUNC_POFFIN_CASE]             = { UsePoffinCaseFromMenu,  UsePoffinCaseInField,  NULL              },
+    [ITEM_USE_FUNC_PAL_PAD]                 = { UsePalPadFromMenu,      UsePalPadInField,      NULL              },
+    [ITEM_USE_FUNC_POKE_RADAR]              = { UsePokeRadarFromMenu,   UsePokeRadarInField,   CanUsePokeRadar   },
+    [ITEM_USE_FUNC_SPRAYDUCK]               = { UseSprayDuckFromMenu,   UseSprayDuckInField,   CanUseSprayDuck   },
+    [ITEM_USE_FUNC_MULCH]                   = { UseMulchFromMenu,       NULL,                  CanUseMulch       },
+    [ITEM_USE_FUNC_HONEY]                   = { UseHoneyFromMenu,       NULL,                  NULL              },
+    [ITEM_USE_FUNC_VS_SEEKER]               = { UseVsSeekerFromMenu,    UseVsSeekerInField,    CanUseVsSeeker    },
+    [ITEM_USE_FUNC_OLD_ROD]                 = { UseOldRodFromMenu,      UseOldRodInField,      CanUseFishingRod  },
+    [ITEM_USE_FUNC_GOOD_ROD]                = { UseGoodRodFromMenu,     UseGoodRodInField,     CanUseFishingRod  },
+    [ITEM_USE_FUNC_SUPER_ROD]               = { UseSuperRodFromMenu,    UseSuperRodInField,    CanUseFishingRod  },
+    [ITEM_USE_FUNC_BAG_MESSAGE]             = { NULL,                   UseBagMessageItem,     NULL              },
+    [ITEM_USE_FUNC_EVO_STONE]               = { UseEvoStoneFromMenu,    NULL,                  NULL              },
+    [ITEM_USE_FUNC_ESCAPE_ROPE]             = { UseEscapeRopeFromMenu,  NULL,                  CanUseEscapeRope  },
+    [ITEM_USE_FUNC_AZURE_FLUTE]             = { UseAzureFluteFromMenu,  UseAzureFluteInField,  CanUseAzureFlute  },
+    [ITEM_USE_FUNC_VS_RECORDER]             = { UseVsRecorderFromMenu,  UseVsRecorderInField,  NULL              },
+    [ITEM_USE_FUNC_GRACIDEA]                = { UseGracideaFromMenu,    UseGracideaInField,    NULL              },
+    [ITEM_USE_FUNC_PARTY_AFFECTING_ITEM]    = { UsePartyAffectingItem,  NULL,                  NULL              },
 };
 // clang-format on
 
@@ -1039,7 +1039,7 @@ static void *OpenPartyMenuForGracidea(void *fieldSystem)
     return FieldSystem_OpenPartyMenu_SelectForItemUsage(fieldSystem, HEAP_ID_FIELD2, ITEM_GRACIDEA);
 }
 
-static void UseNatureMintFromMenu(ItemMenuUseContext *usageContext, const ItemUseContext *additionalContext)
+static void UsePartyAffectingItem(ItemMenuUseContext *usageContext, const ItemUseContext *additionalContext)
 {
     FieldSystem *fieldSystem = FieldTask_GetFieldSystem(usageContext->fieldTask);
     StartMenu *menu = FieldTask_GetEnv(usageContext->fieldTask);

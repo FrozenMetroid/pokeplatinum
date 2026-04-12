@@ -1113,7 +1113,12 @@ static void SetMonDataFromMon(PokemonSummaryScreen *summaryScreen, Pokemon *mon,
     monData->spDefense = Pokemon_GetValue(mon, MON_DATA_SP_DEF, NULL);
     monData->speed = Pokemon_GetValue(mon, MON_DATA_SPEED, NULL);
     monData->ability = Pokemon_GetValue(mon, MON_DATA_ABILITY, NULL);
-    monData->nature = Pokemon_GetNature(mon);
+
+    // new implementation here because Pokemon_GetNature shows mint-affected nature
+    // the nature string on the memo screen is actually handled elsewhere with InitializeNatureRelatedString, so the regular nature field here goes unused really
+    monData->mintNature = Pokemon_GetNature(mon);
+    u32 personality = Pokemon_GetValue(mon, MON_DATA_PERSONALITY, NULL);
+    monData->nature = Pokemon_GetNatureOf(personality);
 
     monData->evHP = Pokemon_GetValue(mon, MON_DATA_HP_EV, NULL);
     monData->evAttack = Pokemon_GetValue(mon, MON_DATA_ATK_EV, NULL);

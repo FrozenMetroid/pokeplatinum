@@ -1013,6 +1013,20 @@
         "{STRVAR_1 1, 0, 0}’s stats were\n",
         "updated after sniffing the mint!\r"
       ]
+    },
+    {
+      "id": "PartyMenu_Text_AbilityCapsuleFail",
+      "en_US": [
+        "{STRVAR_1 1, 0, 0} cannot change\n",
+        "its Ability!\r"
+      ]
+    },
+    {
+      "id": "PartyMenu_Text_AbilityCapsuleSuccess",
+      "en_US": [
+        "{STRVAR_1 1, 0, 0}’s Ability was\n",
+        "changed to {STRVAR_1 8, 1, 0}!\r"
+      ]
     }
   ]
 }

@@ -833,11 +833,23 @@ OngoingContest_OfficialContest_ReturnToContestRegistration:
     SetVar VAR_0x8005, 1
     Common_GiveAccessory
 ContestRegistration_ThankYouForParticipating:
+    GoToIfUnset FLAG_OBTAINED_CONTEST_HALL_PRISM_SCALE, PrismScale_Give
+_FinishContest:
     Message ContestRegistration_Text_ThankYouForParticipating
     WaitButton
     CloseMessage
 ContestRegistration_End:
     End
+
+PrismScale_Give:
+    GoToIfCannotFitItem ITEM_PRISM_SCALE, 1, VAR_RESULT, _FinishContest
+    Message ContestRegistration_Text_GivePrismScale
+    SetVar VAR_0x8004, ITEM_PRISM_SCALE
+    SetVar VAR_0x8005, 1
+    Common_GiveItemQuantity
+    CloseMessage
+    ReleaseAll
+    GoTo ContestRegistration_End
 
 OngoingContest_PlayApplause:
     PlaySE SEQ_SE_DP_CON_F007

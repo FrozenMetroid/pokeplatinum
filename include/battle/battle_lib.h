@@ -1116,6 +1116,17 @@ BOOL BattleSystem_PluckBerry(BattleSystem *battleSys, BattleContext *battleCtx, 
 BOOL BattleSystem_FlingItem(BattleSystem *battleSys, BattleContext *battleCtx, int battler);
 
 /**
+ * @brief Check if there are any special exceptions for Fling based on species and stuff, e.g. Giratina trying to fling Griseous Orb
+ *
+ * @param battleSys
+ * @param battleCtx
+ * @param battler   The target of the flung item.
+ * @return TRUE if a follow-up subsequence should be run to apply the item's
+ * Fling effect; FALSE if no such follow-up is needed.
+ */
+BOOL BattleSystem_CheckFlingExceptions(BattleSystem *battleSys, BattleContext *battleCtx, int battler);
+
+/**
  * @brief Update the count for the Metronome held item.
  *
  * @param battleSys

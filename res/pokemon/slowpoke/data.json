@@ -120,16 +120,10 @@
         ]
     },
     "evolutions": [
-        [
-            "EVO_LEVEL",
-            37,
-            "SPECIES_SLOWBRO"
-        ],
-        [
-            "EVO_TRADE_WITH_HELD_ITEM",
-            "ITEM_KINGS_ROCK",
-            "SPECIES_SLOWKING"
-        ]
+        ["EVO_LEVEL", 37, "SPECIES_SLOWBRO" ],
+        ["EVO_TRADE_WITH_HELD_ITEM", "ITEM_KINGS_ROCK", "SPECIES_SLOWKING" ],
+        ["EVO_LEVEL_WITH_HELD_ITEM_DAY", "ITEM_KINGS_ROCK", "SPECIES_SLOWKING" ],
+        ["EVO_LEVEL_WITH_HELD_ITEM_NIGHT", "ITEM_KINGS_ROCK", "SPECIES_SLOWKING" ]
     ],
     "offspring": "SPECIES_SLOWPOKE",
     "footprint": {

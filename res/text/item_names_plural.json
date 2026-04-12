@@ -1976,6 +1976,30 @@
     {
       "id": "pl_msg_00000394_00493",
       "en_US": "Ability Patches"
+    },
+    {
+      "id": "pl_msg_00000394_00494",
+      "en_US": "Bottle Caps"
+    },
+    {
+      "id": "pl_msg_00000394_00495",
+      "en_US": "Gold Bottle Caps"
+    },
+    {
+      "id": "pl_msg_00000394_00496",
+      "en_US": "Eviolites"
+    },
+    {
+      "id": "pl_msg_00000394_00497",
+      "en_US": "Linking Cords"
+    },
+    {
+      "id": "pl_msg_00000394_00498",
+      "en_US": "Prism Scales"
+    },
+    {
+      "id": "pl_msg_00000394_00499",
+      "en_US": "Rocky Helmets"
     }
   ]
 }

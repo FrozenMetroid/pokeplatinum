@@ -105,7 +105,8 @@
         ]
     },
     "evolutions": [
-        [ "EVO_TRADE", "SPECIES_GOLEM" ]
+        [ "EVO_TRADE", "SPECIES_GOLEM" ],
+        [ "EVO_USE_ITEM", "ITEM_LINKING_CORD", "SPECIES_GOLEM" ]
     ],
     "offspring": "SPECIES_GEODUDE",
     "footprint": {

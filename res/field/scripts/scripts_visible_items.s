@@ -143,7 +143,7 @@
     ScriptEntry VisibleItems_IronIslandB2FRightRoom_Elixir
     ScriptEntry VisibleItems_IronIslandB2FRightRoom_TM23
     ScriptEntry VisibleItems_IronIslandB2FLeftRoom_DuskBall
-    ScriptEntry VisibleItems_IronIslandB2FLeftRoom_MaxPotion
+    ScriptEntry VisibleItems_IronIslandB2FLeftRoom_RockyHelmet
     ScriptEntry VisibleItems_IronIslandB2FLeftRoom_UltraBall
     ScriptEntry VisibleItems_IronIslandB2FLeftRoom_HPUp
     ScriptEntry VisibleItems_IronIslandB3F_ShinyStone
@@ -246,7 +246,7 @@
     ScriptEntry VisibleItems_LakeAcuity_TM14
     ScriptEntry VisibleItems_SnowpointTempleB1F_Calcium
     ScriptEntry VisibleItems_SnowpointTempleB4F_FullHeal
-    ScriptEntry VisibleItems_GalacticHQB2F_Zinc
+    ScriptEntry VisibleItems_GalacticHQB2F_AbilityCapsule
     ScriptEntry VisibleItems_BattlePark_RazorFang
     ScriptEntry VisibleItems_Route216_HPUp
     ScriptEntry VisibleItems_OldChateauBackWestRoom_DreadPlate
@@ -290,7 +290,7 @@
     ScriptEntry VisibleItems_FloaromaMeadow_RareCandy
     ScriptEntry VisibleItems_IronIslandB2FLeftRoom_RedShard
     ScriptEntry VisibleItems_IronIslandB1FLeftRoom_YellowShard
-    ScriptEntry VisibleItems_IronIslandB2FLeftRoom_Nugget
+    ScriptEntry VisibleItems_IronIslandB2FLeftRoom_Magnet
     ScriptEntry VisibleItems_IronIslandB1FRightRoom_Revive
     ScriptEntry VisibleItems_Route216_MaxPotion
     ScriptEntry VisibleItems_Route216_Revive
@@ -1178,8 +1178,8 @@ VisibleItems_IronIslandB2FLeftRoom_DuskBall:
     GoTo VisibleItems_TryGiveItem
     End
 
-VisibleItems_IronIslandB2FLeftRoom_MaxPotion:
-    SetVar VAR_0x8008, ITEM_MAX_POTION
+VisibleItems_IronIslandB2FLeftRoom_RockyHelmet:
+    SetVar VAR_0x8008, ITEM_ROCKY_HELMET
     SetVar VAR_0x8009, 1
     GoTo VisibleItems_TryGiveItem
     End
@@ -1796,8 +1796,8 @@ VisibleItems_SnowpointTempleB4F_FullHeal:
     GoTo VisibleItems_TryGiveItem
     End
 
-VisibleItems_GalacticHQB2F_Zinc:
-    SetVar VAR_0x8008, ITEM_ZINC
+VisibleItems_GalacticHQB2F_AbilityCapsule:
+    SetVar VAR_0x8008, ITEM_ABILITY_CAPSULE
     SetVar VAR_0x8009, 1
     GoTo VisibleItems_TryGiveItem
     End
@@ -2060,7 +2060,7 @@ VisibleItems_IronIslandB1FLeftRoom_YellowShard:
     GoTo VisibleItems_TryGiveItem
     End
 
-VisibleItems_IronIslandB2FLeftRoom_Nugget:
+VisibleItems_IronIslandB2FLeftRoom_Magnet:
     SetVar VAR_0x8008, ITEM_MAGNET
     SetVar VAR_0x8009, 1
     GoTo VisibleItems_TryGiveItem

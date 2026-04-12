@@ -15,6 +15,7 @@
 #include "string_template.h"
 #include "trainer_info.h"
 #include "unk_02017038.h"
+#include "res/text/bank/pokemon_summary_screen.h"
 
 static int DeterminePokemonStatus(Pokemon *param0, BOOL param1, int param2);
 static void InitializeNatureRelatedString(PokemonInfoDisplayStruct *param0);
@@ -316,14 +317,16 @@ void sub_0209282C(PokemonInfoDisplayStruct *param0)
 
 static void InitializeNatureRelatedString(PokemonInfoDisplayStruct *param0)
 {
-    int v0 = Pokemon_GetNature(param0->unk_0C);
+    // int v0 = Pokemon_GetNature(param0->unk_0C);
+    u32 personality = Pokemon_GetValue(param0->unk_0C, MON_DATA_PERSONALITY, NULL);
+    u8 nature = Pokemon_GetNatureOf(personality);
 
-    if (v0 > 24) {
+    if (nature > 24) {
         return;
     }
 
     param0->unk_14.unk_04 = String_Init(((2 * 18) * 2), param0->heapID);
-    MessageLoader_GetString(param0->unk_04, (24 + v0), param0->unk_14.unk_04);
+    MessageLoader_GetString(param0->unk_04, (pl_msg_00000455_00024 + nature), param0->unk_14.unk_04);
 }
 
 static void InitializePokemonMetInfoString(PokemonInfoDisplayStruct *param0, int param1)

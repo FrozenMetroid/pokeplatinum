@@ -40,6 +40,25 @@ TwinleafTownPlayerHouse2F_Wii:
     End
 
 TwinleafTownPlayerHouse2F_PC:
+.if DEBUG_FLY_FROM_START
+    Debug_SetAllTownsVisited
+    GiveBadge BADGE_ID_COAL
+    GiveBadge BADGE_ID_FOREST
+    GiveBadge BADGE_ID_COBBLE
+    GiveBadge BADGE_ID_FEN
+    GiveBadge BADGE_ID_RELIC
+    GiveBadge BADGE_ID_MINE
+    GiveBadge BADGE_ID_ICICLE
+    GiveBadge BADGE_ID_BEACON
+    AddItem ITEM_HM01, 1, VAR_RESULT
+    AddItem ITEM_HM02, 1, VAR_RESULT
+    AddItem ITEM_HM03, 1, VAR_RESULT
+    AddItem ITEM_HM04, 1, VAR_RESULT
+    AddItem ITEM_HM05, 1, VAR_RESULT
+    AddItem ITEM_HM06, 1, VAR_RESULT
+    AddItem ITEM_HM07, 1, VAR_RESULT
+    AddItem ITEM_HM08, 1, VAR_RESULT
+.endif
     PlaySE SEQ_SE_CONFIRM
     LockAll
     BufferPlayerName 0

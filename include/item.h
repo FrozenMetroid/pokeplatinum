@@ -290,6 +290,14 @@ u8 Item_TMHMNumber(u16 item);
 u8 Item_IsMail(u16 item);
 
 /**
+ * @brief Check if a given item is a Multitype Plate
+ *
+ * @param item
+ * @return TRUE if the item is a Multitype Plate, FALSE otherwise.
+ */
+u8 Item_IsPlate(u16 item);
+
+/**
  * @brief Get the mail number for a given item.
  *
  * @param item

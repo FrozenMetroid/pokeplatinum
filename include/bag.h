@@ -6,7 +6,7 @@
 
 #include "savedata.h"
 
-#define ITEM_POCKET_SIZE        165
+#define ITEM_POCKET_SIZE        (165 + 6) // plus [Gold] Bottle Cap, Eviolite, Linking Cord, Prism Scale, and Rocky Helmet
 #define KEY_ITEM_POCKET_SIZE    (50 + 3) // plus Shiny, Oval, and Catching Charms
 #define TMHM_POCKET_SIZE        100
 #define MAIL_POCKET_SIZE        12

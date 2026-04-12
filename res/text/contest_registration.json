@@ -1266,6 +1266,15 @@
         "Everyone else must choose\n",
         "“JOIN GROUP.”"
       ]
+    },
+    {
+      "id": "ContestRegistration_Text_GivePrismScale",
+      "en_US": [
+        "Thank you for participating.\n",
+        "Take this as a token of our\f",
+        "appreciation for joining a Contest.\f",
+        "for the first time!\r"
+      ]
     }
   ]
 }

@@ -6684,14 +6684,34 @@ static BOOL ScrCmd_PokeMartFrontier(ScriptContext *ctx)
         ITEM_POWER_HERB,
         ITEM_BRIGHTPOWDER,
         ITEM_CHOICE_BAND,
+        ITEM_CHOICE_SPECS,
+        ITEM_CHOICE_SCARF,
+        ITEM_FOCUS_SASH,
         ITEM_FOCUS_BAND,
         ITEM_SCOPE_LENS,
         ITEM_MUSCLE_BAND,
-        ITEM_FOCUS_SASH,
-        ITEM_CHOICE_SCARF,
+        ITEM_WISE_GLASSES,
         ITEM_RAZOR_CLAW,
         ITEM_RAZOR_FANG,
+        ITEM_ROCKY_HELMET,
+        ITEM_EVIOLITE,
+        ITEM_KINGS_ROCK,
+        ITEM_DRAGON_SCALE,
+        ITEM_UPGRADE,
+        ITEM_METAL_COAT,
+        ITEM_DEEPSEATOOTH,
+        ITEM_DEEPSEASCALE,
+        ITEM_PROTECTOR,
+        ITEM_MAGMARIZER,
+        ITEM_ELECTIRIZER,
+        ITEM_DUBIOUS_DISC,
+        ITEM_REAPER_CLOTH,
+        ITEM_PRISM_SCALE,
+        ITEM_LINKING_CORD,
         ITEM_RARE_CANDY,
+        ITEM_ABILITY_CAPSULE,
+        ITEM_BOTTLE_CAP,
+        ITEM_GOLD_BOTTLE_CAP,
         SHOP_ITEM_END,
     };
     static const u16 *BattleFrontierExchangeServiceCorners[] = {
@@ -7211,5 +7231,50 @@ static BOOL ScrCmd_Debug_SetAllTownsVisited(ScriptContext *ctx)
         FieldSystem_SetFlag(ctx->fieldSystem, i);
     }
 
+    return FALSE;
+}
+
+static BOOL ScrCmd_BottleCapStatIncrease(ScriptContext *ctx)
+{
+    u16 partySlot = ScriptContext_GetVar(ctx);
+    u16 statID = ScriptContext_GetVar(ctx);
+    EmulatorLog("ScrCmd_BottleCapStatIncrease: partySlot %d, statID %d", partySlot, statID);
+    u16 *destVar = ScriptContext_GetVarPointer(ctx);
+
+    Pokemon *mon = Party_GetPokemonBySlotIndex(SaveData_GetParty(ctx->fieldSystem->saveData), partySlot);
+
+    u8 iv = 31;
+    u8 maxedStats = 0;
+
+    if (statID >= 0xFF) { // chose gold bottle cap, max all stats
+        for (int i = 0; i < 6; i++) { // first check if all the stats are already maxed, if so set dest var to 0xFFFF to indicate failure, otherwise max all stats
+             if (Pokemon_GetValue(mon, MON_DATA_HP_IV + i, NULL) == 31) {
+                maxedStats++;
+            }
+        } 
+        if (maxedStats >= 6) {
+            *destVar = 0xFFFF;
+            return FALSE;
+        }
+        for (int i = 0; i < 6; i++) {
+            Pokemon_SetValue(mon, MON_DATA_HP_IV + i, &iv);
+        }
+    } else { // chose regular bottle cap, max one stat
+        if (Pokemon_GetValue(mon, MON_DATA_HP_IV + statID, NULL) == 31) {
+            *destVar = 0xFFFF;
+            return FALSE;
+        }
+        Pokemon_SetValue(mon, MON_DATA_HP_IV + statID, &iv);
+    }
+
+    return FALSE;
+}
+
+static BOOL ScrCmd_PrintMonPersonality(ScriptContext *ctx)
+{
+    u16 partySlot = ScriptContext_GetVar(ctx);
+    Pokemon *mon = Party_GetPokemonBySlotIndex(SaveData_GetParty(ctx->fieldSystem->saveData), partySlot);
+    u32 personality = Pokemon_GetValue(mon, MON_DATA_PERSONALITY, NULL);
+    EmulatorLog("Mon in party slot %d has personality %u", partySlot, personality);
     return FALSE;
 }

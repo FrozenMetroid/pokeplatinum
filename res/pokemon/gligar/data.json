@@ -127,11 +127,7 @@
         ]
     },
     "evolutions": [
-        [
-            "EVO_LEVEL_WITH_HELD_ITEM_NIGHT",
-            "ITEM_RAZOR_FANG",
-            "SPECIES_GLISCOR"
-        ]
+        ["EVO_LEVEL_WITH_HELD_ITEM_NIGHT", "ITEM_RAZOR_FANG", "SPECIES_GLISCOR"]
     ],
     "offspring": "SPECIES_GLIGAR",
     "footprint": {

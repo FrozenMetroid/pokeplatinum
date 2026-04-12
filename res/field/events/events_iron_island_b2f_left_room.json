@@ -57,11 +57,11 @@
             "y": 0
         },
         {
-            "id": "LOCALID_ITEM_MAX_POTION",
+            "id": "LOCALID_ITEM_ROCKY_HELMET",
             "graphics_id": "OBJ_EVENT_GFX_POKEBALL",
             "movement_type": "MOVEMENT_TYPE_NONE",
             "trainer_type": "TRAINER_TYPE_NONE",
-            "hidden_flag": "FLAG_OBTAINED_IRON_ISLAND_B2F_LEFT_ROOM_MAX_POTION",
+            "hidden_flag": "FLAG_OBTAINED_IRON_ISLAND_B2F_LEFT_ROOM_ROCKY_HELMET",
             "script": 7141,
             "initial_dir": 0,
             "data": [],
@@ -283,7 +283,7 @@
             "y": 0
         },
         {
-            "id": "LOCALID_ITEM_NUGGET",
+            "id": "LOCALID_ITEM_MAGNET",
             "graphics_id": "OBJ_EVENT_GFX_POKEBALL",
             "movement_type": "MOVEMENT_TYPE_NONE",
             "trainer_type": "TRAINER_TYPE_NONE",

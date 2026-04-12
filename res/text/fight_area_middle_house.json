@@ -29,6 +29,134 @@
         "That’s why you should check out the\n",
         "Global Terminal in Jubilife City."
       ]
+    },
+    {
+      "id": "pl_msg_00000197_00003",
+      "en_US": [
+        "Hello! I’m the eccentric\n",
+        "Bottle Cap fanatic!\r",
+        "I can’t get enough Bottle Caps!\n",
+        "Will you share some with me?\f",
+        "I will help your Pokémon if you do!\r"
+      ]
+    },
+    {
+      "id": "pl_msg_00000197_00004",
+      "en_US": [
+        "Awh... I thought maybe I had\n",
+        "found a fellow fanatic!"
+      ]
+    },
+    {
+      "id": "pl_msg_00000197_00005",
+      "en_US": [
+        "But... you don’t even have\n",
+        "any of those bottle caps!"
+      ]
+    },
+    {
+      "id": "pl_msg_00000197_00006",
+      "en_US": [
+        "Yippee! Which one will you give me?"
+      ]
+    },
+    {
+      "id": "pl_msg_00000197_00007",
+      "en_US": [
+        "BOTTLE CAP"
+      ]
+    },
+    {
+      "id": "pl_msg_00000197_00008",
+      "en_US": [
+        "GOLD BOTTLE CAP"
+      ]
+    },
+    {
+      "id": "pl_msg_00000197_00009",
+      "en_US": [
+        "CANCEL"
+      ]
+    },
+    {
+      "id": "pl_msg_00000197_00010",
+      "en_US": [
+        "Marvelous! I will help increase\n",
+        "this Pokémon’s stats!\r",
+        "Which stat should I work with?"
+      ]
+    },
+    {
+      "id": "pl_msg_00000197_00011",
+      "en_US": [
+        "HP"
+      ]
+    },
+    {
+      "id": "pl_msg_00000197_00012",
+      "en_US": [
+        "ATTACK"
+      ]
+    },
+    {
+      "id": "pl_msg_00000197_00013",
+      "en_US": [
+        "DEFENSE"
+      ]
+    },
+    {
+      "id": "pl_msg_00000197_00014",
+      "en_US": [
+        "SP. ATTACK"
+      ]
+    },
+    {
+      "id": "pl_msg_00000197_00015",
+      "en_US": [
+        "SP. DEFENSE"
+      ]
+    },
+    {
+      "id": "pl_msg_00000197_00016",
+      "en_US": [
+        "SPEED"
+      ]
+    },
+    {
+      "id": "pl_msg_00000197_00017",
+      "en_US": [
+        "Hehehe, I will bring out the\n",
+        "maximum potential of your Pokémon!\r"
+      ]
+    },
+    {
+      "id": "pl_msg_00000197_00018",
+      "en_US": [
+        "...There we go! Your Pokémon\n",
+        "is looking incredible!"
+      ]
+    },
+    {
+      "id": "pl_msg_00000197_00019",
+      "en_US": [
+        "Great choice! Let me work on that\n",
+        "stat now...\r"
+      ]
+    },
+    {
+      "id": "pl_msg_00000197_00020",
+      "en_US": [
+        "I appreciate wanting to give me a\n",
+        "bottle cap, but your Pokémon doesn’t\f",
+        "need my help!"
+      ]
+    },
+    {
+      "id": "pl_msg_00000197_00021",
+      "en_US": [
+        "Ahh, wonderful! Which Pokémon shall\n",
+        "I help now?\r"
+      ]
     }
   ]
 }

@@ -57,6 +57,7 @@
 #include "constants/battle.h"
 
 .set DEBUG_GIVE_SHINY_CHARM_FROM_START, 1
+.set DEBUG_FLY_FROM_START, 1
 
 #define INC_AS_ASM
 #include "data/field/script_commands.h"
@@ -5027,6 +5028,17 @@
     .short SCRCMD_DEBUG_SETALLTOWNSVISITED
     .endm
 
+    .macro BottleCapStatIncrease slot, stat, destVar
+    .short SCRCMD_BOTTLECAPSTATINCREASE
+    .short \slot
+    .short \stat
+    .short \destVar
+    .endm
+
+    .macro PrintMonPersonality slot
+    .short SCRCMD_PRINTMONPERSONALITY
+    .short \slot
+    .endm
 
 
     .macro GoToIfLt varID, valueOrVarID, offset

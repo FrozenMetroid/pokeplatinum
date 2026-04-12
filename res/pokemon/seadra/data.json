@@ -96,11 +96,9 @@
         ]
     },
     "evolutions": [
-        [
-            "EVO_TRADE_WITH_HELD_ITEM",
-            "ITEM_DRAGON_SCALE",
-            "SPECIES_KINGDRA"
-        ]
+        ["EVO_TRADE_WITH_HELD_ITEM", "ITEM_DRAGON_SCALE", "SPECIES_KINGDRA" ],
+        ["EVO_LEVEL_WITH_HELD_ITEM_DAY", "ITEM_DRAGON_SCALE", "SPECIES_KINGDRA" ],
+        ["EVO_LEVEL_WITH_HELD_ITEM_NIGHT", "ITEM_DRAGON_SCALE", "SPECIES_KINGDRA" ]
     ],
     "offspring": "SPECIES_HORSEA",
     "footprint": {

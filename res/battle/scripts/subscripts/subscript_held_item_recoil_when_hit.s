@@ -14,5 +14,7 @@ _009:
     PrintMessage BattleStrings_Text_PokemonIsHurtByPokemonsItem_AllyAlly, TAG_NICKNAME_NICKNAME_ITEM, BTLSCR_ATTACKER, BTLSCR_DEFENDER, BTLSCR_DEFENDER
     Wait 
     WaitButtonABTime 30
+    CompareMonDataToValue OPCODE_EQU, BTLSCR_DEFENDER, BATTLEMON_HELD_ITEM, ITEM_ROCKY_HELMET, _end
     RemoveItem BTLSCR_DEFENDER
-    End 
+_end:
+    End  

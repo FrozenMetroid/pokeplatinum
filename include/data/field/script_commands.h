@@ -869,6 +869,8 @@ const ScrCmdFunc gFieldScriptCommands[] = {
     ScriptCommandTableEntry(SCRCMD_QUEUENEWREPEL,                                        ScrCmd_QueueNewRepel)
     ScriptCommandTableEntry(SCRCMD_CHECKTMHMMOVECOMPATIBILITY,                           ScrCmd_CheckTMHMMoveCompatibility)
     ScriptCommandTableEntry(SCRCMD_DEBUG_SETALLTOWNSVISITED,                             ScrCmd_Debug_SetAllTownsVisited)
+    ScriptCommandTableEntry(SCRCMD_BOTTLECAPSTATINCREASE,                                ScrCmd_BottleCapStatIncrease)
+    ScriptCommandTableEntry(SCRCMD_PRINTMONPERSONALITY,                                  ScrCmd_PrintMonPersonality)
 
 #ifndef INC_AS_ASM
 };

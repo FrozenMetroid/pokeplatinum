@@ -82,16 +82,12 @@
         ]
     },
     "evolutions": [
-        [
-            "EVO_TRADE_WITH_HELD_ITEM",
-            "ITEM_DEEPSEATOOTH",
-            "SPECIES_HUNTAIL"
-        ],
-        [
-            "EVO_TRADE_WITH_HELD_ITEM",
-            "ITEM_DEEPSEASCALE",
-            "SPECIES_GOREBYSS"
-        ]
+        ["EVO_TRADE_WITH_HELD_ITEM", "ITEM_DEEPSEATOOTH", "SPECIES_HUNTAIL" ],
+        ["EVO_TRADE_WITH_HELD_ITEM", "ITEM_DEEPSEASCALE", "SPECIES_GOREBYSS" ],
+        ["EVO_LEVEL_WITH_HELD_ITEM_DAY", "ITEM_DEEPSEATOOTH", "SPECIES_HUNTAIL" ],
+        ["EVO_LEVEL_WITH_HELD_ITEM_NIGHT", "ITEM_DEEPSEATOOTH", "SPECIES_HUNTAIL" ],
+        ["EVO_LEVEL_WITH_HELD_ITEM_DAY", "ITEM_DEEPSEASCALE", "SPECIES_GOREBYSS" ],
+        ["EVO_LEVEL_WITH_HELD_ITEM_NIGHT", "ITEM_DEEPSEASCALE", "SPECIES_GOREBYSS" ]
     ],
     "offspring": "SPECIES_CLAMPERL",
     "footprint": {

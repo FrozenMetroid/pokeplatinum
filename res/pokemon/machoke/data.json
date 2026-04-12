@@ -101,7 +101,8 @@
         ]
     },
     "evolutions": [
-        [ "EVO_TRADE", "SPECIES_MACHAMP" ]
+        [ "EVO_TRADE", "SPECIES_MACHAMP" ],
+        [ "EVO_USE_ITEM", "ITEM_LINKING_CORD", "SPECIES_MACHAMP" ]
     ],
     "offspring": "SPECIES_MACHOP",
     "footprint": {

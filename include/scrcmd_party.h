@@ -45,5 +45,7 @@ BOOL ScrCmd_Dummy0A0(ScriptContext *ctx);
 BOOL ScrCmd_FindPartySlotWithFatefulEncounterSpecies(ScriptContext *ctx);
 BOOL ScrCmd_CheckPartyHasHeldItem(ScriptContext *ctx);
 BOOL ScrCmd_CheckTMHMMoveCompatibility(ScriptContext *ctx);
+BOOL ScrCmd_BottleCapStatIncrease(ScriptContext *ctx);
+BOOL ScrCmd_PrintMonPersonality(ScriptContext *ctx);
 
 #endif // POKEPLATINUM_SCRCMD_PARTY_H

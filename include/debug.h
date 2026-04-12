@@ -42,3 +42,9 @@ DEBUG_SUPREME_OVERLORD
     Debug damage changes when Supreme Overlord is active
 */
 #define DEBUG_SUPREME_OVERLORD
+
+/*
+DEBUG_FLY_FROM_START
+    Enables Fly everywhere
+*/
+#define DEBUG_FLY_FROM_START

@@ -82,11 +82,10 @@
         ]
     },
     "evolutions": [
-        [
-            "EVO_LEVEL_BEAUTY",
-            170,
-            "SPECIES_MILOTIC"
-        ]
+        ["EVO_LEVEL_BEAUTY", 170, "SPECIES_MILOTIC" ],
+        ["EVO_TRADE_WITH_HELD_ITEM", "ITEM_PRISM_SCALE", "SPECIES_MILOTIC" ],
+        ["EVO_LEVEL_WITH_HELD_ITEM_DAY", "ITEM_PRISM_SCALE", "SPECIES_MILOTIC" ],
+        ["EVO_LEVEL_WITH_HELD_ITEM_NIGHT", "ITEM_PRISM_SCALE", "SPECIES_MILOTIC" ]
     ],
     "offspring": "SPECIES_FEEBAS",
     "footprint": {
