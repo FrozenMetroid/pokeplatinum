@@ -1884,6 +1884,98 @@
     {
       "id": "pl_msg_00000392_00470",
       "en_US": "Catching Charm"
+    },
+    {
+      "id": "pl_msg_00000392_00471",
+      "en_US": "Lonely Mint"
+    },
+    {
+      "id": "pl_msg_00000392_00472",
+      "en_US": "Adamant Mint"
+    },
+    {
+      "id": "pl_msg_00000392_00473",
+      "en_US": "Naughty Mint"
+    },
+    {
+      "id": "pl_msg_00000392_00474",
+      "en_US": "Brave Mint"
+    },
+    {
+      "id": "pl_msg_00000392_00475",
+      "en_US": "Bold Mint"
+    },
+    {
+      "id": "pl_msg_00000392_00476",
+      "en_US": "Impish Mint"
+    },
+    {
+      "id": "pl_msg_00000392_00477",
+      "en_US": "Lax Mint"
+    },
+    {
+      "id": "pl_msg_00000392_00478",
+      "en_US": "Relaxed Mint"
+    },
+    {
+      "id": "pl_msg_00000392_00479",
+      "en_US": "Modest Mint"
+    },
+    {
+      "id": "pl_msg_00000392_00480",
+      "en_US": "Mild Mint"
+    },
+    {
+      "id": "pl_msg_00000392_00481",
+      "en_US": "Rash Mint"
+    },
+    {
+      "id": "pl_msg_00000392_00482",
+      "en_US": "Quiet Mint"
+    },
+    {
+      "id": "pl_msg_00000392_00483",
+      "en_US": "Calm Mint"
+    },
+    {
+      "id": "pl_msg_00000392_00484",
+      "en_US": "Gentle Mint"
+    },
+    {
+      "id": "pl_msg_00000392_00485",
+      "en_US": "Careful Mint"
+    },
+    {
+      "id": "pl_msg_00000392_00486",
+      "en_US": "Sassy Mint"
+    },
+    {
+      "id": "pl_msg_00000392_00487",
+      "en_US": "Timid Mint"
+    },
+    {
+      "id": "pl_msg_00000392_00488",
+      "en_US": "Hasty Mint"
+    },
+    {
+      "id": "pl_msg_00000392_00489",
+      "en_US": "Jolly Mint"
+    },
+    {
+      "id": "pl_msg_00000392_00490",
+      "en_US": "Naive Mint"
+    },
+    {
+      "id": "pl_msg_00000392_00491",
+      "en_US": "Serious Mint"
+    },
+    {
+      "id": "pl_msg_00000392_00492",
+      "en_US": "Ability Capsule"
+    },
+    {
+      "id": "pl_msg_00000392_00493",
+      "en_US": "Ability Patch"
     }
   ]
 }

@@ -56,6 +56,8 @@
 #include "constants/tv_broadcast.h"
 #include "constants/battle.h"
 
+.set DEBUG_GIVE_SHINY_CHARM_FROM_START, 1
+
 #define INC_AS_ASM
 #include "data/field/script_commands.h"
 #include "macros/movement.inc"

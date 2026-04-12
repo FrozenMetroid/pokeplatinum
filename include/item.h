@@ -146,6 +146,11 @@ enum ItemDataParam {
     ITEM_PARAM_FRIENDSHIP_HIGH,
 };
 
+typedef struct NatureMintMapping {
+    u16 mint;
+    u16 nature; // could be u8 but doing this for alignment
+};
+
 /**
  * @brief Move the item in the corresponding pocket from one slot to another.
  *

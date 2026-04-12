@@ -915,27 +915,23 @@ static int Daycare_GetEggCycleLength(FieldSystem *fieldSystem)
     return 255;
 }
 
-static u16 Daycare_GetEggChanceWithOvalCharm(u16 compatibilityScore, BOOL hasOvalCharm)
+static u16 Daycare_GetEggChanceWithOvalCharm(u16 compatibilityScore)
 {
-    if (!hasOvalCharm) {
-        return compatibilityScore;
+    switch (compatibilityScore) 
+    {
+        case PARENTS_INCOMPATIBLE:
+            return 0;
+
+        case PARENTS_LOW_COMPATIBILITY:
+            return 40;
+
+        case PARENTS_MED_COMPATIBILITY:
+            return 80;
+
+        case PARENTS_MAX_COMPATIBILITY:
+            return 88;
     }
-    switch (compatibilityScore) {
-    case PARENTS_INCOMPATIBLE:
-        return 0;
-
-    case PARENTS_LOW_COMPATIBILITY:
-        return 40;
-
-    case PARENTS_MED_COMPATIBILITY:
-        return 80;
-
-    case PARENTS_MAX_COMPATIBILITY:
-        return 88;
-
-    default:
-        return compatibilityScore;
-    }
+    return compatibilityScore;
 }
 
 BOOL Daycare_Update(Daycare *daycare, Party *party, FieldSystem *fieldSystem)
@@ -965,7 +961,9 @@ BOOL Daycare_Update(Daycare *daycare, Party *party, FieldSystem *fieldSystem)
             // oval charm stuff
             Bag *bag = SaveData_GetBag(SaveData_Ptr());
             BOOL hasOvalCharm = Bag_CanRemoveItem(bag, ITEM_OVAL_CHARM, 1, HEAP_ID_FIELD1);
-            compatibilityScore = Daycare_GetEggChanceWithOvalCharm(compatibilityScore, hasOvalCharm);
+            if (hasOvalCharm) {
+                compatibilityScore = Daycare_GetEggChanceWithOvalCharm(compatibilityScore);
+            }
 
             if (compatibilityScore > rand) {
                 Daycare_SetInheritedNature(daycare);

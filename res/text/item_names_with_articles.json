@@ -1884,6 +1884,98 @@
     {
       "id": "pl_msg_00000393_00470",
       "en_US": "a {COLOR 255}Catching Charm{COLOR 0}"
+    },
+    {
+      "id": "pl_msg_00000393_00471",
+      "en_US": "a {COLOR 255}Lonely Mint{COLOR 0}"
+    },
+    {
+      "id": "pl_msg_00000393_00472",
+      "en_US": "an {COLOR 255}Adamant Mint{COLOR 0}"
+    },
+    {
+      "id": "pl_msg_00000393_00473",
+      "en_US": "a {COLOR 255}Naughty Mint{COLOR 0}"
+    },
+    {
+      "id": "pl_msg_00000393_00474",
+      "en_US": "a {COLOR 255}Brave Mint{COLOR 0}"
+    },
+    {
+      "id": "pl_msg_00000393_00475",
+      "en_US": "a {COLOR 255}Bold Mint{COLOR 0}"
+    },
+    {
+      "id": "pl_msg_00000393_00476",
+      "en_US": "an {COLOR 255}Impish Mint{COLOR 0}"
+    },
+    {
+      "id": "pl_msg_00000393_00477",
+      "en_US": "a {COLOR 255}Lax Mint{COLOR 0}"
+    },
+    {
+      "id": "pl_msg_00000393_00478",
+      "en_US": "a {COLOR 255}Relaxed Mint{COLOR 0}"
+    },
+    {
+      "id": "pl_msg_00000393_00479",
+      "en_US": "a {COLOR 255}Modest Mint{COLOR 0}"
+    },
+    {
+      "id": "pl_msg_00000393_00480",
+      "en_US": "a {COLOR 255}Mild Mint{COLOR 0}"
+    },
+    {
+      "id": "pl_msg_00000393_00481",
+      "en_US": "a {COLOR 255}Rash Mint{COLOR 0}"
+    },
+    {
+      "id": "pl_msg_00000393_00482",
+      "en_US": "a {COLOR 255}Quiet Mint{COLOR 0}"
+    },
+    {
+      "id": "pl_msg_00000393_00483",
+      "en_US": "a {COLOR 255}Calm Mint{COLOR 0}"
+    },
+    {
+      "id": "pl_msg_00000393_00484",
+      "en_US": "a {COLOR 255}Gentle Mint{COLOR 0}"
+    },
+    {
+      "id": "pl_msg_00000393_00485",
+      "en_US": "a {COLOR 255}Careful Mint{COLOR 0}"
+    },
+    {
+      "id": "pl_msg_00000393_00486",
+      "en_US": "a {COLOR 255}Sassy Mint{COLOR 0}"
+    },
+    {
+      "id": "pl_msg_00000393_00487",
+      "en_US": "a {COLOR 255}Timid Mint{COLOR 0}"
+    },
+    {
+      "id": "pl_msg_00000393_00488",
+      "en_US": "a {COLOR 255}Hasty Mint{COLOR 0}"
+    },
+    {
+      "id": "pl_msg_00000393_00489",
+      "en_US": "a {COLOR 255}Jolly Mint{COLOR 0}"
+    },
+    {
+      "id": "pl_msg_00000393_00490",
+      "en_US": "a {COLOR 255}Naive Mint{COLOR 0}"
+    },
+    {
+      "id": "pl_msg_00000393_00491",
+      "en_US": "a {COLOR 255}Serious Mint{COLOR 0}"
+    },
+    {
+      "id": "pl_msg_00000393_00492",
+      "en_US": "an {COLOR 255}Ability Capsule{COLOR 0}"
+    },
+    {
+      "id": "pl_msg_00000393_00493",
+      "en_US": "an {COLOR 255}Ability Patch{COLOR 0}"
     }
   ]
 }

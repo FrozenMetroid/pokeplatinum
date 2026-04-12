@@ -3669,6 +3669,191 @@
         "chance of getting a critical catch.\n",
         "Curiously, it doesn’t shake much."
       ]
+    },
+    {
+      "id": "pl_msg_00000391_00471",
+      "en_US": [
+        "Having a Pokémon smell this mint can\n",
+        "make its Attack stat grow stronger.\n",
+        "However, its Defense stat may suffer."
+      ]
+    },
+    {
+      "id": "pl_msg_00000391_00472",
+      "en_US": [
+        "Having a Pokémon smell this mint can\n",
+        "make its Attack stat grow stronger.\n",
+        "However, its Sp. Atk stat may suffer."
+      ]
+    },
+    {
+      "id": "pl_msg_00000391_00473",
+      "en_US": [
+        "Having a Pokémon smell this mint can\n",
+        "make its Attack stat grow stronger.\n",
+        "However, its Sp. Def stat may suffer."
+      ]
+    },
+    {
+      "id": "pl_msg_00000391_00474",
+      "en_US": [
+        "Having a Pokémon smell this mint can\n",
+        "make its Attack stat grow stronger.\n",
+        "However, its Speed stat may suffer."
+      ]
+    },
+    {
+      "id": "pl_msg_00000391_00475",
+      "en_US": [
+        "Having a Pokémon smell this mint can\n",
+        "make its Defense stat grow stronger.\n",
+        "However, its Attack stat may suffer."
+      ]
+    },
+    {
+      "id": "pl_msg_00000391_00476",
+      "en_US": [
+        "Having a Pokémon smell this mint can\n",
+        "make its Defense stat grow stronger.\n",
+        "However, its Sp. Atk stat may suffer."
+      ]
+    },
+    {
+      "id": "pl_msg_00000391_00477",
+      "en_US": [
+        "Having a Pokémon smell this mint can\n",
+        "make its Defense stat grow stronger.\n",
+        "However, its Sp. Def stat may suffer."
+      ]
+    },
+    {
+      "id": "pl_msg_00000391_00478",
+      "en_US": [
+        "Having a Pokémon smell this mint can\n",
+        "make its Defense stat grow stronger.\n",
+        "However, its Speed stat may suffer."
+      ]
+    },
+    {
+      "id": "pl_msg_00000391_00479",
+      "en_US": [
+        "Having a Pokémon smell this mint can\n",
+        "make its Sp. Atk stat grow stronger.\n",
+        "However, its Attack stat may suffer."
+      ]
+    },
+    {
+      "id": "pl_msg_00000391_00480",
+      "en_US": [
+        "Having a Pokémon smell this mint can\n",
+        "make its Sp. Atk stat grow stronger.\n",
+        "However, its Defense stat may suffer."
+      ]
+    },
+    {
+      "id": "pl_msg_00000391_00481",
+      "en_US": [
+        "Having a Pokémon smell this mint can\n",
+        "make its Sp. Atk stat grow stronger.\n",
+        "However, its Sp. Def stat may suffer."
+      ]
+    },
+    {
+      "id": "pl_msg_00000391_00482",
+      "en_US": [
+        "Having a Pokémon smell this mint can\n",
+        "make its Sp. Atk stat grow stronger.\n",
+        "However, its Speed stat may suffer."
+      ]
+    },
+    {
+      "id": "pl_msg_00000391_00483",
+      "en_US": [
+        "Having a Pokémon smell this mint can\n",
+        "make its Sp. Def stat grow stronger.\n",
+        "However, its Attack stat may suffer."
+      ]
+    },
+    {
+      "id": "pl_msg_00000391_00484",
+      "en_US": [
+        "Having a Pokémon smell this mint can\n",
+        "make its Sp. Def stat grow stronger.\n",
+        "However, its Defense stat may suffer."
+      ]
+    },
+    {
+      "id": "pl_msg_00000391_00485",
+      "en_US": [
+        "Having a Pokémon smell this mint can\n",
+        "make its Sp. Def stat grow stronger.\n",
+        "However, its Sp. Atk stat may suffer."
+      ]
+    },
+    {
+      "id": "pl_msg_00000391_00486",
+      "en_US": [
+        "Having a Pokémon smell this mint can\n",
+        "make its Sp. Def stat grow stronger.\n",
+        "However, its Speed stat may suffer."
+      ]
+    },
+    {
+      "id": "pl_msg_00000391_00487",
+      "en_US": [
+        "Having a Pokémon smell this mint can\n",
+        "make its Speed stat grow stronger.\n",
+        "However, its Attack stat may suffer."
+      ]
+    },
+    {
+      "id": "pl_msg_00000391_00488",
+      "en_US": [
+        "Having a Pokémon smell this mint can\n",
+        "make its Speed stat grow stronger.\n",
+        "However, its Defense stat may suffer."
+      ]
+    },
+    {
+      "id": "pl_msg_00000391_00489",
+      "en_US": [
+        "Having a Pokémon smell this mint can\n",
+        "make its Speed stat grow stronger.\n",
+        "However, its Sp. Atk stat may suffer."
+      ]
+    },
+    {
+      "id": "pl_msg_00000391_00490",
+      "en_US": [
+        "Having a Pokémon smell this mint can\n",
+        "make its Speed stat grow stronger.\n",
+        "However, its Sp. Def stat may suffer."
+      ]
+    },
+    {
+      "id": "pl_msg_00000391_00491",
+      "en_US": [
+        "Having a Pokémon smell this mint will\n",
+        "cause all of its stats to grow at\n",
+        "an equal rate"
+      ]
+    },
+    {
+      "id": "pl_msg_00000391_00492",
+      "en_US": [
+        "A capsule that allows a Pokémon to\n",
+        "switch its current Ability to the other\n",
+        "Ability its species can have."
+      ]
+    },
+    {
+      "id": "pl_msg_00000391_00493",
+      "en_US": [
+        "A patch that can be used to change\n",
+        "the regular Ability of a Pokémon to\n",
+        "a rarer Ability, or the opposite."
+      ]
     }
+
   ]
 }

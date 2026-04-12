@@ -25,6 +25,7 @@
 #include "bg_window.h"
 #include "brightness_controller.h"
 #include "communication_system.h"
+#include "debug.h"
 #include "field_message.h"
 #include "field_overworld_state.h"
 #include "field_overworld_weather.h"

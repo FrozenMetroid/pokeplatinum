@@ -7,6 +7,8 @@
 #include "constants/items.h"
 #include "constants/moves.h"
 
+#include "constants/battle.h"
+
 #include "bag.h"
 #include "heap.h"
 #include "message.h"
@@ -2849,6 +2851,144 @@ const ItemArchiveIDs sItemArchiveIDs[] = {
         .dataID = 0x1C0,
         .iconID = catching_charm_NCGR,
         .paletteID = catching_charm_NCLR,
+        .gen3ID = GBA_ITEM_NONE,
+    },
+    [ITEM_LONELY_MINT] = {
+        .dataID = 0x1C1,
+        .iconID = attack_mint_NCGR,
+        .paletteID = attack_mint_NCLR,
+        .gen3ID = GBA_ITEM_NONE,
+    },
+    [ITEM_ADAMANT_MINT] = {
+        .dataID = 0x1C2,
+        .iconID = attack_mint_NCGR,
+        .paletteID = attack_mint_NCLR,
+        .gen3ID = GBA_ITEM_NONE,
+    },
+    [ITEM_NAUGHTY_MINT] = {
+        .dataID = 0x1C3,
+        .iconID = attack_mint_NCGR,
+        .paletteID = attack_mint_NCLR,
+        .gen3ID = GBA_ITEM_NONE,
+    },
+    [ITEM_BRAVE_MINT] = {
+        .dataID = 0x1C4,
+        .iconID = attack_mint_NCGR,
+        .paletteID = attack_mint_NCLR,
+        .gen3ID = GBA_ITEM_NONE,
+    },
+    [ITEM_BOLD_MINT] = {
+        .dataID = 0x1C5,
+        .iconID = defense_mint_NCGR,
+        .paletteID = defense_mint_NCLR,
+        .gen3ID = GBA_ITEM_NONE,
+    },
+    [ITEM_IMPISH_MINT] = {
+        .dataID = 0x1C6,
+        .iconID = defense_mint_NCGR,
+        .paletteID = defense_mint_NCLR,
+        .gen3ID = GBA_ITEM_NONE,
+    },
+    [ITEM_LAX_MINT] = {
+        .dataID = 0x1C7,
+        .iconID = defense_mint_NCGR,
+        .paletteID = defense_mint_NCLR,
+        .gen3ID = GBA_ITEM_NONE,
+    },
+    [ITEM_RELAXED_MINT] = {
+        .dataID = 0x1C8,
+        .iconID = defense_mint_NCGR,
+        .paletteID = defense_mint_NCLR,
+        .gen3ID = GBA_ITEM_NONE,
+    },
+    [ITEM_MODEST_MINT] = {
+        .dataID = 0x1C9,
+        .iconID = sp_attack_mint_NCGR,
+        .paletteID = sp_attack_mint_NCLR,
+        .gen3ID = GBA_ITEM_NONE,
+    },
+    [ITEM_MILD_MINT] = {
+        .dataID = 0x1CA,
+        .iconID = sp_attack_mint_NCGR,
+        .paletteID = sp_attack_mint_NCLR,
+        .gen3ID = GBA_ITEM_NONE,
+    },
+    [ITEM_RASH_MINT] = {
+        .dataID = 0x1CB,
+        .iconID = sp_attack_mint_NCGR,
+        .paletteID = sp_attack_mint_NCLR,
+        .gen3ID = GBA_ITEM_NONE,
+    },
+    [ITEM_QUIET_MINT] = {
+        .dataID = 0x1CC,
+        .iconID = sp_attack_mint_NCGR,
+        .paletteID = sp_attack_mint_NCLR,
+        .gen3ID = GBA_ITEM_NONE,
+    },
+    [ITEM_CALM_MINT] = {
+        .dataID = 0x1CD,
+        .iconID = sp_defense_mint_NCGR,
+        .paletteID = sp_defense_mint_NCLR,
+        .gen3ID = GBA_ITEM_NONE,
+    },
+    [ITEM_GENTLE_MINT] = {
+        .dataID = 0x1CE,
+        .iconID = sp_defense_mint_NCGR,
+        .paletteID = sp_defense_mint_NCLR,
+        .gen3ID = GBA_ITEM_NONE,
+    },
+    [ITEM_CAREFUL_MINT] = {
+        .dataID = 0x1CF,
+        .iconID = sp_defense_mint_NCGR,
+        .paletteID = sp_defense_mint_NCLR,
+        .gen3ID = GBA_ITEM_NONE,
+    },
+    [ITEM_SASSY_MINT] = {
+        .dataID = 0x1D0,
+        .iconID = sp_defense_mint_NCGR,
+        .paletteID = sp_defense_mint_NCLR,
+        .gen3ID = GBA_ITEM_NONE,
+    },
+    [ITEM_TIMID_MINT] = {
+        .dataID = 0x1D1,
+        .iconID = speed_mint_NCGR,
+        .paletteID = speed_mint_NCLR,
+        .gen3ID = GBA_ITEM_NONE,
+    },
+    [ITEM_HASTY_MINT] = {
+        .dataID = 0x1D2,
+        .iconID = speed_mint_NCGR,
+        .paletteID = speed_mint_NCLR,
+        .gen3ID = GBA_ITEM_NONE,
+    },
+    [ITEM_JOLLY_MINT] = {
+        .dataID = 0x1D3,
+        .iconID = speed_mint_NCGR,
+        .paletteID = speed_mint_NCLR,
+        .gen3ID = GBA_ITEM_NONE,
+    },
+    [ITEM_NAIVE_MINT] = {
+        .dataID = 0x1D4,
+        .iconID = speed_mint_NCGR,
+        .paletteID = speed_mint_NCLR,
+        .gen3ID = GBA_ITEM_NONE,
+    },
+    [ITEM_SERIOUS_MINT] = {
+        .dataID = 0x1D5,
+        .iconID = neutral_mint_NCGR,
+        .paletteID = neutral_mint_NCLR,
+        .gen3ID = GBA_ITEM_NONE,
+    },
+    [ITEM_ABILITY_CAPSULE] = {
+        .dataID = 0x1D6,
+        .iconID = neutral_mint_NCGR, // for now
+        .paletteID = neutral_mint_NCLR,
+        .gen3ID = GBA_ITEM_NONE,
+    },
+    [ITEM_ABILITY_PATCH] = {
+        .dataID = 0x1D7,
+        .iconID = neutral_mint_NCGR, // for now
+        .paletteID = neutral_mint_NCLR,
         .gen3ID = GBA_ITEM_NONE,
     },
 };

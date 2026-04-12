@@ -1884,6 +1884,98 @@
     {
       "id": "pl_msg_00000394_00470",
       "en_US": "Catching Charms"
+    },
+    {
+      "id": "pl_msg_00000394_00471",
+      "en_US": "Lonely Mints"
+    },
+    {
+      "id": "pl_msg_00000394_00472",
+      "en_US": "Adamant Mints"
+    },
+    {
+      "id": "pl_msg_00000394_00473",
+      "en_US": "Naughty Mints"
+    },
+    {
+      "id": "pl_msg_00000394_00474",
+      "en_US": "Brave Mints"
+    },
+    {
+      "id": "pl_msg_00000394_00475",
+      "en_US": "Bold Mints"
+    },
+    {
+      "id": "pl_msg_00000394_00476",
+      "en_US": "Impish Mints"
+    },
+    {
+      "id": "pl_msg_00000394_00477",
+      "en_US": "Lax Mints"
+    },
+    {
+      "id": "pl_msg_00000394_00478",
+      "en_US": "Relaxed Mints"
+    },
+    {
+      "id": "pl_msg_00000394_00479",
+      "en_US": "Modest Mints"
+    },
+    {
+      "id": "pl_msg_00000394_00480",
+      "en_US": "Mild Mints"
+    },
+    {
+      "id": "pl_msg_00000394_00481",
+      "en_US": "Rash Mints"
+    },
+    {
+      "id": "pl_msg_00000394_00482",
+      "en_US": "Quiet Mints"
+    },
+    {
+      "id": "pl_msg_00000394_00483",
+      "en_US": "Calm Mints"
+    },
+    {
+      "id": "pl_msg_00000394_00484",
+      "en_US": "Gentle Mints"
+    },
+    {
+      "id": "pl_msg_00000394_00485",
+      "en_US": "Careful Mints"
+    },
+    {
+      "id": "pl_msg_00000394_00486",
+      "en_US": "Sassy Mints"
+    },
+    {
+      "id": "pl_msg_00000394_00487",
+      "en_US": "Timid Mints"
+    },
+    {
+      "id": "pl_msg_00000394_00488",
+      "en_US": "Hasty Mints"
+    },
+    {
+      "id": "pl_msg_00000394_00489",
+      "en_US": "Jolly Mints"
+    },
+    {
+      "id": "pl_msg_00000394_00490",
+      "en_US": "Naive Mints"
+    },
+    {
+      "id": "pl_msg_00000394_00491",
+      "en_US": "Serious Mints"
+    },
+    {
+      "id": "pl_msg_00000394_00492",
+      "en_US": "Ability Capsules"
+    },
+    {
+      "id": "pl_msg_00000394_00493",
+      "en_US": "Ability Patches"
     }
   ]
 }

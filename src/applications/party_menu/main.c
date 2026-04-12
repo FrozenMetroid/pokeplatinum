@@ -11,6 +11,7 @@
 #include "generated/items.h"
 #include "generated/moves.h"
 #include "generated/pokemon_contest_types.h"
+#include "generated/natures.h"
 
 #include "applications/party_menu/defs.h"
 #include "applications/party_menu/form_change.h"
@@ -2713,6 +2714,34 @@ static u8 HandleSpecialInput(PartyMenuApplication *application)
 
     return menuInput;
 }
+BOOL Item_IsNatureMint(u16 item)
+{
+    return (item >= ITEM_LONELY_MINT && item <= ITEM_SERIOUS_MINT);
+}
+
+struct NatureMintMapping sNatureMintMapping[] = {
+    {ITEM_LONELY_MINT,      NATURE_LONELY},
+    {ITEM_ADAMANT_MINT,     NATURE_ADAMANT},
+    {ITEM_NAUGHTY_MINT,     NATURE_NAUGHTY},
+    {ITEM_BRAVE_MINT,       NATURE_BRAVE},
+    {ITEM_BOLD_MINT,        NATURE_BOLD},
+    {ITEM_IMPISH_MINT,      NATURE_IMPISH},
+    {ITEM_LAX_MINT,         NATURE_LAX},
+    {ITEM_RELAXED_MINT,     NATURE_RELAXED},
+    {ITEM_MODEST_MINT,      NATURE_MODEST},
+    {ITEM_MILD_MINT,        NATURE_MILD},
+    {ITEM_RASH_MINT,        NATURE_RASH},
+    {ITEM_QUIET_MINT,       NATURE_QUIET},
+    {ITEM_CALM_MINT,        NATURE_CALM},
+    {ITEM_GENTLE_MINT,      NATURE_GENTLE},
+    {ITEM_CAREFUL_MINT,     NATURE_CAREFUL},
+    {ITEM_SASSY_MINT,       NATURE_SASSY},
+    {ITEM_TIMID_MINT,       NATURE_TIMID},
+    {ITEM_HASTY_MINT,       NATURE_HASTY},
+    {ITEM_JOLLY_MINT,       NATURE_JOLLY},
+    {ITEM_NAIVE_MINT,       NATURE_NAIVE},
+    {ITEM_SERIOUS_MINT,     NATURE_SERIOUS},
+};
 
 static int ApplyItemEffectOnPokemon(PartyMenuApplication *app)
 {
@@ -2725,6 +2754,29 @@ static int ApplyItemEffectOnPokemon(PartyMenuApplication *app)
         PartyMenu_SetupFormChangeAnim(app);
         return 31;
     }
+    if (Item_IsNatureMint(app->partyMenu->usedItemID)) 
+    {
+        Pokemon *mon;
+        for (u8 i = 0; i < NELEMS(sNatureMintMapping); i++) {
+            if (sNatureMintMapping[i].mint == app->partyMenu->usedItemID) {
+                mon = Party_GetPokemonBySlotIndex(app->partyMenu->party, app->currPartySlot);
+                u8 desiredNature = sNatureMintMapping[i].nature;
+                SET_MON_NATURE_OVERRIDE(mon, desiredNature);
+                Bag_TryRemoveItem(app->partyMenu->bag, app->partyMenu->usedItemID, 1, HEAP_ID_PARTY_MENU);
+                break;
+            }
+        }
+        Heap_Free(itemData);
+        String *msg = MessageLoader_GetNewString(app->messageLoader, PartyMenu_Text_NatureMintConfirmation);
+
+        StringTemplate_SetNickname(app->template, 0, Pokemon_GetBoxPokemon(mon));
+        StringTemplate_Format(app->template, app->tmpString, msg);
+        String_Free(msg);
+        PartyMenu_PrintLongMessage(app, PRINT_MESSAGE_PRELOADED, TRUE);
+        app->stateAfterMessage = PARTY_MENU_STATE_32;
+        return PARTY_MENU_STATE_SHOW_MESSAGE_THEN_NEXT_STATE;
+    }
+
 
     if (Item_Get(itemData, ITEM_PARAM_PP_UP) != 0 || Item_Get(itemData, ITEM_PARAM_PP_MAX) != 0) {
         Heap_Free(itemData);

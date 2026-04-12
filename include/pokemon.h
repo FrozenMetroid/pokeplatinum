@@ -36,6 +36,29 @@
 
 #define SHINY_ODDS 8
 
+// MON_DATA_UNUSED_113 (2 bits) fields
+#define DUMMY_P2_1_HIDDEN_ABILITY_MASK (0x01)
+#define DUMMY_P2_1_HAS_HIT_NECESSARY_CRITICAL_HITS (0x02)
+
+// MON_DATA_UNUSED_114 (16 bits) fields
+#define DUMMY_P2_2_CHANGE_ABILITY_SLOT (0x0001)
+#define DUMMY_P2_2_NATURE_OVERRIDE (0x003E)
+#define DUMMY_P2_2_HP_IV_OVERRIDE (0x0040)
+#define DUMMY_P2_2_ATTACK_IV_OVERRIDE (0x0080)
+#define DUMMY_P2_2_DEFENSE_IV_OVERRIDE (0x0100)
+#define DUMMY_P2_2_SPEED_IV_OVERRIDE (0x0200)
+#define DUMMY_P2_2_SP_ATTACK_IV_OVERRIDE (0x0400)
+#define DUMMY_P2_2_SP_DEFENSE_IV_OVERRIDE (0x0800)
+
+#define SET_MON_NATURE_OVERRIDE(mon, nature) { \
+    u16 tempvarassumeunused = Pokemon_GetValue(mon, MON_DATA_UNUSED_114, NULL); \
+    tempvarassumeunused &= ~DUMMY_P2_2_NATURE_OVERRIDE; \
+    tempvarassumeunused |= ((nature+1) << 1) & DUMMY_P2_2_NATURE_OVERRIDE; \
+    Pokemon_SetValue(mon, MON_DATA_UNUSED_114, &tempvarassumeunused); \
+}
+#define GET_MON_NATURE_OVERRIDE(mon) (((Pokemon_GetValue(mon, MON_DATA_UNUSED_114, NULL) & DUMMY_P2_2_NATURE_OVERRIDE) >> 1) & 0x1F)
+#define GET_BOX_MON_NATURE_OVERRIDE(boxMon) (((BoxPokemon_GetValue(boxMon, MON_DATA_UNUSED_114, NULL) & DUMMY_P2_2_NATURE_OVERRIDE) >> 1) & 0x1F)
+
 enum FriendshipEvents {
     FRIENDSHIP_EVENT_LEVEL_UP,
     FRIENDSHIP_EVENT_UNK_1,

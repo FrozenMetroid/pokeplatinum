@@ -715,3 +715,15 @@ oval_charm.NCGR
 oval_charm.NCLR
 catching_charm.NCGR
 catching_charm.NCLR
+attack_mint.NCGR
+attack_mint.NCLR
+defense_mint.NCGR
+defense_mint.NCLR
+sp_attack_mint.NCGR
+sp_attack_mint.NCLR
+sp_defense_mint.NCGR
+sp_defense_mint.NCLR
+speed_mint.NCGR
+speed_mint.NCLR
+neutral_mint.NCGR
+neutral_mint.NCLR

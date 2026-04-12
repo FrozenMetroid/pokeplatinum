@@ -79,6 +79,9 @@ TwinleafTownPlayerHouse2F_RivalTriggerSouth:
 
 TwinleafTownPlayerHouse2F_Rival:
     LockAll
+.if DEBUG_GIVE_SHINY_CHARM_FROM_START
+    AddItem ITEM_SHINY_CHARM, 1, VAR_RESULT
+.endif
     ClearFlag FLAG_HIDE_TWINLEAF_TOWN_PLAYER_HOUSE_2F_RIVAL
     AddObject LOCALID_RIVAL
     ApplyMovement LOCALID_RIVAL, TwinleafTownPlayerHouse2F_Movement_RivalEnterRoom

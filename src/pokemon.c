@@ -2427,10 +2427,25 @@ u8 BoxPokemon_GetNature(BoxPokemon *boxMon)
 {
     BOOL reencrypt = BoxPokemon_EnterDecryptionContext(boxMon);
     u32 monPersonality = BoxPokemon_GetValue(boxMon, MON_DATA_PERSONALITY, NULL);
+    u32 nature_override = GET_BOX_MON_NATURE_OVERRIDE(boxMon);
 
     BoxPokemon_ExitDecryptionContext(boxMon, reencrypt);
 
-    return Pokemon_GetNatureOf(monPersonality);
+    if (nature_override != 0) {
+        return nature_override - 1;
+    }
+    
+    // pulled from HGE
+
+    // lord forgive me, i know not what i do
+    // modulo operator in this world is only signed!  0x80000000 % 25 = 23
+    // could just use GetNatureFromPersonality from the rom, but this was a good exercise anyway
+    if (monPersonality & 0x80000000)
+        monPersonality = ((((u32)monPersonality & 0x7FFFFFFF) % 25) + 23) % 25;
+    else
+        monPersonality %= 25;
+
+    return monPersonality;
 }
 
 u8 Pokemon_GetNatureOf(u32 monPersonality)
