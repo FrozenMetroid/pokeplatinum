@@ -65,8 +65,7 @@ _121:
     PayPrizeMoney 
     // {0} got ${1} for winning!
     PrintMessage BattleStrings_Text_PlayerGotMoneyForWinning, TAG_TRNAME_NUM, BTLSCR_PLAYER, BTLSCR_MSG_TEMP
-    Wait 
-    WaitButtonABTime 60
+    Wait
 
 _135:
     GenerateEndOfBattleItem 
@@ -74,10 +73,10 @@ _135:
     CompareVarToValue OPCODE_EQU, BTLVAR_MSG_TEMP, 0, _150
     // {0} picked up ${1}!
     PrintMessage BattleStrings_Text_PlayerPickedUpMoney, TAG_TRNAME_NUM, BTLSCR_PLAYER, BTLSCR_MSG_TEMP
-    Wait 
-    WaitButtonABTime 60
+    Wait
 
 _150:
+    WaitABButtonsOrScreenTap
     FadeOutBattle 
     Wait 
     End 

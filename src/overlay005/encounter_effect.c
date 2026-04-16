@@ -148,7 +148,8 @@ static const SysTaskFunc sEncounterEffectTaskFuncs[] = {
     EncounterEffect_GalacticBoss,
 
     EncounterEffect_Frontier,
-    EncounterEffect_Double
+    EncounterEffect_Double,
+    EncounterEffect_LeaderJasmine,
 };
 
 static const u8 Unk_ov5_021F9988[8] = {

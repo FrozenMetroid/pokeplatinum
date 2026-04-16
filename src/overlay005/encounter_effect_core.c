@@ -2604,7 +2604,7 @@ typedef struct GymLeaderEncounterParam {
 
 #define GYM_LEADER(NAME) (TRAINER_CLASS_LEADER_##NAME - TRAINER_CLASS_LEADER_ROARK)
 
-static const GymLeaderEncounterParam sGymLeaderEncounterParams[8] = {
+static const GymLeaderEncounterParam sGymLeaderEncounterParams[9] = {
     {
         .endX = 214 * FX32_ONE,
         .trainerID = TRAINER_LEADER_ROARK,
@@ -2715,6 +2715,20 @@ static const GymLeaderEncounterParam sGymLeaderEncounterParams[8] = {
         .bannerPlttIdx = leader_volkner_banner_NCLR,
         .bannerTileIdx = leader_volkner_banner_NCGR,
         .bannerTilemapIdx = leader_volkner_banner_NSCR,
+        .padding = 0,
+    },
+    {
+        .endX = 214 * FX32_ONE,
+        .trainerID = TRAINER_LEADER_JASMINE,
+        .trainerClass = TRAINER_CLASS_JASMINE,
+        .unused = 1,
+        .mugshotPlttIdx = jasmine_mugshot_NCLR,
+        .mugshotTileIdx = jasmine_mugshot_NCGR,
+        .mugshotCellIdx = jasmine_mugshot_cell_NCER,
+        .mugshotAnimIdx = jasmine_mugshot_anim_NANR,
+        .bannerPlttIdx = jasmine_banner_NCLR,
+        .bannerTileIdx = jasmine_banner_NCGR,
+        .bannerTilemapIdx = jasmine_banner_NSCR,
         .padding = 0,
     },
 };
@@ -3199,6 +3213,16 @@ void EncounterEffect_LeaderVolkner(SysTask *task, void *param)
 {
     EncounterEffect *encEffect = param;
     BOOL done = EncounterEffect_GymLeader(encEffect, HEAP_ID_FIELD1, &sGymLeaderEncounterParams[7]);
+
+    if (done == TRUE) {
+        EncounterEffect_Finish(encEffect, task);
+    }
+}
+
+void EncounterEffect_LeaderJasmine(SysTask *task, void *param)
+{
+    EncounterEffect *encEffect = param;
+    BOOL done = EncounterEffect_GymLeader(encEffect, HEAP_ID_FIELD1, &sGymLeaderEncounterParams[8]);
 
     if (done == TRUE) {
         EncounterEffect_Finish(encEffect, task);

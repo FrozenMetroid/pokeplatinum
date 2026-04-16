@@ -1238,6 +1238,10 @@
     .long 223
     .endm
 
+    .macro WaitABButtonsOrScreenTap
+    .long 224
+    .endm
+
     .text
     .globl _start
 _start:

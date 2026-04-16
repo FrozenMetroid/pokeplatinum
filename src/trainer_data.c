@@ -329,7 +329,7 @@ static void TrainerData_BuildParty(FieldBattleDTO *dto, int battler, enum HeapID
 #define SHINY_VALUE(otid, pid) (((otid & 0xffff0000) >> 16) ^ (otid & 0xffff) ^ ((pid & 0xffff0000) >> 16) ^ (pid & 0xffff))
 #define SHINY_CHECK(otid, pid) (SHINY_VALUE(otid, pid) <= SHINY_ODDS)
 
-typedef struct ExpandedTrainerMonData {
+typedef struct __attribute__((packed)) ExpandedTrainerMonData {
     u8 ivs;
     u8 abilityslot;
     u16 level;
@@ -372,6 +372,7 @@ static void TrainerData_BuildParty(FieldBattleDTO *dto, int battler, enum HeapID
 
     Party_InitWithCapacity(dto->parties[battler], MAX_PARTY_SIZE);
     trmon = Heap_Alloc(heapID, sizeof(ExpandedTrainerMonData) * MAX_PARTY_SIZE);
+    EmulatorLog("ExpandedTrainerMonData size: %d", sizeof(ExpandedTrainerMonData));
     mon = Pokemon_New(heapID);
 
     Trainer_LoadParty(dto->trainerIDs[battler], trmon);
@@ -380,12 +381,19 @@ static void TrainerData_BuildParty(FieldBattleDTO *dto, int battler, enum HeapID
         ? 120
         : 136;
 
-    for (i = 0; i < dto->trainer[battler].header.partySize; i++) {
-        species = trmon[i].monsno & 0x07FF;
-        // form is included in the u16 for the species number in the trainer data, so extract it bitwise
-        form = (trmon[i].monsno & 0xF800) >> TRAINER_MON_FORM_SHIFT;
+    u8 partySize = dto->trainer[battler].header.partySize;
+    EmulatorLog("Party size: %d", partySize);
 
-        rnd = trmon[i].ivs + trmon[i].level + species + dto->trainerIDs[battler];
+    for (i = 0; i < partySize; i++) {
+        u8 *base = (u8 *)trmon;
+        ExpandedTrainerMonData *data = (ExpandedTrainerMonData *)(base + i * 0x56); // need to specify the offset for each mon because there were issues with the sizeof returning 0x58 instead of 0x56 and so everything was shifted
+        EmulatorLog("Processing mon %d", i + 1);
+        species = data->monsno & 0x07FF;
+        EmulatorLog("Species: %d", species);
+        // form is included in the u16 for the species number in the trainer data, so extract it bitwise
+        form = (data->monsno & 0xF800) >> TRAINER_MON_FORM_SHIFT;
+
+        rnd = data->ivs + data->level + species + dto->trainerIDs[battler];
         LCRNG_SetSeed(rnd);
 
         for (j = 0; j < dto->trainer[battler].header.trainerType; j++) {
@@ -393,9 +401,9 @@ static void TrainerData_BuildParty(FieldBattleDTO *dto, int battler, enum HeapID
         }
 
         rnd = (rnd << 8) + genderMod;
-        ivs = trmon[i].ivs * MAX_IVS_SINGLE_STAT / MAX_IV_SCALE;
+        ivs = data->ivs * MAX_IVS_SINGLE_STAT / MAX_IV_SCALE;
 
-        Pokemon_InitWith(mon, species, trmon[i].level, ivs, TRUE, rnd, OTID_NOT_SHINY, 0);
+        Pokemon_InitWith(mon, species, data->level, ivs, TRUE, rnd, OTID_NOT_SHINY, 0);
         Pokemon_SetValue(mon, MON_DATA_FORM, &form);
 
         // Default ability handling if it's not overridden later
@@ -403,7 +411,7 @@ static void TrainerData_BuildParty(FieldBattleDTO *dto, int battler, enum HeapID
         ability2 = SpeciesData_GetFormValue(species, form, SPECIES_DATA_ABILITY_2);
         // add hidden ability here later
         if (ability2 != 0) {
-            if (trmon[i].abilityslot & 1 || trmon[i].abilityslot == 32) {
+            if (data->abilityslot & 1 || data->abilityslot == 32) {
                 Pokemon_SetValue(mon, MON_DATA_ABILITY, &ability1);
             } else {
                 Pokemon_SetValue(mon, MON_DATA_ABILITY, &ability2);
@@ -411,41 +419,45 @@ static void TrainerData_BuildParty(FieldBattleDTO *dto, int battler, enum HeapID
         } else {
             Pokemon_SetValue(mon, MON_DATA_ABILITY, &ability1);
         }
+        EmulatorLog("Set ability: %d", Pokemon_GetValue(mon, MON_DATA_ABILITY, NULL));
 
         // Explicit overrides from expanded record
-        Pokemon_SetValue(mon, MON_DATA_HELD_ITEM, &trmon[i].itemno);
+        Pokemon_SetValue(mon, MON_DATA_HELD_ITEM, &data->itemno);
 
         for (j = 0; j < 4; j++) {
-            if (trmon[i].moves[j] != 0) {
-                Pokemon_SetMoveSlot(mon, trmon[i].moves[j], j);
+            if (data->moves[j] != 0) {
+                Pokemon_SetMoveSlot(mon, data->moves[j], j);
             }
         }
 
-        if (trmon[i].ability != 0) {
-            Pokemon_SetValue(mon, MON_DATA_ABILITY, &trmon[i].ability);
+        if (data->ability != 0) {
+            Pokemon_SetValue(mon, MON_DATA_ABILITY, &data->ability);
         }
 
-        if (trmon[i].ball != 0) {
-            Pokemon_SetValue(mon, MON_DATA_POKEBALL, &trmon[i].ball);
-        } // defaults to pokeball
+        if (data->ball != 0) {
+            Pokemon_SetValue(mon, MON_DATA_POKEBALL, &data->ball);
+        } else {
+            u16 pokeBall = ITEM_POKE_BALL;
+            Pokemon_SetValue(mon, MON_DATA_POKEBALL, &pokeBall);
+        }
 
         for (j = 0; j < 6; j++) {
-            if (trmon[i].ivnums[j] > 0) { // only do this if the user specified IVs
-                Pokemon_SetValue(mon, MON_DATA_HP_IV + j, &trmon[i].ivnums[j]);
+            if (data->ivnums[j] > 0) { // only do this if the user specified IVs
+                Pokemon_SetValue(mon, MON_DATA_HP_IV + j, &data->ivnums[j]);
             }
         }
         for (j = 0; j < 6; j++) { // defaulting to 0 every time if not specified is fine
-            Pokemon_SetValue(mon, MON_DATA_HP_EV + j, &trmon[i].evnums[j]);
+            Pokemon_SetValue(mon, MON_DATA_HP_EV + j, &data->evnums[j]);
         }
 
-        if (trmon[i].nature != 0xFF) {
+        if (data->nature != 0xFF) {
             pid = Pokemon_GetValue(mon, MON_DATA_PERSONALITY, NULL);
             u8 currentNature = pid % 25;
-            pid = pid + trmon[i].nature - currentNature;
+            pid = pid + data->nature - currentNature;
             Pokemon_SetValue(mon, MON_DATA_PERSONALITY, &pid);
         }
 
-        if (trmon[i].shinyLock != 0) {
+        if (data->shinyLock != 0) {
             pid = Pokemon_GetValue(mon, MON_DATA_PERSONALITY, NULL);
             do {
                 id = (LCRNG_Next() | (LCRNG_Next() << 16));
@@ -454,47 +466,47 @@ static void TrainerData_BuildParty(FieldBattleDTO *dto, int battler, enum HeapID
         }
 
         Pokemon_CalcStats(mon);
-        Pokemon_SetValue(mon, MON_DATA_STATUS, &trmon[i].status);
+        Pokemon_SetValue(mon, MON_DATA_STATUS, &data->status);
 
         // the following is from HGE but I never foresee myself using them, so
 
-        // if (trmon[i].additionalflags & TRDATATYPE_EXTRA_HP) {
-        //     Pokemon_SetValue(mon, MON_DATA_MAX_HP, &trmon[i].hp);
-        //     Pokemon_SetValue(mon, MON_DATA_HP, &trmon[i].hp);
+        // if (data->additionalflags & TRDATATYPE_EXTRA_HP) {
+        //     Pokemon_SetValue(mon, MON_DATA_MAX_HP, &data->hp);
+        //     Pokemon_SetValue(mon, MON_DATA_HP, &data->hp);
         // }
-        // if (trmon[i].additionalflags & TRDATATYPE_EXTRA_ATTACK) {
-        //     Pokemon_SetValue(mon, MON_DATA_ATK, &trmon[i].atk);
+        // if (data->additionalflags & TRDATATYPE_EXTRA_ATTACK) {
+        //     Pokemon_SetValue(mon, MON_DATA_ATK, &data->atk);
         // }
-        // if (trmon[i].additionalflags & TRDATATYPE_EXTRA_DEFENSE) {
-        //     Pokemon_SetValue(mon, MON_DATA_DEF, &trmon[i].def);
+        // if (data->additionalflags & TRDATATYPE_EXTRA_DEFENSE) {
+        //     Pokemon_SetValue(mon, MON_DATA_DEF, &data->def);
         // }
-        // if (trmon[i].additionalflags & TRDATATYPE_EXTRA_SPEED) {
-        //     Pokemon_SetValue(mon, MON_DATA_SPEED, &trmon[i].speed);
+        // if (data->additionalflags & TRDATATYPE_EXTRA_SPEED) {
+        //     Pokemon_SetValue(mon, MON_DATA_SPEED, &data->speed);
         // }
-        // if (trmon[i].additionalflags & TRDATATYPE_EXTRA_SP_ATTACK) {
-        //     Pokemon_SetValue(mon, MON_DATA_SP_ATK, &trmon[i].spatk);
+        // if (data->additionalflags & TRDATATYPE_EXTRA_SP_ATTACK) {
+        //     Pokemon_SetValue(mon, MON_DATA_SP_ATK, &data->spatk);
         // }
-        // if (trmon[i].additionalflags & TRDATATYPE_EXTRA_SP_DEFENSE) {
-        //     Pokemon_SetValue(mon, MON_DATA_SP_DEF, &trmon[i].spdef);
+        // if (data->additionalflags & TRDATATYPE_EXTRA_SP_DEFENSE) {
+        //     Pokemon_SetValue(mon, MON_DATA_SP_DEF, &data->spdef);
         // }
-        // if (trmon[i].additionalflags & TRDATATYPE_EXTRA_TYPES) {
+        // if (data->additionalflags & TRDATATYPE_EXTRA_TYPES) {
         //     for (j = 0; j < 2; j++) {
-        //         Pokemon_SetValue(mon, MON_DATA_TYPE_1 + j, &trmon[i].types[j]);
+        //         Pokemon_SetValue(mon, MON_DATA_TYPE_1 + j, &data->types[j]);
         //     }
         // }
-        // if (trmon[i].additionalflags & TRDATATYPE_EXTRA_PP) {
+        // if (data->additionalflags & TRDATATYPE_EXTRA_PP) {
         //     for (j = 0; j < 4; j++) {
-        //         Pokemon_SetValue(mon, MON_DATA_MOVE1_PP + j, &trmon[i].ppcounts[j]);
+        //         Pokemon_SetValue(mon, MON_DATA_MOVE1_PP + j, &data->ppcounts[j]);
         //     }
         // }
-        // if (trmon[i].additionalflags & TRDATATYPE_EXTRA_NICKNAME) {
+        // if (data->additionalflags & TRDATATYPE_EXTRA_NICKNAME) {
         //     u32 one = 1;
         //     Pokemon_SetValue(mon, MON_DATA_HAS_NICKNAME, &one);
-        //     Pokemon_SetValue(mon, MON_DATA_NICKNAME, trmon[i].nickname);
+        //     Pokemon_SetValue(mon, MON_DATA_NICKNAME, data->nickname);
         // }
 
-        Pokemon_SetBallSeal(trmon[i].ballSeal, mon, heapID);
-        TrainerMon_FrustrationCheckAndSetFriendship(mon);
+        Pokemon_SetBallSeal(data->ballSeal, mon, heapID);
+        TrainerMon_FrustrationCheckAndSetFriendship(mon); // from HeartGold
         Party_AddPokemon(dto->parties[battler], mon);
     }
 

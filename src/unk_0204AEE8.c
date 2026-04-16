@@ -102,7 +102,8 @@ static const u16 sTrainerClassToObjectID[][2] = {
     { TRAINER_CLASS_AROMA_LADY, OBJ_EVENT_GFX_POKEMON_BREEDER_F },
     { TRAINER_CLASS_IDOL, OBJ_EVENT_GFX_IDOL },
     { TRAINER_CLASS_ARTIST, OBJ_EVENT_GFX_ARTIST },
-    { TRAINER_CLASS_POKE_KID, OBJ_EVENT_GFX_PIKACHU }
+    { TRAINER_CLASS_POKE_KID, OBJ_EVENT_GFX_PIKACHU },
+    { TRAINER_CLASS_JASMINE, OBJ_EVENT_GFX_JASMINE} // I know this is the battle frontier but /shrug
 };
 
 StringTemplate *BattleFrontier_MakeSeenBanlistSpeciesMsg(SaveData *saveData, u16 numPokemonRequired, u16 unused2, u8 unused3, u8 *outNumBannedSeen)

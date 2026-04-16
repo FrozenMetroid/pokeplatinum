@@ -937,7 +937,11 @@ static BOOL Field_UpdateSafari(FieldSystem *fieldSystem)
     u16 *steps = FieldOverworldState_GetSafariStepCount(SaveData_GetFieldOverworldState(fieldSystem->saveData));
     (*steps)++;
 
+    #ifdef INCREASE_SAFARI_STEPS
+    if (*steps >= 1000) {
+    #else
     if (*steps >= 500) {
+    #endif
         ScriptManager_Set(fieldSystem, SCRIPT_ID(SAFARI_GAME, 1), NULL);
         return TRUE;
     }

@@ -1388,6 +1388,7 @@ static BOOL TrainerIsGymLeaderE4OrChampion(u16 trainerClass)
     case TRAINER_CLASS_ELITE_FOUR_FLINT:
     case TRAINER_CLASS_ELITE_FOUR_LUCIAN:
     case TRAINER_CLASS_CHAMPION_CYNTHIA:
+    case TRAINER_CLASS_JASMINE:
         return TRUE;
         break;
     }

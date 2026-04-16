@@ -27,14 +27,14 @@ void Options_Init(Options *options)
 {
     MI_CpuFill8(options, 0, sizeof(Options));
 
-    #ifdef TESTING_SPEED_UP_TEXT
+    #ifdef TESTING_SET_FAST_TEXT
     options->textSpeed = OPTIONS_TEXT_SPEED_FAST;
     #else
     options->textSpeed = OPTIONS_TEXT_SPEED_NORMAL;
     #endif
     options->soundMode = OPTIONS_SOUND_MODE_STEREO;
     options->battleStyle = OPTIONS_BATTLE_STYLE_SHIFT;
-    #ifdef TESTING_SPEED_UP_BATTLES
+    #ifdef TESTING_SET_BATTLE_SCENE_OFF
     options->battleScene = OPTIONS_BATTLE_SCENE_OFF;
     #else
     options->battleScene = OPTIONS_BATTLE_SCENE_ON;

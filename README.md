@@ -40,6 +40,7 @@ Credits:
 - Pokémon that require trading to evolve can now evolve in singleplayer
     Pokémon that required holding an item to evolve while trading now simply need to hold the item and level up once
     Pokémon that evolved by trading will now evolve with a Linking Cord
+- 1000 steps in Safari Zone instead of 500
 
 # Battle Changes
 

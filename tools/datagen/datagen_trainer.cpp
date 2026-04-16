@@ -783,7 +783,7 @@ static void ParseAndPackParty(const rapidjson::Document &doc, size_t partySize, 
         u16 nickname[11] = {};
         FillU16Array(m, "nickname", nickname, 11); // doesn't work with strings
 
-        u16 ballSeal = static_cast<u16>(GetUintOr(m, "ballSeal", 0));
+        u16 ballSeal = static_cast<u16>(GetUintOr(m, "ball_seal", 0));
 
         // now start writing everything into the file
         WriteU8(buf, offset, ivs);                // 0x00
@@ -963,8 +963,6 @@ int main(int argc, char **argv) // same as the one above but with one line chang
     return EXIT_SUCCESS;
 
     // static_assert(sizeof(PackedExpandedTrainerMonData) == 0x56, "PackedExpandedTrainerMonData size mismatch");
-
-    // everything else identical
 }
 
 #endif

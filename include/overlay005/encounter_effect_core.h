@@ -29,6 +29,7 @@ void EncounterEffect_LeaderFantina(SysTask *task, void *param);
 void EncounterEffect_LeaderCandice(SysTask *task, void *param);
 void EncounterEffect_LeaderByron(SysTask *task, void *param);
 void EncounterEffect_LeaderVolkner(SysTask *task, void *param);
+void EncounterEffect_LeaderJasmine(SysTask *task, void *param);
 void EncounterEffect_EliteFourAaron(SysTask *task, void *param);
 void EncounterEffect_EliteFourBertha(SysTask *task, void *param);
 void EncounterEffect_EliteFourFlint(SysTask *task, void *param);

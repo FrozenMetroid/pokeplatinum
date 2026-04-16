@@ -283,8 +283,8 @@ static const Sound_TileBehaviorFootStep Sound_TileBehaviorFootStepData[] = {
     {TILE_BEHAVIOR_MUD_DEEP,            SEQ_SE_DP_MARSH_WALK},
     {TILE_BEHAVIOR_MUD_WITH_GRASS,      SEQ_SE_DP_MARSH_WALK},
     {TILE_BEHAVIOR_MUD_DEEP_WITH_GRASS, SEQ_SE_DP_MARSH_WALK},
-    {TILE_BEHAVIOR_TALL_GRASS,          SEQ_SE_DP_KUSA},
-    {TILE_BEHAVIOR_VERY_TALL_GRASS,     SEQ_SE_DP_KUSA},
+    {TILE_BEHAVIOR_TALL_GRASS,          SEQ_SE_PL_ASHIOTO_GRASS}, // SEQ_SE_PL_KUSA lowkey bad
+    {TILE_BEHAVIOR_VERY_TALL_GRASS,     SEQ_SE_PL_ASHIOTO_GRASS},
     {TILE_BEHAVIOR_SAND,                SEQ_SE_PL_ASHIOTO_SAND},
     {TILE_BEHAVIOR_CAVE_FLOOR,          SEQ_SE_PL_ASHIOTO_CAVE},
     {TILE_BEHAVIOR_FLAT_GRASS,          SEQ_SE_PL_ASHIOTO_GRASS}, // haven't defined this behavior on any maps because we can't edit map data in the decomp yet

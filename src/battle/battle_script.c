@@ -309,8 +309,9 @@ static BOOL BtlCmd_WaitTime(BattleSystem *battleSys, BattleContext *battleCtx);
 static BOOL BtlCmd_CheckCurMoveIsType(BattleSystem *battleSys, BattleContext *battleCtx);
 static BOOL BtlCmd_LoadArchivedMonData(BattleSystem *battleSys, BattleContext *battleCtx);
 static BOOL BtlCmd_RefreshMonData(BattleSystem *battleSys, BattleContext *battleCtx);
-static BOOL BtlCmd_End(BattleSystem *battleSys, BattleContext *battleCtx);
 static BOOL BtlCmd_CheckFlingItem(BattleSystem *battleSys, BattleContext *battleCtx);
+static BOOL BtlCmd_End(BattleSystem *battleSys, BattleContext *battleCtx);
+static BOOL BtlCmd_WaitABScreenTap(BattleSystem *battleSys, BattleContext *battleCtx);
 
 static int BattleScript_Read(BattleContext *battleCtx);
 static void BattleScript_Iter(BattleContext *battleCtx, int i);
@@ -571,7 +572,8 @@ static const BtlCmd sBattleCommands[] = {
     BtlCmd_LoadArchivedMonData,
     BtlCmd_RefreshMonData,
     BtlCmd_CheckFlingItem,
-    BtlCmd_End
+    BtlCmd_End,
+    BtlCmd_WaitABScreenTap
 };
 
 BOOL BattleScript_Exec(BattleSystem *battleSys, BattleContext *battleCtx)
@@ -9762,6 +9764,18 @@ static BOOL BtlCmd_End(BattleSystem *battleSys, BattleContext *battleCtx)
 {
     battleCtx->battleProgressFlag = TRUE;
     return BattleSystem_PopScript(battleCtx);
+}
+
+static BOOL CheckABOrScreenTap(void *test) {
+    return (JOY_NEW(PAD_BUTTON_A | PAD_BUTTON_B) != 0 || gSystem.touchPressed != 0);
+}
+
+static BOOL BtlCmd_WaitABScreenTap(BattleSystem *battleSys, BattleContext *battleCtx)
+{
+    if (CheckABOrScreenTap(NULL)) {
+        BattleScript_Iter(battleCtx, 1);
+    }
+    battleCtx->battleProgressFlag = TRUE;
 }
 
 /**

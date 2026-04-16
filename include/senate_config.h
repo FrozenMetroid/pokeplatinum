@@ -23,6 +23,11 @@ in the Pokedex if you fought it in the Frontier
 */
 #define SEENPOKEMON_FRONTIER
 
+/*
+500 to 1000
+*/
+#define INCREASE_SAFARI_STEPS
+
 
 
 /*
