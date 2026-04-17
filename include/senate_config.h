@@ -28,6 +28,12 @@ in the Pokedex if you fought it in the Frontier
 */
 #define INCREASE_SAFARI_STEPS
 
+/*
+Shortened timer for Honey Tree
+30 mins instead of 6 hours
+*/
+#define HONEYTREE_SHORTENED_TIMER
+
 
 
 /*
@@ -65,11 +71,12 @@ in the Pokedex if you fought it in the Frontier
 #define BATTLE_ADD_ARTILLERY
 
 
-// The following are always applied because they deal with some subscripts
+// The following are always applied because they deal with some subscripts and/or things that aren't easily configurable
 // Modernization:
 // 1) Storm Drain and Lightning Rod
 // 2) Rapid Spin
 // 3) Sturdy
+// 4) Modern Exp. Share
 
 
 

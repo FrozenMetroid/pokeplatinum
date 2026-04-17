@@ -23,6 +23,7 @@ void Player_Init(PlayerSave *player)
     Coins_Init(&player->coins);
     PlayTime_Init(&player->playTime);
     player->mostRecentRepel = 0;
+    player->partyWideExpShare = FALSE;
 }
 
 TrainerInfo *SaveData_GetTrainerInfo(SaveData *saveData)
@@ -49,7 +50,7 @@ PlayTime *SaveData_GetPlayTime(SaveData *saveData)
     return &state->playTime;
 }
 
-u16 SaveData_GetMostRecentRepel(SaveData *saveData)
+u8 SaveData_GetMostRecentRepel(SaveData *saveData)
 {
     PlayerSave *state = SaveData_SaveTable(saveData, SAVE_TABLE_ENTRY_PLAYER);
     return state->mostRecentRepel;
@@ -61,3 +62,17 @@ void SaveData_SetMostRecentRepel(SaveData *saveData, u16 repel)
     state->mostRecentRepel = repel;
     return;
 }
+
+BOOL SaveData_GetExpShareStatus(SaveData *saveData)
+{
+    PlayerSave *state = SaveData_SaveTable(saveData, SAVE_TABLE_ENTRY_PLAYER);
+    return state->partyWideExpShare;
+}
+
+void SaveData_SetExpShareStatus(SaveData *saveData, u8 status)
+{
+    GF_ASSERT(status == 0 || status == 1);
+    PlayerSave *state = SaveData_SaveTable(saveData, SAVE_TABLE_ENTRY_PLAYER);
+    state->partyWideExpShare = status;
+    return;
+} 

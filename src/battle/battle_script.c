@@ -2425,19 +2425,16 @@ static BOOL BtlCmd_CalcExpGain(BattleSystem *battleSys, BattleContext *battleCtx
     if ((battlerData->battlerType & BATTLER_TYPE_SOLO_ENEMY) && (battleType & BATTLE_TYPE_NO_EXPERIENCE) == FALSE) {
         int i;
         int totalMonsGainingExp = 0;
-        int totalMonsWithExpShare = 0;
+        u16 item;
+        Pokemon *mon;
+        BOOL partyWideExpShare = SaveData_GetExpShareStatus(SaveData_Ptr());
 
         for (i = 0; i < Party_GetCurrentCount(BattleSystem_GetParty(battleSys, BATTLER_US)); i++) {
-            Pokemon *mon = BattleSystem_GetPartyPokemon(battleSys, BATTLER_US, i);
+            mon = BattleSystem_GetPartyPokemon(battleSys, BATTLER_US, i);
 
             if (Pokemon_GetValue(mon, MON_DATA_SPECIES, NULL) && Pokemon_GetValue(mon, MON_DATA_HP, NULL)) {
                 if (battleCtx->sideGetExpMask[(battleCtx->faintedMon >> 1) & 1] & FlagIndex(i)) {
                     totalMonsGainingExp++;
-                }
-
-                u16 item = Pokemon_GetValue(mon, MON_DATA_HELD_ITEM, NULL);
-                if (BattleSystem_GetItemData(battleCtx, item, ITEM_PARAM_HOLD_EFFECT) == HOLD_EFFECT_EXP_SHARE) {
-                    totalMonsWithExpShare++;
                 }
             }
         }
@@ -2445,18 +2442,14 @@ static BOOL BtlCmd_CalcExpGain(BattleSystem *battleSys, BattleContext *battleCtx
         u16 exp = SpeciesData_GetSpeciesValue(battleCtx->battleMons[battleCtx->faintedMon].species, SPECIES_DATA_BASE_EXP_REWARD);
         exp = (exp * battleCtx->battleMons[battleCtx->faintedMon].level) / 7;
 
-        if (totalMonsWithExpShare) {
-            battleCtx->gainedExp = (exp / 2) / totalMonsGainingExp;
+        if (partyWideExpShare) {
+            battleCtx->gainedExp = exp;
 
             if (battleCtx->gainedExp == 0) {
                 battleCtx->gainedExp = 1;
             }
 
-            battleCtx->sharedExp = (exp / 2) / totalMonsWithExpShare;
-
-            if (battleCtx->sharedExp == 0) {
-                battleCtx->sharedExp = 1;
-            }
+            battleCtx->sharedExp = battleCtx->gainedExp / 2;
         } else {
             battleCtx->gainedExp = exp / totalMonsGainingExp;
 
@@ -10012,6 +10005,7 @@ static void BattleScript_GetExpTask(SysTask *task, void *inData)
     u32 battleType = BattleSystem_GetBattleType(data->battleSys);
     int item;
     int itemEffect;
+    BOOL partyWideExpShare = SaveData_GetExpShareStatus(SaveData_Ptr());
 
     battler = data->battleCtx->faintedMon >> 1 & 1; // init to the side with the fainted mon
     expBattler = 0;
@@ -10019,10 +10013,8 @@ static void BattleScript_GetExpTask(SysTask *task, void *inData)
     // Figure out which mon we're working on
     for (slot = data->tmpData[GET_EXP_PARTY_SLOT]; slot < BattleSystem_GetPartyCount(data->battleSys, expBattler); slot++) {
         mon = BattleSystem_GetPartyPokemon(data->battleSys, expBattler, slot);
-        item = Pokemon_GetValue(mon, MON_DATA_HELD_ITEM, NULL);
-        itemEffect = Item_LoadParam(item, ITEM_PARAM_HOLD_EFFECT, HEAP_ID_BATTLE);
 
-        if (itemEffect == HOLD_EFFECT_EXP_SHARE || (data->battleCtx->sideGetExpMask[battler] & FlagIndex(slot))) {
+        if ((data->battleCtx->sideGetExpMask[battler] & FlagIndex(slot)) || partyWideExpShare) { // if party-wide exp share, give exp to every slot; otherwise, only slots that participated
             break;
         }
     }
@@ -10055,10 +10047,8 @@ static void BattleScript_GetExpTask(SysTask *task, void *inData)
 
         if (Pokemon_GetValue(mon, MON_DATA_HP, NULL) && Pokemon_GetValue(mon, MON_DATA_LEVEL, NULL) != MAX_POKEMON_LEVEL) {
             if (data->battleCtx->sideGetExpMask[battler] & FlagIndex(slot)) {
-                totalExp = data->battleCtx->gainedExp;
-            }
-
-            if (itemEffect == HOLD_EFFECT_EXP_SHARE) {
+                totalExp = data->battleCtx->gainedExp; // for mons that actively participated
+            } else if (partyWideExpShare) { // everyone else gets exp if the party-wise exp share is enabled; needs to be an else if because both could be true, but don't apply additional sharedExp to totalExp if the battler is the slot is one that participated
                 totalExp += data->battleCtx->sharedExp;
             }
 

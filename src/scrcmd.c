@@ -7216,7 +7216,7 @@ static BOOL ScrCmd_QueueNewRepel(ScriptContext *ctx)
 {
     u16 *destVar = ScriptContext_GetVarPointer(ctx);
 
-    u16 repelID = SaveData_GetMostRecentRepel(ctx->fieldSystem->saveData);
+    u8 repelID = SaveData_GetMostRecentRepel(ctx->fieldSystem->saveData);
 
     Repel_Use(ctx->fieldSystem->saveData, repelID, HEAP_ID_FIELD1);
 
@@ -7276,5 +7276,15 @@ static BOOL ScrCmd_PrintMonPersonality(ScriptContext *ctx)
     Pokemon *mon = Party_GetPokemonBySlotIndex(SaveData_GetParty(ctx->fieldSystem->saveData), partySlot);
     u32 personality = Pokemon_GetValue(mon, MON_DATA_PERSONALITY, NULL);
     EmulatorLog("Mon in party slot %d has personality %u", partySlot, personality);
+    return FALSE;
+}
+
+static BOOL ScrCmd_CheckExpShareStatus(ScriptContext *ctx)
+{
+    u16 *destVar = ScriptContext_GetVarPointer(ctx);
+
+    *destVar = SaveData_GetExpShareStatus(ctx->fieldSystem->saveData);
+    EmulatorLog("Checked EXP Share Status in scrcmd.c, it is: %d", *destVar);
+
     return FALSE;
 }

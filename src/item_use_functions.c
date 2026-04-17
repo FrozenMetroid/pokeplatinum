@@ -96,6 +96,7 @@ static void UseAzureFluteFromMenu(ItemMenuUseContext *usageContext, const ItemUs
 static void UseVsRecorderFromMenu(ItemMenuUseContext *usageContext, const ItemUseContext *additionalContext);
 static void UseGracideaFromMenu(ItemMenuUseContext *usageContext, const ItemUseContext *additionalContext);
 static void UsePartyAffectingItem(ItemMenuUseContext *usageContext, const ItemUseContext *additionalContext);
+static void UseExpShareFromMenu(ItemMenuUseContext *usageContext, const ItemUseContext *additionalContext);
 static BOOL UseBicycleInField(ItemFieldUseContext *usageContext);
 static BOOL UseJournalInField(ItemFieldUseContext *usageContext);
 static BOOL UseOldRodInField(ItemFieldUseContext *usageContext);
@@ -164,6 +165,7 @@ static const ItemUseFuncDat sItemUseFuncs[] = {
     [ITEM_USE_FUNC_VS_RECORDER]             = { UseVsRecorderFromMenu,  UseVsRecorderInField,  NULL              },
     [ITEM_USE_FUNC_GRACIDEA]                = { UseGracideaFromMenu,    UseGracideaInField,    NULL              },
     [ITEM_USE_FUNC_PARTY_AFFECTING_ITEM]    = { UsePartyAffectingItem,  NULL,                  NULL              },
+    [ITEM_USE_FUNC_EXP_SHARE]               = { UseExpShareFromMenu,    NULL,                  NULL              },
 };
 // clang-format on
 
@@ -1046,6 +1048,21 @@ static void UsePartyAffectingItem(ItemMenuUseContext *usageContext, const ItemUs
     menu->taskData = FieldSystem_OpenPartyMenu_SelectForItemUsage(fieldSystem, HEAP_ID_FIELD2, usageContext->item);
 
     StartMenu_SetCallback(menu, StartMenu_ExitPartyMenu);
+}
+
+static void UseExpShareFromMenu(ItemMenuUseContext *usageContext, const ItemUseContext *additionalContext)
+{
+    FieldSystem *fieldSystem = FieldTask_GetFieldSystem(usageContext->fieldTask);
+    u8 status;
+    if (SaveData_GetExpShareStatus(fieldSystem->saveData) == TRUE) { // if it's already set, set it to false
+        status = FALSE;
+    } else {
+        status = TRUE;
+    }
+    SaveData_SetExpShareStatus(fieldSystem->saveData, status);
+
+    sub_02068540(usageContext, additionalContext, SCRIPT_ID(COMMON_SCRIPTS, 59));
+    return;
 }
 
 BOOL sub_02069238(FieldSystem *fieldSystem)

@@ -5040,6 +5040,13 @@
     .short \slot
     .endm
 
+    .macro CheckExpShareStatus, var
+    .short SCRCMD_CHECKEXPSHARESTATUS
+    .short \var
+    .endm
+
+
+// CONVENIENCE MACROS
 
     .macro GoToIfLt varID, valueOrVarID, offset
     CompareVar \varID, \valueOrVarID

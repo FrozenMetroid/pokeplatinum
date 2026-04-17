@@ -27,7 +27,7 @@
     "base_friendship": 35,
     "exp_rate": "EXP_RATE_SLOW",
     "egg_groups": [ "EGG_GROUP_WATER_2", "EGG_GROUP_WATER_2" ],
-    "abilities": [ "ABILITY_ROUGH_SKIN", "ABILITY_NONE" ],
+    "abilities": [ "ABILITY_ROUGH_SKIN", "ABILITY_STRONG_JAW" ],
     "safari_flee_rate": 90,
     "body_color": "MON_COLOR_RED",
     "flip_sprite": false,

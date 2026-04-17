@@ -13,7 +13,8 @@ typedef struct PlayerSave {
     u16 coins;
     PlayTime playTime;
     u8 padding_2A[2];
-    u16 mostRecentRepel;
+    u8 mostRecentRepel; // all the repels IDs are less than 255
+    u8 partyWideExpShare:1;
 } PlayerSave;
 
 int Player_SaveSize(void);
@@ -22,7 +23,9 @@ TrainerInfo *SaveData_GetTrainerInfo(SaveData *saveData);
 Options *SaveData_GetOptions(SaveData *saveData);
 u16 *SaveData_GetCoins(SaveData *saveData);
 PlayTime *SaveData_GetPlayTime(SaveData *saveData);
-u16 SaveData_GetMostRecentRepel(SaveData *saveData);
+u8 SaveData_GetMostRecentRepel(SaveData *saveData);
 void SaveData_SetMostRecentRepel(SaveData *saveData, u16 repel);
+BOOL SaveData_GetExpShareStatus(SaveData *saveData);
+void SaveData_SetExpShareStatus(SaveData *saveData, u8 status);
 
 #endif // POKEPLATINUM_SAVE_PLAYER_H

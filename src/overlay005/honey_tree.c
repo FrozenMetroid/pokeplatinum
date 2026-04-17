@@ -398,7 +398,11 @@ static u8 GetTreeIdFromMapId(const int mapId)
 
 static const BOOL SixHoursSinceSlathered(const int minutesLeft)
 {
+    #ifndef HONEYTREE_SHORTENED_TIMER
     if ((0 < minutesLeft) && (minutesLeft <= (18 * 60))) {
+    #else
+    if ((0 < minutesLeft) && (minutesLeft <= ((24 * 60) - 30))) {
+    #endif
         return TRUE;
     } else {
         return FALSE;

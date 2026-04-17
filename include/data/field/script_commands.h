@@ -871,6 +871,7 @@ const ScrCmdFunc gFieldScriptCommands[] = {
     ScriptCommandTableEntry(SCRCMD_DEBUG_SETALLTOWNSVISITED,                             ScrCmd_Debug_SetAllTownsVisited)
     ScriptCommandTableEntry(SCRCMD_BOTTLECAPSTATINCREASE,                                ScrCmd_BottleCapStatIncrease)
     ScriptCommandTableEntry(SCRCMD_PRINTMONPERSONALITY,                                  ScrCmd_PrintMonPersonality)
+    ScriptCommandTableEntry(SCRCMD_CHECKEXPSHARESTATUS,                                  ScrCmd_CheckExpShareStatus)
 
 #ifndef INC_AS_ASM
 };

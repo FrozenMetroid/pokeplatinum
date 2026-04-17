@@ -66,6 +66,7 @@
     ScriptEntry CommonScript_FadeToDefaultMusic @ 0x808
     ScriptEntry CommonScript_GriseousOrbCouldNotBeRemoved @ 0x809
     ScriptEntry CommonScript_AskReuseRepel @ 0x80A
+    ScriptEntry CommonScript_ExpShareStatusUpdate @ 0x80B
     ScriptEntryEnd
 
 CommonScript_EmptyScript1:
@@ -1692,5 +1693,19 @@ _EndDialogue:
     CloseMessage
     ReleaseAll
     End
+
+CommonScript_ExpShareStatusUpdate:
+    PlaySe SEQ_SE_CONFIRM
+    LockAll
+    CheckExpShareStatus VAR_RESULT
+    GoToIfEq VAR_RESULT, FALSE, _Message_ExpShareTurnedOff
+    Message CommonStrings_Text_ExpShareOn
+    WaitButton
+    GoTo _EndDialogue
+
+_Message_ExpShareTurnedOff:
+    Message CommonStrings_Text_ExpShareOff
+    WaitButton
+    GoTo _EndDialogue
 
     .balign 4, 0

@@ -27,7 +27,7 @@
     "base_friendship": 70,
     "exp_rate": "EXP_RATE_FAST",
     "egg_groups": [ "EGG_GROUP_FIELD", "EGG_GROUP_FAIRY" ],
-    "abilities": [ "ABILITY_HYPER_CUTTER", "ABILITY_INTIMIDATE" ],
+    "abilities": [ "ABILITY_STRONG_JAW", "ABILITY_INTIMIDATE" ],
     "safari_flee_rate": 0,
     "body_color": "MON_COLOR_BLACK",
     "flip_sprite": false,

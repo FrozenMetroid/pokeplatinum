@@ -887,6 +887,20 @@
         "{STRVAR_1 3, 0, 0} used the\n",
         "{STRVAR_1 8, 1, 0}."
       ]
+    },
+    {
+      "id": "CommonStrings_Text_ExpShareOn",
+      "en_US": [
+        "Your full party will now receive\n",
+        "experience in battle!"
+      ]
+    },
+    {
+      "id": "CommonStrings_Text_ExpShareOff",
+      "en_US": [
+        "Only the Pokémon that participate in\n",
+        "battle will receive experience."
+      ]
     }
   ]
 }

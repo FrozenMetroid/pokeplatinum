@@ -14,7 +14,7 @@
 BOOL Repel_UpdateSteps(SaveData *saveData, FieldSystem *fieldSystem)
 {
     u8 *repelSteps = SpecialEncounter_GetRepelSteps(SaveData_GetSpecialEncounters(saveData));
-    u16 repelID = SaveData_GetMostRecentRepel(saveData);
+    u8 repelID = SaveData_GetMostRecentRepel(saveData);
 
     if (*repelSteps > 0) {
         (*repelSteps)--;
