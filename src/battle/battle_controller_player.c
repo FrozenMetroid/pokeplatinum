@@ -2654,6 +2654,7 @@ static BOOL BattleControllerPlayer_CheckStatusDisruption(BattleSystem *battleSys
             break;
 
         case CHECK_STATUS_STATE_PARALYSIS:
+            #ifndef BATTLE_MAGIC_GUARD_IMMUNITY_TO_PARALYSIS_REMOVED
             if ((ATTACKING_MON.status & MON_CONDITION_PARALYSIS)
                 && Battler_Ability(battleCtx, battleCtx->attacker) != ABILITY_MAGIC_GUARD) {
                 if (BattleSystem_RandNext(battleSys) % 4 == 0) {
@@ -2666,6 +2667,19 @@ static BOOL BattleControllerPlayer_CheckStatusDisruption(BattleSystem *battleSys
                     result = CHECK_STATUS_DISRUPT_MOVE;
                 }
             }
+            #else
+            if (ATTACKING_MON.status & MON_CONDITION_PARALYSIS) {
+                if (BattleSystem_RandNext(battleSys) % 4 == 0) {
+                    battleCtx->moveFailFlags[battleCtx->attacker].paralyzed = TRUE;
+
+                    LOAD_SUBSEQ(subscript_fully_paralyzed);
+                    battleCtx->command = BATTLE_CONTROL_EXEC_SCRIPT;
+                    battleCtx->commandNext = BATTLE_CONTROL_UPDATE_MOVE_BUFFERS;
+
+                    result = CHECK_STATUS_DISRUPT_MOVE;
+                }
+            }
+            #endif
 
             battleCtx->statusCheckState++;
             break;

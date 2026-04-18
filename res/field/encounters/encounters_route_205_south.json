@@ -39,7 +39,7 @@
         },
         {
             "level": 12,
-            "species": "SPECIES_SHELLOS"
+            "species": "SPECIES_ELEKID"
         },
         {
             "level": 11,
@@ -47,7 +47,7 @@
         },
         {
             "level": 12,
-            "species": "SPECIES_SHELLOS"
+            "species": "SPECIES_ELEKID"
         }
     ],
     "swarms": [

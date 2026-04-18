@@ -70,6 +70,11 @@ Shortened timer for Honey Tree
 
 #define BATTLE_ADD_ARTILLERY
 
+#define BATTLE_UPDATE_PARALYSIS_SPEED // speed is reduced by 50% 
+#define BATTLE_MAGIC_GUARD_IMMUNITY_TO_PARALYSIS_REMOVED
+
+#define BATTLE_BUFF_FACADE_BURN_DAMAGE // Burn damage no longer halves Facade damage
+
 
 // The following are always applied because they deal with some subscripts and/or things that aren't easily configurable
 // Modernization:

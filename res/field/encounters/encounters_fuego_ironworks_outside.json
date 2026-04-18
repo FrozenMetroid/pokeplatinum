@@ -2,7 +2,7 @@
     "land_rate": 20,
     "land_encounters": [
         {
-            "level": 28,
+            "level": 30,
             "species": "SPECIES_MAGMAR"
         },
         {
@@ -10,7 +10,7 @@
             "species": "SPECIES_MAGNEMITE"
         },
         {
-            "level": 29,
+            "level": 31,
             "species": "SPECIES_MAGMAR"
         },
         {
@@ -38,16 +38,16 @@
             "species": "SPECIES_FLOATZEL"
         },
         {
-            "level": 31,
-            "species": "SPECIES_GASTRODON"
+            "level": 26,
+            "species": "SPECIES_MAGBY"
         },
         {
             "level": 31,
             "species": "SPECIES_FLOATZEL"
         },
         {
-            "level": 31,
-            "species": "SPECIES_GASTRODON"
+            "level": 27,
+            "species": "SPECIES_MAGBY"
         }
     ],
     "swarms": [

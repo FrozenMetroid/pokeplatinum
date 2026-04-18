@@ -9,7 +9,7 @@ You do not have my permission to release a playable patch of this fork for any r
 Credits:
 - Everyone who contributed to the decompilation, without which this fork would not exist. You all are awesome!
 - Everyone who contributed to HeartGold-Engine, whose work helped me to program things such as modernized Sturdy. Special shoutout to BluRose in particular!
-- RavePossum for multiple tutorials
+- RavePossum for multiple tutorials, such as showing EVs, IVs, and nature-affected stats on the summary screen
 
 - Senate
 
@@ -22,7 +22,6 @@ Credits:
 - Oval Charm
 - Debug/testing code for nearly perfect wild encounters and perfect starters
 - Lowercase Pokémon names
-- A myriad of changes to the battle system, as documented below
 - Redone encounters and Trainers (WIP)
 - Some Pokémon have moves defined to be learned whenever they evolve, e.g. Close Combat on Infernape
 - Infinite TMs and forgettable HMs
@@ -42,6 +41,8 @@ Credits:
     Pokémon that evolved by trading will now evolve with a Linking Cord
 - 1000 steps in Safari Zone instead of 500
 - Toggleable party-wide Exp. Share
+- Honey Trees only take 30 minutes to give an encounter rather than 6 hours
+- A myriad of changes to the battle system, as documented below
 
 # Battle Changes
 
@@ -97,6 +98,13 @@ Move Modernizations and Changes:
 Miscellaneous Battle System Changes:
 - Ice-types receive a 50% Defense increase when under the effects of Hail (Hail has not been modernized to Snow)
 - Trainer AI has been updated to fix a few bugs, such as not reading Dry Skin as a Water immunity and viewing Storm Drain and Lightning Rod as immunities now
+- Paralysis
+    Not ignorable by Magic Guard (Jirachi wins the Clefable matchup even more now)
+    Reduces speed by 50%
+    Electric-types immune
+- Burn
+    1/16 damage instead of 1/8
+    Facade is no longer weakened
 
 # Additional Item Locations
 - Evolutionary items like the Magmarizer are purchasable at the Battle Frontier
@@ -111,3 +119,8 @@ Miscellaneous Battle System Changes:
 - Mental Herb: Battle Frontier
 - Life Orb: Battle Frontier
 - Lucky Egg: Battle Frontier
+
+# Encounters
+- Murkrow and Misdreavus added back to Eterna Forest at night
+- Encounter Spiritomb at the Hallowed Tower immediately
+- Diamond and Pearl-exclusive Sinnoh encounters have been returned, such as Glameow and Stunky

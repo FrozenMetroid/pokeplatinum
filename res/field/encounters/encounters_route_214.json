@@ -27,27 +27,27 @@
         },
         {
             "level": 24,
-            "species": "SPECIES_GRAVELER"
+            "species": "SPECIES_HOUNDOUR"
         },
         {
             "level": 21,
             "species": "SPECIES_RHYHORN"
         },
         {
-            "level": 24,
-            "species": "SPECIES_HOUNDOUR"
+            "level": 23,
+            "species": "SPECIES_STUNKY"
         },
         {
             "level": 24,
-            "species": "SPECIES_RHYHORN"
+            "species": "SPECIES_STUNKY"
+        },
+        {
+            "level": 23,
+            "species": "SPECIES_STUNKY"
         },
         {
             "level": 24,
-            "species": "SPECIES_HOUNDOUR"
-        },
-        {
-            "level": 24,
-            "species": "SPECIES_RHYHORN"
+            "species": "SPECIES_STUNKY"
         }
     ],
     "swarms": [
@@ -60,7 +60,7 @@
     ],
     "night": [
         "SPECIES_HOUNDOUR",
-        "SPECIES_ZUBAT"
+        "SPECIES_KRICKETUNE"
     ],
     "radar": [
         "SPECIES_POOCHYENA",

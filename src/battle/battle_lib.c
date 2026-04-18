@@ -1304,7 +1304,11 @@ u8 BattleSystem_CompareBattlerSpeed(BattleSystem *battleSys, BattleContext *batt
     if (battler1Ability == ABILITY_QUICK_FEET && (battleCtx->battleMons[battler1].status & MON_CONDITION_ANY)) {
         battler1Speed = battler1Speed * 15 / 10;
     } else if (battleCtx->battleMons[battler1].status & MON_CONDITION_PARALYSIS) {
+        #ifdef BATTLE_UPDATE_PARALYSIS_SPEED
+        battler1Speed /= 2;
+        #else
         battler1Speed /= 4;
+        #endif
     }
 
     if (battler1Ability == ABILITY_SLOW_START
@@ -1370,7 +1374,11 @@ u8 BattleSystem_CompareBattlerSpeed(BattleSystem *battleSys, BattleContext *batt
     if (battler2Ability == ABILITY_QUICK_FEET && (battleCtx->battleMons[battler2].status & MON_CONDITION_ANY)) {
         battler2Speed = battler2Speed * 15 / 10;
     } else if (battleCtx->battleMons[battler2].status & MON_CONDITION_PARALYSIS) {
+        #ifdef BATTLE_UPDATE_PARALYSIS_SPEED
+        battler2Speed /= 2;
+        #else
         battler2Speed /= 4;
+        #endif
     }
 
     if (battler2Ability == ABILITY_SLOW_START
@@ -7276,7 +7284,11 @@ int BattleSystem_CalcMoveDamage(BattleSystem *battleSys,
         damage /= stageDivisor;
         damage /= 50;
 
+        #ifdef BATTLE_BUFF_FACADE_BURN_DAMAGE
+        if ((attackerParams.statusMask & MON_CONDITION_BURN) && attackerParams.ability != ABILITY_GUTS && move != MOVE_FACADE) {
+        #else
         if ((attackerParams.statusMask & MON_CONDITION_BURN) && attackerParams.ability != ABILITY_GUTS) {
+        #endif
             damage /= 2;
         }
 

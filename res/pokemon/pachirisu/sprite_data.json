@@ -17,21 +17,21 @@
             },
             {
                 "sprite_frame": 1,
-                "frame_delay": 4,
+                "frame_delay": 12,
                 "x_shift": 0,
-                "y_shift": 0
+                "y_shift": -2
             },
              {
                 "sprite_frame": 0,
-                "frame_delay": 4,
+                "frame_delay": 8,
                 "x_shift": 0,
                 "y_shift": 0
             },
             {
                 "sprite_frame": 1,
-                "frame_delay": 4,
+                "frame_delay": 8,
                 "x_shift": 0,
-                "y_shift": 0
+                "y_shift": -1
             },
             {
                 "sprite_frame": -1,

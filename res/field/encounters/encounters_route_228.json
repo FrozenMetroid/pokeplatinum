@@ -3,7 +3,7 @@
     "land_encounters": [
         {
             "level": 51,
-            "species": "SPECIES_DUGTRIO"
+            "species": "SPECIES_CACTURNE"
         },
         {
             "level": 52,
@@ -30,24 +30,24 @@
             "species": "SPECIES_DUGTRIO"
         },
         {
-            "level": 50,
-            "species": "SPECIES_DUGTRIO"
+            "level": 45,
+            "species": "SPECIES_TRAPINCH"
         },
         {
             "level": 49,
-            "species": "SPECIES_DIGLETT"
+            "species": "SPECIES_VIBRAVA"
         },
         {
             "level": 50,
-            "species": "SPECIES_CACNEA"
+            "species": "SPECIES_VIBRAVA"
         },
         {
             "level": 49,
-            "species": "SPECIES_DIGLETT"
+            "species": "SPECIES_VIBRAVA"
         },
         {
             "level": 50,
-            "species": "SPECIES_CACNEA"
+            "species": "SPECIES_VIBRAVA"
         }
     ],
     "swarms": [

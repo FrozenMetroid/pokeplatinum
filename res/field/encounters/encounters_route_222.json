@@ -19,7 +19,7 @@
         },
         {
             "level": 38,
-            "species": "SPECIES_WINGULL"
+            "species": "SPECIES_PELIPPER"
         },
         {
             "level": 39,
@@ -34,8 +34,8 @@
             "species": "SPECIES_LUXIO"
         },
         {
-            "level": 40,
-            "species": "SPECIES_PELIPPER"
+            "level": 39,
+            "species": "SPECIES_PURUGLY"
         },
         {
             "level": 41,
@@ -43,7 +43,7 @@
         },
         {
             "level": 40,
-            "species": "SPECIES_PELIPPER"
+            "species": "SPECIES_PURUGLY"
         },
         {
             "level": 41,

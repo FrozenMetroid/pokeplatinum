@@ -35,19 +35,19 @@
         },
         {
             "level": 19,
-            "species": "SPECIES_MACHOP"
+            "species": "SPECIES_STUNKY"
         },
         {
             "level": 18,
-            "species": "SPECIES_GEODUDE"
+            "species": "SPECIES_STUNKY"
         },
         {
             "level": 19,
-            "species": "SPECIES_MACHOP"
+            "species": "SPECIES_STUNKY"
         },
         {
             "level": 18,
-            "species": "SPECIES_GEODUDE"
+            "species": "SPECIES_STUNKY"
         }
     ],
     "swarms": [
