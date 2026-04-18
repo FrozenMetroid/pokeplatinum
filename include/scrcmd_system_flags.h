@@ -24,5 +24,6 @@ BOOL ScrCmd_Strength(ScriptContext *ctx);
 BOOL ScrCmd_Flash(ScriptContext *ctx);
 BOOL ScrCmd_Defog(ScriptContext *ctx);
 BOOL ScrCmd_CheckExpShareStatus(ScriptContext *ctx);
+BOOL ScrCmd_Debug_SetNationalDexAllSeen(ScriptContext *ctx);
 
 #endif // POKEPLATINUM_SCRCMD_SYSTEM_FLAGS_H

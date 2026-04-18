@@ -7288,3 +7288,17 @@ static BOOL ScrCmd_CheckExpShareStatus(ScriptContext *ctx)
 
     return FALSE;
 }
+
+static BOOL ScrCmd_Debug_SetNationalDexAllSeen(ScriptContext *ctx)
+{
+
+    Pokedex *pokedex = SaveData_GetPokedex(ctx->fieldSystem->saveData);
+    for (int i = 1; i < SPECIES_ARCEUS + 1; i++) {
+        Pokemon *mon = Pokemon_New(HEAP_ID_FIELD1);
+        Pokemon_InitWith(mon, i, 1, 0, TRUE, 0, OTID_NOT_SET, 0);
+        Pokedex_Encounter(pokedex, mon);
+        Heap_Free(mon);
+    }
+
+    return FALSE;
+}

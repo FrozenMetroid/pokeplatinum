@@ -5045,6 +5045,10 @@
     .short \var
     .endm
 
+    .macro Debug_SetNationalDexAllSeen
+    .short SCRCMD_DEBUG_SETNATIONALDEXALLSEEN
+    .endm
+
 
 // CONVENIENCE MACROS
 
