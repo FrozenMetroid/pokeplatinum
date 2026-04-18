@@ -36,8 +36,8 @@
     {
       "id": "pl_msg_00000612_00005",
       "en_US": [
-        "The Pokémon is protected\n",
-        "against 1-hit KO attacks."
+        "It cannot be knocked out\n",
+        "with one hit."
       ]
     },
     {
@@ -218,8 +218,8 @@
     {
       "id": "pl_msg_00000612_00031",
       "en_US": [
-        "The Pokémon draws in all\n",
-        "Electric-type moves."
+        "Draws in all Electric-type\n",
+        "moves to up Sp. Attack."
       ]
     },
     {
@@ -799,8 +799,8 @@
     {
       "id": "pl_msg_00000612_00114",
       "en_US": [
-        "The Pokémon draws in all\n",
-        "Water-type moves."
+        "Draws in all Water-type\n",
+        "moves to up Sp. Attack."
       ]
     },
     {

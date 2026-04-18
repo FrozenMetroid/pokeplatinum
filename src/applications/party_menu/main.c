@@ -1803,7 +1803,7 @@ BOOL CheckIfInList(u16 value, u16 array[], u32 size)
     return FALSE;
 }
 
-// make it so that only Fly, Dig, Flash, and non-HM/non-TM field moves like Chatter show up
+// make it so that only Fly, Dig, Flash, Defog, and non-HM/non-TM field moves like Chatter show up
 // the ones that can be used in the overworld by interacting with something, e.g. Cut, will only be usable by interacting with the object/spot in the overworld
 static u8 GetContextMenuEntriesForPartyMon(PartyMenuApplication *application, u8 *menuEntriesBuffer)
 {
@@ -1816,7 +1816,7 @@ static u8 GetContextMenuEntriesForPartyMon(PartyMenuApplication *application, u8
     count++;
 
     // TMs to include if the pokemon can learn them
-    u16 tmsToInclude[] = {ITEM_HM02, ITEM_TM70, ITEM_TM28}; // fly, flash, dig
+    u16 tmsToInclude[] = {ITEM_HM02, ITEM_TM70, ITEM_TM28, ITEM_HM05}; // fly, flash, dig, defog
 
     // Moves to include only if the pokemon knows them
     u16 movesIncludedIfLearned[] = {MOVE_SWEET_SCENT, MOVE_SOFTBOILED, MOVE_CHATTER, MOVE_TELEPORT};
@@ -1824,7 +1824,7 @@ static u8 GetContextMenuEntriesForPartyMon(PartyMenuApplication *application, u8
     if (FieldSystem_IsInBattleTowerSalon(application->partyMenu->fieldSystem) == FALSE) {
         if (application->partyMembers[application->currPartySlot].isEgg == FALSE) {
 
-            // add Fly, Flash, and Dig if the mon can learn the move
+            // add Fly, Flash, Dig, and Defog if the mon can learn the move
             for (i = 0; i < NELEMS(tmsToInclude); i++) {
                 BOOL compatible = Pokemon_CanLearnTM(mon, Item_TMHMNumber(tmsToInclude[i]));
                 if (!compatible) {

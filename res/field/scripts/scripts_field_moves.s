@@ -306,11 +306,11 @@ _UsedDefogInLostTower:
 
 FieldMoves_UseDefogFromMenu:
     LockAll
-    CheckTMHMMoveCompatibility MOVE_DEFOG, VAR_0x8004, VAR_RESULT
-    BufferPartyMonNickname 0, VAR_0x8004
+    // CheckTMHMMoveCompatibility MOVE_DEFOG, VAR_0x8004, VAR_RESULT
+    BufferPartyMonNickname 0, VAR_0x8000
     Message FieldMoves_Text_PokemonUsedDefog
     CloseMessage
-    FieldMoveSummonAnim VAR_0x8004
+    FieldMoveSummonAnim VAR_0x8000
     Defog 1
     PlaySE SEQ_SE_DP_FBRADE
     ScrCmd_0C4
