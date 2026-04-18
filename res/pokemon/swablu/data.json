@@ -82,7 +82,8 @@
             "TM87",
             "TM88",
             "TM90",
-            "HM02"
+            "HM02",
+            "HM05"
         ],
         "by_tutor": [
             "MOVE_MUD_SLAP",
@@ -101,7 +102,8 @@
             "MOVE_PURSUIT",
             "MOVE_RAGE",
             "MOVE_FEATHER_DANCE",
-            "MOVE_DRAGON_RUSH"
+            "MOVE_DRAGON_RUSH",
+            "MOVE_DEFOG"
         ]
     },
     "evolutions": [
