@@ -1620,7 +1620,6 @@ JubilifeCity_YouShouldStickAround:
     End
 
 JubilifeCity_KidWithNDS1:
-    // GivePokemon SPECIES_NIDORINA, 1, 0, VAR_RESULT
     NPCMessage JubilifeCity_Text_ImTradingPokemonWithMyBuddy
     End
 
