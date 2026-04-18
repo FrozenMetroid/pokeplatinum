@@ -483,7 +483,7 @@ OreburghCity_Movement_YoungsterWalkToPlayerZ751:
     EndMovement
 
 OreburghCity_BattleGirl1:
-    NPCMessage OreburghCity_Text_TMsAreSingleUseOnlyButHMsCanBeUsedOverAndOver
+    NPCMessage OreburghCity_Text_TMsCanBeUsedInfinitely
     End
 
 OreburghCity_SchoolKidF:

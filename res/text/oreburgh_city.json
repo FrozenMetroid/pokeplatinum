@@ -184,12 +184,12 @@
       ]
     },
     {
-      "id": "OreburghCity_Text_TMsAreSingleUseOnlyButHMsCanBeUsedOverAndOver",
+      "id": "OreburghCity_Text_TMsCanBeUsedInfinitely",
       "en_US": [
-        "TMs are single use only, but HMs\n",
-        "can be used over and over.\r",
-        "It’s tricky trying to decide which\n",
-        "Pokémon should learn what moves."
+        "TMs and HMs can be used infinitely!\n",
+        "Isn’t that incredible? You have so\f",
+        "much freedom to teach your Pokémon\f",
+        "whatever you want!"
       ]
     },
     {

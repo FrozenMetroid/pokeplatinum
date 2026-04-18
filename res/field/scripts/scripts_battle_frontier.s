@@ -25,7 +25,7 @@
     ScriptEntry _0244
     ScriptEntry _0257
     ScriptEntry _026A
-    ScriptEntry _027E
+    ScriptEntry BattleFrontier_ScratchOffCards
     ScriptEntry _02A6
     ScriptEntry _02BA
     ScriptEntry _02D1
@@ -145,13 +145,26 @@ _026A:
     PlaySE SEQ_SE_CONFIRM
     LockAll
     FacePlayer
-    Message 21
-    CloseMessageWithoutErasing
-    PokeMartFrontier MART_FRONTIER_ID_EXCHANGE_SERVICE_CORNER_DOWN
+    Message pl_msg_00000308_00021
+    InitLocalTextListMenu 1, 1, 0, VAR_RESULT
+    AddListMenuEntry pl_msg_00000308_MEDICINE, 1
+    AddListMenuEntry pl_msg_00000308_EVOLUTIONITEMS, 2
+    AddListMenuEntry pl_msg_00000308_HELDITEMS, 3
+    AddListMenuEntry pl_msg_00000308_CANCEL, 4
+    ShowListMenu
+    GoToIfLt VAR_RESULT, 4, _SelectedShop
+    CloseMessage
+_ReleaseAll:
     ReleaseAll
     End
 
-_027E:
+_SelectedShop:
+    SetVar VAR_MAP_LOCAL_5, VAR_RESULT
+    CloseMessageWithoutErasing
+    PokeMartFrontier VAR_MAP_LOCAL_5, 4 // does not show the yes no after selecting a type
+    GoTo _ReleaseAll
+
+BattleFrontier_ScratchOffCards:
     PlaySE SEQ_SE_CONFIRM
     LockAll
     FacePlayer
@@ -170,7 +183,7 @@ _02A6:
     FacePlayer
     Message 23
     CloseMessageWithoutErasing
-    PokeMartFrontier MART_FRONTIER_ID_EXCHANGE_SERVICE_CORNER_UP
+    PokeMartFrontier MART_FRONTIER_ID_EXCHANGE_SERVICE_CORNER_UP, 3 // shows the yes/no
     ReleaseAll
     End
 

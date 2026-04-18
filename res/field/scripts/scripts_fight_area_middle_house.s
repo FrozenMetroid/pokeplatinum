@@ -22,7 +22,7 @@ FightArea_MiddleHouse_BottleCapGuy:
     GoToIfEq VAR_RESULT, FALSE, _NoBottleCaps
 _SelectWhichToGive:
     Message pl_msg_00000197_00006
-    InitLocalTextListMenu 1, 1, 1, VAR_RESULT
+    InitLocalTextListMenu 1, 1, 0, VAR_RESULT
     AddListMenuEntry pl_msg_00000197_00007, 0
     AddListMenuEntry pl_msg_00000197_00008, 1
     AddListMenuEntry pl_msg_00000197_00009, 2

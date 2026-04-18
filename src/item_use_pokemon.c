@@ -19,7 +19,7 @@
 
 #define PP_UP_REQUIREMENT 5 // Moves with fewer max PP can't benefit from PP Ups (e.g. Sketch)
 
-#define MAX_EV_VITAMIN 100
+#define MAX_EV_VITAMIN 252
 #define EV_UNCHANGED   -1
 
 #define HEAL_FULL_HP    255

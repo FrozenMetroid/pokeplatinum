@@ -6646,55 +6646,31 @@ static BOOL ScrCmd_Unused_2CE(ScriptContext *ctx)
 
 static BOOL ScrCmd_PokeMartFrontier(ScriptContext *ctx)
 {
-    u8 martID = ScriptContext_ReadByte(ctx);
-    static const u16 BattleFrontierRightExchangeServiceCorner[] = {
-        ITEM_TM06,
-        ITEM_TM73,
-        ITEM_TM61,
-        ITEM_TM45,
-        ITEM_TM40,
-        ITEM_TM31,
-        ITEM_TM08,
+    u16 martID = ScriptContext_GetVar(ctx);
+    u16 martType = ScriptContext_GetVar(ctx);
+
+    static const u16 BattleFrontierRightExchangeServiceTMs[] = { // remove the ones that can be found elsewhere: Attract, Aerial Ace, Brick Break, X-Scissor, Shadow Ball, Energy Ball, Sludge Bomb, Dragon Pulse, Stone Edge, Earthquake
         ITEM_TM04,
-        ITEM_TM81,
-        ITEM_TM30,
-        ITEM_TM53,
-        ITEM_TM36,
-        ITEM_TM59,
-        ITEM_TM71,
-        ITEM_TM26,
+        ITEM_TM06,
+        ITEM_TM08,
+        ITEM_TM61,
+        ITEM_TM73,
         SHOP_ITEM_END,
     };
-    static const u16 BattleFrontierLeftExchangeServiceCorner[] = {
+    static const u16 BattleFrontierExchangeServiceMedicine[] = {
+        ITEM_HP_UP,
         ITEM_PROTEIN,
-        ITEM_CALCIUM,
         ITEM_IRON,
+        ITEM_CALCIUM,
         ITEM_ZINC,
         ITEM_CARBOS,
-        ITEM_HP_UP,
-        ITEM_POWER_BRACER,
-        ITEM_POWER_BELT,
-        ITEM_POWER_LENS,
-        ITEM_POWER_BAND,
-        ITEM_POWER_ANKLET,
-        ITEM_POWER_WEIGHT,
-        ITEM_TOXIC_ORB,
-        ITEM_FLAME_ORB,
-        ITEM_WHITE_HERB,
-        ITEM_POWER_HERB,
-        ITEM_BRIGHTPOWDER,
-        ITEM_CHOICE_BAND,
-        ITEM_CHOICE_SPECS,
-        ITEM_CHOICE_SCARF,
-        ITEM_FOCUS_SASH,
-        ITEM_FOCUS_BAND,
-        ITEM_SCOPE_LENS,
-        ITEM_MUSCLE_BAND,
-        ITEM_WISE_GLASSES,
-        ITEM_RAZOR_CLAW,
-        ITEM_RAZOR_FANG,
-        ITEM_ROCKY_HELMET,
-        ITEM_EVIOLITE,
+        ITEM_PP_UP,
+        ITEM_PP_MAX,
+        ITEM_RARE_CANDY,
+        ITEM_ABILITY_CAPSULE,
+        SHOP_ITEM_END,
+    };
+    static const u16 BattleFrontierExchangeServiceEvolutionItems[] = {
         ITEM_KINGS_ROCK,
         ITEM_DRAGON_SCALE,
         ITEM_UPGRADE,
@@ -6706,20 +6682,53 @@ static BOOL ScrCmd_PokeMartFrontier(ScriptContext *ctx)
         ITEM_ELECTIRIZER,
         ITEM_DUBIOUS_DISC,
         ITEM_REAPER_CLOTH,
+        ITEM_RAZOR_CLAW,
+        ITEM_RAZOR_FANG,
         ITEM_PRISM_SCALE,
         ITEM_LINKING_CORD,
-        ITEM_RARE_CANDY,
-        ITEM_ABILITY_CAPSULE,
+        SHOP_ITEM_END,
+    };
+    static const u16 BattleFrontierExchangeServiceHeldItems[] = {
+        ITEM_POWER_BRACER,
+        ITEM_POWER_BELT,
+        ITEM_POWER_LENS,
+        ITEM_POWER_BAND,
+        ITEM_POWER_ANKLET,
+        ITEM_POWER_WEIGHT,
         ITEM_BOTTLE_CAP,
         ITEM_GOLD_BOTTLE_CAP,
+        ITEM_TOXIC_ORB,
+        ITEM_FLAME_ORB,
+        ITEM_LIFE_ORB,
+        ITEM_WHITE_HERB,
+        ITEM_POWER_HERB,
+        ITEM_MENTAL_HERB,
+        ITEM_BRIGHTPOWDER,
+        ITEM_CHOICE_BAND,
+        ITEM_CHOICE_SPECS,
+        ITEM_CHOICE_SCARF,
+        ITEM_SHELL_BELL,
+        ITEM_LEFTOVERS,
+        ITEM_BLACK_SLUDGE,
+        ITEM_BIG_ROOT,
+        ITEM_FOCUS_SASH,
+        ITEM_FOCUS_BAND,
+        ITEM_SCOPE_LENS,
+        ITEM_MUSCLE_BAND,
+        ITEM_WISE_GLASSES,
+        ITEM_LUCKY_EGG,
+        ITEM_ROCKY_HELMET,
+        ITEM_EVIOLITE,
         SHOP_ITEM_END,
     };
     static const u16 *BattleFrontierExchangeServiceCorners[] = {
-        BattleFrontierRightExchangeServiceCorner,
-        BattleFrontierLeftExchangeServiceCorner,
+        BattleFrontierRightExchangeServiceTMs,
+        BattleFrontierExchangeServiceMedicine,
+        BattleFrontierExchangeServiceEvolutionItems,
+        BattleFrontierExchangeServiceHeldItems,
     };
 
-    Shop_Start(ctx->task, ctx->fieldSystem, (u16 *)BattleFrontierExchangeServiceCorners[martID], MART_TYPE_FRONTIER, FALSE);
+    Shop_Start(ctx->task, ctx->fieldSystem, (u16 *)BattleFrontierExchangeServiceCorners[martID], martType, FALSE);
     return TRUE;
 }
 

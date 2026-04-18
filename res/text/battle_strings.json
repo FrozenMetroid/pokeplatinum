@@ -8530,6 +8530,48 @@
         "The foe’s {STRVAR_1 1, 0, 0} gained\n",
         "strength from the fallen!"
       ]
+    },
+    {
+      "id": "BattleStrings_Text_TormentWoreOff_Ally",
+      "en_US": [
+        "{STRVAR_1 1, 0, 0} is\n",
+        "no longer tormented!"
+      ]
+    },
+    {
+      "id": "BattleStrings_Text_TormentWoreOff_Wild",
+      "en_US": [
+        "The wild {STRVAR_1 1, 0, 0} is\n",
+        "no longer tormented!"
+      ]
+    },
+    {
+      "id": "BattleStrings_Text_TormentWoreOff_Foe",
+      "en_US": [
+        "The foe’s {STRVAR_1 1, 0, 0} is\n",
+        "no longer tormented!"
+      ]
+    },
+    {
+      "id": "BattleStrings_Text_HealBlockWoreOff_Ally",
+      "en_US": [
+        "{STRVAR_1 1, 0, 0} is no longer\n",
+        "prevented from healing!"
+      ]
+    },
+    {
+      "id": "BattleStrings_Text_HealBlockWoreOff_Wild",
+      "en_US": [
+        "The wild {STRVAR_1 1, 0, 0} is\n",
+        "no longer prevented from healing!"
+      ]
+    },
+    {
+      "id": "BattleStrings_Text_HealBlockWoreOff_Foe",
+      "en_US": [
+        "The foe’s {STRVAR_1 1, 0, 0} is\n",
+        "no longer prevented from healing!"
+      ]
     }
   ]
 }

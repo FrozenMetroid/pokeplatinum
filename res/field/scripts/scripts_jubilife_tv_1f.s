@@ -136,7 +136,7 @@ JubilifeTV1F_SetThirdPrize:
     GoTo JubilifeTV1F_GiveLotteryPrize
 
 JubilifeTV1F_SetSecondPrize:
-    SetVar VAR_0x8003, ITEM_EXP_SHARE
+    SetVar VAR_0x8003, ITEM_PP_MAX
     GoTo JubilifeTV1F_GiveLotteryPrize
 
 JubilifeTV1F_SetFirstPrize:

@@ -114,6 +114,13 @@
         "They have prizes I really want.\n",
         "But Coins, I have none!"
       ]
+    },
+    {
+      "id": "VeilstoneCityPrizeExchange_Text_AlreadyHaveTM",
+      "en_US": [
+        "I’m sorry.\n",
+        "You already have this TM.\r"
+      ]
     }
   ]
 }

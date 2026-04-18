@@ -27,6 +27,7 @@ enum MartTypes {
     MART_TYPE_DECOR,
     MART_TYPE_SEAL,
     MART_TYPE_FRONTIER, // uses Battle Points instead of normal money
+    MART_TYPE_FRONTIER_NO_YESNO, // same as FRONTIER but doesn't have a yes/no menu when purchasing items
 };
 
 enum ShopStaticWindows {

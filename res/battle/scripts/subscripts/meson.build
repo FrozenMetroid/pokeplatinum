@@ -213,7 +213,7 @@ subscript_files = files(
     'subscript_held_item_raise_crit.s',
     'subscript_held_item_sharply_raise_stat.s',
     'subscript_held_item_statdown_restore.s',
-    'subscript_held_item_heal_infatuation.s',
+    'subscript_held_item_heal_mental_conditions.s',
     'subscript_restore_a_little_hp.s',
     'subscript_lose_hp_from_item.s',
     'subscript_lose_hp_from_item_with_message.s',

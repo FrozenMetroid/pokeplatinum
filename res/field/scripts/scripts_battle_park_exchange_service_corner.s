@@ -34,7 +34,7 @@ _0044:
     FacePlayer
     Message 15
     CloseMessageWithoutErasing
-    PokeMartFrontier MART_FRONTIER_ID_EXCHANGE_SERVICE_CORNER_DOWN
+    PokeMartFrontier MART_FRONTIER_ID_EXCHANGE_SERVICE_MEDICINE
     ReleaseAll
     End
 

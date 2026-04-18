@@ -5027,10 +5027,15 @@ BOOL BattleSystem_TriggerHeldItem(BattleSystem *battleSys, BattleContext *battle
             break;
         }
 
-        case HOLD_EFFECT_HEAL_INFATUATION:
-            if (battleCtx->battleMons[battler].statusVolatile & VOLATILE_CONDITION_ATTRACT) {
-                battleCtx->msgTemp = MSGCOND_INFATUATION;
-                subscript = subscript_held_item_heal_infatuation;
+        case HOLD_EFFECT_HEAL_MENTAL_CONDITIONS:
+            if (battleCtx->battleMons[battler].statusVolatile & VOLATILE_CONDITION_ATTRACT
+                || battleCtx->battleMons[battler].statusVolatile & VOLATILE_CONDITION_TORMENT
+                || battleCtx->battleMons[battler].moveEffectsData.tauntedTurns
+                || battleCtx->battleMons[battler].moveEffectsData.encoredTurns
+                || battleCtx->battleMons[battler].moveEffectsData.healBlockTurns
+                || battleCtx->battleMons[battler].moveEffectsData.disabledTurns) {
+                // battleCtx->msgTemp = MSGCOND_INFATUATION;
+                subscript = subscript_held_item_heal_mental_conditions;
                 result = TRUE;
             }
             break;
@@ -5240,10 +5245,15 @@ BOOL BattleSystem_TriggerHeldItemOnStatus(BattleSystem *battleSys, BattleContext
             break;
         }
 
-        case HOLD_EFFECT_HEAL_INFATUATION:
-            if (battleCtx->battleMons[battler].statusVolatile & VOLATILE_CONDITION_ATTRACT) {
-                battleCtx->msgTemp = MSGCOND_INFATUATION;
-                *subscript = subscript_held_item_heal_infatuation;
+        case HOLD_EFFECT_HEAL_MENTAL_CONDITIONS:
+            if (battleCtx->battleMons[battler].statusVolatile & VOLATILE_CONDITION_ATTRACT
+                || battleCtx->battleMons[battler].statusVolatile & VOLATILE_CONDITION_TORMENT
+                || battleCtx->battleMons[battler].moveEffectsData.tauntedTurns
+                || battleCtx->battleMons[battler].moveEffectsData.encoredTurns
+                || battleCtx->battleMons[battler].moveEffectsData.healBlockTurns
+                || battleCtx->battleMons[battler].moveEffectsData.disabledTurns) {
+                // battleCtx->msgTemp = MSGCOND_INFATUATION;
+                *subscript = subscript_held_item_heal_mental_conditions;
                 result = TRUE;
             }
             break;
@@ -6187,11 +6197,16 @@ BOOL BattleSystem_FlingItem(BattleSystem *battleSys, BattleContext *battleCtx, i
         }
         break;
 
-    case FLING_EFFECT_HEAL_INFATUATION:
-        if (DEFENDING_MON.statusVolatile & VOLATILE_CONDITION_ATTRACT) {
-            battleCtx->msgTemp = MSGCOND_INFATUATION;
-            battleCtx->flingScript = subscript_held_item_heal_infatuation;
-        }
+    case FLING_EFFECT_HEAL_MENTAL_CONDITIONS:
+        if (DEFENDING_MON.statusVolatile & VOLATILE_CONDITION_ATTRACT
+                || DEFENDING_MON.statusVolatile & VOLATILE_CONDITION_TORMENT
+                || DEFENDING_MON.moveEffectsData.tauntedTurns
+                || DEFENDING_MON.moveEffectsData.encoredTurns
+                || DEFENDING_MON.moveEffectsData.healBlockTurns
+                || DEFENDING_MON.moveEffectsData.disabledTurns) {
+                // battleCtx->msgTemp = MSGCOND_INFATUATION;
+                battleCtx->flingScript = subscript_held_item_heal_mental_conditions;
+            }
         break;
 
     case FLING_EFFECT_FLINCH:

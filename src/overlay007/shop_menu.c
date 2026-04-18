@@ -259,7 +259,7 @@ void Shop_Start(FieldTask *task, FieldSystem *fieldSystem, u16 *shopItems, u8 ma
 
     if (shopMenu->martType == MART_TYPE_NORMAL) {
         shopMenu->destInventory = SaveData_GetBag(fieldSystem->saveData);
-    } else if (shopMenu->martType == MART_TYPE_FRONTIER) {
+    } else if (shopMenu->martType >= MART_TYPE_FRONTIER) {
         shopMenu->destInventory = SaveData_GetBag(fieldSystem->saveData);
     } else if (shopMenu->martType == MART_TYPE_DECOR) {
         shopMenu->destInventory = SaveData_GetUnderground(fieldSystem->saveData);
@@ -290,7 +290,11 @@ BOOL FieldTask_InitShop(FieldTask *task)
     switch (shopMenu->state) {
     case SHOP_STATE_SHOW_CONTEXT_MENU:
         Shop_ShowContextMenu(shopMenu);
-        shopMenu->state = SHOP_STATE_SELECT_CONTEXT_MENU;
+        if (shopMenu->martType == MART_TYPE_FRONTIER_NO_YESNO) {
+             shopMenu->state = SHOP_STATE_INIT_CAMERA;
+        } else {
+            shopMenu->state = SHOP_STATE_SELECT_CONTEXT_MENU;
+        }
         break;
     case SHOP_STATE_SELECT_CONTEXT_MENU:
         shopMenu->state = Shop_SelectContextMenu(shopMenu);
@@ -386,13 +390,15 @@ static void Shop_InitContextMenu(ShopMenu *shopMenu)
         StringList_AddFromMessageBank(shopMenu->optionsList, shopMenu->msgLoader, pl_msg_00000543_00016, 14);
         StringList_AddFromMessageBank(shopMenu->optionsList, shopMenu->msgLoader, pl_msg_00000543_00017, MENU_CANCEL);
         Window_Add(shopMenu->bgConfig, &shopMenu->windows[0], BG_LAYER_MAIN_3, 1, 1, 13, 6, FIELD_MESSAGE_PALETTE_INDEX, (((1024 - (18 + 12) - 9 - (32 * 8)) - (18 + 12 + 24)) - (27 * 4)) - (13 * 6));
-    } else if (shopMenu->martType == MART_TYPE_FRONTIER) {
+    } else if (shopMenu->martType >= MART_TYPE_FRONTIER) {
         maxOptions = 2;
         shopMenu->optionsList = StringList_New(maxOptions, HEAP_ID_FIELD2);
 
-        StringList_AddFromMessageBank(shopMenu->optionsList, shopMenu->msgLoader, pl_msg_00000543_00029, SHOP_STATE_INIT_CAMERA);
-        StringList_AddFromMessageBank(shopMenu->optionsList, shopMenu->msgLoader, pl_msg_00000543_00030, MENU_CANCEL);
-        Window_Add(shopMenu->bgConfig, &shopMenu->windows[0], BG_LAYER_MAIN_3, 23, 13, 7, 4, FIELD_MESSAGE_PALETTE_INDEX, (((1024 - (18 + 12) - 9 - (32 * 8)) - (18 + 12 + 24)) - (27 * 4)) - (13 * 6));
+        if (shopMenu->martType == MART_TYPE_FRONTIER) {
+            StringList_AddFromMessageBank(shopMenu->optionsList, shopMenu->msgLoader, pl_msg_00000543_00029, SHOP_STATE_INIT_CAMERA);
+            StringList_AddFromMessageBank(shopMenu->optionsList, shopMenu->msgLoader, pl_msg_00000543_00030, MENU_CANCEL);
+            Window_Add(shopMenu->bgConfig, &shopMenu->windows[0], BG_LAYER_MAIN_3, 23, 13, 7, 4, FIELD_MESSAGE_PALETTE_INDEX, (((1024 - (18 + 12) - 9 - (32 * 8)) - (18 + 12 + 24)) - (27 * 4)) - (13 * 6));
+        }
     } else {
         maxOptions = 2;
         shopMenu->optionsList = StringList_New(maxOptions, HEAP_ID_FIELD2);
@@ -414,12 +420,17 @@ static void Shop_InitContextMenu(ShopMenu *shopMenu)
     LoadStandardWindowGraphics(shopMenu->bgConfig, BG_LAYER_MAIN_3, 1024 - (18 + 12) - 9, FIELD_WINDOW_PALETTE_INDEX, 0, HEAP_ID_FIELD2);
     Window_DrawStandardFrame(&shopMenu->windows[0], TRUE, 1024 - (18 + 12) - 9, FIELD_WINDOW_PALETTE_INDEX);
 
-    shopMenu->choiceMenu = Menu_NewAndCopyToVRAM(&menuTemplate, 8, 0, 0, HEAP_ID_FIELD2, PAD_BUTTON_B);
+    if (shopMenu->martType != MART_TYPE_FRONTIER_NO_YESNO) {
+        shopMenu->choiceMenu = Menu_NewAndCopyToVRAM(&menuTemplate, 8, 0, 0, HEAP_ID_FIELD2, PAD_BUTTON_B);
+    }
 }
 
 static u8 Shop_SelectContextMenu(ShopMenu *shopMenu)
 {
-    u32 input = Menu_ProcessInput(shopMenu->choiceMenu);
+    if (shopMenu->martType == MART_TYPE_FRONTIER_NO_YESNO) {
+        return SHOP_STATE_INIT_CAMERA;
+    }
+    u32 input = Menu_ProcessInput(shopMenu->choiceMenu); // yes no menu
 
     switch (input) {
     case MENU_NOTHING_CHOSEN:
@@ -493,7 +504,9 @@ static void Shop_InitCamera(FieldSystem *fieldSystem, ShopMenu *shopMenu)
 {
     Bg_FillTilemapRect(shopMenu->bgConfig, BG_LAYER_MAIN_3, 0, 0, 18, 32, 6, 0);
 
-    Shop_CloseContextMenu(shopMenu);
+    if (shopMenu->martType != MART_TYPE_FRONTIER_NO_YESNO) {
+        Shop_CloseContextMenu(shopMenu);
+    }
     Shop_LoadWindows(shopMenu);
 
     shopMenu->camera = Camera_Alloc(HEAP_ID_FIELD2);
@@ -507,9 +520,9 @@ static void Shop_InitCamera(FieldSystem *fieldSystem, ShopMenu *shopMenu)
 static void Shop_LoadWindows(ShopMenu *shopMenu)
 {
     for (u32 i = 0; i < SHOP_WINDOW_MAX; i++) {
-        if ((shopMenu->martType != MART_TYPE_NORMAL) && (shopMenu->martType != MART_TYPE_FRONTIER) && (i == SHOP_WINDOW_ITEM_DESCRIPTION)) {
+        if ((shopMenu->martType != MART_TYPE_NORMAL) && (shopMenu->martType != MART_TYPE_FRONTIER) && (shopMenu->martType != MART_TYPE_FRONTIER_NO_YESNO) && (i == SHOP_WINDOW_ITEM_DESCRIPTION)) {
             Window_AddFromTemplate(shopMenu->bgConfig, &shopMenu->windows[i], &sShop_NormalItemDescWindowTemplate);
-        } else if ((shopMenu->martType == MART_TYPE_FRONTIER) && (i == SHOP_WINDOW_CURRENT_MONEY)) {
+        } else if ((shopMenu->martType >= MART_TYPE_FRONTIER) && (i == SHOP_WINDOW_CURRENT_MONEY)) {
             Window_AddFromTemplate(shopMenu->bgConfig, &shopMenu->windows[i], &sShop_FrontierCurrMoneyWindowTemplate);
         } else {
             Window_AddFromTemplate(shopMenu->bgConfig, &shopMenu->windows[i], &sShop_DefaultWindowTemplates[i]);
@@ -533,13 +546,13 @@ static void Shop_LoadGraphics(ShopMenu *shopMenu)
 
     Graphics_LoadTilesToBgLayerFromOpenNARC(narc, tiles_NCGR, shopMenu->bgConfig, BG_LAYER_MAIN_1, 0, 0, FALSE, HEAP_ID_FIELD2);
 
-    if ((shopMenu->martType == MART_TYPE_NORMAL) || (shopMenu->martType == MART_TYPE_FRONTIER)) {
+    if ((shopMenu->martType == MART_TYPE_NORMAL) || (shopMenu->martType >= MART_TYPE_FRONTIER)) {
         Graphics_LoadTilemapToBgLayerFromOpenNARC(narc, tilemap_NSCR, shopMenu->bgConfig, BG_LAYER_MAIN_1, 0, 0, FALSE, HEAP_ID_FIELD2);
     } else {
         Graphics_LoadTilemapToBgLayerFromOpenNARC(narc, tilemap_no_item_NSCR, shopMenu->bgConfig, BG_LAYER_MAIN_1, 0, 0, FALSE, HEAP_ID_FIELD2);
     }
 
-    if (shopMenu->martType == MART_TYPE_FRONTIER) {
+    if (shopMenu->martType >= MART_TYPE_FRONTIER) {
         Graphics_LoadPaletteFromOpenNARC(narc, frontier_NCLR, 0, PLTT_OFFSET(0), PALETTE_SIZE_BYTES, HEAP_ID_FIELD2);
     } else {
         Graphics_LoadPaletteFromOpenNARC(narc, default_NCLR, 0, PLTT_OFFSET(0), PALETTE_SIZE_BYTES, HEAP_ID_FIELD2);
@@ -642,7 +655,7 @@ static void Shop_InitItemsList(ShopMenu *shopMenu)
     MessageLoader *moveNames;
     BOOL isTMShop = FALSE;
 
-    if ((shopMenu->martType == MART_TYPE_NORMAL) || (shopMenu->martType == MART_TYPE_FRONTIER)) {
+    if ((shopMenu->martType == MART_TYPE_NORMAL) || (shopMenu->martType >= MART_TYPE_FRONTIER)) {
         itemNames = MessageLoader_Init(MSG_LOADER_PRELOAD_ENTIRE_BANK, NARC_INDEX_MSGDATA__PL_MSG, TEXT_BANK_ITEM_NAMES, HEAP_ID_FIELD2);
         moveNames = MessageLoader_Init(MSG_LOADER_PRELOAD_ENTIRE_BANK, NARC_INDEX_MSGDATA__PL_MSG, TEXT_BANK_MOVE_NAMES, HEAP_ID_FIELD2);
     } else if (shopMenu->martType == MART_TYPE_DECOR) {
@@ -677,7 +690,7 @@ static void Shop_InitItemsList(ShopMenu *shopMenu)
 
     MessageLoader_Free(itemNames);
 
-    if ((shopMenu->martType == MART_TYPE_NORMAL) || (shopMenu->martType == MART_TYPE_FRONTIER)) {
+    if ((shopMenu->martType == MART_TYPE_NORMAL) || (shopMenu->martType >= MART_TYPE_FRONTIER)) {
         MessageLoader_Free(moveNames);
     }
 
@@ -713,7 +726,7 @@ static void Shop_MenuCursorCallback(ListMenu *menu, u32 index, u8 onInit)
         if (shopMenu->martType == MART_TYPE_NORMAL) {
             string = String_Init(130, HEAP_ID_FIELD2);
             Item_LoadDescription(string, index, HEAP_ID_FIELD2);
-        } else if (shopMenu->martType == MART_TYPE_FRONTIER) {
+        } else if (shopMenu->martType >= MART_TYPE_FRONTIER) {
             string = String_Init(130, HEAP_ID_FIELD2);
             Item_LoadDescription(string, index, HEAP_ID_FIELD2);
         } else if (shopMenu->martType == MART_TYPE_DECOR) {
@@ -779,7 +792,7 @@ static void Shop_MenuPrintCallback(ListMenu *menu, u32 index, u8 yOffset)
         price = Shop_GetItemPrice(shopMenu, index);
         string = String_Init(12, HEAP_ID_FIELD2);
 
-        if (shopMenu->martType == MART_TYPE_FRONTIER) {
+        if (shopMenu->martType >= MART_TYPE_FRONTIER) {
             fmtString = MessageLoader_GetNewString(shopMenu->msgLoader, pl_msg_00000543_00032);
         } else {
             fmtString = MessageLoader_GetNewString(shopMenu->msgLoader, pl_msg_00000543_00009);
@@ -809,7 +822,7 @@ static void Shop_PrintCurrentMoney(ShopMenu *shopMenu, u8 clearCurrMoney)
     String *string, *fmtString;
     u32 currMoney, strWidth;
 
-    if (shopMenu->martType == MART_TYPE_FRONTIER) {
+    if (shopMenu->martType >= MART_TYPE_FRONTIER) {
         if (clearCurrMoney == FALSE) {
             Window_FillTilemap(&shopMenu->windows[SHOP_WINDOW_CURRENT_MONEY], 15);
             Window_DrawStandardFrame(
@@ -916,7 +929,7 @@ static u8 Shop_SelectBuyMenu(ShopMenu *shopMenu)
         }
 
         if (currMoney < shopMenu->itemPrice) {
-            if (shopMenu->martType == MART_TYPE_FRONTIER) {
+            if (shopMenu->martType >= MART_TYPE_FRONTIER) {
                 string = MessageLoader_GetNewString(shopMenu->msgLoader, pl_msg_00000543_00037);
             } else {
                 string = MessageLoader_GetNewString(shopMenu->msgLoader, pl_msg_00000543_00003);
@@ -942,7 +955,7 @@ static u8 Shop_SelectBuyMenu(ShopMenu *shopMenu)
 
         Shop_SetItemNameToIndex(shopMenu, shopMenu->itemId, 0);
 
-        if (shopMenu->martType == MART_TYPE_FRONTIER) {
+        if (shopMenu->martType >= MART_TYPE_FRONTIER) {
             string = MessageLoader_GetNewString(shopMenu->msgLoader, pl_msg_00000543_00033);
         } else {
             string = MessageLoader_GetNewString(shopMenu->msgLoader, pl_msg_00000543_00004);
@@ -985,7 +998,7 @@ static void Shop_ShowQtyWithinInventory(ShopMenu *shopMenu)
 
     if (shopMenu->martType == MART_TYPE_NORMAL) {
         inventoryQty = Bag_GetItemQuantity(shopMenu->destInventory, shopMenu->itemId, HEAP_ID_FIELD2);
-    } else if (shopMenu->martType == MART_TYPE_FRONTIER) {
+    } else if (shopMenu->martType >= MART_TYPE_FRONTIER) {
         inventoryQty = Bag_GetItemQuantity(shopMenu->destInventory, shopMenu->itemId, HEAP_ID_FIELD2);
     } else if (shopMenu->martType == MART_TYPE_SEAL) {
         inventoryQty = SealCase_CountSealOccurrenceAnywhere(shopMenu->destInventory, shopMenu->itemId);
@@ -1054,7 +1067,7 @@ static u8 Shop_ShowPurchaseMessage(ShopMenu *shopMenu)
 
     if (shopMenu->martType == MART_TYPE_NORMAL) {
         canFitItem = Bag_CanFitItem(shopMenu->destInventory, shopMenu->itemId, shopMenu->itemAmount, HEAP_ID_FIELD2);
-    } else if (shopMenu->martType == MART_TYPE_FRONTIER) {
+    } else if (shopMenu->martType >= MART_TYPE_FRONTIER) {
         canFitItem = Bag_CanFitItem(shopMenu->destInventory, shopMenu->itemId, shopMenu->itemAmount, HEAP_ID_FIELD2);
     } else if (shopMenu->martType == MART_TYPE_DECOR) {
         if (Underground_GetGoodsCountPC(shopMenu->destInventory) == MAX_GOODS_PC_SLOTS) {
@@ -1071,7 +1084,7 @@ static u8 Shop_ShowPurchaseMessage(ShopMenu *shopMenu)
 
         if (shopMenu->martType == MART_TYPE_NORMAL) {
             string = MessageLoader_GetNewString(shopMenu->msgLoader, pl_msg_00000543_00007);
-        } else if (shopMenu->martType == MART_TYPE_FRONTIER) {
+        } else if (shopMenu->martType >= MART_TYPE_FRONTIER) {
             string = MessageLoader_GetNewString(shopMenu->msgLoader, pl_msg_00000543_00007);
         } else if (shopMenu->martType == MART_TYPE_DECOR) {
             string = MessageLoader_GetNewString(shopMenu->msgLoader, pl_msg_00000543_00012);
@@ -1096,13 +1109,13 @@ static u8 Shop_ShowPurchaseMessage(ShopMenu *shopMenu)
 
         StringTemplate_SetMoveName(shopMenu->strTemplate, 3, move);
 
-        if (shopMenu->martType == MART_TYPE_FRONTIER) {
+        if (shopMenu->martType >= MART_TYPE_FRONTIER) {
             string = MessageLoader_GetNewString(shopMenu->msgLoader, pl_msg_00000543_00036);
         } else {
             string = MessageLoader_GetNewString(shopMenu->msgLoader, pl_msg_00000543_00027);
         }
     } else {
-        if (shopMenu->martType == MART_TYPE_FRONTIER) {
+        if (shopMenu->martType >= MART_TYPE_FRONTIER) {
             string = MessageLoader_GetNewString(shopMenu->msgLoader, pl_msg_00000543_00035);
         } else {
             string = MessageLoader_GetNewString(shopMenu->msgLoader, pl_msg_00000543_00005);
@@ -1135,7 +1148,7 @@ static void Shop_ShowQtyTotalItemPurchase(ShopMenu *shopMenu, u8 dontDrawFrame)
     Text_AddPrinterWithParams(&shopMenu->windows[SHOP_WINDOW_QUANTITY_TOTAL_PRICE], FONT_SYSTEM, string, 0, 8, TEXT_SPEED_NO_TRANSFER, NULL);
     String_Free(fmtString);
 
-    if (shopMenu->martType == MART_TYPE_FRONTIER) {
+    if (shopMenu->martType >= MART_TYPE_FRONTIER) {
         fmtString = MessageLoader_GetNewString(shopMenu->msgLoader, pl_msg_00000543_00034);
     } else {
         fmtString = MessageLoader_GetNewString(shopMenu->msgLoader, pl_msg_00000543_00022);
@@ -1178,7 +1191,7 @@ static u8 Shop_SelectConfirmPurchase(ShopMenu *shopMenu)
             }
 
             StringTemplate_SetBagPocketName(shopMenu->strTemplate, 1, Item_LoadParam(shopMenu->itemId, ITEM_PARAM_FIELD_POCKET, HEAP_ID_FIELD2));
-        } else if (shopMenu->martType == MART_TYPE_FRONTIER) {
+        } else if (shopMenu->martType >= MART_TYPE_FRONTIER) {
             if (shopMenu->itemAmount == 1) {
                 StringTemplate_SetItemName(shopMenu->strTemplate, 0, shopMenu->itemId);
             } else {
@@ -1231,7 +1244,7 @@ static u8 Shop_ConfirmItemPurchase(ShopMenu *shopMenu)
     if (shopMenu->martType == MART_TYPE_NORMAL) {
         Bag_TryAddItem(shopMenu->destInventory, shopMenu->itemId, shopMenu->itemAmount, HEAP_ID_FIELD2);
         FieldSystem_SaveTVEpisodeSegment_SinnohShoppingChampCorner(shopMenu->saveData, shopMenu->itemId, shopMenu->itemAmount);
-    } else if (shopMenu->martType == MART_TYPE_FRONTIER) {
+    } else if (shopMenu->martType >= MART_TYPE_FRONTIER) {
         Bag_TryAddItem(shopMenu->destInventory, shopMenu->itemId, shopMenu->itemAmount, HEAP_ID_FIELD2);
     } else if (shopMenu->martType == MART_TYPE_DECOR) {
         Underground_TryAddGoodPC(shopMenu->destInventory, shopMenu->itemId);
@@ -1241,7 +1254,7 @@ static u8 Shop_ConfirmItemPurchase(ShopMenu *shopMenu)
 
     Shop_TakeMoney(shopMenu, shopMenu->itemPrice * shopMenu->itemAmount);
 
-    if (shopMenu->martType == MART_TYPE_FRONTIER) {
+    if (shopMenu->martType >= MART_TYPE_FRONTIER) {
         GameRecords_AddToRecordValue(shopMenu->records, RECORD_BATTLE_POINTS_SPENT, shopMenu->itemPrice * shopMenu->itemAmount);
     } else {
         GameRecords_AddToRecordValue(shopMenu->records, RECORD_MONEY_SPENT, shopMenu->itemPrice * shopMenu->itemAmount);
@@ -1272,7 +1285,7 @@ static u8 Shop_FinishPurchase(ShopMenu *shopMenu)
             SystemVars_IncrementDepartmentStoreBuyCount(shopMenu->varsFlags);
         }
 
-        if ((shopMenu->martType == MART_TYPE_NORMAL) || (shopMenu->martType == MART_TYPE_FRONTIER)) { 
+        if ((shopMenu->martType == MART_TYPE_NORMAL) || (shopMenu->martType >= MART_TYPE_FRONTIER)) { 
             if (Item_IsPokeBall(shopMenu->itemId) && (shopMenu->itemAmount >= 10)) {
                 premierBallCount = shopMenu->itemAmount / 10; // make it so that you can receive more than 1
                 while (Bag_CanFitItem(shopMenu->destInventory, ITEM_PREMIER_BALL, premierBallCount, HEAP_ID_FIELD2) == FALSE && premierBallCount > 0) { // if you can't fit all the premier balls, try with one less until you can fit them or you have no more to give
@@ -1341,7 +1354,7 @@ static void Shop_SetItemNameToIndex(ShopMenu *shopMenu, u16 itemId, u16 idx)
 {
     if (shopMenu->martType == MART_TYPE_NORMAL) {
         StringTemplate_SetItemName(shopMenu->strTemplate, idx, itemId);
-    } else if (shopMenu->martType == MART_TYPE_FRONTIER) {
+    } else if (shopMenu->martType >= MART_TYPE_FRONTIER) {
         StringTemplate_SetItemName(shopMenu->strTemplate, idx, itemId);
     } else if (shopMenu->martType == MART_TYPE_DECOR) {
         StringTemplate_SetUndergroundGoodsName(shopMenu->strTemplate, idx, itemId);
@@ -1354,7 +1367,7 @@ static u32 Shop_GetItemPrice(ShopMenu *shopMenu, u16 itemId)
 {
     if (shopMenu->martType == MART_TYPE_NORMAL) {
         return Item_LoadParam(itemId, ITEM_PARAM_PRICE, HEAP_ID_FIELD2);
-    } else if (shopMenu->martType == MART_TYPE_FRONTIER) {
+    } else if (shopMenu->martType >= MART_TYPE_FRONTIER) {
         return Shop_GetItemBPPrice(shopMenu, itemId);
     } else if (shopMenu->martType == MART_TYPE_DECOR) {
         return Good_GetMoneyPrice(itemId);
@@ -1372,6 +1385,8 @@ static u16 Shop_GetItemBPPrice(ShopMenu *shopMenu, u16 itemId)
         { ITEM_ZINC, 1},
         { ITEM_CARBOS, 1},
         { ITEM_HP_UP, 1},
+        { ITEM_PP_UP, 1},
+        { ITEM_PP_MAX, 2},
         { ITEM_POWER_BRACER, 4},
         { ITEM_POWER_BELT, 4},
         { ITEM_POWER_LENS, 4},
@@ -1380,8 +1395,10 @@ static u16 Shop_GetItemBPPrice(ShopMenu *shopMenu, u16 itemId)
         { ITEM_POWER_WEIGHT, 4},
         { ITEM_TOXIC_ORB, 12},
         { ITEM_FLAME_ORB, 12},
+        { ITEM_LIFE_ORB, 12},
         { ITEM_WHITE_HERB, 12},
         { ITEM_POWER_HERB, 12},
+        { ITEM_MENTAL_HERB, 12},
         { ITEM_BRIGHTPOWDER, 12},
         { ITEM_CHOICE_BAND, 12},
         { ITEM_CHOICE_SPECS, 12},
@@ -1391,6 +1408,10 @@ static u16 Shop_GetItemBPPrice(ShopMenu *shopMenu, u16 itemId)
         { ITEM_SCOPE_LENS, 12},
         { ITEM_MUSCLE_BAND, 12},
         { ITEM_WISE_GLASSES, 12},
+        { ITEM_LEFTOVERS, 12},
+        { ITEM_BLACK_SLUDGE, 12},
+        { ITEM_BIG_ROOT, 12},
+        { ITEM_SHELL_BELL, 12},
         { ITEM_RAZOR_CLAW, 12},
         { ITEM_RAZOR_FANG, 12},
         { ITEM_ROCKY_HELMET, 12},
@@ -1408,10 +1429,11 @@ static u16 Shop_GetItemBPPrice(ShopMenu *shopMenu, u16 itemId)
         { ITEM_REAPER_CLOTH, 12},
         { ITEM_PRISM_SCALE, 12},
         { ITEM_LINKING_CORD, 12},
-        { ITEM_RARE_CANDY, 12},
-        { ITEM_ABILITY_CAPSULE, 12},
-        { ITEM_BOTTLE_CAP, 12 },
-        { ITEM_GOLD_BOTTLE_CAP, 48 },
+        { ITEM_RARE_CANDY, 4},
+        { ITEM_ABILITY_CAPSULE, 4},
+        { ITEM_BOTTLE_CAP, 8},
+        { ITEM_GOLD_BOTTLE_CAP, 40},
+        { ITEM_LUCKY_EGG, 12},
         { ITEM_TM06, 8 },
         { ITEM_TM73, 8 },
         { ITEM_TM61, 8 },
@@ -1440,7 +1462,7 @@ static u16 Shop_GetItemBPPrice(ShopMenu *shopMenu, u16 itemId)
 
 static u32 Shop_GetCurrentMoney(ShopMenu *shopMenu)
 {
-    if (shopMenu->martType == MART_TYPE_FRONTIER) {
+    if (shopMenu->martType >= MART_TYPE_FRONTIER) {
         return BattlePoints_ApplyFuncAndGet(sub_0202D750(shopMenu->saveData), 0, BATTLE_POINTS_FUNC_NONE);
     } else {
         return TrainerInfo_Money(shopMenu->trainerInfo);
@@ -1449,7 +1471,7 @@ static u32 Shop_GetCurrentMoney(ShopMenu *shopMenu)
 
 static void Shop_TakeMoney(ShopMenu *shopMenu, u32 amount)
 {
-    if (shopMenu->martType == MART_TYPE_FRONTIER) {
+    if (shopMenu->martType >= MART_TYPE_FRONTIER) {
         BattlePoints_ApplyFuncAndGet(sub_0202D750(shopMenu->saveData), amount, BATTLE_POINTS_FUNC_SUB);
     } else {
         TrainerInfo_TakeMoney(shopMenu->trainerInfo, amount);
@@ -1474,7 +1496,7 @@ static u8 Shop_MoveCameraBack(FieldSystem *fieldSystem, ShopMenu *shopMenu)
 
     Shop_DestroySprites(shopMenu);
 
-    if (shopMenu->martType == MART_TYPE_FRONTIER) {
+    if (shopMenu->martType >= MART_TYPE_FRONTIER) {
         return SHOP_STATE_SHOW_EXIT_MESSAGE;
     }
 
@@ -1506,7 +1528,7 @@ static void Shop_PrintExit(FieldSystem *fieldSystem, ShopMenu *shopMenu)
 {
     String *string;
 
-    if (shopMenu->martType == MART_TYPE_FRONTIER) {
+    if (shopMenu->martType >= MART_TYPE_FRONTIER) {
         string = MessageLoader_GetNewString(shopMenu->msgLoader, pl_msg_00000543_00031);
     } else {
         string = MessageLoader_GetNewString(shopMenu->msgLoader, pl_msg_00000543_00001);
@@ -1608,7 +1630,7 @@ static void Shop_ChangeItemIconGfx(ShopMenu *shopMenu, u16 itemId)
 {
     SpriteResource *spriteRes;
 
-    if ((shopMenu->martType != MART_TYPE_NORMAL) && (shopMenu->martType != MART_TYPE_FRONTIER)) {
+    if ((shopMenu->martType != MART_TYPE_NORMAL) && (shopMenu->martType != MART_TYPE_FRONTIER) && (shopMenu->martType != MART_TYPE_FRONTIER_NO_YESNO)) {
         Sprite_SetDrawFlag(shopMenu->sprites[SHOP_SPRITE_ITEM_ICON], FALSE);
         return;
     }

@@ -193,8 +193,8 @@
       "en_US": [
         "Welcome to the Exchange Service\n",
         "Corner!\r",
-        "Would you like to trade in your BP for\n",
-        "some prizes?"
+        "For which prizes would you like\n",
+        "to trade in your BP?"
       ]
     },
     {
@@ -264,6 +264,36 @@
       "en_US": [
         "This...!\n",
         "A scale model of the Battle Frontier."
+      ]
+    },
+    {
+      "id": "pl_msg_00000308_MEDICINE",
+      "en_US": [
+        "MEDICINE"
+      ]
+    },
+    {
+      "id": "pl_msg_00000308_EVOLUTIONITEMS",
+      "en_US": [
+        "EVOLUTION ITEMS"
+      ]
+    },
+    {
+      "id": "pl_msg_00000308_HELDITEMS",
+      "en_US": [
+        "HELD ITEMS"
+      ]
+    },
+    {
+      "id": "pl_msg_00000308_CANCEL",
+      "en_US": [
+        "CANCEL"
+      ]
+    },
+    {
+      "id": "pl_msg_00000308_IsThisSelectionOK",
+      "en_US": [
+        "Is this selection OK?"
       ]
     }
   ]

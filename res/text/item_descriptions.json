@@ -1663,9 +1663,9 @@
     {
       "id": "pl_msg_00000391_00219",
       "en_US": [
-        "An item to be held by a Pokémon. It\n",
-        "snaps the holder out of infatuation.\n",
-        "It can be used only once."
+        "An item to be held by a Pokémon.\n",
+        "It snaps the user out of move-binding\n",
+        "effects to move freely--but only once."
       ]
     },
     {

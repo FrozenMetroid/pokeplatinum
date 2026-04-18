@@ -82,6 +82,9 @@ Ability Modernizations:
 - Storm Drain
 - Stench
 
+Item Modernizations:
+- Mental Herb
+
 Move Modernizations and Changes:
 - Toxic when used by a Poison-type is perfectly accurate
 - Moves such as Leech Life and Hi Jump Kick have had their BPs increased to match modern standards
@@ -105,3 +108,6 @@ Miscellaneous Battle System Changes:
 - Linking Cord: Battle Frontier, Game Corner
 - Nature mints: Eterna Herp Shop
 - Bottle Caps: Battle Frontier (use them in the middle house in the Fight Area)
+- Mental Herb: Battle Frontier
+- Life Orb: Battle Frontier
+- Lucky Egg: Battle Frontier

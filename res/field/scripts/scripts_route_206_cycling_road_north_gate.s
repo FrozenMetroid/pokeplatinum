@@ -22,12 +22,7 @@ Route206CyclingRoadNorthGate_OnFrameForceBikingInGate:
     Return
 
 Route206CyclingRoadNorthGate_OnTransition:
-    CallIfSet FLAG_RECEIVED_ROUTE_206_CYCLING_ROAD_NORTH_GATE_EXP_SHARE, Route206CyclingRoadNorthGate_HideScientistM
     End
-
-Route206CyclingRoadNorthGate_HideScientistM:
-    SetFlag FLAG_HIDE_ROUTE_206_CYCLING_ROAD_NORTH_GATE_SCIENTIST_M
-    Return
 
 Route206CyclingRoadNorthGate_CashierM:
     NPCMessage Route206CyclingRoadNorthGate_Text_LearnHowToShiftGearsAndYoullBeAbleToRideAnywhere
@@ -70,56 +65,6 @@ Route206CyclingRoadNorthGate_TriggerClearFlagForceBikingInGate:
     End
 
 Route206CyclingRoadNorthGate_ScientistM:
-    PlaySE SEQ_SE_CONFIRM
-    LockAll
-    FacePlayer
-    GoToIfSet FLAG_RECEIVED_ROUTE_206_CYCLING_ROAD_NORTH_GATE_EXP_SHARE, Route206CyclingRoadNorthGate_APokemonHoldingAnExpShareWillGetSomeOfTheExpPointsFromBattle
-    BufferPlayerName 0
-    BufferCounterpartName 1
-    GetPlayerGender VAR_MAP_LOCAL_0
-    GoToIfEq VAR_MAP_LOCAL_0, GENDER_MALE, Route206CyclingRoadNorthGate_PlayerMaleLetMeAskYouHowManyPokemonHaveYouMet
-    GoTo Route206CyclingRoadNorthGate_PlayerFemaleLetMeAskYouHowManyPokemonHaveYouMet
-
-Route206CyclingRoadNorthGate_PlayerMaleLetMeAskYouHowManyPokemonHaveYouMet:
-    Message Route206CyclingRoadNorthGate_Text_PlayerLetMeAskYouHowManyPokemonHaveYouMet
-    GoTo Route206CyclingRoadNorthGate_CheckAmountPokemonSeen
-
-Route206CyclingRoadNorthGate_PlayerFemaleLetMeAskYouHowManyPokemonHaveYouMet:
-    Message Route206CyclingRoadNorthGate_Text_PlayerLetMeAskYouHowManyPokemonHaveYouMet2
-    GoTo Route206CyclingRoadNorthGate_CheckAmountPokemonSeen
-
-Route206CyclingRoadNorthGate_CheckAmountPokemonSeen:
-    GetNationalDexSeenCount VAR_0x8004
-    BufferNumber 1, VAR_0x8004
-    GoToIfLt VAR_0x8004, 35, Route206CyclingRoadNorthGate_YouveGotToFindAtLeast35
-    Message Route206CyclingRoadNorthGate_Text_ProfessorRowanShouldBeDelightedHereIsSomethingForYou
-    SetVar VAR_0x8004, ITEM_EXP_SHARE
-    SetVar VAR_0x8005, 1
-    GoToIfCannotFitItem VAR_0x8004, VAR_0x8005, VAR_RESULT, Route206CyclingRoadNorthGate_BagIsFull
-    SetFlag FLAG_RECEIVED_ROUTE_206_CYCLING_ROAD_NORTH_GATE_EXP_SHARE
-    Common_GiveItemQuantityNoLineFeed
-    CloseMessage
-    ReleaseAll
-    End
-
-Route206CyclingRoadNorthGate_BagIsFull:
-    Common_MessageBagIsFull
-    CloseMessage
-    ReleaseAll
-    End
-
-Route206CyclingRoadNorthGate_APokemonHoldingAnExpShareWillGetSomeOfTheExpPointsFromBattle:
-    Message Route206CyclingRoadNorthGate_Text_APokemonHoldingAnExpShareWillGetSomeOfTheExpPointsFromBattle
-    WaitButton
-    CloseMessage
-    ReleaseAll
-    End
-
-Route206CyclingRoadNorthGate_YouveGotToFindAtLeast35:
-    Message Route206CyclingRoadNorthGate_Text_YouveGotToFindAtLeast35
-    WaitButton
-    CloseMessage
-    ReleaseAll
     End
 
     .balign 4, 0

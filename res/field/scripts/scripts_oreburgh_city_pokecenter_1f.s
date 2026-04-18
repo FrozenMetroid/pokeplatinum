@@ -11,6 +11,7 @@
     ScriptEntry OreburghCityPokecenter1F_Gentleman
     ScriptEntry OreburghCityPokecenter1F_KidWithNDSWest
     ScriptEntry OreburghCityPokecenter1F_KidWithNDSEast
+    ScriptEntry OreburghCityPokecenter1F_RowanAssistant
     ScriptEntryEnd
 
 OreburghCityPokecenter1F_Nurse:
@@ -99,6 +100,57 @@ OreburghCityPokecenter1F_KidWithNDSWest:
 
 OreburghCityPokecenter1F_KidWithNDSEast:
     NPCMessage OreburghCityPokecenter1F_Text_CoolYouHaveAVsRecorder
+    End
+
+OreburghCityPokecenter1F_RowanAssistant:
+    PlaySE SEQ_SE_CONFIRM
+    LockAll
+    FacePlayer
+    GoToIfSet FLAG_RECEIVED_EXP_SHARE, OreburghCityPokecenter1F_APokemonHoldingAnExpShareWillGetSomeOfTheExpPointsFromBattle
+    BufferPlayerName 0
+    BufferCounterpartName 1
+    GetPlayerGender VAR_MAP_LOCAL_0
+    GoToIfEq VAR_MAP_LOCAL_0, GENDER_MALE, OreburghCityPokecenter1F_PlayerMaleLetMeAskYouHowManyPokemonHaveYouMet
+    GoTo OreburghCityPokecenter1F_PlayerFemaleLetMeAskYouHowManyPokemonHaveYouMet
+
+OreburghCityPokecenter1F_PlayerMaleLetMeAskYouHowManyPokemonHaveYouMet:
+    Message OreburghCityPokecenter1F_Text_PlayerLetMeAskYouHowManyPokemonHaveYouMet
+    GoTo OreburghCityPokecenter1F_CheckAmountPokemonSeen
+
+OreburghCityPokecenter1F_PlayerFemaleLetMeAskYouHowManyPokemonHaveYouMet:
+    Message OreburghCityPokecenter1F_Text_PlayerLetMeAskYouHowManyPokemonHaveYouMet2
+    GoTo OreburghCityPokecenter1F_CheckAmountPokemonSeen
+
+OreburghCityPokecenter1F_CheckAmountPokemonSeen:
+    GetNationalDexSeenCount VAR_0x8004
+    BufferNumber 1, VAR_0x8004
+    GoToIfLt VAR_0x8004, 20, OreburghCityPokecenter1F_YouveGotToFindAtLeast20
+    Message OreburghCityPokecenter1F_Text_ProfessorRowanShouldBeDelightedHereIsSomethingForYou
+    SetVar VAR_0x8004, ITEM_EXP_SHARE
+    SetVar VAR_0x8005, 1
+    GoToIfCannotFitItem VAR_0x8004, VAR_0x8005, VAR_RESULT, OreburghCityPokecenter1F_BagIsFull
+    SetFlag FLAG_RECEIVED_EXP_SHARE
+    Common_GiveItemQuantityNoLineFeed
+    GoTo OreburghCityPokecenter1F_APokemonHoldingAnExpShareWillGetSomeOfTheExpPointsFromBattle
+
+OreburghCityPokecenter1F_BagIsFull:
+    Common_MessageBagIsFull
+    CloseMessage
+    ReleaseAll
+    End
+
+OreburghCityPokecenter1F_APokemonHoldingAnExpShareWillGetSomeOfTheExpPointsFromBattle:
+    Message OreburghCityPokecenter1F_Text_APokemonHoldingAnExpShareWillGetSomeOfTheExpPointsFromBattle
+    WaitButton
+    CloseMessage
+    ReleaseAll
+    End
+
+OreburghCityPokecenter1F_YouveGotToFindAtLeast20:
+    Message OreburghCityPokecenter1F_Text_YouveGotToFindAtLeast20
+    WaitButton
+    CloseMessage
+    ReleaseAll
     End
 
     .balign 4, 0

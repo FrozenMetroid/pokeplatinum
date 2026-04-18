@@ -4336,9 +4336,10 @@
     .short \destVar
     .endm
 
-    .macro PokeMartFrontier martID
+    .macro PokeMartFrontier martID, martType
     .short SCRCMD_POKEMARTFRONTIER
-    .byte \martID
+    .short \martID
+    .short \martType
     .endm
 
     .macro ScrCmd_2D9 arg0, arg1, arg2
