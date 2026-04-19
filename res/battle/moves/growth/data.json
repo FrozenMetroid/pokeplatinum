@@ -1,12 +1,12 @@
 {
     "name": "Growth",
     "class": "CLASS_STATUS",
-    "type": "TYPE_NORMAL",
+    "type": "TYPE_GRASS",
     "power": 0,
     "accuracy": 0,
     "pp": 40,
     "effect": {
-        "type": "BATTLE_EFFECT_SP_ATK_UP",
+        "type": "BATTLE_EFFECT_GROWTH",
         "chance": 0
     },
     "range": "RANGE_USER",

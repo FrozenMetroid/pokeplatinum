@@ -8,22 +8,28 @@
     "ai_flags": [
         "AI_FLAG_BASIC",
         "AI_FLAG_EVAL_ATTACK",
-        "AI_FLAG_EXPERT"
+        "AI_FLAG_EXPERT",
+        "AI_FLAG_PRIORITIZE_EXTREMES"
     ],
     "double_battle": false,
     "party": [
         {
-            "species": "SPECIES_TURTWIG",
+            "species": "SPECIES_GROTLE",
             "form": 0,
             "level": 20,
             "item": "ITEM_NONE",
             "moves": [
-                "MOVE_GRASS_KNOT",
+                "MOVE_BITE",
                 "MOVE_RAZOR_LEAF",
                 "MOVE_SUNNY_DAY",
-                "MOVE_REFLECT"
+                "MOVE_GROWTH"
             ],
-            "iv_scale": 50,
+            "iv_scale": 0,
+            "ivnums": [15, 15, 15, 15, 15, 15],
+            "evnums": [35, 35, 0, 0, 0, 0],
+            "ball": "ITEM_POKE_BALL",
+            "ability": "ABILITY_OVERGROW",
+            "nature": "NATURE_ADAMANT",
             "ball_seal": 0
         },
         {
@@ -34,24 +40,34 @@
             "moves": [
                 "MOVE_GRASS_KNOT",
                 "MOVE_LEECH_SEED",
-                "MOVE_MAGICAL_LEAF",
-                "MOVE_SAFEGUARD"
+                "MOVE_SUNNY_DAY",
+                "MOVE_GROWTH"
             ],
-            "iv_scale": 50,
+            "iv_scale": 9,
+            "ivnums": [15, 15, 15, 15, 15, 15],
+            "evnums": [35, 0, 0, 0, 35, 0],
+            "ball": "ITEM_POKE_BALL",
+            "ability": "ABILITY_FLOWER_GIFT",
+            "nature": "NATURE_MODEST",
             "ball_seal": 0
         },
         {
             "species": "SPECIES_ROSERADE",
             "form": 0,
             "level": 22,
-            "item": "ITEM_SITRUS_BERRY",
+            "item": "ITEM_ORAN_BERRY",
             "moves": [
                 "MOVE_GRASS_KNOT",
-                "MOVE_MAGICAL_LEAF",
                 "MOVE_POISON_STING",
-                "MOVE_STUN_SPORE"
+                "MOVE_SLEEP_POWDER",
+                "MOVE_GROWTH"
             ],
-            "iv_scale": 50,
+            "iv_scale": 0,
+            "ivnums": [15, 15, 15, 15, 15, 15],
+            "evnums": [35, 35, 0, 0, 0, 0],
+            "ball": "ITEM_NEST_BALL",
+            "ability": "ABILITY_POISON_POINT",
+            "nature": "NATURE_QUIET",
             "ball_seal": 0
         }
     ],

@@ -23,7 +23,12 @@
                 "MOVE_TACKLE",
                 "MOVE_METAL_CLAW"
             ],
-            "iv_scale": 50,
+            "iv_scale": 0,
+            "ivnums": [10, 10, 10, 10, 10, 10],
+            "evnums": [20, 20, 0, 0, 0, 0],
+            "ball": "ITEM_POKE_BALL",
+            "ability": "ABILITY_STURDY",
+            "nature": "NATURE_IMPISH",
             "ball_seal": 0
         },
         {
@@ -37,7 +42,12 @@
                 "MOVE_STEALTH_ROCK",
                 "MOVE_ROCK_THROW"
             ],
-            "iv_scale": 50,
+            "iv_scale": 0,
+            "ivnums": [15, 15, 15, 15, 15, 15],
+            "evnums": [0, 35, 0, 35, 0, 0],
+            "ball": "ITEM_GREAT_BALL",
+            "ability": "ABILITY_MOLD_BREAKER",
+            "nature": "NATURE_ADAMANT",
             "ball_seal": 0
         }
     ],

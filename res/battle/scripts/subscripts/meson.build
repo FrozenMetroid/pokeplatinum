@@ -301,4 +301,5 @@ subscript_files = files(
     'subscript_null.s',
     'subscript_supreme_overlord.s',
     'subscript_piercing_eye.s',
+    'subscript_user_attack_and_sp_attack_up.s',
 )

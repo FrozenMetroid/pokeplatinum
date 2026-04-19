@@ -94,6 +94,7 @@ Move Modernizations and Changes:
     Ancient Power and Silver Wind's PP has been increased from 5 to 15
     Giga Drain's PP has been increased from 10 to 15
 - Defog removes hazards from both sides of the field
+- Growth raises Special Attack and Attack by one stage; two stages under harsh sunlight
 
 Miscellaneous Battle System Changes:
 - Ice-types receive a 50% Defense increase when under the effects of Hail (Hail has not been modernized to Snow)
@@ -121,6 +122,7 @@ Miscellaneous Battle System Changes:
 - Lucky Egg: Battle Frontier
 
 # Encounters
+- The Pokédex accurately shows where Pokémon live
 - Murkrow and Misdreavus added back to Eterna Forest at night
 - Encounter Spiritomb at the Hallowed Tower immediately
 - Diamond and Pearl-exclusive Sinnoh encounters have been returned, such as Glameow and Stunky

@@ -1242,6 +1242,11 @@
     .long 224
     .endm
 
+    .macro CheckSunnyWeather jump_not_sunny
+    .long 225
+    .long (\jump_not_sunny-.) / 4 - 1
+    .endm
+
     .text
     .globl _start
 _start:

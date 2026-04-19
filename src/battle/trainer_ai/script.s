@@ -140,6 +140,7 @@ Basic_ScoreMoveEffect:
     IfCurrentMoveEffectEqualTo BATTLE_EFFECT_DEF_UP, Basic_CheckHighStatStage_Defense
     IfCurrentMoveEffectEqualTo BATTLE_EFFECT_SPEED_UP, Basic_CheckHighStatStage_Speed
     IfCurrentMoveEffectEqualTo BATTLE_EFFECT_SP_ATK_UP, Basic_CheckHighStatStage_SpAttack
+    IfCurrentMoveEffectEqualTo BATTLE_EFFECT_GROWTH, Basic_CheckHighStatStage_SpAttack_and_Attack
     IfCurrentMoveEffectEqualTo BATTLE_EFFECT_SP_DEF_UP, Basic_CheckHighStatStage_SpDefense
     IfCurrentMoveEffectEqualTo BATTLE_EFFECT_ACC_UP, Basic_CheckHighStatStage_Accuracy
     IfCurrentMoveEffectEqualTo BATTLE_EFFECT_EVA_UP, Basic_CheckHighStatStage_Evasion
@@ -381,7 +382,19 @@ Basic_CheckHighStatStage_SpAttack:
 
 Basic_CheckHighStatStage_SpAttack_NoSimple:
     IfStatStageEqualTo AI_BATTLER_ATTACKER, BATTLE_STAT_SP_ATTACK, 12, ScoreMinus10
-    PopOrEnd 
+    PopOrEnd
+
+Basic_CheckHighStatStage_SpAttack_and_Attack:
+    LoadBattlerAbility AI_BATTLER_ATTACKER
+    IfLoadedNotEqualTo ABILITY_SIMPLE, Basic_CheckHighStatStage_SpAttack_and_Attack_NoSimple
+    IfStatStageGreaterThan AI_BATTLER_ATTACKER, BATTLE_STAT_SP_ATTACK, 8, ScoreMinus10
+    IfStatStageGreaterThan AI_BATTLER_ATTACKER, BATTLE_STAT_ATTACK, 8, ScoreMinus10
+    PopOrEnd
+
+Basic_CheckHighStatStage_SpAttack_and_Attack_NoSimple:
+    IfStatStageEqualTo AI_BATTLER_ATTACKER, BATTLE_STAT_SP_ATTACK, 12, ScoreMinus10
+    IfStatStageEqualTo AI_BATTLER_ATTACKER, BATTLE_STAT_ATTACK, 12, ScoreMinus10
+    PopOrEnd
 
 Basic_CheckHighStatStage_SpDefense:
     LoadBattlerAbility AI_BATTLER_ATTACKER
@@ -1638,6 +1651,7 @@ Expert_Main:
     IfCurrentMoveEffectEqualTo BATTLE_EFFECT_DEF_UP, Expert_StatusDefenseUp
     IfCurrentMoveEffectEqualTo BATTLE_EFFECT_SPEED_UP, Expert_StatusSpeedUp
     IfCurrentMoveEffectEqualTo BATTLE_EFFECT_SP_ATK_UP, Expert_StatusSpAttackUp
+    IfCurrentMoveEffectEqualTo BATTLE_EFFECT_GROWTH, Expert_StatusSpAttackandAttackUp
     IfCurrentMoveEffectEqualTo BATTLE_EFFECT_SP_DEF_UP, Expert_StatusSpDefenseUp
     IfCurrentMoveEffectEqualTo BATTLE_EFFECT_ACC_UP, Expert_StatusAccuracyUp
     IfCurrentMoveEffectEqualTo BATTLE_EFFECT_EVA_UP, Expert_StatusEvasionUp
@@ -2108,7 +2122,40 @@ Expert_StatusSpAttackUp_ScoreMinus2:
     AddToMoveScore -2
 
 Expert_StatusSpAttackUp_End:
-    PopOrEnd 
+    PopOrEnd
+
+Expert_StatusSpAttackandAttackUp:
+    // If the attacker is at +3 stat stage or higher, ~60.9% chance of additional score -1.
+    //
+    // If the attacker is at 100% HP, 50% chance of additional score +2.
+    //
+    // If the attacker's HP is > 70%, no further score changes.
+    //
+    // If the attacker's HP is < 40%, additional score -2.
+    //
+    // Otherwise, ~84.4% chance of additional score -2.
+    IfStatStageLessThan AI_BATTLER_ATTACKER, BATTLE_STAT_SP_ATTACK, 9, Expert_StatusSpAttackandAttack_CheckUserAtMaxHP
+    IfStatStageLessThan AI_BATTLER_ATTACKER, BATTLE_STAT_ATTACK, 9, Expert_StatusSpAttackandAttack_CheckUserAtMaxHP
+    IfRandomLessThan 100, Expert_StatusSpAttackandAttack_CheckUserHPRange
+    AddToMoveScore -1
+    GoTo Expert_StatusSpAttackandAttack_CheckUserHPRange
+
+Expert_StatusSpAttackandAttack_CheckUserAtMaxHP:
+    IfHPPercentNotEqualTo AI_BATTLER_ATTACKER, 100, Expert_StatusSpAttackandAttack_CheckUserHPRange
+    IfRandomLessThan 128, Expert_StatusSpAttackandAttack_CheckUserHPRange
+    AddToMoveScore 2
+
+Expert_StatusSpAttackandAttack_CheckUserHPRange:
+    IfHPPercentGreaterThan AI_BATTLER_ATTACKER, 70, Expert_StatusSpAttackandAttack_End
+    IfHPPercentLessThan AI_BATTLER_ATTACKER, 40, Expert_StatusSpAttackandAttack_ScoreMinus2
+    IfRandomLessThan 70, Expert_StatusSpAttackandAttack_End
+
+Expert_StatusSpAttackandAttack_ScoreMinus2:
+    AddToMoveScore -2
+
+Expert_StatusSpAttackandAttack_End:
+    PopOrEnd
+
 
 Expert_StatusSpDefenseUp:
     // If the attacker is at +3 stat stage or higher, ~60.9% chance of additional score -1.

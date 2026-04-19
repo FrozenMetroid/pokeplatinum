@@ -2,7 +2,7 @@
     "name": "Poison Sting",
     "class": "CLASS_PHYSICAL",
     "type": "TYPE_POISON",
-    "power": 15,
+    "power": 35,
     "accuracy": 100,
     "pp": 35,
     "effect": {

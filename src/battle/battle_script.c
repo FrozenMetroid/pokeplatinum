@@ -312,6 +312,7 @@ static BOOL BtlCmd_RefreshMonData(BattleSystem *battleSys, BattleContext *battle
 static BOOL BtlCmd_CheckFlingItem(BattleSystem *battleSys, BattleContext *battleCtx);
 static BOOL BtlCmd_End(BattleSystem *battleSys, BattleContext *battleCtx);
 static BOOL BtlCmd_WaitABScreenTap(BattleSystem *battleSys, BattleContext *battleCtx);
+static BOOL BtlCmd_CheckSunnyWeather(BattleSystem *battleSys, BattleContext *battleCtx);
 
 static int BattleScript_Read(BattleContext *battleCtx);
 static void BattleScript_Iter(BattleContext *battleCtx, int i);
@@ -573,7 +574,8 @@ static const BtlCmd sBattleCommands[] = {
     BtlCmd_RefreshMonData,
     BtlCmd_CheckFlingItem,
     BtlCmd_End,
-    BtlCmd_WaitABScreenTap
+    BtlCmd_WaitABScreenTap,
+    BtlCmd_CheckSunnyWeather,
 };
 
 BOOL BattleScript_Exec(BattleSystem *battleSys, BattleContext *battleCtx)
@@ -9769,6 +9771,18 @@ static BOOL BtlCmd_WaitABScreenTap(BattleSystem *battleSys, BattleContext *battl
         BattleScript_Iter(battleCtx, 1);
     }
     battleCtx->battleProgressFlag = TRUE;
+}
+
+static BOOL BtlCmd_CheckSunnyWeather(BattleSystem *battleSys, BattleContext *battleCtx)
+{
+    BattleScript_Iter(battleCtx, 1);
+    int jumpIfNotSunny = BattleScript_Read(battleCtx);
+
+    if (!WEATHER_IS_SUN) {
+        BattleScript_Iter(battleCtx, jumpIfNotSunny);
+    }
+
+    return TRUE;
 }
 
 /**
