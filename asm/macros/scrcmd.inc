@@ -61,6 +61,7 @@
 
 #define INC_AS_ASM
 #include "data/field/script_commands.h"
+#include "data/scripts/scrcmd.h"
 #include "macros/movement.inc"
 
     .set FALSE, 0
@@ -1802,8 +1803,8 @@
     .short SCRCMD_12A
     .endm
 
-    .macro ScrCmd_12B
-    .short SCRCMD_12B
+    .macro StartSignatureApp
+    .short SCRCMD_STARTSIGNATUREAPP
     .endm
 
     .macro CheckSaveType destVarID
@@ -2246,9 +2247,9 @@
     .short \berryItemID
     .endm
 
-    .macro SetBerryWateringState direction
+    .macro SetBerryWateringState state
     .short SCRCMD_SETBERRYWATERINGSTATE
-    .short \direction
+    .short \state
     .endm
 
     .macro HarvestBerry
@@ -2297,10 +2298,10 @@
     .short \z
     .endm
 
-    .macro ScrCmd_18C arg0, arg1
+    .macro ScrCmd_18C localID, dir
     .short SCRCMD_18C
-    .short \arg0
-    .short \arg1
+    .short \localID
+    .short \dir
     .endm
 
     .macro ShowSavingIcon
@@ -3635,12 +3636,12 @@
     .short \destVarID
     .endm
 
-    .macro ScrCmd_25E
-    .short SCRCMD_25E
+    .macro InitLakeGuardianContainmentUnits
+    .short SCRCMD_INITLAKEGUARDIANCONTAINMENTUNITS
     .endm
 
-    .macro ScrCmd_25F
-    .short SCRCMD_25F
+    .macro DeactivateLakeGuardianContainmentUnits
+    .short SCRCMD_DEACTIVATELAKEGUARDIANCONTAINMENTUNITS
     .endm
 
     .macro IncrementTrainerScore2 scoreID
@@ -3690,13 +3691,13 @@
     .short \destVar
     .endm
 
-    .macro ScrCmd_269 arg0, arg1, arg2, arg3, arg4
-    .short SCRCMD_269
-    .short \arg0
-    .short \arg1
-    .short \arg2
-    .short \arg3
-    .short \arg4
+    .macro ShakeObject localID, times, speed, xOffset, zOffset
+    .short SCRCMD_SHAKEOBJECT
+    .short \localID
+    .short \times
+    .short \speed
+    .short \xOffset
+    .short \zOffset
     .endm
 
     .macro FlickerObject localID, times, delay
@@ -4763,8 +4764,8 @@
     .short SCRCMD_RESETDISTORTIONWORLDPERSISTEDCAMERAANGLES
     .endm
 
-    .macro ScrCmd_320
-    .short SCRCMD_320
+    .macro DoDWWarp
+    .short SCRCMD_DODWWARP
     .endm
 
     .macro StartDistortionWorldGiratinaShadowEvent eventIndex

@@ -41,6 +41,7 @@
 #include "applications/poffin_case/main.h"
 #include "applications/pokedex/pokedex_main.h"
 #include "applications/pokemon_summary_screen/main.h"
+#include "applications/signature.h"
 #include "applications/town_map/main.h"
 #include "applications/trainer_case/main.h"
 #include "battle/battle_main.h"
@@ -59,7 +60,6 @@
 #include "overlay058/ov58_021D0D80.h"
 #include "overlay059/ov59_021D0D80.h"
 #include "overlay064/ov64_0222DCE0.h"
-#include "overlay072/ov72_0223D7A0.h"
 #include "overlay085/ov85_02241440.h"
 #include "overlay088/ov88_0223B140.h"
 #include "overlay088/struct_ov88_0223C370.h"
@@ -81,6 +81,7 @@
 #include "egg_hatch.h"
 #include "evolution.h"
 #include "field_battle_data_transfer.h"
+#include "field_bgm.h"
 #include "field_move_tasks.h"
 #include "field_overworld_state.h"
 #include "field_system.h"
@@ -115,20 +116,19 @@
 #include "trainer_case.h"
 #include "trainer_case_save_data.h"
 #include "trainer_info.h"
-#include "tv_episode_segment.h"
+#include "tv_segment.h"
 #include "unk_02017498.h"
 #include "unk_020298BC.h"
-#include "unk_0202C858.h"
 #include "unk_0202D05C.h"
 #include "unk_0202D778.h"
 #include "unk_020366A0.h"
 #include "unk_02038FFC.h"
-#include "unk_020553DC.h"
 #include "unk_020559DC.h"
 #include "unk_0205B33C.h"
 #include "unk_0209747C.h"
 #include "unk_02097624.h"
 #include "vars_flags.h"
+#include "wifi_history_save_data.h"
 
 #include "constdata/const_020EA328.h"
 #include "constdata/const_020EA358.h"
@@ -146,7 +146,7 @@ FS_EXTERN_OVERLAY(overlay59);
 FS_EXTERN_OVERLAY(overlay61);
 FS_EXTERN_OVERLAY(overlay64);
 FS_EXTERN_OVERLAY(trainer_case);
-FS_EXTERN_OVERLAY(overlay72);
+FS_EXTERN_OVERLAY(signature);
 FS_EXTERN_OVERLAY(options_menu);
 FS_EXTERN_OVERLAY(choose_starter);
 FS_EXTERN_OVERLAY(town_map);
@@ -1298,20 +1298,20 @@ void FieldSystem_LaunchChooseStarterApp(FieldSystem *fieldSystem, ChooseStarterD
     FieldSystem_StartChildProcess(fieldSystem, &template, chooseStarterData);
 }
 
-void sub_0203E0D0(FieldSystem *fieldSystem)
+void FieldSystem_LaunchSignatureApp(FieldSystem *fieldSystem)
 {
-    TrainerCaseSaveData *v0 = SaveData_GetTrainerCaseSaveData(fieldSystem->saveData);
+    TrainerCaseSaveData *unused = SaveData_GetTrainerCaseSaveData(fieldSystem->saveData);
 
-    FS_EXTERN_OVERLAY(overlay72);
+    FS_EXTERN_OVERLAY(signature);
 
-    const ApplicationManagerTemplate v1 = {
-        ov72_0223D7A0,
-        ov72_0223D920,
-        ov72_0223D984,
-        FS_OVERLAY_ID(overlay72)
+    const ApplicationManagerTemplate template = {
+        SignatureApp_Init,
+        SignatureApp_Main,
+        SignatureApp_Exit,
+        FS_OVERLAY_ID(signature)
     };
 
-    FieldSystem_StartChildProcess(fieldSystem, &v1, fieldSystem->saveData);
+    FieldSystem_StartChildProcess(fieldSystem, &template, fieldSystem->saveData);
 }
 
 void FieldSystem_LaunchGTSApp(FieldSystem *fieldSystem, BOOL connectToWiFi)
@@ -1489,13 +1489,13 @@ void FieldSystem_HatchEgg(FieldSystem *fieldSystem)
     Pokemon *eggMon = Party_GetFirstEgg(party);
 
     GF_ASSERT(eggMon != NULL);
-    FieldSystem_SaveTVEpisodeSegment_HappyHappyEggClub(fieldSystem, eggMon);
+    FieldSystem_SaveTVSegment_HappyHappyEggClub(fieldSystem, eggMon);
 
     EggHatchArgs args;
     args.mon = eggMon;
     args.options = SaveData_GetOptions(fieldSystem->saveData);
     args.trainerInfo = SaveData_GetTrainerInfo(fieldSystem->saveData);
-    args.bgmID = Sound_GetOverrideBGM(fieldSystem, fieldSystem->location->mapId);
+    args.bgmID = FieldBGM_GetEffective(fieldSystem, fieldSystem->location->mapId);
 
     EggHatch_HatchEgg(fieldSystem->task, &args);
 }
@@ -1800,14 +1800,14 @@ void FieldSystem_StartLibraryTV(FieldSystem *fieldSystem)
     FieldSystem_StartChildProcess(fieldSystem, &LibraryTV_template, fieldSystem->saveData);
 }
 
-static const ApplicationManagerTemplate Unk_020EA368 = {
+static const ApplicationManagerTemplate sDWWarpTemplate = {
     DWWarp_Init,
     DWWarp_Main,
     DWWarp_Exit,
     FS_OVERLAY_ID(dw_warp)
 };
 
-void sub_0203E714(FieldSystem *fieldSystem)
+void FieldSystem_StartDWWarp(FieldSystem *fieldSystem)
 {
-    FieldSystem_StartChildProcess(fieldSystem, &Unk_020EA368, fieldSystem->saveData);
+    FieldSystem_StartChildProcess(fieldSystem, &sDWWarpTemplate, fieldSystem->saveData);
 }

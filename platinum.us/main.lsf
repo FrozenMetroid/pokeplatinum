@@ -61,7 +61,7 @@ Static main
 	Object main.nef.p/src_software_sprite.c.o
 	Object main.nef.p/src_unk_0201567C.c.o
 	Object main.nef.p/src_poffin_types.c.o
-	Object main.nef.p/src_unk_02015920.c.o
+	Object main.nef.p/src_yes_no_touch_menu.c.o
 	Object main.nef.p/src_pokemon_anim.c.o
 	Object main.nef.p/src_unk_02017038.c.o
 	Object main.nef.p/src_easy3d_object.c.o
@@ -125,7 +125,7 @@ Static main
 	Object main.nef.p/src_coins.c.o
 	Object main.nef.p/src_journal.c.o
 	Object main.nef.p/src_trainer_case_save_data.c.o
-	Object main.nef.p/src_unk_0202C858.c.o
+	Object main.nef.p/src_wifi_history_save_data.c.o
 	Object main.nef.p/src_unk_0202C9F4.c.o
 	Object main.nef.p/src_play_time.c.o
 	Object main.nef.p/src_chatot_cry.c.o
@@ -138,7 +138,7 @@ Static main
 	Object main.nef.p/src_hall_of_fame_entries.c.o
 	Object main.nef.p/src_unk_0202E2CC.c.o
 	Object main.nef.p/src_rankings.c.o
-	Object main.nef.p/src_unk_0202EEC0.c.o
+	Object main.nef.p/src_pal_park_transfers.c.o
 	Object main.nef.p/src_link_contest_records.c.o
 	Object main.nef.p/src_unk_0202F180.c.o
 	Object main.nef.p/src_unk_0202F1D4.c.o
@@ -228,7 +228,7 @@ Static main
 	Object main.nef.p/src_unk_02054884.c.o
 	Object main.nef.p/src_terrain_attributes.c.o
 	Object main.nef.p/src_terrain_collision_manager.c.o
-	Object main.nef.p/src_unk_020553DC.c.o
+	Object main.nef.p/src_field_bgm.c.o
 	Object main.nef.p/src_overworld_map_history.c.o
 	Object main.nef.p/src_field_transition.c.o
 	Object main.nef.p/src_unk_020559DC.c.o
@@ -272,7 +272,7 @@ Static main
 	Object main.nef.p/src_roaming_pokemon.c.o
 	Object main.nef.p/src_npc_trade_task.c.o
 	Object main.nef.p/src_cutscenes_boat_cutscene_boat_cutscene.c.o
-	Object main.nef.p/src_tv_episode_segment.c.o
+	Object main.nef.p/src_tv_segment.c.o
 	Object main.nef.p/src_rankings_machine.c.o
 	Object main.nef.p/src_unk_02070428.c.o
 	Object main.nef.p/src_field_move_tasks.c.o
@@ -552,8 +552,8 @@ Overlay overlay5
 	Object main.nef.p/src_overlay005_ov5_021F61BC.c.o
 	Object main.nef.p/src_overlay005_ov5_021F6454.c.o
 	Object main.nef.p/src_overlay005_scrcmd_move_tutor.c.o
-	Object main.nef.p/src_overlay005_ov5_021F8370.c.o
-	Object main.nef.p/src_overlay005_ov5_021F8560.c.o
+	Object main.nef.p/src_overlay005_villa_furniture.c.o
+	Object main.nef.p/src_overlay005_dist_world_surf_mount_renderer.c.o
 }
 
 Overlay overlay6
@@ -571,7 +571,7 @@ Overlay overlay6
 	Object main.nef.p/src_overlay006_hm_cut_in.c.o
 	Object main.nef.p/src_overlay006_roamer_after_battle.c.o
 	Object main.nef.p/src_overlay006_npc_trade.c.o
-	Object main.nef.p/src_overlay006_ov6_02246444.c.o
+	Object main.nef.p/src_overlay006_tv_episode.c.o
 	Object main.nef.p/src_overlay006_ov6_022465FC.c.o
 	Object main.nef.p/src_overlay006_tv_commercials.c.o
 	Object main.nef.p/src_overlay006_special_dates.c.o
@@ -586,7 +586,7 @@ Overlay overlay6
 	Object main.nef.p/src_overlay006_ov6_02247830.c.o
 	Object main.nef.p/src_overlay006_link_contest_record_display.c.o
 	Object main.nef.p/src_overlay006_healing_machine_animation_hall_of_fame.c.o
-	Object main.nef.p/src_overlay006_ov6_02247F5C.c.o
+	Object main.nef.p/src_overlay006_lake_guardian_containment_units.c.o
 	Object main.nef.p/src_overlay006_ov6_02248050.c.o
 	Object main.nef.p/src_overlay006_ov6_02248948.c.o
 	Object main.nef.p/src_overlay006_ov6_022489E4.c.o
@@ -1248,10 +1248,10 @@ Overlay trainer_case
 	Object main.nef.p/src_applications_trainer_case_badge_chimes.c.o
 }
 
-Overlay overlay72
+Overlay signature
 {
 	After trainer_case
-	Object main.nef.p/src_overlay072_ov72_0223D7A0.c.o
+	Object main.nef.p/src_applications_signature.c.o
 }
 
 Overlay rowan_intro
@@ -1451,7 +1451,7 @@ Overlay main_menu
 {
 	After http
 	Object main.nef.p/src_main_menu_main_menu.c.o
-	Object main.nef.p/src_main_menu_ov97_0222C174.c.o
+	Object main.nef.p/src_main_menu_ranger_link.c.o
 	Object main.nef.p/src_main_menu_ov97_0222D04C.c.o
 	Object main.nef.p/src_main_menu_ov97_0222D2F8.c.o
 	Object main.nef.p/src_main_menu_mystery_gift_app.c.o

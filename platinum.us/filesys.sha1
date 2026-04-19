@@ -199,7 +199,7 @@ d91ceca1e3ef5e57061dabc690c0f1a1556dc624 *res/prebuilt/graphic/ev_pokeselect.nar
 5c673be62fe6bddfa911e3be26762b7e47d60b41 *res/prebuilt/graphic/f_note_gra.narc
 4941a639804c2b009836d1ab9b86a2ab0bb0c436 *res/graphics/signposts/field_board.narc
 3a71f8eca65f2524f96c4bb8463800ae19a70a90 *res/trainers/classes/field_encounteffect.narc
-e4ad5fcd9010114089a5ded83a077a75860d633a *res/graphics/scroll_prompts/fld_comact.narc
+e4ad5fcd9010114089a5ded83a077a75860d633a *res/graphics/scroll_prompts/scroll_prompts.narc
 1122e901209b1047fbbacb1a47311c8bd529a647 *res/prebuilt/graphic/font.narc
 02e2132b2bb08413d890c220bff7219e3725f7c2 *res/prebuilt/graphic/fontoam.narc
 e7266bd8b7095861b6e1fdaf4f13cb648a9c325d *res/prebuilt/graphic/footprint_board.narc
@@ -209,7 +209,7 @@ e7266bd8b7095861b6e1fdaf4f13cb648a9c325d *res/prebuilt/graphic/footprint_board.n
 44214e37e0345a75b00a1c01d46ca787cdba1fb8 *res/prebuilt/graphic/lobby_news.narc
 428a40285a2c82705502962047f8cb9492ef3df1 *res/prebuilt/graphic/mail_gra.narc
 1d70dd8856d2f85beb2d4e461cfaf7179153640a *res/graphics/start_menu/start_menu.narc
-5ccc879d6b89822eff8adeb0637af9f06c7d640d *res/prebuilt/graphic/mysign.narc
+5ccc879d6b89822eff8adeb0637af9f06c7d640d *res/graphics/signature_interface/signature_interface.narc
 0f05587c988da3072761675d31b6bf94c9928d65 *res/graphics/main_menu/main_menu_graphics.narc
 0de1d0a92bf3c1cf90b4522b11fb397dfdf9d533 *res/prebuilt/graphic/ntag_gra.narc
 46742a8665062b1fa4fe576491fa2ad67ca83f49 *res/prebuilt/graphic/nutmixer.narc
@@ -232,7 +232,7 @@ a14c782aba232ccd2fa1968512950f5d055936e3 *res/prebuilt/graphic/ranking.narc
 dc5129bfe80b3fb77c46f54392e6762d0b3aaeb3 *res/prebuilt/graphic/record.narc
 53fff347f98f51eab9aa00f720a67cd43ffc0502 *res/graphics/shop_menu/shop_gra.narc
 f79e12419475818dcdb42df7fbf843e3c8f71252 *res/graphics/town_map/town_map_graphics.narc
-3675606fff996a3c20fd8a35b514aacdff54c46a *res/prebuilt/graphic/touch_subwindow.narc
+3675606fff996a3c20fd8a35b514aacdff54c46a *res/graphics/yes_no_touch_menu/yes_no_touch_menu.narc
 3446f96721b7dee9983222f2ecf4bc30e1530f27 *res/graphics/trainer_case/trainer_case.narc
 474dd2ac959d28cf2be9cdc2fb0626b091ab281e *res/prebuilt/graphic/unionobj2d_onlyfront.narc
 a90eefcf0fe8e649978329bec0185c072392ee58 *res/prebuilt/graphic/unionroom.narc
@@ -297,8 +297,8 @@ ad5fefc4758eba86f6f647e506531d6cfe9c9ce5 *res/prebuilt/arc/plgym_ghost.narc
 114d4f20de27a95ad930b246bb6f62a6d7295fe5 *res/prebuilt/arc/tv.narc
 e486e52fc813b5c8d334afedf515cbce879de372 *res/prebuilt/fielddata/maptable/mapname.bin
 115e9632aba1f20195779667fe7ba8f89f268aad *res/prebuilt/poketool/pokezukan.narc
-9848c22dfdab0edbf9bab5dc6562fea41498d962 *res/pokemon/pl_pokezukan.narc
-e7b13d750733413f481d6c2423fee32cb7d5df37 *res/pokemon/shinzukan.narc
+9848c22dfdab0edbf9bab5dc6562fea41498d962 *res/pokemon/national_to_regional.narc
+e7b13d750733413f481d6c2423fee32cb7d5df37 *res/pokemon/regional_to_national.narc
 f414660585d0c1c638cb235ad6b025bd590986a4 *res/prebuilt/poketool/pokeanm/pokeanm.narc
 f414660585d0c1c638cb235ad6b025bd590986a4 *res/prebuilt/poketool/pokeanm/pl_pokeanm.narc
 e388289d5648250d73b02a38e7a8a3ecca525e0c *res/prebuilt/demo/shinka/data/particle/shinka_demo_particle.narc

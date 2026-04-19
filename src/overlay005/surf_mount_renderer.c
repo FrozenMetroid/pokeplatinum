@@ -46,7 +46,7 @@ typedef struct SurfMountRenderer {
     int mapObjLocalID;
     int mapHeaderID;
     int counter;
-    int animID;
+    BOOL syncPos;
     fx32 yOffset;
     fx32 yDelta;
     SurfMountUserData userData;
@@ -85,7 +85,7 @@ static void SurfMountResources_Free(SurfMountResources *resources)
     Simple3D_FreeModel(&resources->surfMountModel);
 }
 
-OverworldAnimManager *SurfMountRenderer_HandleSurfBegin(MapObject *surfMountMapObj, int tileX, int tileZ, int dir, BOOL reuseMapObjPos)
+OverworldAnimManager *SurfMountRenderer_HandleSurfBegin(MapObject *surfMountMapObj, int tileX, int tileZ, int dir, BOOL syncPos)
 {
     SurfMountUserData userData;
     VecFx32 mapObjPos = { 0, 0, 0 };
@@ -95,11 +95,11 @@ OverworldAnimManager *SurfMountRenderer_HandleSurfBegin(MapObject *surfMountMapO
     userData.resources = FieldEffectManager_GetRendererContext(userData.fieldEffMan, FIELD_EFFECT_RENDERER_SURF_MOUNT);
     userData.surfMountMapObj = surfMountMapObj;
 
-    if (!reuseMapObjPos) {
+    if (!syncPos) {
         FieldSystem *fieldSystem = MapObject_FieldSystem(surfMountMapObj);
 
-        mapObjPos.x = MAP_OBJECT_COORD_TO_FX32(tileX);
-        mapObjPos.z = MAP_OBJECT_COORD_TO_FX32(tileZ);
+        mapObjPos.x = MAP_OBJECT_COORD_CENTER_TO_FX32(tileX);
+        mapObjPos.z = MAP_OBJECT_COORD_CENTER_TO_FX32(tileZ);
         MapObject_RecalculatePositionHeight(fieldSystem, &mapObjPos);
     } else {
         VecFx32 spritePosOffset = { MAP_OBJECT_BASE_POS_OFFSET_X, MAP_OBJECT_BASE_POS_OFFSET_Y, MAP_OBJECT_BASE_POS_OFFSET_Z };
@@ -109,7 +109,7 @@ OverworldAnimManager *SurfMountRenderer_HandleSurfBegin(MapObject *surfMountMapO
     }
 
     int taskPriority = MapObject_CalculateTaskPriority(surfMountMapObj, 2);
-    return FieldEffectManager_InitAnimManager(userData.fieldEffMan, &sSurfMountRendererAnimFuncs, &mapObjPos, reuseMapObjPos, &userData, taskPriority);
+    return FieldEffectManager_InitAnimManager(userData.fieldEffMan, &sSurfMountRendererAnimFuncs, &mapObjPos, syncPos, &userData, taskPriority);
 }
 
 static BOOL SurfMountRenderer_AnimInit(OverworldAnimManager *animMan, void *context)
@@ -122,7 +122,7 @@ static BOOL SurfMountRenderer_AnimInit(OverworldAnimManager *animMan, void *cont
     renderer->mapObjLocalID = MapObject_GetLocalID(surfMountMapObj);
     renderer->mapHeaderID = MapObject_GetMapID(surfMountMapObj);
     renderer->dir = userData->dir;
-    renderer->animID = OverworldAnimManager_GetID(animMan);
+    renderer->syncPos = OverworldAnimManager_GetUserInt(animMan);
     renderer->yOffset = RENDERER_INITIAL_Y_OFFSET;
     renderer->yDelta = RENDERER_INITIAL_Y_DELTA;
 
@@ -156,7 +156,7 @@ static void SurfMountRenderer_AnimTick(OverworldAnimManager *animMan, void *cont
         return;
     }
 
-    if (renderer->animID == 0) {
+    if (!renderer->syncPos) {
         return;
     }
 
@@ -223,11 +223,11 @@ static void SurfMountRenderer_AnimRender(OverworldAnimManager *animMan, void *co
     Simple3D_DrawRenderObj(surfMountRenderObj, &pos, &scale, &rotation);
 }
 
-void SurfMountRenderer_Reset(OverworldAnimManager *animMan, int animID)
+void SurfMountRenderer_SetSyncPos(OverworldAnimManager *animMan, BOOL syncPos)
 {
     SurfMountRenderer *renderer = OverworldAnimManager_GetFuncsContext(animMan);
 
-    renderer->animID = animID;
+    renderer->syncPos = syncPos;
     renderer->yOffset = RENDERER_INITIAL_Y_OFFSET;
     renderer->yDelta = RENDERER_INITIAL_Y_DELTA;
 }

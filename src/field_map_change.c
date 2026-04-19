@@ -26,6 +26,7 @@
 #include "brightness_controller.h"
 #include "communication_system.h"
 #include "debug.h"
+#include "field_bgm.h"
 #include "field_message.h"
 #include "field_overworld_state.h"
 #include "field_overworld_weather.h"
@@ -66,7 +67,6 @@
 #include "underground.h"
 #include "underground_map_transition.h"
 #include "unk_0203D1B8.h"
-#include "unk_020553DC.h"
 #include "unk_020559DC.h"
 #include "unk_0205B33C.h"
 #include "unk_0205C22C.h"
@@ -253,7 +253,7 @@ void FieldMapChange_UpdateGameData(FieldSystem *fieldSystem, BOOL noWarp)
     int mapId = fieldSystem->location->mapId;
     FieldOverworldState *fieldState = SaveData_GetFieldOverworldState(fieldSystem->saveData);
 
-    Sound_ClearSpecialBGM(fieldSystem);
+    FieldBGM_ClearOverride(fieldSystem);
     FieldSystem_ClearLocalFlags(fieldSystem);
 
     if (!noWarp) {
@@ -310,7 +310,7 @@ void FieldMapChange_UpdateGameDataDistortionWorld(FieldSystem *fieldSystem, BOOL
     int mapId = fieldSystem->location->mapId;
     FieldOverworldState *fieldState = SaveData_GetFieldOverworldState(fieldSystem->saveData);
 
-    Sound_ClearSpecialBGM(fieldSystem);
+    FieldBGM_ClearOverride(fieldSystem);
     FieldSystem_ClearLocalFlags(fieldSystem);
 
     if (!param1) {
@@ -638,7 +638,7 @@ static BOOL FieldTask_ChangeMap(FieldTask *task)
     switch (mapChangeData->state) {
     case 0:
         Sound_PlayEffect(SEQ_SE_DP_KAIDAN2);
-        Sound_TryFadeInBGM(fieldSystem, location->mapId);
+        FieldBGM_TryFadeIn(fieldSystem, location->mapId);
         FieldTransition_FadeOutAndFinishMap(task);
         mapChangeData->state++;
         break;
@@ -651,7 +651,7 @@ static BOOL FieldTask_ChangeMap(FieldTask *task)
             break;
         }
 
-        Sound_PlayMapBGM(fieldSystem, location->mapId);
+        FieldBGM_PlayForMapHeader(fieldSystem, location->mapId);
         FieldTransition_StartMapAndFadeIn(task);
         mapChangeData->state++;
         break;
@@ -732,7 +732,7 @@ static BOOL FieldTask_ChangeMapFull(FieldTask *task)
 
     switch (mapChangeSub->state) {
     case 0:
-        Sound_TryFadeInBGM(fieldSystem, nextLocation->mapId);
+        FieldBGM_TryFadeIn(fieldSystem, nextLocation->mapId);
         FieldTransition_FinishMap(task);
         mapChangeSub->state++;
         break;
@@ -745,7 +745,7 @@ static BOOL FieldTask_ChangeMapFull(FieldTask *task)
             break;
         }
 
-        Sound_PlayMapBGM(fieldSystem, nextLocation->mapId);
+        FieldBGM_PlayForMapHeader(fieldSystem, nextLocation->mapId);
         FieldTransition_StartMap(task);
         mapChangeSub->state++;
         break;
@@ -805,7 +805,7 @@ static BOOL FieldTask_MapChangeFly(FieldTask *task)
 
     switch (mapChangeData->state) {
     case 0:
-        Sound_TryFadeInBGM(fieldSystem, location->mapId);
+        FieldBGM_TryFadeIn(fieldSystem, location->mapId);
         FieldTask_FinishFly(task);
         mapChangeData->state++;
         break;
@@ -819,7 +819,7 @@ static BOOL FieldTask_MapChangeFly(FieldTask *task)
             break;
         }
 
-        Sound_PlayMapBGM(fieldSystem, location->mapId);
+        FieldBGM_PlayForMapHeader(fieldSystem, location->mapId);
         FieldSystem_SetFlyFlags(fieldSystem);
         FieldTransition_StartMapAndFadeInFly(task);
         mapChangeData->state++;
@@ -927,7 +927,7 @@ static BOOL FieldTask_MapChangeByFieldWarp(FieldTask *task)
 
     switch (mapChangeData->state) {
     case 0:
-        Sound_TryFadeInBGM(fieldSystem, location->mapId);
+        FieldBGM_TryFadeIn(fieldSystem, location->mapId);
         FieldTask_StartFinishFieldMapFieldWarp(task);
         mapChangeData->state++;
         break;
@@ -941,7 +941,7 @@ static BOOL FieldTask_MapChangeByFieldWarp(FieldTask *task)
             break;
         }
 
-        Sound_PlayMapBGM(fieldSystem, location->mapId);
+        FieldBGM_PlayForMapHeader(fieldSystem, location->mapId);
 
         if (mapChangeData->fieldWarpType == FIELD_WARP_TYPE_TELEPORT) {
             FieldSystem_SetTeleportFlags(fieldSystem);
@@ -1039,7 +1039,7 @@ static BOOL FieldTask_MapChangeWarp(FieldTask *task)
         break;
     case 1:
         if (mapChangeWarpData->warpFinished) {
-            Sound_TryFadeInBGM(fieldSystem, nextLocation->mapId);
+            FieldBGM_TryFadeIn(fieldSystem, nextLocation->mapId);
             FieldTransition_FinishMap(task);
             mapChangeWarpData->state++;
         }
@@ -1053,7 +1053,7 @@ static BOOL FieldTask_MapChangeWarp(FieldTask *task)
             break;
         }
 
-        Sound_PlayMapBGM(fieldSystem, nextLocation->mapId);
+        FieldBGM_PlayForMapHeader(fieldSystem, nextLocation->mapId);
         FieldTransition_StartMap(task);
         mapChangeWarpData->state++;
         break;
@@ -1230,7 +1230,7 @@ BOOL FieldTask_MapChangeToUnderground(FieldTask *task)
         }
 
         Sound_SetScene(SOUND_SCENE_NONE);
-        Sound_ClearSpecialBGM(fieldSystem);
+        FieldBGM_ClearOverride(fieldSystem);
         FieldTransition_StartMap(task);
         ctx->state++;
         break;
@@ -1296,7 +1296,7 @@ BOOL FieldTask_MapChangeFromUnderground(FieldTask *task)
         }
 
         Sound_SetScene(SOUND_SCENE_NONE);
-        Sound_ClearSpecialBGM(fieldSystem);
+        FieldBGM_ClearOverride(fieldSystem);
         FieldTransition_StartMap(task);
         ctx->state++;
         break;
@@ -1397,7 +1397,7 @@ static BOOL sub_02054538(FieldTask *task)
 
     switch (*state) {
     case 0:
-        Sound_TryFadeInBGM(fieldSystem, v3->mapId);
+        FieldBGM_TryFadeIn(fieldSystem, v3->mapId);
         FieldSystem_StartWarpAnimation(fieldSystem, 1, &mapChangeData->unk_04);
         (*state)++;
         break;
@@ -1416,7 +1416,7 @@ static BOOL sub_02054538(FieldTask *task)
             break;
         }
 
-        Sound_PlayMapBGM(fieldSystem, v3->mapId);
+        FieldBGM_PlayForMapHeader(fieldSystem, v3->mapId);
         FieldTransition_StartMap(task);
         (*state)++;
         break;
@@ -1457,7 +1457,7 @@ static BOOL sub_02054648(FieldTask *task)
 
     switch (*state) {
     case 0:
-        Sound_TryFadeInBGM(fieldSystem, v3->mapId);
+        FieldBGM_TryFadeIn(fieldSystem, v3->mapId);
         FieldTransition_FadeOut(task);
         (*state)++;
         break;
@@ -1474,7 +1474,7 @@ static BOOL sub_02054648(FieldTask *task)
             break;
         }
 
-        Sound_PlayMapBGM(fieldSystem, v3->mapId);
+        FieldBGM_PlayForMapHeader(fieldSystem, v3->mapId);
         FieldTransition_StartMap(task);
         (*state)++;
         break;
@@ -1523,7 +1523,7 @@ static BOOL FieldTask_ChangeMapColosseum(FieldTask *task)
     switch (mapChangeData->state) {
     case 0:
         Sound_PlayEffect(SEQ_SE_DP_KAIDAN2);
-        Sound_TryFadeInBGM(fieldSystem, location->mapId);
+        FieldBGM_TryFadeIn(fieldSystem, location->mapId);
         FieldTransition_FadeOutAndFinishMap(task);
         mapChangeData->state++;
         break;
@@ -1536,7 +1536,7 @@ static BOOL FieldTask_ChangeMapColosseum(FieldTask *task)
             break;
         }
 
-        Sound_PlayMapBGM(fieldSystem, location->mapId);
+        FieldBGM_PlayForMapHeader(fieldSystem, location->mapId);
         FieldTransition_StartMap(task);
         mapChangeData->state++;
         break;

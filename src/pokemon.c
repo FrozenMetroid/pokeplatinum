@@ -54,6 +54,7 @@
 #include "unk_0202C9F4.h"
 #include "unk_02092494.h"
 
+#include "res/pokemon/regional_pokedex_size.h"
 #include "res/trainers/classes/trbgra.naix"
 
 #include "debug.h"
@@ -4144,7 +4145,7 @@ u16 Pokemon_NationalDexNumber(u16 sinnohDexNumber)
 {
     u16 result = 0;
 
-    if (sinnohDexNumber <= SINNOH_DEX_COUNT) {
+    if (sinnohDexNumber <= REGIONAL_DEX_COUNT) {
         NARC_ReadFromMemberByIndexPair(&result, NARC_INDEX_POKETOOL__SHINZUKAN, 0, sinnohDexNumber * 2, 2);
     }
 

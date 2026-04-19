@@ -6,15 +6,14 @@
 #include "constants/field/dynamic_map_features.h"
 #include "constants/great_marsh_tram.h"
 
-#include "struct_defs/struct_02071B10.h"
 #include "struct_defs/struct_02071B30.h"
 #include "struct_defs/struct_02071B6C.h"
 #include "struct_defs/struct_02071BF8.h"
 #include "struct_defs/struct_02071C18.h"
-#include "struct_defs/struct_02071C34.h"
 
 #include "field/field_system.h"
 #include "field/field_system_sub2_t.h"
+#include "overlay005/villa_furniture.h"
 #include "overlay006/great_marsh_tram.h"
 #include "overlay008/ov8_02249960.h"
 #include "overlay009/ov9_02249960.h"
@@ -57,8 +56,8 @@ void PersistedMapFeatures_InitForPastoriaGym(FieldSystem *fieldSystem)
     PersistedMapFeatures *persistedMapFeatures = MiscSaveBlock_GetPersistedMapFeatures(FieldSystem_GetSaveData(fieldSystem));
     PersistedMapFeatures_InitWithID(persistedMapFeatures, DYNAMIC_MAP_FEATURES_PASTORIA_GYM);
 
-    UnkStruct_02071B10 *data = PersistedMapFeatures_GetBuffer(persistedMapFeatures, DYNAMIC_MAP_FEATURES_PASTORIA_GYM);
-    data->unk_00 = 1;
+    PastoriaGymPersistedFeature *feature = PersistedMapFeatures_GetBuffer(persistedMapFeatures, DYNAMIC_MAP_FEATURES_PASTORIA_GYM);
+    feature->pressedButton = PASTORIA_GREEN_BUTTON_PRESSED;
 }
 
 void PersistedMapFeatures_InitForCanalaveGym(FieldSystem *fieldSystem)
@@ -138,8 +137,8 @@ void PersistedMapFeatures_InitForVilla(FieldSystem *fieldSystem)
     PersistedMapFeatures *persistedMapFeatures = MiscSaveBlock_GetPersistedMapFeatures(FieldSystem_GetSaveData(fieldSystem));
     PersistedMapFeatures_InitWithID(persistedMapFeatures, DYNAMIC_MAP_FEATURES_VILLA);
 
-    UnkStruct_02071C34 *data = PersistedMapFeatures_GetBuffer(persistedMapFeatures, DYNAMIC_MAP_FEATURES_VILLA);
-    memset(data, 0, sizeof(UnkStruct_02071C34));
+    VillaPersistedData *data = PersistedMapFeatures_GetBuffer(persistedMapFeatures, DYNAMIC_MAP_FEATURES_VILLA);
+    memset(data, 0, sizeof(VillaPersistedData));
 }
 
 void PersistedMapFeatures_InitForDistortionWorld(FieldSystem *fieldSystem)

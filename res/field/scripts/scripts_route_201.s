@@ -405,7 +405,7 @@ Route201_EndChooseStarterSequenceAndWarpHome:
     FadeScreenOut FADE_SCREEN_SPEED_MEDIUM
     WaitFadeScreen
     HealParty
-    Warp MAP_HEADER_TWINLEAF_TOWN_PLAYER_HOUSE_1F, 0, 2, 6, 0
+    Warp MAP_HEADER_TWINLEAF_TOWN_PLAYER_HOUSE_1F, 0, 2, 6, DIR_NORTH
     FadeScreenIn FADE_SCREEN_SPEED_MEDIUM
     WaitFadeScreen
     ReleaseAll
@@ -1046,7 +1046,7 @@ _0CF1:
     WaitTime 30, VAR_RESULT
     FadeScreenOut FADE_SCREEN_SPEED_MEDIUM
     WaitFadeScreen
-    Warp MAP_HEADER_TWINLEAF_TOWN_PLAYER_HOUSE_1F, 0, 2, 6, 0
+    Warp MAP_HEADER_TWINLEAF_TOWN_PLAYER_HOUSE_1F, 0, 2, 6, DIR_NORTH
     FadeScreenIn FADE_SCREEN_SPEED_MEDIUM
     WaitFadeScreen
     ReleaseAll
