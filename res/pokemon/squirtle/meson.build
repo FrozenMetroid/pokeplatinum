@@ -1,4 +1,4 @@
-species_data_files += files('data.json')
+species_data_files += files('data.json', 'sprite_data.json')
 
 poke_icon_files += files('icon.png')
 
@@ -6,5 +6,6 @@ pokegra_files += files('female_back.png')
 pokegra_files += files('male_back.png')
 pokegra_files += files('female_front.png')
 pokegra_files += files('male_front.png')
+pokegra_files += files('normal.pal')
 
 pokefoot_files += files('footprint.png')

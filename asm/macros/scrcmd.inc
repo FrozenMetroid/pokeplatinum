@@ -5050,6 +5050,10 @@
     .short SCRCMD_DEBUG_SETNATIONALDEXALLSEEN
     .endm
 
+    .macro Debug_GiveAllPokemon
+    .short SCRCMD_DEBUG_GIVEALLPOKEMON
+    .endm
+
 
 // CONVENIENCE MACROS
 

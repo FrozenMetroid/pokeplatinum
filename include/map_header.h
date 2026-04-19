@@ -29,6 +29,12 @@ typedef struct {
     u16 isFlyAllowed : 1;
 } MapHeader;
 
+typedef struct {
+    u16 header;
+    u8 x;
+    u8 z;
+} MapHeaderCoords;
+
 u32 MapHeader_IDBoundsCheck(u32 headerID);
 const u16 MapHeader_GetAreaDataArchiveID(u32 headerID);
 const u16 sub_0203A04C(u32 headerID);

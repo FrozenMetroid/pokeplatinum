@@ -74,6 +74,81 @@ static const u8 sTownMapFlyLocationUnlockFlags[NUM_FLY_LOCATIONS] = {
     FIRST_ARRIVAL_POKEMON_LEAGUE,
 };
 
+#ifdef TESTING_MAP_COORDS_BASED_ON_HEADER
+// return TRUE if you can use default coordinates for a header
+// return FALSE if you need special exceptions -- e.g. Mt. Coronet and Pokemon League
+static BOOL TownMapContext_GetDefaultHeaderCoordinates(u16 mapHeader, int *x, int *z)
+{
+    static MapHeaderCoords sMapHeadersWithDefaultCoords[] = {
+        { MAP_HEADER_TWINLEAF_TOWN,     3, 27 }, // not necessary since it's a single map
+        { MAP_HEADER_SANDGEM_TOWN,      5, 26 }, // not necessary since it's a single map
+        { MAP_HEADER_JUBILIFE_CITY,     5, 24 },
+        { MAP_HEADER_CANALAVE_CITY,     1, 23 },
+        { MAP_HEADER_OREBURGH_CITY,     9, 23 },
+        { MAP_HEADER_FLOAROMA_TOWN,     5, 20 },
+        { MAP_HEADER_ETERNA_CITY,       9, 16 },
+        { MAP_HEADER_HEARTHOME_CITY,    14, 22 },
+        { MAP_HEADER_SOLACEON_TOWN,     17, 20 },
+        { MAP_HEADER_VEILSTONE_CITY,    22, 19 },
+        { MAP_HEADER_PASTORIA_CITY,     19, 26 },
+        { MAP_HEADER_CELESTIC_TOWN,     14, 16 },
+        { MAP_HEADER_SNOWPOINT_CITY,    11, 7 },
+        { MAP_HEADER_SUNYSHORE_CITY,    26, 24 },
+        // { MAP_HEADER_POKEMON_LEAGUE, 0, 0 }, use player coordinates since there are two unique versions of this
+        { MAP_HEADER_FIGHT_AREA,        19, 13},
+        { MAP_HEADER_SURVIVAL_AREA,     20, 10},
+        { MAP_HEADER_RESORT_AREA,       25, 14},
+        { MAP_HEADER_ROUTE_201,         3, 26},
+        { MAP_HEADER_ROUTE_202,         5, 25},
+        { MAP_HEADER_ROUTE_203,         6, 23},
+        { MAP_HEADER_ROUTE_204_SOUTH,   5, 22},
+        { MAP_HEADER_ROUTE_204_NORTH,   5, 21},
+        { MAP_HEADER_ROUTE_205_SOUTH,   6, 20},
+        { MAP_HEADER_ROUTE_205_NORTH,   8, 16},
+        { MAP_HEADER_ROUTE_206,         9, 20},
+        { MAP_HEADER_ROUTE_207,         9, 22},
+        { MAP_HEADER_ROUTE_208,         12, 22},
+        { MAP_HEADER_ROUTE_209,         17, 22},
+        { MAP_HEADER_ROUTE_210_SOUTH,   17, 18},
+        { MAP_HEADER_ROUTE_210_NORTH,   16, 16},
+        { MAP_HEADER_ROUTE_211_WEST,    11, 16},
+        { MAP_HEADER_ROUTE_211_EAST,    13, 16},
+        { MAP_HEADER_ROUTE_212_NORTH,   14, 24},
+        { MAP_HEADER_ROUTE_212_SOUTH,   16, 26},
+        { MAP_HEADER_ROUTE_213,         21, 25},
+        { MAP_HEADER_ROUTE_214,         22, 21},
+        { MAP_HEADER_ROUTE_215,         19, 18},
+        { MAP_HEADER_ROUTE_216,         10, 12},
+        { MAP_HEADER_ROUTE_217,         9, 9},
+        { MAP_HEADER_ROUTE_218,         3, 23},
+        { MAP_HEADER_ROUTE_219,         5, 27},
+        { MAP_HEADER_ROUTE_220,         6, 28},
+        { MAP_HEADER_ROUTE_221,         8, 28},
+        { MAP_HEADER_ROUTE_222,         24, 24},
+        { MAP_HEADER_ROUTE_223,         26, 20},
+        { MAP_HEADER_ROUTE_224,         27, 16},
+        { MAP_HEADER_ROUTE_225,         19, 11},
+        { MAP_HEADER_ROUTE_226,         22, 10},
+        { MAP_HEADER_ROUTE_227,         23, 8},
+        { MAP_HEADER_ROUTE_228,         24, 11},
+        { MAP_HEADER_ROUTE_229,         25, 13},
+        { MAP_HEADER_ROUTE_230,         22, 13},
+        { MAP_HEADER_VERITY_LAKEFRONT,  2, 26},
+        { MAP_HEADER_ACUITY_LAKEFRONT,  9, 6},
+        { MAP_HEADER_VALOR_LAKEFRONT,   21, 23},
+    };
+
+    for (int i = 0; i < NELEMS(sMapHeadersWithDefaultCoords); i++) {
+        if (mapHeader == sMapHeadersWithDefaultCoords[i].header) {
+            *x = sMapHeadersWithDefaultCoords[i].x * MAP_TILES_COUNT_X;
+            *z = sMapHeadersWithDefaultCoords[i].z * MAP_TILES_COUNT_Z;
+            return TRUE;
+        }
+    }
+    return FALSE;
+}
+#endif
+
 void TownMapContext_Init(FieldSystem *fieldSystem, TownMapContext *ctx, enum TownMapMode townMapMode)
 {
     // forward declarations required for matching
@@ -107,6 +182,17 @@ void TownMapContext_Init(FieldSystem *fieldSystem, TownMapContext *ctx, enum Tow
 
     currentMap = MapMatrix_GetMapHeaderIDAtCoords(fieldSystem->mapMatrix, playerX / MAP_TILES_COUNT_X, playerZ / MAP_TILES_COUNT_Z);
 
+    #ifdef TESTING_MAP_COORDS_BASED_ON_HEADER
+    if (MapHeader_IsOnMainMatrix(currentMap)) {
+        if (!TownMapContext_GetDefaultHeaderCoordinates(currentMap, &ctx->playerX, &ctx->playerZ)) {
+            ctx->playerX = playerX;
+            ctx->playerZ = playerZ;
+        }
+    } else {
+        ctx->playerX = exitLocation->x;
+        ctx->playerZ = exitLocation->z;
+    }
+    #else
     if (MapHeader_IsOnMainMatrix(currentMap)) {
         ctx->playerX = playerX;
         ctx->playerZ = playerZ;
@@ -114,6 +200,7 @@ void TownMapContext_Init(FieldSystem *fieldSystem, TownMapContext *ctx, enum Tow
         ctx->playerX = exitLocation->x;
         ctx->playerZ = exitLocation->z;
     }
+    #endif
 
     trainerInfo = SaveData_GetTrainerInfo(FieldSystem_GetSaveData(fieldSystem));
     ctx->trainerGender = TrainerInfo_Gender(trainerInfo);

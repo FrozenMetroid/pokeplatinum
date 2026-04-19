@@ -7311,3 +7311,16 @@ static BOOL ScrCmd_Debug_SetNationalDexAllSeen(ScriptContext *ctx)
 
     return FALSE;
 }
+
+static BOOL ScrCmd_Debug_GiveAllPokemon(ScriptContext *ctx)
+{
+    PCBoxes *pcBoxes = SaveData_GetPCBoxes(ctx->fieldSystem->saveData);
+    for (int i = 1; i < SPECIES_ARCEUS + 1; i++) {
+        Pokemon *mon = Pokemon_New(HEAP_ID_FIELD1);
+        Pokemon_InitWith(mon, i, 100, 31, TRUE, 0, OTID_NOT_SET, 0);
+        PCBoxes_TryStoreBoxMon(pcBoxes, &mon->box);
+        Heap_Free(mon);
+    }
+
+    return FALSE;
+}

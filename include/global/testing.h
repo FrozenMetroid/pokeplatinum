@@ -19,4 +19,11 @@ TESTING_GIVE_PERFECT_ENCOUNTERS
 */
 #define TESTING_GIVE_PERFECT_ENCOUNTERS
 
+/*
+TESTING_MAP_COORDS_BASED_ON_HEADER
+    Updates the Town Map and Fly to display the player's location based on the header
+    Just testing this for Legacy eventually
+*/
+// #define TESTING_MAP_COORDS_BASED_ON_HEADER
+
 #endif

@@ -30,7 +30,7 @@
     "abilities": [ "ABILITY_FLAME_BODY", "ABILITY_MAGMA_ARMOR" ],
     "safari_flee_rate": 0,
     "body_color": "MON_COLOR_RED",
-    "flip_sprite": true,
+    "flip_sprite": false,
     "icon_palette": 0,
     "learnset": {
         "by_level": [

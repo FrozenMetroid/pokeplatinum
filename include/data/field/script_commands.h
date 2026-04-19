@@ -873,6 +873,7 @@ const ScrCmdFunc gFieldScriptCommands[] = {
     ScriptCommandTableEntry(SCRCMD_PRINTMONPERSONALITY,                                  ScrCmd_PrintMonPersonality)
     ScriptCommandTableEntry(SCRCMD_CHECKEXPSHARESTATUS,                                  ScrCmd_CheckExpShareStatus)
     ScriptCommandTableEntry(SCRCMD_DEBUG_SETNATIONALDEXALLSEEN,                          ScrCmd_Debug_SetNationalDexAllSeen)
+    ScriptCommandTableEntry(SCRCMD_DEBUG_GIVEALLPOKEMON,                                 ScrCmd_Debug_GiveAllPokemon)
 
 #ifndef INC_AS_ASM
 };

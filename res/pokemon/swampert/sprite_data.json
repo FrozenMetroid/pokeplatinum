@@ -10,13 +10,13 @@
         "start_delay": 15,
         "frames": [
             {
-                "sprite_frame": 1,
+                "sprite_frame": 0,
                 "frame_delay": 5,
                 "x_shift": 0,
                 "y_shift": 0
             },
             {
-                "sprite_frame": 0,
+                "sprite_frame": 1,
                 "frame_delay": 15,
                 "x_shift": 0,
                 "y_shift": 0
