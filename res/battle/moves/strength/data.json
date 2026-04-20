@@ -1,7 +1,7 @@
 {
     "name": "Strength",
     "class": "CLASS_PHYSICAL",
-    "type": "TYPE_NORMAL",
+    "type": "TYPE_FIGHTING",
     "power": 80,
     "accuracy": 100,
     "pp": 15,

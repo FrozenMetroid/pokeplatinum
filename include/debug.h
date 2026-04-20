@@ -48,3 +48,9 @@ DEBUG_FLY_FROM_START
     Enables Fly everywhere
 */
 #define DEBUG_FLY_FROM_START
+
+/*
+DEBUG_FASTER_HP_BARS
+    Displays debug information about the HP bar update calculations
+*/
+//#define DEBUG_FASTER_HP_BARS

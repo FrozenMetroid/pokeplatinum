@@ -52,7 +52,8 @@
             [44, "MOVE_HYPER_VOICE"],
             [48, "MOVE_HEALING_WISH"],
             [52, "MOVE_PSYCHIC"],
-            [55, "MOVE_RECOVER"]        ],
+            [55, "MOVE_RECOVER"]        
+        ],
         "by_tm": [
             "TM04",
             "TM06",

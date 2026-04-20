@@ -228,6 +228,9 @@ ScriptCommand(BTLCMD_CHECKCURMOVEISTYPE,          BtlCmd_CheckCurMoveIsType)
 ScriptCommand(BTLCMD_LOADARCHIVEDMONDATA,         BtlCmd_LoadArchivedMonData)
 ScriptCommand(BTLCMD_REFRESHMONDATA,              BtlCmd_RefreshMonData)
 ScriptCommand(BTLCMD_END,                         BtlCmd_End)
+ScriptCommand(BTLCMD_CHECKFLINGEXCEPTIONS,        BtlCmd_CheckFlingExceptions)
+ScriptCommand(BTLCMD_WAITABSCREENTAP,             BtlCmd_WaitABScreenTap)
+ScriptCommand(BTLCMD_CHECKSUNNYWEATHER,           BtlCmd_CheckSunnyWeather)
 
 // clang-format on
 

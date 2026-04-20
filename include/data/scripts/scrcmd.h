@@ -202,7 +202,7 @@ ScriptCommand(SCRCMD_USEWATERFALL,                                         ScrCm
 ScriptCommand(SCRCMD_USEFLY,                                               ScrCmd_UseFly)
 ScriptCommand(SCRCMD_0C3,                                                  ScrCmd_0C3)
 ScriptCommand(SCRCMD_0C4,                                                  ScrCmd_0C4)
-ScriptCommand(SCRCMD_0C5,                                                  ScrCmd_0C5)
+ScriptCommand(SCRCMD_FIELDMOVESUMMONANIM,                                  ScrCmd_FieldMoveSummonAnim)
 ScriptCommand(SCRCMD_CHANGEINTOCONTESTATTIRE,                              ScrCmd_ChangeIntoContestAttire)
 ScriptCommand(SCRCMD_CHECKPLAYERONBIKE,                                    ScrCmd_CheckPlayerOnBike)
 ScriptCommand(SCRCMD_SETPLAYERBIKE,                                        ScrCmd_SetPlayerBike)
@@ -845,6 +845,17 @@ ScriptCommand(SCRCMD_BUFFERTRAINERCLASSNAMEWITHARTICLE,                    ScrCm
 ScriptCommand(SCRCMD_BUFFERBALLSEALNAMEPLURAL,                             ScrCmd_BufferBallSealNamePlural)
 ScriptCommand(SCRCMD_CAPITALIZEFIRSTLETTER,                                ScrCmd_CapitalizeFirstLetter)
 ScriptCommand(SCRCMD_BUFFERFLOORNUMBER,                                    ScrCmd_BufferFloorNumber)
+ScriptCommand(SCRCMD_REPLACEMOVE,                                          ScrCmd_ReplaceMove)
+ScriptCommand(SCRCMD_REPLACEABILITY,                                       ScrCmd_ReplaceAbility)
+ScriptCommand(SCRCMD_QUEUENEWREPEL,                                        ScrCmd_QueueNewRepel)
+ScriptCommand(SCRCMD_CHECKTMHMMOVECOMPATIBILITY,                           ScrCmd_CheckTMHMMoveCompatibility)
+ScriptCommand(SCRCMD_DEBUG_SETALLTOWNSVISITED,                             ScrCmd_Debug_SetAllTownsVisited)
+ScriptCommand(SCRCMD_BOTTLECAPSTATINCREASE,                                ScrCmd_BottleCapStatIncrease)
+ScriptCommand(SCRCMD_PRINTMONPERSONALITY,                                  ScrCmd_PrintMonPersonality)
+ScriptCommand(SCRCMD_CHECKEXPSHARESTATUS,                                  ScrCmd_CheckExpShareStatus)
+ScriptCommand(SCRCMD_DEBUG_SETNATIONALDEXALLSEEN,                          ScrCmd_Debug_SetNationalDexAllSeen)
+ScriptCommand(SCRCMD_DEBUG_GIVEALLPOKEMON,                                 ScrCmd_Debug_GiveAllPokemon)
+ScriptCommand(SCRCMD_DEBUG_REDUCEPOKEMONLEVEL,                             ScrCmd_Debug_ReducePokemonLevel)
 
 // clang-format on
 

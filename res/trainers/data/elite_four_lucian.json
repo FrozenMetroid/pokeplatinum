@@ -16,71 +16,96 @@
         {
             "species": "SPECIES_MR_MIME",
             "form": 0,
-            "level": 53,
-            "item": "ITEM_NONE",
+            "level": 56,
+            "item": "ITEM_LIGHT_CLAY",
             "moves": [
                 "MOVE_PSYCHIC",
                 "MOVE_THUNDERBOLT",
                 "MOVE_REFLECT",
                 "MOVE_LIGHT_SCREEN"
             ],
-            "iv_scale": 250,
+            "iv_scale": 0,
+            "ivnums": [31, 31, 31, 31, 31, 31],
+            "evnums": [180, 0, 0, 0, 180, 0],
+            "ball": "ITEM_POKE_BALL",
+            "ability": "ABILITY_FILTER",
+            "nature": "NATURE_MODEST",
             "ball_seal": 0
         },
         {
-            "species": "SPECIES_ESPEON",
+            "species": "SPECIES_JYNX",
             "form": 0,
-            "level": 55,
-            "item": "ITEM_NONE",
+            "level": 57,
+            "item": "ITEM_NEVERMELTICE",
             "moves": [
                 "MOVE_PSYCHIC",
                 "MOVE_SHADOW_BALL",
-                "MOVE_QUICK_ATTACK",
-                "MOVE_SIGNAL_BEAM"
+                "MOVE_ICE_BEAM",
+                "MOVE_LOVELY_KISS"
             ],
-            "iv_scale": 250,
+            "iv_scale": 0,
+            "ivnums": [31, 31, 31, 31, 31, 31],
+            "evnums": [0, 0, 0, 180, 180, 0],
+            "ball": "ITEM_POKE_BALL",
+            "ability": "ABILITY_DRY_SKIN",
+            "nature": "NATURE_TIMID",
             "ball_seal": 0
         },
         {
             "species": "SPECIES_BRONZONG",
             "form": 0,
-            "level": 54,
-            "item": "ITEM_NONE",
+            "level": 57,
+            "item": "ITEM_LEFTOVERS",
             "moves": [
-                "MOVE_PSYCHIC",
+                "MOVE_ZEN_HEADBUTT",
                 "MOVE_GYRO_BALL",
                 "MOVE_EARTHQUAKE",
-                "MOVE_CALM_MIND"
+                "MOVE_SUBSTITUTE"
             ],
-            "iv_scale": 250,
+            "iv_scale": 0,
+            "ivnums": [31, 31, 31, 31, 31, 31],
+            "evnums": [180, 180, 0, 0, 0, 0],
+            "ball": "ITEM_POKE_BALL",
+            "ability": "ABILITY_HEATPROOF",
+            "nature": "NATURE_BRAVE",
             "ball_seal": 0
         },
         {
-            "species": "SPECIES_ALAKAZAM",
+            "species": "SPECIES_CHIMECHO",
             "form": 0,
-            "level": 56,
-            "item": "ITEM_NONE",
+            "level": 58,
+            "item": "ITEM_PETAYA_BERRY",
             "moves": [
                 "MOVE_PSYCHIC",
-                "MOVE_ENERGY_BALL",
-                "MOVE_FOCUS_BLAST",
-                "MOVE_RECOVER"
+                "MOVE_RECOVER",
+                "MOVE_SHADOW_BALL",
+                "MOVE_SIGNAL_BEAM"
             ],
-            "iv_scale": 250,
+            "iv_scale": 0,
+            "ivnums": [31, 31, 31, 31, 31, 31],
+            "evnums": [180, 0, 0, 0, 180, 0],
+            "ball": "ITEM_POKE_BALL",
+            "ability": "ABILITY_LEVITATE",
+            "nature": "NATURE_MODEST",
             "ball_seal": 0
         },
         {
             "species": "SPECIES_GALLADE",
             "form": 0,
             "level": 59,
-            "item": "ITEM_SITRUS_BERRY",
+            "item": "ITEM_EXPERT_BELT",
             "moves": [
-                "MOVE_DRAIN_PUNCH",
+                "MOVE_CLOSE_COMBAT",
                 "MOVE_PSYCHO_CUT",
                 "MOVE_LEAF_BLADE",
-                "MOVE_STONE_EDGE"
+                "MOVE_SHADOW_SNEAK"
             ],
-            "iv_scale": 250,
+            "iv_scale": 0,
+            "ivnums": [31, 31, 31, 31, 31, 31],
+            "evnums": [0, 200, 0, 200, 0, 0],
+            "ball": "ITEM_HEAL_BALL",
+            "ability": "ABILITY_SHARPNESS",
+            "nature": "NATURE_JOLLY",
             "ball_seal": 0
         }
     ],

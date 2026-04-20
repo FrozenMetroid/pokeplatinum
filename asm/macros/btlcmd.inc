@@ -1233,14 +1233,15 @@
 
     .macro End
     .long BTLCMD_END
+    .endm
 
     .macro CheckFlingExceptions jump_no_effect
     .long BTLCMD_CHECKFLINGEXCEPTIONS
     .long (\jump_no_effect-.) / 4 - 1
     .endm
 
-    .macro WaitABButtonsOrScreenTap
-    .long BTLCMD_WAITABBUTTONSORSCREENTAP
+    .macro WaitABScreenTap
+    .long BTLCMD_WAITABSCREENTAP
     .endm
 
     .macro CheckSunnyWeather jump_not_sunny

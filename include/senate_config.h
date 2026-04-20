@@ -75,6 +75,8 @@ Shortened timer for Honey Tree
 
 #define BATTLE_BUFF_FACADE_BURN_DAMAGE // Burn damage no longer halves Facade damage
 
+#define BATTLE_NORMALIZE_POWER_BOOST // Normalize started giving 20% boost in gen 7
+
 
 // The following are always applied because they deal with some subscripts and/or things that aren't easily configurable
 // Modernization:
@@ -82,6 +84,7 @@ Shortened timer for Honey Tree
 // 2) Rapid Spin
 // 3) Sturdy
 // 4) Modern Exp. Share
+// 5) Growth
 
 
 

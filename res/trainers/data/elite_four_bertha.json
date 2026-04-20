@@ -8,78 +8,104 @@
     "ai_flags": [
         "AI_FLAG_BASIC",
         "AI_FLAG_EVAL_ATTACK",
-        "AI_FLAG_EXPERT"
+        "AI_FLAG_EXPERT",
+        "AI_FLAG_WEATHER"
     ],
     "double_battle": false,
     "party": [
         {
+            "species": "SPECIES_HIPPOWDON",
+            "form": 0,
+            "level": 52,
+            "item": "ITEM_LEFTOVERS",
+            "moves": [
+                "MOVE_EARTHQUAKE",
+                "MOVE_STEALTH_ROCK",
+                "MOVE_ROAR",
+                "MOVE_SLACK_OFF"
+            ],
+            "iv_scale": 0,
+            "ivnums": [31, 31, 31, 31, 31, 31],
+            "evnums": [180, 90, 90, 0, 0, 0],
+            "ball": "ITEM_POKE_BALL",
+            "ability": "ABILITY_SAND_STREAM",
+            "nature": "NATURE_CAREFUL",
+            "ball_seal": 0
+        },
+        {
             "species": "SPECIES_WHISCASH",
             "form": 0,
-            "level": 50,
-            "item": "ITEM_NONE",
+            "level": 52,
+            "item": "ITEM_MYSTIC_WATER",
             "moves": [
-                "MOVE_EARTH_POWER",
-                "MOVE_AQUA_TAIL",
+                "MOVE_EARTHQUAKE",
+                "MOVE_WATERFALL",
                 "MOVE_ZEN_HEADBUTT",
-                "MOVE_SANDSTORM"
+                "MOVE_AQUA_JET"
             ],
-            "iv_scale": 250,
+            "iv_scale": 0,
+            "ivnums": [31, 31, 31, 31, 31, 31],
+            "evnums": [180, 180, 0, 0, 0, 0],
+            "ball": "ITEM_POKE_BALL",
+            "ability": "ABILITY_OBLIVIOUS",
+            "nature": "NATURE_ADAMANT",
             "ball_seal": 0
         },
         {
             "species": "SPECIES_GLISCOR",
             "form": 0,
             "level": 53,
-            "item": "ITEM_NONE",
+            "item": "ITEM_EXPERT_BELT",
             "moves": [
                 "MOVE_EARTHQUAKE",
+                "MOVE_THUNDER_FANG",
                 "MOVE_ICE_FANG",
-                "MOVE_FIRE_FANG",
-                "MOVE_THUNDER_FANG"
+                "MOVE_FIRE_FANG"
             ],
-            "iv_scale": 250,
+            "iv_scale": 0,
+            "ivnums": [31, 31, 31, 31, 31, 31],
+            "evnums": [180, 90, 90, 0, 0, 0],
+            "ball": "ITEM_POKE_BALL",
+            "ability": "ABILITY_SAND_VEIL",
+            "nature": "NATURE_IMPISH",
             "ball_seal": 0
         },
         {
-            "species": "SPECIES_HIPPOWDON",
+            "species": "SPECIES_TORTERRA",
             "form": 0,
-            "level": 52,
-            "item": "ITEM_NONE",
+            "level": 54,
+            "item": "ITEM_YACHE_BERRY",
             "moves": [
                 "MOVE_EARTHQUAKE",
+                "MOVE_LEAF_BLADE",
                 "MOVE_STONE_EDGE",
-                "MOVE_CRUNCH",
-                "MOVE_YAWN"
+                "MOVE_SWORDS_DANCE"
             ],
-            "iv_scale": 250,
-            "ball_seal": 0
-        },
-        {
-            "species": "SPECIES_GOLEM",
-            "form": 0,
-            "level": 52,
-            "item": "ITEM_NONE",
-            "moves": [
-                "MOVE_EARTHQUAKE",
-                "MOVE_FIRE_PUNCH",
-                "MOVE_THUNDER_PUNCH",
-                "MOVE_SANDSTORM"
-            ],
-            "iv_scale": 250,
+            "iv_scale": 0,
+            "ivnums": [31, 31, 31, 31, 31, 31],
+            "evnums": [180, 180, 0, 0, 0, 0],
+            "ball": "ITEM_POKE_BALL",
+            "ability": "ABILITY_OVERGROW",
+            "nature": "NATURE_ADAMANT",
             "ball_seal": 0
         },
         {
             "species": "SPECIES_RHYPERIOR",
             "form": 0,
             "level": 55,
-            "item": "ITEM_SITRUS_BERRY",
+            "item": "ITEM_PASSHO_BERRY",
             "moves": [
                 "MOVE_EARTHQUAKE",
                 "MOVE_ROCK_WRECKER",
                 "MOVE_MEGAHORN",
                 "MOVE_AVALANCHE"
             ],
-            "iv_scale": 250,
+            "iv_scale": 0,
+            "ivnums": [31, 31, 31, 31, 31, 31],
+            "evnums": [200, 200, 0, 0, 0, 0],
+            "ball": "ITEM_PREMIER_BALL",
+            "ability": "ABILITY_ROCKY_PAYLOAD",
+            "nature": "NATURE_ADAMANT",
             "ball_seal": 0
         }
     ],

@@ -1,0 +1,71 @@
+{
+    "name": "Debug",
+    "class": "TRAINER_CLASS_ACE_TRAINER_FEMALE",
+    "items": [],
+    "ai_flags": [
+        "AI_FLAG_BASIC",
+        "AI_FLAG_EVAL_ATTACK",
+        "AI_FLAG_EXPERT"
+    ],
+    "double_battle": false,
+    "party": [
+        {
+            "species": "SPECIES_BLISSEY",
+            "form": 0,
+            "level": 100,
+            "item": null,
+            "moves": [
+                "MOVE_TACKLE",
+                "MOVE_TACKLE",
+                "MOVE_TACKLE",
+                "MOVE_TACKLE"
+            ],
+            "iv_scale": 0,
+            "ivnums": [31, 0, 0, 0, 0, 0],
+            "evnums": [252, 0, 0, 0, 0, 0],
+            "ball_seal": 0
+        },
+        {
+            "species": "SPECIES_BLISSEY",
+            "form": 0,
+            "level": 100,
+            "item": null,
+            "moves": [
+                "MOVE_TACKLE",
+                "MOVE_TACKLE",
+                "MOVE_TACKLE",
+                "MOVE_TACKLE"
+            ],
+            "iv_scale": 0,
+            "ivnums": [31, 0, 0, 0, 0, 0],
+            "evnums": [252, 0, 0, 0, 0, 0],
+            "ball_seal": 0
+        }
+    ],
+    "messages":
+    [
+        {
+            "type": "TRMSG_PRE_BATTLE",
+            "en_US": [
+                "Worthy opponents... The search for\n",
+                "them drives me to travel far.\r"
+            ]
+        },
+        {
+            "type": "TRMSG_DEFEAT",
+            "en_US": [
+                "I’ve certainly found a tough\n",
+                "adversary in you...\n"
+            ]
+        },
+        {
+            "type": "TRMSG_POST_BATTLE",
+            "en_US": [
+                "How much you believe in your\n",
+                "Pokémon...\r",
+                "That’s a critical factor in how a\n",
+                "battle will turn out.\n"
+            ]
+        }
+    ]
+}

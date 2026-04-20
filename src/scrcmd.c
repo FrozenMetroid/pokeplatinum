@@ -7328,3 +7328,21 @@ static BOOL ScrCmd_Debug_GiveAllPokemon(ScriptContext *ctx)
 
     return FALSE;
 }
+
+static BOOL ScrCmd_Debug_ReducePokemonLevel(ScriptContext *ctx)
+{
+    u8 partySlot = ScriptContext_GetVar(ctx);
+    u8 level = ScriptContext_GetVar(ctx);
+    Pokemon *mon = Party_GetPokemonBySlotIndex(SaveData_GetParty(ctx->fieldSystem->saveData), partySlot);
+
+    u16 species = Pokemon_GetValue(mon, MON_DATA_SPECIES, NULL);
+    u8 monLevel = Pokemon_GetValue(mon, MON_DATA_LEVEL, NULL);
+    monLevel -= level;
+    Pokemon_SetValue(mon, MON_DATA_LEVEL, &monLevel);
+
+    u32 baseExperience= Pokemon_GetSpeciesBaseExpAt(species, monLevel);
+    BoxPokemon_SetValue(&mon->box, MON_DATA_EXPERIENCE, &baseExperience);
+
+    
+    return FALSE;
+}

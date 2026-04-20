@@ -82,6 +82,10 @@ Ability Modernizations:
 - Sturdy
 - Storm Drain
 - Stench
+- Normalize
+
+Ability Changes:
+- Slow Start: 5 turns -> 3 turns
 
 Item Modernizations:
 - Mental Herb
@@ -95,6 +99,7 @@ Move Modernizations and Changes:
     Giga Drain's PP has been increased from 10 to 15
 - Defog removes hazards from both sides of the field
 - Growth raises Special Attack and Attack by one stage; two stages under harsh sunlight
+- Air Slash: 85BP, 100% accurate, 10% flinch
 
 Miscellaneous Battle System Changes:
 - Ice-types receive a 50% Defense increase when under the effects of Hail (Hail has not been modernized to Snow)

@@ -33,7 +33,7 @@ _050:
     // {0} blacked out!
     PrintMessage BattleStrings_Text_PlayerBlackedOut, TAG_NONE
     Wait 
-    WaitABButtonsOrScreenTap
+    WaitABScreenTap
     FadeOutBattle 
     Wait 
     End 
@@ -75,7 +75,7 @@ _123:
 
 _125:
     SetLinkBattleResult 
-    WaitABButtonsOrScreenTap
+    WaitABScreenTap
     FadeOutBattle 
     Wait 
     End 

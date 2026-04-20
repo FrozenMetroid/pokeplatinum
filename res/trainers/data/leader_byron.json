@@ -8,50 +8,85 @@
     "ai_flags": [
         "AI_FLAG_BASIC",
         "AI_FLAG_EVAL_ATTACK",
-        "AI_FLAG_EXPERT"
+        "AI_FLAG_EXPERT",
+        "AI_FLAG_WEATHER"
     ],
     "double_battle": false,
     "party": [
         {
-            "species": "SPECIES_MAGNETON",
+            "species": "SPECIES_BRONZONG",
             "form": 0,
-            "level": 37,
-            "item": "ITEM_NONE",
+            "level": 38,
+            "item": "ITEM_DAMP_ROCK",
             "moves": [
                 "MOVE_FLASH_CANNON",
-                "MOVE_THUNDERBOLT",
-                "MOVE_TRI_ATTACK",
-                "MOVE_METAL_SOUND"
+                "MOVE_REFLECT",
+                "MOVE_LIGHT_SCREEN",
+                "MOVE_RAIN_DANCE"
             ],
-            "iv_scale": 200,
+            "iv_scale": 0,
+            "ivnums": [31, 31, 31, 31, 31, 31],
+            "evnums": [100, 0, 0, 0, 100, 0],
+            "ball": "ITEM_POKE_BALL",
+            "ability": "ABILITY_LEVITATE",
+            "nature": "NATURE_MODEST",
             "ball_seal": 0
         },
         {
-            "species": "SPECIES_STEELIX",
+            "species": "SPECIES_SCIZOR",
             "form": 0,
-            "level": 38,
-            "item": "ITEM_NONE",
+            "level": 39,
+            "item": "ITEM_OCCA_BERRY",
             "moves": [
-                "MOVE_FLASH_CANNON",
-                "MOVE_ICE_FANG",
-                "MOVE_EARTHQUAKE",
-                "MOVE_SANDSTORM"
+                "MOVE_BUG_BITE",
+                "MOVE_IRON_HEAD",
+                "MOVE_BULLET_PUNCH",
+                "MOVE_CLOSE_COMBAT"
             ],
-            "iv_scale": 200,
+            "iv_scale": 0,
+            "ivnums": [31, 31, 31, 31, 31, 31],
+            "evnums": [0, 100, 0, 100, 0, 0],
+            "ball": "ITEM_POKE_BALL",
+            "ability": "ABILITY_TECHNICIAN",
+            "nature": "NATURE_ADAMANT",
+            "ball_seal": 0
+        },
+        {
+            "species": "SPECIES_MAGNETON",
+            "form": 0,
+            "level": 40,
+            "item": "ITEM_EVIOLITE",
+            "moves": [
+                "MOVE_THUNDER",
+                "MOVE_FLASH_CANNON",
+                "MOVE_METAL_SOUND",
+                "MOVE_MAGNET_RISE"
+            ],
+            "iv_scale": 0,
+            "ivnums": [31, 31, 31, 31, 31, 31],
+            "evnums": [100, 0, 50, 0, 50, 0],
+            "ball": "ITEM_POKE_BALL",
+            "ability": "ABILITY_STURDY",
+            "nature": "NATURE_MODEST",
             "ball_seal": 0
         },
         {
             "species": "SPECIES_BASTIODON",
             "form": 0,
             "level": 41,
-            "item": "ITEM_SITRUS_BERRY",
+            "item": "ITEM_CHESTO_BERRY",
             "moves": [
                 "MOVE_METAL_BURST",
-                "MOVE_STONE_EDGE",
-                "MOVE_IRON_DEFENSE",
-                "MOVE_TAUNT"
+                "MOVE_CURSE",
+                "MOVE_REST",
+                "MOVE_IRON_HEAD"
             ],
-            "iv_scale": 200,
+            "iv_scale": 0,
+            "ivnums": [31, 31, 31, 31, 31, 31],
+            "evnums": [120, 0, 0, 0, 0, 120],
+            "ball": "ITEM_TIMER_BALL",
+            "ability": "ABILITY_FILTER",
+            "nature": "NATURE_CAREFUL",
             "ball_seal": 0
         }
     ],

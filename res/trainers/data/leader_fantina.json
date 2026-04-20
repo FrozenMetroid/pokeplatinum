@@ -21,23 +21,33 @@
                 "MOVE_WILL_O_WISP",
                 "MOVE_PURSUIT",
                 "MOVE_SHADOW_SNEAK",
-                "MOVE_FUTURE_SIGHT"
+                "MOVE_NIGHT_SHADE"
             ],
-            "iv_scale": 100,
+            "iv_scale": 0,
+            "ivnums": [20, 20, 20, 20, 20, 20],
+            "evnums": [45, 45, 0, 0, 0, 0],
+            "ball": "ITEM_POKE_BALL",
+            "ability": "ABILITY_LEVITATE",
+            "nature": "NATURE_ADAMANT",
             "ball_seal": 0
         },
         {
-            "species": "SPECIES_HAUNTER",
+            "species": "SPECIES_DRIFLOON",
             "form": 0,
             "level": 24,
             "item": "ITEM_NONE",
             "moves": [
-                "MOVE_SHADOW_CLAW",
-                "MOVE_SUCKER_PUNCH",
-                "MOVE_HYPNOSIS",
-                "MOVE_CONFUSE_RAY"
+                "MOVE_OMINOUS_WIND",
+                "MOVE_AIR_CUTTER",
+                "MOVE_MINIMIZE",
+                "MOVE_WILL_O_WISP"
             ],
-            "iv_scale": 100,
+            "iv_scale": 0,
+            "ivnums": [20, 20, 20, 20, 20, 20],
+            "evnums": [45, 0, 0, 0, 45, 0],
+            "ball": "ITEM_POKE_BALL",
+            "ability": "ABILITY_AFTERMATH",
+            "nature": "NATURE_MODEST",
             "ball_seal": 0
         },
         {
@@ -51,7 +61,12 @@
                 "MOVE_MAGICAL_LEAF",
                 "MOVE_CONFUSE_RAY"
             ],
-            "iv_scale": 100,
+            "iv_scale": 0,
+            "ivnums": [25, 25, 25, 25, 25, 25],
+            "evnums": [0, 0, 0, 60, 60, 0],
+            "ball": "ITEM_DUSK_BALL",
+            "ability": "ABILITY_LEVITATE",
+            "nature": "NATURE_HASTY",
             "ball_seal": 0
         }
     ],

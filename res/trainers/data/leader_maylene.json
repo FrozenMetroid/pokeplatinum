@@ -12,29 +12,58 @@
         {
             "species": "SPECIES_MEDITITE",
             "form": 0,
-            "level": 28,
-            "item": "ITEM_NONE",
-            "moves": [
-                "MOVE_DRAIN_PUNCH",
-                "MOVE_CONFUSION",
-                "MOVE_ROCK_TOMB",
-                "MOVE_FAKE_OUT"
-            ],
-            "iv_scale": 200,
-            "ball_seal": 0
-        },
-        {
-            "species": "SPECIES_MACHOKE",
-            "form": 0,
             "level": 29,
             "item": "ITEM_NONE",
             "moves": [
-                "MOVE_KARATE_CHOP",
+                "MOVE_DRAIN_PUNCH",
+                "MOVE_ZEN_HEADBUTT",
                 "MOVE_ROCK_TOMB",
-                "MOVE_STRENGTH",
-                "MOVE_FOCUS_ENERGY"
+                "MOVE_FAKE_OUT"
             ],
-            "iv_scale": 200,
+            "iv_scale": 0,
+            "ivnums": [25, 25, 25, 25, 25, 25],
+            "evnums": [60, 60, 0, 0, 0, 0],
+            "ball": "ITEM_POKE_BALL",
+            "ability": "ABILITY_PURE_POWER",
+            "nature": "NATURE_ADAMANT",
+            "ball_seal": 0
+        },
+        {
+            "species": "SPECIES_MONFERNO",
+            "form": 0,
+            "level": 30,
+            "item": "ITEM_NONE",
+            "moves": [
+                "MOVE_FLAME_WHEEL",
+                "MOVE_BULK_UP",
+                "MOVE_MACH_PUNCH",
+                "MOVE_SHADOW_CLAW"
+            ],
+            "iv_scale": 0,
+            "ivnums": [25, 25, 25, 25, 25, 25],
+            "evnums": [0, 60, 0, 60, 0, 0],
+            "ball": "ITEM_POKE_BALL",
+            "ability": "ABILITY_BLAZE",
+            "nature": "NATURE_ADAMANT",
+            "ball_seal": 0
+        },
+        {
+            "species": "SPECIES_BRELOOM",
+            "form": 0,
+            "level": 31,
+            "item": "ITEM_COBA_BERRY",
+            "moves": [
+                "MOVE_MACH_PUNCH",
+                "MOVE_DRAIN_PUNCH",
+                "MOVE_BULK_UP",
+                "MOVE_ROCK_TOMB"
+            ],
+            "iv_scale": 0,
+            "ivnums": [25, 25, 25, 25, 25, 25],
+            "evnums": [0, 60, 0, 60, 0, 0],
+            "ball": "ITEM_POKE_BALL",
+            "ability": "ABILITY_EFFECT_SPORE",
+            "nature": "NATURE_JOLLY",
             "ball_seal": 0
         },
         {
@@ -44,11 +73,16 @@
             "item": "ITEM_NONE",
             "moves": [
                 "MOVE_DRAIN_PUNCH",
-                "MOVE_FORCE_PALM",
+                "MOVE_PAYBACK",
                 "MOVE_METAL_CLAW",
                 "MOVE_BONE_RUSH"
             ],
-            "iv_scale": 200,
+            "iv_scale": 0,
+            "ivnums": [31, 31, 31, 31, 31, 31],
+            "evnums": [0, 75, 0, 75, 0, 0],
+            "ball": "ITEM_HEAL_BALL",
+            "ability": "ABILITY_STEADFAST",
+            "nature": "NATURE_JOLLY",
             "ball_seal": 0
         }
     ],

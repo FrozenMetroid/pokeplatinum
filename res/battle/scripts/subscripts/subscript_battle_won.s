@@ -76,7 +76,7 @@ _135:
     Wait
 
 _150:
-    WaitABButtonsOrScreenTap
+    WaitABScreenTap
     FadeOutBattle 
     Wait 
     End 

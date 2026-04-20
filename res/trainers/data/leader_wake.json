@@ -1,5 +1,5 @@
 {
-    "name": "Wake",
+    "name": "Crasher Wake",
     "class": "TRAINER_CLASS_LEADER_WAKE",
     "items": [
         "ITEM_HYPER_POTION",
@@ -13,31 +13,60 @@
     "double_battle": false,
     "party": [
         {
-            "species": "SPECIES_GYARADOS",
+            "species": "SPECIES_MANTINE",
             "form": 0,
-            "level": 33,
-            "item": "ITEM_NONE",
+            "level": 34,
+            "item": "ITEM_WACAN_BERRY",
             "moves": [
-                "MOVE_WATERFALL",
+                "MOVE_ROOST",
+                "MOVE_AIR_SLASH",
                 "MOVE_BRINE",
-                "MOVE_BITE",
-                "MOVE_TWISTER"
+                "MOVE_RAIN_DANCE"
             ],
-            "iv_scale": 150,
+            "iv_scale": 0,
+            "ivnums": [31, 31, 31, 31, 31, 31],
+            "evnums": [75, 0, 0, 0, 35, 35],
+            "ball": "ITEM_POKE_BALL",
+            "ability": "ABILITY_SWIFT_SWIM",
+            "nature": "NATURE_CALM",
             "ball_seal": 0
         },
         {
-            "species": "SPECIES_QUAGSIRE",
-            "form": 0,
-            "level": 34,
+            "species": "SPECIES_GASTRODON",
+            "form": 1,
+            "level": 35,
             "item": "ITEM_NONE",
             "moves": [
-                "MOVE_MUD_SHOT",
-                "MOVE_ROCK_TOMB",
-                "MOVE_WATER_PULSE",
+                "MOVE_MUD_BOMB",
+                "MOVE_BRINE",
+                "MOVE_RECOVER",
                 "MOVE_YAWN"
             ],
-            "iv_scale": 150,
+            "iv_scale": 0,
+            "ivnums": [31, 31, 31, 31, 31, 31],
+            "evnums": [75, 0, 35, 0, 35, 0],
+            "ball": "ITEM_POKE_BALL",
+            "ability": "ABILITY_STORM_DRAIN",
+            "nature": "NATURE_BOLD",
+            "ball_seal": 0
+        },
+        {
+            "species": "SPECIES_OCTILLERY",
+            "form": 1,
+            "level": 35,
+            "item": "ITEM_NONE",
+            "moves": [
+                "MOVE_BUBBLE_BEAM",
+                "MOVE_PSYBEAM",
+                "MOVE_AURORA_BEAM",
+                "MOVE_SIGNAL_BEAM"
+            ],
+            "iv_scale": 0,
+            "ivnums": [31, 31, 31, 31, 31, 31],
+            "evnums": [75, 0, 0, 0, 75, 0],
+            "ball": "ITEM_POKE_BALL",
+            "ability": "ABILITY_ARTILLERY",
+            "nature": "NATURE_MODEST",
             "ball_seal": 0
         },
         {
@@ -46,12 +75,17 @@
             "level": 37,
             "item": "ITEM_SITRUS_BERRY",
             "moves": [
-                "MOVE_BRINE",
+                "MOVE_WATERFALL",
                 "MOVE_ICE_FANG",
                 "MOVE_CRUNCH",
                 "MOVE_AQUA_JET"
             ],
-            "iv_scale": 150,
+            "iv_scale": 0,
+            "ivnums": [31, 31, 31, 31, 31, 31],
+            "evnums": [0, 100, 0, 100, 0, 0],
+            "ball": "ITEM_DIVE_BALL",
+            "ability": "ABILITY_SWIFT_SWIM",
+            "nature": "NATURE_ADAMANT",
             "ball_seal": 0
         }
     ],

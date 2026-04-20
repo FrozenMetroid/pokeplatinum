@@ -60,7 +60,7 @@
 .set DEBUG_FLY_FROM_START, 1
 
 #define INC_AS_ASM
-#include "data/field/script_commands.h"
+// #include "data/field/script_commands.h"
 #include "data/scripts/scrcmd.h"
 #include "macros/movement.inc"
 
@@ -5053,6 +5053,12 @@
 
     .macro Debug_GiveAllPokemon
     .short SCRCMD_DEBUG_GIVEALLPOKEMON
+    .endm
+
+    .macro Debug_ReducePokemonLevel slot, by_how_many_level
+    .short SCRCMD_DEBUG_REDUCEPOKEMONLEVEL
+    .short \slot
+    .short \by_how_many_level
     .endm
 
 

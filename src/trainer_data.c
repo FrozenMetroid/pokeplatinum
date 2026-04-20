@@ -342,7 +342,14 @@ typedef struct __attribute__((packed)) ExpandedTrainerMonData {
     u8 evnums[6];
     u8 nature;
     u8 shinyLock;
-    u8 padding[2];
+    // Bits 0-3: 0: No override
+    //           1: Force male
+    //           2: Force female
+    // Bits 4-7: 0: No override
+    //           1: Force ability 1
+    //           2: Force ability 2
+    u8 genderAbilityOverride;
+    u8 padding;
     u32 additionalflags;
     u32 status;
     u16 hp;
@@ -372,7 +379,6 @@ static void TrainerData_BuildParty(FieldBattleDTO *dto, int battler, enum HeapID
 
     Party_InitWithCapacity(dto->parties[battler], MAX_PARTY_SIZE);
     trmon = Heap_Alloc(heapID, sizeof(ExpandedTrainerMonData) * MAX_PARTY_SIZE);
-    EmulatorLog("ExpandedTrainerMonData size: %d", sizeof(ExpandedTrainerMonData));
     mon = Pokemon_New(heapID);
 
     Trainer_LoadParty(dto->trainerIDs[battler], trmon);
@@ -380,18 +386,16 @@ static void TrainerData_BuildParty(FieldBattleDTO *dto, int battler, enum HeapID
     genderMod = TrainerClass_Gender(dto->trainer[battler].header.trainerType) == GENDER_FEMALE
         ? 120
         : 136;
-
+    
     u8 partySize = dto->trainer[battler].header.partySize;
-    EmulatorLog("Party size: %d", partySize);
 
     for (i = 0; i < partySize; i++) {
         u8 *base = (u8 *)trmon;
         ExpandedTrainerMonData *data = (ExpandedTrainerMonData *)(base + i * 0x56); // need to specify the offset for each mon because there were issues with the sizeof returning 0x58 instead of 0x56 and so everything was shifted
-        EmulatorLog("Processing mon %d", i + 1);
         species = data->monsno & 0x07FF;
-        EmulatorLog("Species: %d", species);
-        // form is included in the u16 for the species number in the trainer data, so extract it bitwise
-        form = (data->monsno & 0xF800) >> TRAINER_MON_FORM_SHIFT;
+        form = (data->monsno & 0xF800) >> TRAINER_MON_FORM_SHIFT; // form is included in the u16 for the species number in the trainer data, so extract it bitwise
+        
+        TrainerMon_OverridePidGender(species, form, data->genderAbilityOverride, &genderMod);
 
         rnd = data->ivs + data->level + species + dto->trainerIDs[battler];
         LCRNG_SetSeed(rnd);
@@ -419,13 +423,12 @@ static void TrainerData_BuildParty(FieldBattleDTO *dto, int battler, enum HeapID
         } else {
             Pokemon_SetValue(mon, MON_DATA_ABILITY, &ability1);
         }
-        EmulatorLog("Set ability: %d", Pokemon_GetValue(mon, MON_DATA_ABILITY, NULL));
 
         // Explicit overrides from expanded record
         Pokemon_SetValue(mon, MON_DATA_HELD_ITEM, &data->itemno);
 
         for (j = 0; j < 4; j++) {
-            if (data->moves[j] != 0) {
+            if (data->moves[j] != 0) { // only set the move if it's specified, otherwise leave it as the default for the species
                 Pokemon_SetMoveSlot(mon, data->moves[j], j);
             }
         }

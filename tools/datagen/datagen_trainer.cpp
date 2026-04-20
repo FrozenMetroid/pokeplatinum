@@ -695,6 +695,7 @@ static void ParseAndPackParty(const rapidjson::Document &doc, size_t partySize, 
         u8 ivs = static_cast<u8>(GetUintOr(m, "iv_scale", GetUintOr(m, "ivs", 0)));
         u8 abilityslot = static_cast<u8>(GetUintOr(m, "ability_slot", 0));
         u16 level = static_cast<u16>(GetUintOr(m, "level", 1));
+        u8 genderAbilityOverride = static_cast<u8>(GetUintOr(m,"gender_ability_override", 0));
 
         u16 monsno = static_cast<u16>(LookupConst(m["species"].GetString(), Species));
         monsno |= static_cast<u16>(GetUintOr(m, "form", 0) << TRAINER_MON_FORM_SHIFT);
@@ -804,7 +805,7 @@ static void ParseAndPackParty(const rapidjson::Document &doc, size_t partySize, 
         }
         WriteU8(buf, offset, nature);             // 0x20
         WriteU8(buf, offset, shinyLock);          // 0x21
-        WriteU8(buf, offset, 0);                  // 0x22 padding
+        WriteU8(buf, offset, genderAbilityOverride); // 0x22
         WriteU8(buf, offset, 0);                  // 0x23 padding
         WriteU32(buf, offset, 0);                 // 0x24 additionalFlags padding since we're not using it rn
         WriteU32(buf, offset, status);            // 0x28
