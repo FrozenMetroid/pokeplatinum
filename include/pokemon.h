@@ -700,6 +700,7 @@ s8 Pokemon_GetFlavorAffinityOf(u32 monPersonality, enum Flavor flavor);
 int Pokemon_LoadLevelUpMoveIdsOf(int monSpecies, int monForm, u16 *monLevelUpMoveIDs);
 
 void Pokemon_ApplyPokerus(Party *party);
+void Pokemon_ApplyPokerusAtSlot(Party *party, int slot);
 u8 Pokemon_HasPokerus(Party *party, u8 param1);
 void Party_UpdatePokerusStatus(Party *party, s32 param1);
 void Pokemon_ValidatePokerus(Party *party);
@@ -943,5 +944,7 @@ void PokemonSprite_LoadShadowSize(NARC *narc, u8 *shadowSize, u16 species);
 BOOL Pokemon_SetBallSeal(int param0, Pokemon *mon, enum HeapID heapID);
 void sub_02078B40(Pokemon *mon, UnkStruct_02078B40 *param1);
 void sub_02078E0C(UnkStruct_02078B40 *param0, Pokemon *mon);
+
+void BoxPokemon_SetMetLocationAndDate(BoxPokemon *boxMon, int metLocation, int isHatch);
 
 #endif // POKEPLATINUM_POKEMON_H

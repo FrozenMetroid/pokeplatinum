@@ -558,7 +558,7 @@ BOOL ScrCmd_CheckPartyPokerus(ScriptContext *ctx)
     return FALSE;
 }
 
-BOOL ScrCmd_GetPartyMonGender_Unused(ScriptContext *ctx)
+BOOL ScrCmd_GetPartyMonGender(ScriptContext *ctx)
 {
     u16 slot = ScriptContext_GetVar(ctx);
     u16 *destVar = ScriptContext_GetVarPointer(ctx);

@@ -1700,8 +1700,8 @@
     .short \destVarID
     .endm
 
-    .macro GetPartyMonGender_Unused slot, destVar
-    .short SCRCMD_GETPARTYMONGENDER_UNUSED
+    .macro GetPartyMonGender slot, destVar
+    .short SCRCMD_GETPARTYMONGENDER
     .short \slot
     .short \destVar
     .endm
@@ -5061,6 +5061,14 @@
     .short \by_how_many_level
     .endm
 
+    .macro WonderTrade level, partyslot, natdexenabled, destVarForMessage
+    .short SCRCMD_WONDERTRADE
+    .short \level
+    .short \partyslot
+    .short \natdexenabled
+    .short \destVarForMessage
+    .endm
+
 
 // CONVENIENCE MACROS
 
@@ -5305,6 +5313,14 @@
     CloseMessageWithoutErasing
     PokeMartSpecialties \martID
     ReleaseAll
+    .endm
+
+    .macro switch var
+    SetVarFromVar VAR_0x8008, \var
+    .endm
+
+    .macro case value, target
+    GoToIfEq VAR_0x8008, \value, \target
     .endm
 
     /* CallCommonScript aliases below */

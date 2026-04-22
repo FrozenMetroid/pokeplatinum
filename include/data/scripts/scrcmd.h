@@ -287,7 +287,7 @@ ScriptCommand(SCRCMD_SHOWLINKCONTESTRECORDS,                               ScrCm
 ScriptCommand(SCRCMD_LOCKAUTOSCROLLFORLINKCONTESTS,                        ScrCmd_LockAutoScrollForLinkContests)
 ScriptCommand(SCRCMD_LOCKTEXTSPEED,                                        ScrCmd_LockTextSpeed)
 ScriptCommand(SCRCMD_CHECKPARTYPOKERUS,                                    ScrCmd_CheckPartyPokerus)
-ScriptCommand(SCRCMD_GETPARTYMONGENDER_UNUSED,                             ScrCmd_GetPartyMonGender_Unused)
+ScriptCommand(SCRCMD_GETPARTYMONGENDER,                                    ScrCmd_GetPartyMonGender)
 ScriptCommand(SCRCMD_SETSPECIALLOCATION,                                   ScrCmd_SetSpecialLocation)
 ScriptCommand(SCRCMD_GETFLOORSABOVE,                                       ScrCmd_GetFloorsAbove)
 ScriptCommand(SCRCMD_SHOWCURRENTFLOOR,                                     ScrCmd_ShowCurrentFloor)
@@ -856,6 +856,7 @@ ScriptCommand(SCRCMD_CHECKEXPSHARESTATUS,                                  ScrCm
 ScriptCommand(SCRCMD_DEBUG_SETNATIONALDEXALLSEEN,                          ScrCmd_Debug_SetNationalDexAllSeen)
 ScriptCommand(SCRCMD_DEBUG_GIVEALLPOKEMON,                                 ScrCmd_Debug_GiveAllPokemon)
 ScriptCommand(SCRCMD_DEBUG_REDUCEPOKEMONLEVEL,                             ScrCmd_Debug_ReducePokemonLevel)
+ScriptCommand(SCRCMD_WONDERTRADE,                                          ScrCmd_WonderTrade)
 
 // clang-format on
 

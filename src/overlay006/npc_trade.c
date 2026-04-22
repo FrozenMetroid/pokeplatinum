@@ -80,10 +80,11 @@ void NPCTrade_FillAnimationTemplate(FieldSystem *fieldSystem, NPCTradeData *data
     Pokemon *partyMon = Party_GetPokemonBySlotIndex(party, slot);
     u32 level = Pokemon_GetValue(partyMon, MON_DATA_LEVEL, NULL);
 
-    NPCTrade_CreateMon(data->mon, data->npcTradeMon, level, data->npcTradeID, data->heapID, fieldSystem->location->mapId);
-
-    Pokemon_Copy(partyMon, givingMon);
-    Pokemon_Copy(data->mon, receivingMon);
+    if (!data->wonderTrade) {
+        NPCTrade_CreateMon(data->mon, data->npcTradeMon, level, data->npcTradeID, data->heapID, fieldSystem->location->mapId);
+        Pokemon_Copy(partyMon, givingMon);
+        Pokemon_Copy(data->mon, receivingMon);
+    }
 
     animationConfig->sendingPokemon = Pokemon_GetBoxPokemon(givingMon);
     animationConfig->receivingPokemon = Pokemon_GetBoxPokemon(receivingMon);

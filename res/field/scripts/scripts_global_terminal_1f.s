@@ -3,6 +3,19 @@
 #include "res/text/bank/menu_entries.h"
 #include "constants/map_object.h"
 
+.set VAR_PARTY_SLOT,  0x8000
+.set VAR_BADGE_COUNT,  0x8001
+.set VAR_SENT_POKEMON_LEVEL,  0x8002
+.set VAR_SENT_POKEMON_ID,  0x8003
+.set VAR_RECEIVED_POKEMON_ID,  0x8004
+.set VAR_HELD_ITEM,  0x8005
+.set VAR_GENDER,  0x8006
+.set VAR_RECEIVED_SPECIES_LEVEL,  0x8007
+.set VAR_FORM, 0x8009
+.set VAR_FINAL_MESSAGE, 0x800A
+.set VAR_UPGRADED_WONDER_TRADE, 0x800B
+
+.set OW_Attendant_Wonder_Trade, 14
 
     ScriptEntry _00F0
     ScriptEntry _00F2
@@ -21,10 +34,11 @@
     ScriptEntry _0496
     ScriptEntry _0520
     ScriptEntry _0533
-    ScriptEntry _0546
+    ScriptEntry GlobalTerminal1F_REMOVED
     ScriptEntry _0601
     ScriptEntry _0652
     ScriptEntry _074C
+    ScriptEntry GlobalTerminal1f_WonderTrade_Clerk
     ScriptEntryEnd
 
 _0056:
@@ -256,6 +270,16 @@ _0360:
     FaceSouth
     EndMovement
 
+    .balign 4, 0
+Action_Walk_Down_Fast_Site:
+    WalkOnSpotNormalSouth
+    EndMovement
+
+    .balign 4, 0
+Action_Walk_Right_Fast_Site:
+    WalkOnSpotNormalEast
+    EndMovement
+
 GlobalTerminal1f_GTS_Exit_BadEgg:
     CallCommonScript 0x2338 @ CommonScript_HasBadEgg; outputs pl_msg_00000221_00127
     WaitButton
@@ -383,20 +407,7 @@ _0533:
     NPCMessage pl_msg_00000046_00033
     End
 
-_0546:
-    PlaySE SEQ_SE_CONFIRM
-    LockAll
-    FacePlayer
-    CheckPartyHasBadEgg VAR_RESULT
-    GoToIfEq VAR_RESULT, 1, _05A0
-    SetVar VAR_0x8000, 0
-    GetPartyMonSpecies VAR_0x8000, VAR_RESULT
-    GoToIfEq VAR_RESULT, 0, _05CB
-    BufferPartyMonSpecies 0, 0
-    Message pl_msg_00000046_00018
-    ShowYesNoMenu VAR_RESULT
-    GoToIfEq VAR_RESULT, MENU_YES, _05AB
-    GoToIfEq VAR_RESULT, MENU_NO, _05B8
+GlobalTerminal1F_REMOVED:
     End
 
 _05A0:
@@ -532,5 +543,174 @@ _074A:
 _074C:
     EventMessage pl_msg_00000046_00041
     End
+
+GlobalTerminal1f_WonderTrade_Clerk:
+    LockAll
+    PlaySE SEQ_SE_CONFIRM
+	GoToIfSet FLAG_FIRST_TIME_SPEAKING_TO_WONDER_TRADE_LADY, Check_If_Willing_To_Pay
+	Message pl_msg_GlobalTerminal1F_WonderTrade_Introduce
+	SetFlag FLAG_FIRST_TIME_SPEAKING_TO_WONDER_TRADE_LADY
+Check_If_Willing_To_Pay:
+	Message pl_msg_GlobalTerminal1F_WonderTrade_AskToSpend
+	ShowMoney 20, 2
+	ShowYesNoMenu VAR_RESULT
+	GoToIfEq VAR_RESULT, MENU_NO, Quit_Wonder_Trade_Before_Pay
+	CheckMoney VAR_RESULT, 500
+	GoToIfEq VAR_RESULT, FALSE, Not_Enough_Money
+	RemoveMoney 500
+	UpdateMoneyDisplay
+	PlaySE SEQ_SE_DP_REGI
+	WaitSE SEQ_SE_DP_REGI
+	HideMoney
+Select_Pokemon:
+	Message pl_msg_GlobalTerminal1F_WonderTrade_TellSelectPokemon
+	CloseMessage
+	FadeScreenOut
+    WaitFadeScreen
+    SelectMoveTutorPokemon // works here even though it's not for a move tutor
+    GetSelectedPartySlot VAR_PARTY_SLOT
+    ReturnToField
+    FadeScreenIn
+    WaitFadeScreen
+	GoToIfEq VAR_PARTY_SLOT, 255, Cancel_Sent_Mon_Selection
+	GetPartyMonSpecies VAR_PARTY_SLOT, VAR_SENT_POKEMON_ID
+	GoToIfEq VAR_SENT_POKEMON_ID, 0, Selected_Pokemon_Is_Egg
+	BufferPartyMonSpecies 1, VAR_PARTY_SLOT
+	Message pl_msg_GlobalTerminal1F_WonderTrade_ConfirmSend
+	ShowYesNoMenu VAR_RESULT
+	GoToIfEq VAR_RESULT, MENU_NO, Cancel_Sent_Mon_Selection
+	// add stuff here for sending the following mon back if those are added
+	ApplyMovement OW_Attendant_Wonder_Trade, Action_Walk_Down_Fast_Site
+	WaitMovement
+	Message pl_msg_GlobalTerminal1F_WonderTrade_SendItOver
+	CloseMessage
+	GetSetNationalDexEnabled 2, VAR_UPGRADED_WONDER_TRADE // stores 1 if you have the national dex
+	Call Generate_Level
+    CallIfEq VAR_RECEIVED_SPECIES_LEVEL, 0, Raise_Received_Level_By_1
+Generate_Rest_Of_Pokemon_Info:
+    ApplyMovement OW_Attendant_Wonder_Trade, Action_Walk_Right_Fast_Site
+    WaitMovement
+	PlaySE SEQ_SE_PL_BREC03
+	WaitSE SEQ_SE_PL_BREC03
+	WonderTrade VAR_RECEIVED_SPECIES_LEVEL, VAR_PARTY_SLOT, VAR_UPGRADED_WONDER_TRADE, VAR_FINAL_MESSAGE
+	ApplyMovement OW_Attendant_Wonder_Trade, Action_Walk_Down_Fast_Site
+	WaitMovement
+
+    // un-comment these if the trade graphics are removed for whatever reason
+	// Call Check_Gender_For_Display
+	// PlayFanfare SEQ_FANFA5
+	// PlayCry VAR_RECEIVED_POKEMON_ID, 0
+	// BufferPlayerName 0
+	// BufferPartyMonSpecies 1, VAR_PARTY_SLOT
+	// Message pl_msg_GlobalTerminal1F_ReceivedA
+	// WaitFanfare
+	// WaitCry
+	// RemovePokemonPreview
+
+    GetPartyCount VAR_PARTY_SLOT
+    SubVar VAR_PARTY_SLOT, 1
+    PlaySE SEQ_SE_CONFIRM
+	BufferPartyMonSpecies 1, VAR_PARTY_SLOT
+	MessageVar VAR_FINAL_MESSAGE // message based on base stat total of the mon
+	GoTo End_Dialogue
+
+Check_Gender_For_Display:
+	GetPartyCount VAR_PARTY_SLOT
+	SubVar VAR_PARTY_SLOT, 1 // party count is 0-6, but party slot is 0-5
+	GetPartyMonGender VAR_PARTY_SLOT, VAR_GENDER
+    GetPartyMonForm VAR_PARTY_SLOT, VAR_FORM
+	GetPartyMonSpecies VAR_PARTY_SLOT, VAR_RECEIVED_POKEMON_ID
+	switch VAR_GENDER
+	case 0, Show_Male_Pokemon_Pic
+	case 1, Show_Female_Pokemon_Pic
+	case 2, Show_Male_Pokemon_Pic
+	Return
+
+Show_Male_Pokemon_Pic:
+	DrawPokemonPreview VAR_RECEIVED_POKEMON_ID, 0, VAR_FORM
+	Return
+
+Show_Female_Pokemon_Pic:
+	DrawPokemonPreview VAR_RECEIVED_POKEMON_ID, 1, VAR_FORM
+	Return
+
+Raise_Received_Level_By_1:
+	AddVar VAR_RECEIVED_SPECIES_LEVEL, 1 // in case you roll a 0
+	Return
+
+Generate_Level:
+	CountBadgesAcquired VAR_BADGE_COUNT
+	switch VAR_BADGE_COUNT
+    case 0, No_Badges
+    case 1, One_Badge
+    case 2, Two_Badges
+    case 3, Three_Badges
+    case 4, Four_Badges
+    case 5, Five_Badges
+    case 6, Six_Badges
+    case 7, Seven_Badges
+    GetRandom VAR_RECEIVED_SPECIES_LEVEL, 101
+	Return
+
+No_Badges:
+One_Badge:
+    GetRandom VAR_RECEIVED_SPECIES_LEVEL, 20
+	Return
+
+Two_Badges:
+    GetRandom VAR_RECEIVED_SPECIES_LEVEL, 30
+	Return
+
+Three_Badges:
+    GetRandom VAR_RECEIVED_SPECIES_LEVEL, 40
+	Return
+
+Four_Badges:
+    GetRandom VAR_RECEIVED_SPECIES_LEVEL, 50
+	Return
+
+Five_Badges:
+    GetRandom VAR_RECEIVED_SPECIES_LEVEL, 65
+	Return
+
+Six_Badges:
+    GetRandom VAR_RECEIVED_SPECIES_LEVEL, 75
+	Return
+
+Seven_Badges:
+	GetRandom VAR_RECEIVED_SPECIES_LEVEL, 85
+	Return
+
+Quit_Wonder_Trade_Before_Pay:
+	HideMoney
+	Message pl_msg_GlobalTerminal1F_WonderTrade_QuitBeforePay
+End_Dialogue:
+    WaitButton
+    CloseMessage
+    ReleaseAll
+    End
+
+Not_Enough_Money:
+	Message pl_msg_GlobalTerminal1F_WonderTrade_NotEnoughMoney
+	HideMoney
+    GoTo End_Dialogue
+
+Cancel_Sent_Mon_Selection:
+	Message pl_msg_GlobalTerminal1F_WonderTrade_AskToSelectAnotherPokemon
+	ShowYesNoMenu VAR_RESULT
+	GoToIfEq VAR_RESULT, MENU_YES, Select_Pokemon
+Return_Money:
+	ShowMoney 20, 2
+	GiveMoney 500
+	Message pl_msg_GlobalTerminal1F_WonderTrade_ReturnMoney
+	PlaySE SEQ_SE_DP_REGI
+	UpdateMoneyDisplay
+	WaitSE SEQ_SE_DP_REGI
+	HideMoney
+    GoTo End_Dialogue
+
+Selected_Pokemon_Is_Egg:
+	Message pl_msg_GlobalTerminal1F_CannotAcceptEggs
+    GoTo Cancel_Sent_Mon_Selection
 
     .balign 4, 0

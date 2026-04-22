@@ -362,4 +362,10 @@ void *ItemTable_Load(enum HeapID heapID);
  */
 ItemData *ItemTable_Index(ItemData *itemTable, u16 index);
 
+
+BOOL Item_IsPokeBall(u16 itemId);
+BOOL Item_IsPadding(u16 itemId);
+BOOL Item_IsKeyItem(u16 itemId, enum HeapID heapID);
+
+
 #endif // POKEPLATINUM_ITEM_DATA_H

@@ -504,6 +504,9 @@
     {
       "id": "LocationNames_Text_RockPeakRuins",
       "en_US": "Rock Peak Ruins"
+    },{
+      "id": "LocationNames_Text_WonderTrade",
+      "en_US": "Wonder Trade"
     }
   ]
 }

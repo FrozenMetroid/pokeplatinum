@@ -30,5 +30,6 @@ u8 Daycare_GetState(Daycare *daycare);
 u32 Daycare_GetCompatibilityLevel(Daycare *daycare);
 void Egg_CreateHatchedMon(Pokemon *egg, enum HeapID heapID);
 u32 BoxMon_GetPairDaycareCompatibilityLevel(BoxPokemon **boxMonPair);
+u8 LoadSpeciesEggMoves(Pokemon *mon, u16 *eggMoves);
 
 #endif // POKEPLATINUM_DAYCARE_H

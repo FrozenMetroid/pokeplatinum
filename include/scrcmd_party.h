@@ -27,7 +27,7 @@ BOOL ScrCmd_CountAliveMonsExcept(ScriptContext *ctx);
 BOOL ScrCmd_CountAliveMonsAndBoxMons(ScriptContext *ctx);
 BOOL ScrCmd_CountPartyEggs(ScriptContext *ctx);
 BOOL ScrCmd_CheckPartyPokerus(ScriptContext *ctx);
-BOOL ScrCmd_GetPartyMonGender_Unused(ScriptContext *ctx);
+BOOL ScrCmd_GetPartyMonGender(ScriptContext *ctx);
 BOOL ScrCmd_GetPartyMonMoveCount(ScriptContext *ctx);
 BOOL ScrCmd_ClearPartyMonMoveSlot(ScriptContext *ctx);
 BOOL ScrCmd_GetPartyMonMove(ScriptContext *ctx);

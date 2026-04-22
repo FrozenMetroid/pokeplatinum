@@ -15,15 +15,6 @@
 
 FS_EXTERN_OVERLAY(overlay95);
 
-typedef struct NPCTradeTaskEnv {
-    NPCTradeData *npcTradeData;
-    u32 state;
-    int partySlot;
-    TradeAnimationTemplate tradeAnimTemplate;
-    Pokemon *givingMon;
-    Pokemon *receivingMon;
-} NPCTradeTaskEnv;
-
 static const ApplicationManagerTemplate tradeSequenceAppMan = {
     TradeSequence_Init,
     TradeSequence_Main,
@@ -31,7 +22,6 @@ static const ApplicationManagerTemplate tradeSequenceAppMan = {
     FS_OVERLAY_ID(overlay95),
 };
 
-static BOOL FieldTask_ProcessNPCTrade(FieldTask *task);
 static void StartTradeApplication(FieldTask *task);
 
 void StartTradeApplication(FieldTask *task)
@@ -44,7 +34,7 @@ void StartTradeApplication(FieldTask *task)
     FieldTask_RunApplication(task, &tradeSequenceAppMan, &taskEnv->tradeAnimTemplate);
 }
 
-static BOOL FieldTask_ProcessNPCTrade(FieldTask *task)
+BOOL FieldTask_ProcessNPCTrade(FieldTask *task)
 {
     FieldSystem *fieldSystem = FieldTask_GetFieldSystem(task);
     NPCTradeTaskEnv *taskEnv = FieldTask_GetEnv(task);
@@ -52,7 +42,10 @@ static BOOL FieldTask_ProcessNPCTrade(FieldTask *task)
     switch (taskEnv->state) {
     case 0:
         NPCTrade_FillAnimationTemplate(fieldSystem, taskEnv->npcTradeData, taskEnv->partySlot, &taskEnv->tradeAnimTemplate, taskEnv->givingMon, taskEnv->receivingMon);
-        NPCTrade_ReceiveMon(fieldSystem, taskEnv->npcTradeData, taskEnv->partySlot);
+        if (!taskEnv->npcTradeData->wonderTrade) {
+            EmulatorLog("Received mon from NPC Trade");
+            NPCTrade_ReceiveMon(fieldSystem, taskEnv->npcTradeData, taskEnv->partySlot);
+        }
         taskEnv->state++;
         break;
     case 1:
@@ -76,9 +69,17 @@ static BOOL FieldTask_ProcessNPCTrade(FieldTask *task)
         taskEnv->state++;
         break;
     case 6:
-        Heap_Free(taskEnv->givingMon);
-        Heap_Free(taskEnv->receivingMon);
+        EmulatorLog("Finished NPC Trade animation, cleaning up task!");
+        if (!taskEnv->npcTradeData->wonderTrade) { 
+            // don't want to free these because the pointer to givingMon is the 
+            // points to the mon in the wonder trade struct for the mon you sent, 
+            // and the receivingMon points to the one in your party that you just received
+            // from wonder trade
+            Heap_Free(taskEnv->givingMon);
+            Heap_Free(taskEnv->receivingMon);
+        }
         Heap_Free(taskEnv);
+        EmulatorLog("Finished processing NPC Trade task!");
         return TRUE;
     }
 

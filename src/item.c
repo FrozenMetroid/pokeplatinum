@@ -17,7 +17,6 @@
 
 #include "res/graphics/item_icons/item_icon.naix"
 
-BOOL Item_IsPokeBall(u16 itemId);
 
 typedef struct ItemArchiveIDs {
     u16 dataID; // Member file index in pl_item_data.narc; TODO: Use NAIX generated from pl_item_data
@@ -3608,6 +3607,16 @@ u8 Item_IsHerbalMedicine(u16 item)
 BOOL Item_IsPokeBall(u16 itemId)
 {
     return (itemId >= ITEM_MASTER_BALL && itemId <= ITEM_CHERISH_BALL);
+}
+
+BOOL Item_IsPadding(u16 itemId)
+{
+    return (itemId >= ITEM_UNUSED_113 && itemId <= ITEM_UNUSED_134);
+}
+
+BOOL Item_IsKeyItem(u16 itemId, enum HeapID heapID)
+{
+    return (Item_LoadParam(itemId, ITEM_PARAM_FIELD_POCKET, heapID) == POCKET_KEY_ITEMS);
 }
 
 void *ItemTable_Load(enum HeapID heapID)

@@ -26,7 +26,6 @@ static void InitializeIVsString(PokemonInfoDisplayStruct *param0);
 static void InitializeFlavorAffinityString(PokemonInfoDisplayStruct *param0);
 static void InitializeFriendshipLevelString(PokemonInfoDisplayStruct *param0);
 static void AssignTrainerInfoToBoxPokemon(BoxPokemon *boxMon, TrainerInfo *param1, enum HeapID heapID);
-static void BoxPokemon_SetMetLocationAndDate(BoxPokemon *boxMon, int metLocation, int isHatch);
 static void BoxPokemon_ResetMetLocationAndDate(BoxPokemon *boxMon, int isHatch);
 static void BoxPokemon_SetMetLevelToCurrentLevel(BoxPokemon *boxMon);
 static void BoxPokemon_SetFatefulEncounterFlag(BoxPokemon *boxMon);
@@ -865,7 +864,7 @@ static void AssignTrainerInfoToBoxPokemon(BoxPokemon *boxMon, TrainerInfo *train
     String_Free(v2);
 }
 
-static void BoxPokemon_SetMetLocationAndDate(BoxPokemon *boxMon, int metLocation, int isHatch)
+void BoxPokemon_SetMetLocationAndDate(BoxPokemon *boxMon, int metLocation, int isHatch)
 {
     RTCDate date;
 

@@ -27,7 +27,7 @@
             "ivnums": [31, 31, 31, 31, 31, 31],
             "evnums": [0, 0, 0, 140, 140, 0],
             "ball": "ITEM_POKE_BALL",
-            "ability": "ABILITY_STATIC",
+            "ability": "ABILITY_VOLT_ABSORB",
             "nature": "NATURE_TIMID",
             "ball_seal": 0
         },

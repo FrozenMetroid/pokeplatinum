@@ -289,7 +289,6 @@ static void Pokemon_EncryptData(void *data, u32 bytes, u32 seed);
 static void Pokemon_DecryptData(void *data, u32 bytes, u32 seed);
 static u16 Pokemon_GetDataChecksum(void *data, u32 bytes);
 static void *BoxPokemon_GetDataBlock(BoxPokemon *boxMon, u32 personality, enum PokemonDataBlockID dataBlockID);
-static int Pokemon_GetFormNarcIndex(int monSpecies, int monForm);
 static inline int Pokemon_Face(int num);
 
 void Pokemon_Init(Pokemon *mon)
@@ -4223,6 +4222,32 @@ void Pokemon_ApplyPokerus(Party *party)
         } while (partySlot == currentPartyCount);
 
         if (Pokemon_HasPokerus(party, FlagIndex(partySlot)) == 0) {
+            u8 monPokerus;
+            do {
+                monPokerus = LCRNG_Next() & 0xff;
+            } while ((monPokerus & 0x7) == 0);
+
+            if (monPokerus & 0xf0) {
+                monPokerus &= 0x7;
+            }
+
+            monPokerus |= (monPokerus << 4);
+            monPokerus &= 0xf3;
+            monPokerus++;
+
+            Pokemon_SetValue(mon, MON_DATA_POKERUS, &monPokerus);
+        }
+    }
+}
+
+void Pokemon_ApplyPokerusAtSlot(Party *party, int slot)
+{
+    u16 rand = LCRNG_Next();
+
+    if (rand == 16384 || rand == 32768 || rand == 49152) {
+        Pokemon *mon = Party_GetPokemonBySlotIndex(party, slot);
+
+        if (Pokemon_HasPokerus(party, FlagIndex(slot)) == 0) {
             u8 monPokerus;
             do {
                 monPokerus = LCRNG_Next() & 0xff;

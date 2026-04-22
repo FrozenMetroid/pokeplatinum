@@ -135,6 +135,13 @@
         "Floaroma Meadow Ahead\n",
         "Honey Available"
       ]
+    },
+    {
+      "id": "FloaromaTown_Text_WonderTradeMessage",
+      "en_US": [
+        "Wonder Trade Message:\n",
+        "{STRVAR_1 1, 0, 0}\r"
+      ]
     }
   ]
 }

@@ -367,6 +367,112 @@
         "If you had a Fashion Case, I could give\n",
         "you something nice."
       ]
+    },
+    {
+      "id": "pl_msg_GlobalTerminal1F_WonderTrade_Introduce",
+      "en_US": [
+        "Do you know about Wonder Trading?\r",
+        "It’s a wonderful new invention to\n",
+        "get new Pokémon from other Trainers!\r",
+        "Oh, it’s so exciting!\n",
+        "Just select one of your Pokémon and...\f",
+        "poof! A new Pokémon is sent over!\r",
+        "Be careful, though! You won’t be able\n",
+        "to get your Pokémon back!\r"
+      ]
+    },
+    {
+      "id": "pl_msg_GlobalTerminal1F_WonderTrade_AskToSpend",
+      "en_US": [
+        "Would you like to spend $500 to\n",
+        "use Wonder Trade?"
+      ]
+    },
+    {
+      "id": "pl_msg_GlobalTerminal1F_WonderTrade_TellSelectPokemon",
+      "en_US": [
+        "Wonderful! We’ll get started now.\n",
+        "What Pokémon would you like to send?\r"
+      ]
+    },
+    {
+      "id": "pl_msg_GlobalTerminal1F_WonderTrade_ConfirmSend",
+      "en_US": [
+        "You won’t be able to get {STRVAR_1 3, 1, 0}\n",
+        "back! Send {STRVAR_1 3, 1, 0}?"
+      ]
+    },
+    {
+      "id": "pl_msg_GlobalTerminal1F_WonderTrade_SendItOver",
+      "en_US": "Here, I’ll send it over for you.\r"
+    },
+    {
+      "id": "pl_msg_GlobalTerminal1F_WonderTrade_QuitBeforePay",
+      "en_US": [
+        "Oh, alright! Some other time then.\n",
+        "You’re always welcome to Wonder Trade!"
+      ]
+    },
+    {
+      "id": "pl_msg_GlobalTerminal1F_WonderTrade_NotEnoughMoney",
+      "en_US": [
+        "Oh, drat! You don’t have enough money!\n",
+        "Come back when you have enough!"
+      ]
+    },
+    {
+      "id": "pl_msg_GlobalTerminal1F_WonderTrade_AskToSelectAnotherPokemon",
+      "en_US": [
+        "Would you like to pick another\n",
+        "Pokémon?"
+      ]
+    },
+    {
+      "id": "pl_msg_GlobalTerminal1F_WonderTrade_ReturnMoney",
+      "en_US": [
+        "Oh, alright, some other time then.\r",
+        "Here’s your money back."
+      ]
+    },
+    {
+      "id": "pl_msg_GlobalTerminal1F_CannotAcceptEggs",
+      "en_US": "Pardon me, but we cannot accept Eggs!\r"
+    },
+    {
+      "id": "pl_msg_GlobalTerminal1F_ReceivedA",
+      "en_US": "{STRVAR_1 3, 0, 0} received {STRVAR_1 3, 1, 0}!\r"
+    },
+    {
+      "id": "pl_msg_GlobalTerminal1F_LowBST",
+      "en_US": [
+        "Oh, a {STRVAR_1 3, 1, 0}! How charming!\n",
+        "Please do visit again."
+      ]
+    },
+    {
+      "id": "pl_msg_GlobalTerminal1F_MediumBST",
+      "en_US": [
+        "Wow, a {STRVAR_1 3, 1, 0}!\n",
+        "That’s exciting! Please do visit again."
+      ]
+    },
+    {
+      "id": "pl_msg_GlobalTerminal1F_HighBST",
+      "en_US": [
+        "A Trainer sent you a {STRVAR_1 3, 1, 0}!\n",
+        "That’s mighty generous of them.\f",
+        "Please do visit again."
+      ]
+    },
+    {
+      "id": "pl_msg_GlobalTerminal1F_OutstandingBST",
+      "en_US": [
+        "What luck you have to get a\n",
+        "{STRVAR_1 3, 1, 0}!\r",
+        "With that luck, you should play\n",
+        "the Jubilife City lottery!\r",
+        "Please do visit again."
+      ]
     }
   ]
 }

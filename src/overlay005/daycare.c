@@ -442,7 +442,7 @@ static void Egg_InheritIVs(Pokemon *egg, Daycare *daycare)
     }
 }
 
-static u8 LoadSpeciesEggMoves(Pokemon *mon, u16 *eggMoves)
+u8 LoadSpeciesEggMoves(Pokemon *mon, u16 *eggMoves)
 {
     u16 species, eggMoveOffset, eggMoveCount, i;
 

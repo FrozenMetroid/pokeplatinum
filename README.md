@@ -14,6 +14,8 @@ Credits:
 - Senate
 
 # Features
+- Faster HP Bar
+- Singleplayer Wonder Trade in the Global Terminal
 - Footstep sounds for walking, running, metal, grass, wood, and caves from HeartGold and Soulsilver
     Metal, Grass, and Wood metatile behavior have not been applied to any maps because of the inability to edit maps in the decomp currently
 - Multiple Premier Balls when buying Poké Balls of any type
@@ -36,6 +38,8 @@ Credits:
 - Prism Scale
 - Show EVs and IVs on the Summary Screen
 - Reduced BP prices at the Battle Frontier shops for less grinding
+- Rebalanced Pokémon and Trainers
+- Some different Pokémon encounters
 - Pokémon that require trading to evolve can now evolve in singleplayer
     Pokémon that required holding an item to evolve while trading now simply need to hold the item and level up once
     Pokémon that evolved by trading will now evolve with a Linking Cord
@@ -45,6 +49,8 @@ Credits:
 - A myriad of changes to the battle system, as documented below
 
 # Battle Changes
+
+HP bar is faster now.
 
 The data structure for Trainers has been completely overhauled to be like how it is in HeartGold-Engine -- now Trainers' Pokémon can have custom Poké Balls, Abilities, EVs, IVs, etc.
 

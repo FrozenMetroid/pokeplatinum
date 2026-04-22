@@ -33,5 +33,6 @@ FieldSystem *FieldTask_GetFieldSystem(FieldTask *task);
 void *FieldTask_GetEnv(FieldTask *task);
 int *FieldTask_GetState(FieldTask *task);
 u32 FieldTask_GetDummy1CVal(FieldTask *task);
+BOOL FieldTask_ProcessNPCTrade(FieldTask *task);
 
 #endif // POKEPLATINUM_FIELD_TASK_H

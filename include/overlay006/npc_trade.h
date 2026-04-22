@@ -35,7 +35,17 @@ typedef struct NPCTradeData {
     TrainerInfo *trainerInfo;
     u32 npcTradeID;
     enum HeapID heapID;
+    BOOL wonderTrade;
 } NPCTradeData;
+
+typedef struct NPCTradeTaskEnv {
+    NPCTradeData *npcTradeData;
+    u32 state;
+    int partySlot;
+    TradeAnimationTemplate tradeAnimTemplate;
+    Pokemon *givingMon;
+    Pokemon *receivingMon;
+} NPCTradeTaskEnv;
 
 NPCTradeData *NPCTrade_Init(enum HeapID heapID, u32 entryID);
 void NPCTrade_Free(NPCTradeData *data);
