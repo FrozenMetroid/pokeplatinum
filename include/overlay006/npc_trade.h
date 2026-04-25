@@ -4,6 +4,7 @@
 #include "field/field_system_decl.h"
 #include "overlay006/struct_npc_trade_animation_template.h"
 
+#include "evolution.h"
 #include "pokemon.h"
 
 typedef struct NPCTradeMon {
@@ -45,6 +46,7 @@ typedef struct NPCTradeTaskEnv {
     TradeAnimationTemplate tradeAnimTemplate;
     Pokemon *givingMon;
     Pokemon *receivingMon;
+    EvolutionData *evolutionData;
 } NPCTradeTaskEnv;
 
 NPCTradeData *NPCTrade_Init(enum HeapID heapID, u32 entryID);
@@ -53,5 +55,6 @@ u32 NPCTrade_GetSpecies(const NPCTradeData *data);
 u32 NPCTrade_GetRequestedSpecies(const NPCTradeData *data);
 void NPCTrade_ReceiveMon(FieldSystem *fieldSystem, NPCTradeData *data, int slot);
 void NPCTrade_FillAnimationTemplate(FieldSystem *fieldSystem, NPCTradeData *data, int slot, TradeAnimationTemplate *param3, Pokemon *givingMon, Pokemon *receivingMon);
+BOOL NPCTrade_ShouldEvolve(Pokemon *mon, u16 *targetSpecies, u8 *method, enum HeapID heapID);
 
 #endif // POKEPLATINUM_NPC_TRADE_H

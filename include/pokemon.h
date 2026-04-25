@@ -947,4 +947,6 @@ void sub_02078E0C(UnkStruct_02078B40 *param0, Pokemon *mon);
 
 void BoxPokemon_SetMetLocationAndDate(BoxPokemon *boxMon, int metLocation, int isHatch);
 
+int Pokemon_GetFormNarcIndex(int monSpecies, int monForm);
+
 #endif // POKEPLATINUM_POKEMON_H

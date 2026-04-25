@@ -7,4 +7,6 @@
 
 void FieldTask_StartNPCTrade(FieldTask *task, NPCTradeData *data, int partySlot, enum HeapID heapID);
 
+void NPCTrade_WaitEvolution(EvolutionData *evolutionData, u32 *subTaskState);
+
 #endif // POKEPLATINUM_NPC_TRADE_TASK_H

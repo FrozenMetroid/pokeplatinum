@@ -5011,7 +5011,7 @@ static void *BoxPokemon_GetDataBlock(BoxPokemon *boxMon, u32 personality, enum P
     return result;
 }
 
-static int Pokemon_GetFormNarcIndex(int monSpecies, int monForm)
+int Pokemon_GetFormNarcIndex(int monSpecies, int monForm)
 {
     // TODO enum values?
     switch (monSpecies) {

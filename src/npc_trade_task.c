@@ -43,7 +43,6 @@ BOOL FieldTask_ProcessNPCTrade(FieldTask *task)
     case 0:
         NPCTrade_FillAnimationTemplate(fieldSystem, taskEnv->npcTradeData, taskEnv->partySlot, &taskEnv->tradeAnimTemplate, taskEnv->givingMon, taskEnv->receivingMon);
         if (!taskEnv->npcTradeData->wonderTrade) {
-            EmulatorLog("Received mon from NPC Trade");
             NPCTrade_ReceiveMon(fieldSystem, taskEnv->npcTradeData, taskEnv->partySlot);
         }
         taskEnv->state++;
@@ -61,16 +60,28 @@ BOOL FieldTask_ProcessNPCTrade(FieldTask *task)
         taskEnv->state++;
         break;
     case 4:
+        if (NPCTrade_ShouldEvolve(taskEnv->receivingMon, &targetSpecies, &method, HEAP_ID_FIELD2)) {
+            Heap_Create(HEAP_ID_APPLICATION, HEAP_ID_EVOLUTION, HEAP_SIZE_EVOLUTION);
+            taskEnv->evolutionData = Evolution_Begin(SaveData_GetParty(fieldSystem->saveData), taskEnv->receivingMon, targetSpecies, SaveData_GetOptions(fieldSystem->saveData), PokemonSummaryScreen_ShowContestData(fieldSystem->saveData), SaveData_GetPokedex(fieldSystem->saveData), SaveData_GetBag(fieldSystem->saveData), SaveData_GetGameRecords(fieldSystem->saveData), SaveData_GetPoketch(fieldSystem->saveData), method, 4, HEAP_ID_EVOLUTION);
+            taskEnv->state++;
+        } else {
+            taskEnv->state = 6; // skip evolution if the mon doesn't evolve after the trade
+        }
+        break;
+    case 5:
+        NPCTrade_WaitEvolution(taskEnv->evolutionData, &taskEnv->state);
+        break;
+    case 6:
         FieldTransition_StartMap(task);
         taskEnv->state++;
         break;
-    case 5:
+    case 7:
         FieldTransition_FadeIn(task);
         taskEnv->state++;
         break;
-    case 6:
+    case 8:
         if (!taskEnv->npcTradeData->wonderTrade) { 
-            // don't want to free these because the pointer to givingMon is the 
+            // don't want to free these because the pointer to givingMon
             // points to the mon in the wonder trade struct for the mon you sent, 
             // and the receivingMon points to the one in your party that you just received
             // from wonder trade
