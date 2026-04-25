@@ -60,6 +60,7 @@ BOOL FieldTask_ProcessNPCTrade(FieldTask *task)
         taskEnv->state++;
         break;
     case 4:
+        u16 targetSpecies, method;
         if (NPCTrade_ShouldEvolve(taskEnv->receivingMon, &targetSpecies, &method, HEAP_ID_FIELD2)) {
             Heap_Create(HEAP_ID_APPLICATION, HEAP_ID_EVOLUTION, HEAP_SIZE_EVOLUTION);
             taskEnv->evolutionData = Evolution_Begin(SaveData_GetParty(fieldSystem->saveData), taskEnv->receivingMon, targetSpecies, SaveData_GetOptions(fieldSystem->saveData), PokemonSummaryScreen_ShowContestData(fieldSystem->saveData), SaveData_GetPokedex(fieldSystem->saveData), SaveData_GetBag(fieldSystem->saveData), SaveData_GetGameRecords(fieldSystem->saveData), SaveData_GetPoketch(fieldSystem->saveData), method, 4, HEAP_ID_EVOLUTION);
