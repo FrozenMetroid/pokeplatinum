@@ -37,7 +37,7 @@
 #define MENU_TITLE_HEIGHT         2
 #define ENTRIES_BASE_TILE         (MENU_TITLE_BASE_TILE + MENU_TITLE_WIDTH * MENU_TITLE_HEIGHT)
 #define ENTRIES_WIDTH             30
-#define ENTRIES_HEIGHT            14
+#define ENTRIES_HEIGHT            14 // update to 16 to visually show all of them without the scroll
 #define DESCRIPTION_BASE_TILE     (ENTRIES_BASE_TILE + ENTRIES_WIDTH * ENTRIES_HEIGHT)
 #define DESCRIPTION_WIDTH         27
 #define DESCRIPTION_HEIGHT        4
@@ -56,6 +56,8 @@
 
 #define HEAP_ALLOCATION_SIZE 0x10000
 
+#define NUM_ENTRIES_ON_SCREEN 7
+
 enum OptionsMenuEntryID {
     ENTRY_TEXT_SPEED = 0,
     ENTRY_SOUND_MODE,
@@ -63,6 +65,9 @@ enum OptionsMenuEntryID {
     ENTRY_BATTLE_STYLE,
     ENTRY_BUTTON_MODE,
     ENTRY_MESSAGE_BOX_FRAME,
+    #ifdef OPTIONS_ADD_WONDER_TRADE_ANIMS
+    ENTRY_WONDER_TRADE_ANIMS,
+    #endif
     ENTRY_CLOSE,
 
     MAX_ENTRIES,
@@ -109,6 +114,9 @@ typedef struct OptionsMenuData {
             OptionsMenuEntry battleStyle;
             OptionsMenuEntry buttonMode;
             OptionsMenuEntry messageBoxStyle;
+            #ifdef OPTIONS_ADD_WONDER_TRADE_ANIMS
+            OptionsMenuEntry wonderTradeAnims;
+            #endif
             OptionsMenuEntry close;
         };
     } entries;
@@ -128,7 +136,8 @@ static void SetupBgs(OptionsMenuData *menuData);
 static void LoadBgTiles(OptionsMenuData *menuData);
 static void SetupWindows(OptionsMenuData *menuData);
 
-static void PrintTitleAndEntries(OptionsMenuData *param0);
+static void PrintTitle(OptionsMenuData *menuData);
+static void PrintEntries(OptionsMenuData *menuData, u8 firstEntry, u8 lastEntry);
 static void PrintEntryChoices(OptionsMenuData *menuData, u16 entry);
 static void PrintEntryDescription(OptionsMenuData *menuData, u16 entry, BOOL scheduleVRAMCopy);
 static void PrintBankEntryAsDescription(OptionsMenuData *menuData, u16 entry, BOOL scheduleVRAMCopy);
@@ -162,6 +171,9 @@ BOOL OptionsMenu_Init(ApplicationManager *appMan, int *state)
     menuData->options.soundMode = Options_SoundMode(options);
     menuData->options.buttonMode = Options_ButtonMode(options);
     menuData->options.messageBoxStyle = Options_Frame(options);
+    #ifdef OPTIONS_ADD_WONDER_TRADE_ANIMS
+    menuData->options.wonderTradeAnims = Options_WonderTradeAnims(options);
+    #endif
     menuData->heapID = HEAP_ID_OPTIONS_MENU;
     menuData->saveOptions = options;
 
@@ -181,6 +193,9 @@ BOOL OptionsMenu_Exit(ApplicationManager *appMan, int *state)
         menuData->options.soundMode = menuData->entries.soundMode.selected;
         menuData->options.buttonMode = menuData->entries.buttonMode.selected;
         menuData->options.messageBoxStyle = menuData->entries.messageBoxStyle.selected;
+        #ifdef OPTIONS_ADD_WONDER_TRADE_ANIMS
+        menuData->options.wonderTradeAnims = menuData->entries.wonderTradeAnims.selected;
+        #endif
     }
 
     Options_SetTextSpeed(menuData->saveOptions, menuData->options.textSpeed);
@@ -189,6 +204,9 @@ BOOL OptionsMenu_Exit(ApplicationManager *appMan, int *state)
     Options_SetSoundMode(menuData->saveOptions, menuData->options.soundMode);
     Options_SetButtonMode(menuData->saveOptions, menuData->options.buttonMode);
     Options_SetFrame(menuData->saveOptions, menuData->options.messageBoxStyle);
+    #ifdef OPTIONS_ADD_WONDER_TRADE_ANIMS
+    Options_SetWonderTradeAnims(menuData->saveOptions, menuData->options.wonderTradeAnims);
+    #endif
     Sound_SetPlaybackMode(menuData->options.soundMode);
     Options_SetSystemButtonMode(NULL, menuData->options.buttonMode);
 
@@ -372,7 +390,8 @@ static int SetupMenuVisuals(OptionsMenuData *menuData)
 
     case 2:
         SetupWindows(menuData);
-        PrintTitleAndEntries(menuData);
+        PrintTitle(menuData);
+        PrintEntries(menuData, ENTRY_TEXT_SPEED, ENTRY_CLOSE); // all the entries that can be seen by default without scrolling
         VramTransfer_New(32, menuData->heapID);
         GXLayers_EngineAToggleLayers(GX_PLANEMASK_OBJ, TRUE);
         NetworkIcon_InitIfConnected();
@@ -683,12 +702,15 @@ static const u8 sEntryLabels[MAX_ENTRIES] = {
     OptionsMenu_Text_BattleStyleLabel,
     OptionsMenu_Text_ButtonModeLabel,
     OptionsMenu_Text_MessageBoxStyleLabel,
+    #ifdef OPTIONS_ADD_WONDER_TRADE_ANIMS
+    OptionsMenu_Text_WonderTrade,
+    #endif
     OptionsMenu_Text_CloseLabel,
 };
 
-static void PrintTitleAndEntries(OptionsMenuData *menuData)
+static void PrintTitle(OptionsMenuData *menuData)
 {
-    u16 i; // Must forward-declare to match
+    u16 i;
     TextColor transparentBg = TEXT_COLOR(1, 2, 0);
     TextColor whiteBg = TEXT_COLOR(1, 2, 15);
 
@@ -703,7 +725,18 @@ static void PrintTitleAndEntries(OptionsMenuData *menuData)
         transparentBg,
         NULL);
 
-    for (i = 0; i < MAX_ENTRIES; i++) {
+    Window_CopyToVRAM(&menuData->windows.title);
+    String_Free(string);
+}
+
+static void PrintEntries(OptionsMenuData *menuData, u8 firstEntry, u8 lastEntry)
+{
+    u16 i;
+    TextColor transparentBg = TEXT_COLOR(1, 2, 0);
+    TextColor whiteBg = TEXT_COLOR(1, 2, 15);
+    String *string = String_Init(256, menuData->heapID);
+
+    for (i = firstEntry; i <= lastEntry; i++) {
         String_Clear(string);
         MessageLoader_GetString(menuData->msgLoader, sEntryLabels[i], string);
         Text_AddPrinterWithParamsAndColor(&menuData->windows.entries,
@@ -716,14 +749,13 @@ static void PrintTitleAndEntries(OptionsMenuData *menuData)
             NULL);
     }
 
-    for (i = 0; i < MAX_ENTRIES; i++) {
+    for (i = firstEntry; i <= lastEntry; i++) {
         PrintEntryChoices(menuData, i);
+        if (i == menuData->cursor) {
+            PrintEntryDescription(menuData, i, TRUE);
+        }
     }
-
-    PrintEntryDescription(menuData, ENTRY_TEXT_SPEED, TRUE);
-    Window_CopyToVRAM(&menuData->windows.title);
     Window_CopyToVRAM(&menuData->windows.entries);
-    String_Free(string);
 }
 
 static const int sNumChoicesPerEntry[MAX_ENTRIES] = {
@@ -733,6 +765,9 @@ static const int sNumChoicesPerEntry[MAX_ENTRIES] = {
     2,
     3,
     20,
+    #ifdef OPTIONS_ADD_WONDER_TRADE_ANIMS
+    2,
+    #endif
     0,
 };
 
@@ -743,6 +778,9 @@ static const u8 sFirstChoicePerEntry[MAX_ENTRIES] = {
     OptionsMenu_Text_BattleStyleShift,
     OptionsMenu_Text_ButtonModeNormal,
     OptionsMenu_Text_MessageBoxStyle_01,
+    #ifdef OPTIONS_ADD_WONDER_TRADE_ANIMS
+    OptionsMenu_Text_WonderTradeAnims_On,
+    #endif
     NULL,
 };
 
@@ -762,9 +800,16 @@ static void LoadAllEntryChoices(OptionsMenuData *menuData)
     menuData->entries.soundMode.selected = menuData->options.soundMode;
     menuData->entries.buttonMode.selected = menuData->options.buttonMode;
     menuData->entries.messageBoxStyle.selected = menuData->options.messageBoxStyle;
+    #ifdef OPTIONS_ADD_WONDER_TRADE_ANIMS
+    menuData->entries.wonderTradeAnims.selected = menuData->options.wonderTradeAnims;
+    #endif
 }
 
+#ifdef OPTIONS_ADD_WONDER_TRADE_ANIMS
+static const s8 sEntryXOffsets[] = { 0, 0, 0, 0, 0, 0, 0, 0 };
+#else
 static const s8 sEntryXOffsets[] = { 0, 0, 0, 0, 0, 0, 0 };
+#endif
 
 static void PrintEntryChoices(OptionsMenuData *menuData, u16 entry)
 {
@@ -797,8 +842,13 @@ static void PrintEntryChoices(OptionsMenuData *menuData, u16 entry)
         Options_SetSystemButtonMode(NULL, menuData->entries.asArray[entry].selected);
     } else if (entry == ENTRY_TEXT_SPEED) {
         Options_SetTextSpeed(menuData->saveOptions, menuData->entries.asArray[entry].selected);
-        PrintEntryDescription(menuData, entry, FALSE);
+        PrintEntryDescription(menuData, entry, FALSE); // displays the new text speed immediately in the description box
+    } 
+    #ifdef OPTIONS_ADD_WONDER_TRADE_ANIMS
+    else if (entry == ENTRY_WONDER_TRADE_ANIMS) {
+        Options_SetWonderTradeAnims(menuData->saveOptions, menuData->entries.asArray[entry].selected);
     }
+    #endif
 
     xOffset = 0;
     for (i = 0; i < menuData->entries.asArray[entry].numChoices; i++) {
@@ -900,7 +950,7 @@ static void ProcessMainInput(OptionsMenuData *menuData)
     }
 
     if (JOY_NEW(PAD_KEY_UP)) {
-        menuData->cursor = (menuData->cursor + 7 - 1) % 7;
+        menuData->cursor = (menuData->cursor + NUM_ENTRIES_ON_SCREEN - 1) % NUM_ENTRIES_ON_SCREEN;
         Bg_ScheduleScroll(menuData->bgConfig,
             BG_LAYER_MAIN_0,
             BG_OFFSET_UPDATE_SET_Y,
@@ -909,11 +959,8 @@ static void ProcessMainInput(OptionsMenuData *menuData)
         PrintEntryDescription(menuData, menuData->cursor, TRUE);
         Sound_PlayEffect(SEQ_SE_CONFIRM);
     } else if (JOY_NEW(PAD_KEY_DOWN)) {
-        menuData->cursor = (menuData->cursor + 1) % 7;
-        Bg_ScheduleScroll(menuData->bgConfig,
-            BG_LAYER_MAIN_0,
-            BG_OFFSET_UPDATE_SET_Y,
-            -(menuData->cursor * SINGLE_ENTRY_HEIGHT + FIRST_ENTRY_OFFSET));
+        menuData->cursor = (menuData->cursor + 1) % NUM_ENTRIES_ON_SCREEN;
+        Bg_ScheduleScroll(menuData->bgConfig, BG_LAYER_MAIN_0, BG_OFFSET_UPDATE_SET_Y, -(menuData->cursor * SINGLE_ENTRY_HEIGHT + FIRST_ENTRY_OFFSET));
 
         PrintEntryDescription(menuData, menuData->cursor, TRUE);
         Sound_PlayEffect(SEQ_SE_CONFIRM);
@@ -927,7 +974,12 @@ static BOOL ChangesWereMade(OptionsMenuData *menuData)
         || menuData->options.battleStyle != menuData->entries.battleStyle.selected
         || menuData->options.soundMode != menuData->entries.soundMode.selected
         || menuData->options.buttonMode != menuData->entries.buttonMode.selected
-        || menuData->options.messageBoxStyle != menuData->entries.messageBoxStyle.selected;
+        || menuData->options.messageBoxStyle != menuData->entries.messageBoxStyle.selected
+        #ifdef OPTIONS_ADD_WONDER_TRADE_ANIMS
+        || menuData->options.wonderTradeAnims != menuData->entries.wonderTradeAnims.selected;
+        #else
+        ;
+        #endif
 }
 
 static const WindowTemplate sConfirmationWindowTemplate = {
@@ -961,6 +1013,9 @@ static const u8 sEntryDescriptions[MAX_ENTRIES] = {
     OptionsMenu_Text_BattleStyleDescription,
     OptionsMenu_Text_ButtonModeDescription,
     OptionsMenu_Text_MessageBoxStyleDescription,
+    #ifdef OPTIONS_ADD_WONDER_TRADE_ANIMS
+    OptionsMenu_Text_WonderTradeAnims_Description,
+    #endif
     OptionsMenu_Text_CloseDescription,
 };
 

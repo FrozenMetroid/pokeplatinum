@@ -10,7 +10,7 @@ typedef struct OptionsMenu {
     u16 battleStyle : 1;
     u16 buttonMode : 2;
     u16 messageBoxStyle : 5;
-    u16 : 1;
+    u16 wonderTradeAnims : 1;
 } OptionsMenu;
 
 BOOL OptionsMenu_Init(ApplicationManager *appMan, int *state);

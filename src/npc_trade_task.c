@@ -69,7 +69,6 @@ BOOL FieldTask_ProcessNPCTrade(FieldTask *task)
         taskEnv->state++;
         break;
     case 6:
-        EmulatorLog("Finished NPC Trade animation, cleaning up task!");
         if (!taskEnv->npcTradeData->wonderTrade) { 
             // don't want to free these because the pointer to givingMon is the 
             // points to the mon in the wonder trade struct for the mon you sent, 
@@ -79,7 +78,6 @@ BOOL FieldTask_ProcessNPCTrade(FieldTask *task)
             Heap_Free(taskEnv->receivingMon);
         }
         Heap_Free(taskEnv);
-        EmulatorLog("Finished processing NPC Trade task!");
         return TRUE;
     }
 

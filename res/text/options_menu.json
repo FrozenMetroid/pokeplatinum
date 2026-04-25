@@ -224,6 +224,25 @@
     {
       "id": "OptionsMenu_Text_CloseDescription",
       "en_US": "Return to the game."
+    },
+    {
+      "id": "OptionsMenu_Text_WonderTrade",
+      "en_US": "WONDER TRADE"
+    },
+    {
+      "id": "OptionsMenu_Text_WonderTradeAnims_On",
+      "en_US": "ON"
+    },
+    {
+      "id": "OptionsMenu_Text_WonderTradeAnims_Off",
+      "en_US": "OFF"
+    },
+    {
+      "id": "OptionsMenu_Text_WonderTradeAnims_Description",
+      "en_US": [
+        "Choose between seeing or not seeing\n",
+        "Wonder Trade animations."
+      ]
     }
   ]
 }

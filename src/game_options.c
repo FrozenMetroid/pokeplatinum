@@ -41,6 +41,7 @@ void Options_Init(Options *options)
     #endif
     options->buttonMode = OPTIONS_BUTTON_MODE_NORMAL;
     options->frame = OPTIONS_FRAME_1;
+    options->wonderTradeAnims = TRUE;
 }
 
 void Options_SetSystemButtonMode(SaveData *saveData, enum OptionsButtonMode mode)
@@ -134,4 +135,14 @@ int Options_Frame(const Options *options)
 void Options_SetFrame(Options *options, enum OptionsFrame frame)
 {
     options->frame = frame;
+}
+
+int Options_WonderTradeAnims(const Options *options)
+{
+    return options->wonderTradeAnims;
+}
+
+void Options_SetWonderTradeAnims(Options *options, BOOL anims)
+{
+    options->wonderTradeAnims = anims;
 }

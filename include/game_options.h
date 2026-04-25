@@ -12,7 +12,7 @@ typedef struct Options {
     u16 battleScene : 1;
     u16 buttonMode : 2;
     u16 frame : 5;
-    u16 : 1;
+    u16 wonderTradeAnims : 1;
 } Options;
 
 Options *Options_New(enum HeapID heapID);
@@ -32,5 +32,7 @@ int Options_ButtonMode(const Options *options);
 void Options_SetButtonMode(Options *options, enum OptionsButtonMode mode);
 int Options_Frame(const Options *options);
 void Options_SetFrame(Options *options, enum OptionsFrame frame);
+int Options_WonderTradeAnims(const Options *options);
+void Options_SetWonderTradeAnims(Options *options, BOOL fast);
 
 #endif // POKEPLATINUM_GAME_OPTIONS_H
