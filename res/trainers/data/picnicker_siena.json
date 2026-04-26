@@ -4,27 +4,36 @@
     "items": [],
     "ai_flags": [
         "AI_FLAG_BASIC",
-        "AI_FLAG_EVAL_ATTACK",
-        "AI_FLAG_EXPERT"
+        "AI_FLAG_EVAL_ATTACK"
     ],
     "double_battle": false,
     "party": [
         {
-            "species": "SPECIES_BIDOOF",
+            "species": "SPECIES_BUIZEL",
             "form": 0,
-            "level": 12,
+            "level": 13,
             "item": null,
-            "moves": null,
-            "iv_scale": 0,
+            "moves": [
+                "MOVE_WATER_GUN",
+                "MOVE_QUICK_ATTACK",
+                "MOVE_PURSUIT",
+                "MOVE_GROWL"
+            ],
+            "iv_scale": 20,
             "ball_seal": 0
         },
         {
-            "species": "SPECIES_PACHIRISU",
+            "species": "SPECIES_BEAUTIFLY",
             "form": 0,
-            "level": 12,
+            "level": 13,
             "item": null,
-            "moves": null,
-            "iv_scale": 0,
+            "moves": [
+                "MOVE_GUST",
+                "MOVE_ABSORB",
+                "MOVE_TACKLE",
+                "MOVE_STRING_SHOT"
+            ],
+            "iv_scale": 20,
             "ball_seal": 0
         }
     ],

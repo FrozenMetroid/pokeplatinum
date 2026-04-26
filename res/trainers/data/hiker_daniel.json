@@ -4,34 +4,21 @@
     "items": [],
     "ai_flags": [
         "AI_FLAG_BASIC",
-        "AI_FLAG_PRIORITIZE_EXTREMES"
+        "AI_FLAG_EVAL_ATTACK"
     ],
     "double_battle": false,
     "party": [
         {
-            "species": "SPECIES_GEODUDE",
+            "species": "SPECIES_NOSEPASS",
             "form": 0,
-            "level": 10,
+            "level": 15,
             "item": null,
-            "moves": null,
-            "iv_scale": 0,
-            "ball_seal": 0
-        },
-        {
-            "species": "SPECIES_GEODUDE",
-            "form": 0,
-            "level": 11,
-            "item": null,
-            "moves": null,
-            "iv_scale": 0,
-            "ball_seal": 0
-        },
-        {
-            "species": "SPECIES_GEODUDE",
-            "form": 0,
-            "level": 12,
-            "item": null,
-            "moves": null,
+            "moves": [
+                "MOVE_TACKLE",
+                "MOVE_ROCK_THROW",
+                "MOVE_HARDEN",
+                "MOVE_THUNDER_SHOCK"
+            ],
             "iv_scale": 0,
             "ball_seal": 0
         }

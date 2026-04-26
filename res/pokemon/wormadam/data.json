@@ -34,7 +34,7 @@
     "icon_palette": 1,
     "learnset": {
         "by_level": [
-            [1, "MOVE_VINE_WHIP"],
+            [0, "MOVE_VINE_WHIP"],
             [1, "MOVE_TACKLE"],
             [5, "MOVE_PROTECT"],
             [10, "MOVE_BUG_BITE"],

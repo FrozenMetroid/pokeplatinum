@@ -36,7 +36,6 @@
         "by_level": [
             [1, "MOVE_THUNDER_FANG"],
             [1, "MOVE_BUG_BITE"],
-            [1, "MOVE_BUG_BITE"],
             [1, "MOVE_POISON_FANG"],
             [1, "MOVE_BIND"],
             [1, "MOVE_GROWTH"],

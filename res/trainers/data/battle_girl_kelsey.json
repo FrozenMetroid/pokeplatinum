@@ -9,11 +9,16 @@
     "double_battle": false,
     "party": [
         {
-            "species": "SPECIES_MACHOP",
+            "species": "SPECIES_MEDITITE",
             "form": 0,
             "level": 15,
             "item": null,
-            "moves": null,
+            "moves": [
+                "MOVE_CONFUSION",
+                "MOVE_LOW_KICK",
+                "MOVE_BIDE",
+                "MOVE_DETECT"
+            ],
             "iv_scale": 20,
             "ball_seal": 0
         }

@@ -10,16 +10,22 @@
     "double_battle": false,
     "party": [
         {
-            "species": "SPECIES_ZUBAT",
+            "species": "SPECIES_SMOOCHUM",
             "form": 0,
             "level": 21,
             "item": "ITEM_NONE",
             "moves": [
-                "MOVE_GIGA_DRAIN",
-                "MOVE_WING_ATTACK",
-                "MOVE_BITE"
+                "MOVE_ICY_WIND",
+                "MOVE_CONFUSION",
+                "MOVE_SWEET_KISS",
+                "MOVE_SING"
             ],
-            "iv_scale": 100,
+            "ability": "ABILITY_FOREWARN",
+            "ivnums": [12, 12, 12, 12, 12, 12],
+            "evnums": [0, 0, 0, 30, 30, 0],
+            "ball": "ITEM_DUSK_BALL",
+            "nature": "NATURE_MODEST",
+            "iv_scale": 0,
             "ball_seal": 0
         },
         {
@@ -31,9 +37,14 @@
                 "MOVE_NIGHT_SLASH",
                 "MOVE_POISON_GAS",
                 "MOVE_SCREECH",
-                "MOVE_SMOKE_SCREEN"
+                "MOVE_SLUDGE"
             ],
-            "iv_scale": 100,
+            "ability": "ABILITY_STENCH",
+            "ivnums": [12, 12, 12, 12, 12, 12],
+            "evnums": [0, 40, 0, 40, 0, 0],
+            "ball": "ITEM_DUSK_BALL",
+            "nature": "NATURE_HASTY",
+            "iv_scale": 0,
             "ball_seal": 0
         }
     ],

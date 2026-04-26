@@ -306,7 +306,11 @@ static const Sound_FootStep Sound_FootStepData[] = {
 void Sound_ControlFootstepCounter(u16 seq) {
     u8 *footStepCounter = SoundSystem_GetParam(SOUND_SYSTEM_PARAM_FOOT_STEP_COUNTER);
 
-    Sound_SetInitialVolumeForSequence(seq, Sound_FootStepData[*footStepCounter].volume);
+    if (seq != SEQ_SE_PL_YUKI) {
+        Sound_SetInitialVolumeForSequence(seq, Sound_FootStepData[*footStepCounter].volume);
+    } else {
+        Sound_SetInitialVolumeForSequence(seq, Sound_FootStepData[*footStepCounter].volume * 2); // make the snow footsteps louder because they sound quieter than the others
+    }
     Sound_SetPitchForHandle(SOUND_HANDLE_TYPE_SFX_2, 0xFFFF, Sound_FootStepData[*footStepCounter].pitch);
 
     *footStepCounter++;

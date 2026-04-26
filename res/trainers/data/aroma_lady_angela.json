@@ -9,16 +9,22 @@
     "double_battle": false,
     "party": [
         {
-            "species": "SPECIES_ROSELIA",
+            "species": "SPECIES_TURTWIG",
             "form": 0,
             "level": 19,
             "item": null,
             "moves": [
-                "MOVE_MEGA_DRAIN",
-                "MOVE_POISON_STING",
-                "MOVE_STUN_SPORE"
+                "MOVE_RAZOR_LEAF",
+                "MOVE_SLAM",
+                "MOVE_BITE",
+                "MOVE_WITHDRAW"
             ],
-            "iv_scale": 20,
+            "ability": "ABILITY_OVERGROW",
+            "ball": "ITEM_GREAT_BALL",
+            "ivnums": [12, 12, 12, 12, 12, 12],
+            "evnums": [30, 30, 0, 0, 0, 0],
+            "nature": "NATURE_ADAMANT",
+            "iv_scale": 0,
             "ball_seal": 0
         }
     ],

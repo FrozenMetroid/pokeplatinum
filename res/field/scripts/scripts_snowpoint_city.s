@@ -29,6 +29,7 @@ SnowpointCity_TriggerTempleGuard:
     LockAll
     ApplyMovement LOCALID_TEMPLE_GUARD, SnowpointCity_Movement_TempleGuardWalkOnSpotWest
     WaitMovement
+    PlaySE SEQ_SE_CONFIRM
     Message SnowpointCity_Text_OnlyChosenMayEnterTemple
     CloseMessage
     GetNationalDexEnabled VAR_RESULT

@@ -2,7 +2,7 @@
     "name": "Shadow Punch",
     "class": "CLASS_PHYSICAL",
     "type": "TYPE_GHOST",
-    "power": 60,
+    "power": 80,
     "accuracy": 0,
     "pp": 20,
     "effect": {

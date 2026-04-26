@@ -4,21 +4,22 @@
     "items": [],
     "ai_flags": [
         "AI_FLAG_BASIC",
-        "AI_FLAG_EVAL_ATTACK",
-        "AI_FLAG_EXPERT"
+        "AI_FLAG_EVAL_ATTACK"
     ],
     "double_battle": false,
     "party": [
         {
             "species": "SPECIES_PIPLUP",
             "form": 0,
-            "level": 14,
+            "level": 15,
             "item": null,
             "moves": [
                 "MOVE_BUBBLE",
-                "MOVE_PECK"
+                "MOVE_PECK",
+                "MOVE_TACKLE",
+                "MOVE_NONE"
             ],
-            "iv_scale": 0,
+            "iv_scale": 20,
             "ball_seal": 0
         }
     ],

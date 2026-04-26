@@ -34,7 +34,6 @@
     "icon_palette": 0,
     "learnset": {
         "by_level": [
-            [1, "MOVE_EXTRASENSORY"],
             [1, "MOVE_SPIKES"],
             [1, "MOVE_ABSORB"],
             [4, "MOVE_GROWTH"],

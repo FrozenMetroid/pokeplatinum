@@ -3,33 +3,48 @@
     "class": "TRAINER_CLASS_LASS",
     "items": [],
     "ai_flags": [
-        "AI_FLAG_BASIC"
+        "AI_FLAG_BASIC",
+        "AI_FLAG_EVAL_ATTACK",
+        "AI_FLAG_EXPERT"
     ],
     "double_battle": false,
     "party": [
         {
-            "species": "SPECIES_CHERUBI",
+            "species": "SPECIES_WORMADAM",
             "form": 0,
-            "level": 17,
+            "level": 18,
             "item": null,
             "moves": [
-                "MOVE_TACKLE",
-                "MOVE_LEECH_SEED"
+                "MOVE_BUG_BITE",
+                "MOVE_PROTECT",
+                "MOVE_VINE_WHIP",
+                "MOVE_HIDDEN_POWER"
             ],
-            "iv_scale": 20,
+            "ability": "ABILITY_ANTICIPATION",
+            "ball": "ITEM_POKE_BALL",
+            "ivnums": [12, 12, 12, 12, 12, 12],
+            "evnums": [30, 0, 0, 0, 30, 0],
+            "nature": "NATURE_SERIOUS",
+            "iv_scale": 0,
             "ball_seal": 0
         },
         {
             "species": "SPECIES_ROSELIA",
             "form": 0,
-            "level": 17,
+            "level": 19,
             "item": null,
             "moves": [
-                "MOVE_MEGA_DRAIN",
-                "MOVE_POISON_STING",
-                "MOVE_STUN_SPORE"
+                "MOVE_MAGICAL_LEAF",
+                "MOVE_GROWTH",
+                "MOVE_SLEEP_POWDER",
+                "MOVE_LEECH_SEED"
             ],
-            "iv_scale": 20,
+            "ability": "ABILITY_NATURAL_CURE",
+            "ball": "ITEM_POKE_BALL",
+            "ivnums": [12, 12, 12, 12, 12, 12],
+            "evnums": [30, 0, 0, 0, 30, 0],
+            "nature": "NATURE_MODEST",
+            "iv_scale": 0,
             "ball_seal": 0
         }
     ],

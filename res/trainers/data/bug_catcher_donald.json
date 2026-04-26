@@ -3,26 +3,37 @@
     "class": "TRAINER_CLASS_BUG_CATCHER",
     "items": [],
     "ai_flags": [
-        "AI_FLAG_BASIC"
+        "AI_FLAG_BASIC",
+        "AI_FLAG_EVAL_ATTACK"
     ],
     "double_battle": false,
     "party": [
         {
             "species": "SPECIES_BURMY",
             "form": 1,
-            "level": 14,
+            "level": 15,
             "item": null,
-            "moves": null,
-            "iv_scale": 10,
+            "moves": [
+                "MOVE_TACKLE",
+                "MOVE_PROTECT",
+                "MOVE_BUG_BITE",
+                "MOVE_HIDDEN_POWER"
+            ],
+            "iv_scale": 20,
             "ball_seal": 0
         },
         {
-            "species": "SPECIES_BURMY",
-            "form": 2,
+            "species": "SPECIES_COMBEE",
+            "form": 0,
             "level": 14,
             "item": null,
-            "moves": null,
-            "iv_scale": 10,
+            "moves": [
+                "MOVE_GUST",
+                "MOVE_BUG_BITE",
+                "MOVE_SWEET_SCENT",
+                "MOVE_SILVER_WIND"
+            ],
+            "iv_scale": 20,
             "ball_seal": 0
         }
     ],

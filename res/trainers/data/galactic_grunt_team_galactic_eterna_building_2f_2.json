@@ -8,12 +8,17 @@
     "double_battle": false,
     "party": [
         {
-            "species": "SPECIES_GLAMEOW",
+            "species": "SPECIES_ELECTRIKE",
             "form": 0,
             "level": 19,
             "item": null,
-            "moves": null,
-            "iv_scale": 0,
+            "moves": [
+                "MOVE_SPARK",
+                "MOVE_TACKLE",
+                "MOVE_QUICK_ATTACK",
+                "MOVE_HOWL"
+            ],
+            "iv_scale": 20,
             "ball_seal": 0
         }
     ],

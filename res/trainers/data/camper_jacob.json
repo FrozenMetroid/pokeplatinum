@@ -4,8 +4,7 @@
     "items": [],
     "ai_flags": [
         "AI_FLAG_BASIC",
-        "AI_FLAG_EVAL_ATTACK",
-        "AI_FLAG_EXPERT"
+        "AI_FLAG_EVAL_ATTACK"
     ],
     "double_battle": false,
     "party": [
@@ -16,7 +15,8 @@
             "item": null,
             "moves": [
                 "MOVE_EMBER",
-                "MOVE_TACKLE"
+                "MOVE_TACKLE",
+                "MOVE_GROWL"
             ],
             "iv_scale": 0,
             "ball_seal": 0

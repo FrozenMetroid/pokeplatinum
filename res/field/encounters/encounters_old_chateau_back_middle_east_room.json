@@ -34,20 +34,20 @@
             "species": "SPECIES_GASTLY"
         },
         {
-            "level": 17,
-            "species": "SPECIES_GASTLY"
+            "level": 16,
+            "species": "SPECIES_SHUPPET"
         },
         {
             "level": 17,
-            "species": "SPECIES_GASTLY"
+            "species": "SPECIES_SHUPPET"
+        },
+        {
+            "level": 16,
+            "species": "SPECIES_SHUPPET"
         },
         {
             "level": 17,
-            "species": "SPECIES_GASTLY"
-        },
-        {
-            "level": 17,
-            "species": "SPECIES_GASTLY"
+            "species": "SPECIES_SHUPPET"
         }
     ],
     "swarms": [
