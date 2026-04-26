@@ -36,8 +36,8 @@
         "by_level": [
             [1, "MOVE_WATER_GUN"],
             [1, "MOVE_GROWL"],
-            [6, "MOVE_SUPERSONIC"],
-            [10, "MOVE_WING_ATTACK"],
+            [6, "MOVE_GUST"],
+            [10, "MOVE_SUPERSONIC"],
             [13, "MOVE_MIST"],
             [16, "MOVE_WATER_PULSE"],
             [19, "MOVE_QUICK_ATTACK"],

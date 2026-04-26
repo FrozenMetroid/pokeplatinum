@@ -8,21 +8,17 @@
     "double_battle": false,
     "party": [
         {
-            "species": "SPECIES_PONYTA",
+            "species": "SPECIES_EEVEE",
             "form": 0,
             "level": 20,
             "item": null,
-            "moves": null,
-            "iv_scale": 0,
-            "ball_seal": 0
-        },
-        {
-            "species": "SPECIES_SHINX",
-            "form": 0,
-            "level": 18,
-            "item": null,
-            "moves": null,
-            "iv_scale": 0,
+            "moves": [
+                "MOVE_TACKLE",
+                "MOVE_SAND_ATTACK",
+                "MOVE_QUICK_ATTACK",
+                "MOVE_BITE"
+            ],
+            "iv_scale": 30,
             "ball_seal": 0
         }
     ],

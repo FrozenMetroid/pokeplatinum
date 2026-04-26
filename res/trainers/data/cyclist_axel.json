@@ -3,7 +3,8 @@
     "class": "TRAINER_CLASS_CYCLIST_MALE",
     "items": [],
     "ai_flags": [
-        "AI_FLAG_BASIC"
+        "AI_FLAG_BASIC",
+        "AI_FLAG_EVAL_ATTACK"
     ],
     "double_battle": false,
     "party": [
@@ -12,8 +13,13 @@
             "form": 0,
             "level": 21,
             "item": null,
-            "moves": null,
-            "iv_scale": 0,
+            "moves": [
+                "MOVE_SPARK",
+                "MOVE_SLAM",
+                "MOVE_QUICK_ATTACK",
+                "MOVE_THUNDER_SHOCK"
+            ],
+            "iv_scale": 30,
             "ball_seal": 0
         }
     ],
