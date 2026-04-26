@@ -36,7 +36,8 @@
         "by_level": [
             [1, "MOVE_THUNDER_SHOCK"],
             [1, "MOVE_GROWL"],
-            [5, "MOVE_TAIL_WHIP"],
+            [3, "MOVE_TAIL_WHIP"],
+            [5, "MOVE_QUICK_ATTACK"],
             [8, "MOVE_THUNDER_WAVE"],
             [10, "MOVE_ENCORE"],
             [13, "MOVE_SWEET_KISS"],
