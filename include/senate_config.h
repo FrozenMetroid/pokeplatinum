@@ -6,8 +6,7 @@
 */
 
 /*
-Can reuse TMs and their graphics remove
-the count in the bag
+Can reuse TMs and their count in the bag is no longer shown
 */
 #define REUSABLE_TMS
 
@@ -90,7 +89,7 @@ Shortened timer for Honey Tree
 
 
 /*
-            TO-DO ONCE MORE IS EXPOSED IN THE DECOMP
+    TO-DO ONCE MORE IS EXPOSED IN THE DECOMP
 */
 // #define BATTLE_GRASS_TYPES_IMMUNE_TO_POWDER
 

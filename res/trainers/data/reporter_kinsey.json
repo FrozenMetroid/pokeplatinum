@@ -3,17 +3,23 @@
     "class": "TRAINER_CLASS_REPORTER",
     "items": [],
     "ai_flags": [
-        "AI_FLAG_BASIC"
+        "AI_FLAG_BASIC",
+        "AI_FLAG_EVAL_ATTACK"
     ],
     "double_battle": false,
     "party": [
         {
-            "species": "SPECIES_SHINX",
+            "species": "SPECIES_LUXIO",
             "form": 0,
             "level": 22,
             "item": null,
-            "moves": null,
-            "iv_scale": 0,
+            "moves": [
+                "MOVE_SPARK",
+                "MOVE_BITE",
+                "MOVE_TACKLE",
+                "MOVE_DOUBLE_KICK"
+            ],
+            "iv_scale": 40,
             "ball_seal": 0
         },
         {
@@ -21,8 +27,13 @@
             "form": 0,
             "level": 22,
             "item": null,
-            "moves": null,
-            "iv_scale": 0,
+            "moves": [
+                "MOVE_AIR_CUTTER",
+                "MOVE_OMINOUS_WIND",
+                "MOVE_TAILWIND",
+                "MOVE_PAYBACK"
+            ],
+            "iv_scale": 40,
             "ball_seal": 0
         }
     ],

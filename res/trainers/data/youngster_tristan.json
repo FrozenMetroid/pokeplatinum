@@ -3,16 +3,22 @@
     "class": "TRAINER_CLASS_YOUNGSTER",
     "items": [],
     "ai_flags": [
-        "AI_FLAG_BASIC"
+        "AI_FLAG_BASIC",
+        "AI_FLAG_EVAL_ATTACK"
     ],
     "double_battle": false,
     "party": [
         {
             "species": "SPECIES_STARLY",
             "form": 0,
-            "level": 5,
+            "level": 4,
             "item": null,
-            "moves": null,
+            "moves": [
+                "MOVE_TACKLE",
+                "MOVE_GROWL",
+                "MOVE_QUICK_ATTACK",
+                "MOVE_NONE"
+            ],
             "iv_scale": 0,
             "ball_seal": 0
         }

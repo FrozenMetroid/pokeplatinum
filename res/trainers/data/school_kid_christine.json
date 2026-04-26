@@ -6,16 +6,18 @@
     ],
     "ai_flags": [
         "AI_FLAG_BASIC",
-        "AI_FLAG_EXPERT"
+        "AI_FLAG_EVAL_ATTACK"
     ],
     "double_battle": false,
     "party": [
         {
-            "species": "SPECIES_BIDOOF",
+            "species": "SPECIES_BUDEW",
             "form": 0,
             "level": 6,
             "item": null,
-            "moves": null,
+            "moves": [
+                "MOVE_ABSORB"
+            ],
             "iv_scale": 10,
             "ball_seal": 0
         }

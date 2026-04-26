@@ -32,6 +32,7 @@ def parse_npc_trade(data) -> bytes:
         u32(data["unused2"]),
         u32(data["language"]),
         u32(from_species(data["requestedSpecies"])),
+        u32(data["level"]),
     ])
 
 input_path = pathlib.Path(sys.argv[1])

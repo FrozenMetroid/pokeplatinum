@@ -4,7 +4,7 @@
     "items": [],
     "ai_flags": [
         "AI_FLAG_BASIC",
-        "AI_FLAG_EXPERT"
+        "AI_FLAG_EVAL_ATTACK"
     ],
     "double_battle": false,
     "party": [
@@ -13,7 +13,10 @@
             "form": 0,
             "level": 7,
             "item": null,
-            "moves": null,
+            "moves": [
+                "MOVE_ABSORB",
+                "MOVE_WATER_SPORT"
+            ],
             "iv_scale": 0,
             "ball_seal": 0
         }

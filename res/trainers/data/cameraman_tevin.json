@@ -3,7 +3,8 @@
     "class": "TRAINER_CLASS_CAMERAMAN",
     "items": [],
     "ai_flags": [
-        "AI_FLAG_BASIC"
+        "AI_FLAG_BASIC",
+        "AI_FLAG_EVAL_ATTACK"
     ],
     "double_battle": false,
     "party": [
@@ -12,7 +13,12 @@
             "form": 0,
             "level": 20,
             "item": null,
-            "moves": null,
+            "moves": [
+                "MOVE_CONFUSION",
+                "MOVE_BARRIER",
+                "MOVE_COPYCAT",
+                "MOVE_PSYCH_UP"
+            ],
             "iv_scale": 0,
             "ball_seal": 0
         },
@@ -21,7 +27,12 @@
             "form": 0,
             "level": 22,
             "item": null,
-            "moves": null,
+            "moves": [
+                "MOVE_KARATE_CHOP",
+                "MOVE_SEISMIC_TOSS",
+                "MOVE_FORESIGHT",
+                "MOVE_PAYBACK"
+            ],
             "iv_scale": 0,
             "ball_seal": 0
         }

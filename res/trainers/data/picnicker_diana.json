@@ -4,17 +4,19 @@
     "items": [],
     "ai_flags": [
         "AI_FLAG_BASIC",
-        "AI_FLAG_EVAL_ATTACK",
-        "AI_FLAG_EXPERT"
+        "AI_FLAG_EVAL_ATTACK"
     ],
     "double_battle": false,
     "party": [
         {
-            "species": "SPECIES_BIDOOF",
+            "species": "SPECIES_PONYTA",
             "form": 0,
             "level": 9,
             "item": null,
-            "moves": null,
+            "moves": [
+                "MOVE_TACKLE",
+                "MOVE_GROWL"
+            ],
             "iv_scale": 0,
             "ball_seal": 0
         }

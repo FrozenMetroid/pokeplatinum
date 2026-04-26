@@ -4,8 +4,7 @@
     "items": [],
     "ai_flags": [
         "AI_FLAG_BASIC",
-        "AI_FLAG_EVAL_ATTACK",
-        "AI_FLAG_PRIORITIZE_EXTREMES"
+        "AI_FLAG_EVAL_ATTACK"
     ],
     "double_battle": false,
     "party": [
@@ -28,7 +27,8 @@
             "item": null,
             "moves": [
                 "MOVE_POUND",
-                "MOVE_GROWL"
+                "MOVE_GROWL",
+                "MOVE_BUBBLE"
             ],
             "iv_scale": 30,
             "ball_seal": 0

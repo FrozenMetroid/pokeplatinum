@@ -4,7 +4,7 @@
     "items": [],
     "ai_flags": [
         "AI_FLAG_BASIC",
-        "AI_FLAG_EXPERT"
+        "AI_FLAG_EVAL_ATTACK"
     ],
     "double_battle": false,
     "party": [
@@ -13,8 +13,12 @@
             "form": 0,
             "level": 9,
             "item": null,
-            "moves": null,
-            "iv_scale": 0,
+            "moves": [
+                "MOVE_ABSORB",
+                "MOVE_POISON_STING",
+                "MOVE_GROWTH"
+            ],
+            "iv_scale": 15,
             "ball_seal": 0
         },
         {
@@ -22,8 +26,12 @@
             "form": 0,
             "level": 11,
             "item": null,
-            "moves": null,
-            "iv_scale": 0,
+            "moves": [
+                "MOVE_ABSORB",
+                "MOVE_LEECH_SEED",
+                "MOVE_TACKLE"
+            ],
+            "iv_scale": 15,
             "ball_seal": 0
         }
     ],

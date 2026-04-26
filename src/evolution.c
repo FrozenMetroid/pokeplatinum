@@ -341,7 +341,9 @@ static void Evolution_Main(EvolutionData *evolutionData)
             && PokemonAnimManager_HasAnimCompleted(evolutionData->monAnimMan, 0) == TRUE
             && PokemonSprite_IsAnimActive(evolutionData->monSprites[0]) == FALSE) {
             sub_02015738(evolutionData->unk_58, 1);
-            Sound_PlayBasicBGM(SEQ_SHINKA);
+            if (Sound_Impl_GetCurrentBGM() != SEQ_KOUKAN) { // for trades that evolves; the trade anim uses Koukan which is the same as Shinka, just a different seq id
+                Sound_PlayBasicBGM(SEQ_SHINKA);
+            }
             evolutionData->delay = 20;
             evolutionData->state = EVOLUTION_STATE_START_FADE;
         }
@@ -433,7 +435,7 @@ static void Evolution_Main(EvolutionData *evolutionData)
         break;
     case EVOLUTION_STATE_SET_POKEMON_VALUES_AND_PRINT_CONGRATULATIONS:
         if (Sound_IsPokemonCryPlaying() == FALSE && PokemonAnimManager_HasAnimCompleted(evolutionData->monAnimMan, 0) == TRUE && PokemonSprite_IsAnimActive(evolutionData->monSprites[1]) == FALSE) {
-            Pokemon_SetValue(evolutionData->mon, MON_DATA_SPECIES, (u8 *)&evolutionData->targetSpecies);
+            Pokemon_SetValue(evolutionData->mon, MON_DATA_SPECIES, &evolutionData->targetSpecies);
             Pokemon_CalcAbility(evolutionData->mon);
             Pokemon_CalcLevelAndStats(evolutionData->mon);
             StringTemplate_SetNickname(evolutionData->strTemplate, 0, Pokemon_GetBoxPokemon(evolutionData->mon));

@@ -18,5 +18,6 @@
     "otGender": "GENDER_MALE",
     "unused2": 50,
     "language": 2,
-    "requestedSpecies": "SPECIES_BUIZEL"
+    "requestedSpecies": "SPECIES_BUIZEL",
+    "level": 18
 }

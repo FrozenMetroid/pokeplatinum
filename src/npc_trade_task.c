@@ -61,9 +61,11 @@ BOOL FieldTask_ProcessNPCTrade(FieldTask *task)
         break;
     case 4:
         u16 targetSpecies, method;
+        Party *party = SaveData_GetParty(fieldSystem->saveData);
+        taskEnv->receivingMon = Party_GetPokemonBySlotIndex(party, taskEnv->partySlot); // had to update this pointer because I was having an issue with the mon evolving, but not updating the species at the end, and since it's already in the party, who cares
         if (NPCTrade_ShouldEvolve(taskEnv->receivingMon, &targetSpecies, &method, HEAP_ID_FIELD2)) {
             Heap_Create(HEAP_ID_APPLICATION, HEAP_ID_EVOLUTION, HEAP_SIZE_EVOLUTION);
-            taskEnv->evolutionData = Evolution_Begin(SaveData_GetParty(fieldSystem->saveData), taskEnv->receivingMon, targetSpecies, SaveData_GetOptions(fieldSystem->saveData), PokemonSummaryScreen_ShowContestData(fieldSystem->saveData), SaveData_GetPokedex(fieldSystem->saveData), SaveData_GetBag(fieldSystem->saveData), SaveData_GetGameRecords(fieldSystem->saveData), SaveData_GetPoketch(fieldSystem->saveData), method, 4, HEAP_ID_EVOLUTION);
+            taskEnv->evolutionData = Evolution_Begin(party, taskEnv->receivingMon, targetSpecies, SaveData_GetOptions(fieldSystem->saveData), PokemonSummaryScreen_ShowContestData(fieldSystem->saveData), SaveData_GetPokedex(fieldSystem->saveData), SaveData_GetBag(fieldSystem->saveData), SaveData_GetGameRecords(fieldSystem->saveData), SaveData_GetPoketch(fieldSystem->saveData), method, 4, HEAP_ID_EVOLUTION);
             taskEnv->state++;
         } else {
             taskEnv->state = 6; // skip evolution if the mon doesn't evolve after the trade
@@ -81,13 +83,10 @@ BOOL FieldTask_ProcessNPCTrade(FieldTask *task)
         taskEnv->state++;
         break;
     case 8:
-        if (!taskEnv->npcTradeData->wonderTrade) { 
-            // don't want to free these because the pointer to givingMon
-            // points to the mon in the wonder trade struct for the mon you sent, 
-            // and the receivingMon points to the one in your party that you just received
-            // from wonder trade
+        if (!taskEnv->npcTradeData->wonderTrade) { // don't need to free the receiving mon in either case because the pointer is updated to a mon in the party
+            // don't want to free this because the pointer to givingMon
+            // points to the mon in the wonder trade struct for the mon you sent
             Heap_Free(taskEnv->givingMon);
-            Heap_Free(taskEnv->receivingMon);
         }
         Heap_Free(taskEnv);
         return TRUE;

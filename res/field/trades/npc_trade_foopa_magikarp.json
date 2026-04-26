@@ -1,11 +1,11 @@
 {
     "species": "SPECIES_MAGIKARP",
-    "hpIV": 15,
-    "atkIV": 25,
-    "defIV": 15,
-    "speedIV": 20,
-    "spAtkIV": 25,
-    "spDefIV": 15,
+    "hpIV": 31,
+    "atkIV": 31,
+    "defIV": 31,
+    "speedIV": 31,
+    "spAtkIV": 31,
+    "spDefIV": 31,
     "unused1": 33,
     "otID": 53277,
     "cool": 0,
@@ -18,5 +18,6 @@
     "otGender": "GENDER_MALE",
     "unused2": 0,
     "language": 5,
-    "requestedSpecies": "SPECIES_FINNEON"
+    "requestedSpecies": "SPECIES_FINNEON",
+    "level": 35
 }

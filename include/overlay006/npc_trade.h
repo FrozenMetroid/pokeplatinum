@@ -28,6 +28,7 @@ typedef struct NPCTradeMon {
     u32 unused2;
     u32 language;
     u32 requestedSpecies;
+    u32 level;
 } NPCTradeMon;
 
 typedef struct NPCTradeData {

@@ -7260,7 +7260,6 @@ static BOOL ScrCmd_BottleCapStatIncrease(ScriptContext *ctx)
 {
     u16 partySlot = ScriptContext_GetVar(ctx);
     u16 statID = ScriptContext_GetVar(ctx);
-    EmulatorLog("ScrCmd_BottleCapStatIncrease: partySlot %d, statID %d", partySlot, statID);
     u16 *destVar = ScriptContext_GetVarPointer(ctx);
 
     Pokemon *mon = Party_GetPokemonBySlotIndex(SaveData_GetParty(ctx->fieldSystem->saveData), partySlot);
@@ -7306,7 +7305,6 @@ static BOOL ScrCmd_CheckExpShareStatus(ScriptContext *ctx)
     u16 *destVar = ScriptContext_GetVarPointer(ctx);
 
     *destVar = SaveData_GetExpShareStatus(ctx->fieldSystem->saveData);
-    EmulatorLog("Checked EXP Share Status in scrcmd.c, it is: %d", *destVar);
 
     return FALSE;
 }
@@ -7759,13 +7757,11 @@ void WonderTrade_GetBall(struct WonderTradeData *wonderTradeData, u32 *taskState
 
 void WonderTrade_GiveMon(struct WonderTradeData *wonderTradeData, struct FieldSystem_t *fieldSystem, u32 *taskState)
 {
-    TrainerInfo *trainerInfo = SaveData_GetTrainerInfo(fieldSystem->saveData);
     wonderTradeData->party = SaveData_GetParty(fieldSystem->saveData);
 
     u32 otid = LCRNG_Next(); // random ot id
     
     Pokemon *mon = Pokemon_New(HEAP_ID_FIELD1);
-    Pokemon_Init(mon);
     Pokemon_InitWith(mon, wonderTradeData->species, wonderTradeData->level, INIT_IVS_RANDOM, FALSE, 0, OTID_SET, otid);
     
     BoxPokemon_SetMetLocationAndDate(&mon->box, LocationNames_Text_WonderTrade, TRUE);
@@ -7922,6 +7918,7 @@ void WonderTrade_GetEVs(struct WonderTradeData *wonderTradeData, u32 *taskState)
     u8 effortValueToAdd;
     u8 stats[6] = {0}; // populate an array for each stat's EVs and set them to 0 for now
     u8 odds = LCRNG_RandMod(10);
+    ++odds; // avoid 0
     u8 i, temp;
     u16 totalEvs = LCRNG_RandMod(wonderTradeData->level * odds); // this is my way of making lower levels have few EVs; want to make it more realistic where you can't get a level 1 mon with like 400 EVs lol
     if (totalEvs > 512) { // just in case

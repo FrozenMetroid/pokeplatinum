@@ -18,5 +18,6 @@
     "otGender": "GENDER_FEMALE",
     "unused2": 0,
     "language": 2,
-    "requestedSpecies": "SPECIES_MACHOP"
+    "requestedSpecies": "SPECIES_MACHOP",
+    "level": 10
 }

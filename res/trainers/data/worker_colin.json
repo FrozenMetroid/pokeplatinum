@@ -3,17 +3,21 @@
     "class": "TRAINER_CLASS_WORKER",
     "items": [],
     "ai_flags": [
-        "AI_FLAG_BASIC"
+        "AI_FLAG_BASIC",
+        "AI_FLAG_EVAL_ATTACK"
     ],
     "double_battle": false,
     "party": [
         {
-            "species": "SPECIES_GEODUDE",
+            "species": "SPECIES_ZUBAT",
             "form": 0,
             "level": 6,
             "item": null,
-            "moves": null,
-            "iv_scale": 0,
+            "moves": [
+                "MOVE_ABSORB",
+                "MOVE_POISON_STING"
+            ],
+            "iv_scale": 15,
             "ball_seal": 0
         },
         {
@@ -21,8 +25,11 @@
             "form": 0,
             "level": 8,
             "item": null,
-            "moves": null,
-            "iv_scale": 0,
+            "moves": [
+                "MOVE_LOW_KICK",
+                "MOVE_LEER"
+            ],
+            "iv_scale": 15,
             "ball_seal": 0
         }
     ],

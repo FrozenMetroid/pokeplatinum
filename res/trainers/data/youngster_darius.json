@@ -3,7 +3,8 @@
     "class": "TRAINER_CLASS_YOUNGSTER",
     "items": [],
     "ai_flags": [
-        "AI_FLAG_BASIC"
+        "AI_FLAG_BASIC",
+        "AI_FLAG_EVAL_ATTACK"
     ],
     "double_battle": false,
     "party": [
@@ -14,22 +15,29 @@
             "item": null,
             "moves": [
                 "MOVE_TACKLE",
-                "MOVE_DEFENSE_CURL"
+                "MOVE_DEFENSE_CURL",
+                "MOVE_ROCK_THROW"
             ],
-            "iv_scale": 10,
+            "ability": "ABILITY_STURDY",
+            "ivnums": [10, 10, 10, 10, 10, 10],
+            "evnums": [10, 10, 0, 0, 0, 0],
+            "iv_scale": 0,
             "ball_seal": 0
         },
         {
             "species": "SPECIES_ONIX",
             "form": 0,
-            "level": 9,
+            "level": 10,
             "item": null,
             "moves": [
                 "MOVE_ROCK_THROW",
                 "MOVE_TACKLE",
                 "MOVE_HARDEN"
             ],
-            "iv_scale": 10,
+            "ability": "ABILITY_STURDY",
+            "ivnums": [10, 10, 10, 10, 10, 10],
+            "evnums": [10, 10, 0, 0, 0, 0],
+            "iv_scale": 0,
             "ball_seal": 0
         }
     ],

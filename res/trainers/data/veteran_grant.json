@@ -32,7 +32,7 @@
                 "MOVE_AERIAL_ACE",
                 "MOVE_TAKE_DOWN",
                 "MOVE_QUICK_ATTACK",
-                "MOVE_GROWL"
+                "MOVE_DOUBLE_TEAM"
             ],
             "iv_scale": 100,
             "ball_seal": 0

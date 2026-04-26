@@ -79,10 +79,9 @@ void NPCTrade_FillAnimationTemplate(FieldSystem *fieldSystem, NPCTradeData *data
 {
     Party *party = SaveData_GetParty(fieldSystem->saveData);
     Pokemon *partyMon = Party_GetPokemonBySlotIndex(party, slot);
-    u32 level = Pokemon_GetValue(partyMon, MON_DATA_LEVEL, NULL);
 
     if (!data->wonderTrade) {
-        NPCTrade_CreateMon(data->mon, data->npcTradeMon, level, data->npcTradeID, data->heapID, fieldSystem->location->mapId);
+        NPCTrade_CreateMon(data->mon, data->npcTradeMon, data->npcTradeMon->level, data->npcTradeID, data->heapID, fieldSystem->location->mapId);
         Pokemon_Copy(partyMon, givingMon);
         Pokemon_Copy(data->mon, receivingMon);
     }

@@ -3,7 +3,8 @@
     "class": "TRAINER_CLASS_YOUNGSTER",
     "items": [],
     "ai_flags": [
-        "AI_FLAG_BASIC"
+        "AI_FLAG_BASIC",
+        "AI_FLAG_EVAL_ATTACK"
     ],
     "double_battle": false,
     "party": [
@@ -12,8 +13,10 @@
             "form": 0,
             "level": 7,
             "item": null,
-            "moves": null,
-            "iv_scale": 0,
+            "moves": [
+                "MOVE_BIDE"
+            ],
+            "iv_scale": 10,
             "ball_seal": 0
         },
         {
@@ -21,7 +24,10 @@
             "form": 0,
             "level": 6,
             "item": null,
-            "moves": null,
+            "moves": [
+                "MOVE_POISON_STING",
+                "MOVE_ABSORB"
+            ],
             "iv_scale": 0,
             "ball_seal": 0
         }
@@ -33,7 +39,7 @@
                 "I get my get-up-and-go from my\n",
                 "Pokémon!\r",
                 "Here we go!\n",
-                "KRICKETOT! ZUBAT!\r"
+                "Kricketot! Zubat!\r"
             ]
         },
         {

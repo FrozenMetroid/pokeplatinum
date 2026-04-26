@@ -3,7 +3,8 @@
     "class": "TRAINER_CLASS_YOUNGSTER",
     "items": [],
     "ai_flags": [
-        "AI_FLAG_BASIC"
+        "AI_FLAG_BASIC",
+        "AI_FLAG_EVAL_ATTACK"
     ],
     "double_battle": false,
     "party": [
@@ -12,7 +13,12 @@
             "form": 0,
             "level": 24,
             "item": null,
-            "moves": null,
+            "moves": [
+                "MOVE_AERIAL_ACE",
+                "MOVE_QUICK_ATTACK",
+                "MOVE_DOUBLE_TEAM",
+                "MOVE_ENDEAVOR"
+            ],
             "iv_scale": 0,
             "ball_seal": 0
         }

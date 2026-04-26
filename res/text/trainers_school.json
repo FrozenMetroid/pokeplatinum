@@ -64,8 +64,8 @@
       "en_US": [
         "We learned about Pokémon types\n",
         "today. Umm...\r",
-        "Grass is weak to Fire,\r",
-        "Fire is weak to Water,\r",
+        "Grass is weak to Fire,\n",
+        "Fire is weak to Water,\f",
         "and Water is weak to Grass!"
       ]
     },

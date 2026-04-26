@@ -14,9 +14,10 @@
     "smart": 0,
     "tough": 0,
     "personality": 136,
-    "heldItem": "ITEM_EVERSTONE",
+    "heldItem": "ITEM_NONE",
     "otGender": "GENDER_FEMALE",
     "unused2": 0,
     "language": 2,
-    "requestedSpecies": "SPECIES_MEDICHAM"
+    "requestedSpecies": "SPECIES_MEDICHAM",
+    "level": 40
 }

@@ -50,7 +50,7 @@ SnowpointCityWestHouse_TryTrade:
     StartNPCTrade VAR_0x8004
     FinishNPCTrade
     SetFlag FLAG_TRADED_FOR_GASPAR_HAUNTER
-    Message SnowpointCityWestHouse_Text_IMadeItPreventEvolving
+    Message SnowpointCityWestHouse_Text_TurnedIntoGengar
     WaitButton
     CloseMessage
     ReleaseAll

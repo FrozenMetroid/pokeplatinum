@@ -18,18 +18,20 @@
                 "MOVE_STRING_SHOT",
                 "MOVE_POISON_STING"
             ],
-            "iv_scale": 0,
+            "iv_scale": 15,
             "ball_seal": 0
         },
         {
-            "species": "SPECIES_KRICKETOT",
+            "species": "SPECIES_SILCOON",
             "form": 0,
             "level": 11,
             "item": null,
             "moves": [
-                "MOVE_BIDE"
+                "MOVE_TACKLE",
+                "MOVE_HARDEN",
+                "MOVE_POISON_STING"
             ],
-            "iv_scale": 0,
+            "iv_scale": 15,
             "ball_seal": 0
         }
     ],
