@@ -13,14 +13,14 @@
 #include "struct_defs/choose_starter_data.h"
 #include "struct_defs/clear_game_player_info.h"
 #include "struct_defs/dress_up_photo.h"
+#include "struct_defs/frontier_records_app_args.h"
 #include "struct_defs/gts_player_data.h"
+#include "struct_defs/hall_of_fame_display_data.h"
 #include "struct_defs/image_clips.h"
 #include "struct_defs/struct_0203DA00.h"
 #include "struct_defs/struct_0203DDFC.h"
 #include "struct_defs/struct_0203DE34.h"
-#include "struct_defs/struct_0203E234.h"
 #include "struct_defs/struct_0203E348.h"
-#include "struct_defs/struct_0203E564.h"
 #include "struct_defs/struct_0203E608.h"
 #include "struct_defs/struct_0203E6C0.h"
 #include "struct_defs/struct_0206BC70.h"
@@ -1204,7 +1204,7 @@ static void sub_0203DF68(FieldTask *param0)
         RecordMixedRNG *v5 = SaveData_GetRecordMixedRNG(fieldSystem->saveData);
         RecordMixedRNG_GetEntryNameAsString(v5, 0, 0, v1->unk_0C->textInputStr);
     } break;
-    case NAMING_SCREEN_TYPE_UNK6: {
+    case NAMING_SCREEN_TYPE_SHAYMIN_TABLET: {
         MiscSaveBlock *v6 = SaveData_MiscSaveBlock(fieldSystem->saveData);
         MiscSaveBlock_SetTabletName(v6, v1->unk_0C->textInputStr);
     } break;

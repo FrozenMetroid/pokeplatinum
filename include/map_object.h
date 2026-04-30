@@ -7,8 +7,8 @@
 #include "constants/map_object.h"
 #include "generated/movement_actions.h"
 
-#include "struct_decls/struct_02061830_decl.h"
-#include "struct_decls/struct_02061AB4_decl.h"
+#include "struct_decls/map_object.h"
+#include "struct_decls/map_object_manager.h"
 
 #include "field/field_system_decl.h"
 #include "functypes/funcptr_020EDF0C.h"
@@ -25,8 +25,8 @@
 #include "narc.h"
 #include "sys_task_manager.h"
 
-#define MAP_OBJECT_COORD_CENTER_TO_FX32(coord) ((coord << 4) * FX32_ONE) + (MAP_OBJECT_TILE_SIZE >> 1)
-#define MAP_OBJECT_COORD_EDGE_TO_FX32(coord)   ((coord << 4) * FX32_ONE)
+#define MAP_OBJECT_COORD_CENTER_TO_FX32(coord) (((coord) << 4) * FX32_ONE) + (MAP_OBJECT_TILE_SIZE >> 1)
+#define MAP_OBJECT_COORD_EDGE_TO_FX32(coord)   (((coord) << 4) * FX32_ONE)
 
 typedef struct MapObjectSave {
     u32 status;

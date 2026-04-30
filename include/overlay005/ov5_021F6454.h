@@ -14,7 +14,7 @@ BOOL ScrCmd_CalcHiddenPowerType(ScriptContext *ctx);
 BOOL ScrCmd_300(ScriptContext *param0);
 BOOL ScrCmd_301(ScriptContext *param0);
 BOOL ScrCmd_GetPartyMonForm2(ScriptContext *ctx);
-BOOL ScrCmd_30F(ScriptContext *param0);
+BOOL ScrCmd_CheckMetFurnitureRequirements(ScriptContext *ctx);
 BOOL ScrCmd_Dummy316(ScriptContext *ctx);
 BOOL ScrCmd_ActivateRegiRuinsDot(ScriptContext *param0);
 BOOL ScrCmd_32D(ScriptContext *ctx);
@@ -24,6 +24,6 @@ BOOL ScrCmd_332(ScriptContext *ctx);
 BOOL ScrCmd_338(ScriptContext *ctx);
 BOOL ScrCmd_339(ScriptContext *ctx);
 BOOL ScrCmd_LogLinkInfoInWiFiHistory(ScriptContext *ctx);
-BOOL ScrCmd_333(ScriptContext *ctx);
+BOOL ScrCmd_SetPlayerVolume(ScriptContext *ctx);
 
 #endif // POKEPLATINUM_OV5_021F6454_H

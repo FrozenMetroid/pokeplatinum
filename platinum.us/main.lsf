@@ -216,7 +216,7 @@ Static main
 	Object main.nef.p/src_unk_0205001C.c.o
 	Object main.nef.p/src_unk_0205003C.c.o
 	Object main.nef.p/src_unk_02050548.c.o
-	Object main.nef.p/src_unk_02050568.c.o
+	Object main.nef.p/src_binoculars_vista_lighthouse.c.o
 	Object main.nef.p/src_vars_flags.c.o
 	Object main.nef.p/src_field_task.c.o
 	Object main.nef.p/src_encounter.c.o
@@ -469,7 +469,7 @@ Overlay overlay5
 	Object main.nef.p/src_overlay005_ov5_021D431C.c.o
 	Object main.nef.p/src_overlay005_area_light.c.o
 	Object main.nef.p/src_overlay005_map_prop_material_shape.c.o
-	Object main.nef.p/src_overlay005_ov5_021D57BC.c.o
+	Object main.nef.p/src_overlay005_fog_manager.c.o
 	Object main.nef.p/src_overlay005_model_attributes.c.o
 	Object main.nef.p/src_overlay005_field_camera.c.o
 	Object main.nef.p/src_overlay005_ov5_021D5BC0.c.o
@@ -1543,7 +1543,7 @@ Overlay overlay104
 	Object main.nef.p/src_overlay104_ov104_02231F74.c.o
 	Object main.nef.p/src_overlay104_ov104_022332B4.c.o
 	Object main.nef.p/src_overlay104_ov104_022339B4.c.o
-	Object main.nef.p/src_overlay104_ov104_02234838.c.o
+	Object main.nef.p/src_overlay104_frscrcmd_battle_hall.c.o
 	Object main.nef.p/src_overlay104_ov104_02234DB4.c.o
 	Object main.nef.p/src_overlay104_ov104_022358E8.c.o
 	Object main.nef.p/src_overlay104_ov104_022361B4.c.o

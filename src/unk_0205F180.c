@@ -9,8 +9,8 @@
 #include "generated/game_records.h"
 #include "generated/movement_actions.h"
 
-#include "struct_decls/struct_02061AB4_decl.h"
-#include "struct_defs/struct_0205EC34.h"
+#include "struct_decls/map_object.h"
+#include "struct_defs/player_data.h"
 
 #include "field/field_system.h"
 #include "overlay005/land_data_manager_decl.h"
@@ -2420,7 +2420,7 @@ static void sub_020615C8(PlayerAvatar *playerAvatar)
     FieldSystem *fieldSystem = MapObject_FieldSystem(v0);
     GameRecords *v2 = SaveData_GetGameRecords(fieldSystem->saveData);
 
-    GameRecords_IncrementRecordValue(v2, RECORD_UNK_000);
+    GameRecords_IncrementRecordValue(v2, RECORD_STEPS);
 }
 
 static int sub_020615E0(PlayerAvatar *playerAvatar, MapObject *mapObj, int param2)

@@ -2,6 +2,7 @@
 # include "res/graphics/frontier/particles/frontier_particles.naix"
 # include "res/text/bank/battle_hall_scene.h"
 # include "constants/battle_frontier_emitters.h"
+# include "constants/battle_hall_functions.h"
 
     .data
 
@@ -244,311 +245,223 @@ _0134:
 
     .balign 4, 0
 _0144:
-    .short 0x0023
-    .short 0x0001
-    .short 0x0027
-    .short 0x0001
-    .short 0x0005
-    .short 0x0009
-    .short 0x0023
-    .short 0x0001
-    .short 0x0023
-    .short 0x0001
-    .short 0x0005
-    .short 0x0001
-    .short 0x0028
-    .short 0x0001
-    .short 0xFD13
+    Delay8
+    WarpIn
+    WalkSouth 9
+    Delay8
+    Delay8
+    WalkSouth
+    WarpOut
+    EndMovement
 
     .balign 4, 0
 _0164:
-    .short 0x0023
-    .short 0x0001
-    .short 0x0023
-    .short 0x0001
-    .short 0x0027
-    .short 0x0001
-    .short 0x0005
-    .short 0x0008
-    .short 0x0023
-    .short 0x0001
-    .short 0x0023
-    .short 0x0001
-    .short 0x0005
-    .short 0x0002
-    .short 0x0028
-    .short 0x0001
-    .short 0xFD13
+    Delay8
+    Delay8
+    WarpIn
+    WalkSouth 8
+    Delay8
+    Delay8
+    WalkSouth 2
+    WarpOut
+    EndMovement
 
     .balign 4, 0
 _0188:
-    .short 0x0027
-    .short 0x0001
-    .short 0x0005
-    .short 0x0009
-    .short 0x0006
-    .short 0x0001
-    .short 0x0013
-    .short 0x0001
-    .short 0x0022
-    .short 0x0001
-    .short 0x0011
-    .short 0x0001
-    .short 0xFD13
+    WarpIn
+    WalkSouth 9
+    WalkWest
+    WalkOnSpotEast
+    Delay4
+    WalkOnSpotSouth
+    EndMovement
 
     .balign 4, 0
 _01A4:
-    .short 0x0012
-    .short 0x0001
-    .short 0xFD13
+    WalkOnSpotWest
+    EndMovement
 
     .balign 4, 0
 _01AC:
-    .short 0x0005
-    .short 0x000C
-    .short 0xFD13
+    WalkSouth 12
+    EndMovement
 
     .balign 4, 0
 _01B4:
-    .short 0x0005
-    .short 0x0004
-    .short 0xFD13
+    WalkSouth 4
+    EndMovement
 
     .balign 4, 0
 _01BC:
-    .short 0x0005
-    .short 0x0004
-    .short 0xFD13
+    WalkSouth 4
+    EndMovement
 
     .balign 4, 0
 _01C4:
-    .short 0x0005
-    .short 0x0004
-    .short 0xFD13
+    WalkSouth 4
+    EndMovement
 
     .balign 4, 0
 _01CC:
-    .short 0x0005
-    .short 0x000C
-    .short 0x0006
-    .short 0x0003
-    .short 0x0013
-    .short 0x0001
-    .short 0xFD13
+    WalkSouth 12
+    WalkWest 3
+    WalkOnSpotEast
+    EndMovement
 
     .balign 4, 0
 _01DC:
-    .short 0x0005
-    .short 0x000C
-    .short 0x0006
-    .short 0x0003
-    .short 0x0013
-    .short 0x0001
-    .short 0xFD13
+    WalkSouth 12
+    WalkWest 3
+    WalkOnSpotEast
+    EndMovement
 
     .balign 4, 0
 _01EC:
-    .short 0x0005
-    .short 0x000D
-    .short 0x0006
-    .short 0x0002
-    .short 0x0005
-    .short 0x0001
-    .short 0x0006
-    .short 0x0001
-    .short 0x0013
-    .short 0x0001
-    .short 0xFD13
+    WalkSouth 13
+    WalkWest 2
+    WalkSouth
+    WalkWest
+    WalkOnSpotEast
+    EndMovement
 
     .balign 4, 0
 _0204:
-    .short 0x0005
-    .short 0x000B
-    .short 0x0006
-    .short 0x0005
-    .short 0x0013
-    .short 0x0001
-    .short 0xFD13
+    WalkSouth 11
+    WalkWest 5
+    WalkOnSpotEast
+    EndMovement
 
     .balign 4, 0
 _0214:
-    .short 0x0007
-    .short 0x0001
-    .short 0xFD13
+    WalkEast
+    EndMovement
 
     .balign 4, 0
 _021C:
-    .short 0x0007
-    .short 0x0001
-    .short 0xFD13
+    WalkEast
+    EndMovement
 
     .balign 4, 0
 _0224:
-    .short 0x0006
-    .short 0x0001
-    .short 0xFD13
+    WalkWest
+    EndMovement
 
     .balign 4, 0
 _022C:
-    .short 0x0006
-    .short 0x0005
-    .short 0xFD13
+    WalkWest 5
+    EndMovement
 
     .balign 4, 0
 _0234:
-    .short 0x0007
-    .short 0x0005
-    .short 0x0012
-    .short 0x0001
-    .short 0xFD13
+    WalkEast 5
+    WalkOnSpotWest
+    EndMovement
 
     .balign 4, 0
 _0240:
-    .short 0x0027
-    .short 0x0001
-    .short 0x0005
-    .short 0x0006
-    .short 0x0007
-    .short 0x0003
-    .short 0x0012
-    .short 0x0001
-    .short 0xFD13
+    WarpIn
+    WalkSouth 6
+    WalkEast 3
+    WalkOnSpotWest
+    EndMovement
 
     .balign 4, 0
 _0254:
-    .short 0x0027
-    .short 0x0001
-    .short 0x0005
-    .short 0x0006
-    .short 0x0007
-    .short 0x0003
-    .short 0x0005
-    .short 0x0001
-    .short 0x0012
-    .short 0x0001
-    .short 0xFD13
+    WarpIn
+    WalkSouth 6
+    WalkEast 3
+    WalkSouth 1
+    WalkOnSpotWest
+    EndMovement
 
     .balign 4, 0
 _026C:
-    .short 0x0027
-    .short 0x0001
-    .short 0x0005
-    .short 0x0007
-    .short 0x0007
-    .short 0x0003
-    .short 0x0012
-    .short 0x0001
-    .short 0xFD13
+    WarpIn
+    WalkSouth 7
+    WalkEast 3
+    WalkOnSpotWest
+    EndMovement
 
     .balign 4, 0
 _0280:
-    .short 0x0028
-    .short 0x0001
-    .short 0x0004
-    .short 0x0006
-    .short 0x0011
-    .short 0x0001
-    .short 0x0026
-    .short 0x0001
-    .short 0x0026
-    .short 0x0001
-    .short 0xFD13
+    WarpOut
+    WalkNorth 6
+    WalkOnSpotSouth
+    Delay32
+    Delay32
+    EndMovement
 
     .balign 4, 0
 _0298:
-    .short 0x0005
-    .short 0x0004
-    .short 0x0012
-    .short 0x0001
-    .short 0xFD13
+    WalkSouth 4
+    WalkOnSpotWest
+    EndMovement
 
     .balign 4, 0
 _02A4:
-    .short 0x0005
-    .short 0x0004
-    .short 0x0013
-    .short 0x0001
-    .short 0xFD13
+    WalkSouth 4
+    WalkOnSpotEast
+    EndMovement
 
     .balign 4, 0
 _02B0:
-    .short 0x0005
-    .short 0x0004
-    .short 0x0007
-    .short 0x0003
-    .short 0x0012
-    .short 0x0001
-    .short 0xFD13
+    WalkSouth 4
+    WalkEast 3
+    WalkOnSpotWest
+    EndMovement
 
     .balign 4, 0
 _02C0:
-    .short 0x0027
-    .short 0x0001
-    .short 0xFD13
+    WarpIn
+    EndMovement
 
     .balign 4, 0
 _02C8:
-    .short 0x0006
-    .short 0x0002
-    .short 0x0004
-    .short 0x0007
-    .short 0x0028
-    .short 0x0001
-    .short 0xFD13
+    WalkWest 2
+    WalkNorth 7
+    WarpOut
+    EndMovement
 
     .balign 4, 0
 _02D8:
-    .short 0x0004
-    .short 0x0001
-    .short 0x0006
-    .short 0x0002
-    .short 0x0004
-    .short 0x0008
-    .short 0x0028
-    .short 0x0001
-    .short 0xFD13
+    WalkNorth
+    WalkWest 2
+    WalkNorth 8
+    WarpOut
+    EndMovement
 
     .balign 4, 0
 _02EC:
-    .short 0x0006
-    .short 0x0002
-    .short 0x0004
-    .short 0x0008
-    .short 0x0028
-    .short 0x0001
-    .short 0xFD13
+    WalkWest 2
+    WalkNorth 8
+    WarpOut
+    EndMovement
 
     .balign 4, 0
 _02FC:
-    .short 0x0007
-    .short 0x0001
-    .short 0xFD13
+    WalkEast
+    EndMovement
 
     .balign 4, 0
 _0304:
-    .short 0x0006
-    .short 0x0001
-    .short 0xFD13
+    WalkWest
+    EndMovement
 
     .balign 4, 0
 _030C:
-    .short 0x0006
-    .short 0x0001
-    .short 0x0013
-    .short 0x0001
-    .short 0xFD13
+    WalkWest
+    WalkOnSpotEast
+    EndMovement
 
     .balign 4, 0
 _0318:
-    .short 0x0004
-    .short 0x000C
-    .short 0xFD13
+    WalkNorth 12
+    EndMovement
 
     .balign 4, 0
 _0320:
-    .short 0x0013
-    .short 0x0001
-    .short 0xFD13
+    WalkOnSpotEast
+    EndMovement
 
 _0326:
     FrontierScrCmd_3E VAR_BATTLE_HALL_CHALLENGE_TYPE, VAR_0x8001
@@ -559,7 +472,7 @@ _0326:
     SetVar FR_VAR_0x800E, 0
     InitNewBattleRecording
     FrontierScrCmd_8B VAR_0x8003, VAR_0x8001, VAR_0x8002, VAR_0x8000
-    FrontierScrCmd_91 30, 0, 0, VAR_0x8008
+    CallBattleHallFunction BH_FUNC_IS_MULTIPLAYER_CHALLENGE, 0, 0, VAR_0x8008
     GoToIfEq VAR_0x8008, 1, _0382
     SetVar FR_VAR_0x800F, 231
     FrontierScrCmd_22 _0008
@@ -578,11 +491,11 @@ _0382:
 
 _03A6:
     FadeScreenIn
-    FrontierScrCmd_91 30, 0, 0, VAR_0x8008
+    CallBattleHallFunction BH_FUNC_IS_MULTIPLAYER_CHALLENGE, 0, 0, VAR_0x8008
     GoToIfEq VAR_0x8008, 1, _0404
-    FrontierScrCmd_28 3, _0188
-    FrontierScrCmd_28 10, _0144
-    FrontierScrCmd_29
+    ApplyMovement 3, _0188
+    ApplyMovement 10, _0144
+    WaitMovement
     PlaySoundEffect SEQ_SE_DP_KAIDAN2
     WaitSoundEffect SEQ_SE_DP_KAIDAN2
     FadeScreenOut
@@ -594,10 +507,10 @@ _03A6:
     End
 
 _0404:
-    FrontierScrCmd_28 3, _0188
-    FrontierScrCmd_28 1, _0144
-    FrontierScrCmd_28 2, _0164
-    FrontierScrCmd_29
+    ApplyMovement 3, _0188
+    ApplyMovement 1, _0144
+    ApplyMovement 2, _0164
+    WaitMovement
     PlaySoundEffect SEQ_SE_DP_KAIDAN2
     WaitSoundEffect SEQ_SE_DP_KAIDAN2
     FadeScreenOut
@@ -610,7 +523,7 @@ _0404:
 
 _044A:
     FrontierScrCmd_03 10
-    FrontierScrCmd_91 30, 0, 0, VAR_0x8008
+    CallBattleHallFunction BH_FUNC_IS_MULTIPLAYER_CHALLENGE, 0, 0, VAR_0x8008
     GoToIfEq VAR_0x8008, 1, _0476
     FrontierScrCmd_22 _0024
     FrontierScrCmd_24 _008C
@@ -640,19 +553,19 @@ _04D4:
 
 _04DC:
     SetVar VAR_0x8003, 0
-    FrontierScrCmd_91 30, 0, 0, VAR_0x8008
+    CallBattleHallFunction BH_FUNC_IS_MULTIPLAYER_CHALLENGE, 0, 0, VAR_0x8008
     GoToIfEq VAR_0x8008, 1, _0510
-    FrontierScrCmd_28 0, _01AC
-    FrontierScrCmd_28 10, _01CC
-    FrontierScrCmd_29
+    ApplyMovement 0, _01AC
+    ApplyMovement 10, _01CC
+    WaitMovement
     GoTo _0532
     End
 
 _0510:
-    FrontierScrCmd_28 0, _01AC
-    FrontierScrCmd_28 1, _01DC
-    FrontierScrCmd_28 2, _01EC
-    FrontierScrCmd_29
+    ApplyMovement 0, _01AC
+    ApplyMovement 1, _01DC
+    ApplyMovement 2, _01EC
+    WaitMovement
     GoTo _0532
     End
 
@@ -661,11 +574,11 @@ _0532:
     CreateParticleSystemEmitter 0, HALL_EMITTER_UNK_20
     WaitTime 30, VAR_0x8008
     FadeScreenOut COLOR_WHITE
-    FrontierScrCmd_91 31, 0, 0, VAR_0x8008
+    CallBattleHallFunction BH_FUNC_TOGGLE_ENGINE_LAYER, 0, 0, VAR_0x8008
     FreeParticleSystem 0
     FadeScreenIn COLOR_WHITE
     FrontierScrCmd_46 0xC350
-    FrontierScrCmd_91 23, 0, 0, VAR_0x8008
+    CallBattleHallFunction BH_FUNC_UNK_23, 0, 0, VAR_0x8008
     GoToIfEq VAR_0x8008, 0, _0595
     SetVar VAR_0x8003, 1
     GoTo _0B48
@@ -673,8 +586,8 @@ _0532:
 
 _0595:
     Message BattleHallScene_Text_ChooseType
-    FrontierScrCmd_91 35, 0, 0, VAR_0x8008
-    FrontierScrCmd_91 30, 0, 0, VAR_0x8008
+    CallBattleHallFunction BH_FUNC_UNK_35, 0, 0, VAR_0x8008
+    CallBattleHallFunction BH_FUNC_IS_MULTIPLAYER_CHALLENGE, 0, 0, VAR_0x8008
     GoToIfEq VAR_0x8008, 1, _05BC
     GoTo _0611
     End
@@ -682,7 +595,7 @@ _0595:
 _05BC:
     MessageNoSkip BattleHallScene_Text_PleaseWait
     ClearReceivedTempDataAllPlayers
-    FrontierScrCmd_35 220
+    SyncConnectedPlayers 220
     ClearReceivedTempDataAllPlayers
     FrontierScrCmd_C9 1
     GoTo _05D4
@@ -695,11 +608,11 @@ _05D4:
     FrontierScrCmd_94 VAR_0x8006
     ClearReceivedTempDataAllPlayers
     ClearReceivedTempDataAllPlayers
-    FrontierScrCmd_35 221
+    SyncConnectedPlayers 221
     ClearReceivedTempDataAllPlayers
     FrontierScrCmd_C9 0
     ClearReceivedTempDataAllPlayers
-    FrontierScrCmd_35 100
+    SyncConnectedPlayers 100
     ClearReceivedTempDataAllPlayers
     GoTo _0611
     End
@@ -707,11 +620,11 @@ _05D4:
 _0611:
     FadeScreenOut
     CloseMessage
-    FrontierScrCmd_91 30, 0, 0, VAR_0x8008
+    CallBattleHallFunction BH_FUNC_IS_MULTIPLAYER_CHALLENGE, 0, 0, VAR_0x8008
     CallIfEq VAR_0x8008, 1, _065B
     OpenBattleHallApp
-    FrontierScrCmd_91 31, 0, 0, VAR_0x8008
-    FrontierScrCmd_91 36, 0, 0, VAR_0x8008
+    CallBattleHallFunction BH_FUNC_TOGGLE_ENGINE_LAYER, 0, 0, VAR_0x8008
+    CallBattleHallFunction BH_FUNC_SET_BASE_LEVEL, 0, 0, VAR_0x8008
     FadeScreenIn
     FrontierScrCmd_8C VAR_0x8003
     GoTo _0665
@@ -719,33 +632,33 @@ _0611:
 
 _065B:
     ClearReceivedTempDataAllPlayers
-    FrontierScrCmd_35 224
+    SyncConnectedPlayers 224
     ClearReceivedTempDataAllPlayers
     Return
 
 _0665:
-    FrontierScrCmd_91 30, 0, 0, VAR_0x8008
+    CallBattleHallFunction BH_FUNC_IS_MULTIPLAYER_CHALLENGE, 0, 0, VAR_0x8008
     GoToIfEq VAR_0x8008, 1, _0708
     CallIfNe FR_VAR_0x800E, 0, _080D
     SetVar FR_VAR_0x800E, 1
-    FrontierScrCmd_91 37, 0, 0, VAR_0x8008
+    CallBattleHallFunction BH_FUNC_UNK_37, 0, 0, VAR_0x8008
     GoToIfEq VAR_0x8008, 1, _1199
     GoToIfEq VAR_0x8008, 2, _11BE
     Call _13C3
     BufferNumber 0, VAR_0x8008
     Call _083D
-    FrontierScrCmd_28 98, _0240
-    FrontierScrCmd_29
+    ApplyMovement 98, _0240
+    WaitMovement
     WaitTime 15, VAR_0x8008
-    FrontierScrCmd_28 98, _01A4
-    FrontierScrCmd_29
-    FrontierScrCmd_91 32, 0, 0, VAR_0x8008
+    ApplyMovement 98, _01A4
+    WaitMovement
+    CallBattleHallFunction BH_FUNC_UNK_32, 0, 0, VAR_0x8008
     FrontierScrCmd_95 0
     WaitABPress
     CloseMessage
-    FrontierScrCmd_28 10, _0214
-    FrontierScrCmd_28 98, _0224
-    FrontierScrCmd_29
+    ApplyMovement 10, _0214
+    ApplyMovement 98, _0224
+    WaitMovement
     GoTo _0700
     End
 
@@ -757,7 +670,7 @@ _0708:
     CallIfNe FR_VAR_0x800E, 0, _0821
     SetVar FR_VAR_0x800E, 1
     ClearReceivedTempDataAllPlayers
-    FrontierScrCmd_35 223
+    SyncConnectedPlayers 223
     ClearReceivedTempDataAllPlayers
     Call _13FE
     GoTo _0731
@@ -770,7 +683,7 @@ _0731:
     FrontierScrCmd_94 VAR_0x8006
     ClearReceivedTempDataAllPlayers
     ClearReceivedTempDataAllPlayers
-    FrontierScrCmd_35 222
+    SyncConnectedPlayers 222
     ClearReceivedTempDataAllPlayers
     GoTo _0762
     End
@@ -782,59 +695,59 @@ _0762:
     FrontierScrCmd_94 VAR_0x8006
     ClearReceivedTempDataAllPlayers
     ClearReceivedTempDataAllPlayers
-    FrontierScrCmd_35 103
+    SyncConnectedPlayers 103
     Call _0858
-    FrontierScrCmd_28 98, _0254
-    FrontierScrCmd_28 99, _026C
-    FrontierScrCmd_29
+    ApplyMovement 98, _0254
+    ApplyMovement 99, _026C
+    WaitMovement
     WaitTime 15, VAR_0x8008
-    FrontierScrCmd_28 98, _01A4
-    FrontierScrCmd_29
-    FrontierScrCmd_91 32, 0, 0, VAR_0x8008
+    ApplyMovement 98, _01A4
+    WaitMovement
+    CallBattleHallFunction BH_FUNC_UNK_32, 0, 0, VAR_0x8008
     FrontierScrCmd_95 0
     WaitTime 30, VAR_0x8008
     CloseMessage
-    FrontierScrCmd_28 99, _01A4
-    FrontierScrCmd_29
-    FrontierScrCmd_91 32, 0, 0, VAR_0x8008
+    ApplyMovement 99, _01A4
+    WaitMovement
+    CallBattleHallFunction BH_FUNC_UNK_32, 0, 0, VAR_0x8008
     FrontierScrCmd_95 1
     WaitTime 30, VAR_0x8008
     CloseMessage
-    FrontierScrCmd_28 1, _0214
-    FrontierScrCmd_28 2, _021C
-    FrontierScrCmd_28 98, _0224
-    FrontierScrCmd_28 99, _0224
-    FrontierScrCmd_29
+    ApplyMovement 1, _0214
+    ApplyMovement 2, _021C
+    ApplyMovement 98, _0224
+    ApplyMovement 99, _0224
+    WaitMovement
     MessageNoSkip BattleHallScene_Text_PleaseWait
     GoTo _08A0
     End
 
 _080D:
-    FrontierScrCmd_28 10, _0320
-    FrontierScrCmd_28 11, _030C
-    FrontierScrCmd_29
+    ApplyMovement 10, _0320
+    ApplyMovement 11, _030C
+    WaitMovement
     Return
 
 _0821:
-    FrontierScrCmd_28 1, _0320
-    FrontierScrCmd_28 2, _0320
-    FrontierScrCmd_28 11, _030C
-    FrontierScrCmd_29
+    ApplyMovement 1, _0320
+    ApplyMovement 2, _0320
+    ApplyMovement 11, _030C
+    WaitMovement
     Return
 
 _083D:
-    FrontierScrCmd_91 20, 0, 0, VAR_0x8008
+    CallBattleHallFunction BH_FUNC_UNK_20, 0, 0, VAR_0x8008
     SetVar VAR_0x800B, VAR_0x8008
     FrontierScrCmd_22 _0114
     FrontierScrCmd_24 _0124
     Return
 
 _0858:
-    FrontierScrCmd_91 20, 0, 0, VAR_0x8008
+    CallBattleHallFunction BH_FUNC_UNK_20, 0, 0, VAR_0x8008
     SetVar VAR_0x800B, VAR_0x8008
     FrontierScrCmd_22 _0114
     FrontierScrCmd_24 _0124
-    FrontierScrCmd_91 20, 1, 0, VAR_0x8008
+    CallBattleHallFunction BH_FUNC_UNK_20, 1, 0, VAR_0x8008
     SetVar VAR_0x800C, VAR_0x8008
     FrontierScrCmd_22 _011C
     FrontierScrCmd_24 _0134
@@ -847,9 +760,9 @@ _088C:
     Return
 
 _08A0:
-    FrontierScrCmd_91 30, 0, 0, VAR_0x8008
+    CallBattleHallFunction BH_FUNC_IS_MULTIPLAYER_CHALLENGE, 0, 0, VAR_0x8008
     GoToIfEq VAR_0x8008, 1, _08F1
-    FrontierScrCmd_91 37, 0, 0, VAR_0x8008
+    CallBattleHallFunction BH_FUNC_UNK_37, 0, 0, VAR_0x8008
     GoToIfEq VAR_0x8008, 1, _08E1
     GoToIfEq VAR_0x8008, 2, _08E1
     FrontierScrCmd_3F 1
@@ -864,7 +777,7 @@ _08E1:
 
 _08F1:
     ClearReceivedTempDataAllPlayers
-    FrontierScrCmd_35 101
+    SyncConnectedPlayers 101
     ClearReceivedTempDataAllPlayers
     CloseMessage
     FrontierScrCmd_3F 1
@@ -872,20 +785,20 @@ _08F1:
     End
 
 _0907:
-    FrontierScrCmd_90
-    FrontierScrCmd_8F
-    FrontierScrCmd_91 27, 0, 0, VAR_0x8008
-    FrontierScrCmd_91 31, 0, 0, VAR_0x8008
+    BattleHall_StartBattle
+    BattleHall_CheckWonBattle
+    CallBattleHallFunction BH_FUNC_UPDATE_HELD_ITEMS, 0, 0, VAR_0x8008
+    CallBattleHallFunction BH_FUNC_TOGGLE_ENGINE_LAYER, 0, 0, VAR_0x8008
     FadeScreenIn
-    FrontierScrCmd_92 VAR_0x8008
+    BattleHall_GetBattleResult VAR_0x8008
     GoToIfEq VAR_0x8008, 0, _0F5D
-    IncrementRecordValue RECORD_UNK_062
-    FrontierScrCmd_91 28, 0, 0, VAR_0x8008
-    FrontierScrCmd_91 33, 0, 0, VAR_0x8008
+    IncrementRecordValue RECORD_BATTLE_HALL_VICTORIES
+    CallBattleHallFunction BH_FUNC_UNK_28, 0, 0, VAR_0x8008
+    CallBattleHallFunction BH_FUNC_UNK_33, 0, 0, VAR_0x8008
     CallIfEq VAR_0x8008, 10, _09B1
-    FrontierScrCmd_91 30, 0, 0, VAR_0x8008
+    CallBattleHallFunction BH_FUNC_IS_MULTIPLAYER_CHALLENGE, 0, 0, VAR_0x8008
     GoToIfEq VAR_0x8008, 1, _09E3
-    FrontierScrCmd_91 37, 0, 0, VAR_0x8008
+    CallBattleHallFunction BH_FUNC_UNK_37, 0, 0, VAR_0x8008
     GoToIfEq VAR_0x8008, 1, _1333
     GoToIfEq VAR_0x8008, 2, _137B
     Call _13C3
@@ -902,13 +815,13 @@ _09B1:
     Return
 
 _09B7:
-    FrontierScrCmd_28 98, _02C8
-    FrontierScrCmd_29
+    ApplyMovement 98, _02C8
+    WaitMovement
     FrontierScrCmd_25 98
     FrontierScrCmd_23 VAR_0x800B
-    FrontierScrCmd_28 11, _02FC
-    FrontierScrCmd_28 10, _0304
-    FrontierScrCmd_29
+    ApplyMovement 11, _02FC
+    ApplyMovement 10, _0304
+    WaitMovement
     GoTo _0A41
     End
 
@@ -918,17 +831,17 @@ _09E3:
     WaitForParticleSystemEmitters
     FreeParticleSystem 0
     Call _141B
-    FrontierScrCmd_28 98, _02D8
-    FrontierScrCmd_28 99, _02EC
-    FrontierScrCmd_29
+    ApplyMovement 98, _02D8
+    ApplyMovement 99, _02EC
+    WaitMovement
     FrontierScrCmd_25 98
     FrontierScrCmd_25 99
     FrontierScrCmd_23 VAR_0x800B
     FrontierScrCmd_23 VAR_0x800C
-    FrontierScrCmd_28 11, _02FC
-    FrontierScrCmd_28 1, _0304
-    FrontierScrCmd_28 2, _0304
-    FrontierScrCmd_29
+    ApplyMovement 11, _02FC
+    ApplyMovement 1, _0304
+    ApplyMovement 2, _0304
+    WaitMovement
     GoTo _0A41
     End
 
@@ -937,9 +850,9 @@ _0A41:
     End
 
 _0A49:
-    FrontierScrCmd_91 14, 1, 0, VAR_0x8008
-    FrontierScrCmd_91 5, 0, 0, VAR_0x8008
-    FrontierScrCmd_91 23, 0, 0, VAR_0x8008
+    CallBattleHallFunction BH_FUNC_UNK_14, 1, 0, VAR_0x8008
+    CallBattleHallFunction BH_FUNC_INCREMENT_CURRENT_STEAK, 0, 0, VAR_0x8008
+    CallBattleHallFunction BH_FUNC_UNK_23, 0, 0, VAR_0x8008
     GoToIfNe VAR_0x8008, 10, _0B25
     GoTo _0A73
     End
@@ -966,13 +879,13 @@ _0AC8:
     End
 
 _0AD6:
-    FrontierScrCmd_91 22, 0, 0, VAR_0x8008
+    CallBattleHallFunction BH_FUNC_UNK_22, 0, 0, VAR_0x8008
     FrontierScrCmd_3D VAR_BATTLE_HALL_LOBBY_LOAD_ACTION, 1
-    FrontierScrCmd_91 15, 0, 0, VAR_0x8008
+    CallBattleHallFunction BH_FUNC_UNK_15, 0, 0, VAR_0x8008
     BufferSpeciesName 0, VAR_0x8008
     Message BattleHallScene_Text_BPEarned
     BufferPlayerName 0
-    FrontierScrCmd_91 34, 0, 0, VAR_0x8008
+    CallBattleHallFunction BH_FUNC_UNK_34, 0, 0, VAR_0x8008
     BufferNumber 1, VAR_0x8008
     GiveBattlePoints VAR_0x8008
     Message BattleHallScene_Text_ReceiveBP
@@ -987,7 +900,7 @@ _0B1D:
     End
 
 _0B25:
-    FrontierScrCmd_91 15, 0, 0, VAR_0x8008
+    CallBattleHallFunction BH_FUNC_UNK_15, 0, 0, VAR_0x8008
     BufferSpeciesName 0, VAR_0x8008
     Message BattleHallScene_Text_FullRestore
     PlayFanfare SEQ_ASA
@@ -1003,7 +916,7 @@ _0B48:
     End
 
 _0B5B:
-    FrontierScrCmd_91 23, 0, 0, VAR_0x8008
+    CallBattleHallFunction BH_FUNC_UNK_23, 0, 0, VAR_0x8008
     AddVar VAR_0x8008, 1
     BufferNumber 0, VAR_0x8008
     Message BattleHallScene_Text_AreYouReady
@@ -1011,7 +924,7 @@ _0B5B:
     End
 
 _0B79:
-    FrontierScrCmd_91 30, 0, 0, VAR_0x8008
+    CallBattleHallFunction BH_FUNC_IS_MULTIPLAYER_CHALLENGE, 0, 0, VAR_0x8008
     GoToIfEq VAR_0x8008, 1, _0BA2
     GoToIfEq VAR_0x8003, 0, _0BF2
     GoTo _0BE4
@@ -1098,7 +1011,7 @@ _0CD4:
     End
 
 _0D10:
-    FrontierScrCmd_91 30, 0, 0, VAR_0x8008
+    CallBattleHallFunction BH_FUNC_IS_MULTIPLAYER_CHALLENGE, 0, 0, VAR_0x8008
     GoToIfEq VAR_0x8008, 1, _0D2C
     GoTo _0D99
     End
@@ -1115,10 +1028,10 @@ _0D3B:
     GoToIfEq VAR_0x8008, 0, _0D3B
     FrontierScrCmd_94 VAR_0x8006
     ClearReceivedTempDataAllPlayers
-    FrontierScrCmd_91 24, 0, 0, VAR_0x8008
+    CallBattleHallFunction BH_FUNC_UNK_24, 0, 0, VAR_0x8008
     GoToIfEq VAR_0x8008, 1, _0D80
     ClearReceivedTempDataAllPlayers
-    FrontierScrCmd_35 102
+    SyncConnectedPlayers 102
     ClearReceivedTempDataAllPlayers
     GoTo _0D99
     End
@@ -1170,7 +1083,7 @@ _0E0B:
     End
 
 _0E1F:
-    FrontierScrCmd_91 4, 0, 0, VAR_0x8005
+    CallBattleHallFunction BH_FUNC_GET_CURRENT_STREAK, 0, 0, VAR_0x8005
     Return
 
 _0E28:
@@ -1180,7 +1093,7 @@ _0E28:
 _0E30:
     SetVar VAR_0x8003, 1
     MessageInstant BattleHallScene_Text_Saving
-    FrontierScrCmd_91 17, 0, 0, VAR_0x8008
+    CallBattleHallFunction BH_FUNC_GET_CHALLENGE_TYPE, 0, 0, VAR_0x8008
     ShowSavingIcon
     FrontierScrCmd_6D 5, VAR_0x8008, VAR_0x8005, VAR_0x8005
     HideSavingIcon
@@ -1211,13 +1124,13 @@ _0E7B:
 
 _0E99:
     FrontierScrCmd_3D VAR_BATTLE_HALL_LOBBY_LOAD_ACTION, 2
-    FrontierScrCmd_91 10, 0, 0, VAR_0x8008
+    CallBattleHallFunction BH_FUNC_UNK_10, 0, 0, VAR_0x8008
     Call _1087
     FreeBattleRecording
     FrontierScrCmd_8D
     FadeScreenOut
     CloseMessage
-    FrontierScrCmd_91 7, 0, 0, VAR_0x8008
+    CallBattleHallFunction BH_FUNC_RESET_SYSTEM, 0, 0, VAR_0x8008
     End
 
 _0EC7:
@@ -1228,7 +1141,7 @@ _0ECF:
     Message BattleHallScene_Text_RetireQuestion
     ShowYesNoMenu VAR_0x8008, MENU_NO
     GoToIfEq VAR_0x8008, 1, _0F55
-    FrontierScrCmd_91 30, 0, 0, VAR_0x8008
+    CallBattleHallFunction BH_FUNC_IS_MULTIPLAYER_CHALLENGE, 0, 0, VAR_0x8008
     GoToIfEq VAR_0x8008, 1, _0F01
     GoTo _0F40
     End
@@ -1247,13 +1160,13 @@ _0F0D:
 
 _0F30:
     ClearReceivedTempDataAllPlayers
-    FrontierScrCmd_35 107
+    SyncConnectedPlayers 107
     ClearReceivedTempDataAllPlayers
     GoTo _0F40
     End
 
 _0F40:
-    FrontierScrCmd_91 21, 0, 0, VAR_0x8008
+    CallBattleHallFunction BH_FUNC_UNK_21, 0, 0, VAR_0x8008
     FrontierScrCmd_3D VAR_BATTLE_HALL_LOBBY_LOAD_ACTION, 3
     GoTo _100D
     End
@@ -1288,13 +1201,13 @@ _0FC0:
     End
 
 _0FC8:
-    FrontierScrCmd_91 21, 0, 0, VAR_0x8008
+    CallBattleHallFunction BH_FUNC_UNK_21, 0, 0, VAR_0x8008
     FrontierScrCmd_3D VAR_BATTLE_HALL_LOBBY_LOAD_ACTION, 3
     GoTo _0FDD
     End
 
 _0FDD:
-    FrontierScrCmd_91 30, 0, 0, VAR_0x8008
+    CallBattleHallFunction BH_FUNC_IS_MULTIPLAYER_CHALLENGE, 0, 0, VAR_0x8008
     GoToIfEq VAR_0x8008, 1, _0FF9
     GoTo _100D
     End
@@ -1302,7 +1215,7 @@ _0FDD:
 _0FF9:
     MessageNoSkip BattleHallScene_Text_PleaseWait
     ClearReceivedTempDataAllPlayers
-    FrontierScrCmd_35 105
+    SyncConnectedPlayers 105
     ClearReceivedTempDataAllPlayers
     GoTo _100D
     End
@@ -1314,12 +1227,12 @@ _100D:
     End
 
 _101D:
-    FrontierScrCmd_91 30, 0, 0, VAR_0x8008
+    CallBattleHallFunction BH_FUNC_IS_MULTIPLAYER_CHALLENGE, 0, 0, VAR_0x8008
     CallIfEq VAR_0x8008, 1, _1071
     FadeScreenOut
-    FrontierScrCmd_91 17, 0, 0, VAR_0x8008
+    CallBattleHallFunction BH_FUNC_GET_CHALLENGE_TYPE, 0, 0, VAR_0x8008
     CallIfEq VAR_0x8008, 2, _106B
-    FrontierScrCmd_91 17, 0, 0, VAR_0x8008
+    CallBattleHallFunction BH_FUNC_GET_CHALLENGE_TYPE, 0, 0, VAR_0x8008
     GoToIfEq VAR_0x8008, 3, _107B
     FreeBattleRecording
     FrontierScrCmd_8D
@@ -1331,7 +1244,7 @@ _106B:
 
 _1071:
     ClearReceivedTempDataAllPlayers
-    FrontierScrCmd_35 106
+    SyncConnectedPlayers 106
     ClearReceivedTempDataAllPlayers
     Return
 
@@ -1353,7 +1266,7 @@ _1087:
 _109F:
     MessageInstant BattleHallScene_Text_Saving2
     ShowSavingIcon
-    FrontierScrCmd_76 VAR_0x8008
+    BattleHall_UpdateWinRecord VAR_0x8008
     CallIfEq VAR_0x8008, 0, _10C2
     HideSavingIcon
     PlaySoundEffect SEQ_SE_DP_SAVE
@@ -1366,7 +1279,7 @@ _10C2:
 
 _10C8:
     PlaySoundEffect SEQ_SE_DP_DENDOU
-    FrontierScrCmd_91 19, 0, 0, VAR_0x8008
+    CallBattleHallFunction BH_FUNC_UNK_19, 0, 0, VAR_0x8008
     GoToIfLt VAR_0x8008, 2, _10F5
     GoToIfLt VAR_0x8008, 5, _1109
     GoTo _1117
@@ -1389,7 +1302,7 @@ _1117:
     Return
 
 _1125:
-    FrontierScrCmd_91 23, 0, 0, VAR_0x8008
+    CallBattleHallFunction BH_FUNC_UNK_23, 0, 0, VAR_0x8008
     AddVar VAR_0x8008, 1
     GoToIfEq VAR_0x8008, 10, _1159
     PlaySoundEffect SEQ_SE_DP_UG_022
@@ -1438,60 +1351,60 @@ _11BE:
     End
 
 _11E3:
-    FrontierScrCmd_28 98, _0234
-    FrontierScrCmd_29
+    ApplyMovement 98, _0234
+    WaitMovement
     WaitTime 30, VAR_0x8008
-    FrontierScrCmd_28 10, _0214
-    FrontierScrCmd_28 98, _0224
-    FrontierScrCmd_29
+    ApplyMovement 10, _0214
+    ApplyMovement 98, _0224
+    WaitMovement
     Return
 
 _1207:
     Call _088C
-    FrontierScrCmd_91 31, 1, 0, VAR_0x8008
+    CallBattleHallFunction BH_FUNC_TOGGLE_ENGINE_LAYER, 1, 0, VAR_0x8008
     FrontierScrCmd_45 VAR_0x8002, 128, 56, 0xC350, 0, 0
     FrontierScrCmd_4E 10, 160, 230, 192, 0, 0
     WaitTime 10, VAR_0x8008
     FrontierScrCmd_4E 10, 160, 230, 192, 54, 1
-    FrontierScrCmd_28 98, _0280
-    FrontierScrCmd_28 0, _0318
-    FrontierScrCmd_29
+    ApplyMovement 98, _0280
+    ApplyMovement 0, _0318
+    WaitMovement
     InitParticleSystem 0, battle_hall_spa
     CreateParticleSystemEmitter 0, HALL_EMITTER_UNK_16
     CreateParticleSystemEmitter 0, HALL_EMITTER_UNK_17
     WaitTime 90, VAR_0x8008
     CreateParticleSystemEmitter 0, HALL_EMITTER_UNK_18
-    FrontierScrCmd_28 98, _02C0
-    FrontierScrCmd_29
+    ApplyMovement 98, _02C0
+    WaitMovement
     PlaySoundEffect SEQ_SE_DP_DENDOU
     WaitSoundEffect SEQ_SE_DP_DENDOU
-    FrontierScrCmd_28 0, _01B4
-    FrontierScrCmd_28 98, _0298
-    FrontierScrCmd_29
+    ApplyMovement 0, _01B4
+    ApplyMovement 98, _0298
+    WaitMovement
     PlaySoundEffect SEQ_SE_DP_DENDOU
     CreateParticleSystemEmitter 0, HALL_EMITTER_UNK_11
     CreateParticleSystemEmitter 0, HALL_EMITTER_UNK_12
     WaitSoundEffect SEQ_SE_DP_DENDOU
     FrontierScrCmd_4E 10, 160, 230, 192, 10, 0
-    FrontierScrCmd_28 0, _01BC
-    FrontierScrCmd_28 98, _02A4
-    FrontierScrCmd_29
+    ApplyMovement 0, _01BC
+    ApplyMovement 98, _02A4
+    WaitMovement
     PlaySoundEffect SEQ_SE_DP_DENDOU
     CreateParticleSystemEmitter 0, HALL_EMITTER_UNK_11
     CreateParticleSystemEmitter 0, HALL_EMITTER_UNK_12
     WaitSoundEffect SEQ_SE_DP_DENDOU
-    FrontierScrCmd_28 0, _01C4
-    FrontierScrCmd_28 98, _02B0
-    FrontierScrCmd_29
+    ApplyMovement 0, _01C4
+    ApplyMovement 98, _02B0
+    WaitMovement
     FrontierScrCmd_46 0xC350
     CreateParticleSystemEmitter 0, HALL_EMITTER_UNK_20
     WaitTime 30, VAR_0x8008
     FadeScreenOut COLOR_WHITE
-    FrontierScrCmd_91 31, 0, 0, VAR_0x8008
+    CallBattleHallFunction BH_FUNC_TOGGLE_ENGINE_LAYER, 0, 0, VAR_0x8008
     FreeParticleSystem 0
     FadeScreenIn COLOR_WHITE
-    FrontierScrCmd_28 98, _022C
-    FrontierScrCmd_29
+    ApplyMovement 98, _022C
+    WaitMovement
     Return
 
 _1333:
@@ -1531,7 +1444,7 @@ _13BB:
     Return
 
 _13C3:
-    FrontierScrCmd_91 4, 0, 0, VAR_0x8008
+    CallBattleHallFunction BH_FUNC_GET_CURRENT_STREAK, 0, 0, VAR_0x8008
     GoToIfGe VAR_0x8008, 9999, _13DF
     AddVar VAR_0x8008, 1
     Return
@@ -1541,28 +1454,28 @@ _13DF:
 
 _13E1:
     WaitTime 1, VAR_0x8008
-    FrontierScrCmd_91 29, 0, 0, VAR_0x8008
+    CallBattleHallFunction BH_FUNC_UNK_29, 0, 0, VAR_0x8008
     WaitTime 1, VAR_0x8008
     ClearReceivedTempDataAllPlayers
-    FrontierScrCmd_35 185
+    SyncConnectedPlayers 185
     ClearReceivedTempDataAllPlayers
     Return
 
 _13FE:
     WaitTime 1, VAR_0x8008
-    FrontierScrCmd_91 29, 0, 0, VAR_0x8008
+    CallBattleHallFunction BH_FUNC_UNK_29, 0, 0, VAR_0x8008
     WaitTime 1, VAR_0x8008
     ClearReceivedTempDataAllPlayers
-    FrontierScrCmd_35 186
+    SyncConnectedPlayers 186
     ClearReceivedTempDataAllPlayers
     Return
 
 _141B:
     WaitTime 1, VAR_0x8008
-    FrontierScrCmd_91 29, 0, 0, VAR_0x8008
+    CallBattleHallFunction BH_FUNC_UNK_29, 0, 0, VAR_0x8008
     WaitTime 1, VAR_0x8008
     ClearReceivedTempDataAllPlayers
-    FrontierScrCmd_35 187
+    SyncConnectedPlayers 187
     ClearReceivedTempDataAllPlayers
     Return
 

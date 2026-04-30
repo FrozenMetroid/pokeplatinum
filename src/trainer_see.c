@@ -9,8 +9,8 @@
 #include "generated/movement_actions.h"
 #include "generated/movement_types.h"
 
-#include "struct_decls/struct_02061830_decl.h"
-#include "struct_decls/struct_02061AB4_decl.h"
+#include "struct_decls/map_object.h"
+#include "struct_decls/map_object_manager.h"
 
 #include "field/field_system.h"
 #include "overlay005/ov5_021ECC20.h"
@@ -373,7 +373,7 @@ static MapObject *FindTrainerPartner(FieldSystem *fieldSystem, MapObjectManager 
     return NULL;
 }
 
-BOOL FieldSystem_IsTrainerDefated(FieldSystem *fieldSystem, MapObject *mapObj)
+BOOL FieldSystem_IsTrainerDefeated(FieldSystem *fieldSystem, MapObject *mapObj)
 {
     int trainerType = GetTrainerType(mapObj);
 
@@ -662,7 +662,7 @@ static int sub_02068308(UnkStruct_020EF6D0 *param0)
 {
     sub_020656AC(param0->mapObj);
 
-    if ((PersistedMapFeatures_IsCurrentDynamicMap(param0->fieldSystem, DYNAMIC_MAP_FEATURES_HEARTHOME_GYM) == 0) || (ov8_0224C5DC(param0->fieldSystem, param0->mapObj) == 0)) {
+    if ((PersistedMapFeatures_IsCurrentDynamicMap(param0->fieldSystem, DYNAMIC_MAP_FEATURES_HEARTHOME_GYM) == 0) || (HearthomeGym_SetTrainerPostBattleMovement(param0->fieldSystem, param0->mapObj) == 0)) {
         MapObject_SwitchMovementType(param0->mapObj, MOVEMENT_TYPE_NONE);
     }
 

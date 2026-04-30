@@ -34,9 +34,11 @@
 #include "generated/time_of_day.h"
 #include "generated/trainer_score_events.h"
 #include "generated/trainers.h"
-#include "constants/battle/battle_script.h"
+#include "generated/villa_furniture_type.h"
 #include "constants/animation_tags.h"
+#include "constants/battle.h"
 #include "constants/battle_tower.h"
+#include "constants/battle/battle_script.h"
 #include "constants/boat_cutscene.h"
 #include "constants/colors.h"
 #include "constants/elevator_dirs.h"
@@ -46,15 +48,16 @@
 #include "constants/init_script_types.h"
 #include "constants/items.h"
 #include "constants/map_object.h"
-#include "constants/overworld_weather.h"
 #include "constants/moves.h"
+#include "constants/overworld_weather.h"
 #include "constants/pokemon.h"
 #include "constants/regi_ruins.h"
 #include "constants/roamer_states.h"
 #include "constants/savedata/vars_flags.h"
 #include "constants/scrcmd.h"
+#include "constants/sound_volume.h"
 #include "constants/tv_broadcast.h"
-#include "constants/battle.h"
+#include "constants/villa_visitors.h"
 
 .set DEBUG_GIVE_SHINY_CHARM_FROM_START, 1
 .set DEBUG_FLY_FROM_START, 1
@@ -2148,8 +2151,8 @@
     .short SCRCMD_INITPERSISTEDMAPFEATURESFORHEARTHOMEGYM
     .endm
 
-    .macro ScrCmd_172
-    .short SCRCMD_172
+    .macro MoveHearthomeGymDPLift
+    .short SCRCMD_MOVEHEARTHOMEGYMDPLIFT
     .endm
 
     .macro InitPersistedMapFeaturesForCanalaveGym
@@ -3195,8 +3198,8 @@
     .short SCRCMD_FINISHNPCTRADE
     .endm
 
-    .macro ScrCmd_22B
-    .short SCRCMD_22B
+    .macro TurnOnPokedexLanguageDetection
+    .short SCRCMD_TURNONPOKEDEXLANGUAGEDETECTION
     .endm
 
     .macro TurnOnPokedexFormDetection
@@ -3747,9 +3750,9 @@
     SetHiddenLocation \hiddenLocation, FALSE
     .endm
 
-    .macro ScrCmd_271 arg0
-    .short SCRCMD_271
-    .short \arg0
+    .macro OpenShayminTabletNamingScreen destVar
+    .short SCRCMD_OPENSHAYMINTABLETNAMINGSCREEN
+    .short \destVar
     .endm
 
     .macro BufferTabletName templateArg
@@ -3805,8 +3808,8 @@
     .short \amount
     .endm
 
-    .macro ScrCmd_27A
-    .short SCRCMD_27A
+    .macro UseVistaLighthouseBinoculars
+    .short SCRCMD_USEVISTALIGHTHOUSEBINOCULARS
     .endm
 
     .macro InitDailyRandomLevel
@@ -4512,12 +4515,12 @@
     .short \trainerID
     .endm
 
-    .macro ScrCmd_2F4 arg0, arg1, arg2, arg3
-    .short SCRCMD_2F4
-    .short \arg0
-    .short \arg1
-    .short \arg2
-    .short \arg3
+    .macro GetRandomBattlegroundTrainers destVar1, destVar2, destVar3, destVar4
+    .short ScrCmd_GETRANDOMBATTLEGROUNDTRAINERS
+    .short \destVar1
+    .short \destVar2
+    .short \destVar3
+    .short \destVar4
     .endm
 
     .macro BufferValuePaddingDigits templateArg, value, paddingMode, maxDigits
@@ -4540,8 +4543,8 @@
     .short \arg0
     .endm
 
-    .macro SetScene22
-    .short SCRCMD_SETSCENE22
+    .macro SetScenePlayBGMMusicBox
+    .short SCRCMD_SETSCENEPLAYBGMMUSICBOX
     .endm
 
     .macro SetFieldScene bgmID
@@ -4558,9 +4561,9 @@
     .short SCRCMD_2FB
     .endm
 
-    .macro ScrCmd_2FC arg0
-    .short SCRCMD_2FC
-    .short \arg0
+    .macro CheckABPress destVar
+    .short SCRCMD_CHECKABPRESS
+    .short \destVar
     .endm
 
     .macro BufferTypeName templateArg, type
@@ -4651,13 +4654,13 @@
     .short SCRCMD_30B
     .endm
 
-    .macro ScrCmd_30C
-    .short SCRCMD_30C
+    .macro SaveTVSegmentHomeAndManorNoFurniture
+    .short SCRCMD_SAVETVSEGMENTHOMEANDMANORNOFURNITURE
     .endm
 
-    .macro ScrCmd_30D arg0
-    .short SCRCMD_30D
-    .short \arg0
+    .macro SaveTVSegmentHomeAndManor furniture
+    .short SCRCMD_SAVETVSEGMENTHOMEANDMANOR
+    .short \furniture
     .endm
 
     .macro ScrCmd_30E arg0
@@ -4665,10 +4668,10 @@
     .short \arg0
     .endm
 
-    .macro ScrCmd_30F arg0, arg1
-    .short SCRCMD_30F
-    .short \arg0
-    .short \arg1
+    .macro CheckMetFurnitureRequirements furniture, destVar
+    .short SCRCMD_CHECKMETFURNITUREREQUIREMENTS
+    .short \furniture
+    .short \destVar
     .endm
 
     .macro StartLibraryTV
@@ -4864,9 +4867,9 @@
     .short SCRCMD_332
     .endm
 
-    .macro ScrCmd_333 arg0
-    .short SCRCMD_333
-    .short \arg0
+    .macro SetPlayerVolume volume
+    .short SCRCMD_SETPLAYERVOLUME
+    .short \volume
     .endm
 
     .macro AddToGameRecord recordID, value
