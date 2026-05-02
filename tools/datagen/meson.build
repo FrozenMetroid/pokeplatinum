@@ -35,25 +35,6 @@ datagen_trainer_exe = executable(
     native: true,
 )
 
-datagen_frontier_exe = executable(
-    'datagen-frontier',
-    sources: [
-        files('datagen_frontier.cpp'),
-        c_consts_generators,
-    ],
-    cpp_args: datagen_cpp_args,
-    implicit_include_directories: true,
-    include_directories: [
-        public_includes,
-        toplevel_includes,
-    ],
-    dependencies: [
-        nitroarc_dep,
-        rapidjson_dep,
-    ],
-    native: true,
-)
-
 datagen_events_exe = executable(
     'datagen-events',
     sources: [

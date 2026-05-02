@@ -20,7 +20,7 @@
 			"animationType":	1,
 			"playbackMode":	1,
 			"frameData":	[{
-					"frameDelay":	20,
+					"frameDelay":	40,
 					"resultId":	0
 				}, {
 					"frameDelay":	6,
