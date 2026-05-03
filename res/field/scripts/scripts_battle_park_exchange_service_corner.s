@@ -50,18 +50,18 @@ BattleParkExchangeServiceCorner_Unused2:
     GoToIfEq VAR_RESULT, -2, BattleParkExchangeServiceCorner_Unused3
     GoToIfEq VAR_RESULT, VAR_MAP_LOCAL_1, BattleParkExchangeServiceCorner_Unused3
     SetVar VAR_MAP_LOCAL_3, VAR_RESULT
-    ScrCmd_29B VAR_MAP_LOCAL_0, VAR_MAP_LOCAL_3, VAR_0x8000, VAR_0x8001
+    GetExchangeServiceCornerItemAndCost VAR_MAP_LOCAL_0, VAR_MAP_LOCAL_3, VAR_0x8000, VAR_0x8001
     CallIfEq VAR_MAP_LOCAL_0, 0, BattleParkExchangeServiceCorner_Unused4
     CallIfEq VAR_MAP_LOCAL_0, 1, BattleParkExchangeServiceCorner_Unused5
     ShowYesNoMenu VAR_RESULT
     GoToIfEq VAR_RESULT, 1, BattleParkExchangeServiceCorner_Unused2
-    ScrCmd_29A VAR_0x8001, VAR_RESULT
+    CheckBattlePoints VAR_0x8001, VAR_RESULT
     GoToIfEq VAR_RESULT, 0, BattleParkExchangeServiceCorner_Unused6
     CanFitItem VAR_0x8000, 1, VAR_RESULT
     GoToIfEq VAR_RESULT, 0, BattleParkExchangeServiceCorner_Unused7
     Message 3
     AddItem VAR_0x8000, 1, VAR_RESULT
-    ScrCmd_299 VAR_0x8001
+    RemoveBattlePoints VAR_0x8001
     UpdateBPDisplay
     GoTo BattleParkExchangeServiceCorner_Unused2
 
@@ -98,7 +98,7 @@ BattleParkExchangeServiceCorner_Unused8:
     SetVar VAR_0x8009, 0
     InitGlobalTextListMenu 1, 1, 0, VAR_RESULT
 BattleParkExchangeServiceCorner_Unused9:
-    ScrCmd_29B VAR_MAP_LOCAL_0, VAR_0x8008, VAR_0x8000, VAR_0x8001
+    GetExchangeServiceCornerItemAndCost VAR_MAP_LOCAL_0, VAR_0x8008, VAR_0x8000, VAR_0x8001
     BufferItemName 0, VAR_0x8000
     BufferVarPaddingDigits 1, VAR_0x8001, PADDING_MODE_SPACES, 3
     AddListMenuEntry 231, VAR_0x8008

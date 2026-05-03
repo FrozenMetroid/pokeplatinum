@@ -46,15 +46,15 @@ _009A:
     SetFlag FLAG_HIDE_BATTLE_HALL_MAJOR_NPC
     CheckTVInterviewEligible TV_PROGRAM_SEGMENT_BATTLE_FRONTIER_FRONTLINE_NEWS_MULTI, VAR_MAP_LOCAL_0
     GoToIfEq VAR_MAP_LOCAL_0, 0, _00D5
-    ScrCmd_329 VAR_MAP_LOCAL_1, VAR_MAP_LOCAL_2, VAR_MAP_LOCAL_3, VAR_MAP_LOCAL_4
+    GetBattleFrontierReporterPosition VAR_MAP_LOCAL_1, VAR_MAP_LOCAL_2, VAR_MAP_LOCAL_3, VAR_MAP_LOCAL_4
     SetObjectEventPos 29, VAR_MAP_LOCAL_1, VAR_MAP_LOCAL_2
     SetObjectEventDir 29, VAR_MAP_LOCAL_3
     SetObjectEventMovementType 29, VAR_MAP_LOCAL_4
-    ClearFlag FLAG_UNK_0x02C3
+    ClearFlag FLAG_HIDE_BATTLE_FRONTIER_REPORTER
     End
 
 _00D5:
-    SetFlag FLAG_UNK_0x02C3
+    SetFlag FLAG_HIDE_BATTLE_FRONTIER_REPORTER
     End
 
 _00DB:
@@ -145,7 +145,7 @@ _026A:
     PlaySE SEQ_SE_CONFIRM
     LockAll
     FacePlayer
-    Message pl_msg_00000308_00021
+    Message 21
     InitLocalTextListMenu 1, 1, 0, VAR_RESULT
     AddListMenuEntry pl_msg_00000308_MEDICINE, 1
     AddListMenuEntry pl_msg_00000308_EVOLUTIONITEMS, 2

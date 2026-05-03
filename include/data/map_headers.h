@@ -4255,7 +4255,7 @@ static const MapHeader sMapHeaders[] = {
         .isEscapeRopeAllowed = FALSE,
         .isFlyAllowed = FALSE,
     },
-    [MAP_HEADER_UNUSED_BATTLE_PARK_GATE_TO_FIGHT_AREA] = {
+    [MAP_HEADER_BATTLE_PARK_GATE_TO_FIGHT_AREA] = {
         .areaDataArchiveID = area_data_044,
         .unk_01 = 0xF,
         .mapMatrixID = map_matrix_250,
@@ -7115,7 +7115,7 @@ static const MapHeader sMapHeaders[] = {
         .isEscapeRopeAllowed = FALSE,
         .isFlyAllowed = FALSE,
     },
-    [MAP_HEADER_UNUSED_BATTLE_PARK] = {
+    [MAP_HEADER_BATTLE_PARK] = {
         .areaDataArchiveID = area_data_064,
         .unk_01 = 0xF,
         .mapMatrixID = map_matrix_229,
@@ -7137,7 +7137,7 @@ static const MapHeader sMapHeaders[] = {
         .isEscapeRopeAllowed = FALSE,
         .isFlyAllowed = TRUE,
     },
-    [MAP_HEADER_UNUSED_BATTLE_PARK_EXCHANGE_SERVICE_CORNER] = {
+    [MAP_HEADER_BATTLE_PARK_EXCHANGE_SERVICE_CORNER] = {
         .areaDataArchiveID = area_data_041,
         .unk_01 = 0xF,
         .mapMatrixID = map_matrix_231,

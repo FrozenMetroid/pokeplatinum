@@ -23,7 +23,7 @@ _0032:
     CallIfEq VAR_0x8004, 24, _01BA
     CallIfEq VAR_0x8004, 25, _01CC
     CallIfEq VAR_0x8004, 26, _01DE
-    ClearFlag FLAG_UNK_0x0276
+    ClearFlag FLAG_HIDE_BATTLE_PARK_PALMER
     AddObject 11
     LockObject 11
     ApplyMovement 11, _02C8
@@ -51,7 +51,7 @@ _0032:
     CallIfEq VAR_0x8004, 25, _0218
     CallIfEq VAR_0x8004, 26, _022C
     RemoveObject 11
-    ClearFlag FLAG_UNK_0x0277
+    ClearFlag FLAG_HIDE_BATTLE_PARK_RIVAL
     AddObject 12
     LockObject 12
     ApplyMovement 12, _02C8
@@ -72,7 +72,7 @@ _0032:
     CallIfEq VAR_0x8004, 25, _0268
     CallIfEq VAR_0x8004, 26, _027C
     RemoveObject 12
-    SetVar VAR_UNK_0x410E, 1
+    SetVar VAR_BATTLE_PARK_STATE, 1
     ReleaseAll
     End
 
