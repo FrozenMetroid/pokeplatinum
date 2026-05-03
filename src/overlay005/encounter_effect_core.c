@@ -30,6 +30,7 @@
 #include "save_player.h"
 #include "screen_fade.h"
 #include "screen_scroll_manager.h"
+#include "senate_config.h"
 #include "sprite.h"
 #include "string_gf.h"
 #include "string_template.h"
@@ -1704,7 +1705,7 @@ typedef struct {
     UnkStruct_ov5_021DE47C unk_00;
     UnkStruct_ov5_021DE5A4 unk_1A0;
     Sprite *unk_1D4[4];
-    QuadraticInterpolationTaskFX32 unk_1E4[2];
+    QuadraticInterpolationTaskFX32 spriteResources[2];
 } UnkStruct_ov5_021E44C0;
 
 void EncounterEffect_Frontier(SysTask *param0, void *param1)
@@ -1864,8 +1865,8 @@ void EncounterEffect_Double(SysTask *param0, void *param1)
         break;
 
     case 3:
-        QuadraticInterpolationTaskFX32_Init(&v1->unk_1E4[0], 0, 128 * FX32_ONE, FX32_CONST(0.1f), 4);
-        QuadraticInterpolationTaskFX32_Init(&v1->unk_1E4[1], 0, 160 * FX32_ONE, FX32_CONST(0.1f), 4);
+        QuadraticInterpolationTaskFX32_Init(&v1->spriteResources[0], 0, 128 * FX32_ONE, FX32_CONST(0.1f), 4);
+        QuadraticInterpolationTaskFX32_Init(&v1->spriteResources[1], 0, 160 * FX32_ONE, FX32_CONST(0.1f), 4);
 
         for (v3 = 0; v3 < 4; v3++) {
             Sprite_SetDrawFlag(v1->unk_1D4[v3], TRUE);
@@ -1876,23 +1877,23 @@ void EncounterEffect_Double(SysTask *param0, void *param1)
 
     case 4:
         for (v3 = 0; v3 < 2; v3++) {
-            v2 = QuadraticInterpolationTaskFX32_Update(&v1->unk_1E4[v3]);
+            v2 = QuadraticInterpolationTaskFX32_Update(&v1->spriteResources[v3]);
         }
 
         v4 = VecFx32_FromXYZ(
-            128 * FX32_ONE, (96 * FX32_ONE) - v1->unk_1E4[0].currentValue, 0);
+            128 * FX32_ONE, (96 * FX32_ONE) - v1->spriteResources[0].currentValue, 0);
         Sprite_SetPosition(v1->unk_1D4[0], &v4);
 
         v4 = VecFx32_FromXYZ(
-            128 * FX32_ONE, (96 * FX32_ONE) + v1->unk_1E4[0].currentValue, 0);
+            128 * FX32_ONE, (96 * FX32_ONE) + v1->spriteResources[0].currentValue, 0);
         Sprite_SetPosition(v1->unk_1D4[1], &v4);
 
         v4 = VecFx32_FromXYZ(
-            (128 * FX32_ONE) - v1->unk_1E4[1].currentValue, 96 * FX32_ONE, 0);
+            (128 * FX32_ONE) - v1->spriteResources[1].currentValue, 96 * FX32_ONE, 0);
         Sprite_SetPosition(v1->unk_1D4[2], &v4);
 
         v4 = VecFx32_FromXYZ(
-            (128 * FX32_ONE) + v1->unk_1E4[1].currentValue, 96 * FX32_ONE, 0);
+            (128 * FX32_ONE) + v1->spriteResources[1].currentValue, 96 * FX32_ONE, 0);
         Sprite_SetPosition(v1->unk_1D4[3], &v4);
 
         if (v2 == 1) {
@@ -2599,14 +2600,16 @@ typedef struct GymLeaderEncounterParam {
     u8 bannerPlttIdx;
     u8 bannerTileIdx;
     u8 bannerTilemapIdx;
-    u8 padding;
+    u8 nameTileIdx;
+    u8 nameCellIdx;
+    u8 nameAnimIdx;
 } GymLeaderEncounterParam;
 
 #define GYM_LEADER(NAME) (TRAINER_CLASS_LEADER_##NAME - TRAINER_CLASS_LEADER_ROARK)
 
 static const GymLeaderEncounterParam sGymLeaderEncounterParams[9] = {
     {
-        .endX = 214 * FX32_ONE,
+        .endX = 208 * FX32_ONE,
         .trainerID = TRAINER_LEADER_ROARK,
         .trainerClass = TRAINER_CLASS_LEADER_ROARK,
         .unused = 1,
@@ -2617,10 +2620,12 @@ static const GymLeaderEncounterParam sGymLeaderEncounterParams[9] = {
         .bannerPlttIdx = leader_roark_banner_NCLR,
         .bannerTileIdx = leader_roark_banner_NCGR,
         .bannerTilemapIdx = leader_roark_banner_NSCR,
-        .padding = 0,
+        .nameTileIdx = leader_roark_name_NCGR,
+        .nameCellIdx = leader_roark_name_cell_NCER,
+        .nameAnimIdx = leader_roark_name_anim_NANR,
     },
     {
-        .endX = 214 * FX32_ONE,
+        .endX = 208 * FX32_ONE,
         .trainerID = TRAINER_LEADER_GARDENIA,
         .trainerClass = TRAINER_CLASS_LEADER_GARDENIA,
         .unused = 1,
@@ -2631,7 +2636,9 @@ static const GymLeaderEncounterParam sGymLeaderEncounterParams[9] = {
         .bannerPlttIdx = leader_gardenia_banner_NCLR,
         .bannerTileIdx = leader_gardenia_banner_NCGR,
         .bannerTilemapIdx = leader_gardenia_banner_NSCR,
-        .padding = 0,
+        .nameTileIdx = leader_gardenia_name_NCGR,
+        .nameCellIdx = leader_gardenia_name_cell_NCER,
+        .nameAnimIdx = leader_gardenia_name_anim_NANR,
     },
     {
         .endX = 214 * FX32_ONE,
@@ -2645,7 +2652,9 @@ static const GymLeaderEncounterParam sGymLeaderEncounterParams[9] = {
         .bannerPlttIdx = leader_wake_banner_NCLR,
         .bannerTileIdx = leader_wake_banner_NCGR,
         .bannerTilemapIdx = leader_wake_banner_NSCR,
-        .padding = 0,
+        .nameTileIdx = leader_wake_name_NCGR,
+        .nameCellIdx = leader_wake_name_cell_NCER,
+        .nameAnimIdx = leader_wake_name_anim_NANR,
     },
     {
         .endX = 214 * FX32_ONE,
@@ -2659,10 +2668,12 @@ static const GymLeaderEncounterParam sGymLeaderEncounterParams[9] = {
         .bannerPlttIdx = leader_maylene_banner_NCLR,
         .bannerTileIdx = leader_maylene_banner_NCGR,
         .bannerTilemapIdx = leader_maylene_banner_NSCR,
-        .padding = 0,
+        .nameTileIdx = leader_maylene_name_NCGR,
+        .nameCellIdx = leader_maylene_name_cell_NCER,
+        .nameAnimIdx = leader_maylene_name_anim_NANR,
     },
     {
-        .endX = 214 * FX32_ONE,
+        .endX = 208 * FX32_ONE,
         .trainerID = TRAINER_LEADER_FANTINA,
         .trainerClass = TRAINER_CLASS_LEADER_FANTINA,
         .unused = 1,
@@ -2673,7 +2684,9 @@ static const GymLeaderEncounterParam sGymLeaderEncounterParams[9] = {
         .bannerPlttIdx = leader_fantina_banner_NCLR,
         .bannerTileIdx = leader_fantina_banner_NCGR,
         .bannerTilemapIdx = leader_fantina_banner_NSCR,
-        .padding = 0,
+        .nameTileIdx = leader_fantina_name_NCGR,
+        .nameCellIdx = leader_fantina_name_cell_NCER,
+        .nameAnimIdx = leader_fantina_name_anim_NANR,
     },
     {
         .endX = 214 * FX32_ONE,
@@ -2687,7 +2700,9 @@ static const GymLeaderEncounterParam sGymLeaderEncounterParams[9] = {
         .bannerPlttIdx = leader_candice_banner_NCLR,
         .bannerTileIdx = leader_candice_banner_NCGR,
         .bannerTilemapIdx = leader_candice_banner_NSCR,
-        .padding = 0,
+        .nameTileIdx = leader_candice_name_NCGR,
+        .nameCellIdx = leader_candice_name_cell_NCER,
+        .nameAnimIdx = leader_candice_name_anim_NANR,
     },
     {
         .endX = 214 * FX32_ONE,
@@ -2701,7 +2716,9 @@ static const GymLeaderEncounterParam sGymLeaderEncounterParams[9] = {
         .bannerPlttIdx = leader_byron_banner_NCLR,
         .bannerTileIdx = leader_byron_banner_NCGR,
         .bannerTilemapIdx = leader_byron_banner_NSCR,
-        .padding = 0,
+        .nameTileIdx = leader_byron_name_NCGR,
+        .nameCellIdx = leader_byron_name_cell_NCER,
+        .nameAnimIdx = leader_byron_name_anim_NANR,
     },
     {
         .endX = 214 * FX32_ONE,
@@ -2715,7 +2732,9 @@ static const GymLeaderEncounterParam sGymLeaderEncounterParams[9] = {
         .bannerPlttIdx = leader_volkner_banner_NCLR,
         .bannerTileIdx = leader_volkner_banner_NCGR,
         .bannerTilemapIdx = leader_volkner_banner_NSCR,
-        .padding = 0,
+        .nameTileIdx = leader_volkner_name_NCGR,
+        .nameCellIdx = leader_volkner_name_cell_NCER,
+        .nameAnimIdx = leader_volkner_name_anim_NANR,
     },
     {
         .endX = 214 * FX32_ONE,
@@ -2729,7 +2748,9 @@ static const GymLeaderEncounterParam sGymLeaderEncounterParams[9] = {
         .bannerPlttIdx = jasmine_banner_NCLR,
         .bannerTileIdx = jasmine_banner_NCGR,
         .bannerTilemapIdx = jasmine_banner_NSCR,
-        .padding = 0,
+        .nameTileIdx = 0,
+        .nameCellIdx = 0,
+        .nameAnimIdx = 0,
     },
 };
 
@@ -2792,8 +2813,9 @@ typedef struct {
     LinearInterpolationTaskFX32 unk_2C;
     UnkStruct_ov5_021DED04 *unk_40;
     UnkStruct_ov5_021DE47C unk_44;
-    UnkStruct_ov5_021DE5A4 unk_1E4[2];
+    UnkStruct_ov5_021DE5A4 spriteResources[3];
     Sprite *mugshotSprite;
+    Sprite *nameSprite;
     UnkStruct_ov5_021E5128 unk_250;
     UnkStruct_ov5_021E52A8_sub1 unk_2B4;
     UnkStruct_ov5_021E52A8_sub2 unk_2BC;
@@ -2923,27 +2945,32 @@ static BOOL EncounterEffect_GymLeader(EncounterEffect *encEffect, enum HeapID he
         memset(encEffect->param, 0, sizeof(GymLeaderEncounterEffect));
         leaderEncEffect = encEffect->param;
 
-        Graphics_LoadPaletteFromOpenNARC(encEffect->narc, 11, 0, 2 * 0x20, 0x20, heapID);
+        Graphics_LoadPaletteFromOpenNARC(encEffect->narc, 11, PAL_LOAD_MAIN_BG, 2 * 0x20, 0x20, heapID);
 
         GXLayers_EngineAToggleLayers(GX_PLANEMASK_BG2, FALSE);
-        Window_Add(encEffect->fieldSystem->bgConfig, &leaderEncEffect->unk_2E0, 2, 0, 10, 16, 2, 2, 1);
+        #ifndef ENCOUNTER_EFFECT_TRAINER_NAME_AS_SPRITE
+        Window_Add(encEffect->fieldSystem->bgConfig, &leaderEncEffect->unk_2E0, BG_LAYER_MAIN_2, 0, 10, 32, 2, PLTT_2, 1);
         Window_FillTilemap(&leaderEncEffect->unk_2E0, 0);
         trainerName = EncounterEffect_GetGymLeaderName(param->trainerID, heapID);
         Text_AddPrinterWithParamsAndColor(&leaderEncEffect->unk_2E0, FONT_SYSTEM, trainerName, 0, 0, TEXT_SPEED_INSTANT, TEXT_COLOR(1, 2, 0), NULL);
         String_Free(trainerName);
+        #endif
 
         EncounterEffect_InitSpriteCollection(&leaderEncEffect->unk_44, 8, 3);
 
-        ov5_021DE4CC(
-            encEffect->narc, &leaderEncEffect->unk_44, &leaderEncEffect->unk_1E4[0], param->mugshotPlttIdx, 1, param->mugshotTileIdx, param->mugshotCellIdx, param->mugshotAnimIdx, 600000);
+        ov5_021DE4CC(encEffect->narc, &leaderEncEffect->unk_44, &leaderEncEffect->spriteResources[0], param->mugshotPlttIdx, 1, param->mugshotTileIdx, param->mugshotCellIdx, param->mugshotAnimIdx, 600000); // loads the gym leader mugshot graphics resources
 
-        ov5_021DE4CC(
-            encEffect->narc, &leaderEncEffect->unk_44, &leaderEncEffect->unk_1E4[1], 51, 1, 52, 53, 54, 600000 + 1);
+        ov5_021DE4CC(encEffect->narc, &leaderEncEffect->unk_44, &leaderEncEffect->spriteResources[1], 51, 1, 52, 53, 54, 600000 + 1); // loads the VS graphics resources
 
-        leaderEncEffect->mugshotSprite = ov5_021DE62C(
-            &leaderEncEffect->unk_44, &leaderEncEffect->unk_1E4[0], 272 * FX32_ONE, 66 * FX32_ONE, 0, 0);
+        #ifdef ENCOUNTER_EFFECT_TRAINER_NAME_AS_SPRITE
+        ov5_021DE4CC( encEffect->narc, &leaderEncEffect->unk_44, &leaderEncEffect->spriteResources[2], 162, 1, param->nameTileIdx, param->nameCellIdx, param->nameAnimIdx, 600000); // 162 is the palette that's the same for all of them
+        leaderEncEffect->nameSprite = ov5_021DE62C(&leaderEncEffect->unk_44, &leaderEncEffect->spriteResources[2], 240 * FX32_ONE, 66 * FX32_ONE, 0, 0);
+        Sprite_SetDrawFlag(leaderEncEffect->nameSprite, FALSE);
+        #endif
+
+        leaderEncEffect->mugshotSprite = ov5_021DE62C(&leaderEncEffect->unk_44, &leaderEncEffect->spriteResources[0], 272 * FX32_ONE, 66 * FX32_ONE, 0, 0);
         Sprite_SetDrawFlag(leaderEncEffect->mugshotSprite, FALSE);
-        ov5_021E5128(&leaderEncEffect->unk_250, &leaderEncEffect->unk_44, &leaderEncEffect->unk_1E4[1], FX32_CONST(72), FX32_CONST(74), heapID);
+        ov5_021E5128(&leaderEncEffect->unk_250, &leaderEncEffect->unk_44, &leaderEncEffect->spriteResources[1], FX32_CONST(72), FX32_CONST(74), heapID); // sets the VS sprite coordinates
 
         EncounterEffect_BlendTrainerSpritePltt(leaderEncEffect->mugshotSprite, heapID, param->trainerClass, 14, GX_RGB(0, 0, 0));
 
@@ -3000,7 +3027,7 @@ static BOOL EncounterEffect_GymLeader(EncounterEffect *encEffect, enum HeapID he
 
         GXLayers_EngineAToggleLayers(GX_PLANEMASK_OBJ, 1);
 
-        v1 = ov5_021E51B4(&leaderEncEffect->unk_250);
+        v1 = ov5_021E51B4(&leaderEncEffect->unk_250); // draws the VS graphic (the VS letters, not the mugshot)
 
         if (v1 == 1) {
             encEffect->state++;
@@ -3008,7 +3035,7 @@ static BOOL EncounterEffect_GymLeader(EncounterEffect *encEffect, enum HeapID he
 
         break;
 
-    case 6:
+    case 6: // mugshot slide in
 
         QuadraticInterpolationTaskFX32_Init(&leaderEncEffect->unk_00, 272 * FX32_ONE, param->endX, -64 * FX32_ONE, 4);
         Sprite_SetDrawFlag(leaderEncEffect->mugshotSprite, TRUE);
@@ -3111,8 +3138,11 @@ static BOOL EncounterEffect_GymLeader(EncounterEffect *encEffect, enum HeapID he
 
         Sprite_Delete(leaderEncEffect->mugshotSprite);
         ov5_021E519C(&leaderEncEffect->unk_250);
-        ov5_021DE5A4(&leaderEncEffect->unk_44, &leaderEncEffect->unk_1E4[0]);
-        ov5_021DE5A4(&leaderEncEffect->unk_44, &leaderEncEffect->unk_1E4[1]);
+        ov5_021DE5A4(&leaderEncEffect->unk_44, &leaderEncEffect->spriteResources[0]);
+        ov5_021DE5A4(&leaderEncEffect->unk_44, &leaderEncEffect->spriteResources[1]);
+        #ifdef ENCOUNTER_EFFECT_TRAINER_NAME_AS_SPRITE
+        ov5_021DE5A4(&leaderEncEffect->unk_44, &leaderEncEffect->spriteResources[2]);
+        #endif
         ov5_021DE4AC(&leaderEncEffect->unk_44);
 
         Window_Remove(&leaderEncEffect->unk_2E0);

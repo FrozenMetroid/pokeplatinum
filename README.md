@@ -135,5 +135,5 @@ Miscellaneous Battle System Changes:
 # Encounters
 - The Pokédex accurately shows where Pokémon live
 - Murkrow and Misdreavus added back to Eterna Forest at night
-- Encounter Spiritomb at the Hallowed Tower immediately
+- Encounter Spiritomb at the Hallowed Tower immediately with an Odd Keystone
 - Diamond and Pearl-exclusive Sinnoh encounters have been returned, such as Glameow and Stunky

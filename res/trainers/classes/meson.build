@@ -27,6 +27,10 @@ trainer_encounter_anim_json = []
 trainer_encounter_pal = []
 trainer_encounter_copy = []
 trainer_encounter_dummy_png = []
+trainer_encounter_banner_name_png = []
+trainer_encounter_banner_name_pal = []
+trainer_encounter_banner_name_cell_json = []
+trainer_encounter_banner_name_anim_json = []
 
 # 1. These static files must always exist.
 trainer_encounter_mugshot_png = files(
@@ -78,6 +82,10 @@ frontier_vs_png = files(
 )
 frontier_vs_anim_json = files(
     '.shared/vs_anim.json',
+)
+
+trainer_encounter_banner_name_pal = files(
+    '.shared/enc_name.png',
 )
 
 
@@ -138,6 +146,15 @@ foreach trainer_class : trainer_class_dirnames
     # league shares banner assets, so they only have palettes
     if fs.exists(trainer_class / 'banner.pal')
         trainer_encounter_pal += files(trainer_class / 'banner.pal')
+    endif
+    if fs.exists(trainer_class / 'name.png')
+        trainer_encounter_banner_name_png += files(trainer_class / 'name.png')
+    endif
+    if fs.exists(trainer_class / 'name_cell.json')
+        trainer_encounter_banner_name_cell_json += files(trainer_class / 'name_cell.json')
+    endif
+    if fs.exists(trainer_class / 'name_anim.json')
+        trainer_encounter_banner_name_anim_json += files(trainer_class / 'name_anim.json')
     endif
 endforeach
 
@@ -358,6 +375,29 @@ trainer_encounter_NCLR = nclr_gen.process(trainer_encounter_pal,
 trainer_encounter_paste = copy_gen.process(trainer_encounter_copy,
     preserve_path_from: trainer_classes_root,)
 
+banner_name_NCGR = ncgr_cell_gen.process(trainer_encounter_banner_name_png,
+    extra_args: [
+        '-version101',
+        '-vram',
+        '-clobbersize',
+        '-convertTo4Bpp',
+    ],
+    preserve_path_from: trainer_classes_root,
+)
+
+banner_name_NCLR = nclr_gen.process(trainer_encounter_banner_name_pal,
+    extra_args: [
+        '-convertTo4Bpp',
+    ],
+    preserve_path_from: trainer_classes_root,
+)
+
+banner_name_NCER = ncer_gen.process(trainer_encounter_banner_name_cell_json,
+    preserve_path_from: trainer_classes_root,)
+
+banner_name_NANR = nanr_gen.process(trainer_encounter_banner_name_anim_json,
+    preserve_path_from: trainer_classes_root,)
+
 field_encounteffect_narc = custom_target('field_encounteffect.narc',
     output: [
         'field_encounteffect.narc',
@@ -372,6 +412,10 @@ field_encounteffect_narc = custom_target('field_encounteffect.narc',
         trainer_encounter_NANR,
         trainer_encounter_NCLR,
         trainer_encounter_paste,
+        banner_name_NCLR,
+        banner_name_NCGR,
+        banner_name_NCER,
+        banner_name_NANR,
         frontier_vs_NCGR,
         frontier_vs_anim_NANR,
     ],

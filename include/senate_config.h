@@ -34,6 +34,12 @@ Shortened timer for Honey Tree
 #define HONEYTREE_SHORTENED_TIMER
 
 
+/*
+Display the trainer's name as a sprite during the encounter effect
+*/
+#define ENCOUNTER_EFFECT_TRAINER_NAME_AS_SPRITE
+
+
 
 /*
 ===============BATTLE==============
