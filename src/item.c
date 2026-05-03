@@ -3533,7 +3533,7 @@ u8 Item_TMHMNumber(u16 item)
 
 u8 Item_IsMail(u16 item)
 {
-    for (u32 i = 0; i < NUM_MAILS; i++) {
+    for (u32 i = 0; i < NUM_MAIL_TYPES; i++) {
         if (sMailItemIDs[i] == item) {
             return TRUE;
         }
@@ -3547,9 +3547,9 @@ u8 Item_IsPlate(u16 item)
     return (item >= ITEM_FLAME_PLATE && item <= ITEM_IRON_PLATE);
 }
 
-u8 Item_MailNumber(u16 item)
+u8 Item_GetMailType(u16 item)
 {
-    for (u32 i = 0; i < NUM_MAILS; i++) {
+    for (u32 i = 0; i < NUM_MAIL_TYPES; i++) {
         if (sMailItemIDs[i] == item) {
             return i;
         }
@@ -3558,13 +3558,13 @@ u8 Item_MailNumber(u16 item)
     return ITEM_NONE;
 }
 
-u16 Item_ForMailNumber(u8 mail)
+u16 Item_ForMailType(u8 mailType)
 {
-    if (mail >= NUM_MAILS) {
+    if (mailType >= NUM_MAIL_TYPES) {
         return ITEM_NONE;
     }
 
-    return sMailItemIDs[mail];
+    return sMailItemIDs[mailType];
 }
 
 u8 Item_IsBerry(u16 item)

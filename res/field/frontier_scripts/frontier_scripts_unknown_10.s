@@ -113,7 +113,7 @@ _0188:
     FrontierScrCmd_B2 7, 2, 0, VAR_0x8008
     SetVar VAR_0x8004, 0
     SetVar VAR_0x8009, 2
-    FrontierScrCmd_3D VAR_UNK_0x40B9, 0
+    FrontierScrCmd_3D VAR_BATTLE_FACTORY_CHALLENGE_LEVEL, 0
     GoTo _0254
     End
 
@@ -121,7 +121,7 @@ _01A9:
     FrontierScrCmd_B2 7, 3, 0, VAR_0x8008
     SetVar VAR_0x8004, 0
     SetVar VAR_0x8009, 3
-    FrontierScrCmd_3D VAR_UNK_0x40B9, 1
+    FrontierScrCmd_3D VAR_BATTLE_FACTORY_CHALLENGE_LEVEL, 1
     GoTo _0254
     End
 
@@ -434,7 +434,7 @@ _0766:
     FrontierScrCmd_25 0
     FrontierScrCmd_25 2
     FrontierScrCmd_25 3
-    IncrementRecordValue RECORD_UNK_058
+    IncrementRecordValue RECORD_TIMES_STARTED_BATTLE_FRONTIER_CHALLENGE
     FrontierScrCmd_B2 9, 0, 0, VAR_0x8008
     SetVar FR_VAR_0x8010, VAR_0x8008
     GoToIfEq FR_VAR_0x8010, 1, _0842
@@ -458,7 +458,7 @@ _0838:
 
 _0842:
     FrontierScrCmd_B3
-    FrontierScrCmd_3D VAR_UNK_0x40DE, 1
+    FrontierScrCmd_3D VAR_BATTLE_TOWER_MULTI_BATTLE_ROOM_LOAD_ACTION, 1
     Call _08D3
     GoTo _0858
     End

@@ -21,7 +21,6 @@
 #include "generated/species_data_params.h"
 
 #include "struct_defs/chatot_cry.h"
-#include "struct_defs/mail.h"
 #include "struct_defs/seal_case.h"
 #include "struct_defs/species_sprite_data.h"
 #include "struct_defs/sprite_animation_frame.h"
@@ -4154,19 +4153,16 @@ u16 Pokemon_NationalDexNumber(u16 sinnohDexNumber)
 void Pokemon_Copy(Pokemon *src, Pokemon *dest)
 {
     *dest = *src;
-    return;
 }
 
 void BoxPokemon_Copy(BoxPokemon *src, BoxPokemon *dest)
 {
     *dest = *src;
-    return;
 }
 
 void BoxPokemon_FromPokemon(Pokemon *src, BoxPokemon *dest)
 {
     *dest = src->box;
-    return;
 }
 
 s8 Pokemon_GetFlavorAffinity(Pokemon *mon, enum Flavor flavor)
@@ -4216,9 +4212,9 @@ void Pokemon_ApplyPokerus(Party *party)
 
             if (Pokemon_GetValue(mon, MON_DATA_SPECIES, NULL) && Pokemon_GetValue(mon, MON_DATA_IS_EGG, NULL) == FALSE) {
                 break;
-            } else {
-                partySlot = currentPartyCount;
             }
+
+            partySlot = currentPartyCount;
         } while (partySlot == currentPartyCount);
 
         if (Pokemon_HasPokerus(party, FlagIndex(partySlot)) == 0) {
