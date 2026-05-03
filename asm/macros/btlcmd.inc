@@ -217,13 +217,13 @@
     .long \battler
     .endm
 
-    .macro UpdateHealthBarValue battler
-    .long BTLCMD_UPDATEHEALTHBARVALUE
+    .macro UpdateHealthBoxValue battler
+    .long BTLCMD_UPDATEHEALTHBOXVALUE
     .long \battler
     .endm
 
-    .macro UpdateHealthBar battler
-    .long BTLCMD_UPDATEHEALTHBAR
+    .macro UpdateHealthBox battler
+    .long BTLCMD_UPDATEHEALTHBOX
     .long \battler
     .endm
 

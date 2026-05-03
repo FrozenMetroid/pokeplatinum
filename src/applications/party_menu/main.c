@@ -2659,7 +2659,7 @@ static BOOL PartyMenu_HPTransferUpdateHP(PartyMenuApplication *application, u8 s
     PartyMenu_ClearMemberHP(application, slot);
     Window_FillTilemap(&application->windows[3 + slot * 5], 0);
     PartyMenu_PrintMemberCurrentHP(application, slot);
-    PartyMenu_DrawMemberHealthbar(application, slot);
+    PartyMenu_DrawMemberHealthbox(application, slot);
 
     if (application->monHpTransfer[HP_TRANSFER_HP_BUFFER] == application->monHpTransfer[HP_TRANSFER_COUNTER]
         || application->partyMembers[slot].curHP == application->partyMembers[slot].maxHP) {

@@ -37,7 +37,7 @@ Shortened timer for Honey Tree
 /*
 Display the trainer's name as a sprite during the encounter effect
 */
-#define ENCOUNTER_EFFECT_TRAINER_NAME_AS_SPRITE
+//#define ENCOUNTER_EFFECT_TRAINER_NAME_AS_SPRITE
 
 
 
@@ -75,7 +75,7 @@ Display the trainer's name as a sprite during the encounter effect
 
 #define BATTLE_ADD_ARTILLERY
 
-#define BATTLE_UPDATE_PARALYSIS_SPEED // speed is reduced by 50% 
+#define BATTLE_UPDATE_PARALYSIS_SPEED // speed is reduced by 50%
 #define BATTLE_MAGIC_GUARD_IMMUNITY_TO_PARALYSIS_REMOVED
 
 #define BATTLE_BUFF_FACADE_BURN_DAMAGE // Burn damage no longer halves Facade damage

@@ -18,7 +18,7 @@ void PartyMenu_PrintMemberName(PartyMenuApplication *application, u8 slot);
 void PartyMenu_PrintMemberLevel(PartyMenuApplication *application, u8 slot);
 void PartyMenu_PrintMemberCurrentHP(PartyMenuApplication *application, u8 slot);
 void PartyMenu_ClearMemberHP(PartyMenuApplication *application, u8 slot);
-void PartyMenu_DrawMemberHealthbar(PartyMenuApplication *application, u8 slot);
+void PartyMenu_DrawMemberHealthbox(PartyMenuApplication *application, u8 slot);
 void PartyMenu_DrawMemberPanelData(PartyMenuApplication *application, u8 slot);
 void PartyMenu_LoadMemberWindowTiles(PartyMenuApplication *application, u8 slot);
 void PartyMenu_CopyMemberWindowToVRAM(PartyMenuApplication *application, u8 slot);

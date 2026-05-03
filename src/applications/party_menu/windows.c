@@ -54,47 +54,47 @@ enum {
     WIN_TEMPLATE_NAME_MEMB0 = 0,
     WIN_TEMPLATE_LEVEL_MEMB0,
     WIN_TEMPLATE_HP_MEMB0,
-    WIN_TEMPLATE_HEALTHBAR_MEMB0,
+    WIN_TEMPLATE_HEALTHBOX_MEMB0,
     WIN_TEMPLATE_COMMENT_MEMB0,
     WIN_TEMPLATE_NAME_MEMB1,
     WIN_TEMPLATE_LEVEL_MEMB1,
     WIN_TEMPLATE_HP_MEMB1,
-    WIN_TEMPLATE_HEALTHBAR_MEMB1,
+    WIN_TEMPLATE_HEALTHBOX_MEMB1,
     WIN_TEMPLATE_COMMENT_MEMB1,
     WIN_TEMPLATE_NAME_MEMB2,
     WIN_TEMPLATE_LEVEL_MEMB2,
     WIN_TEMPLATE_HP_MEMB2,
-    WIN_TEMPLATE_HEALTHBAR_MEMB2,
+    WIN_TEMPLATE_HEALTHBOX_MEMB2,
     WIN_TEMPLATE_COMMENT_MEMB2,
     WIN_TEMPLATE_NAME_MEMB3,
     WIN_TEMPLATE_LEVEL_MEMB3,
     WIN_TEMPLATE_HP_MEMB3,
-    WIN_TEMPLATE_HEALTHBAR_MEMB3,
+    WIN_TEMPLATE_HEALTHBOX_MEMB3,
     WIN_TEMPLATE_COMMENT_MEMB3,
     WIN_TEMPLATE_NAME_MEMB4,
     WIN_TEMPLATE_LEVEL_MEMB4,
     WIN_TEMPLATE_HP_MEMB4,
-    WIN_TEMPLATE_HEALTHBAR_MEMB4,
+    WIN_TEMPLATE_HEALTHBOX_MEMB4,
     WIN_TEMPLATE_COMMENT_MEMB4,
     WIN_TEMPLATE_NAME_MEMB5,
     WIN_TEMPLATE_LEVEL_MEMB5,
     WIN_TEMPLATE_HP_MEMB5,
-    WIN_TEMPLATE_HEALTHBAR_MEMB5,
+    WIN_TEMPLATE_HEALTHBOX_MEMB5,
     WIN_TEMPLATE_COMMENT_MEMB5,
     WIN_TEMPLATE_NAME_MEMB1_MULTI,
     WIN_TEMPLATE_LEVEL_MEMB1_MULTI,
     WIN_TEMPLATE_HP_MEMB1_MULTI,
-    WIN_TEMPLATE_HEALTHBAR_MEMB1_MULTI,
+    WIN_TEMPLATE_HEALTHBOX_MEMB1_MULTI,
     WIN_TEMPLATE_COMMENT_MEMB1_MULTI,
     WIN_TEMPLATE_NAME_MEMB3_MULTI,
     WIN_TEMPLATE_LEVEL_MEMB3_MULTI,
     WIN_TEMPLATE_HP_MEMB3_MULTI,
-    WIN_TEMPLATE_HEALTHBAR_MEMB3_MULTI,
+    WIN_TEMPLATE_HEALTHBOX_MEMB3_MULTI,
     WIN_TEMPLATE_COMMENT_MEMB3_MULTI,
     WIN_TEMPLATE_NAME_MEMB5_MULTI,
     WIN_TEMPLATE_LEVEL_MEMB5_MULTI,
     WIN_TEMPLATE_HP_MEMB5_MULTI,
-    WIN_TEMPLATE_HEALTHBAR_MEMB5_MULTI,
+    WIN_TEMPLATE_HEALTHBOX_MEMB5_MULTI,
     WIN_TEMPLATE_COMMENT_MEMB5_MULTI,
 };
 
@@ -107,8 +107,8 @@ enum {
 #define WIN_LEVEL_MEMB_H       2
 #define WIN_HP_MEMB_W          8
 #define WIN_HP_MEMB_H          2
-#define WIN_HEALTHBAR_MEMB_W   6
-#define WIN_HEALTHBAR_MEMB_H   1
+#define WIN_HEALTHBOX_MEMB_W   6
+#define WIN_HEALTHBOX_MEMB_H   1
 #define WIN_COMMENT_MEMB_W     10
 #define WIN_COMMENT_MEMB_H     2
 
@@ -116,32 +116,32 @@ enum {
 #define WIN_NAME_MEMB0_BASE_TILE      (WIN_BASE_TILE_START)
 #define WIN_LEVEL_MEMB0_BASE_TILE     (WIN_NAME_MEMB0_BASE_TILE + WIN_SIZE(NAME_MEMB))
 #define WIN_HP_MEMB0_BASE_TILE        (WIN_LEVEL_MEMB0_BASE_TILE + WIN_SIZE(LEVEL_MEMB))
-#define WIN_HEALTHBAR_MEMB0_BASE_TILE (WIN_HP_MEMB0_BASE_TILE + WIN_SIZE(HP_MEMB))
+#define WIN_HEALTHBOX_MEMB0_BASE_TILE (WIN_HP_MEMB0_BASE_TILE + WIN_SIZE(HP_MEMB))
 #define WIN_COMMENT_MEMB0_BASE_TILE   (WIN_LEVEL_MEMB0_BASE_TILE + WIN_SIZE(LEVEL_MEMB))
-#define WIN_NAME_MEMB1_BASE_TILE      (WIN_HEALTHBAR_MEMB0_BASE_TILE + WIN_SIZE(HEALTHBAR_MEMB))
+#define WIN_NAME_MEMB1_BASE_TILE      (WIN_HEALTHBOX_MEMB0_BASE_TILE + WIN_SIZE(HEALTHBOX_MEMB))
 #define WIN_LEVEL_MEMB1_BASE_TILE     (WIN_NAME_MEMB1_BASE_TILE + WIN_SIZE(NAME_MEMB))
 #define WIN_HP_MEMB1_BASE_TILE        (WIN_LEVEL_MEMB1_BASE_TILE + WIN_SIZE(LEVEL_MEMB))
-#define WIN_HEALTHBAR_MEMB1_BASE_TILE (WIN_HP_MEMB1_BASE_TILE + WIN_SIZE(HP_MEMB))
+#define WIN_HEALTHBOX_MEMB1_BASE_TILE (WIN_HP_MEMB1_BASE_TILE + WIN_SIZE(HP_MEMB))
 #define WIN_COMMENT_MEMB1_BASE_TILE   (WIN_LEVEL_MEMB1_BASE_TILE + WIN_SIZE(LEVEL_MEMB))
-#define WIN_NAME_MEMB2_BASE_TILE      (WIN_HEALTHBAR_MEMB1_BASE_TILE + WIN_SIZE(HEALTHBAR_MEMB))
+#define WIN_NAME_MEMB2_BASE_TILE      (WIN_HEALTHBOX_MEMB1_BASE_TILE + WIN_SIZE(HEALTHBOX_MEMB))
 #define WIN_LEVEL_MEMB2_BASE_TILE     (WIN_NAME_MEMB2_BASE_TILE + WIN_SIZE(NAME_MEMB))
 #define WIN_HP_MEMB2_BASE_TILE        (WIN_LEVEL_MEMB2_BASE_TILE + WIN_SIZE(LEVEL_MEMB))
-#define WIN_HEALTHBAR_MEMB2_BASE_TILE (WIN_HP_MEMB2_BASE_TILE + WIN_SIZE(HP_MEMB))
+#define WIN_HEALTHBOX_MEMB2_BASE_TILE (WIN_HP_MEMB2_BASE_TILE + WIN_SIZE(HP_MEMB))
 #define WIN_COMMENT_MEMB2_BASE_TILE   (WIN_LEVEL_MEMB2_BASE_TILE + WIN_SIZE(LEVEL_MEMB))
-#define WIN_NAME_MEMB3_BASE_TILE      (WIN_HEALTHBAR_MEMB2_BASE_TILE + WIN_SIZE(HEALTHBAR_MEMB))
+#define WIN_NAME_MEMB3_BASE_TILE      (WIN_HEALTHBOX_MEMB2_BASE_TILE + WIN_SIZE(HEALTHBOX_MEMB))
 #define WIN_LEVEL_MEMB3_BASE_TILE     (WIN_NAME_MEMB3_BASE_TILE + WIN_SIZE(NAME_MEMB))
 #define WIN_HP_MEMB3_BASE_TILE        (WIN_LEVEL_MEMB3_BASE_TILE + WIN_SIZE(LEVEL_MEMB))
-#define WIN_HEALTHBAR_MEMB3_BASE_TILE (WIN_HP_MEMB3_BASE_TILE + WIN_SIZE(HP_MEMB))
+#define WIN_HEALTHBOX_MEMB3_BASE_TILE (WIN_HP_MEMB3_BASE_TILE + WIN_SIZE(HP_MEMB))
 #define WIN_COMMENT_MEMB3_BASE_TILE   (WIN_LEVEL_MEMB3_BASE_TILE + WIN_SIZE(LEVEL_MEMB))
-#define WIN_NAME_MEMB4_BASE_TILE      (WIN_HEALTHBAR_MEMB3_BASE_TILE + WIN_SIZE(HEALTHBAR_MEMB))
+#define WIN_NAME_MEMB4_BASE_TILE      (WIN_HEALTHBOX_MEMB3_BASE_TILE + WIN_SIZE(HEALTHBOX_MEMB))
 #define WIN_LEVEL_MEMB4_BASE_TILE     (WIN_NAME_MEMB4_BASE_TILE + WIN_SIZE(NAME_MEMB))
 #define WIN_HP_MEMB4_BASE_TILE        (WIN_LEVEL_MEMB4_BASE_TILE + WIN_SIZE(LEVEL_MEMB))
-#define WIN_HEALTHBAR_MEMB4_BASE_TILE (WIN_HP_MEMB4_BASE_TILE + WIN_SIZE(HP_MEMB))
+#define WIN_HEALTHBOX_MEMB4_BASE_TILE (WIN_HP_MEMB4_BASE_TILE + WIN_SIZE(HP_MEMB))
 #define WIN_COMMENT_MEMB4_BASE_TILE   (WIN_LEVEL_MEMB4_BASE_TILE + WIN_SIZE(LEVEL_MEMB))
-#define WIN_NAME_MEMB5_BASE_TILE      (WIN_HEALTHBAR_MEMB4_BASE_TILE + WIN_SIZE(HEALTHBAR_MEMB))
+#define WIN_NAME_MEMB5_BASE_TILE      (WIN_HEALTHBOX_MEMB4_BASE_TILE + WIN_SIZE(HEALTHBOX_MEMB))
 #define WIN_LEVEL_MEMB5_BASE_TILE     (WIN_NAME_MEMB5_BASE_TILE + WIN_SIZE(NAME_MEMB))
 #define WIN_HP_MEMB5_BASE_TILE        (WIN_LEVEL_MEMB5_BASE_TILE + WIN_SIZE(LEVEL_MEMB))
-#define WIN_HEALTHBAR_MEMB5_BASE_TILE (WIN_HP_MEMB5_BASE_TILE + WIN_SIZE(HP_MEMB))
+#define WIN_HEALTHBOX_MEMB5_BASE_TILE (WIN_HP_MEMB5_BASE_TILE + WIN_SIZE(HP_MEMB))
 #define WIN_COMMENT_MEMB5_BASE_TILE   (WIN_LEVEL_MEMB5_BASE_TILE + WIN_SIZE(LEVEL_MEMB))
 
 static const WindowTemplate sMemberWindowTemplates[] = {
@@ -172,14 +172,14 @@ static const WindowTemplate sMemberWindowTemplates[] = {
         .palette = 0,
         .baseTile = WIN_HP_MEMB0_BASE_TILE,
     },
-    [WIN_TEMPLATE_HEALTHBAR_MEMB0] = {
+    [WIN_TEMPLATE_HEALTHBOX_MEMB0] = {
         .bgLayer = BG_LAYER_MAIN_1,
         .tilemapLeft = 8,
         .tilemapTop = 3,
-        .width = WIN_HEALTHBAR_MEMB_W,
-        .height = WIN_HEALTHBAR_MEMB_H,
+        .width = WIN_HEALTHBOX_MEMB_W,
+        .height = WIN_HEALTHBOX_MEMB_H,
         .palette = 3,
-        .baseTile = WIN_HEALTHBAR_MEMB0_BASE_TILE,
+        .baseTile = WIN_HEALTHBOX_MEMB0_BASE_TILE,
     },
     [WIN_TEMPLATE_COMMENT_MEMB0] = {
         .bgLayer = BG_LAYER_MAIN_1,
@@ -217,14 +217,14 @@ static const WindowTemplate sMemberWindowTemplates[] = {
         .palette = 0,
         .baseTile = WIN_HP_MEMB1_BASE_TILE,
     },
-    [WIN_TEMPLATE_HEALTHBAR_MEMB1] = {
+    [WIN_TEMPLATE_HEALTHBOX_MEMB1] = {
         .bgLayer = BG_LAYER_MAIN_1,
         .tilemapLeft = 24,
         .tilemapTop = 4,
-        .width = WIN_HEALTHBAR_MEMB_W,
-        .height = WIN_HEALTHBAR_MEMB_H,
+        .width = WIN_HEALTHBOX_MEMB_W,
+        .height = WIN_HEALTHBOX_MEMB_H,
         .palette = 4,
-        .baseTile = WIN_HEALTHBAR_MEMB1_BASE_TILE,
+        .baseTile = WIN_HEALTHBOX_MEMB1_BASE_TILE,
     },
     [WIN_TEMPLATE_COMMENT_MEMB1] = {
         .bgLayer = BG_LAYER_MAIN_1,
@@ -262,14 +262,14 @@ static const WindowTemplate sMemberWindowTemplates[] = {
         .palette = 0,
         .baseTile = WIN_HP_MEMB2_BASE_TILE,
     },
-    [WIN_TEMPLATE_HEALTHBAR_MEMB2] = {
+    [WIN_TEMPLATE_HEALTHBOX_MEMB2] = {
         .bgLayer = BG_LAYER_MAIN_1,
         .tilemapLeft = 8,
         .tilemapTop = 9,
-        .width = WIN_HEALTHBAR_MEMB_W,
-        .height = WIN_HEALTHBAR_MEMB_H,
+        .width = WIN_HEALTHBOX_MEMB_W,
+        .height = WIN_HEALTHBOX_MEMB_H,
         .palette = 5,
-        .baseTile = WIN_HEALTHBAR_MEMB2_BASE_TILE,
+        .baseTile = WIN_HEALTHBOX_MEMB2_BASE_TILE,
     },
     [WIN_TEMPLATE_COMMENT_MEMB2] = {
         .bgLayer = BG_LAYER_MAIN_1,
@@ -307,14 +307,14 @@ static const WindowTemplate sMemberWindowTemplates[] = {
         .palette = 0,
         .baseTile = WIN_HP_MEMB3_BASE_TILE,
     },
-    [WIN_TEMPLATE_HEALTHBAR_MEMB3] = {
+    [WIN_TEMPLATE_HEALTHBOX_MEMB3] = {
         .bgLayer = BG_LAYER_MAIN_1,
         .tilemapLeft = 24,
         .tilemapTop = 10,
-        .width = WIN_HEALTHBAR_MEMB_W,
-        .height = WIN_HEALTHBAR_MEMB_H,
+        .width = WIN_HEALTHBOX_MEMB_W,
+        .height = WIN_HEALTHBOX_MEMB_H,
         .palette = 6,
-        .baseTile = WIN_HEALTHBAR_MEMB3_BASE_TILE,
+        .baseTile = WIN_HEALTHBOX_MEMB3_BASE_TILE,
     },
     [WIN_TEMPLATE_COMMENT_MEMB3] = {
         .bgLayer = BG_LAYER_MAIN_1,
@@ -352,14 +352,14 @@ static const WindowTemplate sMemberWindowTemplates[] = {
         .palette = 0,
         .baseTile = WIN_HP_MEMB4_BASE_TILE,
     },
-    [WIN_TEMPLATE_HEALTHBAR_MEMB4] = {
+    [WIN_TEMPLATE_HEALTHBOX_MEMB4] = {
         .bgLayer = BG_LAYER_MAIN_1,
         .tilemapLeft = 8,
         .tilemapTop = 15,
-        .width = WIN_HEALTHBAR_MEMB_W,
-        .height = WIN_HEALTHBAR_MEMB_H,
+        .width = WIN_HEALTHBOX_MEMB_W,
+        .height = WIN_HEALTHBOX_MEMB_H,
         .palette = 7,
-        .baseTile = WIN_HEALTHBAR_MEMB4_BASE_TILE,
+        .baseTile = WIN_HEALTHBOX_MEMB4_BASE_TILE,
     },
     [WIN_TEMPLATE_COMMENT_MEMB4] = {
         .bgLayer = BG_LAYER_MAIN_1,
@@ -397,14 +397,14 @@ static const WindowTemplate sMemberWindowTemplates[] = {
         .palette = 0,
         .baseTile = WIN_HP_MEMB5_BASE_TILE,
     },
-    [WIN_TEMPLATE_HEALTHBAR_MEMB5] = {
+    [WIN_TEMPLATE_HEALTHBOX_MEMB5] = {
         .bgLayer = BG_LAYER_MAIN_1,
         .tilemapLeft = 24,
         .tilemapTop = 16,
-        .width = WIN_HEALTHBAR_MEMB_W,
-        .height = WIN_HEALTHBAR_MEMB_H,
+        .width = WIN_HEALTHBOX_MEMB_W,
+        .height = WIN_HEALTHBOX_MEMB_H,
         .palette = 8,
-        .baseTile = WIN_HEALTHBAR_MEMB5_BASE_TILE,
+        .baseTile = WIN_HEALTHBOX_MEMB5_BASE_TILE,
     },
     [WIN_TEMPLATE_COMMENT_MEMB5] = {
         .bgLayer = BG_LAYER_MAIN_1,
@@ -442,23 +442,23 @@ static const WindowTemplate sMemberWindowTemplates[] = {
         .palette = 0,
         .baseTile = WIN_HP_MEMB1_BASE_TILE,
     },
-    [WIN_TEMPLATE_HEALTHBAR_MEMB1_MULTI] = {
+    [WIN_TEMPLATE_HEALTHBOX_MEMB1_MULTI] = {
         .bgLayer = BG_LAYER_MAIN_1,
         .tilemapLeft = 24,
         .tilemapTop = 4,
-        .width = WIN_HEALTHBAR_MEMB_W,
-        .height = WIN_HEALTHBAR_MEMB_H,
+        .width = WIN_HEALTHBOX_MEMB_W,
+        .height = WIN_HEALTHBOX_MEMB_H,
         .palette = 4,
-        .baseTile = WIN_HEALTHBAR_MEMB1_BASE_TILE,
+        .baseTile = WIN_HEALTHBOX_MEMB1_BASE_TILE,
     },
     [WIN_TEMPLATE_COMMENT_MEMB1_MULTI] = {
         .bgLayer = BG_LAYER_MAIN_1,
         .tilemapLeft = 24,
         .tilemapTop = 4,
-        .width = WIN_HEALTHBAR_MEMB_W,
-        .height = WIN_HEALTHBAR_MEMB_H,
+        .width = WIN_HEALTHBOX_MEMB_W,
+        .height = WIN_HEALTHBOX_MEMB_H,
         .palette = 4,
-        .baseTile = WIN_HEALTHBAR_MEMB1_BASE_TILE,
+        .baseTile = WIN_HEALTHBOX_MEMB1_BASE_TILE,
     },
     [WIN_TEMPLATE_NAME_MEMB3_MULTI] = {
         .bgLayer = BG_LAYER_MAIN_1,
@@ -487,23 +487,23 @@ static const WindowTemplate sMemberWindowTemplates[] = {
         .palette = 0,
         .baseTile = WIN_HP_MEMB3_BASE_TILE,
     },
-    [WIN_TEMPLATE_HEALTHBAR_MEMB3_MULTI] = {
+    [WIN_TEMPLATE_HEALTHBOX_MEMB3_MULTI] = {
         .bgLayer = BG_LAYER_MAIN_1,
         .tilemapLeft = 24,
         .tilemapTop = 10,
-        .width = WIN_HEALTHBAR_MEMB_W,
-        .height = WIN_HEALTHBAR_MEMB_H,
+        .width = WIN_HEALTHBOX_MEMB_W,
+        .height = WIN_HEALTHBOX_MEMB_H,
         .palette = 6,
-        .baseTile = WIN_HEALTHBAR_MEMB3_BASE_TILE,
+        .baseTile = WIN_HEALTHBOX_MEMB3_BASE_TILE,
     },
     [WIN_TEMPLATE_COMMENT_MEMB3_MULTI] = {
         .bgLayer = BG_LAYER_MAIN_1,
         .tilemapLeft = 24,
         .tilemapTop = 4,
-        .width = WIN_HEALTHBAR_MEMB_W,
-        .height = WIN_HEALTHBAR_MEMB_H,
+        .width = WIN_HEALTHBOX_MEMB_W,
+        .height = WIN_HEALTHBOX_MEMB_H,
         .palette = 4,
-        .baseTile = WIN_HEALTHBAR_MEMB1_BASE_TILE,
+        .baseTile = WIN_HEALTHBOX_MEMB1_BASE_TILE,
     },
     [WIN_TEMPLATE_NAME_MEMB5_MULTI] = {
         .bgLayer = BG_LAYER_MAIN_1,
@@ -532,23 +532,23 @@ static const WindowTemplate sMemberWindowTemplates[] = {
         .palette = 0,
         .baseTile = WIN_HP_MEMB5_BASE_TILE,
     },
-    [WIN_TEMPLATE_HEALTHBAR_MEMB5_MULTI] = {
+    [WIN_TEMPLATE_HEALTHBOX_MEMB5_MULTI] = {
         .bgLayer = BG_LAYER_MAIN_1,
         .tilemapLeft = 24,
         .tilemapTop = 16,
-        .width = WIN_HEALTHBAR_MEMB_W,
-        .height = WIN_HEALTHBAR_MEMB_H,
+        .width = WIN_HEALTHBOX_MEMB_W,
+        .height = WIN_HEALTHBOX_MEMB_H,
         .palette = 8,
-        .baseTile = WIN_HEALTHBAR_MEMB5_BASE_TILE,
+        .baseTile = WIN_HEALTHBOX_MEMB5_BASE_TILE,
     },
     [WIN_TEMPLATE_COMMENT_MEMB5_MULTI] = {
         .bgLayer = BG_LAYER_MAIN_1,
         .tilemapLeft = 24,
         .tilemapTop = 4,
-        .width = WIN_HEALTHBAR_MEMB_W,
-        .height = WIN_HEALTHBAR_MEMB_H,
+        .width = WIN_HEALTHBOX_MEMB_W,
+        .height = WIN_HEALTHBOX_MEMB_H,
         .palette = 4,
-        .baseTile = WIN_HEALTHBAR_MEMB1_BASE_TILE,
+        .baseTile = WIN_HEALTHBOX_MEMB1_BASE_TILE,
     }
 };
 
@@ -577,7 +577,7 @@ enum {
 #define WIN_TEACH_MOVE_W        12
 #define WIN_TEACH_MOVE_H        8
 
-#define WIN_CANCEL_BUTTON_BASE_TILE  (WIN_HEALTHBAR_MEMB5_BASE_TILE + WIN_SIZE(HEALTHBAR_MEMB))
+#define WIN_CANCEL_BUTTON_BASE_TILE  (WIN_HEALTHBOX_MEMB5_BASE_TILE + WIN_SIZE(HEALTHBOX_MEMB))
 #define WIN_CONFIRM_BUTTON_BASE_TILE (WIN_CANCEL_BUTTON_BASE_TILE + WIN_SIZE(CANCEL_BUTTON))
 #define WIN_SHORT_MESSAGE_BASE_TILE  (WIN_CONFIRM_BUTTON_BASE_TILE + WIN_SIZE(CONFIRM_BUTTON))
 #define WIN_MEDIUM_MESSAGE_BASE_TILE (WIN_SHORT_MESSAGE_BASE_TILE + WIN_SIZE(SHORT_MESSAGE))
@@ -961,9 +961,9 @@ static void PartyMenu_PrintMemberMaxHP(PartyMenuApplication *application, u8 slo
     Window_ScheduleCopyToVRAM(window);
 }
 
-void PartyMenu_DrawMemberHealthbar(PartyMenuApplication *application, u8 slot)
+void PartyMenu_DrawMemberHealthbox(PartyMenuApplication *application, u8 slot)
 {
-    Window *window = &application->windows[PARTY_MENU_WIN_HEALTHBAR_MEMB0 + slot * PARTY_MENU_WIN_NUM_PER_MEMBER];
+    Window *window = &application->windows[PARTY_MENU_WIN_HEALTHBOX_MEMB0 + slot * PARTY_MENU_WIN_NUM_PER_MEMBER];
     switch (HealthBar_Color(application->partyMembers[slot].curHP, application->partyMembers[slot].maxHP, 48)) {
     case BARCOLOR_EMPTY:
         Window_ScheduleCopyToVRAM(window);
@@ -995,14 +995,14 @@ void PartyMenu_DrawMemberPanelData(PartyMenuApplication *application, u8 slot)
     Window_FillTilemap(&application->windows[PARTY_MENU_WIN_NAME_MEMB0 + slot * PARTY_MENU_WIN_NUM_PER_MEMBER], 0);
     Window_FillTilemap(&application->windows[PARTY_MENU_WIN_LEVEL_MEMB0 + slot * PARTY_MENU_WIN_NUM_PER_MEMBER], 0);
     Window_FillTilemap(&application->windows[PARTY_MENU_WIN_HP_MEMB0 + slot * PARTY_MENU_WIN_NUM_PER_MEMBER], 0);
-    Window_FillTilemap(&application->windows[PARTY_MENU_WIN_HEALTHBAR_MEMB0 + slot * PARTY_MENU_WIN_NUM_PER_MEMBER], 0);
+    Window_FillTilemap(&application->windows[PARTY_MENU_WIN_HEALTHBOX_MEMB0 + slot * PARTY_MENU_WIN_NUM_PER_MEMBER], 0);
     PartyMenu_PrintMemberName(application, slot);
 
     if (application->partyMembers[slot].isEgg == TRUE) {
         Window_ScheduleCopyToVRAM(&application->windows[PARTY_MENU_WIN_NAME_MEMB0 + slot * PARTY_MENU_WIN_NUM_PER_MEMBER]);
         Window_ScheduleCopyToVRAM(&application->windows[PARTY_MENU_WIN_LEVEL_MEMB0 + slot * PARTY_MENU_WIN_NUM_PER_MEMBER]);
         Window_ScheduleCopyToVRAM(&application->windows[PARTY_MENU_WIN_HP_MEMB0 + slot * PARTY_MENU_WIN_NUM_PER_MEMBER]);
-        Window_ScheduleCopyToVRAM(&application->windows[PARTY_MENU_WIN_HEALTHBAR_MEMB0 + slot * PARTY_MENU_WIN_NUM_PER_MEMBER]);
+        Window_ScheduleCopyToVRAM(&application->windows[PARTY_MENU_WIN_HEALTHBOX_MEMB0 + slot * PARTY_MENU_WIN_NUM_PER_MEMBER]);
         return;
     }
 
@@ -1010,7 +1010,7 @@ void PartyMenu_DrawMemberPanelData(PartyMenuApplication *application, u8 slot)
     PartyMenu_PrintMemberLevel(application, slot);
     PartyMenu_PrintMemberCurrentHP(application, slot);
     PartyMenu_PrintMemberMaxHP(application, slot);
-    PartyMenu_DrawMemberHealthbar(application, slot);
+    PartyMenu_DrawMemberHealthbox(application, slot);
 }
 
 void PartyMenu_LoadMemberWindowTiles(PartyMenuApplication *application, u8 slot)
@@ -1018,7 +1018,7 @@ void PartyMenu_LoadMemberWindowTiles(PartyMenuApplication *application, u8 slot)
     Window_LoadTiles(&application->windows[PARTY_MENU_WIN_NAME_MEMB0 + slot * PARTY_MENU_WIN_NUM_PER_MEMBER]);
     Window_LoadTiles(&application->windows[PARTY_MENU_WIN_LEVEL_MEMB0 + slot * PARTY_MENU_WIN_NUM_PER_MEMBER]);
     Window_LoadTiles(&application->windows[PARTY_MENU_WIN_HP_MEMB0 + slot * PARTY_MENU_WIN_NUM_PER_MEMBER]);
-    Window_LoadTiles(&application->windows[PARTY_MENU_WIN_HEALTHBAR_MEMB0 + slot * PARTY_MENU_WIN_NUM_PER_MEMBER]);
+    Window_LoadTiles(&application->windows[PARTY_MENU_WIN_HEALTHBOX_MEMB0 + slot * PARTY_MENU_WIN_NUM_PER_MEMBER]);
 }
 
 void PartyMenu_CopyMemberWindowToVRAM(PartyMenuApplication *application, u8 slot)
@@ -1026,7 +1026,7 @@ void PartyMenu_CopyMemberWindowToVRAM(PartyMenuApplication *application, u8 slot
     Window_ClearAndScheduleCopyToVRAM(&application->windows[PARTY_MENU_WIN_NAME_MEMB0 + slot * PARTY_MENU_WIN_NUM_PER_MEMBER]);
     Window_ClearAndScheduleCopyToVRAM(&application->windows[PARTY_MENU_WIN_LEVEL_MEMB0 + slot * PARTY_MENU_WIN_NUM_PER_MEMBER]);
     Window_ClearAndScheduleCopyToVRAM(&application->windows[PARTY_MENU_WIN_HP_MEMB0 + slot * PARTY_MENU_WIN_NUM_PER_MEMBER]);
-    Window_ClearAndScheduleCopyToVRAM(&application->windows[PARTY_MENU_WIN_HEALTHBAR_MEMB0 + slot * PARTY_MENU_WIN_NUM_PER_MEMBER]);
+    Window_ClearAndScheduleCopyToVRAM(&application->windows[PARTY_MENU_WIN_HEALTHBOX_MEMB0 + slot * PARTY_MENU_WIN_NUM_PER_MEMBER]);
 }
 
 void PartyMenu_PrintMemberComment_CanUseEvoItem(PartyMenuApplication *application, u8 slot)

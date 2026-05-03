@@ -108,12 +108,12 @@ enum SummaryPageState {
 #define FILLED_HEART_BASE_TILE 0x12C
 #define APPEAL_HEARTS_Y        47
 
-#define HEALTHBAR_BASE_X           24
-#define HEALTHBAR_Y                6
-#define GREEN_HEALTHBAR_BASE_TILE  0xC0
-#define YELLOW_HEALTHBAR_BASE_TILE 0xE0
-#define RED_HEALTHBAR_BASE_TILE    0x100
-#define HEALTHBAR_TILES_MAX        6
+#define HEALTHBOX_BASE_X           24
+#define HEALTHBOX_Y                6
+#define GREEN_HEALTHBOX_BASE_TILE  0xC0
+#define YELLOW_HEALTHBOX_BASE_TILE 0xE0
+#define RED_HEALTHBOX_BASE_TILE    0x100
+#define HEALTHBOX_TILES_MAX        6
 #define PALETTE_SLOT_10_MASK       0xA000
 
 #define EXPBAR_BASE_X    23
@@ -1431,27 +1431,27 @@ static void DrawHealthBar(PokemonSummaryScreen *summaryScreen)
     case BARCOLOR_MAX:
     case BARCOLOR_GREEN:
     case BARCOLOR_EMPTY:
-        baseTile = GREEN_HEALTHBAR_BASE_TILE | PALETTE_SLOT_10_MASK;
+        baseTile = GREEN_HEALTHBOX_BASE_TILE | PALETTE_SLOT_10_MASK;
         break;
     case BARCOLOR_YELLOW:
-        baseTile = YELLOW_HEALTHBAR_BASE_TILE | PALETTE_SLOT_10_MASK;
+        baseTile = YELLOW_HEALTHBOX_BASE_TILE | PALETTE_SLOT_10_MASK;
         break;
     case BARCOLOR_RED:
-        baseTile = RED_HEALTHBAR_BASE_TILE | PALETTE_SLOT_10_MASK;
+        baseTile = RED_HEALTHBOX_BASE_TILE | PALETTE_SLOT_10_MASK;
         break;
     }
 
     u8 pixelCount = App_PixelCount(summaryScreen->monData.curHP, summaryScreen->monData.maxHP, 48);
     u16 tile;
 
-    for (u8 i = 0; i < HEALTHBAR_TILES_MAX; i++) {
+    for (u8 i = 0; i < HEALTHBOX_TILES_MAX; i++) {
         if (pixelCount >= 8) {
             tile = baseTile + 8;
         } else {
             tile = baseTile + pixelCount;
         }
 
-        Bg_FillTilemapRect(summaryScreen->bgConfig, BG_LAYER_MAIN_3, tile, HEALTHBAR_BASE_X + i, HEALTHBAR_Y, 1, 1, TILEMAP_FILL_VAL_INCLUDES_PALETTE);
+        Bg_FillTilemapRect(summaryScreen->bgConfig, BG_LAYER_MAIN_3, tile, HEALTHBOX_BASE_X + i, HEALTHBOX_Y, 1, 1, TILEMAP_FILL_VAL_INCLUDES_PALETTE);
 
         if (pixelCount < 8) {
             pixelCount = 0;

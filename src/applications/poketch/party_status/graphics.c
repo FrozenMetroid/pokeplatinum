@@ -24,13 +24,13 @@
 #define POKE_ICON_TILE_COUNT 16
 #define POKE_ICON_SIZE_BYTES (POKE_ICON_TILE_COUNT * TILE_SIZE_4BPP)
 
-#define HEALTHBAR_WIDTH_TILES 8
-#define HEALTHBAR_SEGMENTS    ((HEALTHBAR_WIDTH_TILES * TILE_WIDTH_PIXELS) / 2)
+#define HEALTHBOX_WIDTH_TILES 8
+#define HEALTHBOX_SEGMENTS    ((HEALTHBOX_WIDTH_TILES * TILE_WIDTH_PIXELS) / 2)
 
-static void DrawHealthbars(PartyStatusGraphics *graphics, const PartyStatus *partyData, u32 offset);
-static void DrawHealthbarBorders(Window *window, PartyStatusGraphics *graphics);
-static void FillHealthbars(Window *hpBar, u32 hpBarFill);
-static u32 GetHealthbarFillAmount(u32 currentHp, u32 maxHp);
+static void DrawHealthboxs(PartyStatusGraphics *graphics, const PartyStatus *partyData, u32 offset);
+static void DrawHealthboxBorders(Window *window, PartyStatusGraphics *graphics);
+static void FillHealthboxs(Window *hpBar, u32 hpBarFill);
+static u32 GetHealthboxFillAmount(u32 currentHp, u32 maxHp);
 static void UnloadSprites(PartyStatusGraphics *graphics);
 static void SetupItemSprites(PartyStatusGraphics *graphics, const PartyStatus *partyData);
 static void SetupMonIconSprites(PartyStatusGraphics *graphics, const PartyStatus *partyData);
@@ -155,7 +155,7 @@ static void Task_DrawAppScreen(SysTask *task, void *taskMan)
     PoketchGraphics_LoadActivePalette(0, 0);
 
     graphics->hpBarBaseTile = bgTileCount;
-    DrawHealthbars(graphics, graphics->partyData, bgTileCount);
+    DrawHealthboxs(graphics, graphics->partyData, bgTileCount);
     Bg_CopyTilemapBufferToVRAM(graphics->bgConfig, BG_LAYER_SUB_2);
 
     PoketchTask_FillPaletteFromActivePaletteSlot(15, 1);
@@ -169,7 +169,7 @@ static void Task_DrawAppScreen(SysTask *task, void *taskMan)
     EndTask(taskMan);
 }
 
-static void DrawHealthbars(PartyStatusGraphics *graphics, const PartyStatus *partyData, u32 offset)
+static void DrawHealthboxs(PartyStatusGraphics *graphics, const PartyStatus *partyData, u32 offset)
 {
     static const struct {
         u16 x;
@@ -185,17 +185,17 @@ static void DrawHealthbars(PartyStatusGraphics *graphics, const PartyStatus *par
 
     for (int slot = 0; slot < partyData->partyCount; slot++) {
         Window_Init(&graphics->hpBarWindows[slot]);
-        Window_Add(graphics->bgConfig, &graphics->hpBarWindows[slot], BG_LAYER_SUB_2, hpBarCorners[slot].x, hpBarCorners[slot].y, HEALTHBAR_WIDTH_TILES, 1, 0, offset + slot * HEALTHBAR_WIDTH_TILES);
+        Window_Add(graphics->bgConfig, &graphics->hpBarWindows[slot], BG_LAYER_SUB_2, hpBarCorners[slot].x, hpBarCorners[slot].y, HEALTHBOX_WIDTH_TILES, 1, 0, offset + slot * HEALTHBOX_WIDTH_TILES);
         Window_PutToTilemap(&graphics->hpBarWindows[slot]);
 
-        DrawHealthbarBorders(&graphics->hpBarWindows[slot], graphics);
-        FillHealthbars(&graphics->hpBarWindows[slot], GetHealthbarFillAmount(partyData->mons[slot].currentHp, partyData->mons[slot].maxHp));
+        DrawHealthboxBorders(&graphics->hpBarWindows[slot], graphics);
+        FillHealthboxs(&graphics->hpBarWindows[slot], GetHealthboxFillAmount(partyData->mons[slot].currentHp, partyData->mons[slot].maxHp));
     }
 
     graphics->partyCount = partyData->partyCount;
 }
 
-static void DrawHealthbarBorders(Window *window, PartyStatusGraphics *graphics)
+static void DrawHealthboxBorders(Window *window, PartyStatusGraphics *graphics)
 {
     Bg_FillTilemapRect(graphics->bgConfig, BG_LAYER_SUB_2, 1, window->tilemapLeft - 1, window->tilemapTop - 1, 1, 1, 0);
     Bg_FillTilemapRect(graphics->bgConfig, BG_LAYER_SUB_2, 2, window->tilemapLeft, window->tilemapTop - 1, window->width, 1, 0);
@@ -209,9 +209,9 @@ static void DrawHealthbarBorders(Window *window, PartyStatusGraphics *graphics)
     Bg_FillTilemapRect(graphics->bgConfig, BG_LAYER_SUB_2, BG_TILE_FLIP_V | BG_TILE_FLIP_H | 1, window->tilemapLeft + window->width, window->tilemapTop + window->height, 1, 1, 0);
 }
 
-static void FillHealthbars(Window *hpBar, u32 hpBarFill)
+static void FillHealthboxs(Window *hpBar, u32 hpBarFill)
 {
-    Window_FillRectWithColor(hpBar, 4, 0, 0, HEALTHBAR_WIDTH_TILES * TILE_WIDTH_PIXELS, TILE_HEIGHT_PIXELS);
+    Window_FillRectWithColor(hpBar, 4, 0, 0, HEALTHBOX_WIDTH_TILES * TILE_WIDTH_PIXELS, TILE_HEIGHT_PIXELS);
 
     if (hpBarFill) {
         Window_FillRectWithColor(hpBar, 15, 0, 0, hpBarFill, TILE_HEIGHT_PIXELS);
@@ -220,7 +220,7 @@ static void FillHealthbars(Window *hpBar, u32 hpBarFill)
     Window_LoadTiles(hpBar);
 }
 
-static u32 GetHealthbarFillAmount(u32 currentHp, u32 maxHp)
+static u32 GetHealthboxFillAmount(u32 currentHp, u32 maxHp)
 {
     u32 width;
 
@@ -229,15 +229,15 @@ static u32 GetHealthbarFillAmount(u32 currentHp, u32 maxHp)
     }
 
     if (currentHp == maxHp) {
-        return HEALTHBAR_WIDTH_TILES * TILE_WIDTH_PIXELS;
+        return HEALTHBOX_WIDTH_TILES * TILE_WIDTH_PIXELS;
     }
 
-    width = (((currentHp << FX32_SHIFT) / maxHp) * HEALTHBAR_SEGMENTS) >> FX32_SHIFT;
+    width = (((currentHp << FX32_SHIFT) / maxHp) * HEALTHBOX_SEGMENTS) >> FX32_SHIFT;
 
     if (width == 0) { // if HP isn't 0, add a pixel to the bar even if calculated width is 0
         width = 1;
-    } else if (width == HEALTHBAR_SEGMENTS) { // if HP isn't full, remove a pixel from the bar even if calculated with is max
-        width = HEALTHBAR_SEGMENTS - 1;
+    } else if (width == HEALTHBOX_SEGMENTS) { // if HP isn't full, remove a pixel from the bar even if calculated with is max
+        width = HEALTHBOX_SEGMENTS - 1;
     }
 
     return width * 2;
@@ -434,7 +434,7 @@ static void Task_RedrawAppScreen(SysTask *task, void *taskMan)
 
     SetupItemSprites(graphics, partyData);
     SetupMonIconSprites(graphics, partyData);
-    DrawHealthbars(graphics, partyData, graphics->hpBarBaseTile);
+    DrawHealthboxs(graphics, partyData, graphics->hpBarBaseTile);
 
     Bg_CopyTilemapBufferToVRAM(graphics->bgConfig, BG_LAYER_SUB_2);
 

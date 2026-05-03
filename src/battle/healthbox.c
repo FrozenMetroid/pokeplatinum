@@ -14,6 +14,7 @@
 
 #include "assert.h"
 #include "bg_window.h"
+#include "debug.h"
 #include "font_special_chars.h"
 #include "heap.h"
 #include "math_util.h"
@@ -82,33 +83,33 @@ typedef struct {
 enum HealthBoxPart {
     HEALTHBOX_PART_HP_H = 0,
     HEALTHBOX_PART_HP_P,
-    HEALTHBOX_PART_HP_GREEN_FILL_0,
-    HEALTHBOX_PART_HP_GREEN_FILL_1,
-    HEALTHBOX_PART_HP_GREEN_FILL_2,
-    HEALTHBOX_PART_HP_GREEN_FILL_3,
-    HEALTHBOX_PART_HP_GREEN_FILL_4,
-    HEALTHBOX_PART_HP_GREEN_FILL_5,
-    HEALTHBOX_PART_HP_GREEN_FILL_6,
-    HEALTHBOX_PART_HP_GREEN_FILL_7,
-    HEALTHBOX_PART_HP_GREEN_FILL_8,
-    HEALTHBOX_PART_HP_YELLOW_FILL_0,
-    HEALTHBOX_PART_HP_YELLOW_FILL_1,
-    HEALTHBOX_PART_HP_YELLOW_FILL_2,
-    HEALTHBOX_PART_HP_YELLOW_FILL_3,
-    HEALTHBOX_PART_HP_YELLOW_FILL_4,
-    HEALTHBOX_PART_HP_YELLOW_FILL_5,
-    HEALTHBOX_PART_HP_YELLOW_FILL_6,
-    HEALTHBOX_PART_HP_YELLOW_FILL_7,
-    HEALTHBOX_PART_HP_YELLOW_FILL_8,
-    HEALTHBOX_PART_HP_RED_FILL_0,
-    HEALTHBOX_PART_HP_RED_FILL_1,
-    HEALTHBOX_PART_HP_RED_FILL_2,
-    HEALTHBOX_PART_HP_RED_FILL_3,
-    HEALTHBOX_PART_HP_RED_FILL_4,
-    HEALTHBOX_PART_HP_RED_FILL_5,
-    HEALTHBOX_PART_HP_RED_FILL_6,
-    HEALTHBOX_PART_HP_RED_FILL_7,
-    HEALTHBOX_PART_HP_RED_FILL_8,
+    HEALTHBOX_PART_GREEN_FILL_0,
+    HEALTHBOX_PART_GREEN_FILL_1,
+    HEALTHBOX_PART_GREEN_FILL_2,
+    HEALTHBOX_PART_GREEN_FILL_3,
+    HEALTHBOX_PART_GREEN_FILL_4,
+    HEALTHBOX_PART_GREEN_FILL_5,
+    HEALTHBOX_PART_GREEN_FILL_6,
+    HEALTHBOX_PART_GREEN_FILL_7,
+    HEALTHBOX_PART_GREEN_FILL_8,
+    HEALTHBOX_PART_YELLOW_FILL_0,
+    HEALTHBOX_PART_YELLOW_FILL_1,
+    HEALTHBOX_PART_YELLOW_FILL_2,
+    HEALTHBOX_PART_YELLOW_FILL_3,
+    HEALTHBOX_PART_YELLOW_FILL_4,
+    HEALTHBOX_PART_YELLOW_FILL_5,
+    HEALTHBOX_PART_YELLOW_FILL_6,
+    HEALTHBOX_PART_YELLOW_FILL_7,
+    HEALTHBOX_PART_YELLOW_FILL_8,
+    HEALTHBOX_PART_RED_FILL_0,
+    HEALTHBOX_PART_RED_FILL_1,
+    HEALTHBOX_PART_RED_FILL_2,
+    HEALTHBOX_PART_RED_FILL_3,
+    HEALTHBOX_PART_RED_FILL_4,
+    HEALTHBOX_PART_RED_FILL_5,
+    HEALTHBOX_PART_RED_FILL_6,
+    HEALTHBOX_PART_RED_FILL_7,
+    HEALTHBOX_PART_RED_FILL_8,
     HEALTHBOX_PART_EXP_FILL_0,
     HEALTHBOX_PART_EXP_FILL_1,
     HEALTHBOX_PART_EXP_FILL_2,
@@ -161,7 +162,7 @@ enum HealthBoxPart {
 };
 
 static s32 HealthBox_DrawGauge(HealthBox *healthbox, enum HealthBoxGaugeType gaugeType);
-static s32 UpdateGauge(s32 max, s32 cur, s32 diff, s32 *temp, u8 size, u16 fillOffset);
+static s32 UpdateGauge(s32 max, s32 cur, s32 diff, s32 *temp, u8 size, u16 fillOffset, enum HealthBoxGaugeType gaugeType);
 static u8 FillCells(s32 max, s32 cur, s32 diff, s32 *temp, u8 *cells, u8 cellNum);
 static u32 CalcGaugeFill(s32 curVal, s32 diff, s32 maxVal, u8 gaugeSize);
 static const u8 *GetHealthBoxPartsTile(enum HealthBoxPart part);
@@ -860,7 +861,7 @@ void ov16_0226737C(HealthBox *healthbox)
     }
 }
 
-void HealthBox_CalcHP(HealthBox *healthbox, int damage) // TODO: all calls pass in damage from healthbox, pls fix.
+void HealthBox_CalcHP(HealthBox *healthbox, int damage)
 {
     healthbox->hpTemp = S32_MIN;
 
@@ -1381,7 +1382,7 @@ static s32 HealthBox_DrawGauge(HealthBox *healthbox, enum HealthBoxGaugeType gau
     s32 fillOffset;
 
     if (gaugeType == HEALTHBOX_GAUGE_HP) {
-        result = UpdateGauge(healthbox->maxHP, healthbox->curHP, healthbox->damage, &healthbox->hpTemp, HEALTHBOX_HP_CELL_COUNT, 1);
+        result = UpdateGauge(healthbox->maxHP, healthbox->curHP, healthbox->damage, &healthbox->hpTemp, HEALTHBOX_HP_CELL_COUNT, 0xFFFF, gaugeType);
     } else {
         fillOffset = CalcGaugeFill(healthbox->curExp, healthbox->expReward, healthbox->maxExp, HEALTHBOX_EXP_CELL_COUNT);
 
@@ -1390,7 +1391,7 @@ static s32 HealthBox_DrawGauge(HealthBox *healthbox, enum HealthBoxGaugeType gau
         }
 
         fillOffset = abs(healthbox->expReward / fillOffset);
-        result = UpdateGauge(healthbox->maxExp, healthbox->curExp, healthbox->expReward, &healthbox->expTemp, HEALTHBOX_EXP_CELL_COUNT, fillOffset);
+        result = UpdateGauge(healthbox->maxExp, healthbox->curExp, healthbox->expReward, &healthbox->expTemp, HEALTHBOX_EXP_CELL_COUNT, fillOffset, gaugeType);
     }
 
     if (gaugeType != HEALTHBOX_GAUGE_HP || healthbox->numberMode != TRUE) {
@@ -1428,14 +1429,14 @@ static void DrawGauge(HealthBox *healthbox, u8 gaugeType)
 
         switch (barColor) {
         case BARCOLOR_GREEN:
-            part = HEALTHBOX_PART_HP_GREEN_FILL_0;
+            part = HEALTHBOX_PART_GREEN_FILL_0;
             break;
         case BARCOLOR_YELLOW:
-            part = HEALTHBOX_PART_HP_YELLOW_FILL_0;
+            part = HEALTHBOX_PART_YELLOW_FILL_0;
             break;
         case BARCOLOR_RED:
         default:
-            part = HEALTHBOX_PART_HP_RED_FILL_0;
+            part = HEALTHBOX_PART_RED_FILL_0;
             break;
         }
 
@@ -1477,18 +1478,34 @@ static void DrawGauge(HealthBox *healthbox, u8 gaugeType)
  * @brief Update the pixels of a gauge based on the calculated
  * change in the current value of a gauge.
  *
- * @param cur       Current value of the gauge
- * @param diff      Change to be applied to the current value
- * @param max       Max value of the gauge
- * @param size      Size of the gauge, in squares of fill
- * @param temp      Temporary value stored in the gauge
- * @return          Number of pixels to be filled
+ * @param cur           Current value of the gauge
+ * @param diff          Change to be applied to the current value
+ * @param max           Max value of the gauge
+ * @param size          Size of the gauge, in squares of fill
+ * @param temp          Temporary value stored in the gauge -- how much damage taken/recovered or EXP to give
+ * @param fillOffset    By how much the HP/EXP should be changed per frame
+ * @return              Number of pixels to be filled
  */
-static s32 UpdateGauge(s32 max, s32 cur, s32 diff, s32 *temp, u8 size, u16 fillOffset)
+static s32 UpdateGauge(s32 max, s32 cur, s32 diff, s32 *temp, u8 size, u16 fillOffset, enum HealthBoxGaugeType gaugeType)
 {
+    // fillOffset = constant passed in but we're about to adjust it to deplete the HP fast
+
     s32 updated, final, ratio;
 
-    u8 corrected = size * HEALTHBOX_NAME_BLOCK_COUNT_X;
+    if (gaugeType == HEALTHBOX_GAUGE_HP) {
+        fillOffset = (max + 99) / 100;
+        fillOffset = fillOffset + (fillOffset % cur);
+    } else {
+        // nothing here until exp bar is figured out
+    }
+
+    #ifdef DEBUG_FASTER_HP_BARS
+    EmulatorLog("UpdateGauge Step 1: max: %u, cur: %u, diff: %u, temp: %u, size: %u, fillOffset: %u", max, cur, diff, *temp, size, fillOffset);
+    #endif
+    u8 corrected = size * HEALTHBOX_NAME_BLOCK_COUNT_X; // 6 * 8 = 48 for HP bar, 12 * 8 = 96 for EXP bar
+    #ifdef DEBUG_FASTER_HP_BARS
+    EmulatorLog("UpdateGauge Step 2: corrected: %u", corrected);
+    #endif
 
     if (*temp == S32_MIN) {
         if (max < corrected) {
@@ -1497,25 +1514,42 @@ static s32 UpdateGauge(s32 max, s32 cur, s32 diff, s32 *temp, u8 size, u16 fillO
             *temp = cur;
         }
     }
+    #ifdef DEBUG_FASTER_HP_BARS
+    EmulatorLog("UpdateGauge Step 3: temp after initialization check: %u", *temp);
+    #endif
+    
+    updated = cur - diff; // how much HP we should be at after applying the damage/heal
+    #ifdef DEBUG_FASTER_HP_BARS
+    EmulatorLog("UpdateGauge Step 4: updated (cur - diff): %u", updated);
+    #endif
 
-    updated = cur - diff;
-
+    // if the updated HP is less than 0, set it to 0. If it's more than max HP, set it to max HP.
     if (updated < 0) {
         updated = 0;
     } else if (updated > max) {
         updated = max;
     }
+    #ifdef DEBUG_FASTER_HP_BARS
+    EmulatorLog("UpdateGauge Step 5: updated after bounds check: %u", updated);
+    #endif
 
+    // if the gauge was fully depleted/filled?
     if (max < corrected) {
         if (updated == (*temp >> 8) && (*temp & 0xff) == 0) {
             return -1;
         }
     } else {
         if (updated == *temp) {
+            // break out here if the HP bar is already at the correct number of pixels to fill, to avoid doing unnecessary calculations and updates
+            #ifdef DEBUG_FASTER_HP_BARS
+            EmulatorLog("UpdateGauge Step 5.1: early exit check passed, returning -1");
+            #endif
             return -1;
         }
     }
-
+    #ifdef DEBUG_FASTER_HP_BARS
+    EmulatorLog("UpdateGauge Step 6: temp after early exit check: %u", *temp);
+    #endif
     if (max < corrected) {
         ratio = max * 0x100 / corrected;
 
@@ -1540,7 +1574,7 @@ static s32 UpdateGauge(s32 max, s32 cur, s32 diff, s32 *temp, u8 size, u16 fillO
                 final = updated;
             }
         }
-    } else {
+    } else { // this is where the bar is changed if the max HP is 48 or more, which is the case for the EXP bar and for the HP bar of higher-level Pokemon
         if (diff < 0) {
             *temp += fillOffset;
 
@@ -1617,7 +1651,7 @@ static u8 FillCells(s32 max, s32 cur, s32 diff, s32 *temp, u8 *cells, u8 cellNum
  */
 static u32 CalcGaugeFill(s32 curVal, s32 diff, s32 maxVal, u8 gaugeSize)
 {
-    u8 gaugeSizePixels = gaugeSize * 8; // gauges have 8 pixels per "square" of fill
+    u8 gaugeSizePixels = gaugeSize * 8; // gauges have 8 pixels per "square" of fill; 12 * 8 = 96 for the exp bar
     s32 newVal = curVal - diff;
 
     if (newVal < 0) {

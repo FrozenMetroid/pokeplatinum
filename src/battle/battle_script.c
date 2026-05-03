@@ -113,8 +113,8 @@ static BOOL BtlCmd_BufferLocalMessage(BattleSystem *battleSys, BattleContext *ba
 static BOOL BtlCmd_PlayMoveAnimation(BattleSystem *battleSys, BattleContext *battleCtx);
 static BOOL BtlCmd_PlayMoveAnimationOnMons(BattleSystem *battleSys, BattleContext *battleCtx);
 static BOOL BtlCmd_FlickerMon(BattleSystem *battleSys, BattleContext *battleCtx);
-static BOOL BtlCmd_UpdateHealthBarValue(BattleSystem *battleSys, BattleContext *battleCtx);
-static BOOL BtlCmd_UpdateHealthBar(BattleSystem *battleSys, BattleContext *battleCtx);
+static BOOL BtlCmd_UpdateHealthBoxValue(BattleSystem *battleSys, BattleContext *battleCtx);
+static BOOL BtlCmd_UpdateHealthBox(BattleSystem *battleSys, BattleContext *battleCtx);
 static BOOL BtlCmd_TryFaintMon(BattleSystem *battleSys, BattleContext *battleCtx);
 static BOOL BtlCmd_PlayFaintAnimation(BattleSystem *battleSys, BattleContext *battleCtx);
 static BOOL BtlCmd_WaitButtonABTime(BattleSystem *battleSys, BattleContext *battleCtx);
@@ -1697,7 +1697,7 @@ static BOOL BtlCmd_FlickerMon(BattleSystem *battleSys, BattleContext *battleCtx)
  * @param battleCtx
  * @return FALSE
  */
-static BOOL BtlCmd_UpdateHealthBarValue(BattleSystem *battleSys, BattleContext *battleCtx)
+static BOOL BtlCmd_UpdateHealthBoxValue(BattleSystem *battleSys, BattleContext *battleCtx)
 {
     BattleScript_Iter(battleCtx, 1);
     int inBattler = BattleScript_Read(battleCtx);
@@ -1738,7 +1738,7 @@ static BOOL BtlCmd_UpdateHealthBarValue(BattleSystem *battleSys, BattleContext *
  * @param battleCtx
  * @return FALSE
  */
-static BOOL BtlCmd_UpdateHealthBar(BattleSystem *battleSys, BattleContext *battleCtx)
+static BOOL BtlCmd_UpdateHealthBox(BattleSystem *battleSys, BattleContext *battleCtx)
 {
     BattleScript_Iter(battleCtx, 1);
     int inBattler = BattleScript_Read(battleCtx);

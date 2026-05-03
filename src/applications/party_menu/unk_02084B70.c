@@ -536,7 +536,7 @@ static int PokemonSummaryScreen_UpdateHPBar(PartyMenuApplication *param0)
     PartyMenu_ClearMemberHP(application, application->currPartySlot);
     Window_FillTilemap(&application->windows[3 + application->currPartySlot * 5], 0);
     PartyMenu_PrintMemberCurrentHP(application, application->currPartySlot);
-    PartyMenu_DrawMemberHealthbar(application, application->currPartySlot);
+    PartyMenu_DrawMemberHealthbox(application, application->currPartySlot);
 
     if (application->partyMembers[application->currPartySlot].curHP == curHP) {
         PartyMenu_PrintLongMessage(application, PRINT_MESSAGE_PRELOADED, TRUE);
@@ -627,7 +627,7 @@ int sub_02085804(PartyMenuApplication *application)
         PartyMenu_ClearMemberHP(application, application->currPartySlot);
         Window_FillTilemap(&application->windows[3 + application->currPartySlot * 5], 0);
         PartyMenu_PrintMemberCurrentHP(application, application->currPartySlot);
-        PartyMenu_DrawMemberHealthbar(application, application->currPartySlot);
+        PartyMenu_DrawMemberHealthbox(application, application->currPartySlot);
 
         if (application->partyMembers[application->currPartySlot].curHP == curHP) {
             PartyMenu_PrintLongMessage(application, PRINT_MESSAGE_PRELOADED, TRUE);

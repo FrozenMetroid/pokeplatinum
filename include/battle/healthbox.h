@@ -98,9 +98,9 @@ typedef struct HealthBox {
  * @param gfxHandler
  * @param narc
  * @param palette
- * @param healthbox
+ * @param healthboxType
  */
-void HealthBox_LoadResources(SpriteSystem *spriteSys, SpriteManager *spriteMan, NARC *narc, PaletteData *palette, enum HealthBoxType healthbox);
+void HealthBox_LoadResources(SpriteSystem *spriteSys, SpriteManager *spriteMan, NARC *narc, PaletteData *palette, enum HealthBoxType healthboxType);
 ManagedSprite *HealthBox_DrawSprite(SpriteSystem *spriteSys, SpriteManager *spriteMan, int type);
 
 /**
