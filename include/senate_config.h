@@ -36,8 +36,9 @@ Shortened timer for Honey Tree
 
 /*
 Display the trainer's name as a sprite during the encounter effect
+Currently not working
 */
-//#define ENCOUNTER_EFFECT_TRAINER_NAME_AS_SPRITE
+// #define ENCOUNTER_EFFECT_TRAINER_NAME_AS_SPRITE
 
 
 
@@ -82,7 +83,6 @@ Display the trainer's name as a sprite during the encounter effect
 
 #define BATTLE_NORMALIZE_POWER_BOOST // Normalize started giving 20% boost in gen 7
 
-
 // The following are always applied because they deal with some subscripts and/or things that aren't easily configurable
 // Modernization:
 // 1) Storm Drain and Lightning Rod
@@ -90,9 +90,6 @@ Display the trainer's name as a sprite during the encounter effect
 // 3) Sturdy
 // 4) Modern Exp. Share
 // 5) Growth
-
-
-
 
 /*
     TO-DO ONCE MORE IS EXPOSED IN THE DECOMP

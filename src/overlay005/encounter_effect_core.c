@@ -2657,7 +2657,7 @@ static const GymLeaderEncounterParam sGymLeaderEncounterParams[9] = {
         .nameAnimIdx = leader_wake_name_anim_NANR,
     },
     {
-        .endX = 214 * FX32_ONE,
+        .endX = 208 * FX32_ONE,
         .trainerID = TRAINER_LEADER_MAYLENE,
         .trainerClass = TRAINER_CLASS_LEADER_MAYLENE,
         .unused = 1,
@@ -2689,7 +2689,7 @@ static const GymLeaderEncounterParam sGymLeaderEncounterParams[9] = {
         .nameAnimIdx = leader_fantina_name_anim_NANR,
     },
     {
-        .endX = 214 * FX32_ONE,
+        .endX = 208 * FX32_ONE,
         .trainerID = TRAINER_LEADER_CANDICE,
         .trainerClass = TRAINER_CLASS_LEADER_CANDICE,
         .unused = 1,
@@ -2705,7 +2705,7 @@ static const GymLeaderEncounterParam sGymLeaderEncounterParams[9] = {
         .nameAnimIdx = leader_candice_name_anim_NANR,
     },
     {
-        .endX = 214 * FX32_ONE,
+        .endX = 208 * FX32_ONE,
         .trainerID = TRAINER_LEADER_BYRON,
         .trainerClass = TRAINER_CLASS_LEADER_BYRON,
         .unused = 1,
@@ -2721,7 +2721,7 @@ static const GymLeaderEncounterParam sGymLeaderEncounterParams[9] = {
         .nameAnimIdx = leader_byron_name_anim_NANR,
     },
     {
-        .endX = 214 * FX32_ONE,
+        .endX = 208 * FX32_ONE,
         .trainerID = TRAINER_LEADER_VOLKNER,
         .trainerClass = TRAINER_CLASS_LEADER_VOLKNER,
         .unused = 1,
@@ -2813,7 +2813,11 @@ typedef struct {
     LinearInterpolationTaskFX32 unk_2C;
     UnkStruct_ov5_021DED04 *unk_40;
     UnkStruct_ov5_021DE47C unk_44;
+    #ifdef ENCOUNTER_EFFECT_TRAINER_NAME_AS_SPRITE
     UnkStruct_ov5_021DE5A4 spriteResources[3];
+    #else
+    UnkStruct_ov5_021DE5A4 spriteResources[2];
+    #endif
     Sprite *mugshotSprite;
     Sprite *nameSprite;
     UnkStruct_ov5_021E5128 unk_250;
@@ -2949,7 +2953,7 @@ static BOOL EncounterEffect_GymLeader(EncounterEffect *encEffect, enum HeapID he
 
         GXLayers_EngineAToggleLayers(GX_PLANEMASK_BG2, FALSE);
         #ifndef ENCOUNTER_EFFECT_TRAINER_NAME_AS_SPRITE
-        Window_Add(encEffect->fieldSystem->bgConfig, &leaderEncEffect->unk_2E0, BG_LAYER_MAIN_2, 0, 10, 32, 2, PLTT_2, 1);
+        Window_Add(encEffect->fieldSystem->bgConfig, &leaderEncEffect->unk_2E0, BG_LAYER_MAIN_2, 0, 10, 16, 2, PLTT_2, 1);
         Window_FillTilemap(&leaderEncEffect->unk_2E0, 0);
         trainerName = EncounterEffect_GetGymLeaderName(param->trainerID, heapID);
         Text_AddPrinterWithParamsAndColor(&leaderEncEffect->unk_2E0, FONT_SYSTEM, trainerName, 0, 0, TEXT_SPEED_INSTANT, TEXT_COLOR(1, 2, 0), NULL);
@@ -3048,7 +3052,7 @@ static BOOL EncounterEffect_GymLeader(EncounterEffect *encEffect, enum HeapID he
         encEffect->state++;
         break;
 
-    case 7:
+    case 7: // mugshot slide in update position
 
         v1 = QuadraticInterpolationTaskFX32_Update(&leaderEncEffect->unk_00);
         v3 = VecFx32_FromXYZ(
@@ -3061,7 +3065,7 @@ static BOOL EncounterEffect_GymLeader(EncounterEffect *encEffect, enum HeapID he
 
         break;
 
-    case 8:
+    case 8: // start name fade in
         LinearInterpolationTaskS32_Init(&leaderEncEffect->unk_18, 0, 16, 3);
         leaderEncEffect->unk_2F8 = 10;
         encEffect->state++;
@@ -3116,7 +3120,6 @@ static BOOL EncounterEffect_GymLeader(EncounterEffect *encEffect, enum HeapID he
         break;
 
     case 13:
-
         StartScreenFade(FADE_MAIN_ONLY, FADE_TYPE_BRIGHTNESS_OUT, FADE_TYPE_BRIGHTNESS_OUT, COLOR_WHITE, 15, 1, HEAP_ID_FIELD1);
         encEffect->state++;
         break;
@@ -3137,6 +3140,9 @@ static BOOL EncounterEffect_GymLeader(EncounterEffect *encEffect, enum HeapID he
         }
 
         Sprite_Delete(leaderEncEffect->mugshotSprite);
+        #ifdef ENCOUNTER_EFFECT_TRAINER_NAME_AS_SPRITE
+        Sprite_Delete(leaderEncEffect->nameSprite);
+        #endif
         ov5_021E519C(&leaderEncEffect->unk_250);
         ov5_021DE5A4(&leaderEncEffect->unk_44, &leaderEncEffect->spriteResources[0]);
         ov5_021DE5A4(&leaderEncEffect->unk_44, &leaderEncEffect->spriteResources[1]);
@@ -3145,7 +3151,9 @@ static BOOL EncounterEffect_GymLeader(EncounterEffect *encEffect, enum HeapID he
         #endif
         ov5_021DE4AC(&leaderEncEffect->unk_44);
 
+        #ifndef ENCOUNTER_EFFECT_TRAINER_NAME_AS_SPRITE
         Window_Remove(&leaderEncEffect->unk_2E0);
+        #endif
 
         GX_SetVisibleWnd(GX_WNDMASK_NONE);
 
