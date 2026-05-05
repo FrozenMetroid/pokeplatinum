@@ -342,10 +342,10 @@ BOOL WonderTrade_GetSpeciesAndForm(struct WonderTradeData *wonderTradeData, stru
 
     // now add some addiitonal rng to make stronger mons rarer
     u32 odds = LCRNG_RandMod(10);
-    u16 baseStatTotal = 0;
+    u16 baseStatTotal = 0, attribute = 0;
     for (int i = 0; i < 6; i++) { // determine the base stat total of the mon
         // BASE_HP through BASE_SPDEF is 0-5, so just use i
-        u8 attribute = SpeciesData_GetFormValue(wonderTradeData->species, wonderTradeData->form, i);
+        attribute = SpeciesData_GetFormValue(wonderTradeData->species, wonderTradeData->form, i);
         baseStatTotal += attribute;
     }
 
@@ -379,12 +379,14 @@ BOOL WonderTrade_GetSpeciesAndForm(struct WonderTradeData *wonderTradeData, stru
 
 void WonderTrade_GetAbility(struct WonderTradeData *wonderTradeData, u32 *taskState)
 {
-    u8 ability1 = SpeciesData_GetFormValue(wonderTradeData->species, wonderTradeData->form, SPECIES_DATA_ABILITY_1);
-    u8 ability2 = SpeciesData_GetFormValue(wonderTradeData->species, wonderTradeData->form, SPECIES_DATA_ABILITY_2);
-    wonderTradeData->ability = ability1; // default
-    if (LCRNG_RandMod(2) == 1 && ability2 != 0) { // 50% chance to be ability 2 if it exists, otherwise ability 1
-        wonderTradeData->ability = ability2;
-    }
+    // edit: none of this is needed because the ability is generated with Pokemon_InitWith and we don't have hidden abilities, so there is no additional logic needed
+
+    // u8 ability1 = SpeciesData_GetFormValue(wonderTradeData->species, wonderTradeData->form, SPECIES_DATA_ABILITY_1);
+    // u8 ability2 = SpeciesData_GetFormValue(wonderTradeData->species, wonderTradeData->form, SPECIES_DATA_ABILITY_2);
+    // wonderTradeData->ability = ability1; // default
+    // if (LCRNG_RandMod(2) == 1 && ability2 != 0) { // 50% chance to be ability 2 if it exists, otherwise ability 1
+    //     wonderTradeData->ability = ability2;
+    // }
 
     ++(*taskState);
 }
@@ -608,12 +610,9 @@ void WonderTrade_GetEVs(struct WonderTradeData *wonderTradeData, u32 *taskState)
             remainingEvs -= 1;
         }
     }
-    Pokemon_SetValue(wonderTradeData->receivedPokemon, MON_DATA_HP_EV,     &stats[0]);
-    Pokemon_SetValue(wonderTradeData->receivedPokemon, MON_DATA_ATK_EV,    &stats[1]);
-    Pokemon_SetValue(wonderTradeData->receivedPokemon, MON_DATA_DEF_EV,    &stats[2]);
-    Pokemon_SetValue(wonderTradeData->receivedPokemon, MON_DATA_SPEED_EV,  &stats[3]);
-    Pokemon_SetValue(wonderTradeData->receivedPokemon, MON_DATA_SPATK_EV,  &stats[4]);
-    Pokemon_SetValue(wonderTradeData->receivedPokemon, MON_DATA_SPDEF_EV,  &stats[5]);
+    for (i = 0; i < 6; i++) {
+        Pokemon_SetValue(wonderTradeData->receivedPokemon, MON_DATA_HP_EV + i, &stats[i]);
+    }
     Pokemon_CalcStats(wonderTradeData->receivedPokemon);
     ++(*taskState);
 }
