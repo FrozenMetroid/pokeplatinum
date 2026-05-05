@@ -56,6 +56,6 @@ u32 NPCTrade_GetSpecies(const NPCTradeData *data);
 u32 NPCTrade_GetRequestedSpecies(const NPCTradeData *data);
 void NPCTrade_ReceiveMon(FieldSystem *fieldSystem, NPCTradeData *data, int slot);
 void NPCTrade_FillAnimationTemplate(FieldSystem *fieldSystem, NPCTradeData *data, int slot, TradeAnimationTemplate *param3, Pokemon *givingMon, Pokemon *receivingMon);
-BOOL NPCTrade_ShouldEvolve(Pokemon *mon, u16 *targetSpecies, u8 *method, enum HeapID heapID);
+BOOL NPCTrade_ShouldEvolve(Pokemon *mon, u16 *targetSpecies, u16 *method, enum HeapID heapID);
 
 #endif // POKEPLATINUM_NPC_TRADE_H

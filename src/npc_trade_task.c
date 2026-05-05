@@ -109,3 +109,45 @@ void FieldTask_StartNPCTrade(FieldTask *task, NPCTradeData *npcTradeData, int pa
 
     FieldTask_InitCall(task, FieldTask_ProcessNPCTrade, taskEnv);
 }
+
+BOOL NPCTrade_ShouldEvolve(Pokemon *mon, u16 *targetSpecies, u16 *method, enum HeapID heapID)
+{
+    BOOL shouldEvolve = FALSE;
+
+    u16 species = Pokemon_GetValue(mon, MON_DATA_SPECIES, NULL);
+    u16 form = Pokemon_GetValue(mon, MON_DATA_FORM, NULL);
+    u16 item = Pokemon_GetValue(mon, MON_DATA_HELD_ITEM, NULL);
+
+    u16 speciesWithForm = Pokemon_GetFormNarcIndex(species, form);
+
+    struct SpeciesEvolution *evoTable = Heap_Alloc(heapID, MAX_EVOLUTIONS * sizeof(struct SpeciesEvolution));
+    NARC_ReadWholeMemberByIndexPair(evoTable, NARC_INDEX_POKETOOL__PERSONAL__EVO, speciesWithForm);
+
+    for (int i = 0; i < MAX_EVOLUTIONS; i++) {
+        if (evoTable[i].method == EVO_TRADE_WITH_HELD_ITEM && evoTable[i].param == item) {
+            shouldEvolve = TRUE;
+            item = ITEM_NONE;
+            Pokemon_SetValue(mon, MON_DATA_HELD_ITEM, &item); // remove the item from the mon
+            *targetSpecies = evoTable[i].targetSpecies;
+            *method = evoTable[i].method;
+            break;
+        } else if (evoTable[i].method == EVO_TRADE && item != ITEM_EVERSTONE) {
+            shouldEvolve = TRUE;
+            *targetSpecies = evoTable[i].targetSpecies;
+            *method = evoTable[i].method;
+            break;
+        }
+    }
+
+    Heap_Free(evoTable);
+    return shouldEvolve;
+}
+
+void NPCTrade_WaitEvolution(EvolutionData *evolutionData, u32 *subTaskState)
+{
+    if (Evolution_IsDone(evolutionData)) {
+        Evolution_Free(evolutionData);
+        Heap_Destroy(HEAP_ID_EVOLUTION);
+        ++(*subTaskState);
+    }
+}
