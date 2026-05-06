@@ -1431,6 +1431,7 @@ static u16 Shop_GetItemBPPrice(ShopMenu *shopMenu, u16 itemId)
         { ITEM_LINKING_CORD, 12},
         { ITEM_RARE_CANDY, 4},
         { ITEM_ABILITY_CAPSULE, 4},
+        { ITEM_ABILITY_PATCH, 12},
         { ITEM_BOTTLE_CAP, 8},
         { ITEM_GOLD_BOTTLE_CAP, 40},
         { ITEM_LUCKY_EGG, 12},

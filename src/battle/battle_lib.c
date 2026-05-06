@@ -6892,6 +6892,8 @@ int BattleSystem_CalcMoveDamage(BattleSystem *battleSys,
 
     battleType = BattleSystem_GetBattleType(battleSys);
 
+    int defenderPartnerAbility = Battler_Ability(battleCtx, BattleSystem_GetPartner(battleSys, defender)); // for friend guard
+
     // Assign power; prefer the input power (used by variable-power moves, e.g. Gyro Ball)
     if (inPower == 0) {
         movePower = MOVE_DATA(move).power;
@@ -7356,6 +7358,10 @@ int BattleSystem_CalcMoveDamage(BattleSystem *battleSys,
     if ((battleType & BATTLE_TYPE_DOUBLES)
         && MOVE_DATA(move).range == RANGE_ALL_ADJACENT
         && BattleSystem_CountAliveBattlers(battleSys, battleCtx, FALSE, defender) >= 2) {
+        damage = damage * 3 / 4;
+    }
+    if ((battleType & BATTLE_TYPE_DOUBLES)
+        && (defenderPartnerAbility == ABILITY_FRIEND_GUARD)) {
         damage = damage * 3 / 4;
     }
 

@@ -483,6 +483,26 @@ static BOOL CheckPatchShiny(const int chainCount)
     }
 }
 
+BOOL CheckPatchHiddenAbility(RadarChain *chain)
+{
+    int chainCount = chain->count;
+    
+    if (!chainCount) {
+        return FALSE;
+    }
+
+    int rate = 2000 - (chainCount * 200); // this means you need to reach a chain of 10 to have the highest chance of getting the hidden ability, which is 50%
+    if (rate < 2) {
+        rate = 2;
+    }
+
+    if (!LCRNG_RandMod(rate)) {
+        return TRUE;
+    } else {
+        return FALSE;
+    }
+}
+
 void RadarChain_Increment(FieldSystem *fieldSystem)
 {
     IncWithCap(&(fieldSystem->chain->count));

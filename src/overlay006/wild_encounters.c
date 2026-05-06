@@ -101,8 +101,8 @@ static BOOL TryGenerateGrassEncounter_DoubleBattle(FieldSystem *fieldSystem, Pok
 static BOOL TryGenerateSurfEncounter(FieldSystem *fieldSystem, Pokemon *param1, FieldBattleDTO *param2, EncounterSlot *param3, const WildEncounters_FieldParams *param4);
 static BOOL TryGenerateFishingEncounter(FieldSystem *fieldSystem, Pokemon *param1, FieldBattleDTO *param2, EncounterSlot *param3, const WildEncounters_FieldParams *param4, const int param5);
 static BOOL TryGenerateWildMon(Pokemon *firstPartyMon, const int fishingRodType, const WildEncounters_FieldParams *fieldParams, const EncounterSlot *encounterTable, const u8 encounterType, const int param5, FieldBattleDTO *param6);
-static BOOL CreateWildMon_FromRadarNoChain(FieldSystem *fieldSystem, Pokemon *param1, const WildEncounters_FieldParams *param2, const EncounterSlot *param3, const int param4, FieldBattleDTO *param5, const int param6, const int param7);
-static BOOL CreateWildMon_FromRadarKeepChain(const int species, const int level, const int partyDest, const BOOL isShiny, const u32 trainerId, const WildEncounters_FieldParams *fieldParams, Pokemon *mon, FieldBattleDTO *battleParams);
+static BOOL CreateWildMon_FromRadarNoChain(FieldSystem *fieldSystem, Pokemon *param1, const WildEncounters_FieldParams *param2, const EncounterSlot *param3, const int param4, FieldBattleDTO *param5, const int param6, const int param7, BOOL hasHiddenAbility);
+static BOOL CreateWildMon_FromRadarKeepChain(const int species, const int level, const int partyDest, const BOOL isShiny, const u32 trainerId, const WildEncounters_FieldParams *fieldParams, Pokemon *mon, FieldBattleDTO *battleParams, BOOL hasHiddenAbility);
 static u8 ModifyEncounterRateWithFieldParams(const BOOL isFishingEncounter, const u8 encounterRate, const WildEncounters_FieldParams *fieldParams, const u32 weatherEffect, Pokemon *unused);
 static void CreateWildSingleBattle(FieldSystem *fieldSystem, const BOOL param1, FieldBattleDTO **param2);
 static void WildEncounters_ReplaceGreatMarshDailyEncounters(FieldSystem *fieldSystem, const BOOL safariGameActive, const BOOL param2, EncounterSlot *encTable);
@@ -703,11 +703,13 @@ static BOOL TryGenerateGrassEncounter_WithRadar(FieldSystem *fieldSystem, Pokemo
 
         GetRadarMon(fieldSystem->chain, &species, &level);
 
+        BOOL hasHiddenAbility = CheckPatchHiddenAbility(fieldSystem->chain);
+
         if (radarData->preserveChain == 1) {
             TrainerInfo *v3 = SaveData_GetTrainerInfo(FieldSystem_GetSaveData(fieldSystem));
-            encounterSuccess = CreateWildMon_FromRadarKeepChain(species, level, 1, radarData->isShiny, TrainerInfo_ID(v3), encounterFieldParams, firstPartyMon, battleParams);
+            encounterSuccess = CreateWildMon_FromRadarKeepChain(species, level, 1, radarData->isShiny, TrainerInfo_ID(v3), encounterFieldParams, firstPartyMon, battleParams, hasHiddenAbility);
         } else {
-            encounterSuccess = CreateWildMon_FromRadarNoChain(fieldSystem, firstPartyMon, encounterFieldParams, encounterTable, 1, battleParams, species, level);
+            encounterSuccess = CreateWildMon_FromRadarNoChain(fieldSystem, firstPartyMon, encounterFieldParams, encounterTable, 1, battleParams, species, level, hasHiddenAbility);
         }
 
         if (encounterSuccess) {
@@ -982,7 +984,7 @@ static u8 GetWildMonLevel(const EncounterSlot *slot, const WildEncounters_FieldP
 
 // Creates a mon with a personality that will make it shiny, and complies with Cute Charm/Synchronize.
 // It only has to check one or the other, not both, because only one ability can be in effect at a time.
-static void CreateWildMonShinyWithGenderOrNature(const u16 species, const u8 level, const int partySlot, const u32 param3, const WildEncounters_FieldParams *encounterFieldParams, Pokemon *firstPartyMon, FieldBattleDTO *battleParams)
+static void CreateWildMonShinyWithGenderOrNature(const u16 species, const u8 level, const int partySlot, const u32 param3, const WildEncounters_FieldParams *encounterFieldParams, Pokemon *firstPartyMon, FieldBattleDTO *battleParams, BOOL hasHiddenAbility)
 {
     u8 firstMonGender;
     u8 firstMonNature;
@@ -1041,6 +1043,18 @@ static void CreateWildMonShinyWithGenderOrNature(const u16 species, const u8 lev
     }
 
     Pokemon_InitWith(newEncounter, species, level, INIT_IVS_RANDOM, TRUE, newEncounterPersonality, OTID_SET, encounterFieldParams->trainerID);
+    
+    if (hasHiddenAbility) {
+        SpeciesData *speciesData = Heap_Alloc(HEAP_ID_FIELD2, sizeof(SpeciesData));
+        SpeciesData_FromMonForm(species, Pokemon_GetValue(newEncounter, MON_DATA_FORM, NULL), speciesData);
+
+        u8 hiddenAbility = SpeciesData_GetValue(speciesData, SPECIES_DATA_HIDDEN_ABILITY);
+        if (hiddenAbility != ABILITY_NONE) {
+            Pokemon_SetValue(newEncounter, MON_DATA_ABILITY, &hiddenAbility);
+            Pokemon_SetValue(newEncounter, MON_DATA_HIDDEN_ABILITY_SET, &hasHiddenAbility);
+        }
+        Heap_Free(speciesData);
+    }
 
     GF_ASSERT(AddWildMonToParty(partySlot, encounterFieldParams, newEncounter, battleParams));
     Heap_Free(newEncounter);
@@ -1091,7 +1105,7 @@ void Array_ReturnHighestAndSecondHighestSlots(u8 array[6], u8 *highest, u8 *seco
     *secondHighest = candidates[LCRNG_RandMod(count)];
 }
 
-static void CreateWildMon(u16 species, u8 level, const int partyDest, const WildEncounters_FieldParams *encounterFieldParams, Pokemon *firstPartyMon, FieldBattleDTO *battleParams)
+static void CreateWildMon(u16 species, u8 level, const int partyDest, const WildEncounters_FieldParams *encounterFieldParams, Pokemon *firstPartyMon, FieldBattleDTO *battleParams, BOOL hasHiddenAbility)
 {
     Pokemon *newEncounter = Pokemon_New(HEAP_ID_FIELD2);
     Pokemon_Init(newEncounter);
@@ -1158,6 +1172,18 @@ static void CreateWildMon(u16 species, u8 level, const int partyDest, const Wild
     Pokemon_SetValue(newEncounter, statIds[secondHighest], &ev);
     #endif
 
+    if (hasHiddenAbility) {
+        SpeciesData *speciesData = Heap_Alloc(HEAP_ID_FIELD2, sizeof(SpeciesData));
+        SpeciesData_FromMonForm(species, Pokemon_GetValue(newEncounter, MON_DATA_FORM, NULL), speciesData);
+
+        u8 hiddenAbility = SpeciesData_GetValue(speciesData, SPECIES_DATA_HIDDEN_ABILITY);
+        if (hiddenAbility != ABILITY_NONE) {
+            Pokemon_SetValue(newEncounter, MON_DATA_ABILITY, &hiddenAbility);
+            Pokemon_SetValue(newEncounter, MON_DATA_HIDDEN_ABILITY_SET, &hasHiddenAbility);
+        }
+        Heap_Free(speciesData);
+    }
+
     GF_ASSERT(AddWildMonToParty(partyDest, encounterFieldParams, newEncounter, battleParams));
     Heap_Free(newEncounter);
 }
@@ -1222,27 +1248,27 @@ static BOOL TryGenerateWildMon(Pokemon *firstPartyMon, const int fishingRodType,
         return FALSE;
     }
 
-    CreateWildMon(encounterTable[encounterSlot].species, level, partyDest, encounterFieldParams, firstPartyMon, battleParams);
+    CreateWildMon(encounterTable[encounterSlot].species, level, partyDest, encounterFieldParams, firstPartyMon, battleParams, FALSE); // false, don't force hidden ability
     return TRUE;
 }
 
 // Forced to be the species of the chain.
-static BOOL CreateWildMon_FromRadarKeepChain(const int species, const int level, const int partyDest, const BOOL isShiny, const u32 trainerId, const WildEncounters_FieldParams *encounterFieldParams, Pokemon *mon, FieldBattleDTO *battleParams)
+static BOOL CreateWildMon_FromRadarKeepChain(const int species, const int level, const int partyDest, const BOOL isShiny, const u32 trainerId, const WildEncounters_FieldParams *encounterFieldParams, Pokemon *mon, FieldBattleDTO *battleParams, BOOL hasHiddenAbility)
 {
     GF_ASSERT(species != 0);
     u8 lvl = level;
 
     if (isShiny) {
-        CreateWildMonShinyWithGenderOrNature(species, lvl, partyDest, trainerId, encounterFieldParams, mon, battleParams);
+        CreateWildMonShinyWithGenderOrNature(species, lvl, partyDest, trainerId, encounterFieldParams, mon, battleParams, hasHiddenAbility);
     } else {
-        CreateWildMon(species, lvl, partyDest, encounterFieldParams, mon, battleParams);
+        CreateWildMon(species, lvl, partyDest, encounterFieldParams, mon, battleParams, hasHiddenAbility);
     }
 
     return TRUE;
 }
 
 // Generates new encounter slot, so may or may not break the chain.
-static BOOL CreateWildMon_FromRadarNoChain(FieldSystem *fieldSystem, Pokemon *mon, const WildEncounters_FieldParams *encounterFieldParams, const EncounterSlot *encounterTable, const int partyDest, FieldBattleDTO *battleParams, const int species, const int level)
+static BOOL CreateWildMon_FromRadarNoChain(FieldSystem *fieldSystem, Pokemon *mon, const WildEncounters_FieldParams *encounterFieldParams, const EncounterSlot *encounterTable, const int partyDest, FieldBattleDTO *battleParams, const int species, const int level, BOOL hasHiddenAbility)
 {
     u8 encounterSlot = 0;
 
@@ -1270,7 +1296,7 @@ static BOOL CreateWildMon_FromRadarNoChain(FieldSystem *fieldSystem, Pokemon *mo
         RadarChain_Clear(fieldSystem->chain);
     }
 
-    CreateWildMon(newSpecies, newLevel, partyDest, encounterFieldParams, mon, battleParams);
+    CreateWildMon(newSpecies, newLevel, partyDest, encounterFieldParams, mon, battleParams, hasHiddenAbility);
     return TRUE;
 }
 
@@ -1300,7 +1326,7 @@ void CreateWildMon_HoneyTree(FieldSystem *fieldSystem, FieldBattleDTO *battlePar
 
     HoneyTree_Unslather(fieldSystem);
     battleParams->battleStatusMask |= BATTLE_STATUS_HONEY_TREE;
-    CreateWildMon(species, level, 1, &encounterFieldParams, firstPartyMon, battleParams);
+    CreateWildMon(species, level, 1, &encounterFieldParams, firstPartyMon, battleParams, FALSE); // false, don't force hidden ability
 
     return;
 }
@@ -1313,7 +1339,7 @@ void CreateWildMon_Scripted(FieldSystem *fieldSystem, u16 species, u8 level, Fie
     WildEncounters_FieldParams encounterFieldParams;
     InitEncounterFieldParams(fieldSystem, firstPartyMon, NULL, &encounterFieldParams);
 
-    CreateWildMon(species, level, 1, &encounterFieldParams, firstPartyMon, battleParams);
+    CreateWildMon(species, level, 1, &encounterFieldParams, firstPartyMon, battleParams, FALSE); // false, don't force hidden ability
     return;
 }
 

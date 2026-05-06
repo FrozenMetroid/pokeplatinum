@@ -1015,14 +1015,14 @@
       ]
     },
     {
-      "id": "PartyMenu_Text_AbilityCapsuleFail",
+      "id": "PartyMenu_Text_AbilityChangeFail",
       "en_US": [
         "{STRVAR_1 1, 0, 0} cannot change\n",
         "its Ability!\r"
       ]
     },
     {
-      "id": "PartyMenu_Text_AbilityCapsuleSuccess",
+      "id": "PartyMenu_Text_AbilityChangeSuccess",
       "en_US": [
         "{STRVAR_1 1, 0, 0}’s Ability was\n",
         "changed to {STRVAR_1 8, 1, 0}!\r"

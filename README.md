@@ -29,7 +29,10 @@ Credits:
 - Infinite TMs and forgettable HMs
 - Use HMs without teaching the move
     Must have a Pokémon capable of using the move in your party, the associated Badge if there is one, and the HM in your Bag
-- Ability Capsule
+- Hidden Abilities
+    Use the Ability Patch or find them in the wild with Poké Radar chains!
+    Not all Pokémon have their Hidden Abilities due to those Abilities not being programmed
+- Ability Capsule and Ability Patch
 - Nature mints
 - Rocky Helmet
 - Eviolite
@@ -82,6 +85,7 @@ Additional Abilities:
     Rhyperior (inspired by it shooting Geodude out of its arms)
 - Prankster: Gives priority to status moves (Sand-Attack, Growl, etc.)
     Murkrow and Sableye
+- Friend Guard: Reduces damage done to allies by 25% (Cleffa and Clefairy)
 
 Ability Modernizations:
 - Lightning Rod
@@ -131,6 +135,7 @@ Miscellaneous Battle System Changes:
 - Mental Herb: Battle Frontier
 - Life Orb: Battle Frontier
 - Lucky Egg: Battle Frontier
+- Ability Patch: Battle Frontier
 
 # Encounters
 - The Pokédex accurately shows where Pokémon live

@@ -427,8 +427,8 @@ static void TrainerData_BuildParty(FieldBattleDTO *dto, int battler, enum HeapID
         // Explicit overrides from expanded record
         Pokemon_SetValue(mon, MON_DATA_HELD_ITEM, &data->itemno);
 
-        for (j = 0; j < 4; j++) {
-            if (data->moves[j] != 0) { // only set the move if it's specified, otherwise leave it as the default for the species
+        if (data->moves[0] != 0) { // only set the moves if the first one is specified, otherwise leave them as the default for the species
+            for (j = 0; j < 4; j++) {
                 Pokemon_SetMoveSlot(mon, data->moves[j], j);
             }
         }

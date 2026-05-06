@@ -2779,26 +2779,41 @@ static int ApplyItemEffectOnPokemon(PartyMenuApplication *app)
         return PARTY_MENU_STATE_SHOW_MESSAGE_THEN_NEXT_STATE;
     }
 
-    if (app->partyMenu->usedItemID == ITEM_ABILITY_CAPSULE /* || app->partyMenu->usedItemID == ITEM_ABILITY_CAPSULE*/) {
+    if (app->partyMenu->usedItemID == ITEM_ABILITY_CAPSULE || app->partyMenu->usedItemID == ITEM_ABILITY_PATCH) {
         Pokemon *mon = Party_GetPokemonBySlotIndex(app->partyMenu->party, app->currPartySlot);
         u16 species = Pokemon_GetValue(mon, MON_DATA_SPECIES, NULL);
         u8 form = Pokemon_GetValue(mon, MON_DATA_FORM, NULL);
         u8 ability1 = SpeciesData_GetFormValue(species, form, SPECIES_DATA_ABILITY_1);
         u8 ability2 = SpeciesData_GetFormValue(species, form, SPECIES_DATA_ABILITY_2);
+        u8 hiddenAbility = SpeciesData_GetFormValue(species, form, SPECIES_DATA_HIDDEN_ABILITY);
         u8 currentAbility = Pokemon_GetValue(mon, MON_DATA_ABILITY, NULL);
         String *msg;
         BOOL success = FALSE;
-        if (currentAbility == ability1 && ability2 != 0) {
-            Pokemon_SetValue(mon, MON_DATA_ABILITY, &ability2);
-            success = TRUE;
-        } else if (currentAbility == ability2) {
-            Pokemon_SetValue(mon, MON_DATA_ABILITY, &ability1);
-            success = TRUE;
-        } else {
-            msg = MessageLoader_GetNewString(app->messageLoader, PartyMenu_Text_AbilityCapsuleFail);
+        if (app->partyMenu->usedItemID == ITEM_ABILITY_PATCH) {
+            if (currentAbility == hiddenAbility) { // remove hidden ability
+                Pokemon_SetValue(mon, MON_DATA_ABILITY, &ability1);
+                Pokemon_SetValue(mon, MON_DATA_HIDDEN_ABILITY_SET, &success);
+                success = TRUE;
+            } else if (hiddenAbility != 0) { // set hidden ability
+                Pokemon_SetValue(mon, MON_DATA_ABILITY, &hiddenAbility);
+                success = TRUE;
+                Pokemon_SetValue(mon, MON_DATA_HIDDEN_ABILITY_SET, &success);
+            } else {
+                msg = MessageLoader_GetNewString(app->messageLoader, PartyMenu_Text_AbilityChangeFail);
+            }
+        } else { // ability capsule handling
+            if (currentAbility == ability1 && ability2 != 0) {
+                Pokemon_SetValue(mon, MON_DATA_ABILITY, &ability2);
+                success = TRUE;
+            } else if (currentAbility == ability2) {
+                Pokemon_SetValue(mon, MON_DATA_ABILITY, &ability1);
+                success = TRUE;
+            } else if (currentAbility == hiddenAbility) {
+                msg = MessageLoader_GetNewString(app->messageLoader, PartyMenu_Text_AbilityChangeFail);
+            }
         }
         if (success) {
-            msg = MessageLoader_GetNewString(app->messageLoader, PartyMenu_Text_AbilityCapsuleSuccess);
+            msg = MessageLoader_GetNewString(app->messageLoader, PartyMenu_Text_AbilityChangeSuccess);
             Bag_TryRemoveItem(app->partyMenu->bag, app->partyMenu->usedItemID, 1, HEAP_ID_PARTY_MENU);
         }
         StringTemplate_SetNickname(app->template, 0, &mon->box);
