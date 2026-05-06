@@ -129,7 +129,7 @@ BOOL FieldTask_WonderTrade(FieldTask *task)
             }
             break;
         case WONDER_TRADE_TASK_STATE_GENERATE_ABILITY:
-            WonderTrade_GetAbility(wonderTradeData, taskState);
+            WonderTrade_GetAbility(wonderTradeData, taskState); // just goes to the next state until hidden abilities get added
             break;
         case WONDER_TRADE_TASK_STATE_GENERATE_ITEM:
             WonderTrade_GetItem(wonderTradeData, taskState);
@@ -167,6 +167,7 @@ BOOL FieldTask_WonderTrade(FieldTask *task)
 
 BOOL WonderTrade_GetSpeciesAndForm(struct WonderTradeData *wonderTradeData, struct FieldSystem_t *fieldSystem)
 {
+    u16 speciesWithForm;
     int i;
 
     // generate a random mon before Uxie since everything after and including Uxie is off the table
@@ -248,9 +249,7 @@ BOOL WonderTrade_GetSpeciesAndForm(struct WonderTradeData *wonderTradeData, stru
         case SPECIES_ESPEON:
         case SPECIES_LEAFEON:
         case SPECIES_GLACEON:
-        // case SPECIES_FLAREON:
-        // case SPECIES_JOLTEON:
-        // Not necessary to include Vaporeon because it is right after Eevee in the national dex order and thus the regressive check works on it, but also, level 1 Vaporeon (and Jolteon and Flareon), are legal
+        // Not necessary to include the other three eeveelutions because they are all legal at level 1
             if (wonderTradeData->level < 2) { // Eevee needs to be at least level 2 to evolve into these
                 wonderTradeData->species = SPECIES_EEVEE;
             }
@@ -308,27 +307,12 @@ BOOL WonderTrade_GetSpeciesAndForm(struct WonderTradeData *wonderTradeData, stru
             break;
     }
 
-    // adjust species for personal narc if the forms have different data
-    switch (wonderTradeData->species) {
-        case SPECIES_WORMADAM:
-            if (wonderTradeData->form && wonderTradeData->form <= 2) {
-                wonderTradeData->species = (499 - 1) + wonderTradeData->form;
-            }
-            break;
-        case SPECIES_ROTOM:
-            if (wonderTradeData->form && wonderTradeData->form <= 4) {
-                wonderTradeData->species = (503 - 1) + wonderTradeData->form;
-            }
-            break;
-        default:
-            break;
-    }
-
     // check if need to regress the mon based on level -- for every other case
     for (i = 0; i < 2; i++) { // need to do this twice in case you roll a level 1 Pidgeot for example and simply regressing once isn't enough
 
         struct SpeciesEvolution *evoTable = Heap_Alloc(HEAP_ID_FIELD1, MAX_EVOLUTIONS * sizeof(struct SpeciesEvolution));
-        NARC_ReadWholeMemberByIndexPair(evoTable, NARC_INDEX_POKETOOL__PERSONAL__EVO, (wonderTradeData->species - 1));
+        speciesWithForm = Pokemon_GetFormNarcIndex(wonderTradeData->species, wonderTradeData->form);
+        NARC_ReadWholeMemberByIndexPair(evoTable, NARC_INDEX_POKETOOL__PERSONAL__EVO, (speciesWithForm - 1));
         // check to see if the previous evo table has an evolution that matches the generated species and if the method is level-based
         // Shedinja and the Hitmons are also level-based, but they are handled above
         if (evoTable[0].targetSpecies == wonderTradeData->species 
@@ -379,14 +363,19 @@ BOOL WonderTrade_GetSpeciesAndForm(struct WonderTradeData *wonderTradeData, stru
 
 void WonderTrade_GetAbility(struct WonderTradeData *wonderTradeData, u32 *taskState)
 {
-    // edit: none of this is needed because the ability is generated with Pokemon_InitWith and we don't have hidden abilities, so there is no additional logic needed
 
-    // u8 ability1 = SpeciesData_GetFormValue(wonderTradeData->species, wonderTradeData->form, SPECIES_DATA_ABILITY_1);
-    // u8 ability2 = SpeciesData_GetFormValue(wonderTradeData->species, wonderTradeData->form, SPECIES_DATA_ABILITY_2);
-    // wonderTradeData->ability = ability1; // default
-    // if (LCRNG_RandMod(2) == 1 && ability2 != 0) { // 50% chance to be ability 2 if it exists, otherwise ability 1
-    //     wonderTradeData->ability = ability2;
-    // }
+    #ifdef ADD_HIDDEN_ABILITIES
+    u8 ability1 = SpeciesData_GetFormValue(wonderTradeData->species, wonderTradeData->form, SPECIES_DATA_ABILITY_1);
+    u8 ability2 = SpeciesData_GetFormValue(wonderTradeData->species, wonderTradeData->form, SPECIES_DATA_ABILITY_2);
+    u8 hiddenAbility = SpeciesData_GetFormValue(wonderTradeData->species, wonderTradeData->form, SPECIES_DATA_HIDDEN_ABILITY);
+    u8 odds = LCRNG_RandMod(100);
+    wonderTradeData->ability = ability1; // default
+    if (odds <= 44 && ability2 != 0) { // 45% (0-44) chance to be ability 2 if it exists, otherwise ability 1
+        wonderTradeData->ability = ability2;
+    } else if (odds > 94 && hiddenAbility != 0) { // 5% chance (95, 96, 97, 98, 99) to be hidden ability if it exists, otherwise ability 1 or 2 depending on the first check
+        wonderTradeData->ability = hiddenAbility;
+    }
+    #endif
 
     ++(*taskState);
 }
@@ -433,7 +422,9 @@ void WonderTrade_GiveMon(struct WonderTradeData *wonderTradeData, struct FieldSy
     BoxPokemon_SetMetLocationAndDate(&mon->box, LocationNames_Text_WonderTrade, TRUE);
 
     Pokemon_SetValue(mon, MON_DATA_HELD_ITEM, &wonderTradeData->item);
-    Pokemon_SetValue(mon, MON_DATA_ABILITY, &wonderTradeData->ability);
+    #ifdef ADD_HIDDEN_ABILITIES
+    Pokemon_SetValue(mon, MON_DATA_ABILITY, &wonderTradeData->ability); // only use this line if hidden abilities are added because the default ability is already determined by the personality value generated in Pokemon_InitWith
+    #endif
     Pokemon_SetValue(mon, MON_DATA_FORM, &wonderTradeData->form);
     Pokemon_SetValue(mon, MON_DATA_POKEBALL, &wonderTradeData->ball);
 

@@ -63,8 +63,9 @@ typedef struct SpeciesData {
     u8 bodyColor : 7;
     u8 flipSprite : 1;
     // u16 padding;
-
     u32 tmLearnsetMasks[4]; // Bitflags for whether this pokemon can learn a TM
+    u32 hiddenAbility:8;
+    u32 padding:24;
 } SpeciesData;
 
 typedef struct SpeciesEvolution {

@@ -1111,8 +1111,8 @@ static u32 BoxPokemon_GetDataInternal(BoxPokemon *boxMon, enum PokemonDataParam 
         }
         break;
 
-    case MON_DATA_UNUSED_121:
-        result = monDataBlockC->unused;
+    case MON_DATA_HIDDEN_ABILITY_SET:
+        result = monDataBlockC->hiddenAbilitySet;
         break;
 
     case MON_DATA_MET_GAME:
@@ -1669,8 +1669,8 @@ static void BoxPokemon_SetDataInternal(BoxPokemon *boxMon, enum PokemonDataParam
         String_ToChars(value, monDataBlockC->nickname, NELEMS(monDataBlockC->nickname));
         break;
 
-    case MON_DATA_UNUSED_121:
-        monDataBlockC->unused = *u8Value;
+    case MON_DATA_HIDDEN_ABILITY_SET:
+        monDataBlockC->hiddenAbilitySet = *u8Value;
         break;
 
     case MON_DATA_MET_GAME:
@@ -2110,7 +2110,7 @@ static void BoxPokemon_IncreaseDataInternal(BoxPokemon *boxMon, enum PokemonData
     case MON_DATA_NICKNAME:
     case MON_DATA_NICKNAME_STRING:
     case MON_DATA_NICKNAME_STRING_AND_FLAG:
-    case MON_DATA_UNUSED_121:
+    case MON_DATA_HIDDEN_ABILITY_SET:
     case MON_DATA_MET_GAME:
     case MON_DATA_SUPER_COOL_RIBBON:
     case MON_DATA_SUPER_COOL_RIBBON_GREAT:
@@ -2281,6 +2281,9 @@ u32 SpeciesData_GetValue(SpeciesData *speciesData, enum SpeciesDataParam param)
         break;
     case SPECIES_DATA_TM_LEARNSET_MASK_4:
         result = speciesData->tmLearnsetMasks[3];
+        break;
+    case SPECIES_DATA_HIDDEN_ABILITY:
+        result = speciesData->hiddenAbility;
         break;
     }
 
