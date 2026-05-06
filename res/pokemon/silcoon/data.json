@@ -28,6 +28,7 @@
     "exp_rate": "EXP_RATE_MEDIUM_FAST",
     "egg_groups": [ "EGG_GROUP_BUG", "EGG_GROUP_BUG" ],
     "abilities": [ "ABILITY_SHED_SKIN", "ABILITY_SHELL_ARMOR" ],
+    "hiddenAbility": "ABILITY_NONE",
     "safari_flee_rate": 0,
     "body_color": "MON_COLOR_WHITE",
     "flip_sprite": false,

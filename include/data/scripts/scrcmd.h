@@ -857,6 +857,7 @@ ScriptCommand(SCRCMD_DEBUG_SETNATIONALDEXALLSEEN,                          ScrCm
 ScriptCommand(SCRCMD_DEBUG_GIVEALLPOKEMON,                                 ScrCmd_Debug_GiveAllPokemon)
 ScriptCommand(SCRCMD_DEBUG_REDUCEPOKEMONLEVEL,                             ScrCmd_Debug_ReducePokemonLevel)
 ScriptCommand(SCRCMD_WONDERTRADE,                                          ScrCmd_WonderTrade)
+ScriptCommand(SCRCMD_DEBUG_GETSPECIESDATA,                                 ScrCmd_Debug_GetSpeciesData)
 
 // clang-format on
 

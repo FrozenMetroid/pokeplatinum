@@ -7368,3 +7368,29 @@ static BOOL ScrCmd_WonderTrade(ScriptContext *ctx)
     FieldTask_InitCall(ctx->task, FieldTask_WonderTrade, taskEnv);
     return TRUE;
 }
+
+static BOOL ScrCmd_Debug_GetSpeciesData(ScriptContext *ctx)
+{
+    u8 slot = ScriptContext_GetVar(ctx);
+    u8 dataID = ScriptContext_GetVar(ctx);
+    u16 *destVar = ScriptContext_GetVarPointer(ctx);
+
+    Pokemon *mon = Party_GetPokemonBySlotIndex(SaveData_GetParty(ctx->fieldSystem->saveData), slot);
+    u16 species = Pokemon_GetValue(mon, MON_DATA_SPECIES, NULL);
+    u8 form = Pokemon_GetValue(mon, MON_DATA_FORM, NULL);
+
+    SpeciesData *speciesData = Heap_Alloc(HEAP_ID_FIELD2, sizeof(SpeciesData));
+    SpeciesData_LoadForm(species, form, speciesData);
+
+    if (dataID <= NUM_VALID_SPECIES_DATA)
+    {
+        *destVar = SpeciesData_GetValue(speciesData, dataID);
+    } 
+    else {
+        *destVar = 0xFFFF;
+    }
+    
+    Heap_Free(speciesData);
+
+    return FALSE;
+}

@@ -9,5 +9,6 @@ BOOL ScrCmd_Debug_SetAllTownsVisited(ScriptContext *ctx);
 BOOL ScrCmd_Debug_GiveAllPokemon(ScriptContext *ctx);
 BOOL ScrCmd_Debug_ReducePokemonLevel(ScriptContext *ctx);
 BOOL ScrCmd_WonderTrade(ScriptContext *ctx);
+BOOL ScrCmd_Debug_GetSpeciesData(ScriptContext *ctx);
 
 #endif // POKEPLATINUM_SCRCMD_H

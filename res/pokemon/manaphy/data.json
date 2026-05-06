@@ -28,6 +28,7 @@
     "exp_rate": "EXP_RATE_SLOW",
     "egg_groups": [ "EGG_GROUP_WATER_1", "EGG_GROUP_FAIRY" ],
     "abilities": [ "ABILITY_HYDRATION", "ABILITY_WATER_ABSORB" ],
+    "hiddenAbility": "ABILITY_NONE",
     "safari_flee_rate": 0,
     "body_color": "MON_COLOR_BLUE",
     "flip_sprite": false,

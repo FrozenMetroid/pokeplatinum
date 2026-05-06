@@ -517,14 +517,10 @@ static SpeciesData proc_personal(datafile_t *df) {
         .safariFleeRate = u8(".safari_flee_rate"),
 
         .tmLearnsetMasks = { 0 },
-        .hiddenAbility = ABILITY_NONE,
+        .hiddenAbility = enum_u8(".hiddenAbility", Ability),
     };
 
     proc_tmlearnset(df, &personal);
-
-    //if (u16(".hiddenAbility") == 0) {
-    //    personal.hiddenAbility = enum_u8(".hiddenAbility", Ability);
-    //}
     return personal;
 }
 

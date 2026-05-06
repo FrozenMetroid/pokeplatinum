@@ -28,6 +28,7 @@
     "exp_rate": "EXP_RATE_FLUCTUATING",
     "egg_groups": [ "EGG_GROUP_HUMAN_LIKE", "EGG_GROUP_HUMAN_LIKE" ],
     "abilities": [ "ABILITY_THICK_FAT", "ABILITY_GUTS" ],
+    "hiddenAbility": "ABILITY_NONE",
     "safari_flee_rate": 0,
     "body_color": "MON_COLOR_YELLOW",
     "flip_sprite": false,

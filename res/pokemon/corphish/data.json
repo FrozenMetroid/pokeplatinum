@@ -28,6 +28,7 @@
     "exp_rate": "EXP_RATE_FLUCTUATING",
     "egg_groups": [ "EGG_GROUP_WATER_1", "EGG_GROUP_WATER_3" ],
     "abilities": [ "ABILITY_HYPER_CUTTER", "ABILITY_SHELL_ARMOR" ],
+    "hiddenAbility": "ABILITY_NONE",
     "safari_flee_rate": 0,
     "body_color": "MON_COLOR_RED",
     "flip_sprite": false,

@@ -5072,6 +5072,13 @@
     .short \destVarForMessage
     .endm
 
+    .macro Debug_GetSpeciesData slot, dataID, destVar
+    .short SCRCMD_DEBUG_GETSPECIESDATA
+    .short \slot
+    .short \dataID
+    .short \destVar
+    .endm
+
 
 // CONVENIENCE MACROS
 

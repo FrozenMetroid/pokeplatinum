@@ -28,6 +28,7 @@
     "exp_rate": "EXP_RATE_FAST",
     "egg_groups": [ "EGG_GROUP_UNDISCOVERED", "EGG_GROUP_UNDISCOVERED" ],
     "abilities": [ "ABILITY_THICK_FAT", "ABILITY_HUGE_POWER" ],
+    "hiddenAbility": "ABILITY_NONE",
     "safari_flee_rate": 120,
     "body_color": "MON_COLOR_BLUE",
     "flip_sprite": false,

@@ -28,6 +28,7 @@
     "exp_rate": "EXP_RATE_SLOW",
     "egg_groups": [ "EGG_GROUP_BUG", "EGG_GROUP_WATER_3" ],
     "abilities": [ "ABILITY_BATTLE_ARMOR", "ABILITY_SNIPER" ],
+    "hiddenAbility": "ABILITY_NONE",
     "safari_flee_rate": 60,
     "body_color": "MON_COLOR_PURPLE",
     "flip_sprite": false,

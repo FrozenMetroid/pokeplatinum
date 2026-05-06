@@ -282,7 +282,6 @@ static void PostCaptureBoxPokemonProcessing(BoxPokemon *boxMon, TrainerInfo *par
 static BOOL CanBoxPokemonLearnTM(BoxPokemon *boxMon, u8 tmID);
 static void BoxPokemon_CalcAbility(BoxPokemon *boxMon);
 static void SpeciesData_LoadSpecies(int monSpecies, SpeciesData *speciesData);
-static void SpeciesData_LoadForm(int monSpecies, int monForm, SpeciesData *speciesData);
 static void LoadSpeciesEvolutions(int monSpecies, SpeciesEvolution speciesEvolution[MAX_EVOLUTIONS]);
 static void Pokemon_EncryptData(void *data, u32 bytes, u32 seed);
 static void Pokemon_DecryptData(void *data, u32 bytes, u32 seed);
@@ -4887,7 +4886,7 @@ static void SpeciesData_LoadSpecies(int monSpecies, SpeciesData *speciesData)
     NARC_ReadWholeMemberByIndexPair(speciesData, NARC_INDEX_POKETOOL__PERSONAL__PL_PERSONAL, monSpecies);
 }
 
-static void SpeciesData_LoadForm(int monSpecies, int monForm, SpeciesData *speciesData)
+void SpeciesData_LoadForm(int monSpecies, int monForm, SpeciesData *speciesData)
 {
     monSpecies = Pokemon_GetFormNarcIndex(monSpecies, monForm);
     NARC_ReadWholeMemberByIndexPair(speciesData, NARC_INDEX_POKETOOL__PERSONAL__PL_PERSONAL, monSpecies);

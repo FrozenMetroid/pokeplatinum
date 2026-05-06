@@ -949,4 +949,6 @@ void BoxPokemon_SetMetLocationAndDate(BoxPokemon *boxMon, int metLocation, int i
 
 int Pokemon_GetFormNarcIndex(int monSpecies, int monForm);
 
+void SpeciesData_LoadForm(int monSpecies, int monForm, SpeciesData *speciesData);
+
 #endif // POKEPLATINUM_POKEMON_H

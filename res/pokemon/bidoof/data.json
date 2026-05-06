@@ -28,6 +28,7 @@
     "exp_rate": "EXP_RATE_MEDIUM_FAST",
     "egg_groups": [ "EGG_GROUP_WATER_1", "EGG_GROUP_FIELD" ],
     "abilities": [ "ABILITY_SIMPLE", "ABILITY_UNAWARE" ],
+    "hiddenAbility": "ABILITY_NONE",
     "safari_flee_rate": 90,
     "body_color": "MON_COLOR_BROWN",
     "flip_sprite": false,

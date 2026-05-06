@@ -28,6 +28,7 @@
     "exp_rate": "EXP_RATE_SLOW",
     "egg_groups": [ "EGG_GROUP_GRASS", "EGG_GROUP_GRASS" ],
     "abilities": [ "ABILITY_LEVITATE", "ABILITY_STRONG_JAW" ],
+    "hiddenAbility": "ABILITY_NONE",
     "safari_flee_rate": 60,
     "body_color": "MON_COLOR_GREEN",
     "flip_sprite": false,

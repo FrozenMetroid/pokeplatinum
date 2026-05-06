@@ -28,6 +28,7 @@
     "exp_rate": "EXP_RATE_MEDIUM_FAST",
     "egg_groups": [ "EGG_GROUP_WATER_2", "EGG_GROUP_WATER_2" ],
     "abilities": [ "ABILITY_OBLIVIOUS", "ABILITY_ANTICIPATION" ],
+    "hiddenAbility": "ABILITY_NONE",
     "safari_flee_rate": 120,
     "body_color": "MON_COLOR_GRAY",
     "flip_sprite": false,
