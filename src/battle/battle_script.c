@@ -296,7 +296,7 @@ static BOOL BtlCmd_PrintBattleResultMessage(BattleSystem *battleSys, BattleConte
 static BOOL BtlCmd_PrintEscapeMessage(BattleSystem *battleSys, BattleContext *battleCtx);
 static BOOL BtlCmd_PrintForfeitMessage(BattleSystem *battleSys, BattleContext *battleCtx);
 static BOOL BtlCmd_CheckHoldOnWith1HP(BattleSystem *battleSys, BattleContext *battleCtx);
-static BOOL BtlCmd_TryRestoreStatusOnSwitch(BattleSystem *battleSys, BattleContext *battleCtx);
+static BOOL BtlCmd_TryRestoreStatusOrHPOnSwitch(BattleSystem *battleSys, BattleContext *battleCtx);
 static BOOL BtlCmd_CheckSubstitute(BattleSystem *battleSys, BattleContext *battleCtx);
 static BOOL BtlCmd_CheckIgnoreWeather(BattleSystem *battleSys, BattleContext *battleCtx);
 static BOOL BtlCmd_SetRandomTarget(BattleSystem *battleSys, BattleContext *battleCtx);
@@ -9156,6 +9156,7 @@ static BOOL BtlCmd_CheckHoldOnWith1HP(BattleSystem *battleSys, BattleContext *ba
 
 /**
  * @brief Try to restore the battler's status on switch-out.
+ * also handles Regenerator
  *
  * Inputs:
  * 1. The battler whose status should be restored.
@@ -9166,7 +9167,7 @@ static BOOL BtlCmd_CheckHoldOnWith1HP(BattleSystem *battleSys, BattleContext *ba
  * @param battleCtx
  * @return FALSE
  */
-static BOOL BtlCmd_TryRestoreStatusOnSwitch(BattleSystem *battleSys, BattleContext *battleCtx)
+static BOOL BtlCmd_TryRestoreStatusOrHPOnSwitch(BattleSystem *battleSys, BattleContext *battleCtx)
 {
     BattleScript_Iter(battleCtx, 1);
     int inBattler = BattleScript_Read(battleCtx);
@@ -9182,6 +9183,21 @@ static BOOL BtlCmd_TryRestoreStatusOnSwitch(BattleSystem *battleSys, BattleConte
             && Ability_ForbidsStatus(battleCtx, ability, status) == FALSE) {
             BattleScript_Iter(battleCtx, jumpNoStatusRestore);
         }
+        #ifdef BATTLE_ADD_REGENERATOR
+        if (ability == ABILITY_REGENERATOR) {
+            int hp = Pokemon_GetValue(mon, MON_DATA_HP, NULL);
+            int hpmax = Pokemon_GetValue(mon, MON_DATA_MAX_HP, NULL);
+
+            int hpdelta = hpmax / 3;
+
+            if ((hp + hpdelta) > hpmax)
+                hp = hpmax;
+            else
+                hp += hpdelta;
+
+            Pokemon_SetValue(mon, MON_DATA_HP, (u8 *)&hp);
+        }
+        #endif
     } else {
         BattleScript_Iter(battleCtx, jumpNoStatusRestore);
     }

@@ -956,6 +956,13 @@
         "Heals an ally’s\n",
         "status conditions."
       ]
+    },
+    {
+      "id": "pl_msg_00000612_00137",
+      "en_US": [
+        "Restores a little HP when\n",
+        "withdrawn from battle"
+      ]
     }
   ]
 }

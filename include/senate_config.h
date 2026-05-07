@@ -89,6 +89,8 @@ Currently not working
 
 #define BATTLE_ADD_CURSED_BODY
 
+#define BATTLE_ADD_REGENERATOR
+
 // The following are always applied because they deal with some subscripts and/or things that aren't easily configurable
 // Modernization:
 // 1) Storm Drain and Lightning Rod

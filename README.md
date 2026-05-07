@@ -98,6 +98,8 @@ Additional Abilities:
     Magnemite, Magneton, Magnezone, Staryu, Starmie
 - Cursed Body: 30% chance to disable a move used on the Pokémon
     Gastly, Haunter, Gengar
+- Regenerator: Restores 30% of max HP when switching out
+    Tangela and Tangrowth
 
 Ability Modernizations:
 - Lightning Rod

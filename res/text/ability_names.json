@@ -548,6 +548,10 @@
     {
       "id": "pl_msg_00000610_00136",
       "en_US": "Healer"
+    },
+    {
+      "id": "pl_msg_00000610_00137",
+      "en_US": "Regenerator"
     }
   ]
 }
