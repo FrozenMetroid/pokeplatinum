@@ -949,6 +949,13 @@
         "Restores HP if hit by a\n",
         "Ground-type move."
       ]
+    },
+    {
+      "id": "pl_msg_00000612_00136",
+      "en_US": [
+        "Heals an ally’s\n",
+        "status conditions."
+      ]
     }
   ]
 }

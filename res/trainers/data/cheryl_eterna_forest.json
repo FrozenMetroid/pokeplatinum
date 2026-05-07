@@ -17,8 +17,10 @@
             "moves": [
                 "MOVE_EGG_BOMB",
                 "MOVE_SOFTBOILED",
-                "MOVE_REFRESH"
+                "MOVE_REFRESH",
+                "MOVE_CHARM"
             ],
+            "ability": "ABILITY_HEALER",
             "iv_scale": 30,
             "ball_seal": 0
         }

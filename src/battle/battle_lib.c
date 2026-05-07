@@ -3678,6 +3678,19 @@ BOOL BattleSystem_TriggerTurnEndAbility(BattleSystem *battleSys, BattleContext *
             result = TRUE;
         }
         break;
+    #ifdef BATTLE_ADD_HEALER
+    case ABILITY_HEALER:
+        if ((battleCtx->battleMons[BATTLER_ALLY(battler)].status & MON_CONDITION_ANY)
+            && battleCtx->battleMons[BATTLER_ALLY(battler)].curHP
+            && battleCtx->battleMons[battler].curHP
+            /* && BattleSystem_RandNext(battleSys) % 10 < 3 */) { // always activates now
+
+            battler = BATTLER_ALLY(battler);
+            subscript = subscript_healer;
+            result = TRUE;
+        }
+        break;
+    #endif
     }
 
     if (result == TRUE) {

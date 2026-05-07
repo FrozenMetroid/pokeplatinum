@@ -8595,6 +8595,30 @@
         "{STRVAR_1 6, 1, 0} was disabled\f",
         "by Cursed Body!"
       ]
+    },
+    {
+      "id": "BattleStrings_Text_HealerCuredStatus_Ally",
+      "en_US": [
+        "{STRVAR_1 1, 0, 0} was cured of\n",
+        "its {STRVAR_1 17, 2, 0} status\f",
+        "by its ally’s Healer!"
+      ]
+    },
+    {
+      "id": "BattleStrings_Text_HealerCuredStatus_Wild",
+      "en_US": [
+        "The wild {STRVAR_1 1, 0, 0} was cured of\n",
+        "its {STRVAR_1 17, 2, 0} status\f",
+        "by its ally’s Healer!"
+      ]
+    },
+    {
+      "id": "BattleStrings_Text_HealerCuredStatus_Foe",
+      "en_US": [
+        "The foe’s {STRVAR_1 1, 0, 0} was cured of\n",
+        "its {STRVAR_1 17, 2, 0} status\f",
+        "by its ally’s Healer!"
+      ]
     }
   ]
 }

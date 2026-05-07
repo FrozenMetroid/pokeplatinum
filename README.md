@@ -89,6 +89,15 @@ Additional Abilities:
     Cleffa and Clefairy
 - Justified: Raises Attack if hit by a Dark-type move
     Growlithe, Arcanine
+- Earth Eater: Restores HP if hit by a Ground-type move
+    Onix and Steelix
+- Healer: An ally Pokémon's status condition (Burn, Poison, etc.) is removed at the end of the turn
+    Happiny, Chansey, and Blissey
+    Guaranteed chance to occur, no longer a 30% chance
+- Analytic: Raises the power of moves by 30% if the user moves last
+    Magnemite, Magneton, Magnezone, Staryu, Starmie
+- Cursed Body: 30% chance to disable a move used on the Pokémon
+    Gastly, Haunter, Gengar
 
 Ability Modernizations:
 - Lightning Rod

@@ -544,6 +544,10 @@
     {
       "id": "pl_msg_00000610_00135",
       "en_US": "Earth Eater"
+    },
+    {
+      "id": "pl_msg_00000610_00136",
+      "en_US": "Healer"
     }
   ]
 }

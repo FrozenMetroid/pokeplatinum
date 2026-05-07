@@ -303,4 +303,5 @@ subscript_files = files(
     'subscript_piercing_eye.s',
     'subscript_user_attack_and_sp_attack_up.s',
     'subscript_cursed_body.s',
+    'subscript_healer.s',
 )
