@@ -85,7 +85,10 @@ Additional Abilities:
     Rhyperior (inspired by it shooting Geodude out of its arms)
 - Prankster: Gives priority to status moves (Sand-Attack, Growl, etc.)
     Murkrow and Sableye
-- Friend Guard: Reduces damage done to allies by 25% (Cleffa and Clefairy)
+- Friend Guard: Reduces damage done to allies by 25%
+    Cleffa and Clefairy
+- Justified: Raises Attack if hit by a Dark-type move
+    Growlithe, Arcanine
 
 Ability Modernizations:
 - Lightning Rod

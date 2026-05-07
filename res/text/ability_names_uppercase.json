@@ -523,7 +523,23 @@
     },
     {
       "id": "pl_msg_00000611_00130",
-      "en_US": "Prankster"
+      "en_US": "PRANKSTER"
+    },
+    {
+      "id": "pl_msg_00000611_00131",
+      "en_US": "FRIEND GUARD"
+    },
+    {
+      "id": "pl_msg_00000611_00132",
+      "en_US": "JUSTIFIED"
+    },
+    {
+      "id": "pl_msg_00000611_00133",
+      "en_US": "ANALYTIC"
+    },
+    {
+      "id": "pl_msg_00000611_00134",
+      "en_US": "CURSED BODY"
     }
   ]
 }

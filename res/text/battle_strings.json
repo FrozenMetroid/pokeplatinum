@@ -8572,6 +8572,29 @@
         "The foe’s {STRVAR_1 1, 0, 0} is\n",
         "no longer prevented from healing!"
       ]
+    },
+    {
+      "id": "BattleStrings_Text_CursedBody_Ally",
+      "en_US": [
+        "{STRVAR_1 1, 0, 0}’s {STRVAR_1 6, 1, 0}\n",
+        "was disabled by Cursed Body!"
+      ]
+    },
+    {
+      "id": "BattleStrings_Text_CursedBody_Wild",
+      "en_US": [
+        "The wild {STRVAR_1 1, 0, 0}’s\n",
+        "{STRVAR_1 6, 1, 0} was disabled\f",
+        "by Cursed Body!"
+      ]
+    },
+    {
+      "id": "BattleStrings_Text_CursedBody_Foe",
+      "en_US": [
+        "The foe’s {STRVAR_1 1, 0, 0}’s\n",
+        "{STRVAR_1 6, 1, 0} was disabled\f",
+        "by Cursed Body!"
+      ]
     }
   ]
 }

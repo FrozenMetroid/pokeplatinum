@@ -4346,6 +4346,7 @@ int BattleSystem_RandomOpponent(BattleSystem *battleSys, BattleContext *battleCt
 BOOL BattleSystem_TriggerAbilityOnHit(BattleSystem *battleSys, BattleContext *battleCtx, int *subscript)
 {
     BOOL result = FALSE;
+    u8 moveType;
 
     // These two sentinels must be separate to match
     if (battleCtx->defender == BATTLER_NONE) {
@@ -4354,6 +4355,14 @@ BOOL BattleSystem_TriggerAbilityOnHit(BattleSystem *battleSys, BattleContext *ba
 
     if (Battler_SubstituteWasHit(battleCtx, battleCtx->defender) == TRUE) {
         return result;
+    }
+
+    if (Battler_Ability(battleCtx, battleCtx->attacker) == ABILITY_NORMALIZE) {
+        moveType = TYPE_NORMAL;
+    } else if (battleCtx->moveType) {
+        moveType = battleCtx->moveType;
+    } else {
+        moveType = CURRENT_MOVE_DATA.type;
     }
 
     switch (Battler_Ability(battleCtx, battleCtx->defender)) {
@@ -4376,16 +4385,6 @@ BOOL BattleSystem_TriggerAbilityOnHit(BattleSystem *battleSys, BattleContext *ba
         break;
 
     case ABILITY_COLOR_CHANGE:
-        u8 moveType;
-
-        if (Battler_Ability(battleCtx, battleCtx->attacker) == ABILITY_NORMALIZE) {
-            moveType = TYPE_NORMAL;
-        } else if (battleCtx->moveType) {
-            moveType = battleCtx->moveType;
-        } else {
-            moveType = CURRENT_MOVE_DATA.type;
-        }
-
         if (DEFENDING_MON.curHP
             && (battleCtx->moveStatusFlags & MOVE_STATUS_NO_EFFECTS) == FALSE
             && battleCtx->moveCur != MOVE_STRUGGLE
@@ -4519,6 +4518,48 @@ BOOL BattleSystem_TriggerAbilityOnHit(BattleSystem *battleSys, BattleContext *ba
             result = TRUE;
         }
         break;
+    #ifdef BATTLE_ADD_JUSTIFIED
+    case ABILITY_JUSTIFIED:
+        if (DEFENDING_MON.curHP
+            && (battleCtx->moveStatusFlags & MOVE_STATUS_NO_EFFECTS) == FALSE
+            && (battleCtx->battleStatusMask2 & SYSCTL_UTURN_ACTIVE) == FALSE
+            && (DEFENDER_SELF_TURN_FLAGS.physicalDamageTaken || DEFENDER_SELF_TURN_FLAGS.specialDamageTaken)
+            && battleCtx->battleMons[battleCtx->defender].statBoosts[BATTLE_STAT_ATTACK] < MAX_STAT_STAGE
+            && moveType == TYPE_DARK) {
+                battleCtx->sideEffectType = SIDE_EFFECT_TYPE_ABILITY;
+                battleCtx->sideEffectParam = MOVE_SUBSCRIPT_PTR_ATTACK_UP_1_STAGE;
+                battleCtx->sideEffectMon = battleCtx->defender;
+                battleCtx->msgBattlerTemp = battleCtx->defender;
+
+                *subscript = subscript_update_stat_stage;
+                result = TRUE;
+        }
+        break;
+    #endif
+    #ifdef BATTLE_ADD_CURSED_BODY
+    case ABILITY_CURSED_BODY:
+        int moveSlot = Battler_SlotForMove(&ATTACKING_MON, ATTACKER_LAST_MOVE);
+        if (ATTACKING_MON.curHP
+            && (battleCtx->moveStatusFlags & MOVE_STATUS_NO_EFFECTS) == FALSE
+            && (battleCtx->battleStatusMask & SYSCTL_FIRST_OF_MULTI_TURN) == FALSE
+            && (battleCtx->battleStatusMask2 & SYSCTL_UTURN_ACTIVE) == FALSE
+            && (DEFENDER_SELF_TURN_FLAGS.physicalDamageTaken || DEFENDER_SELF_TURN_FLAGS.specialDamageTaken)
+            && (battleCtx->battleMons[battleCtx->attacker].moveEffectsData.disabledTurns == 0)
+            && (moveSlot != 4) // valid move
+            && (battleCtx->battleMons[battleCtx->attacker].ppCur[moveSlot] != 0) // pp isn't 0
+            && (CURRENT_MOVE_DATA.power != 0) // move isn't status move
+            && BattleSystem_RandNext(battleSys) % 10 < 3) {
+
+                battleCtx->battleMons[battleCtx->attacker].moveEffectsData.disabledTurns = 4;
+                battleCtx->battleMons[battleCtx->attacker].moveEffectsData.disabledMove = ATTACKER_LAST_MOVE;
+                battleCtx->sideEffectType = SIDE_EFFECT_TYPE_ABILITY;
+                battleCtx->msgMoveTemp = ATTACKER_LAST_MOVE;
+
+                *subscript = subscript_cursed_body;
+                result = TRUE;
+            }
+        break;
+    #endif
     }
 
     return result;
@@ -7222,6 +7263,21 @@ int BattleSystem_CalcMoveDamage(BattleSystem *battleSys,
         #ifdef DEBUG_SUPREME_OVERLORD
         EmulatorLog("Move Power After Supreme Overlord: %d. Fainted teammates: %d", movePower, (faintedTeammateCount - 10));
         #endif
+    }
+    #endif
+
+    #ifdef BATTLE_ADD_ANALYTIC
+    if (attackerParams.ability == ABILITY_ANALYTIC) {
+        for (i = 0; i < 4; i++) {
+            if (attacker != i 
+                && ATTACKING_MON.curHP 
+                && !BattleSystem_CompareBattlerSpeed(battleSys, battleCtx, attacker, i, FALSE)) {
+                    break;
+            }
+        }
+        if (i == 4) {
+            movePower = movePower * 13 / 10;
+        }
     }
     #endif
 

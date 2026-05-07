@@ -83,6 +83,12 @@ Currently not working
 
 #define BATTLE_NORMALIZE_POWER_BOOST // Normalize started giving 20% boost in gen 7
 
+#define BATTLE_ADD_ANALYTIC
+
+#define BATTLE_ADD_JUSTIFIED
+
+#define BATTLE_ADD_CURSED_BODY
+
 // The following are always applied because they deal with some subscripts and/or things that aren't easily configurable
 // Modernization:
 // 1) Storm Drain and Lightning Rod

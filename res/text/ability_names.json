@@ -524,6 +524,22 @@
     {
       "id": "pl_msg_00000610_00130",
       "en_US": "Prankster"
+    },
+    {
+      "id": "pl_msg_00000610_00131",
+      "en_US": "Friend Guard"
+    },
+    {
+      "id": "pl_msg_00000610_00132",
+      "en_US": "Justified"
+    },
+    {
+      "id": "pl_msg_00000610_00133",
+      "en_US": "Analytic"
+    },
+    {
+      "id": "pl_msg_00000610_00134",
+      "en_US": "Cursed Body"
     }
   ]
 }

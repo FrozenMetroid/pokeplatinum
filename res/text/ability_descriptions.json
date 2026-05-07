@@ -914,6 +914,34 @@
         "Gives priority to\n",
         "status moves."
       ]
+    },
+    {
+      "id": "pl_msg_00000612_00131",
+      "en_US": [
+        "Reduces damage done\n",
+        "to allies."
+      ]
+    },
+    {
+      "id": "pl_msg_00000612_00132",
+      "en_US": [
+        "Raises Attack when hit\n",
+        "by a Dark-type move."
+      ]
+    },
+    {
+      "id": "pl_msg_00000612_00133",
+      "en_US": [
+        "Boosts move power when\n",
+        "the Pokémon moves last."
+      ]
+    },
+    {
+      "id": "pl_msg_00000612_00134",
+      "en_US": [
+        "May disable a move used\n",
+        "on the Pokémon."
+      ]
     }
   ]
 }
