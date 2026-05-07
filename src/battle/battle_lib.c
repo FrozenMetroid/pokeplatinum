@@ -3627,6 +3627,15 @@ int BattleSystem_TriggerImmunityAbility(BattleContext *battleCtx, int attacker, 
         subscript = subscript_null; // ends the move, all of this occurs after the special attack raise
     }
 
+    if (Battler_IgnorableAbility(battleCtx, attacker, defender, ABILITY_EARTH_EATER) == TRUE) {
+        if (moveType == TYPE_GROUND
+        && (battleCtx->battleStatusMask & SYSCTL_FIRST_OF_MULTI_TURN) == FALSE // do not proc on first turn of Dig
+        && CURRENT_MOVE_DATA.power) {
+            battleCtx->hpCalcTemp = BattleSystem_Divide(battleCtx->battleMons[defender].maxHP, 4);
+            subscript = subscript_ability_restores_hp;
+        }
+    }
+
     return subscript;
 }
 

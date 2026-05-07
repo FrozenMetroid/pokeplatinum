@@ -942,6 +942,13 @@
         "May disable a move used\n",
         "on the Pokémon."
       ]
+    },
+    {
+      "id": "pl_msg_00000612_00135",
+      "en_US": [
+        "Restores HP if hit by a\n",
+        "Ground-type move."
+      ]
     }
   ]
 }
