@@ -629,6 +629,11 @@
     .long \battler
     .endm
 
+    .macro LoadTauntedTurns battler:req
+    .long AICMD_LOADTAUNTEDTURNS
+    .long \battler
+    .endm
+
     .equ TABLE_END, 0xFFFFFFFF
 
     .macro TableEntry entry:req

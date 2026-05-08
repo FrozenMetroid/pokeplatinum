@@ -114,6 +114,7 @@ ScriptCommand(AICMD_CHECKIFHIGHESTDAMAGEWITHPARTNER, AICmd_CheckIfHighestDamageW
 ScriptCommand(AICMD_IFBATTLERFAINTED,                AICmd_IfBattlerFainted)
 ScriptCommand(AICMD_IFBATTLERNOTFAINTED,             AICmd_IfBattlerNotFainted)
 ScriptCommand(AICMD_LOADABILITY,                     AICmd_LoadAbility)
+ScriptCommand(AICMD_LOADTAUNTEDTURNS,                AICmd_LoadTauntedTurns)
 
 // clang-format on
 

@@ -3604,7 +3604,13 @@ int BattleSystem_TriggerImmunityAbility(BattleContext *battleCtx, int attacker, 
         && attacker != defender) {
         subscript = subscript_absorb_and_speed_up_1_stage;
     }
-
+    #ifdef BATTLE_ADD_SAP_SIPPER
+    if (Battler_IgnorableAbility(battleCtx, attacker, defender, ABILITY_SAP_SIPPER) == TRUE
+        && moveType == TYPE_GRASS
+        && attacker != defender) {
+        subscript = subscript_sap_sipper;
+    }
+    #endif
     if (Battler_IgnorableAbility(battleCtx, attacker, defender, ABILITY_DRY_SKIN) == TRUE
         && moveType == TYPE_WATER
         && (battleCtx->battleStatusMask & SYSCTL_FIRST_OF_MULTI_TURN) == FALSE

@@ -311,7 +311,8 @@ struct BattleContext {
 
     u32 battleProgressFlag : 1;
     u32 padding3154_01 : 31;
-
+    u32 magicBounceTracker : 1; // if any client has already activated magic bounce, another can not activate
+    u32 padding_end:31;
 };
 
 #endif // POKEPLATINUM_BATTLE_CONTEXT_H

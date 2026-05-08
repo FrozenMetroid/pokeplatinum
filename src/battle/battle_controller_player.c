@@ -3117,10 +3117,12 @@ static BOOL BattleControllerPlayer_MoveStolen(BattleSystem *battleSys, BattleCon
     }
 
     if ((battleCtx->moveStatusFlags & MOVE_STATUS_NO_EFFECTS) == FALSE
-        && DEFENDER_TURN_FLAGS.magicCoat
+        && (DEFENDER_TURN_FLAGS.magicCoat 
+            || (Battler_IgnorableAbility(battleCtx, battleCtx->attacker, battleCtx->defender, ABILITY_MAGIC_BOUNCE) == TRUE) && !(battleCtx->magicBounceTracker))
         && (CURRENT_MOVE_DATA.flags & MOVE_FLAG_CAN_MAGIC_COAT)) {
+        
         DEFENDER_TURN_FLAGS.magicCoat = FALSE;
-
+        battleCtx->magicBounceTracker = TRUE;
         battleCtx->moveProtect[battleCtx->attacker] = FALSE;
         battleCtx->movePrevByBattler[battleCtx->attacker] = battleCtx->moveTemp;
         battleCtx->movePrev = battleCtx->moveTemp;
@@ -3835,7 +3837,7 @@ static void BattleControllerPlayer_AfterMoveEffects(BattleSystem *battleSys, Bat
             battleCtx->afterMoveEffectTemp = 0;
         }
         break;
-
+    
     default:
         break;
     }

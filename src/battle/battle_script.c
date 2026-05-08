@@ -43,6 +43,7 @@
 
 #include "bg_window.h"
 #include "char_transfer.h"
+#include "debug.h"
 #include "dexmode_checker.h"
 #include "flags.h"
 #include "heap.h"
@@ -9573,6 +9574,10 @@ BOOL BattleSystem_CheckFlingExceptions(BattleSystem *battleSys, BattleContext *b
  */
 static BOOL BtlCmd_End(BattleSystem *battleSys, BattleContext *battleCtx)
 {
+    #ifdef DEBUG_MAGIC_BOUNCE
+    EmulatorLog("Resetting magic bounce tracker at end of sequence");
+    #endif
+    battleCtx->magicBounceTracker = FALSE; // reset magic bounce at the end of each sequence to guarantee it can proc again
     battleCtx->battleProgressFlag = TRUE;
     return BattleSystem_PopScript(battleCtx);
 }

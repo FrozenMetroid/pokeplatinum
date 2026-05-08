@@ -304,4 +304,5 @@ subscript_files = files(
     'subscript_user_attack_and_sp_attack_up.s',
     'subscript_cursed_body.s',
     'subscript_healer.s',
+    'subscript_sap_sipper.s',
 )

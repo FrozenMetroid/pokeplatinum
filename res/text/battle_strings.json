@@ -8619,6 +8619,27 @@
         "its {STRVAR_1 17, 2, 0} status\f",
         "by its ally’s Healer!"
       ]
+    },
+    {
+      "id": "BattleStrings_Text_PokemonsMoveWasBouncedBackByMagicBounce_Ally",
+      "en_US": [
+        "{STRVAR_1 1, 0, 0}’s {STRVAR_1 6, 1, 0}\n",
+        "was bounced back by Magic Bounce!"
+      ]
+    },
+    {
+      "id": "BattleStrings_Text_PokemonsMoveWasBouncedBackByMagicBounce_Wild",
+      "en_US": [
+        "The wild {STRVAR_1 1, 0, 0}’s {STRVAR_1 6, 1, 0}\n",
+        "was bounced back by Magic Bounce!"
+      ]
+    },
+    {
+      "id": "BattleStrings_Text_PokemonsMoveWasBouncedBackByMagicBounce_Foe",
+      "en_US": [
+        "The foe’s {STRVAR_1 1, 0, 0}’s {STRVAR_1 6, 1, 0}\n",
+        "was bounced back by Magic Bounce!"
+      ]
     }
   ]
 }

@@ -177,6 +177,7 @@ static void AICmd_CheckIfHighestDamageWithPartner(BattleSystem *battleSys, Battl
 static void AICmd_IfBattlerFainted(BattleSystem *battleSys, BattleContext *battleCtx);
 static void AICmd_IfBattlerNotFainted(BattleSystem *battleSys, BattleContext *battleCtx);
 static void AICmd_LoadAbility(BattleSystem *battleSys, BattleContext *battleCtx);
+static void AICmd_LoadTauntedTurns(BattleSystem *battleSys, BattleContext *battleCtx);
 
 static u8 TrainerAI_MainSingles(BattleSystem *battleSys, BattleContext *battleCtx);
 static u8 TrainerAI_MainDoubles(BattleSystem *battleSys, BattleContext *battleCtx);
@@ -4202,4 +4203,14 @@ static BOOL TrainerAI_ShouldUseItem(BattleSystem *battleSys, int battler)
     }
 
     return result;
+}
+
+static void AICmd_LoadTauntedTurns(BattleSystem *battleSys, BattleContext *battleCtx)
+{
+    AIScript_Iter(battleCtx, 1);
+
+    int inBattler = AIScript_Read(battleCtx);
+    u8 battler = AIScript_Battler(battleCtx, inBattler);
+
+    AI_CONTEXT.calcTemp = battleCtx->battleMons[battler].moveEffectsData.tauntedTurns;
 }

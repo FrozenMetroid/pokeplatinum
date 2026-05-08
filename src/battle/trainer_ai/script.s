@@ -78,6 +78,7 @@ Basic_CheckForImmunity:
     IfLoadedEqualTo ABILITY_WONDER_GUARD, Basic_CheckWonderGuard
     IfLoadedEqualTo ABILITY_LEVITATE, Basic_CheckGroundAbsorption
     IfLoadedEqualTo ABILITY_DRY_SKIN, Basic_CheckWaterAbsorption2 // FIXED: This line should branch on Dry Skin rather than Levitate
+    IfLoadedEqualTo ABILITY_SAP_SIPPER, Basic_CheckGrassAbsorption
     GoTo Basic_NoImmunityAbility
 
 Basic_CheckElectricAbsorption:
@@ -93,6 +94,11 @@ Basic_CheckWaterAbsorption:
 Basic_CheckFireAbsorption:
     LoadTypeFrom LOAD_MOVE_TYPE
     IfTempEqualTo TYPE_FIRE, ScoreMinus12
+    GoTo Basic_NoImmunityAbility
+
+Basic_CheckGrassAbsorption:
+    LoadTypeFrom LOAD_MOVE_TYPE
+    IfTempEqualTo TYPE_GRASS, ScoreMinus12
     GoTo Basic_NoImmunityAbility
 
 Basic_CheckWonderGuard:
@@ -286,6 +292,7 @@ Basic_ScoreMoveEffect:
     IfCurrentMoveEffectEqualTo BATTLE_EFFECT_SP_ATK_DOWN_2_OPPOSITE_GENDER, Basic_CheckCaptivate
     IfCurrentMoveEffectEqualTo BATTLE_EFFECT_STEALTH_ROCK, Basic_CheckStealthRock
     IfCurrentMoveEffectEqualTo BATTLE_EFFECT_FAINT_FULL_RESTORE_NEXT_MON, Basic_CheckLunarDance
+    IfCurrentMoveEffectEqualTo BATTLE_EFFECT_TAUNT, Basic_Taunt
     PopOrEnd 
 
 Basic_CheckCannotSleep:
@@ -295,6 +302,7 @@ Basic_CheckCannotSleep:
     LoadBattlerAbility AI_BATTLER_DEFENDER
     IfLoadedEqualTo ABILITY_INSOMNIA, ScoreMinus10
     IfLoadedEqualTo ABILITY_VITAL_SPIRIT, ScoreMinus10
+    IfLoadedEqualTo ABILITY_MAGIC_BOUNCE, ScoreMinus10
     PopOrEnd 
 
 Basic_CheckCannotExplode:
@@ -544,6 +552,7 @@ Basic_CheckCannotPoison:
     LoadBattlerAbility AI_BATTLER_DEFENDER
     IfLoadedEqualTo ABILITY_IMMUNITY, ScoreMinus10
     IfLoadedEqualTo ABILITY_MAGIC_GUARD, ScoreMinus10
+    IfLoadedEqualTo ABILITY_MAGIC_BOUNCE, ScoreMinus10 // bounce back poison gas, poison powder, and toxic
     IfLoadedEqualTo ABILITY_POISON_HEAL, ScoreMinus10
 
     IfLoadedNotEqualTo ABILITY_LEAF_GUARD, Basic_CheckCannotPoison_Hydration
@@ -629,7 +638,7 @@ Basic_CheckCannotParalyze:
     IfMoveEffectivenessEquals TYPE_MULTI_IMMUNE, ScoreMinus10
     LoadBattlerAbility AI_BATTLER_DEFENDER
     IfLoadedEqualTo ABILITY_LIMBER, ScoreMinus10
-    IfLoadedEqualTo ABILITY_MAGIC_GUARD, ScoreMinus10
+    // IfLoadedEqualTo ABILITY_MAGIC_GUARD, ScoreMinus10 // removed Magic Guard's immunity to paralysis
     LoadBattlerAbility AI_BATTLER_ATTACKER
     IfLoadedEqualTo ABILITY_MOLD_BREAKER, Basic_CheckCannotParalyze_ImmuneToStatus
     IfMoveEqualTo MOVE_THUNDER_WAVE, Basic_CheckCannotParalyze_ThunderWave
@@ -639,6 +648,7 @@ Basic_CheckCannotParalyze_ThunderWave:
     LoadBattlerAbility AI_BATTLER_DEFENDER
     IfLoadedEqualTo ABILITY_MOTOR_DRIVE, ScoreMinus10
     IfLoadedEqualTo ABILITY_VOLT_ABSORB, ScoreMinus10
+    IfLoadedEqualTo ABILITY_MAGIC_BOUNCE, ScoreMinus10
 
 Basic_CheckCannotParalyze_ImmuneToStatus:
     IfStatus AI_BATTLER_DEFENDER, MON_CONDITION_ANY, ScoreMinus10
@@ -660,21 +670,34 @@ Basic_CheckCannotLeechSeed:
     IfLoadedEqualTo TYPE_GRASS, ScoreMinus10
     LoadBattlerAbility AI_BATTLER_DEFENDER
     IfLoadedEqualTo ABILITY_MAGIC_GUARD, ScoreMinus10
+    IfLoadedEqualTo ABILITY_MAGIC_BOUNCE, ScoreMinus10
     PopOrEnd 
 
 Basic_CheckCannotDisable:
     // If the target is already Disabled, score -8.
     IfBattlerUnderEffect AI_BATTLER_DEFENDER, CHECK_DISABLE, ScoreMinus8
+
+    // if the target has magic bounce, don't use it
+    LoadBattlerAbility AI_BATTLER_DEFENDER
+    IfLoadedEqualTo ABILITY_MAGIC_BOUNCE, ScoreMinus10
     PopOrEnd 
 
 Basic_CheckCannotEncore:
     // If the target is already Encored, score -8.
     IfBattlerUnderEffect AI_BATTLER_DEFENDER, CHECK_ENCORE, ScoreMinus8
+
+    // if the target has magic bounce, don't use it
+    LoadBattlerAbility AI_BATTLER_DEFENDER
+    IfLoadedEqualTo ABILITY_MAGIC_BOUNCE, ScoreMinus10
     PopOrEnd 
 
 Basic_CheckAttackerAsleep:
     // If the attacker is not currently asleep, score -8.
     IfNotStatus AI_BATTLER_ATTACKER, MON_CONDITION_SLEEP, ScoreMinus8
+
+    // if the target has magic bounce, don't use it
+    LoadBattlerAbility AI_BATTLER_DEFENDER
+    IfLoadedEqualTo ABILITY_MAGIC_BOUNCE, ScoreMinus10
     PopOrEnd 
 
 Basic_CheckLockOn:
@@ -689,6 +712,10 @@ Basic_CheckLockOn:
 Basic_CheckMeanLook:
     // If the target is already under the effect of Mean Look, score -10.
     IfVolatileStatus AI_BATTLER_DEFENDER, VOLATILE_CONDITION_MEAN_LOOK, ScoreMinus10
+
+    // if the target has magic bounce, don't use it
+    LoadBattlerAbility AI_BATTLER_DEFENDER
+    IfLoadedEqualTo ABILITY_MAGIC_BOUNCE, ScoreMinus10
     PopOrEnd 
 
 Basic_CheckCurse:
@@ -697,7 +724,6 @@ Basic_CheckCurse:
     IfLoadedEqualTo TYPE_GHOST, Basic_CheckCurse_GhostType
     LoadTypeFrom LOAD_ATTACKER_TYPE_2
     IfLoadedEqualTo TYPE_GHOST, Basic_CheckCurse_GhostType
-
     // If the attacker has Simple, treat it like a boosting move for both Attack and Defense.
     // That is, if either Attack or Defense are already +2, score -10.
     LoadBattlerAbility AI_BATTLER_ATTACKER
@@ -720,6 +746,9 @@ Basic_CheckCurse_GhostType:
     PopOrEnd 
 
 Basic_CheckSpikes:
+    // if the target has magic bounce, don't use it
+    LoadBattlerAbility AI_BATTLER_DEFENDER
+    IfLoadedEqualTo ABILITY_MAGIC_BOUNCE, ScoreMinus10
     // If the target already has 3 layers of Spikes or is on their last Pokemon, score -10.
     LoadSpikesLayers AI_BATTLER_DEFENDER, SIDE_CONDITION_SPIKES
     IfLoadedEqualTo 3, ScoreMinus10
@@ -730,6 +759,10 @@ Basic_CheckSpikes:
 Basic_CheckForesight:
     // If the target is already under the effect, score -10.
     IfVolatileStatus AI_BATTLER_DEFENDER, VOLATILE_CONDITION_FORESIGHT, ScoreMinus10
+
+    // if the target has magic bounce, don't use it
+    LoadBattlerAbility AI_BATTLER_DEFENDER
+    IfLoadedEqualTo ABILITY_MAGIC_BOUNCE, ScoreMinus10
     PopOrEnd 
 
 Basic_CheckPerishSong:
@@ -748,6 +781,7 @@ Basic_CheckCannotAttract:
     IfVolatileStatus AI_BATTLER_DEFENDER, VOLATILE_CONDITION_ATTRACT, ScoreMinus10
     LoadBattlerAbility AI_BATTLER_DEFENDER
     IfLoadedEqualTo ABILITY_OBLIVIOUS, ScoreMinus10
+    IfLoadedEqualTo ABILITY_MAGIC_BOUNCE, ScoreMinus10
     LoadGender AI_BATTLER_ATTACKER
     IfLoadedEqualTo GENDER_MALE, Basic_CheckCannotAttract_BothMale
     IfLoadedEqualTo GENDER_FEMALE, Basic_CheckCannotAttract_BothFemale
@@ -779,6 +813,7 @@ Basic_CheckMemento:
     LoadBattlerAbility AI_BATTLER_DEFENDER
     IfLoadedEqualTo ABILITY_CLEAR_BODY, ScoreMinus10
     IfLoadedEqualTo ABILITY_WHITE_SMOKE, ScoreMinus10
+    IfLoadedEqualTo ABILITY_MAGIC_BOUNCE, ScoreMinus10
 
 Basic_CheckMemento_CheckStatStages:
     // If the target's Attack is already at -6, score -10.
@@ -889,6 +924,10 @@ Basic_CheckHail_Terminate:
 Basic_CheckTorment:
     // If the target is already under the effect, score -10.
     IfVolatileStatus AI_BATTLER_DEFENDER, VOLATILE_CONDITION_TORMENT, ScoreMinus10
+
+    // if the target has magic bounce, don't use it
+    LoadBattlerAbility AI_BATTLER_DEFENDER
+    IfLoadedEqualTo ABILITY_MAGIC_BOUNCE, ScoreMinus10
     PopOrEnd 
 
 Basic_CheckCannotBurn:
@@ -896,6 +935,7 @@ Basic_CheckCannotBurn:
     LoadBattlerAbility AI_BATTLER_DEFENDER
     IfLoadedEqualTo ABILITY_WATER_VEIL, ScoreMinus10
     IfLoadedEqualTo ABILITY_MAGIC_GUARD, ScoreMinus10
+    IfLoadedEqualTo ABILITY_MAGIC_BOUNCE, ScoreMinus10
     IfStatus AI_BATTLER_DEFENDER, MON_CONDITION_ANY, ScoreMinus10
     LoadTypeFrom LOAD_DEFENDER_TYPE_1
     IfLoadedEqualTo TYPE_FIRE, ScoreMinus10
@@ -953,6 +993,7 @@ Basic_CheckTickle:
     LoadBattlerAbility AI_BATTLER_DEFENDER
     IfLoadedEqualTo ABILITY_CLEAR_BODY, ScoreMinus10
     IfLoadedEqualTo ABILITY_WHITE_SMOKE, ScoreMinus10
+    IfLoadedEqualTo ABILITY_MAGIC_BOUNCE, ScoreMinus10
 
 Basic_CheckTickle_CheckStatStages:
     // If the target's Attack is at -6, score -10.
@@ -1046,6 +1087,10 @@ Basic_CheckGravityActive:
 Basic_CheckMiracleEye:
     // If the target is already under the respective effect, score -10.
     IfMoveEffect AI_BATTLER_DEFENDER, MOVE_EFFECT_MIRACLE_EYE, ScoreMinus10
+
+    // if the target has magic bounce, don't use it
+    LoadBattlerAbility AI_BATTLER_DEFENDER
+    IfLoadedEqualTo ABILITY_MAGIC_BOUNCE, ScoreMinus10
     PopOrEnd 
 
 Basic_CheckHealingWish:
@@ -1202,6 +1247,10 @@ Basic_CheckEmbargo:
     // If the target is already under the respective effect, score -10.
     IfMoveEffect AI_BATTLER_DEFENDER, MOVE_EFFECT_EMBARGO, ScoreMinus10
 
+    // if the target has magic bounce, don't use it
+    LoadBattlerAbility AI_BATTLER_DEFENDER
+    IfLoadedEqualTo ABILITY_MAGIC_BOUNCE, ScoreMinus10
+
     // If a recyclable item for the target's side exists, terminate.
     LoadRecycleItem AI_BATTLER_DEFENDER
     IfLoadedEqualTo ITEM_NONE, Basic_CheckEmbargo_Terminate
@@ -1321,6 +1370,10 @@ Basic_CheckCanPsychoShift:
     IfNotStatus AI_BATTLER_ATTACKER, MON_CONDITION_ANY, ScoreMinus10
     IfStatus AI_BATTLER_DEFENDER, MON_CONDITION_ANY, ScoreMinus10
 
+    // if the target has magic bounce, don't use it
+    LoadBattlerAbility AI_BATTLER_DEFENDER
+    IfLoadedEqualTo ABILITY_MAGIC_BOUNCE, ScoreMinus10
+
     // If the target is protected by Safeguard, score -10.
     IfSideCondition AI_BATTLER_DEFENDER, SIDE_CONDITION_SAFEGUARD, ScoreMinus10
 
@@ -1370,6 +1423,11 @@ Basic_PsychoShift_Terminate:
 Basic_CheckHealBlock:
     // If the target is already under the effect, score -10.
     IfMoveEffect AI_BATTLER_DEFENDER, MOVE_EFFECT_HEAL_BLOCK, ScoreMinus10
+
+    // if the target has magic bounce, don't use it
+    LoadBattlerAbility AI_BATTLER_DEFENDER
+    IfLoadedEqualTo ABILITY_MAGIC_BOUNCE, ScoreMinus10
+
     PopOrEnd 
 
 Basic_CheckPowerTrick:
@@ -1390,6 +1448,7 @@ Basic_CheckGastroAcid:
     IfLoadedEqualTo ABILITY_RUN_AWAY, ScoreMinus10
     IfLoadedEqualTo ABILITY_PICKUP, ScoreMinus10
     IfLoadedEqualTo ABILITY_HONEY_GATHER, ScoreMinus10
+    IfLoadedEqualTo ABILITY_MAGIC_BOUNCE, ScoreMinus10
     PopOrEnd 
 
 Basic_CheckLuckyChant:
@@ -1449,6 +1508,7 @@ Basic_CheckWorrySeed:
     IfLoadedEqualTo ABILITY_INSOMNIA, ScoreMinus10
     IfLoadedEqualTo ABILITY_VITAL_SPIRIT, ScoreMinus10
     IfLoadedEqualTo ABILITY_MULTITYPE, ScoreMinus10
+    IfLoadedEqualTo ABILITY_MAGIC_BOUNCE, ScoreMinus10
 
     // If the target is asleep and does not know either Sleep Talk or Snore, score -10.
     IfNotStatus AI_BATTLER_DEFENDER, MON_CONDITION_SLEEP, Basic_CheckWorrySeed_Terminate
@@ -1460,6 +1520,9 @@ Basic_CheckWorrySeed_Terminate:
     PopOrEnd 
 
 Basic_CheckToxicSpikes:
+    // if the target has magic bounce, don't use it
+    LoadBattlerAbility AI_BATTLER_DEFENDER
+    IfLoadedEqualTo ABILITY_MAGIC_BOUNCE, ScoreMinus10
     // If the target's side of the field already has 2 layers of Toxic Spikes, score -10.
     LoadSpikesLayers AI_BATTLER_DEFENDER, SIDE_CONDITION_TOXIC_SPIKES
     IfLoadedEqualTo 2, ScoreMinus10
@@ -1510,6 +1573,13 @@ Basic_CheckDefog:
     IfSideCondition AI_BATTLER_DEFENDER, SIDE_CONDITION_SPIKES, Basic_CheckDefog_Terminate
     IfSideCondition AI_BATTLER_DEFENDER, SIDE_CONDITION_STEALTH_ROCK, Basic_CheckDefog_Terminate
     IfSideCondition AI_BATTLER_DEFENDER, SIDE_CONDITION_TOXIC_SPIKES, Basic_CheckDefog_Terminate
+
+    // if the user's side of the field has Spikes, Stealth Rock, or Toxic Spikes
+    // active, score +10
+    IfSideCondition AI_BATTLER_ATTACKER, SIDE_CONDITION_SPIKES, ScorePlus10
+    IfSideCondition AI_BATTLER_ATTACKER, SIDE_CONDITION_STEALTH_ROCK, ScorePlus10
+    IfSideCondition AI_BATTLER_ATTACKER, SIDE_CONDITION_TOXIC_SPIKES, ScorePlus10
+
     GoTo ScoreMinus10
 
 Basic_CheckDefog_Terminate:
@@ -1531,6 +1601,7 @@ Basic_CheckCaptivate:
     IfLoadedEqualTo ABILITY_OBLIVIOUS, ScoreMinus10
     IfLoadedEqualTo ABILITY_CLEAR_BODY, ScoreMinus10
     IfLoadedEqualTo ABILITY_WHITE_SMOKE, ScoreMinus10
+    IfLoadedEqualTo ABILITY_MAGIC_BOUNCE, ScoreMinus10
 
 Basic_CheckCaptivate_CheckGender:
     // If the target and the attacker share gender or the target has no gender, score -10.
@@ -1558,6 +1629,10 @@ Basic_CheckStealthRock:
     // If the target's side of the field is already under the effect of Stealth Rock, score -10.
     IfSideCondition AI_BATTLER_DEFENDER, SIDE_CONDITION_STEALTH_ROCK, ScoreMinus10
 
+    // if the target has magic bounce, don't use it
+    LoadBattlerAbility AI_BATTLER_DEFENDER
+    IfLoadedEqualTo ABILITY_MAGIC_BOUNCE, ScoreMinus10
+
     // If the target is on their last Pokemon, score -10.
     CountAlivePartyBattlers AI_BATTLER_DEFENDER
     IfLoadedEqualTo 0, ScoreMinus10
@@ -1579,7 +1654,15 @@ Basic_CheckLunarDance:
     GoTo ScoreMinus10
 
 Basic_CheckLunarDance_Terminate:
-    PopOrEnd 
+    PopOrEnd
+
+Basic_Taunt:
+    LoadBattlerAbility AI_BATTLER_DEFENDER
+    IfLoadedEqualTo ABILITY_MAGIC_BOUNCE, ScoreMinus10
+
+    LoadTauntedTurns AI_BATTLER_DEFENDER
+    IfLoadedGreaterThan 0, ScoreMinus10
+    PopOrEnd
 
 ScoreMinus1:
     AddToMoveScore -1
@@ -2898,6 +2981,9 @@ Expert_Swagger:
     //
     // Otherwise, act identically to Flatter.
     IfMoveKnown AI_BATTLER_ATTACKER, MOVE_PSYCH_UP, Expert_Swagger_PsychUp
+    // if the target has magic bounce, don't use it
+    LoadBattlerAbility AI_BATTLER_DEFENDER
+    IfLoadedEqualTo ABILITY_MAGIC_BOUNCE, ScoreMinus10
 
 Expert_Flatter:
     // 50% chance of additional score +1.
@@ -4509,6 +4595,7 @@ Expert_ChangeUserAbility_DesirableAbilities:
     TableEntry ABILITY_FILTER
     TableEntry ABILITY_SOLID_ROCK
     TableEntry ABILITY_RECKLESS
+    TableEntry ABILITY_MAGIC_BOUNCE
     TableEntry TABLE_END
 
 Expert_Ingrain:

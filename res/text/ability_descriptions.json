@@ -984,6 +984,19 @@
         "Some move types scare\n",
         "it and boost its Speed."
       ]
+    },
+    {
+      "id": "pl_msg_00000612_00141",
+      "en_US": [
+        "Boosts Attack when hit\n",
+        "by a Grass-type move."
+      ]
+    },
+    {
+      "id": "pl_msg_00000612_00142",
+      "en_US": [
+        "Reflects status moves."
+      ]
     }
   ]
 }

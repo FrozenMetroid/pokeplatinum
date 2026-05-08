@@ -54,3 +54,9 @@ DEBUG_FASTER_HP_BARS
     Displays debug information about the HP bar update calculations
 */
 //#define DEBUG_FASTER_HP_BARS
+
+/*
+DEBUG_MAGIC_BOUNCE
+    Shows debug information about Magic Bounce activations
+*/
+// #define DEBUG_MAGIC_BOUNCE

@@ -95,7 +95,7 @@ Additional Abilities:
     Happiny, Chansey, and Blissey
     Guaranteed chance to occur, no longer a 30% chance
 - Analytic: Raises the power of moves by 30% if the user moves last
-    Magnemite, Magneton, Magnezone, Staryu, Starmie
+    Magnemite, Magneton, Magnezone, Staryu, Starmie, Porygon, Porygon2, Porygon-Z
 - Cursed Body: 30% chance to disable a move used on the Pokémon
     Gastly, Haunter, Gengar
 - Regenerator: Restores 30% of max HP when switching out
@@ -104,7 +104,11 @@ Additional Abilities:
     Gyarados
 - Rattled: Raises Speed stage if hit by a Dark, Ghost, or Bug-type move
     Magikarp
-
+- Sap Sipper: Raises Attack if it would be hit by a Grass-type move
+    Marill, and Azumarill
+- Magic Bounce: Reflects status moves back at the user
+    Espeon
+    
 Ability Modernizations:
 - Lightning Rod
 - Sturdy
@@ -128,6 +132,7 @@ Move Modernizations and Changes:
 - Defog removes hazards from both sides of the field
 - Growth raises Special Attack and Attack by one stage; two stages under harsh sunlight
 - Air Slash: 85BP, 100% accurate, 10% flinch
+- Taunt can now be reflected with Mirror Coat and Magic Bounce
 
 Miscellaneous Battle System Changes:
 - Ice-types receive a 50% Defense increase when under the effects of Hail (Hail has not been modernized to Snow)
