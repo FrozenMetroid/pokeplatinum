@@ -149,6 +149,23 @@ static const int sSideEffectSubscripts[] = {
     [MOVE_SUBSCRIPT_PTR_CHATTER]                          = subscript_chatter,
     [MOVE_SUBSCRIPT_PTR_LUNAR_DANCE]                      = subscript_lunar_dance,
     [MOVE_SUBSCRIPT_PTR_GIVE_TARGET_OWN_STATUS]           = subscript_give_target_own_status,
+    // new effects
     [MOVE_SUBSCRIPT_PTR_SP_ATTACK_AND_ATTACK_UP_1_STAGE]  = subscript_user_attack_and_sp_attack_up, // Growth
+    [MOVE_SUBSCRIPT_PTR_ATTACK_UP_3_STAGES]               = subscript_update_stat_stage, // Moxie
+    [MOVE_SUBSCRIPT_PTR_DEFENSE_UP_3_STAGES]              = subscript_update_stat_stage,
+    [MOVE_SUBSCRIPT_PTR_SPEED_UP_3_STAGES]                = subscript_update_stat_stage,
+    [MOVE_SUBSCRIPT_PTR_SP_ATK_UP_3_STAGES]               = subscript_update_stat_stage,
+    [MOVE_SUBSCRIPT_PTR_SP_DEF_UP_3_STAGES]               = subscript_update_stat_stage,
+    [MOVE_SUBSCRIPT_PTR_ACCURACY_UP_3_STAGES]             = subscript_update_stat_stage,
+    [MOVE_SUBSCRIPT_PTR_EVASION_UP_3_STAGES]              = subscript_update_stat_stage,
+    [MOVE_SUBSCRIPT_PTR_ATTACK_DOWN_3_STAGES]             = subscript_update_stat_stage,
+    [MOVE_SUBSCRIPT_PTR_DEFENSE_DOWN_3_STAGES]            = subscript_update_stat_stage,
+    [MOVE_SUBSCRIPT_PTR_SPEED_DOWN_3_STAGES]              = subscript_update_stat_stage,
+    [MOVE_SUBSCRIPT_PTR_SP_ATK_DOWN_3_STAGES]             = subscript_update_stat_stage,
+    [MOVE_SUBSCRIPT_PTR_SP_DEF_DOWN_3_STAGES]             = subscript_update_stat_stage,
+    [MOVE_SUBSCRIPT_PTR_ACCURACY_DOWN_3_STAGES]           = subscript_update_stat_stage,
+    [MOVE_SUBSCRIPT_PTR_EVASION_DOWN_3_STAGES]            = subscript_update_stat_stage,
+
+
 };
 // clang-format on

@@ -548,6 +548,18 @@
     {
       "id": "pl_msg_00000611_00137",
       "en_US": "REGENERATOR"
+    },
+    {
+      "id": "pl_msg_00000611_00138",
+      "en_US": "MOXIE"
+    },
+    {
+      "id": "pl_msg_00000611_00139",
+      "en_US": "CONTRARY"
+    },
+    {
+      "id": "pl_msg_00000611_00140",
+      "en_US": "RATTLED"
     }
   ]
 }

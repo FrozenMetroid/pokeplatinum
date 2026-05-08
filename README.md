@@ -100,6 +100,10 @@ Additional Abilities:
     Gastly, Haunter, Gengar
 - Regenerator: Restores 30% of max HP when switching out
     Tangela and Tangrowth
+- Moxie: Raises Attack stage for any Pokémon that is knocked out
+    Gyarados
+- Rattled: Raises Speed stage if hit by a Dark, Ghost, or Bug-type move
+    Magikarp
 
 Ability Modernizations:
 - Lightning Rod

@@ -875,6 +875,19 @@ int BattleSystem_RandomOpponent(BattleSystem *battleSys, BattleContext *battleCt
  */
 BOOL BattleSystem_TriggerAbilityOnHit(BattleSystem *battleSys, BattleContext *battleCtx, int *subscript);
 
+
+/**
+ * @brief Trigger the attacker's ability after a move deals damage to the defender.
+ *
+ * @param battleSys
+ * @param battleCtx
+ * @param[out] subscript    Return-param for the subscript to be loaded for any
+ *                          triggered effect.
+ * @return TRUE if the returned subscript param should be loaded for a
+ * triggered effect.
+ */
+BOOL BattleSystem_TriggerAttackerAbilityOnHit(BattleSystem *battleSys, BattleContext *battleCtx, int *subscript);
+
 /**
  * @brief Triggers a battler's ability which prevents an illegal status
  * condition on the given battler, e.g. a paralyzed Pokemon with Limber.

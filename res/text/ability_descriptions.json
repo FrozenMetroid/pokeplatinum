@@ -963,6 +963,27 @@
         "Restores a little HP when\n",
         "withdrawn from battle"
       ]
+    },
+    {
+      "id": "pl_msg_00000612_00138",
+      "en_US": [
+        "Boosts Attack after\n",
+        "knocking out any Pokémon."
+      ]
+    },
+    {
+      "id": "pl_msg_00000612_00139",
+      "en_US": [
+        "Makes stat changes have\n",
+        "an opposite effect."
+      ]
+    },
+    {
+      "id": "pl_msg_00000612_00140",
+      "en_US": [
+        "Some move types scare\n",
+        "it and boost its Speed."
+      ]
     }
   ]
 }

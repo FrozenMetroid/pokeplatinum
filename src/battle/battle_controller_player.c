@@ -12,6 +12,8 @@
 #include "constants/narc.h"
 #include "constants/pokemon.h"
 #include "constants/species.h"
+#include "constants/battle/battle_script.h"
+
 #include "generated/abilities.h"
 #include "generated/game_records.h"
 #include "generated/trainer_classes.h"
@@ -2907,12 +2909,14 @@ static int BattleControllerPlayer_CheckMoveHitAccuracy(BattleSystem *battleSys, 
     }
     #endif
 
+    #ifndef BATTLE_UPDATE_SIMPLE_ABILITY_HANDLING
     if (Battler_Ability(battleCtx, attacker) == ABILITY_SIMPLE) {
         accStages *= 2;
     }
     if (Battler_IgnorableAbility(battleCtx, attacker, defender, ABILITY_SIMPLE) == TRUE) {
         evaStages *= 2;
     }
+    #endif
     if (Battler_IgnorableAbility(battleCtx, attacker, defender, ABILITY_UNAWARE) == TRUE) {
         accStages = 0;
     }
@@ -3510,20 +3514,24 @@ enum AfterMoveMessageState {
     ONE_HIT_TRIGGER_SECONDARY,
     ONE_HIT_FORM_CHANGE,
     ONE_HIT_RAGE,
-    ONE_HIT_TRIGGER_ABILITY,
+    ONE_HIT_TRIGGER_DEFENDER_ABILITY,
+    ONE_HIT_TRIGGER_ATTACKER_ABILITY,
     ONE_HIT_EXTRA_FLINCH,
 
     MULTI_HIT_CRITICAL = 0,
     MULTI_HIT_TRIGGER_SECONDARY,
     MULTI_HIT_FORM_CHANGE,
     MULTI_HIT_RAGE,
-    MULTI_HIT_TRIGGER_ABILITY,
+    MULTI_HIT_TRIGGER_DEFENDER_ABILITY,
+    MULTI_HIT_TRIGGER_ATTACKER_ABILITY,
     MULTI_HIT_STATUS,
     MULTI_HIT_EXTRA_FLINCH,
 };
 
 static void BattleControllerPlayer_AfterMoveMessage(BattleSystem *battleSys, BattleContext *battleCtx)
 {
+    int abilitySeq;
+
     switch (battleCtx->afterMoveMessageType) {
     case AFTER_MOVE_MESSAGE_ONE_HIT:
         switch (battleCtx->afterMoveMessageState) {
@@ -3568,9 +3576,7 @@ static void BattleControllerPlayer_AfterMoveMessage(BattleSystem *battleSys, Bat
                 return;
             }
 
-        case ONE_HIT_TRIGGER_ABILITY:
-            int abilitySeq;
-
+        case ONE_HIT_TRIGGER_DEFENDER_ABILITY:
             battleCtx->afterMoveMessageState++;
             if (BattleSystem_TriggerAbilityOnHit(battleSys, battleCtx, &abilitySeq) == TRUE) {
                 LOAD_SUBSEQ(abilitySeq);
@@ -3579,7 +3585,14 @@ static void BattleControllerPlayer_AfterMoveMessage(BattleSystem *battleSys, Bat
 
                 return;
             }
-
+        case ONE_HIT_TRIGGER_ATTACKER_ABILITY:
+            battleCtx->afterMoveMessageState++;
+            if (BattleSystem_TriggerAttackerAbilityOnHit(battleSys, battleCtx, &abilitySeq) == TRUE) {
+                LOAD_SUBSEQ(abilitySeq);
+                battleCtx->commandNext = battleCtx->command;
+                battleCtx->command = BATTLE_CONTROL_EXEC_SCRIPT;
+                return;
+            }
         case ONE_HIT_EXTRA_FLINCH:
             battleCtx->afterMoveMessageState++;
             if (BattleControllerPlayer_CheckExtraFlinch(battleSys, battleCtx) == TRUE) {
@@ -3628,9 +3641,7 @@ static void BattleControllerPlayer_AfterMoveMessage(BattleSystem *battleSys, Bat
                 return;
             }
 
-        case MULTI_HIT_TRIGGER_ABILITY:
-            int abilitySeq;
-
+        case MULTI_HIT_TRIGGER_DEFENDER_ABILITY:
             battleCtx->afterMoveMessageState++;
             if (BattleSystem_TriggerAbilityOnHit(battleSys, battleCtx, &abilitySeq) == TRUE) {
                 LOAD_SUBSEQ(abilitySeq);
@@ -3639,7 +3650,14 @@ static void BattleControllerPlayer_AfterMoveMessage(BattleSystem *battleSys, Bat
 
                 return;
             }
-
+        case MULTI_HIT_TRIGGER_ATTACKER_ABILITY:
+            battleCtx->afterMoveMessageState++;
+            if (BattleSystem_TriggerAttackerAbilityOnHit(battleSys, battleCtx, &abilitySeq) == TRUE) {
+                LOAD_SUBSEQ(abilitySeq);
+                battleCtx->commandNext = battleCtx->command;
+                battleCtx->command = BATTLE_CONTROL_EXEC_SCRIPT;
+                return;
+            }
         case MULTI_HIT_STATUS:
             battleCtx->afterMoveMessageState++;
             if (BattleControllerPlayer_FollowupMessage(battleSys, battleCtx) == TRUE) {
@@ -4027,6 +4045,34 @@ static void BattleControllerPlayer_MoveEnd(BattleSystem *battleSys, BattleContex
             || BattleControllerPlayer_CheckBattleOver(battleSys, battleCtx) == TRUE) {
             return;
         }
+
+        // handle moxie
+        if (Battler_Ability(battleCtx, battleCtx->attacker) == ABILITY_MOXIE) {
+            if (battleCtx->turnFlags[battleCtx->attacker].numberOfKOs
+                && ATTACKING_MON.statBoosts[BATTLE_STAT_ATTACK] < MAX_STAT_STAGE) 
+                {
+                    switch (battleCtx->turnFlags[battleCtx->attacker].numberOfKOs) {
+                        case 1:
+                            battleCtx->sideEffectParam = MOVE_SUBSCRIPT_PTR_ATTACK_UP_1_STAGE;
+                            break;
+                        case 2:
+                            battleCtx->sideEffectParam = MOVE_SUBSCRIPT_PTR_ATTACK_UP_2_STAGES;
+                            break;
+                        case 3:
+                            battleCtx->sideEffectParam = MOVE_SUBSCRIPT_PTR_ATTACK_UP_3_STAGES;
+                            break;
+                        default:
+                            break;
+                    }
+                    battleCtx->sideEffectType = SIDE_EFFECT_TYPE_ABILITY;
+                    battleCtx->sideEffectMon = battleCtx->attacker;
+                    LOAD_SUBSEQ(subscript_update_stat_stage);
+                    battleCtx->commandNext = battleCtx->command;
+                    battleCtx->command = BATTLE_CONTROL_EXEC_SCRIPT;
+                    battleCtx->turnFlags[battleCtx->attacker].numberOfKOs = 0; // reset KO count after activating moxie
+                    return;
+                }
+            }
 
         int nextSeq = BattleSystem_TriggerEffectOnSwitch(battleSys, battleCtx);
         if (nextSeq) {

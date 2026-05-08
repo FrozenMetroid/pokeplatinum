@@ -91,6 +91,11 @@ Currently not working
 
 #define BATTLE_ADD_REGENERATOR
 
+#define BATTLE_UPDATE_SIMPLE_ABILITY_HANDLING // just make Simple... simple... and make it adjust stat stages in the stat change function
+
+#define BATTLE_ADD_RATTLED
+
+
 // The following are always applied because they deal with some subscripts and/or things that aren't easily configurable
 // Modernization:
 // 1) Storm Drain and Lightning Rod

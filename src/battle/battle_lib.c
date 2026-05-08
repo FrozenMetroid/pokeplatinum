@@ -1217,6 +1217,7 @@ static const u8 sSpeedHalvingItemEffects[] = {
 
 static inline int CompareSpeed_ApplySimple(BattleContext *battleCtx, int battler, int stage)
 {
+    #ifndef BATTLE_UPDATE_SIMPLE_ABILITY_HANDLING
     if (Battler_Ability(battleCtx, battler) == ABILITY_SIMPLE) {
         stage = DEFAULT_STAT_STAGE + ((stage - DEFAULT_STAT_STAGE) * 2);
 
@@ -1228,6 +1229,7 @@ static inline int CompareSpeed_ApplySimple(BattleContext *battleCtx, int battler
             stage = MIN_STAT_STAGE;
         }
     }
+    #endif
 
     return stage;
 }
@@ -4540,11 +4542,31 @@ BOOL BattleSystem_TriggerAbilityOnHit(BattleSystem *battleSys, BattleContext *ba
             result = TRUE;
         }
         break;
+    #ifdef BATTLE_ADD_RATTLED
+    case ABILITY_RATTLED:
+        if (DEFENDING_MON.curHP
+            && (battleCtx->moveStatusFlags & MOVE_STATUS_NO_EFFECTS) == FALSE
+            && (battleCtx->battleStatusMask2 & SYSCTL_UTURN_ACTIVE) == FALSE
+            && (battleCtx->battleStatusMask & SYSCTL_FIRST_OF_MULTI_TURN) == FALSE
+            && (DEFENDER_SELF_TURN_FLAGS.physicalDamageTaken || DEFENDER_SELF_TURN_FLAGS.specialDamageTaken)
+            && battleCtx->battleMons[battleCtx->defender].statBoosts[BATTLE_STAT_SPEED] < MAX_STAT_STAGE
+            && (moveType == TYPE_DARK || moveType == TYPE_GHOST || moveType == TYPE_BUG)) {
+                battleCtx->sideEffectType = SIDE_EFFECT_TYPE_ABILITY;
+                battleCtx->sideEffectParam = MOVE_SUBSCRIPT_PTR_SPEED_UP_1_STAGE;
+                battleCtx->sideEffectMon = battleCtx->defender;
+                battleCtx->msgBattlerTemp = battleCtx->defender;
+
+                *subscript = subscript_update_stat_stage;
+                result = TRUE;
+        }
+        break;
+    #endif
     #ifdef BATTLE_ADD_JUSTIFIED
     case ABILITY_JUSTIFIED:
         if (DEFENDING_MON.curHP
             && (battleCtx->moveStatusFlags & MOVE_STATUS_NO_EFFECTS) == FALSE
             && (battleCtx->battleStatusMask2 & SYSCTL_UTURN_ACTIVE) == FALSE
+            && (battleCtx->battleStatusMask & SYSCTL_FIRST_OF_MULTI_TURN) == FALSE
             && (DEFENDER_SELF_TURN_FLAGS.physicalDamageTaken || DEFENDER_SELF_TURN_FLAGS.specialDamageTaken)
             && battleCtx->battleMons[battleCtx->defender].statBoosts[BATTLE_STAT_ATTACK] < MAX_STAT_STAGE
             && moveType == TYPE_DARK) {
@@ -4584,6 +4606,30 @@ BOOL BattleSystem_TriggerAbilityOnHit(BattleSystem *battleSys, BattleContext *ba
     #endif
     }
 
+    return result;
+}
+
+BOOL BattleSystem_TriggerAttackerAbilityOnHit(BattleSystem *battleSys, BattleContext *battleCtx, int *subscript)
+{
+    BOOL result = FALSE;
+
+    if (battleCtx->attacker == BATTLER_NONE) {
+        return result;
+    }
+
+    switch (Battler_Ability(battleCtx, battleCtx->attacker)) {
+        case ABILITY_MOXIE:
+            if (battleCtx->defender == battleCtx->faintedMon
+                && (battleCtx->battleStatusMask2 & SYSCTL_UTURN_ACTIVE) == FALSE
+                && (ATTACKING_MON.curHP)
+                && (battleCtx->moveStatusFlags & MOVE_STATUS_NO_EFFECTS) == FALSE
+                && ATTACKING_MON.statBoosts[BATTLE_STAT_ATTACK] < MAX_STAT_STAGE) {
+
+                    battleCtx->turnFlags[battleCtx->attacker].numberOfKOs++;
+            }
+        default:
+            break;
+    }
     return result;
 }
 
@@ -7170,6 +7216,7 @@ int BattleSystem_CalcMoveDamage(BattleSystem *battleSys,
     }
     #endif
 
+    #ifndef BATTLE_UPDATE_SIMPLE_ABILITY_HANDLING
     if (attackerParams.ability == ABILITY_SIMPLE) {
         attackStage *= 2;
         if (attackStage < MIN_STAT_STAGE - DEFAULT_STAT_STAGE) {
@@ -7205,6 +7252,7 @@ int BattleSystem_CalcMoveDamage(BattleSystem *battleSys,
             spDefenseStage = MAX_STAT_STAGE - DEFAULT_STAT_STAGE;
         }
     }
+    #endif
 
     if (Battler_IgnorableAbility(battleCtx, attacker, defender, ABILITY_UNAWARE) == TRUE) {
         attackStage = 0;

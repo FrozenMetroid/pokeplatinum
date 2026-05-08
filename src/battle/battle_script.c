@@ -2819,7 +2819,15 @@ static BOOL BtlCmd_ChangeStatStage(BattleSystem *battleSys, BattleContext *battl
 
     battleCtx->battleStatusMask &= ~SYSCTL_FAIL_STAT_STAGE_CHANGE;
 
-    if (battleCtx->sideEffectParam >= MOVE_SUBSCRIPT_PTR_ATTACK_DOWN_2_STAGES) {
+    if (battleCtx->sideEffectParam >= MOVE_SUBSCRIPT_PTR_ATTACK_DOWN_3_STAGES) {
+        statOffset = battleCtx->sideEffectParam - MOVE_SUBSCRIPT_PTR_ATTACK_DOWN_3_STAGES;
+        stageChange = -3;
+        battleCtx->scriptTemp = BATTLE_ANIMATION_STAT_DROP;
+    } else if (battleCtx->sideEffectParam >= MOVE_SUBSCRIPT_PTR_ATTACK_UP_3_STAGES) {
+        statOffset = battleCtx->sideEffectParam - MOVE_SUBSCRIPT_PTR_ATTACK_UP_3_STAGES;
+        stageChange = 3;
+        battleCtx->scriptTemp = BATTLE_ANIMATION_STAT_BOOST;
+    } else if (battleCtx->sideEffectParam >= MOVE_SUBSCRIPT_PTR_ATTACK_DOWN_2_STAGES) {
         statOffset = battleCtx->sideEffectParam - MOVE_SUBSCRIPT_PTR_ATTACK_DOWN_2_STAGES;
         stageChange = -2;
         battleCtx->scriptTemp = BATTLE_ANIMATION_STAT_DROP;
@@ -2835,6 +2843,23 @@ static BOOL BtlCmd_ChangeStatStage(BattleSystem *battleSys, BattleContext *battl
         statOffset = battleCtx->sideEffectParam - MOVE_SUBSCRIPT_PTR_ATTACK_UP_1_STAGE;
         stageChange = 1;
         battleCtx->scriptTemp = BATTLE_ANIMATION_STAT_BOOST;
+    }
+
+    if (mon->ability == ABILITY_SIMPLE) {
+        stageChange *= 2;
+    }
+
+    if (mon->ability == ABILITY_CONTRARY) {
+        stageChange = -stageChange;
+
+        if(battleCtx->scriptTemp == BATTLE_ANIMATION_STAT_BOOST)
+        {
+            battleCtx->scriptTemp= BATTLE_ANIMATION_STAT_DROP;
+        }
+        else if(battleCtx->scriptTemp == BATTLE_ANIMATION_STAT_DROP)
+        {
+            battleCtx->scriptTemp= BATTLE_ANIMATION_STAT_BOOST;
+        }
     }
 
     if (stageChange > 0) {
