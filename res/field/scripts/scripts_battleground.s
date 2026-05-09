@@ -394,6 +394,7 @@ Battleground_SetTrainer:
     CallIfEq VAR_MAP_LOCAL_1, OBJ_EVENT_GFX_CANDICE, Battleground_SetTrainerCandice
     CallIfEq VAR_MAP_LOCAL_1, OBJ_EVENT_GFX_BYRON, Battleground_SetTrainerByron
     CallIfEq VAR_MAP_LOCAL_1, OBJ_EVENT_GFX_VOLKNER, Battleground_SetTrainerVolkner
+    CallIfEq VAR_MAP_LOCAL_1, OBJ_EVENT_GFX_JASMINE, Battleground_SetTrainerJasmine
     CallIfEq VAR_MAP_LOCAL_1, OBJ_EVENT_GFX_CHERYL, Battleground_SetTrainerCheryl
     CallIfEq VAR_MAP_LOCAL_1, OBJ_EVENT_GFX_RILEY, Battleground_SetTrainerRiley
     CallIfEq VAR_MAP_LOCAL_1, OBJ_EVENT_GFX_MARLEY, Battleground_SetTrainerMarley
@@ -433,6 +434,10 @@ Battleground_SetTrainerVolkner:
     SetVar VAR_MAP_LOCAL_5, TRAINER_LEADER_VOLKNER_REMATCH
     Return
 
+Battleground_SetTrainerJasmine:
+    SetVar VAR_MAP_LOCAL_5, TRAINER_LEADER_JASMINE
+    Return
+
 Battleground_SetTrainerCheryl:
     SetVar VAR_MAP_LOCAL_5, TRAINER_CHERYL_BATTLEGROUND
     Return
@@ -463,6 +468,7 @@ Battleground_MessageAskBattle:
     CallIfEq VAR_MAP_LOCAL_1, OBJ_EVENT_GFX_CANDICE, Battleground_CandiceAskBattle
     CallIfEq VAR_MAP_LOCAL_1, OBJ_EVENT_GFX_BYRON, Battleground_ByronAskBattle
     CallIfEq VAR_MAP_LOCAL_1, OBJ_EVENT_GFX_VOLKNER, Battleground_VolknerAskBattle
+    CallIfEq VAR_MAP_LOCAL_1, OBJ_EVENT_GFX_JASMINE, Battleground_JasmineAskBattle
     CallIfEq VAR_MAP_LOCAL_1, OBJ_EVENT_GFX_CHERYL, Battleground_CherylAskBattle
     CallIfEq VAR_MAP_LOCAL_1, OBJ_EVENT_GFX_RILEY, Battleground_RileyAskBattle
     CallIfEq VAR_MAP_LOCAL_1, OBJ_EVENT_GFX_MARLEY, Battleground_MarleyAskBattle
@@ -502,6 +508,10 @@ Battleground_VolknerAskBattle:
     Message Battleground_Text_VolknerAskBattle
     Return
 
+Battleground_JasmineAskBattle:
+    Message Battleground_Text_VolknerAskBattle
+    Return
+
 Battleground_CherylAskBattle:
     Message Battleground_Text_CherylAskBattle
     Return
@@ -532,6 +542,7 @@ Battleground_MessageIntro:
     CallIfEq VAR_MAP_LOCAL_1, OBJ_EVENT_GFX_CANDICE, Battleground_CandiceIntro
     CallIfEq VAR_MAP_LOCAL_1, OBJ_EVENT_GFX_BYRON, Battleground_ByronIntro
     CallIfEq VAR_MAP_LOCAL_1, OBJ_EVENT_GFX_VOLKNER, Battleground_VolknerIntro
+    CallIfEq VAR_MAP_LOCAL_1, OBJ_EVENT_GFX_JASMINE, Battleground_JasmineIntro
     CallIfEq VAR_MAP_LOCAL_1, OBJ_EVENT_GFX_CHERYL, Battleground_CherylIntro
     CallIfEq VAR_MAP_LOCAL_1, OBJ_EVENT_GFX_RILEY, Battleground_RileyIntro
     CallIfEq VAR_MAP_LOCAL_1, OBJ_EVENT_GFX_MARLEY, Battleground_MarleyIntro
@@ -571,6 +582,10 @@ Battleground_VolknerIntro:
     Message Battleground_Text_VolknerIntro
     Return
 
+Battleground_JasmineIntro:
+    Message Battleground_Text_JasmineIntro
+    Return
+
 Battleground_CherylIntro:
     Message Battleground_Text_CherylIntro
     Return
@@ -601,6 +616,7 @@ Battleground_MessageDeclinedBattle:
     CallIfEq VAR_MAP_LOCAL_1, OBJ_EVENT_GFX_CANDICE, Battleground_CandiceDeclinedBattle
     CallIfEq VAR_MAP_LOCAL_1, OBJ_EVENT_GFX_BYRON, Battleground_ByronDeclinedBattle
     CallIfEq VAR_MAP_LOCAL_1, OBJ_EVENT_GFX_VOLKNER, Battleground_VolknerDeclinedBattle
+    CallIfEq VAR_MAP_LOCAL_1, OBJ_EVENT_GFX_JASMINE, Battleground_JasmineDeclinedBattle
     CallIfEq VAR_MAP_LOCAL_1, OBJ_EVENT_GFX_CHERYL, Battleground_CherylDeclinedBattle
     CallIfEq VAR_MAP_LOCAL_1, OBJ_EVENT_GFX_RILEY, Battleground_RileyDeclinedBattle
     CallIfEq VAR_MAP_LOCAL_1, OBJ_EVENT_GFX_MARLEY, Battleground_MarleyDeclinedBattle
@@ -640,6 +656,10 @@ Battleground_VolknerDeclinedBattle:
     Message Battleground_Text_VolknerDeclinedBattle
     Return
 
+Battleground_JasmineDeclinedBattle:
+    Message Battleground_Text_JasmineDeclinedBattle
+    Return
+
 Battleground_CherylDeclinedBattle:
     Message Battleground_Text_CherylDeclinedBattle
     Return
@@ -670,6 +690,7 @@ Battleground_MessageAskBattleAgain:
     CallIfEq VAR_MAP_LOCAL_1, OBJ_EVENT_GFX_CANDICE, Battleground_CandiceAskBattleAgain
     CallIfEq VAR_MAP_LOCAL_1, OBJ_EVENT_GFX_BYRON, Battleground_ByronAskBattleAgain
     CallIfEq VAR_MAP_LOCAL_1, OBJ_EVENT_GFX_VOLKNER, Battleground_VolknerAskBattleAgain
+    CallIfEq VAR_MAP_LOCAL_1, OBJ_EVENT_GFX_JASMINE, Battleground_JasmineAskBattleAgain
     CallIfEq VAR_MAP_LOCAL_1, OBJ_EVENT_GFX_CHERYL, Battleground_CherylAskBattleAgain
     CallIfEq VAR_MAP_LOCAL_1, OBJ_EVENT_GFX_RILEY, Battleground_RileyAskBattleAgain
     CallIfEq VAR_MAP_LOCAL_1, OBJ_EVENT_GFX_MARLEY, Battleground_MarleyAskBattleAgain
@@ -709,6 +730,10 @@ Battleground_VolknerAskBattleAgain:
     Message Battleground_Text_VolknerAskBattleAgain
     Return
 
+Battleground_JasmineAskBattleAgain:
+    Message Battleground_Text_JasmineAskBattleAgain
+    Return
+
 Battleground_CherylAskBattleAgain:
     Message Battleground_Text_CherylAskBattleAgain
     Return
@@ -739,6 +764,7 @@ Battleground_MessageDefeat:
     CallIfEq VAR_MAP_LOCAL_1, OBJ_EVENT_GFX_CANDICE, Battleground_CandiceDefeat
     CallIfEq VAR_MAP_LOCAL_1, OBJ_EVENT_GFX_BYRON, Battleground_ByronDefeat
     CallIfEq VAR_MAP_LOCAL_1, OBJ_EVENT_GFX_VOLKNER, Battleground_VolknerDefeat
+    CallIfEq VAR_MAP_LOCAL_1, OBJ_EVENT_GFX_JASMINE, Battleground_JasmineDefeat
     CallIfEq VAR_MAP_LOCAL_1, OBJ_EVENT_GFX_CHERYL, Battleground_CherylDefeat
     CallIfEq VAR_MAP_LOCAL_1, OBJ_EVENT_GFX_RILEY, Battleground_RileyDefeat
     CallIfEq VAR_MAP_LOCAL_1, OBJ_EVENT_GFX_MARLEY, Battleground_MarleyDefeat
@@ -778,6 +804,10 @@ Battleground_VolknerDefeat:
     Message Battleground_Text_VolknerDefeat
     Return
 
+Battleground_JasmineDefeat:
+    Message Battleground_Text_JasmineDefeat
+    Return
+
 Battleground_CherylDefeat:
     Message Battleground_Text_CherylDefeat
     Return
@@ -807,6 +837,7 @@ Battleground_MessageAskBattle2:
     CallIfEq VAR_MAP_LOCAL_1, OBJ_EVENT_GFX_CANDICE, Battleground_CandiceAskBattle2
     CallIfEq VAR_MAP_LOCAL_1, OBJ_EVENT_GFX_BYRON, Battleground_ByronAskBattle2
     CallIfEq VAR_MAP_LOCAL_1, OBJ_EVENT_GFX_VOLKNER, Battleground_VolknerAskBattle2
+    CallIfEq VAR_MAP_LOCAL_1, OBJ_EVENT_GFX_JASMINE, Battleground_JasmineAskBattle2
     CallIfEq VAR_MAP_LOCAL_1, OBJ_EVENT_GFX_CHERYL, Battleground_CherylAskBattle2
     CallIfEq VAR_MAP_LOCAL_1, OBJ_EVENT_GFX_RILEY, Battleground_RileyAskBattle2
     CallIfEq VAR_MAP_LOCAL_1, OBJ_EVENT_GFX_MARLEY, Battleground_MarleyAskBattle2
@@ -846,6 +877,10 @@ Battleground_VolknerAskBattle2:
     Message Battleground_Text_VolknerAskBattle2
     Return
 
+Battleground_JasmineAskBattle2:
+    Message Battleground_Text_JasmineAskBattle2
+    Return
+
 Battleground_CherylAskBattle2:
     Message Battleground_Text_CherylAskBattle2
     Return
@@ -875,6 +910,7 @@ Battleground_MessageIntro2:
     CallIfEq VAR_MAP_LOCAL_1, OBJ_EVENT_GFX_CANDICE, Battleground_CandiceIntro2
     CallIfEq VAR_MAP_LOCAL_1, OBJ_EVENT_GFX_BYRON, Battleground_ByronIntro2
     CallIfEq VAR_MAP_LOCAL_1, OBJ_EVENT_GFX_VOLKNER, Battleground_VolknerIntro2
+    CallIfEq VAR_MAP_LOCAL_1, OBJ_EVENT_GFX_JASMINE, Battleground_JasmineIntro2
     CallIfEq VAR_MAP_LOCAL_1, OBJ_EVENT_GFX_CHERYL, Battleground_CherylIntro2
     CallIfEq VAR_MAP_LOCAL_1, OBJ_EVENT_GFX_RILEY, Battleground_RileyIntro2
     CallIfEq VAR_MAP_LOCAL_1, OBJ_EVENT_GFX_MARLEY, Battleground_MarleyIntro2
@@ -914,6 +950,10 @@ Battleground_VolknerIntro2:
     Message Battleground_Text_VolknerIntro2
     Return
 
+Battleground_JasmineIntro2:
+    Message Battleground_Text_JasmineIntro2
+    Return
+
 Battleground_CherylIntro2:
     Message Battleground_Text_CherylIntro2
     Return
@@ -943,6 +983,7 @@ Battleground_MessageDeclinedBattle2:
     CallIfEq VAR_MAP_LOCAL_1, OBJ_EVENT_GFX_CANDICE, Battleground_CandiceDeclinedBattle2
     CallIfEq VAR_MAP_LOCAL_1, OBJ_EVENT_GFX_BYRON, Battleground_ByronDeclinedBattle2
     CallIfEq VAR_MAP_LOCAL_1, OBJ_EVENT_GFX_VOLKNER, Battleground_VolknerDeclinedBattle2
+    CallIfEq VAR_MAP_LOCAL_1, OBJ_EVENT_GFX_JASMINE, Battleground_JasmineDeclinedBattle2
     CallIfEq VAR_MAP_LOCAL_1, OBJ_EVENT_GFX_CHERYL, Battleground_CherylDeclinedBattle2
     CallIfEq VAR_MAP_LOCAL_1, OBJ_EVENT_GFX_RILEY, Battleground_RileyDeclinedBattle2
     CallIfEq VAR_MAP_LOCAL_1, OBJ_EVENT_GFX_MARLEY, Battleground_MarleyDeclinedBattle2
@@ -982,6 +1023,10 @@ Battleground_VolknerDeclinedBattle2:
     Message Battleground_Text_VolknerDeclinedBattle2
     Return
 
+Battleground_JasmineDeclinedBattle2:
+    Message Battleground_Text_JasmineDeclinedBattle2
+    Return
+
 Battleground_CherylDeclinedBattle2:
     Message Battleground_Text_CherylDeclinedBattle2
     Return
@@ -1011,6 +1056,7 @@ Battleground_MessageAskBattleAgain2:
     CallIfEq VAR_MAP_LOCAL_1, OBJ_EVENT_GFX_CANDICE, Battleground_CandiceAskBattleAgain2
     CallIfEq VAR_MAP_LOCAL_1, OBJ_EVENT_GFX_BYRON, Battleground_ByronAskBattleAgain2
     CallIfEq VAR_MAP_LOCAL_1, OBJ_EVENT_GFX_VOLKNER, Battleground_VolknerAskBattleAgain2
+    CallIfEq VAR_MAP_LOCAL_1, OBJ_EVENT_GFX_JASMINE, Battleground_JasmineAskBattleAgain2
     CallIfEq VAR_MAP_LOCAL_1, OBJ_EVENT_GFX_CHERYL, Battleground_CherylAskBattleAgain2
     CallIfEq VAR_MAP_LOCAL_1, OBJ_EVENT_GFX_RILEY, Battleground_RileyAskBattleAgain2
     CallIfEq VAR_MAP_LOCAL_1, OBJ_EVENT_GFX_MARLEY, Battleground_MarleyAskBattleAgain2
@@ -1050,6 +1096,10 @@ Battleground_VolknerAskBattleAgain2:
     Message Battleground_Text_VolknerAskBattleAgain2
     Return
 
+Battleground_JasmineAskBattleAgain2:
+    Message Battleground_Text_JasmineAskBattleAgain2
+    Return
+
 Battleground_CherylAskBattleAgain2:
     Message Battleground_Text_CherylAskBattleAgain2
     Return
@@ -1079,6 +1129,7 @@ Battleground_MessageDefeat2:
     CallIfEq VAR_MAP_LOCAL_1, OBJ_EVENT_GFX_CANDICE, Battleground_CandiceDefeat2
     CallIfEq VAR_MAP_LOCAL_1, OBJ_EVENT_GFX_BYRON, Battleground_ByronDefeat2
     CallIfEq VAR_MAP_LOCAL_1, OBJ_EVENT_GFX_VOLKNER, Battleground_VolknerDefeat2
+    CallIfEq VAR_MAP_LOCAL_1, OBJ_EVENT_GFX_JASMINE, Battleground_JasmineDefeat2
     CallIfEq VAR_MAP_LOCAL_1, OBJ_EVENT_GFX_CHERYL, Battleground_CherylDefeat2
     CallIfEq VAR_MAP_LOCAL_1, OBJ_EVENT_GFX_RILEY, Battleground_RileyDefeat2
     CallIfEq VAR_MAP_LOCAL_1, OBJ_EVENT_GFX_MARLEY, Battleground_MarleyDefeat2
@@ -1118,6 +1169,10 @@ Battleground_VolknerDefeat2:
     Message Battleground_Text_VolknerDefeat2
     Return
 
+Battleground_JasmineDefeat2:
+    Message Battleground_Text_JasmineDefeat2
+    Return
+
 Battleground_CherylDefeat2:
     Message Battleground_Text_CherylDefeat2
     Return
@@ -1147,6 +1202,7 @@ Battleground_SetFlagDefeatedTrainer:
     CallIfEq VAR_MAP_LOCAL_1, OBJ_EVENT_GFX_CANDICE, Battleground_SetFlagDefeatedCandice
     CallIfEq VAR_MAP_LOCAL_1, OBJ_EVENT_GFX_BYRON, Battleground_SetFlagDefeatedByron
     CallIfEq VAR_MAP_LOCAL_1, OBJ_EVENT_GFX_VOLKNER, Battleground_SetFlagDefeatedVolkner
+    CallIfEq VAR_MAP_LOCAL_1, OBJ_EVENT_GFX_JASMINE, Battleground_SetFlagDefeatedJasmine
     CallIfEq VAR_MAP_LOCAL_1, OBJ_EVENT_GFX_CHERYL, Battleground_SetFlagDefeatedCheryl
     CallIfEq VAR_MAP_LOCAL_1, OBJ_EVENT_GFX_RILEY, Battleground_SetFlagDefeatedRiley
     CallIfEq VAR_MAP_LOCAL_1, OBJ_EVENT_GFX_MARLEY, Battleground_SetFlagDefeatedMarley
@@ -1186,6 +1242,10 @@ Battleground_SetFlagDefeatedVolkner:
     SetFlag FLAG_DEFEATED_BATTLEGROUND_VOLKNER
     Return
 
+Battleground_SetFlagDefeatedJasmine:
+    SetFlag FLAG_DEFEATED_BATTLEGROUND_JASMINE
+    Return
+
 Battleground_SetFlagDefeatedCheryl:
     SetFlag FLAG_DEFEATED_BATTLEGROUND_CHERYL
     Return
@@ -1216,6 +1276,7 @@ Battleground_CheckDefeatedTrainer:
     GoToIfEq VAR_MAP_LOCAL_1, OBJ_EVENT_GFX_CANDICE, Battleground_CheckDefeatedCandice
     GoToIfEq VAR_MAP_LOCAL_1, OBJ_EVENT_GFX_BYRON, Battleground_CheckDefeatedByron
     GoToIfEq VAR_MAP_LOCAL_1, OBJ_EVENT_GFX_VOLKNER, Battleground_CheckDefeatedVolkner
+    GoToIfEq VAR_MAP_LOCAL_1, OBJ_EVENT_GFX_JASMINE, Battleground_CheckDefeatedJasmine
     GoToIfEq VAR_MAP_LOCAL_1, OBJ_EVENT_GFX_CHERYL, Battleground_CheckDefeatedCheryl
     GoToIfEq VAR_MAP_LOCAL_1, OBJ_EVENT_GFX_RILEY, Battleground_CheckDefeatedRiley
     GoToIfEq VAR_MAP_LOCAL_1, OBJ_EVENT_GFX_MARLEY, Battleground_CheckDefeatedMarley
@@ -1253,6 +1314,10 @@ Battleground_CheckDefeatedByron:
 
 Battleground_CheckDefeatedVolkner:
     GoToIfSet FLAG_DEFEATED_BATTLEGROUND_VOLKNER, Battleground_SetResultTrue
+    Return
+
+Battleground_CheckDefeatedJasmine:
+    GoToIfSet FLAG_DEFEATED_BATTLEGROUND_JASMINE, Battleground_SetResultTrue
     Return
 
 Battleground_CheckDefeatedCheryl:

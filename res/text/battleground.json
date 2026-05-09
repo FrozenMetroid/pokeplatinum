@@ -808,6 +808,95 @@
       ]
     },
     {
+      "id": "Battleground_Text_JasmineAskBattle",
+      "en_US": [
+        "Jasmine: Oh... hello...!\r",
+        "Some of my friends in the\n",
+        "Sinnoh League invited me here.\r",
+        "Um... I suppose you want to\n",
+        "battle me then?"
+      ]
+    },
+    {
+      "id": "Battleground_Text_JasmineIntro",
+      "en_US": [
+        "Jasmine: Hehe, don’t underestimate\n",
+        "the toughness of my Steel-types!\r",
+        "Um...\n",
+        "Let’s begin...\r"
+      ]
+    },
+    {
+      "id": "Battleground_Text_JasmineDeclinedBattle",
+      "en_US": [
+        "Jasmine: ...I guess Trainers\n",
+        "from Sinnoh aren’t as hardcore\f",
+        "as those from Johto...!\r"
+      ]
+    },
+    {
+      "id": "Battleground_Text_JasmineAskBattleAgain",
+      "en_US": [
+        "Jasmine: Have you changed your mind?\n",
+        "Um... er..."
+      ]
+    },
+    {
+      "id": "Battleground_Text_JasmineDefeat",
+      "en_US": [
+        "Jasmine: ...Oh! You are a much\n",
+        "better Trainer than me!\r",
+        "Thank you so very, very much\n",
+        "for showing me your strength...\r",
+        "Um... I don’t know if this is\n",
+        "okay to say... but I hope to battle\f",
+        "you again sometime..."
+      ]
+    },
+    {
+      "id": "Battleground_Text_JasmineAskBattle2",
+      "en_US": [
+        "Jasmine: ...Huh? You’d like to\n",
+        "battle me? Um... Okay...\r",
+        "Will you do me the honor\n",
+        "and... battle my Pokémon?"
+      ]
+    },
+    {
+      "id": "Battleground_Text_JasmineIntro2",
+      "en_US": [
+        "Jasmine: ...Thank you. I’m so\n",
+        "happy you said yes!\r",
+        "I’ll show you the cold sharpness\n",
+        "of my Steel-type Pokémon!\r"
+      ]
+    },
+    {
+      "id": "Battleground_Text_JasmineDeclinedBattle2",
+      "en_US": [
+        "Jasmine: Oh... I see..."
+      ]
+    },
+    {
+      "id": "Battleground_Text_JasmineAskBattleAgain2",
+      "en_US": [
+        "Jasmine: Er... Have you changed\n",
+        "your mind then?"
+      ]
+    },
+    {
+      "id": "Battleground_Text_JasmineDefeat2",
+      "en_US": [
+        "Jasmine: You’re an incredible Trainer\n",
+        "after all... Thank you...\r",
+        "Have you been to the Johto region?\n",
+        "It’s a place where other Trainers like\f",
+        "you train and battle.\r",
+        "Um... You should visit sometime...\n",
+        "I think."
+      ]
+    },
+    {
       "id": "Battleground_Text_CherylAskBattle",
       "en_US": [
         "Cheryl: Oh, hello, {STRVAR_1 3, 0, 0}.\n",

@@ -16,6 +16,7 @@
     ScriptEntryEnd
 
 SurvivalArea_OnTransition:
+    SetFlag FLAG_ARRESTED_CHARON_STARK_MOUNTAIN
     GoTo SurvivalArea_SetRivalMessageTryRemoveWarp
     End
 

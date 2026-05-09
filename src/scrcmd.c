@@ -6801,7 +6801,8 @@ static const u16 sBattlegroundGymLeaders[] = {
     OBJ_EVENT_GFX_FANTINA,
     OBJ_EVENT_GFX_CANDICE,
     OBJ_EVENT_GFX_BYRON,
-    OBJ_EVENT_GFX_VOLKNER
+    OBJ_EVENT_GFX_VOLKNER,
+    OBJ_EVENT_GFX_JASMINE
 };
 
 static const u16 sBattlegroundStatTrainers[] = {

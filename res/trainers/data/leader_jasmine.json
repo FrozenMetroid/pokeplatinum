@@ -2,8 +2,8 @@
     "name": "Jasmine",
     "class": "TRAINER_CLASS_JASMINE",
     "items": [
-        "ITEM_HYPER_POTION",
-        "ITEM_HYPER_POTION"
+        "ITEM_FULL_RESTORE",
+        "ITEM_FULL_RESTORE"
     ],
     "ai_flags": [
         "AI_FLAG_BASIC",
@@ -13,60 +13,98 @@
     "double_battle": false,
     "party": [
         {
+            "species": "SPECIES_SKARMORY",
+            "form": 0,
+            "level": 61,
+            "item": "ITEM_WACAN_BERRY",
+            "moves": [
+                "MOVE_SPIKES",
+                "MOVE_STEALTH_ROCK",
+                "MOVE_IRON_HEAD",
+                "MOVE_DRILL_PECK"
+            ],
+            "iv_scale": 0,
+            "ivnums": [31, 31, 31, 31, 31, 31],
+            "evnums": [252, 152, 100, 0, 0, 0],
+            "ability": "ABILITY_STURDY",
+            "ball": "ITEM_POKE_BALL",
+            "nature": "NATURE_CAREFUL",
+            "ball_seal": 0
+        },
+        {
             "species": "SPECIES_MAGNEZONE",
             "form": 0,
-            "level": 46,
-            "item": "ITEM_NONE",
+            "level": 63,
+            "item": "ITEM_SHUCA_BERRY",
             "moves": [
                 "MOVE_THUNDERBOLT",
                 "MOVE_FLASH_CANNON",
-                "MOVE_MAGNET_RISE",
-                "MOVE_TRI_ATTACK"
+                "MOVE_THUNDER_WAVE",
+                "MOVE_METAL_SOUND"
             ],
             "iv_scale": 0,
             "ivnums": [31, 31, 31, 31, 31, 31],
             "evnums": [252, 0, 0, 0, 252, 0],
             "ability": "ABILITY_STURDY",
-            "ball": "ITEM_PREMIER_BALL",
+            "ball": "ITEM_POKE_BALL",
             "nature": "NATURE_MODEST",
             "ball_seal": 0
         },
         {
-            "species": "SPECIES_AGGRON",
+            "species": "SPECIES_MAWILE",
             "form": 0,
-            "level": 45,
-            "item": "ITEM_NONE",
+            "level": 62,
+            "item": "ITEM_LIFE_ORB",
             "moves": [
-                "MOVE_HEAD_SMASH",
                 "MOVE_IRON_HEAD",
-                "MOVE_ICE_PUNCH",
-                "MOVE_FIRE_PUNCH"
-            ],
-            "iv_scale": 0,
-            "ivnums": [31, 31, 31, 31, 31, 31],
-            "evnums": [252, 252, 0, 0, 0, 0],
-            "ability": "ABILITY_ROCK_HEAD",
-            "ball": "ITEM_PREMIER_BALL",
-            "nature": "NATURE_ADAMANT",
-            "ball_seal": 0
-        },
-        {
-            "species": "SPECIES_STEELIX",
-            "form": 0,
-            "level": 48,
-            "item": "ITEM_NONE",
-            "moves": [
-                "MOVE_EARTHQUAKE",
-                "MOVE_IRON_TAIL",
+                "MOVE_SUCKER_PUNCH",
                 "MOVE_THUNDER_FANG",
                 "MOVE_FIRE_FANG"
             ],
             "iv_scale": 0,
             "ivnums": [31, 31, 31, 31, 31, 31],
-            "evnums": [252, 100, 152, 0, 0, 0],
-            "ability": "ABILITY_STURDY",
+            "evnums": [252, 252, 0, 0, 0, 0],
+            "ability": "ABILITY_STRONG_JAW",
+            "ball": "ITEM_POKE_BALL",
+            "nature": "NATURE_ADAMANT",
+            "ball_seal": 0
+        },
+        {
+            "species": "SPECIES_EMPOLEON",
+            "form": 0,
+            "level": 64,
+            "item": "ITEM_PETAYA_BERRY",
+            "moves": [
+                "MOVE_HYDRO_PUMP",
+                "MOVE_ICE_BEAM",
+                "MOVE_FLASH_CANNON",
+                "MOVE_AGILITY"
+            ],
+            "iv_scale": 0,
+            "ivnums": [31, 31, 31, 31, 31, 31],
+            "evnums": [0, 0, 0, 252, 252, 0],
+            "ability": "ABILITY_TORRENT",
+            "ball": "ITEM_GREAT_BALL",
+            "nature": "NATURE_TIMID",
+            "ball_seal": 0
+        },
+        {
+            "species": "SPECIES_STEELIX",
+            "form": 0,
+            "level": 65,
+            "item": "ITEM_LEFTOVERS",
+            "moves": [
+                "MOVE_EARTHQUAKE",
+                "MOVE_IRON_TAIL",
+                "MOVE_CURSE",
+                "MOVE_STONE_EDGE"
+            ],
+            "iv_scale": 0,
+            "ivnums": [31, 31, 31, 31, 31, 31],
+            "evnums": [252, 252, 0, 0, 0, 0],
+            "ability": "ABILITY_EARTH_EATER",
             "ball": "ITEM_PREMIER_BALL",
-            "nature": "NATURE_IMPISH",
+            "nature": "NATURE_ADAMANT",
             "ball_seal": 0
         }
     ],
@@ -78,13 +116,13 @@
         {
             "type": "TRMSG_LAST_BATTLER_HALF_HP",
             "en_US": [
-                "Um... We will still win this!\n"
+                "We will still win this!\n"
             ]
         },
         {
             "type": "TRMSG_DEFEAT",
             "en_US": [
-                "....Wow! Um, I’m stunned!\n"
+                "....Wow! Um... I’m stunned!\n"
             ]
         }
     ]
