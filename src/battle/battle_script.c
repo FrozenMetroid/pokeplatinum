@@ -314,6 +314,7 @@ static BOOL BtlCmd_CheckFlingExceptions(BattleSystem *battleSys, BattleContext *
 static BOOL BtlCmd_End(BattleSystem *battleSys, BattleContext *battleCtx);
 static BOOL BtlCmd_WaitABScreenTap(BattleSystem *battleSys, BattleContext *battleCtx);
 static BOOL BtlCmd_CheckSunnyWeather(BattleSystem *battleSys, BattleContext *battleCtx);
+static BOOL BtlCmd_SetAIAbility(BattleSystem *battleSys, BattleContext *battleCtx);
 
 static int BattleScript_Read(BattleContext *battleCtx);
 static void BattleScript_Iter(BattleContext *battleCtx, int i);
@@ -9602,6 +9603,21 @@ static BOOL BtlCmd_CheckSunnyWeather(BattleSystem *battleSys, BattleContext *bat
     if (!WEATHER_IS_SUN) {
         BattleScript_Iter(battleCtx, jumpIfNotSunny);
     }
+
+    return TRUE;
+}
+
+// explicitly tell the AI what ability the battler has
+// used for Magic Bounce rn
+static BOOL BtlCmd_SetAIAbility(BattleSystem *battleSys, BattleContext *battleCtx)
+{
+    BattleScript_Iter(battleCtx, 1);
+    u32 inBattler = BattleScript_Read(battleCtx);
+    
+    u32 battler = BattleScript_Battler(battleSys, battleCtx, inBattler);
+    u8 ability = BattleMon_Get(battleCtx, battler, BATTLEMON_ABILITY, NULL);
+
+    battleCtx->aiContext.battlerAbilities[battler] = ability;
 
     return TRUE;
 }

@@ -11,7 +11,9 @@
     },
     "range": "RANGE_OPPONENT_SIDE",
     "priority": 0,
-    "flags": [],
+    "flags": [
+        "MOVE_FLAG_CAN_MAGIC_COAT"
+    ],
     "contest": {
         "effect": "CONTEST_EFFECT_SUPPRESS_VOLTAGE",
         "type": "CONTEST_TYPE_SMART"

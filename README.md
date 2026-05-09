@@ -132,7 +132,22 @@ Move Modernizations and Changes:
 - Defog removes hazards from both sides of the field
 - Growth raises Special Attack and Attack by one stage; two stages under harsh sunlight
 - Air Slash: 85BP, 100% accurate, 10% flinch
-- Taunt can now be reflected with Mirror Coat and Magic Bounce
+- Moves that have been updated to be able to be reflected by Magic Coat and Magic Bounce:
+    Disable
+    Defog
+    Embargo
+    Encore
+    Foresight
+    Heal Block
+    Miracle Eye
+    Odor Sleuth
+    Roar/Whirlwind
+    Spikes (!!!)
+    Spite
+    Stealth Rock (!!!)
+    Taunt (!!!)
+    Torment
+    Toxic Spikes (!!!)
 
 Miscellaneous Battle System Changes:
 - Ice-types receive a 50% Defense increase when under the effects of Hail (Hail has not been modernized to Snow)

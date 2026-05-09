@@ -12,6 +12,7 @@
     "range": "RANGE_OPPONENT_SIDE",
     "priority": 0,
     "flags": [
+        "MOVE_FLAG_CAN_MAGIC_COAT",
         "MOVE_FLAG_HIDES_HP_GAUGES"
     ],
     "contest": {

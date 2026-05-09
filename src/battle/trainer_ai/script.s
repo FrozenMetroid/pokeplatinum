@@ -302,6 +302,10 @@ Basic_CheckCannotSleep:
     LoadBattlerAbility AI_BATTLER_DEFENDER
     IfLoadedEqualTo ABILITY_INSOMNIA, ScoreMinus10
     IfLoadedEqualTo ABILITY_VITAL_SPIRIT, ScoreMinus10
+    // if the attacker has mold breaker, ignore magic bounce
+    LoadBattlerAbility AI_BATTLER_ATTACKER
+    IfLoadedEqualTo ABILITY_MOLD_BREAKER, _SkipMagicBounce_Sleep
+    LoadBattlerAbility AI_BATTLER_DEFENDER
     IfLoadedEqualTo ABILITY_MAGIC_BOUNCE, ScoreMinus10
     PopOrEnd 
 
@@ -552,7 +556,12 @@ Basic_CheckCannotPoison:
     LoadBattlerAbility AI_BATTLER_DEFENDER
     IfLoadedEqualTo ABILITY_IMMUNITY, ScoreMinus10
     IfLoadedEqualTo ABILITY_MAGIC_GUARD, ScoreMinus10
+    // if the attacker has mold breaker, ignore magic bounce
+    LoadBattlerAbility AI_BATTLER_ATTACKER
+    IfLoadedEqualTo ABILITY_MOLD_BREAKER, _SkipMagicBounce_CheckPoisonHeal
+    LoadBattlerAbility AI_BATTLER_DEFENDER
     IfLoadedEqualTo ABILITY_MAGIC_BOUNCE, ScoreMinus10 // bounce back poison gas, poison powder, and toxic
+_SkipMagicBounce_CheckPoisonHeal:    
     IfLoadedEqualTo ABILITY_POISON_HEAL, ScoreMinus10
 
     IfLoadedNotEqualTo ABILITY_LEAF_GUARD, Basic_CheckCannotPoison_Hydration
@@ -648,8 +657,8 @@ Basic_CheckCannotParalyze_ThunderWave:
     LoadBattlerAbility AI_BATTLER_DEFENDER
     IfLoadedEqualTo ABILITY_MOTOR_DRIVE, ScoreMinus10
     IfLoadedEqualTo ABILITY_VOLT_ABSORB, ScoreMinus10
-    IfLoadedEqualTo ABILITY_MAGIC_BOUNCE, ScoreMinus10
-
+    IfLoadedEqualTo ABILITY_LIGHTNING_ROD, ScoreMinus10
+    IfLoadedEqualTo ABILITY_MAGIC_BOUNCE, ScoreMinus12
 Basic_CheckCannotParalyze_ImmuneToStatus:
     IfStatus AI_BATTLER_DEFENDER, MON_CONDITION_ANY, ScoreMinus10
     IfSideCondition AI_BATTLER_DEFENDER, SIDE_CONDITION_SAFEGUARD, ScoreMinus10
@@ -670,34 +679,48 @@ Basic_CheckCannotLeechSeed:
     IfLoadedEqualTo TYPE_GRASS, ScoreMinus10
     LoadBattlerAbility AI_BATTLER_DEFENDER
     IfLoadedEqualTo ABILITY_MAGIC_GUARD, ScoreMinus10
+    // if the attacker has mold breaker, ignore magic bounce
+    LoadBattlerAbility AI_BATTLER_ATTACKER
+    IfLoadedEqualTo ABILITY_MOLD_BREAKER, _SkipMagicBounce_LeechSeed
+    LoadBattlerAbility AI_BATTLER_DEFENDER
     IfLoadedEqualTo ABILITY_MAGIC_BOUNCE, ScoreMinus10
+_SkipMagicBounce_LeechSeed:
     PopOrEnd 
 
 Basic_CheckCannotDisable:
     // If the target is already Disabled, score -8.
     IfBattlerUnderEffect AI_BATTLER_DEFENDER, CHECK_DISABLE, ScoreMinus8
-
+    // if the attacker has mold breaker, ignore magic bounce
+    LoadBattlerAbility AI_BATTLER_ATTACKER
+    IfLoadedEqualTo ABILITY_MOLD_BREAKER, _SkipMagicBounce_Disable
     // if the target has magic bounce, don't use it
     LoadBattlerAbility AI_BATTLER_DEFENDER
     IfLoadedEqualTo ABILITY_MAGIC_BOUNCE, ScoreMinus10
+_SkipMagicBounce_Disable:
     PopOrEnd 
 
 Basic_CheckCannotEncore:
     // If the target is already Encored, score -8.
     IfBattlerUnderEffect AI_BATTLER_DEFENDER, CHECK_ENCORE, ScoreMinus8
-
+    // if the attacker has mold breaker, ignore magic bounce
+    LoadBattlerAbility AI_BATTLER_ATTACKER
+    IfLoadedEqualTo ABILITY_MOLD_BREAKER, _SkipMagicBounce_Encore
     // if the target has magic bounce, don't use it
     LoadBattlerAbility AI_BATTLER_DEFENDER
     IfLoadedEqualTo ABILITY_MAGIC_BOUNCE, ScoreMinus10
+_SkipMagicBounce_Encore:
     PopOrEnd 
 
 Basic_CheckAttackerAsleep:
     // If the attacker is not currently asleep, score -8.
     IfNotStatus AI_BATTLER_ATTACKER, MON_CONDITION_SLEEP, ScoreMinus8
-
+    // if the attacker has mold breaker, ignore magic bounce
+    LoadBattlerAbility AI_BATTLER_ATTACKER
+    IfLoadedEqualTo ABILITY_MOLD_BREAKER, _SkipMagicBounce_Sleep
     // if the target has magic bounce, don't use it
     LoadBattlerAbility AI_BATTLER_DEFENDER
     IfLoadedEqualTo ABILITY_MAGIC_BOUNCE, ScoreMinus10
+_SkipMagicBounce_Sleep:
     PopOrEnd 
 
 Basic_CheckLockOn:
@@ -712,10 +735,13 @@ Basic_CheckLockOn:
 Basic_CheckMeanLook:
     // If the target is already under the effect of Mean Look, score -10.
     IfVolatileStatus AI_BATTLER_DEFENDER, VOLATILE_CONDITION_MEAN_LOOK, ScoreMinus10
-
+    // if the attacker has mold breaker, ignore magic bounce
+    LoadBattlerAbility AI_BATTLER_ATTACKER
+    IfLoadedEqualTo ABILITY_MOLD_BREAKER, _SkipMagicBounce_MeanLook
     // if the target has magic bounce, don't use it
     LoadBattlerAbility AI_BATTLER_DEFENDER
     IfLoadedEqualTo ABILITY_MAGIC_BOUNCE, ScoreMinus10
+_SkipMagicBounce_MeanLook:
     PopOrEnd 
 
 Basic_CheckCurse:
@@ -746,9 +772,13 @@ Basic_CheckCurse_GhostType:
     PopOrEnd 
 
 Basic_CheckSpikes:
+    // if the attacker has mold breaker, ignore magic bounce
+    LoadBattlerAbility AI_BATTLER_ATTACKER
+    IfLoadedEqualTo ABILITY_MOLD_BREAKER, _SkipMagicBounce_Spikes
     // if the target has magic bounce, don't use it
     LoadBattlerAbility AI_BATTLER_DEFENDER
     IfLoadedEqualTo ABILITY_MAGIC_BOUNCE, ScoreMinus10
+_SkipMagicBounce_Spikes:
     // If the target already has 3 layers of Spikes or is on their last Pokemon, score -10.
     LoadSpikesLayers AI_BATTLER_DEFENDER, SIDE_CONDITION_SPIKES
     IfLoadedEqualTo 3, ScoreMinus10
@@ -760,9 +790,13 @@ Basic_CheckForesight:
     // If the target is already under the effect, score -10.
     IfVolatileStatus AI_BATTLER_DEFENDER, VOLATILE_CONDITION_FORESIGHT, ScoreMinus10
 
+    // if the attacker has mold breaker, ignore magic bounce
+    LoadBattlerAbility AI_BATTLER_ATTACKER
+    IfLoadedEqualTo ABILITY_MOLD_BREAKER, _SkipMagicBounce_Foresight
     // if the target has magic bounce, don't use it
     LoadBattlerAbility AI_BATTLER_DEFENDER
     IfLoadedEqualTo ABILITY_MAGIC_BOUNCE, ScoreMinus10
+_SkipMagicBounce_Foresight:
     PopOrEnd 
 
 Basic_CheckPerishSong:
@@ -781,7 +815,12 @@ Basic_CheckCannotAttract:
     IfVolatileStatus AI_BATTLER_DEFENDER, VOLATILE_CONDITION_ATTRACT, ScoreMinus10
     LoadBattlerAbility AI_BATTLER_DEFENDER
     IfLoadedEqualTo ABILITY_OBLIVIOUS, ScoreMinus10
+    // if the attacker has mold breaker, ignore magic bounce
+    LoadBattlerAbility AI_BATTLER_ATTACKER
+    IfLoadedEqualTo ABILITY_MOLD_BREAKER, _SkipMagicBounce_Attract
+    LoadBattlerAbility AI_BATTLER_DEFENDER
     IfLoadedEqualTo ABILITY_MAGIC_BOUNCE, ScoreMinus10
+_SkipMagicBounce_Attract:
     LoadGender AI_BATTLER_ATTACKER
     IfLoadedEqualTo GENDER_MALE, Basic_CheckCannotAttract_BothMale
     IfLoadedEqualTo GENDER_FEMALE, Basic_CheckCannotAttract_BothFemale
@@ -925,9 +964,13 @@ Basic_CheckTorment:
     // If the target is already under the effect, score -10.
     IfVolatileStatus AI_BATTLER_DEFENDER, VOLATILE_CONDITION_TORMENT, ScoreMinus10
 
+    // if the attacker has mold breaker, ignore magic bounce
+    LoadBattlerAbility AI_BATTLER_ATTACKER
+    IfLoadedEqualTo ABILITY_MOLD_BREAKER, _SkipMagicBounce_Torment
     // if the target has magic bounce, don't use it
     LoadBattlerAbility AI_BATTLER_DEFENDER
     IfLoadedEqualTo ABILITY_MAGIC_BOUNCE, ScoreMinus10
+_SkipMagicBounce_Torment:
     PopOrEnd 
 
 Basic_CheckCannotBurn:
@@ -935,7 +978,12 @@ Basic_CheckCannotBurn:
     LoadBattlerAbility AI_BATTLER_DEFENDER
     IfLoadedEqualTo ABILITY_WATER_VEIL, ScoreMinus10
     IfLoadedEqualTo ABILITY_MAGIC_GUARD, ScoreMinus10
+    // if the attacker has mold breaker, ignore magic bounce
+    LoadBattlerAbility AI_BATTLER_ATTACKER
+    IfLoadedEqualTo ABILITY_MOLD_BREAKER, _SkipMagicBounce_Burn
+    LoadBattlerAbility AI_BATTLER_DEFENDER
     IfLoadedEqualTo ABILITY_MAGIC_BOUNCE, ScoreMinus10
+_SkipMagicBounce_Burn:
     IfStatus AI_BATTLER_DEFENDER, MON_CONDITION_ANY, ScoreMinus10
     LoadTypeFrom LOAD_DEFENDER_TYPE_1
     IfLoadedEqualTo TYPE_FIRE, ScoreMinus10
@@ -1088,6 +1136,9 @@ Basic_CheckMiracleEye:
     // If the target is already under the respective effect, score -10.
     IfMoveEffect AI_BATTLER_DEFENDER, MOVE_EFFECT_MIRACLE_EYE, ScoreMinus10
 
+    // if the attacker has mold breaker, ignore magic bounce
+    LoadBattlerAbility AI_BATTLER_ATTACKER
+    IfLoadedEqualTo ABILITY_MOLD_BREAKER, _PopOrEnd
     // if the target has magic bounce, don't use it
     LoadBattlerAbility AI_BATTLER_DEFENDER
     IfLoadedEqualTo ABILITY_MAGIC_BOUNCE, ScoreMinus10
@@ -1247,10 +1298,13 @@ Basic_CheckEmbargo:
     // If the target is already under the respective effect, score -10.
     IfMoveEffect AI_BATTLER_DEFENDER, MOVE_EFFECT_EMBARGO, ScoreMinus10
 
+    // if the attacker has mold breaker, skip magic bounce
+    LoadBattlerAbility AI_BATTLER_ATTACKER
+    IfLoadedEqualTo ABILITY_MOLD_BREAKER, _SkipMagicBounce_Embargo
     // if the target has magic bounce, don't use it
     LoadBattlerAbility AI_BATTLER_DEFENDER
     IfLoadedEqualTo ABILITY_MAGIC_BOUNCE, ScoreMinus10
-
+_SkipMagicBounce_Embargo:
     // If a recyclable item for the target's side exists, terminate.
     LoadRecycleItem AI_BATTLER_DEFENDER
     IfLoadedEqualTo ITEM_NONE, Basic_CheckEmbargo_Terminate
@@ -1370,10 +1424,6 @@ Basic_CheckCanPsychoShift:
     IfNotStatus AI_BATTLER_ATTACKER, MON_CONDITION_ANY, ScoreMinus10
     IfStatus AI_BATTLER_DEFENDER, MON_CONDITION_ANY, ScoreMinus10
 
-    // if the target has magic bounce, don't use it
-    LoadBattlerAbility AI_BATTLER_DEFENDER
-    IfLoadedEqualTo ABILITY_MAGIC_BOUNCE, ScoreMinus10
-
     // If the target is protected by Safeguard, score -10.
     IfSideCondition AI_BATTLER_DEFENDER, SIDE_CONDITION_SAFEGUARD, ScoreMinus10
 
@@ -1424,10 +1474,12 @@ Basic_CheckHealBlock:
     // If the target is already under the effect, score -10.
     IfMoveEffect AI_BATTLER_DEFENDER, MOVE_EFFECT_HEAL_BLOCK, ScoreMinus10
 
+    // if the user has mold breaker, ignore magic bounce
+    LoadBattlerAbility AI_BATTLER_DEFENDER
+    IfLoadedEqualTo ABILITY_MOLD_BREAKER, _PopOrEnd
     // if the target has magic bounce, don't use it
     LoadBattlerAbility AI_BATTLER_DEFENDER
     IfLoadedEqualTo ABILITY_MAGIC_BOUNCE, ScoreMinus10
-
     PopOrEnd 
 
 Basic_CheckPowerTrick:
@@ -1448,7 +1500,14 @@ Basic_CheckGastroAcid:
     IfLoadedEqualTo ABILITY_RUN_AWAY, ScoreMinus10
     IfLoadedEqualTo ABILITY_PICKUP, ScoreMinus10
     IfLoadedEqualTo ABILITY_HONEY_GATHER, ScoreMinus10
+
+    // if the user has mold breaker, ignore magic bounce
+    LoadBattlerAbility AI_BATTLER_ATTACKER
+    IfLoadedEqualTo ABILITY_MOLD_BREAKER, _PopOrEnd
+    // don't use if the defender has magic bounce
+    LoadBattlerAbility AI_BATTLER_DEFENDER
     IfLoadedEqualTo ABILITY_MAGIC_BOUNCE, ScoreMinus10
+_PopOrEnd:
     PopOrEnd 
 
 Basic_CheckLuckyChant:
@@ -1508,8 +1567,14 @@ Basic_CheckWorrySeed:
     IfLoadedEqualTo ABILITY_INSOMNIA, ScoreMinus10
     IfLoadedEqualTo ABILITY_VITAL_SPIRIT, ScoreMinus10
     IfLoadedEqualTo ABILITY_MULTITYPE, ScoreMinus10
-    IfLoadedEqualTo ABILITY_MAGIC_BOUNCE, ScoreMinus10
 
+    // if the user has mold breaker, ignore magic bounce
+    LoadBattlerAbility AI_BATTLER_ATTACKER
+    IfLoadedEqualTo ABILITY_MOLD_BREAKER, _WorrySeed_Check_SleepTalk
+    // don't use if the defender has magic bounce
+    LoadBattlerAbility AI_BATTLER_DEFENDER
+    IfLoadedEqualTo ABILITY_MAGIC_BOUNCE, ScoreMinus10
+_WorrySeed_Check_SleepTalk:
     // If the target is asleep and does not know either Sleep Talk or Snore, score -10.
     IfNotStatus AI_BATTLER_DEFENDER, MON_CONDITION_SLEEP, Basic_CheckWorrySeed_Terminate
     IfMoveKnown AI_BATTLER_DEFENDER, MOVE_SLEEP_TALK, Basic_CheckWorrySeed_Terminate
@@ -1520,9 +1585,13 @@ Basic_CheckWorrySeed_Terminate:
     PopOrEnd 
 
 Basic_CheckToxicSpikes:
+    // if the user has mold breaker, ignore magic bounce
+    LoadBattlerAbility AI_BATTLER_ATTACKER
+    IfLoadedEqualTo ABILITY_MOLD_BREAKER, _CheckToxicSpikeLayers
     // if the target has magic bounce, don't use it
     LoadBattlerAbility AI_BATTLER_DEFENDER
     IfLoadedEqualTo ABILITY_MAGIC_BOUNCE, ScoreMinus10
+_CheckToxicSpikeLayers:
     // If the target's side of the field already has 2 layers of Toxic Spikes, score -10.
     LoadSpikesLayers AI_BATTLER_DEFENDER, SIDE_CONDITION_TOXIC_SPIKES
     IfLoadedEqualTo 2, ScoreMinus10
@@ -1628,11 +1697,14 @@ Basic_CheckCaptivate_CheckStatStage:
 Basic_CheckStealthRock:
     // If the target's side of the field is already under the effect of Stealth Rock, score -10.
     IfSideCondition AI_BATTLER_DEFENDER, SIDE_CONDITION_STEALTH_ROCK, ScoreMinus10
-
+    
+    // if the user has mold breaker, ignore magic bounce
+    LoadBattlerAbility AI_BATTLER_ATTACKER
+    IfLoadedEqualTo ABILITY_MOLD_BREAKER, _CheckAlivePartyMemberForStealthRock
     // if the target has magic bounce, don't use it
     LoadBattlerAbility AI_BATTLER_DEFENDER
     IfLoadedEqualTo ABILITY_MAGIC_BOUNCE, ScoreMinus10
-
+_CheckAlivePartyMemberForStealthRock:
     // If the target is on their last Pokemon, score -10.
     CountAlivePartyBattlers AI_BATTLER_DEFENDER
     IfLoadedEqualTo 0, ScoreMinus10
@@ -1657,9 +1729,11 @@ Basic_CheckLunarDance_Terminate:
     PopOrEnd
 
 Basic_Taunt:
+    LoadBattlerAbility AI_BATTLER_ATTACKER
+    IfLoadedEqualTo ABILITY_MOLD_BREAKER, _CheckTauntTurns // ignore magic bounce
     LoadBattlerAbility AI_BATTLER_DEFENDER
     IfLoadedEqualTo ABILITY_MAGIC_BOUNCE, ScoreMinus10
-
+_CheckTauntTurns:
     LoadTauntedTurns AI_BATTLER_DEFENDER
     IfLoadedGreaterThan 0, ScoreMinus10
     PopOrEnd

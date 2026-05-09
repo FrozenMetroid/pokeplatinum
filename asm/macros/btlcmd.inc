@@ -1249,6 +1249,11 @@
     .long (\jump_not_sunny-.) / 4 - 1
     .endm
 
+    .macro SetAIAbility inBattler
+    .long BTLCMD_SETAIABILITY
+    .long \inBattler
+    .endm
+    
     .text
     .globl _start
 _start:
