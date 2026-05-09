@@ -1333,6 +1333,15 @@ static void BattleScript_CalcMoveDamage(BattleSystem *battleSys, BattleContext *
     int moveType;
     if (Battler_Ability(battleCtx, battleCtx->attacker) == ABILITY_NORMALIZE) {
         moveType = TYPE_NORMAL;
+    } else if (MOVE_DATA(battleCtx->moveCur).type == TYPE_NORMAL && MoveIsAffectedByNormalizeVariants(battleCtx->moveCur)) {
+        switch (Battler_Ability(battleCtx, battleCtx->attacker)) {
+            case ABILITY_GALVANIZE:
+                moveType = TYPE_ELECTRIC;
+                break;
+            default:
+                moveType = TYPE_NORMAL;
+                break;
+        }
     } else if (battleCtx->moveType) {
         moveType = battleCtx->moveType;
     } else {

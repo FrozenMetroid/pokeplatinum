@@ -584,6 +584,10 @@
     {
       "id": "pl_msg_00000611_00146",
       "en_US": "TELEPATHY"
+    },
+    {
+      "id": "pl_msg_00000611_00147",
+      "en_US": "GALVANIZE"
     }
   ]
 }

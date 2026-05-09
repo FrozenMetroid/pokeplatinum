@@ -1025,6 +1025,13 @@
         "Anticipates an ally’s\n",
         "attack and dodges it."
       ]
+    },
+    {
+      "id": "pl_msg_00000612_00147",
+      "en_US": [
+        "Normal-type moves become\n",
+        "Electric-type."
+      ]
     }
   ]
 }

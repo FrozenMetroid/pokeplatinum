@@ -1801,6 +1801,7 @@ void BattleSystem_CheckRedirectionAbilities(BattleSystem *battleSys, BattleConte
 
     if (battleCtx->defender == BATTLER_NONE
         || Battler_Ability(battleCtx, attacker) == ABILITY_NORMALIZE
+        || Battler_Ability(battleCtx, attacker) == ABILITY_GALVANIZE
         || Battler_Ability(battleCtx, attacker) == ABILITY_MOLD_BREAKER) {
         return;
     }
@@ -2648,6 +2649,15 @@ int BattleSystem_ApplyTypeChart(BattleSystem *battleSys, BattleContext *battleCt
 
     if (Battler_Ability(battleCtx, attacker) == ABILITY_NORMALIZE) {
         moveType = TYPE_NORMAL;
+    } else if (MOVE_DATA(move).type == TYPE_NORMAL && MoveIsAffectedByNormalizeVariants(move)) {
+        switch (Battler_Ability(battleCtx, attacker)) {
+            case ABILITY_GALVANIZE:
+                moveType = TYPE_ELECTRIC;
+                break;
+            default:
+                moveType = TYPE_NORMAL;
+                break;
+        }
     } else if (inType) {
         moveType = inType;
     } else {
@@ -2760,6 +2770,15 @@ void BattleSystem_CalcEffectiveness(BattleContext *battleCtx, int move, int inTy
 
     if (attackerAbility == ABILITY_NORMALIZE) {
         moveType = TYPE_NORMAL;
+    } else if (MOVE_DATA(move).type == TYPE_NORMAL && MoveIsAffectedByNormalizeVariants(move)) {
+        switch (Battler_Ability(battleCtx, battleCtx->attacker)) {
+            case ABILITY_GALVANIZE:
+                moveType = TYPE_ELECTRIC;
+                break;
+            default:
+                moveType = TYPE_NORMAL;
+                break;
+        }
     } else if (inType) {
         moveType = inType;
     } else {
@@ -3562,6 +3581,15 @@ int BattleSystem_TriggerImmunityAbility(BattleContext *battleCtx, int attacker, 
 
     if (Battler_Ability(battleCtx, attacker) == ABILITY_NORMALIZE) {
         moveType = TYPE_NORMAL;
+    } else if (MOVE_DATA(battleCtx->moveCur).type == TYPE_NORMAL && MoveIsAffectedByNormalizeVariants(battleCtx->moveCur)) {
+        switch (Battler_Ability(battleCtx, attacker)) {
+            case ABILITY_GALVANIZE:
+                moveType = TYPE_ELECTRIC;
+                break;
+            default:
+                moveType = TYPE_NORMAL;
+                break;
+        }
     } else if (battleCtx->moveType) {
         moveType = battleCtx->moveType;
     } else {
@@ -4390,6 +4418,15 @@ BOOL BattleSystem_TriggerAbilityOnHit(BattleSystem *battleSys, BattleContext *ba
 
     if (Battler_Ability(battleCtx, battleCtx->attacker) == ABILITY_NORMALIZE) {
         moveType = TYPE_NORMAL;
+    } else if (MOVE_DATA(battleCtx->moveCur).type == TYPE_NORMAL && MoveIsAffectedByNormalizeVariants(battleCtx->moveCur)) {
+        switch (Battler_Ability(battleCtx, battleCtx->attacker)) {
+            case ABILITY_GALVANIZE:
+                moveType = TYPE_ELECTRIC;
+                break;
+            default:
+                moveType = TYPE_NORMAL;
+                break;
+        }
     } else if (battleCtx->moveType) {
         moveType = battleCtx->moveType;
     } else {
@@ -7022,6 +7059,16 @@ int BattleSystem_CalcMoveDamage(BattleSystem *battleSys,
         #ifdef BATTLE_NORMALIZE_POWER_BOOST
         movePower = movePower * 12 / 10;
         #endif
+    } else if (moveType == TYPE_NORMAL && MoveIsAffectedByNormalizeVariants(move)) {
+        switch (Battler_Ability(battleCtx, attacker)) {
+            case ABILITY_GALVANIZE:
+                moveType = TYPE_ELECTRIC;
+                break;
+            default:
+                moveType = TYPE_NORMAL;
+                break;
+        }
+        movePower = movePower * 13 / 10;
     } else if (inType == TYPE_NORMAL) {
         moveType = MOVE_DATA(move).type;
     } else {
@@ -8768,4 +8815,17 @@ BOOL Battle_CanStealHeldItemFromAttacker(BattleSystem *battleSys, BattleContext 
     }
 
     return TRUE;
+}
+
+BOOL MoveIsAffectedByNormalizeVariants(int move)
+{
+    switch (move) {
+        case MOVE_HIDDEN_POWER:
+        case MOVE_WEATHER_BALL:
+        case MOVE_NATURAL_GIFT:
+        case MOVE_JUDGMENT:
+            return FALSE;
+        default:
+            return TRUE;
+    }
 }

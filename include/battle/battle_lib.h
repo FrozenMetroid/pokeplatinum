@@ -1509,4 +1509,6 @@ int BattleAI_SwitchedSlot(BattleSystem *battleSys, int battler);
  */
 int Move_CalcVariableType(BattleSystem *battleSys, BattleContext *battleCtx, Pokemon *mon, int move);
 
+BOOL MoveIsAffectedByNormalizeVariants(int move);
+
 #endif // POKEPLATINUM_BATTLE_BATTLE_LIB_H

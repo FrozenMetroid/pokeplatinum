@@ -2856,6 +2856,19 @@ static inline int CalcMoveType(BattleContext *battleCtx, int attacker, int move)
 {
     if (Battler_Ability(battleCtx, attacker) == ABILITY_NORMALIZE) {
         return TYPE_NORMAL;
+    } else if (MOVE_DATA(move).type == TYPE_NORMAL && MoveIsAffectedByNormalizeVariants(move)) {
+        switch (Battler_Ability(battleCtx, attacker)) {
+            case ABILITY_GALVANIZE:
+                return TYPE_ELECTRIC;
+            // case ABILITY_AERILATE:
+            //     return TYPE_FLYING;
+            // case ABILITY_PIXILATE:
+            //     return TYPE_FAIRY;
+            // case ABILITY_REFRIGERATE:
+            //     return TYPE_ICE;
+            default:
+                return TYPE_NORMAL;
+        }
     } else if (battleCtx->moveType) {
         return battleCtx->moveType;
     }
@@ -3702,6 +3715,19 @@ static inline int CalcCurrentMoveType(BattleContext *battleCtx)
 {
     if (Battler_Ability(battleCtx, battleCtx->attacker) == ABILITY_NORMALIZE) {
         return TYPE_NORMAL;
+    } else if (battleCtx->moveType == TYPE_NORMAL && MoveIsAffectedByNormalizeVariants(battleCtx->moveCur)) {
+        switch (Battler_Ability(battleCtx, battleCtx->attacker)) {
+            case ABILITY_GALVANIZE:
+                return TYPE_ELECTRIC;
+            // case ABILITY_AERILATE:
+            //     return TYPE_FLYING;
+            // case ABILITY_PIXILATE:
+            //     return TYPE_FAIRY;
+            // case ABILITY_REFRIGERATE:
+            //     return TYPE_ICE;
+            default:
+                return TYPE_NORMAL;
+        }
     } else if (battleCtx->moveType) {
         return battleCtx->moveType;
     }
