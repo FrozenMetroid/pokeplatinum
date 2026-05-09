@@ -74,7 +74,7 @@ Additional Abilities:
 - Piercing Eye (CUSTOM): Lowers foes' Evasion on switch-in. 
     Hoothoot and Noctowl
 - Artillery (CUSTOM): Raises the power of beam moves (Ice Beam, Bubble Beam, etc.)
-    Octillery
+    Remoraid and Octillery
 - Supreme Overlord (Supreme Lord in-game): Raises the power of a move by 10% for each fainted ally
     Honchkrow (overlord of Murkrow in the Pokédex)
 - Sharpness: Raises the power of slicing moves (Leaf Blade, Night Slash, etc.)

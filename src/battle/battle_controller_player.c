@@ -2890,12 +2890,23 @@ static int BattleControllerPlayer_CheckMoveHitAccuracy(BattleSystem *battleSys, 
 
     u8 moveType = CalcMoveType(battleCtx, attacker, move);
     u8 moveClass = MOVE_DATA(move).class;
+    u8 movePower = MOVE_DATA(move).power;
     s8 accStages = battleCtx->battleMons[attacker].statBoosts[BATTLE_STAT_ACCURACY] - 6;
     s8 evaStages = 6 - battleCtx->battleMons[defender].statBoosts[BATTLE_STAT_EVASION];
     u8 defenderType1 = BattleMon_Get(battleCtx, defender, BATTLEMON_TYPE_1, NULL);
     u8 defenderType2 = BattleMon_Get(battleCtx, defender, BATTLEMON_TYPE_2, NULL);
     u8 attackerType1 = BattleMon_Get(battleCtx, attacker, BATTLEMON_TYPE_1, NULL);
     u8 attackerType2 = BattleMon_Get(battleCtx, attacker, BATTLEMON_TYPE_2, NULL);
+
+    #ifdef BATTLE_ADD_TELEPATHY
+    if (Battler_Ability(battleCtx, defender) == ABILITY_TELEPATHY
+     && ((attacker & 1) == (defender & 1)) // used on an ally
+     && (movePower != 0)) // not a status move or a move that deals no damage
+    {
+        battleCtx->moveStatusFlags |= MOVE_STATUS_MISSED;
+        return 0;
+    }
+    #endif
 
     #ifdef BATTLE_ADD_PRANKSTER
     if (Battler_Ability(battleCtx, attacker) == ABILITY_PRANKSTER

@@ -1018,6 +1018,13 @@
         "Steals an item when hit\n",
         "by another Pokémon."
       ]
+    },
+    {
+      "id": "pl_msg_00000612_00146",
+      "en_US": [
+        "Anticipates an ally’s\n",
+        "attack and dodges it."
+      ]
     }
   ]
 }

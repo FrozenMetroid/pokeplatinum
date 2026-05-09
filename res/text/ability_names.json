@@ -584,6 +584,10 @@
     {
       "id": "pl_msg_00000610_00145",
       "en_US": "Pickpocket"
+    },
+    {
+      "id": "pl_msg_00000610_00146",
+      "en_US": "Telepathy"
     }
   ]
 }

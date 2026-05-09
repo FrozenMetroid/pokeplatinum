@@ -580,6 +580,10 @@
     {
       "id": "pl_msg_00000611_00145",
       "en_US": "PICKPOCKET"
+    },
+    {
+      "id": "pl_msg_00000611_00146",
+      "en_US": "TELEPATHY"
     }
   ]
 }
