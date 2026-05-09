@@ -18,6 +18,7 @@ sdat_resources = files([
     seq_folder / 'SEQ_BA_DPOKE2.mid',
     seq_folder / 'SEQ_BA_GINGA3.mid',
     seq_folder / 'SEQ_BA_GINGA.mid',
+    seq_folder / 'SEQ_BA_GS_LEADER.mid',
     seq_folder / 'SEQ_BA_GYM.mid',
     seq_folder / 'SEQ_BA_POKE.mid',
     seq_folder / 'SEQ_BA_RIVAL.mid',

@@ -14,12 +14,7 @@
             "form": 0,
             "level": 29,
             "item": null,
-            "moves": [
-                "MOVE_TACKLE",
-                "MOVE_STEALTH_ROCK",
-                "MOVE_WILL_O_WISP",
-                "MOVE_NONE"
-            ],
+            "moves": null,
             "iv_scale": 50,
             "ball_seal": 0
         },

@@ -12339,6 +12339,17 @@
             "ppr": 54,
             "ply": "PLAYER_SE_2",
             "unkB": [0,0]
+        },
+        {
+            "name": "SEQ_BA_GS_LEADER",
+            "fileName": "SEQ_BA_GS_LEADER.sseq",
+            "unkA": 0,
+            "bnk": "BANK_BGM_BATTLE",
+            "vol": 126,
+            "cpr": 64,
+            "ppr": 54,
+            "ply": "PLAYER_BGM",
+            "unkB": [0,0]
         }
     ],
     "seqarcInfo": [],

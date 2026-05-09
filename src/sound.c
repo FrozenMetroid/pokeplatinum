@@ -12,8 +12,9 @@
 #include "sound_playback.h"
 #include "sound_system.h"
 
-#define BGM_PLAYER_NORMAL_CHANNELS 0x7FF
-#define BGM_PLAYER_EXTRA_CHANNELS  0x7FFF
+#define PLAYER_NORMAL_CHANNELS 0x7FF
+#define PLAYER_EXTRA_CHANNELS  0x7FFF
+#define PLAYER_ALL_CHANNELS    0xFFFF
 
 #define WAVEFORM_SAMPLE_WINDOW 100 // Used to generate amplitude graphs from waveform data
 #define WAVEFORM_MAX_AMPLITUDE 9
@@ -30,6 +31,7 @@ static void Sound_Impl_PlayCutsceneBGM(u8 scene, u16 bgmID, int unused);
 static void Sound_Impl_ReverseBuffer(u8 *buffer, u32 size);
 static void Sound_Impl_FadeToBGM(u8 unused1, u16 bgmID, int fadeOutFrames, int fadeInFrames, u8 bankState, void *unused2);
 static void Sound_SetBGMAllocatableChannels(u16 channels);
+static void Sound_SetPlayerAllocatableChannels(u8 player, u16 channels);
 static void Sound_Impl_PauseOrStopFieldBGM(void);
 static void Sound_Impl_FilterCallback(void *bufferL, void *bufferR, u32 length, NNSSndCaptureFormat format, void *arg);
 static const SNDWaveData *Sound_Impl_GetWaveDataForSpecies(int species);
@@ -264,11 +266,12 @@ BOOL Sound_SetSceneAndPlayBGM(u8 scene, u16 bgmID, int unused)
 
     switch (scene) {
     case SOUND_SCENE_FIELD:
-        Sound_ConfigureBGMChannelsAndReverb(SOUND_CHANNEL_CONFIG_DEFAULT);
+        Sound_ConfigurePlayerChannelsAndReverb(PLAYER_FIELD, SOUND_CHANNEL_CONFIG_EXPANDED);
         Sound_Impl_PlayFieldBGM(bgmID, unused);
         *fanfareDelay = 0;
         break;
     case SOUND_SCENE_BATTLE:
+        Sound_ConfigurePlayerChannelsAndReverb(PLAYER_BGM, SOUND_CHANNEL_CONFIG_EXPANDED);
         Sound_Impl_PlayBattleBGM(bgmID, unused);
         break;
     case 11:
@@ -1332,17 +1335,41 @@ static void Sound_SetBGMAllocatableChannels(u16 channels)
     NNS_SndPlayerSetAllocatableChannel(PLAYER_BGM, channels);
 }
 
+static void Sound_SetPlayerAllocatableChannels(u8 playerID, u16 channels)
+{
+    NNS_SndPlayerSetAllocatableChannel(playerID, channels);
+}
+
 void Sound_ConfigureBGMChannelsAndReverb(enum SoundChannelConfig config)
 {
     if (config == SOUND_CHANNEL_CONFIG_DEFAULT) {
-        Sound_SetBGMAllocatableChannels(BGM_PLAYER_NORMAL_CHANNELS);
+        Sound_SetBGMAllocatableChannels(PLAYER_NORMAL_CHANNELS);
         Sound_StopReverb(0);
     } else if (config == SOUND_CHANNEL_CONFIG_TITLE) {
-        Sound_SetBGMAllocatableChannels(BGM_PLAYER_EXTRA_CHANNELS);
+        Sound_SetBGMAllocatableChannels(PLAYER_EXTRA_CHANNELS);
         Sound_StartReverb(30);
     } else { // SOUND_CHANNEL_CONFIG_ENDING or anything else
-        Sound_SetBGMAllocatableChannels(BGM_PLAYER_EXTRA_CHANNELS);
+        Sound_SetBGMAllocatableChannels(PLAYER_EXTRA_CHANNELS);
         Sound_StartReverb(15);
+    }
+
+    UNUSED(Sound_IsCaptureActive());
+}
+
+void Sound_ConfigurePlayerChannelsAndReverb(u8 player, enum SoundChannelConfig config)
+{
+    if (config == SOUND_CHANNEL_CONFIG_DEFAULT) {
+        Sound_SetPlayerAllocatableChannels(player, PLAYER_NORMAL_CHANNELS);
+        Sound_StopReverb(0);
+    } else if (config == SOUND_CHANNEL_CONFIG_TITLE) {
+        Sound_SetPlayerAllocatableChannels(player, PLAYER_EXTRA_CHANNELS);
+        Sound_StartReverb(30);
+    } else if (config == SOUND_CHANNEL_CONFIG_ENDING) {
+        Sound_SetPlayerAllocatableChannels(player, PLAYER_EXTRA_CHANNELS);
+        Sound_StartReverb(15);
+    } else {
+        Sound_SetPlayerAllocatableChannels(player, PLAYER_ALL_CHANNELS);
+        Sound_StopReverb(0);
     }
 
     UNUSED(Sound_IsCaptureActive());

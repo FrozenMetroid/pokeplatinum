@@ -115,6 +115,7 @@ enum SoundChannelConfig {
     SOUND_CHANNEL_CONFIG_DEFAULT = 0, // Default channel allocation, no reverb
     SOUND_CHANNEL_CONFIG_TITLE, // Extra BGM channels allocated, reverb at ~25% volume
     SOUND_CHANNEL_CONFIG_ENDING, // Extra BGM channels allocated, reverb at ~12% volume
+    SOUND_CHANNEL_CONFIG_EXPANDED,
 };
 
 typedef struct WaveOutParam {
@@ -199,6 +200,7 @@ u32 Sound_GetNumberOfPlayedCrySamples(int unused, const SNDWaveData *data, int p
 u32 Sound_GetTicksForHandle(enum SoundHandleType handleType);
 void Sound_WaveData_AccumulateAmplitudes(const SNDWaveData *data, u8 *amplitudes, int numAmplitudes, int pitch);
 void Sound_ConfigureBGMChannelsAndReverb(enum SoundChannelConfig config);
+void Sound_ConfigurePlayerChannelsAndReverb(u8 player, enum SoundChannelConfig config);
 void Sound_SetPlayerVolume(int playerID, int volume);
 void Sound_Set2PokemonCriesAllowed(BOOL allowed);
 void sub_02005464(BOOL param0);
