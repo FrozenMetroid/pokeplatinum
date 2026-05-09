@@ -17,6 +17,7 @@ BOOL Sound_SetBGM(u8 scene, u16 seqID);
 void Sound_StopBGM(u16 bgmID, int fadeOutFrames);
 void Sound_FadeInBGM(int targetVolume, int frames, enum BGMFadeInType fadeInType);
 void Sound_FadeOutBGM(int targetVolume, int frames);
+void Sound_FadeOutFieldBGM(int targetVolume, int frames);
 BOOL Sound_IsFadeActive(void);
 BOOL Sound_IsSequencePlaying(u16 seqID);
 void Sound_StopWaveOutAndSequences(void);

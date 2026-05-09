@@ -3728,14 +3728,14 @@ static BOOL ScrCmd_SetPlayerBike(ScriptContext *ctx)
 
     if (rideBike == TRUE) {
         FieldBGM_SetOverride(ctx->fieldSystem, SEQ_BICYCLE);
-        FieldBGM_TryFadeOut(ctx->fieldSystem, SEQ_BICYCLE, 1);
+        FieldBGM_TryFadeOut(ctx->fieldSystem, Sound_GetCurrentBGM(), SEQ_BICYCLE, 1);
         PlayerAvatar_SetTransitionState(ctx->fieldSystem->playerAvatar, PLAYER_TRANSITION_CYCLING);
         PlayerAvatar_RequestChangeState(ctx->fieldSystem->playerAvatar);
     } else {
         PlayerAvatar_SetTransitionState(ctx->fieldSystem->playerAvatar, PLAYER_TRANSITION_WALKING);
         PlayerAvatar_RequestChangeState(ctx->fieldSystem->playerAvatar);
         FieldBGM_SetOverride(ctx->fieldSystem, SEQ_NONE);
-        FieldBGM_TryFadeOut(ctx->fieldSystem, FieldBGM_GetEffective(ctx->fieldSystem, ctx->fieldSystem->location->mapId), 1);
+        FieldBGM_TryFadeOut(ctx->fieldSystem, Sound_GetCurrentBGM(), FieldBGM_GetEffective(ctx->fieldSystem, ctx->fieldSystem->location->mapId), 1);
     }
 
     return FALSE;
@@ -7248,7 +7248,7 @@ static BOOL ScrCmd_QueueNewRepel(ScriptContext *ctx)
 
 static BOOL ScrCmd_Debug_SetAllTownsVisited(ScriptContext *ctx)
 {
-    for (int i = FLAG_FIRST_ARRIVAL_TWINLEAF_TOWN; i < FLAG_UNK_0x09F5; i++) {
+    for (int i = FLAG_FIRST_ARRIVAL_TWINLEAF_TOWN; i < FLAG_HIDE_SUNYSHORE_JASMINE; i++) {
         FieldSystem_SetFlag(ctx->fieldSystem, i);
     }
 

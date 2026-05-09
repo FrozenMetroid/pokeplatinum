@@ -29,7 +29,6 @@ typedef struct PokemonCryDurationParam {
 
 static void Sound_Impl_HandleBGMChange(u16 param0, enum SoundHandleType param1);
 static BOOL Sound_Impl_PlayBGM(u16 seqID, u8 playerID, enum SoundHandleType handleType);
-static BOOL Sound_Impl_PlayFieldBGM(u16 seqID, u8 playerID, enum SoundHandleType handleType);
 static void Sound_Impl_ResetBGM(void);
 void Sound_StopAll(void);
 static void Sound_Impl_SetPokemonCryVolume(u16 param0, enum SoundHandleType param1, int param2);
@@ -67,7 +66,7 @@ BOOL Sound_PlayBGM(u16 bgmID)
     if (player == PLAYER_BGM) {
         result = Sound_Impl_PlayBGM(bgmID, player, handleType);
     } else if (player == PLAYER_FIELD) {
-        result = Sound_Impl_PlayFieldBGM(bgmID, player, handleType);
+        result = Sound_PlayFieldBGM(bgmID, player, handleType);
     } else {
         GF_ASSERT(FALSE);
         return FALSE;
@@ -96,7 +95,7 @@ static BOOL Sound_Impl_PlayBGM(u16 seqID, u8 playerID, enum SoundHandleType hand
     return NNS_SndArcPlayerStartSeq(SoundSystem_GetSoundHandle(handleType), seqID);
 }
 
-static BOOL Sound_Impl_PlayFieldBGM(u16 seqID, u8 playerID, enum SoundHandleType handleType)
+BOOL Sound_PlayFieldBGM(u16 seqID, u8 playerID, enum SoundHandleType handleType)
 {
     UNUSED(SoundSystem_GetParam(SOUND_SYSTEM_PARAM_FIELD_BGM_BANK_STATE));
     u16 *newFieldBGM = SoundSystem_GetParam(SOUND_SYSTEM_PARAM_FIELD_BGM);
@@ -183,6 +182,18 @@ void Sound_FadeOutBGM(int targetVolume, int frames)
 
     if (Sound_IsFadeActive() == FALSE) {
         enum SoundHandleType handleType = SoundSystem_GetSoundHandleTypeFromPlayerID(playerID);
+        Sound_FadeVolumeForHandle(handleType, targetVolume, frames);
+        Sound_SetFadeCounter(frames);
+    }
+
+    SoundSystem_SetState(SOUND_SYSTEM_STATE_FADE_OUT);
+}
+
+void Sound_FadeOutFieldBGM(int targetVolume, int frames)
+{
+
+    if (Sound_IsFadeActive() == FALSE) {
+        enum SoundHandleType handleType = SoundSystem_GetSoundHandleTypeFromPlayerID(PLAYER_FIELD);
         Sound_FadeVolumeForHandle(handleType, targetVolume, frames);
         Sound_SetFadeCounter(frames);
     }

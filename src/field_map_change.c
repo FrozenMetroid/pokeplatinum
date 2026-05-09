@@ -632,7 +632,7 @@ static BOOL FieldTask_ChangeMap(FieldTask *task)
     switch (mapChangeData->state) {
     case 0:
         Sound_PlayEffect(SEQ_SE_DP_KAIDAN2);
-        FieldBGM_TryFadeIn(fieldSystem, location->mapId);
+        FieldBGM_TryFadeIn(fieldSystem, location->mapId); // actually fades out if the new map's BGM is different from the current one
         FieldTransition_FadeOutAndFinishMap(task);
         mapChangeData->state++;
         break;
@@ -644,7 +644,7 @@ static BOOL FieldTask_ChangeMap(FieldTask *task)
         if (Sound_IsFadeActive()) {
             break;
         }
-
+        
         FieldBGM_PlayForMapHeader(fieldSystem, location->mapId);
         FieldTransition_StartMapAndFadeIn(task);
         mapChangeData->state++;

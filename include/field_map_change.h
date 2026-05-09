@@ -29,6 +29,7 @@ typedef struct MapChangeUndergroundContext {
 
 void FieldMapChange_Set3DDisplay(FieldSystem *fieldSystem);
 void FieldMapChange_UpdateGameData(FieldSystem *fieldSystem, BOOL param1);
+void FieldMap_ZoneChange_UpdateSoundData(FieldSystem *fieldSystem);
 void FieldMapChange_UpdateGameDataDistortionWorld(FieldSystem *fieldSystem, BOOL param1);
 void sub_02053494(FieldSystem *fieldSystem);
 void FieldSystem_SetLoadNewGameSpawnTask(FieldSystem *fieldSystem);

@@ -204,14 +204,12 @@ void Sound_ConfigurePlayerChannelsAndReverb(u8 player, enum SoundChannelConfig c
 void Sound_SetPlayerVolume(int playerID, int volume);
 void Sound_Set2PokemonCriesAllowed(BOOL allowed);
 void sub_02005464(BOOL param0);
+BOOL Sound_PlayFieldBGM(u16 seqID, u8 playerID, enum SoundHandleType handleType);
+u16 Sound_GetCurrentBGM(void);
 
 static inline u16 Sound_GetCurrentBGM1(void *p)
 {
     return Sound_Impl_GetCurrentBGM(p);
-}
-static inline u16 Sound_GetCurrentBGM(void)
-{
-    return Sound_Impl_GetCurrentBGM();
 }
 
 #endif // POKEPLATINUM_SOUND_H

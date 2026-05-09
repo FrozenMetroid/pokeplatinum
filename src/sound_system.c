@@ -402,3 +402,8 @@ static void SoundSystem_StopBGM()
     NNS_SndPlayerStopSeqByPlayerNo(PLAYER_BGM, 0);
     NNS_SndHandleReleaseSeq(SoundSystem_GetSoundHandle(SOUND_HANDLE_TYPE_BGM));
 }
+
+u16 Sound_GetCurrentBGM(void)
+{
+    return Sound_Impl_GetCurrentBGM();
+}

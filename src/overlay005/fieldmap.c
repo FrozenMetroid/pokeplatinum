@@ -428,7 +428,7 @@ static BOOL FieldMap_ChangeZone(FieldSystem *fieldSystem)
     sub_0206184C(fieldSystem->mapObjMan, oldMapID, newMapID, objEventCount, objEventList);
 
     RadarChain_Clear(fieldSystem->chain);
-    FieldBGM_TryFadeOut(fieldSystem, FieldBGM_GetEffective(fieldSystem, fieldSystem->location->mapId), 1);
+    FieldBGM_TryFadeOut(fieldSystem, Sound_GetCurrentBGM(), FieldBGM_GetEffective(fieldSystem, fieldSystem->location->mapId), 1);
     sub_0203A418(fieldSystem);
 
     if (fieldSystem->unk_04->unk_0C != NULL) {
@@ -466,7 +466,7 @@ void FieldMap_ChangeZoneDistortionWorld(FieldSystem *fieldSystem, u32 mapId)
 
     sub_0206184C(fieldSystem->mapObjMan, oldMapId, mapId, objEventCount, objEventList);
 
-    FieldBGM_TryFadeOut(fieldSystem, FieldBGM_GetEffective(fieldSystem, fieldSystem->location->mapId), 1);
+    FieldBGM_TryFadeOut(fieldSystem, Sound_GetCurrentBGM(), FieldBGM_GetEffective(fieldSystem, fieldSystem->location->mapId), 1);
     sub_0203A418(fieldSystem);
 
     if (fieldSystem->unk_04->unk_0C != NULL) {

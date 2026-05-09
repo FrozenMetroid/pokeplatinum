@@ -13,6 +13,7 @@
 #include "player_avatar.h"
 #include "pokeradar.h"
 #include "rtc.h"
+#include "senate_config.h"
 #include "sound.h"
 #include "sound_playback.h"
 #include "system_flags.h"
@@ -225,30 +226,47 @@ static u16 FieldBGM_GetAltMusicForCyclingRoad(FieldSystem *fieldSystem, int head
     return SEQ_NONE;
 }
 
-BOOL FieldBGM_TryFadeOut(FieldSystem *fieldSystem, u16 bgmID, int mode)
+BOOL FieldBGM_TryFadeOut(FieldSystem *fieldSystem, u16 inBGM, u16 outBGM, int mode)
 {
+    // EmulatorLog("FieldBGM_TryFadeOut: outBGM=%d, mode=%d", outBGM, mode);
+    #pragma unused(inBGM)
     PlayerAvatar *playerAvatar;
     int fadeOutFrames, waitFrames, playerState;
+    u16 bank, scene;
+    BOOL success;
 
     playerAvatar = fieldSystem->playerAvatar;
     playerState = PlayerAvatar_GetPlayerState(playerAvatar);
 
     if (Sound_IsBGMFixed() == TRUE) {
+        // EmulatorLog("FieldBGM_TryFadeOut: BGM is fixed, skipping fade out");
         return FALSE;
     }
 
-    if (bgmID == Sound_GetCurrentBGM1(fieldSystem)) {
+    if (outBGM == Sound_GetCurrentBGM1(fieldSystem)) {
+        // EmulatorLog("FieldBGM_TryFadeOut: outBGM is already playing, skipping fade out");
         return FALSE;
     }
 
     Sound_ClearBGMPauseFlags();
     FieldBGM_GetFadeOutAndWaitFrames(fieldSystem, mode, &fadeOutFrames, &waitFrames);
 
-    // Yes, it's checking bike twice. Maybe there was a point were Acro and Mach Bikes were still a thing?
-    if ((playerState == PLAYER_STATE_CYCLING) || (playerState == PLAYER_STATE_CYCLING)) {
-        Sound_FadeToBGM(4, bgmID, fadeOutFrames, waitFrames, 30, 0, NULL);
-    } else {
-        Sound_FadeOutAndPlayBGM(4, bgmID, fadeOutFrames, waitFrames, 0, NULL);
+    if (playerState == PLAYER_STATE_CYCLING) {
+        Sound_FadeToBGM(4, outBGM, fadeOutFrames, waitFrames, 30, 0, NULL);
+    } 
+    else {
+        #ifdef CHANGE_FIELD_BGM_FADE_OUT
+        Sound_FadeOutBGM(0, fadeOutFrames);
+
+        success = SoundSystem_LoadSequenceEx(outBGM, (NNS_SND_ARC_LOAD_SEQ | NNS_SND_ARC_LOAD_BANK ));
+        if (!success) {
+            EmulatorLog("FieldBGM_TryFadeOut: failed to load outBGM %d", outBGM);
+            return FALSE;
+        }
+        Sound_SetSceneAndPlayBGM(SOUND_SCENE_FIELD, outBGM, 0);
+        #else
+        Sound_FadeOutAndPlayBGM(4, outBGM, fadeOutFrames, waitFrames, 0, NULL);
+        #endif
     }
 
     return TRUE;

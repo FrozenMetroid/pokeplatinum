@@ -441,10 +441,10 @@ static BOOL MountOrUnmountBicycle(FieldTask *task)
             PlayerAvatar_RequestChangeState(fieldSystem->playerAvatar);
 
             FieldBGM_SetOverride(fieldSystem, SEQ_NONE);
-            FieldBGM_TryFadeOut(fieldSystem, FieldBGM_GetEffective(fieldSystem, fieldSystem->location->mapId), 1);
+            FieldBGM_TryFadeOut(fieldSystem, Sound_GetCurrentBGM(), FieldBGM_GetEffective(fieldSystem, fieldSystem->location->mapId), 1);
         } else {
             FieldBGM_SetOverride(fieldSystem, SEQ_BICYCLE);
-            FieldBGM_TryFadeOut(fieldSystem, SEQ_BICYCLE, 1);
+            FieldBGM_TryFadeOut(fieldSystem, Sound_GetCurrentBGM(), SEQ_BICYCLE, 1);
             MapObject_SetPauseMovementOff(Player_MapObject(fieldSystem->playerAvatar));
 
             PlayerAvatar_SetTransitionState(fieldSystem->playerAvatar, PLAYER_TRANSITION_CYCLING);

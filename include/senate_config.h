@@ -33,6 +33,11 @@ Shortened timer for Honey Tree
 */
 #define HONEYTREE_SHORTENED_TIMER
 
+/*
+Testing for changing banks between headers
+*/
+// #define CHANGE_FIELD_BGM_FADE_OUT
+
 
 /*
 Display the trainer's name as a sprite during the encounter effect

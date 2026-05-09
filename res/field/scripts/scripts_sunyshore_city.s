@@ -48,6 +48,7 @@ SunyshoreCity_TriggerRivalAndJasmine:
     ClearFlag FLAG_HIDE_SUNYSHORE_CITY_RIVAL
     AddObject LOCALID_RIVAL
     LockObject LOCALID_RIVAL
+    Common_SetRivalBGM
     GetPlayerMapPos VAR_0x8004, VAR_0x8005
     GoToIfEq VAR_0x8004, 853, SunyshoreCity_RivalEnterX853
     GoToIfEq VAR_0x8004, 854, SunyshoreCity_RivalEnterX854
@@ -111,6 +112,7 @@ SunyshoreCity_RivalAndJasmine:
     CallIfEq VAR_0x8004, 856, SunyshoreCity_RivalLeaveX856
     CallIfEq VAR_0x8004, 857, SunyshoreCity_RivalLeaveX857
     RemoveObject LOCALID_RIVAL
+    Common_FadeToDefaultMusic2
     CallIfEq VAR_0x8004, 853, SunyshoreCity_JasmineWalkToPlayerX853
     CallIfEq VAR_0x8004, 854, SunyshoreCity_JasmineWalkToPlayerX854
     CallIfEq VAR_0x8004, 855, SunyshoreCity_JasmineWalkToPlayerX855
@@ -121,11 +123,16 @@ SunyshoreCity_RivalAndJasmine:
     Message SunyshoreCity_Text_HaveThisAsMyThanks
     Call SunyshoreCity_GiveWaterfall
     CloseMessage
+    GetPlayerMapPos VAR_0x8004, VAR_0x8005
     CallIfEq VAR_0x8004, 853, SunyshoreCity_JasmineLeaveX853
     CallIfEq VAR_0x8004, 854, SunyshoreCity_JasmineLeaveX854
     CallIfEq VAR_0x8004, 855, SunyshoreCity_JasmineLeaveX855
     CallIfEq VAR_0x8004, 856, SunyshoreCity_JasmineLeaveX856
     CallIfEq VAR_0x8004, 857, SunyshoreCity_JasmineLeaveX857
+    ApplyMovement LOCALID_PLAYER, SunyshoreCity_Movement_PlayerWatchJasmineLeave
+    WaitMovement
+    SetFlag FLAG_HIDE_SUNYSHORE_JASMINE
+    RemoveObject LOCALID_JASMINE
     SetVar VAR_SUNYSHORE_STATE, 3
     ReleaseAll
     End
@@ -211,27 +218,27 @@ SunyshoreCity_JasmineWalkToPlayerX857:
 
 SunyshoreCity_JasmineLeaveX853:
     ApplyMovement LOCALID_JASMINE, SunyshoreCity_Movement_JasmineLeaveX853
-    WaitMovement
+    WaitTime 25, VAR_RESULT
     Return
 
 SunyshoreCity_JasmineLeaveX854:
     ApplyMovement LOCALID_JASMINE, SunyshoreCity_Movement_JasmineLeaveX854
-    WaitMovement
+    WaitTime 15, VAR_RESULT
     Return
 
 SunyshoreCity_JasmineLeaveX855:
     ApplyMovement LOCALID_JASMINE, SunyshoreCity_Movement_JasmineLeaveX855
-    WaitMovement
+    WaitTime 35, VAR_RESULT
     Return
 
 SunyshoreCity_JasmineLeaveX856:
     ApplyMovement LOCALID_JASMINE, SunyshoreCity_Movement_JasmineLeaveX856
-    WaitMovement
+    WaitTime 15, VAR_RESULT
     Return
 
 SunyshoreCity_JasmineLeaveX857:
     ApplyMovement LOCALID_JASMINE, SunyshoreCity_Movement_JasmineLeaveX857
-    WaitMovement
+    WaitTime 25, VAR_RESULT
     Return
 
     .balign 4, 0
@@ -265,36 +272,34 @@ SunyshoreCity_Movement_JasmineWalkToPlayerX857:
 
     .balign 4, 0
 SunyshoreCity_Movement_JasmineLeaveX853:
-    WalkNormalNorth
-    WalkNormalEast 4
-    WalkOnSpotNormalSouth
+    WalkNormalEast 2
+    WalkNormalSouth 10
     EndMovement
 
     .balign 4, 0
 SunyshoreCity_Movement_JasmineLeaveX854:
-    WalkNormalNorth
-    WalkNormalEast 3
-    WalkOnSpotNormalSouth
+    WalkNormalEast 1
+    WalkNormalSouth 10
     EndMovement
 
     .balign 4, 0
 SunyshoreCity_Movement_JasmineLeaveX855:
-    WalkNormalNorth
-    WalkNormalEast 2
-    WalkOnSpotNormalSouth
+    WalkNormalEast 1
+    WalkNormalSouth 2
+    WalkNormalWest 1
+    WalkNormalSouth 10
     EndMovement
 
     .balign 4, 0
 SunyshoreCity_Movement_JasmineLeaveX856:
-    WalkNormalNorth
-    WalkNormalEast
-    WalkOnSpotNormalSouth
+    WalkNormalWest 1
+    WalkNormalSouth 10
     EndMovement
 
     .balign 4, 0
 SunyshoreCity_Movement_JasmineLeaveX857:
-    WalkNormalNorth
-    WalkOnSpotNormalSouth
+    WalkNormalWest 2
+    WalkNormalSouth 10
     EndMovement
 
     .balign 4, 0
@@ -391,6 +396,7 @@ SunyshoreCity_Movement_PlayerWatchRivalEnterWest:
 
     .balign 4, 0
 SunyshoreCity_Movement_PlayerWatchRivalEnterX855:
+SunyshoreCity_Movement_PlayerWatchJasmineLeave:
     WalkOnSpotNormalSouth
     EndMovement
 
