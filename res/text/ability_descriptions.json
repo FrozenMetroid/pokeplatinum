@@ -997,6 +997,20 @@
       "en_US": [
         "Reflects status moves."
       ]
+    },
+    {
+      "id": "pl_msg_00000612_00143",
+      "en_US": [
+        "Doubles the Pokémon’s\n",
+        "weight."
+      ]
+    },
+    {
+      "id": "pl_msg_00000612_00144",
+      "en_US": [
+        "Halves the Pokémon’s\n",
+        "weight."
+      ]
     }
   ]
 }

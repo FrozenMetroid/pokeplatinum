@@ -568,6 +568,14 @@
     {
       "id": "pl_msg_00000611_00142",
       "en_US": "MAGIC BOUNCE"
+    },
+    {
+      "id": "pl_msg_00000611_00143",
+      "en_US": "HEAVY METAL"
+    },
+    {
+      "id": "pl_msg_00000611_00144",
+      "en_US": "LIGHT METAL"
     }
   ]
 }

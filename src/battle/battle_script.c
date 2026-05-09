@@ -6860,6 +6860,14 @@ static BOOL BtlCmd_CalcWeightBasedPower(BattleSystem *battleSys, BattleContext *
     int i = 0;
     int monWeight = DEFENDING_MON.weight;
 
+    u8 ability = Battler_Ability(battleCtx, battleCtx->defender);
+
+    if (ability == ABILITY_HEAVY_METAL) {
+        monWeight *= 2;
+    } else if (ability == ABILITY_LIGHT_METAL) {
+        monWeight /= 2;
+    }
+
     for (; sWeightToPower[i][0] != 0xFFFF; i++) {
         if (sWeightToPower[i][0] >= monWeight) {
             break;

@@ -3063,8 +3063,17 @@ static s32 TrainerAI_CalcDamage(BattleSystem *battleSys, BattleContext *battleCt
     case MOVE_GRASS_KNOT: {
         int i;
 
+        u32 weight = battleCtx->battleMons[battleCtx->defender].weight;
+        u8 tempAbility = battleCtx->aiContext.battlerAbilities[battleCtx->defender]; // new ability variable that is specifically what the AI sees
+
+        if (tempAbility == ABILITY_HEAVY_METAL) {
+            weight *= 2;
+        } else if (tempAbility == ABILITY_LIGHT_METAL) {
+            weight /= 2;
+        }
+
         for (i = 0; sWeightToPower[i][0] != 0xFFFF; i++) {
-            if (sWeightToPower[i][0] >= battleCtx->battleMons[AI_CONTEXT.defender].weight) {
+            if (sWeightToPower[i][0] >= weight) {
                 break;
             }
         }

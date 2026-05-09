@@ -572,6 +572,14 @@
     {
       "id": "pl_msg_00000610_00142",
       "en_US": "Magic Bounce"
+    },
+    {
+      "id": "pl_msg_00000610_00143",
+      "en_US": "Heavy Metal"
+    },
+    {
+      "id": "pl_msg_00000610_00144",
+      "en_US": "Light Metal"
     }
   ]
 }
