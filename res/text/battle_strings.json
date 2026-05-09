@@ -8640,6 +8640,27 @@
         "The foe’s {STRVAR_1 1, 0, 0}’s {STRVAR_1 6, 1, 0}\n",
         "was bounced back by Magic Bounce!"
       ]
+    },
+    {
+      "id": "BattleStrings_Text_PokemonStolePokemonsItem_Pickpocket_AllyAlly",
+      "en_US": [
+        "{STRVAR_1 1, 0, 0} stole\n",
+        "{STRVAR_1 1, 1, 0}’s {STRVAR_1 8, 2, 0} with its Pickpocket!"
+      ]
+    },
+    {
+      "id": "BattleStrings_Text_PokemonStolePokemonsItem_Pickpocket_AllyWild",
+      "en_US": [
+        "{STRVAR_1 1, 0, 0} stole the wild\n",
+        "{STRVAR_1 1, 1, 0}’s {STRVAR_1 8, 2, 0} with its Pickpocket!"
+      ]
+    },
+    {
+      "id": "BattleStrings_Text_PokemonStolePokemonsItem_Pickpocket_AllyFoe",
+      "en_US": [
+        "{STRVAR_1 1, 0, 0} stole the foe’s\n",
+        "{STRVAR_1 1, 1, 0}’s {STRVAR_1 8, 2, 0} with its Pickpocket!"
+      ]
     }
   ]
 }

@@ -1011,6 +1011,13 @@
         "Halves the Pokémon’s\n",
         "weight."
       ]
+    },
+    {
+      "id": "pl_msg_00000612_00145",
+      "en_US": [
+        "Steals an item when hit\n",
+        "by another Pokémon."
+      ]
     }
   ]
 }

@@ -580,6 +580,10 @@
     {
       "id": "pl_msg_00000610_00144",
       "en_US": "Light Metal"
+    },
+    {
+      "id": "pl_msg_00000610_00145",
+      "en_US": "Pickpocket"
     }
   ]
 }

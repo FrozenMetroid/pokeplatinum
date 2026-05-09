@@ -576,6 +576,10 @@
     {
       "id": "pl_msg_00000611_00144",
       "en_US": "LIGHT METAL"
+    },
+    {
+      "id": "pl_msg_00000611_00145",
+      "en_US": "PICKPOCKET"
     }
   ]
 }

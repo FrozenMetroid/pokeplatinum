@@ -4813,7 +4813,9 @@ enum AfterMoveHitState {
     AFTER_MOVE_HIT_STATE_RAGE = AFTER_MOVE_HIT_START,
     AFTER_MOVE_HIT_STATE_SHELL_BELL,
     AFTER_MOVE_HIT_STATE_LIFE_ORB,
-
+    #ifdef BATTLE_ADD_PICKPOCKET
+    AFTER_MOVE_HIT_STATE_PICKPOCKET,
+    #endif
     AFTER_MOVE_HIT_STATE_END
 };
 
@@ -4835,7 +4837,7 @@ static BOOL BattleControllerPlayer_TriggerAfterMoveHitEffects(BattleSystem *batt
     int maxBattlers = BattleSystem_GetMaxBattlers(battleSys); // unused, but must remain to match
     int itemEffect = Battler_HeldItemEffect(battleCtx, battleCtx->attacker);
     int itemPower = Battler_HeldItemPower(battleCtx, battleCtx->attacker, 0);
-
+    
     if (BattleControllerPlayer_AnyFainted(battleCtx, battleCtx->command, battleCtx->command, TRUE) == TRUE) {
         return TRUE;
     }
@@ -4881,8 +4883,8 @@ static BOOL BattleControllerPlayer_TriggerAfterMoveHitEffects(BattleSystem *batt
                 && ATTACKING_MON.curHP) {
                 battleCtx->hpCalcTemp = BattleSystem_Divide(battleCtx->battleMons[battleCtx->attacker].maxHP * -1, 10);
                 battleCtx->msgBattlerTemp = battleCtx->attacker;
-
-                LOAD_SUBSEQ(subscript_lose_hp_from_item);
+                battleCtx->msgItemTemp = Battler_HeldItem(battleCtx, battleCtx->attacker);
+                LOAD_SUBSEQ(subscript_lose_hp_from_item_with_message);
                 battleCtx->commandNext = battleCtx->command;
                 battleCtx->command = BATTLE_CONTROL_EXEC_SCRIPT;
 
@@ -4892,6 +4894,29 @@ static BOOL BattleControllerPlayer_TriggerAfterMoveHitEffects(BattleSystem *batt
             battleCtx->afterMoveHitCheckState++;
             break;
 
+        #ifdef BATTLE_ADD_PICKPOCKET
+        case AFTER_MOVE_HIT_STATE_PICKPOCKET: // want this to activate after life orb damage
+            if (DEFENDING_MON.curHP
+                && (Battler_Ability(battleCtx, battleCtx->defender) == ABILITY_PICKPOCKET)
+                && (battleCtx->moveStatusFlags & MOVE_STATUS_NO_EFFECTS) == FALSE
+                && (battleCtx->battleStatusMask & SYSCTL_FIRST_OF_MULTI_TURN) == FALSE
+                && (DEFENDER_SELF_TURN_FLAGS.physicalDamageTaken || DEFENDER_SELF_TURN_FLAGS.specialDamageTaken)
+                && (CURRENT_MOVE_DATA.flags & MOVE_FLAG_MAKES_CONTACT)
+                && (CURRENT_MOVE_DATA.power != 0) // move isn't status move
+                && (Battle_CanStealHeldItemFromAttacker(battleSys, battleCtx))) { // doesn't already have a held item
+                    battleCtx->sideEffectType = SIDE_EFFECT_TYPE_ABILITY;
+                    battleCtx->sideEffectMon = battleCtx->attacker;
+                    battleCtx->msgBattlerTemp = battleCtx->defender;
+                    battleCtx->msgItemTemp = battleCtx->battleMons[battleCtx->attacker].heldItem;
+
+                    LOAD_SUBSEQ(subscript_pickpocket);
+                    battleCtx->command = BATTLE_CONTROL_EXEC_SCRIPT;
+
+                    machineState = STATE_BREAK_OUT;
+            }
+            battleCtx->afterMoveHitCheckState++;
+            break;
+        #endif
         case AFTER_MOVE_HIT_STATE_END:
             battleCtx->afterMoveHitCheckState = 0;
             battleCtx->afterMoveHitCheckTemp = 0;

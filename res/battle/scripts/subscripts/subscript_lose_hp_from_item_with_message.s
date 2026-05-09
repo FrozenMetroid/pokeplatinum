@@ -2,8 +2,10 @@
 
 
 _000:
+    CompareMonDataToValue OPCODE_EQU, BTLSCR_ATTACKER, BATTLEMON_HELD_ITEM, ITEM_LIFE_ORB, _SkipItemAnimation 
     PlayBattleAnimation BTLSCR_MSG_TEMP, BATTLE_ANIMATION_HELD_ITEM
-    Wait 
+    Wait
+_SkipItemAnimation:
     UpdateVar OPCODE_FLAG_ON, BTLVAR_BATTLE_CTX_STATUS, SYSCTL_SKIP_SPRITE_BLINK
     Call BATTLE_SUBSCRIPT_UPDATE_HP
     // {0} is hurt by its {1}!

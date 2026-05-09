@@ -71,6 +71,7 @@ static BOOL IntimidateCheckHelper(BattleContext *battleCtx, u32 client);
 static BOOL IsPowderMove(u16 moveID);
 static u32 BattleSystem_GetFaintedTeammateCount(BattleSystem *battleSys, u32 client);
 static int BattleMon_GetAdjustedSpecies(BattleContext *battleCtx, int battler);
+BOOL Battle_CanStealHeldItemFromAttacker(BattleSystem *battleSys, BattleContext *battleCtx);
 
 static const Fraction sStatStageBoosts[];
 
@@ -7815,7 +7816,8 @@ BOOL BattleSystem_TriggerHeldItemOnPivotMove(BattleSystem *battleSys, BattleCont
         && ATTACKING_MON.curHP) {
         battleCtx->hpCalcTemp = BattleSystem_Divide(ATTACKING_MON.maxHP * -1, 10);
         battleCtx->msgBattlerTemp = battleCtx->attacker;
-        *subscript = subscript_lose_hp_from_item;
+        battleCtx->msgItemTemp = Battler_HeldItem(battleCtx, battleCtx->attacker);
+        *subscript = subscript_lose_hp_from_item_with_message; // updated to show the message about taking damage from Life Orb
         result = TRUE;
     }
 
@@ -8739,3 +8741,31 @@ static u32 BattleSystem_GetFaintedTeammateCount(BattleSystem *battleSys, u32 cli
     return numFainted;
 }
 #endif
+
+BOOL Battle_CanStealHeldItemFromAttacker(BattleSystem *battleSys, BattleContext *battleCtx)
+{
+    u8 attacker = battleCtx->attacker;
+    u8 defender = battleCtx->defender;
+    u8 ability = Battler_Ability(battleCtx, attacker);
+    
+    if (battleCtx->battleMons[attacker].heldItem == ITEM_NONE
+        || battleCtx->battleMons[defender].heldItem != ITEM_NONE) {
+        return FALSE;
+    }
+
+    if (ability == ABILITY_STICKY_HOLD || ability == ABILITY_MOLD_BREAKER) {
+        return FALSE;
+    }
+
+    // more specific exceptions
+    u16 species = battleCtx->battleMons[attacker].species;
+    u16 item = battleCtx->battleMons[attacker].heldItem;
+
+    if ((species == SPECIES_GIRATINA && item == ITEM_GRISEOUS_ORB)
+        || (species == SPECIES_ARCEUS && Item_IsPlate(item))
+        || (Item_IsMail(item))) {
+        return FALSE;
+    }
+
+    return TRUE;
+}

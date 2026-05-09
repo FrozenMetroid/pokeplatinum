@@ -305,4 +305,5 @@ subscript_files = files(
     'subscript_cursed_body.s',
     'subscript_healer.s',
     'subscript_sap_sipper.s',
+    'subscript_pickpocket.s',
 )
