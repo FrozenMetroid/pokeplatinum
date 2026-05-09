@@ -7190,6 +7190,15 @@ int BattleSystem_CalcMoveDamage(BattleSystem *battleSys,
         movePower /= 2;
     }
 
+    if (Battler_IgnorableAbility(battleCtx, attacker, defender, ABILITY_FLUFFY) == TRUE) {
+        if (moveType == TYPE_FIRE) {
+            movePower *= 2;
+        }
+        if (CURRENT_MOVE_DATA.flags & MOVE_FLAG_MAKES_CONTACT) {
+            movePower /= 2;
+        }
+    }
+
     if (attackerParams.ability == ABILITY_HUSTLE) {
         attackStat = attackStat * 150 / 100;
     }

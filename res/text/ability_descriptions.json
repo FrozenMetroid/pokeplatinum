@@ -1032,6 +1032,13 @@
         "Normal-type moves become\n",
         "Electric-type."
       ]
+    },
+    {
+      "id": "pl_msg_00000612_00148",
+      "en_US": [
+        "Resists contact damage\n",
+        "but weaker to Fire-type."
+      ]
     }
   ]
 }

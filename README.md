@@ -72,42 +72,31 @@ The cursor on the bottom screen during a battle is now able to be moved up from 
 
 Additional Abilities:
 - Piercing Eye (CUSTOM): Lowers foes' Evasion on switch-in. 
-    Hoothoot and Noctowl
 - Artillery (CUSTOM): Raises the power of beam moves (Ice Beam, Bubble Beam, etc.)
-    Remoraid and Octillery
 - Supreme Overlord (Supreme Lord in-game): Raises the power of a move by 10% for each fainted ally
-    Honchkrow (overlord of Murkrow in the Pokédex)
 - Sharpness: Raises the power of slicing moves (Leaf Blade, Night Slash, etc.)
-    Absol and Gallade
 - Strong Jaw: Raises the power of biting moves (Crunch, Fire Fang, etc.)
-    Carnivine
 - Rocky Payload: Raises the power of Rock-type moves
-    Rhyperior (inspired by it shooting Geodude out of its arms)
 - Prankster: Gives priority to status moves (Sand-Attack, Growl, etc.)
-    Murkrow, Misdreavus, and Sableye
 - Friend Guard: Reduces damage done to allies by 25%
-    Cleffa and Clefairy
 - Justified: Raises Attack if hit by a Dark-type move
-    Growlithe, Arcanine
 - Earth Eater: Restores HP if hit by a Ground-type move
-    Onix and Steelix
 - Healer: An ally Pokémon's status condition (Burn, Poison, etc.) is removed at the end of the turn
-    Happiny, Chansey, and Blissey
-    Guaranteed chance to occur, no longer a 30% chance
 - Analytic: Raises the power of moves by 30% if the user moves last
-    Magnemite, Magneton, Magnezone, Staryu, Starmie, Porygon, Porygon2, Porygon-Z
 - Cursed Body: 30% chance to disable a move used on the Pokémon
-    Gastly, Haunter, Gengar
 - Regenerator: Restores 30% of max HP when switching out
-    Tangela and Tangrowth
 - Moxie: Raises Attack stage for any Pokémon that is knocked out
-    Gyarados
 - Rattled: Raises Speed stage if hit by a Dark, Ghost, or Bug-type move
-    Magikarp
 - Sap Sipper: Raises Attack if it would be hit by a Grass-type move
-    Marill, and Azumarill
 - Magic Bounce: Reflects status moves back at the user
-    Espeon
+- Heavy Metal: Doubles weight (useless now without Heavy Slam)
+- Light Metal: Halves weight
+- Pickpocket: This Pokémon will steal the attacker's item if they have one and if this Pokémon does not already have an item
+- Telepathy: Allies are unable to damage this Pokémon
+- Galvanize: Normal-type moves become Electric-type
+- Fluffy: Reduces damage done by moves that make contact by 50%; Fire-type moves deal 2x damage
+
+
     
 Ability Modernizations:
 - Lightning Rod
@@ -118,6 +107,7 @@ Ability Modernizations:
 
 Ability Changes:
 - Slow Start: 5 turns -> 3 turns
+- Healer: Guaranteed chance to occur, no longer a 30% chance
 
 Item Modernizations:
 - Mental Herb
