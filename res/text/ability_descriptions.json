@@ -1074,6 +1074,13 @@
         "Makes foes unable to\n",
         "use priority attacks."
       ]
+    },
+    {
+      "id": "pl_msg_00000612_00154",
+      "en_US": [
+        "This Pokémon’s moves\n",
+        "cannot be redirected."
+      ]
     }
   ]
 }

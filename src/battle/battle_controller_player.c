@@ -3290,13 +3290,10 @@ static void BattleControllerPlayer_BeforeMove(BattleSystem *battleSys, BattleCon
         battleCtx->beforeMoveCheckState++;
     case BEFORE_MOVE_STATE_ABILITY_FAILURES:
         // queenly majesty
-        EmulatorLog("Move Priority: %d, Attacker Priority: %d", CURRENT_MOVE_DATA.priority, battleCtx->clientPriority[battleCtx->attacker]);
         if (BattleSystem_CountAbility(battleSys, battleCtx, COUNT_ALIVE_BATTLERS_OUR_SIDE, battleCtx->defender, ABILITY_QUEENLY_MAJESTY)) {
-            EmulatorLog("Defender side has Queenly Majesty");
             if ((Battler_Ability(battleCtx, battleCtx->attacker) != ABILITY_MOLD_BREAKER)
                 && (battleCtx->clientPriority[battleCtx->attacker] > 0 || CURRENT_MOVE_DATA.priority > 0)
                 && (BattleSystem_MoveNotExemptedFromPriorityBlocking(battleCtx, battleCtx->attacker, battleCtx->defender))) {
-                    EmulatorLog("Move blocked by Queenly Majesty");
                     Battler_UnlockMoveChoice(battleSys, battleCtx, battleCtx->attacker);
                     LOAD_SUBSEQ(subscript_cannot_use_move);
                     battleCtx->commandNext = BATTLE_CONTROL_MOVE_FAILED;

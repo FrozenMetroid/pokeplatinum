@@ -1760,7 +1760,8 @@ int BattleSystem_Defender(BattleSystem *battleSys, BattleContext *battleCtx, int
         opponents[0] = BattleSystem_GetEnemyInSlot(battleSys, attacker, ENEMY_IN_SLOT_RIGHT);
         opponents[1] = BattleSystem_GetEnemyInSlot(battleSys, attacker, ENEMY_IN_SLOT_LEFT);
 
-        if (battleType & BATTLE_TYPE_DOUBLES) {
+        if (battleType & BATTLE_TYPE_DOUBLES
+            && (Battler_Ability(battleCtx, attacker) != ABILITY_PROPELLER_TAIL)) {
             if (battleCtx->sideConditions[enemySide].followMe
                 && battleCtx->battleMons[battleCtx->sideConditions[enemySide].followMeUser].curHP) {
                 // If Follow Me is active and the user is still alive, re-point all targets toward them
@@ -1779,9 +1780,10 @@ int BattleSystem_Defender(BattleSystem *battleSys, BattleContext *battleCtx, int
     } else { // the usual single-target moves, e.g., Flamethrower, Thunderbolt
         int enemySide = BattleSystem_GetBattlerSide(battleSys, attacker) ^ 1;
         int target = battleCtx->battlerActions[attacker][BATTLE_ACTION_CHOOSE_TARGET];
-        int maxBattlers = BattleSystem_GetMaxBattlers(battleSys);
+        int maxBattlers = BattleSystem_GetMaxBattlers(battleSys); // unused
 
-        if (battleCtx->sideConditions[enemySide].followMe
+        if (Battler_Ability(battleCtx, attacker) != ABILITY_PROPELLER_TAIL
+            && battleCtx->sideConditions[enemySide].followMe
             && battleCtx->battleMons[battleCtx->sideConditions[enemySide].followMeUser].curHP) {
             // If Follow Me is active and the user is still alive, re-point all targets toward them
             defender = battleCtx->sideConditions[enemySide].followMeUser;
@@ -1802,11 +1804,10 @@ int BattleSystem_Defender(BattleSystem *battleSys, BattleContext *battleCtx, int
 void BattleSystem_CheckRedirectionAbilities(BattleSystem *battleSys, BattleContext *battleCtx, int attacker, u16 move)
 {
     int battler, moveType; // must declare these first to match
-
     if (battleCtx->defender == BATTLER_NONE
         || Battler_Ability(battleCtx, attacker) == ABILITY_NORMALIZE
-        || Battler_Ability(battleCtx, attacker) == ABILITY_GALVANIZE
-        || Battler_Ability(battleCtx, attacker) == ABILITY_MOLD_BREAKER) {
+        || Battler_Ability(battleCtx, attacker) == ABILITY_MOLD_BREAKER
+        || Battler_Ability(battleCtx, attacker) == ABILITY_PROPELLER_TAIL) {
         return;
     }
 
@@ -1831,13 +1832,12 @@ void BattleSystem_CheckRedirectionAbilities(BattleSystem *battleSys, BattleConte
             if (Battler_Ability(battleCtx, battler) == ABILITY_LIGHTNING_ROD
                 && battleCtx->battleMons[battler].curHP
                 && attacker != battler) {
-                battleCtx->selfTurnFlags[battler].lightningRodActivated = TRUE;
                 break;
             }
         }
 
         if (battler != battleCtx->defender) {
-            battleCtx->selfTurnFlags[battler].lightningRodActivated = FALSE;
+            battleCtx->selfTurnFlags[battler].lightningRodActivated = TRUE;
             battleCtx->defender = battler;
         }
     } else if (moveType == TYPE_WATER
@@ -1850,13 +1850,12 @@ void BattleSystem_CheckRedirectionAbilities(BattleSystem *battleSys, BattleConte
                 if (Battler_Ability(battleCtx, battler) == ABILITY_STORM_DRAIN
                     && battleCtx->battleMons[battler].curHP
                     && attacker != battler) {
-                    battleCtx->selfTurnFlags[battler].stormDrainActivated = TRUE;
                     break;
                 }
             }
 
             if (battler != battleCtx->defender) {
-                battleCtx->selfTurnFlags[battler].stormDrainActivated = FALSE;
+                battleCtx->selfTurnFlags[battler].stormDrainActivated = TRUE;
                 battleCtx->defender = battler;
             }
         }
@@ -3654,18 +3653,14 @@ int BattleSystem_TriggerImmunityAbility(BattleContext *battleCtx, int attacker, 
 
     if (Battler_IgnorableAbility(battleCtx, attacker, defender, ABILITY_STORM_DRAIN) == TRUE
         && moveType == TYPE_WATER
-        && (battleCtx->battleStatusMask & SYSCTL_FIRST_OF_MULTI_TURN) == FALSE
-        && CURRENT_MOVE_DATA.power) {
-        battleCtx->moveStatusFlags &= MOVE_STATUS_FAILED; // avoids activating the special attack raise and then showing that the move missed anyway
-        subscript = subscript_null; // ends the move, all of this occurs after the special attack raise
+        && attacker != defender) {
+        subscript = subscript_lightning_rod_redirected; // same subscript as lightning rod, but it handles storm drain's effect instead
     }
 
     if (Battler_IgnorableAbility(battleCtx, attacker, defender, ABILITY_LIGHTNING_ROD) == TRUE
         && moveType == TYPE_ELECTRIC
-        && (battleCtx->battleStatusMask & SYSCTL_FIRST_OF_MULTI_TURN) == FALSE
-        && CURRENT_MOVE_DATA.power) {
-        battleCtx->moveStatusFlags &= MOVE_STATUS_FAILED; // avoids activating the special attack raise and then showing that the move missed anyway
-        subscript = subscript_null; // ends the move, all of this occurs after the special attack raise
+        && attacker != defender) {
+        subscript = subscript_lightning_rod_redirected;
     }
 
     if (Battler_IgnorableAbility(battleCtx, attacker, defender, ABILITY_EARTH_EATER) == TRUE) {
