@@ -4674,6 +4674,23 @@ BOOL BattleSystem_TriggerAttackerAbilityOnHit(BattleSystem *battleSys, BattleCon
 
                     battleCtx->turnFlags[battleCtx->attacker].numberOfKOs++;
             }
+        case ABILITY_POISON_TOUCH:
+            if (DEFENDING_MON.curHP
+                && DEFENDING_MON.status == MON_CONDITION_NONE
+                && (battleCtx->moveStatusFlags & MOVE_STATUS_NO_EFFECTS) == FALSE
+                && (battleCtx->battleStatusMask & SYSCTL_FIRST_OF_MULTI_TURN) == FALSE
+                && (battleCtx->battleStatusMask2 & SYSCTL_UTURN_ACTIVE) == FALSE
+                && (DEFENDER_SELF_TURN_FLAGS.physicalDamageTaken || DEFENDER_SELF_TURN_FLAGS.specialDamageTaken)
+                && (CURRENT_MOVE_DATA.flags & MOVE_FLAG_MAKES_CONTACT)
+                && (!(Battler_SubstituteWasHit(battleCtx, battleCtx->defender)))
+                && BattleSystem_RandNext(battleSys) % 10 < 3) {
+                battleCtx->sideEffectType = SIDE_EFFECT_TYPE_ABILITY;
+                battleCtx->sideEffectMon = battleCtx->defender;
+                battleCtx->msgBattlerTemp = battleCtx->attacker;
+
+                *subscript = subscript_poison;
+                result = TRUE;
+            }
         default:
             break;
     }

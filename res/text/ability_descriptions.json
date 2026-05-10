@@ -1102,6 +1102,13 @@
         "Protects the Pokémon from\n",
         "Defense-lowering attacks."
       ]
+    },
+    {
+      "id": "pl_msg_00000612_00157",
+      "en_US": [
+        "May poison targets when\n",
+        "contact is made."
+      ]
     }
   ]
 }
