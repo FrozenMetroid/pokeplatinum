@@ -72,13 +72,13 @@ typedef struct VRAMTransfer {
     u16 size;
 } VRAMTransfer;
 
-typedef struct {
+typedef struct HealthboxLevelUpFlashState {
     HealthBox *healthbox;
-    u8 *unk_04;
+    u8 *done;
     u8 state;
-    u8 unk_09;
-    s8 unk_0A;
-} UnkStruct_ov16_0226834C;
+    u8 paletteOffset;
+    s8 blendIntensity;
+} HealthboxLevelUpFlashState;
 
 enum HealthBoxPart {
     HEALTHBOX_PART_HP_H = 0,
@@ -177,15 +177,15 @@ static void HealthBox_DrawStatusIcon(HealthBox *healthbox, enum HealthBoxPart pa
 static void HealthBox_DrawBallCount(HealthBox *healthbox, u32 flags);
 static void HealthBox_DrawBallsLeftMessage(HealthBox *healthbox, u32 flags);
 static void HealthBox_LoadMainPalette(SpriteSystem *spriteSys, SpriteManager *handler, NARC *narc, PaletteData *palette, int type);
-static void ov16_02267244(HealthBox *healthbox);
-static void ov16_0226728C(HealthBox *healthbox);
-static const SpriteTemplate *HealthBox_SpriteTemplate(u8 type);
-static const SpriteTemplate *ov16_02268314(u8 type);
-static void ScrollHealthBoxTask(SysTask *task, void *data);
-static void ov16_02268380(SysTask *task, void *param1);
-void ov16_02268470(HealthBox *healthbox);
-void ov16_02268498(HealthBox *healthbox);
-static void ov16_022684BC(SysTask *task, void *data);
+static void Healthbox_DeleteArrowSprite(HealthBox *healthbox);
+static void Healthbox_UnloadArrowSpriteObjects(HealthBox *healthbox);
+static const SpriteTemplate *HealthBox_MainSpriteTemplate(u8 type);
+static const SpriteTemplate *HealthBox_ArrowSpriteTemplate(u8 type);
+static void Healthbox_Task_Scroll(SysTask *task, void *data);
+static void Healthbox_Task_LevelUpFlashAnimation(SysTask *task, void *param1);
+static void Healthbox_StartBobAnimation(HealthBox *healthbox);
+static void Healthbox_StopBobAnimation(HealthBox *healthbox);
+static void Healthbox_Task_Bob(SysTask *task, void *data);
 static void HealthBox_EnableArrow(HealthBox *healthbox, BOOL enable);
 
 ALIGN_4 static const s8 sArrowOffsetX[] = {
@@ -236,7 +236,7 @@ static const VRAMTransfer sBattlerNameVRAMTransfer[][4] = {
     },
 };
 
-static const VRAMTransfer Unk_ov16_0226F47C[][2] = {
+static const VRAMTransfer sLevelIconVRAMTransfer[][2] = {
     {
         { 0xA60, 0x40 },
         { 0xB60, 0x40 },
@@ -263,7 +263,7 @@ static const VRAMTransfer Unk_ov16_0226F47C[][2] = {
     },
 };
 
-static const VRAMTransfer Unk_ov16_0226F3EC[][2] = {
+static const VRAMTransfer sLevelNumberVRAMTransfer[][2] = {
     {
         { 0xAA0, 0x60 },
         { 0xBA0, 0x60 },
@@ -290,7 +290,7 @@ static const VRAMTransfer Unk_ov16_0226F3EC[][2] = {
     },
 };
 
-static const VRAMTransfer Unk_ov16_0226F41C[][2] = {
+static const VRAMTransfer sCurrentHPNumberVRAMTransfer[][2] = {
     {
         { 0x0, 0x0 },
         { 0xD00, 0x60 },
@@ -317,7 +317,7 @@ static const VRAMTransfer Unk_ov16_0226F41C[][2] = {
     },
 };
 
-static const VRAMTransfer Unk_ov16_0226F3BC[] = {
+static const VRAMTransfer sMaxHPNumberVRAMTransfer[] = {
     { 0xD80, 0x60 },
     { 0x6A0, 0x60 },
     { 0xC80, 0x60 },
@@ -326,7 +326,7 @@ static const VRAMTransfer Unk_ov16_0226F3BC[] = {
     { 0x6A0, 0x60 },
 };
 
-static const VRAMTransfer Unk_ov16_0226F44C[][2] = {
+static const VRAMTransfer sHPGaugeVRAMTransfer[][2] = {
     {
         { 0x4E0, 0x0 },
         { 0xC20, 0xC0 },
@@ -353,7 +353,7 @@ static const VRAMTransfer Unk_ov16_0226F44C[][2] = {
     },
 };
 
-static const VRAMTransfer Unk_ov16_0226F38C[] = {
+static const VRAMTransfer sCaughtIconVRAMTransfer[] = {
     { 0x460, HEALTHBOX_WINDOW_BLOCK_SIZE },
     { 0x420, HEALTHBOX_WINDOW_BLOCK_SIZE },
     { 0x440, HEALTHBOX_WINDOW_BLOCK_SIZE },
@@ -362,7 +362,7 @@ static const VRAMTransfer Unk_ov16_0226F38C[] = {
     { 0x420, HEALTHBOX_WINDOW_BLOCK_SIZE },
 };
 
-static const VRAMTransfer Unk_ov16_0226F35C[] = {
+static const VRAMTransfer sStatusIconVRAMTransfer[] = {
     { 0x480, 0x60 },
     { 0x440, 0x60 },
     { 0x460, 0x60 },
@@ -371,21 +371,21 @@ static const VRAMTransfer Unk_ov16_0226F35C[] = {
     { 0x440, 0x60 },
 };
 
-static const VRAMTransfer Unk_ov16_0226F33C[4] = {
+static const VRAMTransfer sBallCountVRAMTransfer[4] = {
     { 0x240, 0xC0 },
     { 0x340, 0xC0 },
     { 0xA00, 0xE0 },
     { 0xB00, 0xE0 },
 };
 
-static const VRAMTransfer Unk_ov16_0226F34C[4] = {
+static const VRAMTransfer sBallsLeftVRAMTransfer[4] = {
     { 0x440, 0xC0 },
     { 0x540, 0xC0 },
     { 0xC00, 0xE0 },
     { 0xD00, 0xE0 },
 };
 
-static const VRAMTransfer Unk_ov16_0226F374[] = {
+static const VRAMTransfer sHPDisplayLeftVRAMTransfer[] = {
     { 0x0, 0x0 },
     { 0x0, 0x0 },
     { 0x4C0, 0x40 },
@@ -394,7 +394,7 @@ static const VRAMTransfer Unk_ov16_0226F374[] = {
     { 0x0, 0x0 },
 };
 
-static const VRAMTransfer Unk_ov16_0226F3A4[] = {
+static const VRAMTransfer sHPDisplayRightVRAMTransfer[] = {
     { 0x0, 0x0 },
     { 0x0, 0x0 },
     { 0xCC0, HEALTHBOX_WINDOW_BLOCK_SIZE },
@@ -403,7 +403,7 @@ static const VRAMTransfer Unk_ov16_0226F3A4[] = {
     { 0x0, 0x0 },
 };
 
-static const VRAMTransfer Unk_ov16_0226F3D4[] = {
+static const VRAMTransfer sHPDisplaySlashVRAMTransfer[] = {
     { 0x0, 0x0 },
     { 0x0, 0x0 },
     { 0xC60, HEALTHBOX_WINDOW_BLOCK_SIZE },
@@ -536,7 +536,7 @@ static const SpriteTemplate sHealthBoxTemplate_EnemySlot2 = {
     .vramTransfer = FALSE,
 };
 
-static const SpriteTemplate sHealthBoxTemplate_Unk_ov16_0226F514 = {
+static const SpriteTemplate sHealthBoxTemplate_Arrow = {
     .x = 0,
     .y = 0,
     .z = 0,
@@ -580,7 +580,7 @@ static const SpriteTemplate sHealthBoxTemplate_NoPlayerMon = {
 
 void HealthBox_LoadResources(SpriteSystem *spriteSys, SpriteManager *spriteMan, NARC *narc, PaletteData *palette, enum HealthBoxType healthboxType)
 {
-    const SpriteTemplate *template = HealthBox_SpriteTemplate(healthboxType);
+    const SpriteTemplate *template = HealthBox_MainSpriteTemplate(healthboxType);
 
     SpriteSystem_LoadCharResObjFromOpenNarc(spriteSys, spriteMan, narc, template->resources[SPRITE_RESOURCE_CHAR], TRUE, NNS_G2D_VRAM_TYPE_2DMAIN, template->resources[SPRITE_RESOURCE_CHAR]);
     SpriteSystem_LoadPaletteBufferFromOpenNarc(palette, PLTTBUF_MAIN_OBJ, spriteSys, spriteMan, narc, healthbox_primary_NCLR, FALSE, 1, NNS_G2D_VRAM_TYPE_2DMAIN, HEALTHBOX_MAIN_PALETTE_RESID);
@@ -595,7 +595,7 @@ void HealthBox_LoadResources(SpriteSystem *spriteSys, SpriteManager *spriteMan, 
 
 static void HealthBox_LoadMainPalette(SpriteSystem *spriteSys, SpriteManager *handler, NARC *narc, PaletteData *palette, int type)
 {
-    const SpriteTemplate *template = ov16_02268314(type);
+    const SpriteTemplate *template = HealthBox_ArrowSpriteTemplate(type);
 
     if (template != NULL) {
         SpriteSystem_LoadCharResObjFromOpenNarc(spriteSys, handler, narc, template->resources[SPRITE_RESOURCE_CHAR], TRUE, NNS_G2D_VRAM_TYPE_2DMAIN, template->resources[SPRITE_RESOURCE_CHAR]);
@@ -607,7 +607,7 @@ static void HealthBox_LoadMainPalette(SpriteSystem *spriteSys, SpriteManager *ha
 
 ManagedSprite *HealthBox_DrawSprite(SpriteSystem *spriteSys, SpriteManager *handler, int type)
 {
-    const SpriteTemplate *template = HealthBox_SpriteTemplate(type);
+    const SpriteTemplate *template = HealthBox_MainSpriteTemplate(type);
     ManagedSprite *managedSprite = SpriteSystem_NewSprite(spriteSys, handler, template);
 
     Sprite_TickFrame(managedSprite->sprite);
@@ -734,11 +734,11 @@ void HealthBox_DrawInfo(HealthBox *healthbox, u32 hp, u32 flags)
     }
 }
 
-void ov16_02267220(HealthBox *healthbox)
+void Healthbox_DeleteMainSprite(HealthBox *healthbox)
 {
-    if (healthbox->task_50 != NULL) {
-        SysTask_Done(healthbox->task_50);
-        healthbox->task_50 = NULL;
+    if (healthbox->bobbingAnimTask != NULL) {
+        SysTask_Done(healthbox->bobbingAnimTask);
+        healthbox->bobbingAnimTask = NULL;
     }
 
     if (healthbox->mainSprite == NULL) {
@@ -749,7 +749,7 @@ void ov16_02267220(HealthBox *healthbox)
     healthbox->mainSprite = NULL;
 }
 
-static void ov16_02267244(HealthBox *healthbox)
+static void Healthbox_DeleteArrowSprite(HealthBox *healthbox)
 {
     if (healthbox->arrowSprite == NULL) {
         return;
@@ -759,11 +759,11 @@ static void ov16_02267244(HealthBox *healthbox)
     healthbox->arrowSprite = NULL;
 }
 
-void ov16_02267258(HealthBox *healthbox)
+void Healthbox_UnloadMainSpriteObjects(HealthBox *healthbox)
 {
     SpriteSystem *spriteSystem;
     SpriteManager *spriteManager;
-    const SpriteTemplate *spriteTemplate = HealthBox_SpriteTemplate(healthbox->type);
+    const SpriteTemplate *spriteTemplate = HealthBox_MainSpriteTemplate(healthbox->type);
     spriteSystem = BattleSystem_GetSpriteSystem(healthbox->battleSys);
     spriteManager = BattleSystem_GetSpriteManager(healthbox->battleSys);
 
@@ -772,11 +772,11 @@ void ov16_02267258(HealthBox *healthbox)
     SpriteManager_UnloadAnimObjById(spriteManager, spriteTemplate->resources[3]);
 }
 
-static void ov16_0226728C(HealthBox *healthbox)
+static void Healthbox_UnloadArrowSpriteObjects(HealthBox *healthbox)
 {
     SpriteSystem *spriteSystem;
     SpriteManager *spriteManager;
-    const SpriteTemplate *spriteTemplate = ov16_02268314(healthbox->type);
+    const SpriteTemplate *spriteTemplate = HealthBox_ArrowSpriteTemplate(healthbox->type);
 
     if (spriteTemplate == NULL) {
         return;
@@ -790,13 +790,13 @@ static void ov16_0226728C(HealthBox *healthbox)
     SpriteManager_UnloadAnimObjById(spriteManager, spriteTemplate->resources[3]);
 }
 
-void ov16_022672C4(HealthBox *healthbox)
+void Healthbox_CreateMainSprite(HealthBox *healthbox)
 {
     NARC *narc = NARC_ctor(NARC_INDEX_BATTLE__GRAPHIC__PL_BATT_OBJ, HEAP_ID_BATTLE);
     SpriteSystem *spriteSystem = BattleSystem_GetSpriteSystem(healthbox->battleSys);
     SpriteManager *spriteManager = BattleSystem_GetSpriteManager(healthbox->battleSys);
     PaletteData *paletteData = BattleSystem_GetPaletteData(healthbox->battleSys);
-    const SpriteTemplate *spriteTemplate = HealthBox_SpriteTemplate(healthbox->type);
+    const SpriteTemplate *spriteTemplate = HealthBox_MainSpriteTemplate(healthbox->type);
 
     HealthBox_LoadResources(spriteSystem, spriteManager, narc, paletteData, healthbox->type);
     healthbox->mainSprite = HealthBox_DrawSprite(spriteSystem, spriteManager, healthbox->type);
@@ -810,19 +810,19 @@ void ov16_022672C4(HealthBox *healthbox)
     NARC_dtor(narc);
 }
 
-void ov16_02267360(HealthBox *healthbox)
+void Healthbox_DestroySprites(HealthBox *healthbox)
 {
-    ov16_02267220(healthbox);
-    ov16_02267258(healthbox);
-    ov16_02267244(healthbox);
-    ov16_0226728C(healthbox);
+    Healthbox_DeleteMainSprite(healthbox);
+    Healthbox_UnloadMainSpriteObjects(healthbox);
+    Healthbox_DeleteArrowSprite(healthbox);
+    Healthbox_UnloadArrowSpriteObjects(healthbox);
 }
 
-void ov16_0226737C(HealthBox *healthbox)
+void Healthbox_ToggleHPDisplayMode(HealthBox *healthbox)
 {
     const u8 *tileNum;
     NNSG2dImageProxy *imgProxy;
-    void *v2;
+    void *objCharPtr;
 
     switch (healthbox->type) {
     case HEALTHBOX_TYPE_PLAYER_SLOT_1:
@@ -834,34 +834,34 @@ void ov16_0226737C(HealthBox *healthbox)
 
     healthbox->numberMode ^= 1;
 
-    v2 = G2_GetOBJCharPtr();
+    objCharPtr = G2_GetOBJCharPtr();
     imgProxy = Sprite_GetImageProxy(healthbox->mainSprite->sprite);
 
     if (healthbox->numberMode == 1) {
         tileNum = GetHealthBoxPartsTile(HEALTHBOX_PART_NUMBERS_LEFT);
-        MI_CpuCopy16(tileNum, (void *)((u32)v2 + Unk_ov16_0226F374[healthbox->type].pos + HEALTHBOX_WINDOW_BLOCK_SIZE + imgProxy->vramLocation.baseAddrOfVram[NNS_G2D_VRAM_TYPE_2DMAIN]), HEALTHBOX_WINDOW_BLOCK_SIZE);
+        MI_CpuCopy16(tileNum, (void *)((u32)objCharPtr + sHPDisplayLeftVRAMTransfer[healthbox->type].pos + HEALTHBOX_WINDOW_BLOCK_SIZE + imgProxy->vramLocation.baseAddrOfVram[NNS_G2D_VRAM_TYPE_2DMAIN]), HEALTHBOX_WINDOW_BLOCK_SIZE);
         tileNum = GetHealthBoxPartsTile(HEALTHBOX_PART_NUMBERS_RIGHT);
-        MI_CpuCopy16(tileNum, (void *)((u32)v2 + Unk_ov16_0226F3A4[healthbox->type].pos + HEALTHBOX_WINDOW_BLOCK_SIZE + imgProxy->vramLocation.baseAddrOfVram[NNS_G2D_VRAM_TYPE_2DMAIN]), HEALTHBOX_WINDOW_BLOCK_SIZE);
+        MI_CpuCopy16(tileNum, (void *)((u32)objCharPtr + sHPDisplayRightVRAMTransfer[healthbox->type].pos + HEALTHBOX_WINDOW_BLOCK_SIZE + imgProxy->vramLocation.baseAddrOfVram[NNS_G2D_VRAM_TYPE_2DMAIN]), HEALTHBOX_WINDOW_BLOCK_SIZE);
 
         tileNum = GetHealthBoxPartsTile(HEALTHBOX_PART_SLASH);
-        MI_CpuCopy16(tileNum, (void *)((u32)v2 + Unk_ov16_0226F3D4[healthbox->type].pos + imgProxy->vramLocation.baseAddrOfVram[NNS_G2D_VRAM_TYPE_2DMAIN]), Unk_ov16_0226F3D4[healthbox->type].size);
+        MI_CpuCopy16(tileNum, (void *)((u32)objCharPtr + sHPDisplaySlashVRAMTransfer[healthbox->type].pos + imgProxy->vramLocation.baseAddrOfVram[NNS_G2D_VRAM_TYPE_2DMAIN]), sHPDisplaySlashVRAMTransfer[healthbox->type].size);
 
         HealthBox_DrawInfo(healthbox, healthbox->curHP, HEALTHBOX_INFO_CURRENT_HP | HEALTHBOX_INFO_MAX_HP);
     } else {
         tileNum = GetHealthBoxPartsTile(HEALTHBOX_PART_HP_H_2);
-        MI_CpuCopy16(tileNum, (void *)((u32)v2 + Unk_ov16_0226F374[healthbox->type].pos + imgProxy->vramLocation.baseAddrOfVram[NNS_G2D_VRAM_TYPE_2DMAIN]), Unk_ov16_0226F374[healthbox->type].size);
+        MI_CpuCopy16(tileNum, (void *)((u32)objCharPtr + sHPDisplayLeftVRAMTransfer[healthbox->type].pos + imgProxy->vramLocation.baseAddrOfVram[NNS_G2D_VRAM_TYPE_2DMAIN]), sHPDisplayLeftVRAMTransfer[healthbox->type].size);
 
         tileNum = GetHealthBoxPartsTile(HEALTHBOX_PART_BAR_END);
-        MI_CpuCopy16(tileNum, (void *)((u32)v2 + Unk_ov16_0226F3A4[healthbox->type].pos + imgProxy->vramLocation.baseAddrOfVram[NNS_G2D_VRAM_TYPE_2DMAIN]), Unk_ov16_0226F3A4[healthbox->type].size);
+        MI_CpuCopy16(tileNum, (void *)((u32)objCharPtr + sHPDisplayRightVRAMTransfer[healthbox->type].pos + imgProxy->vramLocation.baseAddrOfVram[NNS_G2D_VRAM_TYPE_2DMAIN]), sHPDisplayRightVRAMTransfer[healthbox->type].size);
 
         tileNum = GetHealthBoxPartsTile(HEALTHBOX_PART_STATUS_HEALTHY_0);
-        MI_CpuCopy16(tileNum, (void *)((u32)v2 + Unk_ov16_0226F3A4[healthbox->type].pos + HEALTHBOX_WINDOW_BLOCK_SIZE + imgProxy->vramLocation.baseAddrOfVram[NNS_G2D_VRAM_TYPE_2DMAIN]), HEALTHBOX_WINDOW_BLOCK_SIZE);
+        MI_CpuCopy16(tileNum, (void *)((u32)objCharPtr + sHPDisplayRightVRAMTransfer[healthbox->type].pos + HEALTHBOX_WINDOW_BLOCK_SIZE + imgProxy->vramLocation.baseAddrOfVram[NNS_G2D_VRAM_TYPE_2DMAIN]), HEALTHBOX_WINDOW_BLOCK_SIZE);
 
         HealthBox_DrawInfo(healthbox, healthbox->curHP, HEALTHBOX_INFO_HP_GAUGE);
     }
 }
 
-void HealthBox_CalcHP(HealthBox *healthbox, int damage)
+void HealthBox_CalcHP(HealthBox *healthbox, int damage) // CLEANUP: all calls pass in damage from healthbox, pls fix.
 {
     healthbox->hpTemp = S32_MIN;
 
@@ -885,7 +885,7 @@ void HealthBox_CalcHP(HealthBox *healthbox, int damage)
     }
 }
 
-s32 ov16_022674F8(HealthBox *healthbox)
+s32 Healthbox_DrawHPBar(HealthBox *healthbox)
 {
     s32 result = HealthBox_DrawGauge(healthbox, HEALTHBOX_GAUGE_HP);
 
@@ -922,7 +922,7 @@ void HealthBox_CalcExp(HealthBox *healthbox, int expReward)
     }
 }
 
-s32 ov16_02267560(HealthBox *healthbox)
+s32 Healthbox_DrawExpBar(HealthBox *healthbox)
 {
     s32 result = HealthBox_DrawGauge(healthbox, HEALTHBOX_GAUGE_EXP);
 
@@ -933,7 +933,7 @@ s32 ov16_02267560(HealthBox *healthbox)
     return result;
 }
 
-void ov16_0226757C(HealthBox *healthbox)
+void Healthbox_Activate(HealthBox *healthbox)
 {
     if (healthbox->arrowSprite != NULL) {
         Sprite_SetAnimateFlag(healthbox->arrowSprite->sprite, TRUE);
@@ -941,11 +941,11 @@ void ov16_0226757C(HealthBox *healthbox)
     }
 
     if ((BattleSystem_GetBattleType(healthbox->battleSys) & (BATTLE_TYPE_SAFARI | BATTLE_TYPE_PAL_PARK)) == FALSE) {
-        ov16_02268470(healthbox);
+        Healthbox_StartBobAnimation(healthbox);
     }
 }
 
-void ov16_022675AC(HealthBox *healthbox)
+void Healthbox_Deactivate(HealthBox *healthbox)
 {
     if (healthbox->arrowSprite != NULL) {
         Sprite_SetAnimateFlag(healthbox->arrowSprite->sprite, FALSE);
@@ -953,10 +953,10 @@ void ov16_022675AC(HealthBox *healthbox)
         HealthBox_EnableArrow(healthbox, FALSE);
     }
 
-    ov16_02268498(healthbox);
+    Healthbox_StopBobAnimation(healthbox);
 }
 
-void ov16_022675D8(HealthBox *healthbox, int priority)
+void Healthbox_SetExplicitPriority(HealthBox *healthbox, int priority)
 {
     if (healthbox->mainSprite == NULL) {
         return;
@@ -1003,7 +1003,7 @@ void HealthBox_Enable(HealthBox *battleSys, BOOL enable)
 void HealthBox_OffsetPositionXY(HealthBox *healthbox, int x, int y)
 {
     GF_ASSERT(healthbox->mainSprite != NULL);
-    const SpriteTemplate *template = HealthBox_SpriteTemplate(healthbox->type);
+    const SpriteTemplate *template = HealthBox_MainSpriteTemplate(healthbox->type);
 
     Sprite_SetPositionXY(healthbox->mainSprite->sprite, template->x + x, template->y + y);
     if (healthbox->arrowSprite != NULL) {
@@ -1041,7 +1041,7 @@ void HealthBox_Scroll(HealthBox *healthbox, enum HealthBoxScrollDirection direct
         HealthBox_OffsetPositionXY(healthbox, 0, 0);
     }
 
-    SysTask_Start(ScrollHealthBoxTask, healthbox, 990);
+    SysTask_Start(Healthbox_Task_Scroll, healthbox, 990);
 }
 
 /**
@@ -1050,11 +1050,11 @@ void HealthBox_Scroll(HealthBox *healthbox, enum HealthBoxScrollDirection direct
  * @param task
  * @param data
  */
-static void ScrollHealthBoxTask(SysTask *task, void *data)
+static void Healthbox_Task_Scroll(SysTask *task, void *data)
 {
     HealthBox *healthbox = data;
     int done = 0;
-    const SpriteTemplate *template = HealthBox_SpriteTemplate(healthbox->type);
+    const SpriteTemplate *template = HealthBox_MainSpriteTemplate(healthbox->type);
 
     s16 x, y;
     ManagedSprite_GetPositionXY(healthbox->mainSprite, &x, &y);
@@ -1189,88 +1189,85 @@ static void HealthBox_DrawLevelText(HealthBox *healthbox)
     tileNum1 = GetHealthBoxPartsTile(part1);
     tileNum2 = GetHealthBoxPartsTile(part2);
 
-    void *v5 = G2_GetOBJCharPtr();
+    void *objCharPtr = G2_GetOBJCharPtr();
     imgProxy = Sprite_GetImageProxy(healthbox->mainSprite->sprite);
 
-    MI_CpuCopy16(tileNum2, (void *)((u32)v5 + Unk_ov16_0226F47C[healthbox->type][0].pos + imgProxy->vramLocation.baseAddrOfVram[NNS_G2D_VRAM_TYPE_2DMAIN]), Unk_ov16_0226F47C[healthbox->type][0].size);
-    MI_CpuCopy16(tileNum1, (void *)((u32)v5 + Unk_ov16_0226F47C[healthbox->type][1].pos + imgProxy->vramLocation.baseAddrOfVram[NNS_G2D_VRAM_TYPE_2DMAIN]), Unk_ov16_0226F47C[healthbox->type][1].size);
+    MI_CpuCopy16(tileNum2, (void *)((u32)objCharPtr + sLevelIconVRAMTransfer[healthbox->type][0].pos + imgProxy->vramLocation.baseAddrOfVram[NNS_G2D_VRAM_TYPE_2DMAIN]), sLevelIconVRAMTransfer[healthbox->type][0].size);
+    MI_CpuCopy16(tileNum1, (void *)((u32)objCharPtr + sLevelIconVRAMTransfer[healthbox->type][1].pos + imgProxy->vramLocation.baseAddrOfVram[NNS_G2D_VRAM_TYPE_2DMAIN]), sLevelIconVRAMTransfer[healthbox->type][1].size);
 }
 
 static void HealthBox_DrawLevelNumber(HealthBox *healthbox)
 {
     NNSG2dImageProxy *imgProxy;
-    int v4, v5, v6;
+    int byteIdx, tileOffset, srcOffset;
 
     int size = 3 * HEALTHBOX_WINDOW_BLOCK_SIZE;
-    u8 *v0 = Heap_Alloc(HEAP_ID_BATTLE, size);
-    u8 *v1 = Heap_Alloc(HEAP_ID_BATTLE, size * 2);
+    u8 *levelTextBuf = Heap_Alloc(HEAP_ID_BATTLE, size);
+    u8 *tileWorkBuf = Heap_Alloc(HEAP_ID_BATTLE, size * 2);
 
-    MI_CpuFill8(v0, 0xf | (0xf << 4), size);
-    FontSpecialChars_DrawBattleScreenText(BattleSystem_GetSpecialCharsLevel(healthbox->battleSys), healthbox->level, 3, PADDING_MODE_NONE, v0);
+    MI_CpuFill8(levelTextBuf, 0xf | (0xf << 4), size);
+    FontSpecialChars_DrawBattleScreenText(BattleSystem_GetSpecialCharsLevel(healthbox->battleSys), healthbox->level, 3, PADDING_MODE_NONE, levelTextBuf);
 
-    void *v7 = G2_GetOBJCharPtr();
-    u8 *v8, *v9;
+    void *objCharPtr = G2_GetOBJCharPtr();
+    u8 *bottomBlock;
 
     imgProxy = Sprite_GetImageProxy(healthbox->mainSprite->sprite);
 
-    MI_CpuCopy16((void *)((u32)v7 + Unk_ov16_0226F3EC[healthbox->type][0].pos + imgProxy->vramLocation.baseAddrOfVram[NNS_G2D_VRAM_TYPE_2DMAIN]), v1, Unk_ov16_0226F3EC[healthbox->type][0].size);
-    MI_CpuCopy16((void *)((u32)v7 + Unk_ov16_0226F3EC[healthbox->type][1].pos + imgProxy->vramLocation.baseAddrOfVram[NNS_G2D_VRAM_TYPE_2DMAIN]), &v1[size], Unk_ov16_0226F3EC[healthbox->type][1].size);
+    MI_CpuCopy16((void *)((u32)objCharPtr + sLevelNumberVRAMTransfer[healthbox->type][0].pos + imgProxy->vramLocation.baseAddrOfVram[NNS_G2D_VRAM_TYPE_2DMAIN]), tileWorkBuf, sLevelNumberVRAMTransfer[healthbox->type][0].size);
+    MI_CpuCopy16((void *)((u32)objCharPtr + sLevelNumberVRAMTransfer[healthbox->type][1].pos + imgProxy->vramLocation.baseAddrOfVram[NNS_G2D_VRAM_TYPE_2DMAIN]), &tileWorkBuf[size], sLevelNumberVRAMTransfer[healthbox->type][1].size);
 
-    v6 = 0;
+    srcOffset = 0;
 
-    for (v5 = 0; v5 < size; v5 += 32) {
-        for (v4 = 0; v4 < 16; v4++) {
-            v1[v5 + 16 + v4] = v0[v6];
-            v1[v5 + v4 + size] = v0[v6 + 16];
-            v6++;
+    for (tileOffset = 0; tileOffset < size; tileOffset += 32) {
+        for (byteIdx = 0; byteIdx < 16; byteIdx++) {
+            tileWorkBuf[tileOffset + 16 + byteIdx] = levelTextBuf[srcOffset];
+            tileWorkBuf[tileOffset + byteIdx + size] = levelTextBuf[srcOffset + 16];
+            srcOffset++;
         }
 
-        v6 += 16;
+        srcOffset += 16;
     }
 
-    v8 = v1;
-    v9 = &v1[size];
+    bottomBlock = &tileWorkBuf[size];
 
-    MI_CpuCopy16(v8, (void *)((u32)v7 + Unk_ov16_0226F3EC[healthbox->type][0].pos + imgProxy->vramLocation.baseAddrOfVram[NNS_G2D_VRAM_TYPE_2DMAIN]), Unk_ov16_0226F3EC[healthbox->type][0].size);
-    MI_CpuCopy16(v9, (void *)((u32)v7 + Unk_ov16_0226F3EC[healthbox->type][1].pos + imgProxy->vramLocation.baseAddrOfVram[NNS_G2D_VRAM_TYPE_2DMAIN]), Unk_ov16_0226F3EC[healthbox->type][1].size);
+    MI_CpuCopy16(tileWorkBuf, (void *)((u32)objCharPtr + sLevelNumberVRAMTransfer[healthbox->type][0].pos + imgProxy->vramLocation.baseAddrOfVram[NNS_G2D_VRAM_TYPE_2DMAIN]), sLevelNumberVRAMTransfer[healthbox->type][0].size);
+    MI_CpuCopy16(bottomBlock, (void *)((u32)objCharPtr + sLevelNumberVRAMTransfer[healthbox->type][1].pos + imgProxy->vramLocation.baseAddrOfVram[NNS_G2D_VRAM_TYPE_2DMAIN]), sLevelNumberVRAMTransfer[healthbox->type][1].size);
 
-    Heap_Free(v0);
-    Heap_Free(v1);
+    Heap_Free(levelTextBuf);
+    Heap_Free(tileWorkBuf);
 }
 
 static void HealthBox_DrawCurrentHP(HealthBox *healthbox, u32 hp)
 {
-    u8 *v0 = Heap_Alloc(HEAP_ID_BATTLE, 3 * HEALTHBOX_WINDOW_BLOCK_SIZE);
+    u8 *currHPTextBuf = Heap_Alloc(HEAP_ID_BATTLE, 3 * HEALTHBOX_WINDOW_BLOCK_SIZE);
     NNSG2dImageProxy *imgProxy;
 
-    MI_CpuFill8(v0, 0xf | (0xf << 4), 3 * HEALTHBOX_WINDOW_BLOCK_SIZE);
-    FontSpecialChars_DrawBattleScreenText(BattleSystem_GetSpecialCharsHP(healthbox->battleSys), hp, 3, PADDING_MODE_SPACES, v0);
+    MI_CpuFill8(currHPTextBuf, 0xf | (0xf << 4), 3 * HEALTHBOX_WINDOW_BLOCK_SIZE);
+    FontSpecialChars_DrawBattleScreenText(BattleSystem_GetSpecialCharsHP(healthbox->battleSys), hp, 3, PADDING_MODE_SPACES, currHPTextBuf);
 
-    void *v2 = G2_GetOBJCharPtr();
+    void *objCharPtr = G2_GetOBJCharPtr();
     imgProxy = Sprite_GetImageProxy(healthbox->mainSprite->sprite);
-    u8 *v3 = v0;
 
-    MI_CpuCopy16(v3, (void *)((u32)v2 + Unk_ov16_0226F41C[healthbox->type][0].pos + imgProxy->vramLocation.baseAddrOfVram[NNS_G2D_VRAM_TYPE_2DMAIN]), Unk_ov16_0226F41C[healthbox->type][0].size);
-    MI_CpuCopy16(&v3[Unk_ov16_0226F41C[healthbox->type][0].size], (void *)((u32)v2 + Unk_ov16_0226F41C[healthbox->type][1].pos + imgProxy->vramLocation.baseAddrOfVram[NNS_G2D_VRAM_TYPE_2DMAIN]), Unk_ov16_0226F41C[healthbox->type][1].size);
+    MI_CpuCopy16(currHPTextBuf, (void *)((u32)objCharPtr + sCurrentHPNumberVRAMTransfer[healthbox->type][0].pos + imgProxy->vramLocation.baseAddrOfVram[NNS_G2D_VRAM_TYPE_2DMAIN]), sCurrentHPNumberVRAMTransfer[healthbox->type][0].size);
+    MI_CpuCopy16(&currHPTextBuf[sCurrentHPNumberVRAMTransfer[healthbox->type][0].size], (void *)((u32)objCharPtr + sCurrentHPNumberVRAMTransfer[healthbox->type][1].pos + imgProxy->vramLocation.baseAddrOfVram[NNS_G2D_VRAM_TYPE_2DMAIN]), sCurrentHPNumberVRAMTransfer[healthbox->type][1].size);
 
-    Heap_Free(v0);
+    Heap_Free(currHPTextBuf);
 }
 
 static void HealthBox_DrawMaxHP(HealthBox *healthbox)
 {
-    u8 *v0 = Heap_Alloc(HEAP_ID_BATTLE, 3 * HEALTHBOX_WINDOW_BLOCK_SIZE);
+    u8 *maxHPTextBuf = Heap_Alloc(HEAP_ID_BATTLE, 3 * HEALTHBOX_WINDOW_BLOCK_SIZE);
     NNSG2dImageProxy *imgProxy;
 
-    MI_CpuFill8(v0, 0xf | (0xf << 4), 3 * HEALTHBOX_WINDOW_BLOCK_SIZE);
-    FontSpecialChars_DrawBattleScreenText(BattleSystem_GetSpecialCharsHP(healthbox->battleSys), healthbox->maxHP, 3, PADDING_MODE_NONE, v0);
+    MI_CpuFill8(maxHPTextBuf, 0xf | (0xf << 4), 3 * HEALTHBOX_WINDOW_BLOCK_SIZE);
+    FontSpecialChars_DrawBattleScreenText(BattleSystem_GetSpecialCharsHP(healthbox->battleSys), healthbox->maxHP, 3, PADDING_MODE_NONE, maxHPTextBuf);
 
-    void *v2 = G2_GetOBJCharPtr();
+    void *objCharPtr = G2_GetOBJCharPtr();
     imgProxy = Sprite_GetImageProxy(healthbox->mainSprite->sprite);
-    u8 *v3 = v0;
 
-    MI_CpuCopy16(v3, (void *)((u32)v2 + Unk_ov16_0226F3BC[healthbox->type].pos + imgProxy->vramLocation.baseAddrOfVram[NNS_G2D_VRAM_TYPE_2DMAIN]), Unk_ov16_0226F3BC[healthbox->type].size);
+    MI_CpuCopy16(maxHPTextBuf, (void *)((u32)objCharPtr + sMaxHPNumberVRAMTransfer[healthbox->type].pos + imgProxy->vramLocation.baseAddrOfVram[NNS_G2D_VRAM_TYPE_2DMAIN]), sMaxHPNumberVRAMTransfer[healthbox->type].size);
 
-    Heap_Free(v0);
+    Heap_Free(maxHPTextBuf);
 }
 
 static void HealthBox_DrawCaughtIcon(HealthBox *healthbox)
@@ -1284,10 +1281,10 @@ static void HealthBox_DrawCaughtIcon(HealthBox *healthbox)
         tileNum = GetHealthBoxPartsTile(HEALTHBOX_PART_STATUS_HEALTHY_0);
     }
 
-    void *v2 = G2_GetOBJCharPtr();
+    void *objCharPtr = G2_GetOBJCharPtr();
     imgProxy = Sprite_GetImageProxy(healthbox->mainSprite->sprite);
 
-    MI_CpuCopy16(tileNum, (void *)((u32)v2 + Unk_ov16_0226F38C[healthbox->type].pos + imgProxy->vramLocation.baseAddrOfVram[NNS_G2D_VRAM_TYPE_2DMAIN]), Unk_ov16_0226F38C[healthbox->type].size);
+    MI_CpuCopy16(tileNum, (void *)((u32)objCharPtr + sCaughtIconVRAMTransfer[healthbox->type].pos + imgProxy->vramLocation.baseAddrOfVram[NNS_G2D_VRAM_TYPE_2DMAIN]), sCaughtIconVRAMTransfer[healthbox->type].size);
 }
 
 static void HealthBox_DrawStatusIcon(HealthBox *healthbox, enum HealthBoxPart part)
@@ -1295,16 +1292,16 @@ static void HealthBox_DrawStatusIcon(HealthBox *healthbox, enum HealthBoxPart pa
     NNSG2dImageProxy *imgProxy;
     const u8 *tileNum = GetHealthBoxPartsTile(part);
 
-    void *v2 = G2_GetOBJCharPtr();
+    void *objCharPtr = G2_GetOBJCharPtr();
     imgProxy = Sprite_GetImageProxy(healthbox->mainSprite->sprite);
 
-    MI_CpuCopy16(tileNum, (void *)((u32)v2 + Unk_ov16_0226F35C[healthbox->type].pos + imgProxy->vramLocation.baseAddrOfVram[NNS_G2D_VRAM_TYPE_2DMAIN]), Unk_ov16_0226F35C[healthbox->type].size);
+    MI_CpuCopy16(tileNum, (void *)((u32)objCharPtr + sStatusIconVRAMTransfer[healthbox->type].pos + imgProxy->vramLocation.baseAddrOfVram[NNS_G2D_VRAM_TYPE_2DMAIN]), sStatusIconVRAMTransfer[healthbox->type].size);
 }
 
 static void HealthBox_DrawBallCount(HealthBox *healthbox, u32 flags)
 {
     BgConfig *bgConfig = BattleSystem_GetBgConfig(healthbox->battleSys);
-    u8 *v1;
+    u8 *topRow;
     NNSG2dImageProxy *imgProxy;
     Window window;
     MessageLoader *msgLoader = BattleSystem_GetMessageLoader(healthbox->battleSys);
@@ -1319,18 +1316,17 @@ static void HealthBox_DrawBallCount(HealthBox *healthbox, u32 flags)
     Window_AddToTopLeftCorner(bgConfig, &window, 13, 2, 0, 0xf);
     Text_AddPrinterWithParamsColorAndSpacing(&window, FONT_SYSTEM, string, 0, 0, TEXT_SPEED_NO_TRANSFER, HEALTHBOX_NAME_TEXT_COLOR, 0, 0, NULL);
 
-    v1 = window.pixels;
+    topRow = window.pixels;
 
-    void *v6 = G2_GetOBJCharPtr();
+    void *objCharPtr = G2_GetOBJCharPtr();
     imgProxy = Sprite_GetImageProxy(healthbox->mainSprite->sprite);
-    u8 *v7 = v1;
-    u8 *v8 = &v1[13 * HEALTHBOX_WINDOW_BLOCK_SIZE];
+    u8 *bottomRow = &topRow[13 * HEALTHBOX_WINDOW_BLOCK_SIZE];
 
-    MI_CpuCopy16(v7, (void *)((u32)v6 + Unk_ov16_0226F33C[0].pos + imgProxy->vramLocation.baseAddrOfVram[NNS_G2D_VRAM_TYPE_2DMAIN]), Unk_ov16_0226F33C[0].size);
-    MI_CpuCopy16(v8, (void *)((u32)v6 + Unk_ov16_0226F33C[1].pos + imgProxy->vramLocation.baseAddrOfVram[NNS_G2D_VRAM_TYPE_2DMAIN]), Unk_ov16_0226F33C[1].size);
+    MI_CpuCopy16(topRow, (void *)((u32)objCharPtr + sBallCountVRAMTransfer[0].pos + imgProxy->vramLocation.baseAddrOfVram[NNS_G2D_VRAM_TYPE_2DMAIN]), sBallCountVRAMTransfer[0].size);
+    MI_CpuCopy16(bottomRow, (void *)((u32)objCharPtr + sBallCountVRAMTransfer[1].pos + imgProxy->vramLocation.baseAddrOfVram[NNS_G2D_VRAM_TYPE_2DMAIN]), sBallCountVRAMTransfer[1].size);
 
-    MI_CpuCopy16(&v7[Unk_ov16_0226F33C[0].size], (void *)((u32)v6 + Unk_ov16_0226F33C[2].pos + imgProxy->vramLocation.baseAddrOfVram[NNS_G2D_VRAM_TYPE_2DMAIN]), Unk_ov16_0226F33C[2].size);
-    MI_CpuCopy16(&v8[Unk_ov16_0226F33C[1].size], (void *)((u32)v6 + Unk_ov16_0226F33C[3].pos + imgProxy->vramLocation.baseAddrOfVram[NNS_G2D_VRAM_TYPE_2DMAIN]), Unk_ov16_0226F33C[3].size);
+    MI_CpuCopy16(&topRow[sBallCountVRAMTransfer[0].size], (void *)((u32)objCharPtr + sBallCountVRAMTransfer[2].pos + imgProxy->vramLocation.baseAddrOfVram[NNS_G2D_VRAM_TYPE_2DMAIN]), sBallCountVRAMTransfer[2].size);
+    MI_CpuCopy16(&bottomRow[sBallCountVRAMTransfer[1].size], (void *)((u32)objCharPtr + sBallCountVRAMTransfer[3].pos + imgProxy->vramLocation.baseAddrOfVram[NNS_G2D_VRAM_TYPE_2DMAIN]), sBallCountVRAMTransfer[3].size);
 
     Window_Remove(&window);
     String_Free(string);
@@ -1339,7 +1335,7 @@ static void HealthBox_DrawBallCount(HealthBox *healthbox, u32 flags)
 static void HealthBox_DrawBallsLeftMessage(HealthBox *healthbox, u32 flags)
 {
     BgConfig *bgConfig = BattleSystem_GetBgConfig(healthbox->battleSys);
-    u8 *v1;
+    u8 *topRow;
     NNSG2dImageProxy *imgProxy;
     Window window;
     MessageLoader *msgLoader = BattleSystem_GetMessageLoader(healthbox->battleSys);
@@ -1359,17 +1355,16 @@ static void HealthBox_DrawBallsLeftMessage(HealthBox *healthbox, u32 flags)
     Window_AddToTopLeftCorner(bgConfig, &window, 13, 2, 0, 0xf);
     Text_AddPrinterWithParamsColorAndSpacing(&window, FONT_SYSTEM, string, 0, 0, TEXT_SPEED_NO_TRANSFER, TEXT_COLOR(14, 2, 15), 0, 0, NULL);
 
-    v1 = window.pixels;
+    topRow = window.pixels;
 
-    void *v8 = G2_GetOBJCharPtr();
+    void *objCharPtr = G2_GetOBJCharPtr();
     imgProxy = Sprite_GetImageProxy(healthbox->mainSprite->sprite);
-    u8 *v9 = v1;
-    u8 *v10 = &v1[13 * HEALTHBOX_WINDOW_BLOCK_SIZE];
+    u8 *bottomRow = &topRow[13 * HEALTHBOX_WINDOW_BLOCK_SIZE];
 
-    MI_CpuCopy16(v9, (void *)((u32)v8 + Unk_ov16_0226F34C[0].pos + imgProxy->vramLocation.baseAddrOfVram[NNS_G2D_VRAM_TYPE_2DMAIN]), Unk_ov16_0226F34C[0].size);
-    MI_CpuCopy16(v10, (void *)((u32)v8 + Unk_ov16_0226F34C[1].pos + imgProxy->vramLocation.baseAddrOfVram[NNS_G2D_VRAM_TYPE_2DMAIN]), Unk_ov16_0226F34C[1].size);
-    MI_CpuCopy16(&v9[Unk_ov16_0226F34C[0].size], (void *)((u32)v8 + Unk_ov16_0226F34C[2].pos + imgProxy->vramLocation.baseAddrOfVram[NNS_G2D_VRAM_TYPE_2DMAIN]), Unk_ov16_0226F34C[2].size);
-    MI_CpuCopy16(&v10[Unk_ov16_0226F34C[1].size], (void *)((u32)v8 + Unk_ov16_0226F34C[3].pos + imgProxy->vramLocation.baseAddrOfVram[NNS_G2D_VRAM_TYPE_2DMAIN]), Unk_ov16_0226F34C[3].size);
+    MI_CpuCopy16(topRow, (void *)((u32)objCharPtr + sBallsLeftVRAMTransfer[0].pos + imgProxy->vramLocation.baseAddrOfVram[NNS_G2D_VRAM_TYPE_2DMAIN]), sBallsLeftVRAMTransfer[0].size);
+    MI_CpuCopy16(bottomRow, (void *)((u32)objCharPtr + sBallsLeftVRAMTransfer[1].pos + imgProxy->vramLocation.baseAddrOfVram[NNS_G2D_VRAM_TYPE_2DMAIN]), sBallsLeftVRAMTransfer[1].size);
+    MI_CpuCopy16(&topRow[sBallsLeftVRAMTransfer[0].size], (void *)((u32)objCharPtr + sBallsLeftVRAMTransfer[2].pos + imgProxy->vramLocation.baseAddrOfVram[NNS_G2D_VRAM_TYPE_2DMAIN]), sBallsLeftVRAMTransfer[2].size);
+    MI_CpuCopy16(&bottomRow[sBallsLeftVRAMTransfer[1].size], (void *)((u32)objCharPtr + sBallsLeftVRAMTransfer[3].pos + imgProxy->vramLocation.baseAddrOfVram[NNS_G2D_VRAM_TYPE_2DMAIN]), sBallsLeftVRAMTransfer[3].size);
 
     Window_Remove(&window);
     String_Free(string);
@@ -1417,7 +1412,7 @@ static void DrawGauge(HealthBox *healthbox, u8 gaugeType)
     u8 pixels;
     u8 level;
     const u8 *tileNum;
-    void *v7 = G2_GetOBJCharPtr();
+    void *objCharPtr = G2_GetOBJCharPtr();
     NNSG2dImageProxy *imgProxy = Sprite_GetImageProxy(healthbox->mainSprite->sprite);
     int numBlocks;
 
@@ -1441,13 +1436,13 @@ static void DrawGauge(HealthBox *healthbox, u8 gaugeType)
         }
 
         tileNum = GetHealthBoxPartsTile(part);
-        numBlocks = Unk_ov16_0226F44C[healthbox->type][0].size / HEALTHBOX_WINDOW_BLOCK_SIZE;
+        numBlocks = sHPGaugeVRAMTransfer[healthbox->type][0].size / HEALTHBOX_WINDOW_BLOCK_SIZE;
 
         for (i = 0; i < HEALTHBOX_HP_CELL_COUNT; i++) {
             if (i < numBlocks) {
-                MI_CpuCopy16(tileNum + (cells[i] << 5), (void *)((u32)v7 + Unk_ov16_0226F44C[healthbox->type][0].pos + (i * HEALTHBOX_WINDOW_BLOCK_SIZE) + imgProxy->vramLocation.baseAddrOfVram[NNS_G2D_VRAM_TYPE_2DMAIN]), HEALTHBOX_WINDOW_BLOCK_SIZE);
+                MI_CpuCopy16(tileNum + (cells[i] << 5), (void *)((u32)objCharPtr + sHPGaugeVRAMTransfer[healthbox->type][0].pos + (i * HEALTHBOX_WINDOW_BLOCK_SIZE) + imgProxy->vramLocation.baseAddrOfVram[NNS_G2D_VRAM_TYPE_2DMAIN]), HEALTHBOX_WINDOW_BLOCK_SIZE);
             } else {
-                MI_CpuCopy16(tileNum + (cells[i] << 5), (void *)((u32)v7 + Unk_ov16_0226F44C[healthbox->type][1].pos + ((i - numBlocks) * HEALTHBOX_WINDOW_BLOCK_SIZE) + imgProxy->vramLocation.baseAddrOfVram[NNS_G2D_VRAM_TYPE_2DMAIN]), HEALTHBOX_WINDOW_BLOCK_SIZE);
+                MI_CpuCopy16(tileNum + (cells[i] << 5), (void *)((u32)objCharPtr + sHPGaugeVRAMTransfer[healthbox->type][1].pos + ((i - numBlocks) * HEALTHBOX_WINDOW_BLOCK_SIZE) + imgProxy->vramLocation.baseAddrOfVram[NNS_G2D_VRAM_TYPE_2DMAIN]), HEALTHBOX_WINDOW_BLOCK_SIZE);
             }
         }
         break;
@@ -1465,9 +1460,9 @@ static void DrawGauge(HealthBox *healthbox, u8 gaugeType)
 
         for (i = 0; i < HEALTHBOX_EXP_CELL_COUNT; i++) {
             if (i < 5) {
-                MI_CpuCopy16(tileNum + (cells[i] << 5), (void *)((u32)v7 + 1632 + (i * HEALTHBOX_WINDOW_BLOCK_SIZE) + imgProxy->vramLocation.baseAddrOfVram[NNS_G2D_VRAM_TYPE_2DMAIN]), HEALTHBOX_WINDOW_BLOCK_SIZE);
+                MI_CpuCopy16(tileNum + (cells[i] << 5), (void *)((u32)objCharPtr + 1632 + (i * HEALTHBOX_WINDOW_BLOCK_SIZE) + imgProxy->vramLocation.baseAddrOfVram[NNS_G2D_VRAM_TYPE_2DMAIN]), HEALTHBOX_WINDOW_BLOCK_SIZE);
             } else {
-                MI_CpuCopy16(tileNum + (cells[i] << 5), (void *)((u32)v7 + 3584 + ((i - 5) * HEALTHBOX_WINDOW_BLOCK_SIZE) + imgProxy->vramLocation.baseAddrOfVram[NNS_G2D_VRAM_TYPE_2DMAIN]), HEALTHBOX_WINDOW_BLOCK_SIZE);
+                MI_CpuCopy16(tileNum + (cells[i] << 5), (void *)((u32)objCharPtr + 3584 + ((i - 5) * HEALTHBOX_WINDOW_BLOCK_SIZE) + imgProxy->vramLocation.baseAddrOfVram[NNS_G2D_VRAM_TYPE_2DMAIN]), HEALTHBOX_WINDOW_BLOCK_SIZE);
             }
         }
         break;
@@ -1713,7 +1708,7 @@ u8 HealthBox_Type(int battlerType, u32 battleType)
  * @return      Address of the SpriteTemplate struct which applies to this
  *              healthbox type.
  */
-static const SpriteTemplate *HealthBox_SpriteTemplate(u8 type)
+static const SpriteTemplate *HealthBox_MainSpriteTemplate(u8 type)
 {
     switch (type) {
     case HEALTHBOX_TYPE_PLAYER_SOLO:
@@ -1744,7 +1739,7 @@ static const SpriteTemplate *HealthBox_SpriteTemplate(u8 type)
     }
 }
 
-static const SpriteTemplate *ov16_02268314(u8 type)
+static const SpriteTemplate *HealthBox_ArrowSpriteTemplate(u8 type)
 {
     const SpriteTemplate *spriteTemplate;
 
@@ -1754,7 +1749,7 @@ static const SpriteTemplate *ov16_02268314(u8 type)
     case HEALTHBOX_TYPE_PLAYER_SLOT_2:
     case HEALTHBOX_TYPE_SAFARI_ZONE:
     case HEALTHBOX_TYPE_PAL_PARK:
-        spriteTemplate = &sHealthBoxTemplate_Unk_ov16_0226F514;
+        spriteTemplate = &sHealthBoxTemplate_Arrow;
         break;
     case HEALTHBOX_TYPE_ENEMY_SOLO:
     case HEALTHBOX_TYPE_ENEMY_SLOT_1:
@@ -1768,59 +1763,59 @@ static const SpriteTemplate *ov16_02268314(u8 type)
     return spriteTemplate;
 }
 
-void ov16_0226834C(HealthBox *healthbox, u8 *param1)
+void Healthbox_StartLevelUpFlash(HealthBox *healthbox, u8 *doneFlag)
 {
-    UnkStruct_ov16_0226834C *v0;
+    HealthboxLevelUpFlashState *flashState;
 
-    *param1 = 0;
+    *doneFlag = 0;
 
-    v0 = Heap_Alloc(HEAP_ID_BATTLE, sizeof(UnkStruct_ov16_0226834C));
-    MI_CpuClear8(v0, sizeof(UnkStruct_ov16_0226834C));
+    flashState = Heap_Alloc(HEAP_ID_BATTLE, sizeof(HealthboxLevelUpFlashState));
+    MI_CpuClear8(flashState, sizeof(HealthboxLevelUpFlashState));
 
-    v0->healthbox = healthbox;
-    v0->unk_04 = param1;
+    flashState->healthbox = healthbox;
+    flashState->done = doneFlag;
 
-    SysTask_Start(ov16_02268380, v0, 1000);
+    SysTask_Start(Healthbox_Task_LevelUpFlashAnimation, flashState, 1000);
 }
 
-static void ov16_02268380(SysTask *task, void *param1)
+static void Healthbox_Task_LevelUpFlashAnimation(SysTask *task, void *param1)
 {
-    UnkStruct_ov16_0226834C *v0 = param1;
-    SpriteManager *spriteManager = BattleSystem_GetSpriteManager(v0->healthbox->battleSys);
-    int v2;
-    PaletteData *paletteData = BattleSystem_GetPaletteData(v0->healthbox->battleSys);
+    HealthboxLevelUpFlashState *flashState = param1;
+    SpriteManager *spriteManager = BattleSystem_GetSpriteManager(flashState->healthbox->battleSys);
+    int plttOffset;
+    PaletteData *paletteData = BattleSystem_GetPaletteData(flashState->healthbox->battleSys);
 
-    switch (v0->state) {
+    switch (flashState->state) {
     case 0:
-        v2 = SpriteManager_FindPlttResourceOffset(spriteManager, 20007, NNS_G2D_VRAM_TYPE_2DMAIN);
-        ManagedSprite_SetExplicitPalette(v0->healthbox->mainSprite, v2);
-        v0->unk_09 = v2;
-        v0->state++;
+        plttOffset = SpriteManager_FindPlttResourceOffset(spriteManager, 20007, NNS_G2D_VRAM_TYPE_2DMAIN);
+        ManagedSprite_SetExplicitPalette(flashState->healthbox->mainSprite, plttOffset);
+        flashState->paletteOffset = plttOffset;
+        flashState->state++;
     case 1:
-        v0->unk_0A += 2;
+        flashState->blendIntensity += 2;
 
-        if (v0->unk_0A >= 10) {
-            v0->unk_0A = 10;
-            v0->state++;
+        if (flashState->blendIntensity >= 10) {
+            flashState->blendIntensity = 10;
+            flashState->state++;
         }
 
-        PaletteData_Blend(paletteData, 2, v0->unk_09 * 16 + 0, 16, v0->unk_0A, 0x73a5);
+        PaletteData_Blend(paletteData, 2, flashState->paletteOffset * 16 + 0, 16, flashState->blendIntensity, 0x73a5);
         break;
     case 2:
-        v0->unk_0A -= 2;
+        flashState->blendIntensity -= 2;
 
-        if (v0->unk_0A <= 0) {
-            v0->unk_0A = 0;
-            v0->state++;
+        if (flashState->blendIntensity <= 0) {
+            flashState->blendIntensity = 0;
+            flashState->state++;
         }
 
-        PaletteData_Blend(paletteData, 2, v0->unk_09 * 16 + 0, 16, v0->unk_0A, 0x73a5);
+        PaletteData_Blend(paletteData, 2, flashState->paletteOffset * 16 + 0, 16, flashState->blendIntensity, 0x73a5);
         break;
     default:
-        v2 = SpriteManager_FindPlttResourceOffset(spriteManager, HEALTHBOX_MAIN_PALETTE_RESID, NNS_G2D_VRAM_TYPE_2DMAIN);
-        ManagedSprite_SetExplicitPalette(v0->healthbox->mainSprite, v2);
+        plttOffset = SpriteManager_FindPlttResourceOffset(spriteManager, HEALTHBOX_MAIN_PALETTE_RESID, NNS_G2D_VRAM_TYPE_2DMAIN);
+        ManagedSprite_SetExplicitPalette(flashState->healthbox->mainSprite, plttOffset);
 
-        *(v0->unk_04) = 1;
+        *(flashState->done) = 1;
 
         Heap_Free(param1);
         SysTask_Done(task);
@@ -1829,38 +1824,38 @@ static void ov16_02268380(SysTask *task, void *param1)
     }
 }
 
-void ov16_02268468(HealthBox *healthbox)
+void ov16_02268468(HealthBox *healthbox) // CLEANUP: does nothing. Remove.
 {
     return;
 }
 
-void ov16_0226846C(HealthBox *healthbox)
+void ov16_0226846C(HealthBox *healthbox) // CLEANUP: does nothing. Remove.
 {
     return;
 }
 
-void ov16_02268470(HealthBox *healthbox)
+void Healthbox_StartBobAnimation(HealthBox *healthbox)
 {
-    if (healthbox->task_50 != NULL) {
+    if (healthbox->bobbingAnimTask != NULL) {
         return;
     }
 
     healthbox->degrees = 0;
-    healthbox->task_50 = SysTask_Start(ov16_022684BC, healthbox, 1010);
+    healthbox->bobbingAnimTask = SysTask_Start(Healthbox_Task_Bob, healthbox, 1010);
 }
 
-void ov16_02268498(HealthBox *healthbox)
+void Healthbox_StopBobAnimation(HealthBox *healthbox)
 {
-    if (healthbox->task_50 != NULL) {
-        SysTask_Done(healthbox->task_50);
-        healthbox->task_50 = NULL;
+    if (healthbox->bobbingAnimTask != NULL) {
+        SysTask_Done(healthbox->bobbingAnimTask);
+        healthbox->bobbingAnimTask = NULL;
     }
 
     healthbox->degrees = 0;
     HealthBox_OffsetPositionXY(healthbox, 0, 0);
 }
 
-static void ov16_022684BC(SysTask *task, void *data)
+static void Healthbox_Task_Bob(SysTask *task, void *data)
 {
     HealthBox *healthbox = data;
     int y;
