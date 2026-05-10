@@ -5079,6 +5079,12 @@
     .short \destVar
     .endm
 
+    .macro Debug_SetMonItem slot, item
+    .short SCRCMD_DEBUG_SETMONITEM
+    .short \slot
+    .short \item
+    .endm
+
 
 // CONVENIENCE MACROS
 

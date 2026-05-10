@@ -2090,6 +2090,7 @@ static BOOL BtlCmd_GoToSubscript(BattleSystem *battleSys, BattleContext *battleC
 
 /**
  * @brief GoTo to the battle effect sequence for the current move.
+ * @brief Updated for Sheer Force
  *
  * @param battleSys
  * @param battleCtx
@@ -2099,7 +2100,63 @@ static BOOL BtlCmd_GoToEffectScript(BattleSystem *battleSys, BattleContext *batt
 {
     BattleScript_Iter(battleCtx, 1);
 
-    BattleScript_Jump(battleCtx, NARC_INDEX_BATTLE__SKILL__BE_SEQ, CURRENT_MOVE_DATA.effect);
+    int effect = CURRENT_MOVE_DATA.effect;
+
+    if (Battler_Ability(battleCtx, battleCtx->attacker) == ABILITY_SHEER_FORCE)  {
+        switch (effect) {
+            case BATTLE_EFFECT_FLINCH_HIT:
+            case BATTLE_EFFECT_RAISE_ALL_STATS_HIT:
+            case BATTLE_EFFECT_BLIZZARD:
+            case BATTLE_EFFECT_PARALYZE_HIT:
+            case BATTLE_EFFECT_LOWER_SPEED_HIT:
+            case BATTLE_EFFECT_RAISE_SP_ATK_HIT:
+            case BATTLE_EFFECT_CONFUSE_HIT:
+            case BATTLE_EFFECT_LOWER_DEFENSE_HIT:
+            case BATTLE_EFFECT_LOWER_SP_DEF_HIT:
+            case BATTLE_EFFECT_BURN_HIT:
+            case BATTLE_EFFECT_FLINCH_BURN_HIT:
+            // case BATTLE_EFFECT_RAISE_SPEED_HIT: // e,g, Flame Charge
+            case BATTLE_EFFECT_POISON_HIT:
+            case BATTLE_EFFECT_FREEZE_HIT:
+            case BATTLE_EFFECT_FLINCH_FREEZE_HIT:
+            case BATTLE_EFFECT_RAISE_ATTACK_HIT:
+            case BATTLE_EFFECT_LOWER_ACCURACY_HIT:
+            case BATTLE_EFFECT_BADLY_POISON_HIT:
+            case BATTLE_EFFECT_LOWER_SP_ATK_HIT:
+            case BATTLE_EFFECT_THUNDER:
+            case BATTLE_EFFECT_FLINCH_PARALYZE_HIT:
+            case BATTLE_EFFECT_FLINCH_DOUBLE_DAMAGE_FLY_OR_BOUNCE: // removes the double damage flying too
+            case BATTLE_EFFECT_LOWER_SP_DEF_2_HIT:
+            case BATTLE_EFFECT_LOWER_ATTACK_HIT:
+            case BATTLE_EFFECT_THAW_AND_BURN_HIT: // it does thaw otherwise
+            case BATTLE_EFFECT_CHATTER: // confuse chance based on volume of cry
+            case BATTLE_EFFECT_FLINCH_MINIMIZE_DOUBLE_HIT:
+            case BATTLE_EFFECT_TRI_ATTACK:
+            // case BATTLE_EFFECT_PREVENT_HEALING_HIT: // Psychic Noise
+                effect = BATTLE_EFFECT_HIT; // no secondary effect, but still counts as a hit for Sheer Force
+                battleCtx->battleMons[battleCtx->attacker].sheerForceActivated = TRUE;
+                break;
+            case BATTLE_EFFECT_POISON_MULTI_HIT: // twineedle
+                effect = BATTLE_EFFECT_MULTI_HIT;
+                battleCtx->battleMons[battleCtx->attacker].sheerForceActivated = TRUE;
+                break;
+            case BATTLE_EFFECT_HIGH_CRITICAL_BURN_HIT: // Blaze Kick
+            case BATTLE_EFFECT_HIGH_CRITICAL_POISON_HIT: // Cross Poison
+                effect = BATTLE_EFFECT_HIGH_CRITICAL;
+                battleCtx->battleMons[battleCtx->attacker].sheerForceActivated = TRUE;
+                break;
+            case BATTLE_EFFECT_RECOIL_BURN_HIT: // Flare Blitz
+            case BATTLE_EFFECT_RECOIL_PARALYZE_HIT: // Volt Tackle
+                effect = BATTLE_EFFECT_RECOIL_THIRD;
+                battleCtx->battleMons[battleCtx->attacker].sheerForceActivated = TRUE;
+                break;
+            default:
+                battleCtx->battleMons[battleCtx->attacker].sheerForceActivated = FALSE;
+                break;
+        }
+    }
+
+    BattleScript_Jump(battleCtx, NARC_INDEX_BATTLE__SKILL__BE_SEQ, effect);
 
     return FALSE;
 }
@@ -5423,6 +5480,9 @@ static BOOL BtlCmd_Transform(BattleSystem *battleSys, BattleContext *battleCtx)
     ATTACKING_MON.moveEffectsData.slowStartTurnNumber = battleCtx->totalTurns + 1;
     ATTACKING_MON.slowStartAnnounced = FALSE;
     ATTACKING_MON.slowStartFinished = FALSE;
+    ATTACKING_MON.supremeOverlordAnnounced = FALSE;
+    ATTACKING_MON.piercingEyeAnnounced = FALSE;
+    ATTACKING_MON.sheerForceActivated = FALSE;
 
     for (i = 0; i < LEARNED_MOVES_MAX; i++) {
         if (MOVE_DATA(ATTACKING_MON.moves[i]).pp < 5) {

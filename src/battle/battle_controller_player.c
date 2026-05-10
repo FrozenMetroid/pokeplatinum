@@ -4904,7 +4904,8 @@ static BOOL BattleControllerPlayer_TriggerAfterMoveHitEffects(BattleSystem *batt
                 && ATTACKER_SELF_TURN_FLAGS.shellBellDamageDealt
                 && battleCtx->attacker != battleCtx->defender
                 && ATTACKING_MON.curHP < ATTACKING_MON.maxHP
-                && ATTACKING_MON.curHP) {
+                && ATTACKING_MON.curHP
+                && !(Battler_Ability(battleCtx, battleCtx->attacker) == ABILITY_SHEER_FORCE && battleCtx->battleMons[battleCtx->attacker].sheerForceActivated == TRUE)) { // sheer force prevents shell bell from activating
                 battleCtx->hpCalcTemp = BattleSystem_Divide(ATTACKER_SELF_TURN_FLAGS.shellBellDamageDealt * -1, itemPower);
                 battleCtx->msgBattlerTemp = battleCtx->attacker;
 
@@ -4924,7 +4925,8 @@ static BOOL BattleControllerPlayer_TriggerAfterMoveHitEffects(BattleSystem *batt
                 && (battleCtx->battleStatusMask2 & SYSCTL_UTURN_ACTIVE) == FALSE
                 && (battleCtx->battleStatusMask & SYSCTL_MOVE_HIT)
                 && CURRENT_MOVE_DATA.class != CLASS_STATUS
-                && ATTACKING_MON.curHP) {
+                && ATTACKING_MON.curHP
+                && !(Battler_Ability(battleCtx, battleCtx->attacker) == ABILITY_SHEER_FORCE && battleCtx->battleMons[battleCtx->attacker].sheerForceActivated == TRUE)) { // sheer force prevents life orb from activating
                 battleCtx->hpCalcTemp = BattleSystem_Divide(battleCtx->battleMons[battleCtx->attacker].maxHP * -1, 10);
                 battleCtx->msgBattlerTemp = battleCtx->attacker;
                 battleCtx->msgItemTemp = Battler_HeldItem(battleCtx, battleCtx->attacker);
@@ -4947,7 +4949,8 @@ static BOOL BattleControllerPlayer_TriggerAfterMoveHitEffects(BattleSystem *batt
                 && (DEFENDER_SELF_TURN_FLAGS.physicalDamageTaken || DEFENDER_SELF_TURN_FLAGS.specialDamageTaken)
                 && (CURRENT_MOVE_DATA.flags & MOVE_FLAG_MAKES_CONTACT)
                 && (CURRENT_MOVE_DATA.power != 0) // move isn't status move
-                && (Battle_CanStealHeldItemFromAttacker(battleSys, battleCtx))) { // doesn't already have a held item
+                && (Battle_CanStealHeldItemFromAttacker(battleSys, battleCtx))
+                && !(Battler_Ability(battleCtx, battleCtx->attacker) == ABILITY_SHEER_FORCE && battleCtx->battleMons[battleCtx->attacker].sheerForceActivated == TRUE)) { // sheer force prevents pickpocket from activating
                     battleCtx->sideEffectType = SIDE_EFFECT_TYPE_ABILITY;
                     battleCtx->sideEffectMon = battleCtx->attacker;
                     battleCtx->msgBattlerTemp = battleCtx->defender;

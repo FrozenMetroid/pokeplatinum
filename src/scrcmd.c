@@ -7396,3 +7396,14 @@ static BOOL ScrCmd_Debug_GetSpeciesData(ScriptContext *ctx)
 
     return FALSE;
 }
+
+static BOOL ScrCmd_Debug_SetMonItem(ScriptContext *ctx)
+{
+    u8 partySlot = ScriptContext_GetVar(ctx);
+    u16 itemID = ScriptContext_GetVar(ctx);
+
+    Pokemon *mon = Party_GetPokemonBySlotIndex(SaveData_GetParty(ctx->fieldSystem->saveData), partySlot);
+    Pokemon_SetValue(mon, MON_DATA_HELD_ITEM, &itemID);
+
+    return FALSE;
+}

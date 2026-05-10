@@ -1053,6 +1053,13 @@
         "Sp. Atk rises when its\n",
         "stats are lowered."
       ]
+    },
+    {
+      "id": "pl_msg_00000612_00151",
+      "en_US": [
+        "Removes added effects to\n",
+        "increase move damage."
+      ]
     }
   ]
 }

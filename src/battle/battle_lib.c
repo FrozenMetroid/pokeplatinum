@@ -121,6 +121,7 @@ void BattleSystem_InitBattleMon(BattleSystem *battleSys, BattleContext *battleCt
     battleCtx->battleMons[battler].pressureAnnounced = FALSE;
     battleCtx->battleMons[battler].supremeOverlordAnnounced = FALSE;
     battleCtx->battleMons[battler].piercingEyeAnnounced = FALSE;
+    battleCtx->battleMons[battler].sheerForceActivated = FALSE;
     battleCtx->battleMons[battler].type1 = Pokemon_GetValue(mon, MON_DATA_TYPE_1, NULL);
     battleCtx->battleMons[battler].type2 = Pokemon_GetValue(mon, MON_DATA_TYPE_2, NULL);
     battleCtx->battleMons[battler].gender = Pokemon_GetGender(mon);
@@ -4453,6 +4454,10 @@ BOOL BattleSystem_TriggerAbilityOnHit(BattleSystem *battleSys, BattleContext *ba
         break;
 
     case ABILITY_COLOR_CHANGE:
+
+        if (Battler_Ability(battleCtx, battleCtx->attacker) == ABILITY_SHEER_FORCE && battleCtx->battleMons[battleCtx->attacker].sheerForceActivated == TRUE) { // sheer force doesn't let color change activate
+            return FALSE;
+        }
         if (DEFENDING_MON.curHP
             && (battleCtx->moveStatusFlags & MOVE_STATUS_NO_EFFECTS) == FALSE
             && battleCtx->moveCur != MOVE_STRUGGLE
@@ -7385,6 +7390,11 @@ int BattleSystem_CalcMoveDamage(BattleSystem *battleSys,
         }
     }
 
+    if (attackerParams.ability == ABILITY_SHEER_FORCE
+        && battleCtx->battleMons[attacker].sheerForceActivated == TRUE) {
+        movePower = movePower * 13 / 10;
+    }
+
     #ifdef BATTLE_ADD_SUPREME_OVERLORD
     if (attackerParams.ability == ABILITY_SUPREME_OVERLORD) {
         #ifdef DEBUG_SUPREME_OVERLORD
@@ -7858,7 +7868,8 @@ BOOL BattleSystem_TriggerHeldItemOnPivotMove(BattleSystem *battleSys, BattleCont
         && ATTACKER_SELF_TURN_FLAGS.shellBellDamageDealt
         && battleCtx->attacker != battleCtx->defender
         && ATTACKING_MON.curHP < ATTACKING_MON.maxHP
-        && ATTACKING_MON.curHP) {
+        && ATTACKING_MON.curHP
+        && !(Battler_Ability(battleCtx, battleCtx->attacker) == ABILITY_SHEER_FORCE && battleCtx->battleMons[battleCtx->attacker].sheerForceActivated == TRUE)) { // sheer force prevents shell bell from activating) {
         battleCtx->hpCalcTemp = BattleSystem_Divide(ATTACKER_SELF_TURN_FLAGS.shellBellDamageDealt * -1, attackerItemPower);
         battleCtx->msgBattlerTemp = battleCtx->attacker;
         *subscript = subscript_restore_a_little_hp;
@@ -7869,7 +7880,8 @@ BOOL BattleSystem_TriggerHeldItemOnPivotMove(BattleSystem *battleSys, BattleCont
         && Battler_Ability(battleCtx, battleCtx->attacker) != ABILITY_MAGIC_GUARD
         && (battleCtx->battleStatusMask & SYSCTL_MOVE_HIT)
         && CURRENT_MOVE_DATA.class != CLASS_STATUS
-        && ATTACKING_MON.curHP) {
+        && ATTACKING_MON.curHP
+        && !(Battler_Ability(battleCtx, battleCtx->attacker) == ABILITY_SHEER_FORCE && battleCtx->battleMons[battleCtx->attacker].sheerForceActivated == TRUE)) { // sheer force prevents life orb from activating) {
         battleCtx->hpCalcTemp = BattleSystem_Divide(ATTACKING_MON.maxHP * -1, 10);
         battleCtx->msgBattlerTemp = battleCtx->attacker;
         battleCtx->msgItemTemp = Battler_HeldItem(battleCtx, battleCtx->attacker);
