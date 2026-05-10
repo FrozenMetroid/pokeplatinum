@@ -232,6 +232,7 @@ ScriptCommand(BTLCMD_CHECKFLINGEXCEPTIONS,          BtlCmd_CheckFlingExceptions)
 ScriptCommand(BTLCMD_WAITABSCREENTAP,               BtlCmd_WaitABScreenTap)
 ScriptCommand(BTLCMD_CHECKSUNNYWEATHER,             BtlCmd_CheckSunnyWeather)
 ScriptCommand(BTLCMD_SETAIABILITY,                  BtlCmd_SetAIAbility)
+ScriptCommand(BTLCMD_TRYTRIGGERDEFIANTORCOMPETITIVE, BtlCmd_TryTriggerDefiantOrCompetitive)
 
 // clang-format on
 

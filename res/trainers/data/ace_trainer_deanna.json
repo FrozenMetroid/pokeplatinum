@@ -20,6 +20,7 @@
                 "MOVE_SIGNAL_BEAM",
                 "MOVE_LIGHT_SCREEN"
             ],
+            "ability": "ABILITY_INTIMIDATE",
             "iv_scale": 50,
             "ball_seal": 0
         },

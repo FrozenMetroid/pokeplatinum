@@ -315,6 +315,7 @@ static BOOL BtlCmd_End(BattleSystem *battleSys, BattleContext *battleCtx);
 static BOOL BtlCmd_WaitABScreenTap(BattleSystem *battleSys, BattleContext *battleCtx);
 static BOOL BtlCmd_CheckSunnyWeather(BattleSystem *battleSys, BattleContext *battleCtx);
 static BOOL BtlCmd_SetAIAbility(BattleSystem *battleSys, BattleContext *battleCtx);
+static BOOL BtlCmd_TryTriggerDefiantOrCompetitive(BattleSystem *battleSys, BattleContext *battleCtx);
 
 static int BattleScript_Read(BattleContext *battleCtx);
 static void BattleScript_Iter(BattleContext *battleCtx, int i);
@@ -2871,6 +2872,21 @@ static BOOL BtlCmd_ChangeStatStage(BattleSystem *battleSys, BattleContext *battl
         {
             battleCtx->scriptTemp= BATTLE_ANIMATION_STAT_BOOST;
         }
+    }
+
+    // try and handle defiant and competitive lol
+    if ((Battler_Ability(battleCtx, battleCtx->sideEffectMon) == ABILITY_DEFIANT || Battler_Ability(battleCtx, battleCtx->sideEffectMon) == ABILITY_COMPETITIVE)
+        && battleCtx->turnFlags[battleCtx->sideEffectMon].defiant == 0
+        && stageChange < 0
+        && (battleCtx->sideEffectMon != battleCtx->attacker) // can't raise own stats
+        && (battleCtx->sideEffectMon != BattleSystem_GetPartner(battleSys, battleCtx->attacker)) // can't raise partner's stats
+        && ((battleCtx->moveStatusFlags & MOVE_STATUS_NO_EFFECTS) == FALSE)
+        && ((battleCtx->battleStatusMask & SYSCTL_FIRST_OF_MULTI_TURN) == FALSE)
+        && ((battleCtx->battleStatusMask2 & SYSCTL_UTURN_ACTIVE) == FALSE)) {
+
+            battleCtx->turnFlags[battleCtx->sideEffectMon].defiant = TRUE;
+    } else {
+        battleCtx->turnFlags[battleCtx->sideEffectMon].defiant = FALSE;
     }
 
     if (stageChange > 0) {
@@ -9637,6 +9653,49 @@ static BOOL BtlCmd_SetAIAbility(BattleSystem *battleSys, BattleContext *battleCt
     battleCtx->aiContext.battlerAbilities[battler] = ability;
 
     return TRUE;
+}
+
+static BOOL BtlCmd_TryTriggerDefiantOrCompetitive(BattleSystem *battleSys, BattleContext *battleCtx)
+{
+    BattleScript_Iter(battleCtx, 1);
+    int failAddress = BattleScript_Read(battleCtx);
+    int defiantAddress = BattleScript_Read(battleCtx);
+    int competitiveAddress = BattleScript_Read(battleCtx);
+
+    EmulatorLog("Fail Address: %u, Defiant Address: %u, Competitive Address: %u", failAddress, defiantAddress, competitiveAddress);
+
+    u8 ability = Battler_Ability(battleCtx, battleCtx->sideEffectMon);
+    int addressToGoTo = 0;
+
+    if (ability == ABILITY_DEFIANT) {
+        if (battleCtx->battleMons[battleCtx->sideEffectMon].statBoosts[BATTLE_STAT_ATTACK] < MAX_STAT_STAGE) {
+            addressToGoTo = defiantAddress;
+            
+        }
+    } else if (ability == ABILITY_COMPETITIVE) {
+        if (battleCtx->battleMons[battleCtx->sideEffectMon].statBoosts[BATTLE_STAT_SP_ATTACK] < MAX_STAT_STAGE) {
+            addressToGoTo = competitiveAddress;
+        }
+    }
+
+    if ((battleCtx->battleMons[battleCtx->sideEffectMon].curHP != 0)
+        && (battleCtx->turnFlags[battleCtx->sideEffectMon].defiant)
+        && (addressToGoTo != 0)
+        && (battleCtx->moveStatusFlags & MOVE_STATUS_NO_EFFECTS) == FALSE
+        && (battleCtx->battleStatusMask & SYSCTL_FIRST_OF_MULTI_TURN) == FALSE
+        && (battleCtx->battleStatusMask2 & SYSCTL_UTURN_ACTIVE) == FALSE)
+        {
+            EmulatorLog("Address To Go To: %u", addressToGoTo);
+            battleCtx->turnFlags[battleCtx->sideEffectMon].defiant = FALSE;
+            battleCtx->sideEffectType = SIDE_EFFECT_TYPE_ABILITY;
+            EmulatorLog("Triggering Defiant/Competitive");
+            BattleScript_Iter(battleCtx, addressToGoTo);
+            return FALSE;
+        }
+
+    BattleScript_Iter(battleCtx, failAddress);
+
+    return FALSE;
 }
 
 /**

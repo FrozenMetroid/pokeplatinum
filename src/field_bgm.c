@@ -256,14 +256,23 @@ BOOL FieldBGM_TryFadeOut(FieldSystem *fieldSystem, u16 inBGM, u16 outBGM, int mo
     } 
     else {
         #ifdef CHANGE_FIELD_BGM_FADE_OUT
+        // EmulatorLog("Sound Heap Size: %u", NNS_SndHeapGetSize(SoundSystem_Get()->heap));
         Sound_FadeOutBGM(0, fadeOutFrames);
 
-        success = SoundSystem_LoadSequenceEx(outBGM, (NNS_SND_ARC_LOAD_SEQ | NNS_SND_ARC_LOAD_BANK ));
+        success = SoundSystem_LoadSequenceEx(outBGM, (NNS_SND_ARC_LOAD_SEQ));
         if (!success) {
-            EmulatorLog("FieldBGM_TryFadeOut: failed to load outBGM %d", outBGM);
+            // EmulatorLog("FieldBGM_TryFadeOut: failed to load outBGM %d", outBGM);
             return FALSE;
         }
-        Sound_SetSceneAndPlayBGM(SOUND_SCENE_FIELD, outBGM, 0);
+        success = NNS_SndArcLoadBankEx(Sound_GetBankIDFromSequenceID(outBGM), NNS_SND_ARC_LOAD_BANK, SoundSystem_Get()->heap);
+        if (!success) {
+            // EmulatorLog("FieldBGM_TryFadeOut: failed to load outBGM bank %d", outBGM);
+            return FALSE;
+        }
+        
+        Sound_SetFieldBGM(outBGM);
+
+        Sound_SetSceneAndPlayBGM(SOUND_SCENE_FIELD, outBGM, 1);
         #else
         Sound_FadeOutAndPlayBGM(4, outBGM, fadeOutFrames, waitFrames, 0, NULL);
         #endif

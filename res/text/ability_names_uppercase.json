@@ -592,6 +592,14 @@
     {
       "id": "pl_msg_00000611_00148",
       "en_US": "FLUFFY"
+    },
+    {
+      "id": "pl_msg_00000611_00149",
+      "en_US": "DEFIANT"
+    },
+    {
+      "id": "pl_msg_00000611_00150",
+      "en_US": "COMPETITIVE"
     }
   ]
 }

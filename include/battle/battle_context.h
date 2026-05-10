@@ -57,7 +57,8 @@ typedef struct TurnFlags {
     u32 fleeing : 2;
     u32 enduring : 1;
     u32 numberOfKOs: 3; // for Moxie
-    u32 padding00_0A : 19;
+    u32 defiant : 1;
+    u32 padding00_0A : 18;
 
     int physicalDamageTakenFrom[MAX_BATTLERS];
     int physicalDamageLastAttacker;

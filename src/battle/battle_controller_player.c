@@ -3207,6 +3207,7 @@ enum BeforeMoveState {
     BEFORE_MOVE_STATE_CHECK_TARGET_EXISTS,
     BEFORE_MOVE_STATE_CHECK_STOLEN,
     BEFORE_MOVE_STATE_REDIRECT_TARGET,
+    BEFORE_MOVE_STATE_CLEAR_DEFIANT,
 
     BEFORE_MOVE_END,
 };
@@ -3280,6 +3281,12 @@ static void BattleControllerPlayer_BeforeMove(BattleSystem *battleSys, BattleCon
 
     case BEFORE_MOVE_STATE_REDIRECT_TARGET:
         BattleSystem_CheckRedirectionAbilities(battleSys, battleCtx, battleCtx->attacker, battleCtx->moveCur);
+        battleCtx->beforeMoveCheckState++;
+
+    case BEFORE_MOVE_STATE_CLEAR_DEFIANT:
+        for (int i = 0; i < BattleSystem_GetMaxBattlers(battleSys); i++) {
+            battleCtx->turnFlags[i].defiant = FALSE;
+        }
         battleCtx->beforeMoveCheckState = BEFORE_MOVE_START;
     }
 

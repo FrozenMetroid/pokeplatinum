@@ -20,10 +20,18 @@ _018:
     UpdateVar OPCODE_FLAG_ON, BTLVAR_BATTLE_CTX_STATUS_2, SYSCTL_UPDATE_STAT_STAGES
 
 _036:
-    PrintBufferedMessage 
-    Wait 
+    CompareVarToValue OPCODE_FLAG_SET, BTLVAR_BATTLE_CTX_STATUS, SYSCTL_HIT_DURING_SHADOW_FORCE, _HandleDefiantAndCompetitive2
+    PrintBufferedMessage
+    Wait
     WaitButtonABTime 30
-    End 
+    TryTriggerDefiantOrCompetitive _NoNeedHandle, _HandleDefiant, _HandleCompetitive
+_HandleDefiant:
+    Call BATTLE_SUBSCRIPT_DEFIANT
+    GoTo _NoNeedHandle
+_HandleCompetitive:
+    Call BATTLE_SUBSCRIPT_COMPETITIVE
+_NoNeedHandle:
+    End
 
 _041:
     CompareVarToValue OPCODE_NEQ, BTLVAR_SIDE_EFFECT_TYPE, SIDE_EFFECT_TYPE_DIRECT, _048
@@ -38,7 +46,15 @@ _048:
     WaitButtonABTime 30
 
 _059:
-    End 
+_HandleDefiantAndCompetitive2:
+    TryTriggerDefiantOrCompetitive _NoNeedHandle2, _HandleDefiant2, _HandleCompetitive2
+_HandleDefiant2:
+    Call BATTLE_SUBSCRIPT_DEFIANT
+    GoTo _NoNeedHandle
+_HandleCompetitive2:
+    Call BATTLE_SUBSCRIPT_COMPETITIVE
+_NoNeedHandle2:
+    End
 
 _060:
     UpdateVar OPCODE_FLAG_ON, BTLVAR_MOVE_STATUS_FLAGS, MOVE_STATUS_FAILED

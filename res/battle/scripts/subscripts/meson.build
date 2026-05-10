@@ -306,4 +306,6 @@ subscript_files = files(
     'subscript_healer.s',
     'subscript_sap_sipper.s',
     'subscript_pickpocket.s',
+    'subscript_defiant.s',
+    'subscript_competitive.s',
 )

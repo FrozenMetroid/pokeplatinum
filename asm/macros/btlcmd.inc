@@ -1253,6 +1253,13 @@
     .long BTLCMD_SETAIABILITY
     .long \inBattler
     .endm
+
+    .macro TryTriggerDefiantOrCompetitive failAddress, defiantAddress, competitiveAddress
+    .long BTLCMD_TRYTRIGGERDEFIANTORCOMPETITIVE
+    .long (((\failAddress - .) / 4) - 3)
+    .long (((\defiantAddress - .) / 4) - 2)
+    .long (((\competitiveAddress - .) / 4) - 1)
+    .endm
     
     .text
     .globl _start

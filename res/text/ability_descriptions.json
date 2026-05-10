@@ -1039,6 +1039,20 @@
         "Resists contact damage\n",
         "but weaker to Fire-type."
       ]
+    },
+    {
+      "id": "pl_msg_00000612_00149",
+      "en_US": [
+        "Attack rises when its\n",
+        "stats are lowered."
+      ]
+    },
+    {
+      "id": "pl_msg_00000612_00150",
+      "en_US": [
+        "Sp. Atk rises when its\n",
+        "stats are lowered."
+      ]
     }
   ]
 }
