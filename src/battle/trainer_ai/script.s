@@ -312,12 +312,12 @@ Basic_CheckCannotSleep:
 Basic_CheckCannotExplode:
     // If the target is immune, score -10.
     IfMoveEffectivenessEquals TYPE_MULTI_IMMUNE, ScoreMinus10
-
-    // If the target has Damp and we do not have Mold Breaker, score -10.
+    
+    // If the target has Damp and we do not have Mold Breaker, score -30.
     LoadBattlerAbility AI_BATTLER_ATTACKER
     IfLoadedEqualTo ABILITY_MOLD_BREAKER, Basic_CheckLastMon
     LoadBattlerAbility AI_BATTLER_DEFENDER
-    IfLoadedEqualTo ABILITY_DAMP, ScoreMinus10
+    IfLoadedEqualTo ABILITY_DAMP, ScoreMinus30
 
 Basic_CheckLastMon:
     // If we are on our last Pokemon and the target is not also on their last Pokemon,
@@ -460,6 +460,8 @@ Basic_CheckLowStatStage_Attack:
 
 Basic_CheckLowStatStage_Defense:
     IfStatStageEqualTo AI_BATTLER_DEFENDER, BATTLE_STAT_DEFENSE, 0, ScoreMinus10
+    LoadBattlerAbility AI_BATTLER_DEFENDER
+    IfLoadedEqualTo ABILITY_BIG_PECKS, ScoreMinus10
     GoTo Basic_CheckClearBodyEffect
 
 Basic_CheckLowStatStage_Speed:
@@ -1041,6 +1043,7 @@ Basic_CheckTickle:
     LoadBattlerAbility AI_BATTLER_DEFENDER
     IfLoadedEqualTo ABILITY_CLEAR_BODY, ScoreMinus10
     IfLoadedEqualTo ABILITY_WHITE_SMOKE, ScoreMinus10
+    IfLoadedEqualTo ABILITY_BIG_PECKS, ScoreMinus1 // still want it to work for the attack drop
     IfLoadedEqualTo ABILITY_MAGIC_BOUNCE, ScoreMinus10
 
 Basic_CheckTickle_CheckStatStages:
@@ -6956,6 +6959,9 @@ TagStrategy_CheckSpecialScoring:
     IfMoveEqualTo MOVE_GRAVITY, TagStrategy_Gravity
     IfMoveEqualTo MOVE_TRICK_ROOM, TagStrategy_TrickRoom
     IfMoveEqualTo MOVE_FOLLOW_ME, TagStrategy_FollowMe
+    IfMoveEqualTo MOVE_TEETER_DANCE, TagStrategy_TeeterDance
+    IfMoveEqualTo MOVE_EXPLOSION, TagStrategy_ExplosionAndSelfDestruct
+    IfMoveEqualTo MOVE_SELFDESTRUCT, TagStrategy_ExplosionAndSelfDestruct
     LoadTypeFrom LOAD_MOVE_TYPE
     IfLoadedEqualTo TYPE_ELECTRIC, TagStrategy_CheckElectricMove
     IfLoadedEqualTo TYPE_FIRE, TagStrategy_CheckFireMove
@@ -7311,6 +7317,75 @@ TagStrategy_FollowMe_TryScorePlus3:
 TagStrategy_FollowMe_End:
     PopOrEnd 
 
+TagStrategy_TeeterDance:
+    // If the move is Teeter Dance, apply modifiers if meeting the following conditions:
+    //  - The foe and the foe's partner are already confused -> -30
+    //  - The foe is already confused -> -10
+    //  - The foe and the foe's partner have Own Tempo -> -30
+    //  - The foe has Own Tempo -> -10
+    //  - The foe and the foe's partner have Tangled Feet -> -10
+    //  - The foe has Tangled Feet -> -5
+    //  - The partner has: Own Tempo -> +3
+    //  - The partner has: Tangled Feet -> +2
+    IfVolatileStatus AI_BATTLER_DEFENDER, VOLATILE_CONDITION_CONFUSION, TagStrategy_TeeterDance_CheckDefenderPartnerAlreadyConfused
+    IfVolatileStatus AI_BATTLER_DEFENDER_PARTNER, VOLATILE_CONDITION_CONFUSION, TagStrategy_TeeterDance_CheckDefenderAlreadyConfused
+    CheckBattlerAbility AI_BATTLER_DEFENDER, ABILITY_OWN_TEMPO, 
+    IfLoadedEqualTo AI_HAVE, TagStrategy_TeeterDance_CheckDefenderPartnerHasOwnTempo
+    CheckBattlerAbility AI_BATTLER_DEFENDER_PARTNER, ABILITY_OWN_TEMPO,
+    IfLoadedEqualTo AI_HAVE, TagStrategy_TeeterDance_CheckDefenderHasOwnTempo
+    CheckBattlerAbility AI_BATTLER_DEFENDER, ABILITY_TANGLED_FEET,
+    IfLoadedEqualTo AI_HAVE, TagStrategy_TeeterDance_CheckDefenderPartnerHasTangledFeet
+    CheckBattlerAbility AI_BATTLER_DEFENDER_PARTNER, ABILITY_TANGLED_FEET, 
+    IfLoadedEqualTo AI_HAVE, TagStrategy_TeeterDance_CheckDefenderHasTangledFeet
+
+    CheckBattlerAbility AI_BATTLER_ATTACKER_PARTNER, ABILITY_TANGLED_FEET
+    IfLoadedEqualTo AI_HAVE, ScorePlus2
+    CheckBattlerAbility AI_BATTLER_ATTACKER_PARTNER, ABILITY_OWN_TEMPO
+    IfLoadedEqualTo AI_HAVE, ScorePlus3
+    PopOrEnd
+    
+TagStrategy_TeeterDance_CheckDefenderPartnerAlreadyConfused:
+    IfVolatileStatus AI_BATTLER_DEFENDER_PARTNER, VOLATILE_CONDITION_CONFUSION, ScoreMinus30 // both of the foes are already confused
+    GoTo ScoreMinus10
+
+TagStrategy_TeeterDance_CheckDefenderAlreadyConfused:
+    IfVolatileStatus AI_BATTLER_DEFENDER, VOLATILE_CONDITION_CONFUSION, ScoreMinus30 // both of the foes are already confused
+    GoTo ScoreMinus10
+
+TagStrategy_TeeterDance_CheckDefenderPartnerHasOwnTempo:
+    CheckBattlerAbility AI_BATTLER_DEFENDER_PARTNER, ABILITY_OWN_TEMPO,
+    IfLoadedEqualTo AI_HAVE, ScoreMinus30 // both of the foes have Own Tempo
+    GoTo ScoreMinus10
+
+TagStrategy_TeeterDance_CheckDefenderHasOwnTempo:
+    CheckBattlerAbility AI_BATTLER_DEFENDER, ABILITY_OWN_TEMPO,
+    IfLoadedEqualTo AI_HAVE, ScoreMinus30 // both of the foes have Own Tempo
+    GoTo ScoreMinus10
+
+TagStrategy_TeeterDance_CheckDefenderPartnerHasTangledFeet:
+    CheckBattlerAbility AI_BATTLER_DEFENDER_PARTNER, ABILITY_TANGLED_FEET,
+    IfLoadedEqualTo AI_HAVE, ScoreMinus10 // both of the foes have Tangled Feet
+    GoTo ScoreMinus5
+
+TagStrategy_TeeterDance_CheckDefenderHasTangledFeet:
+    CheckBattlerAbility AI_BATTLER_DEFENDER, ABILITY_TANGLED_FEET,
+    IfLoadedEqualTo AI_HAVE, ScoreMinus10 // both of the foes have Tangled Feet
+    GoTo ScoreMinus5
+
+TagStrategy_ExplosionAndSelfDestruct:
+    CountAlivePartyBattlers AI_BATTLER_ATTACKER // if the attacker has no teammates left, score -30
+    IfLoadedEqualTo 0, ScoreMinus30
+    CheckBattlerAbility AI_BATTLER_ATTACKER_PARTNER, ABILITY_TELEPATHY
+    IfLoadedEqualTo AI_HAVE, TagStrategy_ExplosionAndSelfDestruct_AddScore
+    PopOrEnd
+
+TagStrategy_ExplosionAndSelfDestruct_AddScore:
+    AddToMoveScore 3
+    CountAlivePartyBattlers AI_BATTLER_ATTACKER // if the partner has telepathy but they're the only other teammate alive, remove the additional score
+    IfLoadedEqualTo 1, ScoreMinus3
+    PopOrEnd
+
+
 TagStrategy_PartnerKnowsHelpingHand:
     // If our partner knows Helping Hand, then damaging moves (aside from flat-damage moves)
     // get score +1
@@ -7346,6 +7421,8 @@ TagStrategy_Earthquake:
     // battler will score Earthquake and Magnitude an additional -3
     IfMoveEffect AI_BATTLER_ATTACKER_PARTNER, MOVE_EFFECT_MAGNET_RISE, ScorePlus2
     CheckBattlerAbility AI_BATTLER_ATTACKER_PARTNER, ABILITY_LEVITATE
+    IfLoadedEqualTo AI_HAVE, ScorePlus2
+    CheckBattlerAbility AI_BATTLER_ATTACKER_PARTNER, ABILITY_TELEPATHY
     IfLoadedEqualTo AI_HAVE, ScorePlus2
     FlagBattlerIsType AI_BATTLER_ATTACKER_PARTNER, TYPE_FLYING
     IfLoadedEqualTo AI_HAVE, ScorePlus2
@@ -7459,6 +7536,8 @@ TagStrategy_SpreadElectricMove:
     IfLoadedEqualTo AI_HAVE, ScorePlus3
     CheckBattlerAbility AI_BATTLER_ATTACKER_PARTNER, ABILITY_VOLT_ABSORB
     IfLoadedEqualTo AI_HAVE, ScorePlus3
+    CheckBattlerAbility AI_BATTLER_ATTACKER_PARTNER, ABILITY_TELEPATHY
+    IfLoadedEqualTo AI_HAVE, ScorePlus3
     FlagBattlerIsType AI_BATTLER_ATTACKER_PARTNER, TYPE_WATER
     IfLoadedEqualTo AI_HAVE, ScoreMinus10
     FlagBattlerIsType AI_BATTLER_ATTACKER_PARTNER, TYPE_FLYING
@@ -7502,6 +7581,8 @@ TagStrategy_SpreadWaterMove:
     IfLoadedEqualTo AI_HAVE, ScorePlus3
     CheckBattlerAbility AI_BATTLER_ATTACKER_PARTNER, ABILITY_WATER_ABSORB
     IfLoadedEqualTo AI_HAVE, ScorePlus3
+    CheckBattlerAbility AI_BATTLER_ATTACKER_PARTNER, ABILITY_TELEPATHY
+    IfLoadedEqualTo AI_HAVE, ScorePlus3
 
     // fixed: rock type was not included in the upcoming check
     FlagBattlerIsType AI_BATTLER_ATTACKER_PARTNER, TYPE_GROUND
@@ -7536,6 +7617,8 @@ TagStrategy_SpreadFireMove:
     CheckBattlerAbility AI_BATTLER_ATTACKER_PARTNER, ABILITY_DRY_SKIN
     IfLoadedEqualTo AI_HAVE, ScoreMinus3
     CheckBattlerAbility AI_BATTLER_ATTACKER_PARTNER, ABILITY_FLASH_FIRE
+    IfLoadedEqualTo AI_HAVE, ScorePlus3
+    CheckBattlerAbility AI_BATTLER_ATTACKER_PARTNER, ABILITY_TELEPATHY
     IfLoadedEqualTo AI_HAVE, ScorePlus3
     FlagBattlerIsType AI_BATTLER_ATTACKER_PARTNER, TYPE_GRASS
     IfLoadedEqualTo AI_HAVE, ScoreMinus10
