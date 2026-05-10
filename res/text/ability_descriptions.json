@@ -1088,6 +1088,13 @@
         "Boosts certain moves’\n",
         "power in a sandstorm."
       ]
+    },
+    {
+      "id": "pl_msg_00000612_00155",
+      "en_US": [
+        "Powers up special\n",
+        "attacks when burned."
+      ]
     }
   ]
 }

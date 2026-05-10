@@ -368,6 +368,8 @@ void WonderTrade_GetHiddenAbility(struct WonderTradeData *wonderTradeData, u32 *
     u8 odds = LCRNG_RandMod(100);
     if (odds > 94 && hiddenAbility != 0) { // 5% chance (95, 96, 97, 98, 99) to be hidden ability if it exists
         wonderTradeData->hiddenAbility = hiddenAbility;
+    } else {
+        wonderTradeData->hiddenAbility = 0;
     }
 
     ++(*taskState);

@@ -7097,6 +7097,12 @@ int BattleSystem_CalcMoveDamage(BattleSystem *battleSys,
 
     moveClass = MOVE_DATA(move).class;
 
+    if (attackerParams.ability == ABILITY_FLARE_BOOST
+        && (attackerParams.statusMask & MON_CONDITION_BURN)
+        && moveClass == CLASS_SPECIAL) {
+        movePower = movePower * 15 / 10;
+    }
+
     if (attackerParams.ability == ABILITY_HUGE_POWER || attackerParams.ability == ABILITY_PURE_POWER) {
         attackStat = attackStat * 2;
     }

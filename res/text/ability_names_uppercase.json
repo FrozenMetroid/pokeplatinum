@@ -620,6 +620,10 @@
     {
       "id": "pl_msg_00000611_00155",
       "en_US": "SAND FORCE"
+    },
+    {
+      "id": "pl_msg_00000611_00156",
+      "en_US": "FLARE BOOST"
     }
   ]
 }
