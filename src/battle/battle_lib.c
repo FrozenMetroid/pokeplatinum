@@ -7393,6 +7393,12 @@ int BattleSystem_CalcMoveDamage(BattleSystem *battleSys,
         movePower = movePower * 13 / 10;
     }
 
+    if (attackerParams.ability == ABILITY_SAND_FORCE 
+        && (fieldConditions & FIELD_CONDITION_SANDSTORM)
+        && (moveType == TYPE_GROUND || moveType == TYPE_ROCK || moveType == TYPE_STEEL)) {
+        movePower = movePower * 13 / 10;
+    }
+
     #ifdef BATTLE_ADD_SUPREME_OVERLORD
     if (attackerParams.ability == ABILITY_SUPREME_OVERLORD) {
         #ifdef DEBUG_SUPREME_OVERLORD

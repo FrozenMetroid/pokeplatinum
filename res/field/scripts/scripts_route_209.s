@@ -79,9 +79,15 @@ Route209_EncounterSpiritomb:
     StartWildBattle SPECIES_SPIRITOMB, 25
     CheckWonBattle VAR_RESULT
     GoToIfEq VAR_RESULT, FALSE, Route209_BlackOut
+    GetBattleResult VAR_RESULT
+    CallIfEq VAR_RESULT, BATTLE_RESULT_CAPTURED_MON, Route209_CaughtSpiritomb
     SetVar VAR_HALLOWED_TOWER_STATE, 0
     ClearSpiritombCounter
     End
+
+Route209_CaughtSpiritomb:
+    SetFlag FLAG_CAUGHT_ROUTE_209_SPIRITOMB
+    Return
 
 Route209_BlackOut:
     BlackOutFromBattle

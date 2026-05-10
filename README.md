@@ -95,6 +95,13 @@ Additional Abilities:
 - Telepathy: Allies are unable to damage this Pokémon
 - Galvanize: Normal-type moves become Electric-type
 - Fluffy: Reduces damage done by moves that make contact by 50%; Fire-type moves deal 2x damage
+- Defiant: Raises Attack if any stat is lowered
+- Competitive: Raises Sp. Attack if any stat is lowered
+- Sheer Force: Removes additional effects from most moves, as well as Life Orb and Shell Bell, to increase move power
+- Overcoat: Protected from the damaging effects of Hail and Sandstorm
+- Queenly Majesty: Moves with increased priority cannot be used against this Pokémon
+- Propeller Tail: This Pokémon's moves cannot be redirected by the likes of Follow Me, Storm Drain, Lightning Rod, etc.
+- Sand Force: Rock, Ground, and Steel-type moves have a 30% increase in power during Sandstorms
 
 
     

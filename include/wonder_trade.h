@@ -11,7 +11,7 @@ typedef struct WonderTradeData {
     u16 trainerClassGender;
     u8 level;
     u8 form;
-    u8 ability;
+    u8 hiddenAbility; // only used for if the hidden ability is selected, otherwise the ability is determined by the personality value generated in Pokemon_InitWithSpecies and the form of the mon
     u8 partySlot;
     BOOL natDexWonderTrade;
     u16 *finalMessage; // for the attendant to say based on BST of the received mon
@@ -50,7 +50,7 @@ enum WonderTradeTaskState {
 };
 
 BOOL WonderTrade_GetSpeciesAndForm(WonderTradeData *wonderTradeData, struct FieldSystem_t *fieldSystem);
-void WonderTrade_GetAbility(WonderTradeData *wonderTradeData, u32 *taskState);
+void WonderTrade_GetHiddenAbility(WonderTradeData *wonderTradeData, u32 *taskState);
 void WonderTrade_GetItem(WonderTradeData *wonderTradeData, u32 *taskState);
 void WonderTrade_GetBall(WonderTradeData *wonderTradeData, u32 *taskState);
 void WonderTrade_GiveMon(WonderTradeData *wonderTradeData, struct FieldSystem_t *fieldSystem, u32 *taskState);

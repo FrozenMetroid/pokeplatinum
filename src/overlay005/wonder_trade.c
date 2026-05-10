@@ -68,7 +68,7 @@ static const ExcludedSpecies excludedSpeciesData[] = {
     {SPECIES_PIPLUP,        0xFFFF /*FLAG_GOT_OTHER_SINNOH_STARTER*/},
     {SPECIES_PRINPLUP,      0xFFFF /*FLAG_GOT_OTHER_SINNOH_STARTER*/},
     {SPECIES_EMPOLEON,      0xFFFF /*FLAG_GOT_OTHER_SINNOH_STARTER*/},
-    {SPECIES_SPIRITOMB,     0xFFFF /*FLAG_GOT_SPIRITOMB*/},
+    {SPECIES_SPIRITOMB,     FLAG_CAUGHT_ROUTE_209_SPIRITOMB},
     {SPECIES_ROTOM,         FLAG_CAUGHT_OLD_CHATEAU_ROTOM},
     {0xFFFF, 0xFFFF},
     // everything from Uxie and beyond is prohibited, so no need to add them
@@ -129,7 +129,7 @@ BOOL FieldTask_WonderTrade(FieldTask *task)
             }
             break;
         case WONDER_TRADE_TASK_STATE_GENERATE_ABILITY:
-            WonderTrade_GetAbility(wonderTradeData, taskState); // just goes to the next state until hidden abilities get added
+            WonderTrade_GetHiddenAbility(wonderTradeData, taskState); // 5% chance for hidden ability to be selected, otherwise just use the ability found with Pokemon_InitWith
             break;
         case WONDER_TRADE_TASK_STATE_GENERATE_ITEM:
             WonderTrade_GetItem(wonderTradeData, taskState);
@@ -361,21 +361,14 @@ BOOL WonderTrade_GetSpeciesAndForm(struct WonderTradeData *wonderTradeData, stru
     return TRUE;
 }
 
-void WonderTrade_GetAbility(struct WonderTradeData *wonderTradeData, u32 *taskState)
+void WonderTrade_GetHiddenAbility(struct WonderTradeData *wonderTradeData, u32 *taskState)
 {
 
-    #ifdef ADD_HIDDEN_ABILITIES
-    u8 ability1 = SpeciesData_GetFormValue(wonderTradeData->species, wonderTradeData->form, SPECIES_DATA_ABILITY_1);
-    u8 ability2 = SpeciesData_GetFormValue(wonderTradeData->species, wonderTradeData->form, SPECIES_DATA_ABILITY_2);
     u8 hiddenAbility = SpeciesData_GetFormValue(wonderTradeData->species, wonderTradeData->form, SPECIES_DATA_HIDDEN_ABILITY);
     u8 odds = LCRNG_RandMod(100);
-    wonderTradeData->ability = ability1; // default
-    if (odds <= 44 && ability2 != 0) { // 45% (0-44) chance to be ability 2 if it exists, otherwise ability 1
-        wonderTradeData->ability = ability2;
-    } else if (odds > 94 && hiddenAbility != 0) { // 5% chance (95, 96, 97, 98, 99) to be hidden ability if it exists, otherwise ability 1 or 2 depending on the first check
-        wonderTradeData->ability = hiddenAbility;
+    if (odds > 94 && hiddenAbility != 0) { // 5% chance (95, 96, 97, 98, 99) to be hidden ability if it exists
+        wonderTradeData->hiddenAbility = hiddenAbility;
     }
-    #endif
 
     ++(*taskState);
 }
@@ -422,9 +415,11 @@ void WonderTrade_GiveMon(struct WonderTradeData *wonderTradeData, struct FieldSy
     BoxPokemon_SetMetLocationAndDate(&mon->box, LocationNames_Text_WonderTrade, TRUE);
 
     Pokemon_SetValue(mon, MON_DATA_HELD_ITEM, &wonderTradeData->item);
-    #ifdef ADD_HIDDEN_ABILITIES
-    Pokemon_SetValue(mon, MON_DATA_ABILITY, &wonderTradeData->ability); // only use this line if hidden abilities are added because the default ability is already determined by the personality value generated in Pokemon_InitWith
-    #endif
+    if (wonderTradeData->hiddenAbility != 0) {
+        u8 truthnuke = TRUE;
+        Pokemon_SetValue(mon, MON_DATA_ABILITY, &wonderTradeData->hiddenAbility); // only use this line if the hidden ability is selected because the default ability is already determined by the personality value generated in Pokemon_InitWith
+        Pokemon_SetValue(mon, MON_DATA_HIDDEN_ABILITY_SET, &truthnuke);
+    }
     Pokemon_SetValue(mon, MON_DATA_FORM, &wonderTradeData->form);
     Pokemon_SetValue(mon, MON_DATA_POKEBALL, &wonderTradeData->ball);
 
