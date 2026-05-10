@@ -1835,6 +1835,7 @@ static void BattleMessage_CheckSide(BattleSystem *battleSys, BattleMessage *batt
     case TAG_NICKNAME_ABILITY_NICKNAME_ABILITY:
     case TAG_NICKNAME_ABILITY_NICKNAME_STAT:
     case TAG_NICKNAME_ITEM_NICKNAME_ITEM:
+    case TAG_NICKNAME_MOVE_NICKNAME_ABILITY:
         if (BattleSystem_GetBattlerSide(battleSys, battleMsg->params[0] & 0xFF)) {
             battleMsg->id += 3;
 
@@ -2197,6 +2198,13 @@ static void BattleMessage_FillFormatBuffers(BattleSystem *battleSys, BattleMessa
         BattleMessage_SetTrainerClassName(battleSys, 3, battleMsg->params[3]);
         BattleMessage_SetTrainerName(battleSys, 4, battleMsg->params[4]);
         BattleMessage_SetNickname(battleSys, 5, battleMsg->params[5]);
+        break;
+
+    case TAG_NICKNAME_MOVE_NICKNAME_ABILITY:
+        BattleMessage_SetNickname(battleSys, 0, battleMsg->params[0]);
+        BattleMessage_SetMoveName(battleSys, 1, battleMsg->params[1]);
+        BattleMessage_SetNickname(battleSys, 2, battleMsg->params[2]);
+        BattleMessage_SetAbilityName(battleSys, 3, battleMsg->params[3]);
         break;
 
     default:

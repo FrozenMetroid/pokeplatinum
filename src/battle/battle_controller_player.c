@@ -3208,6 +3208,7 @@ enum BeforeMoveState {
     BEFORE_MOVE_STATE_CHECK_STOLEN,
     BEFORE_MOVE_STATE_REDIRECT_TARGET,
     BEFORE_MOVE_STATE_CLEAR_DEFIANT,
+    BEFORE_MOVE_STATE_ABILITY_FAILURES,
 
     BEFORE_MOVE_END,
 };
@@ -3219,7 +3220,6 @@ static void BattleControllerPlayer_BeforeMove(BattleSystem *battleSys, BattleCon
         BattleControllerPlayer_LoadQuickClawCheck(battleSys, battleCtx);
         battleCtx->beforeMoveCheckState++;
         return;
-
     case BEFORE_MOVE_STATE_STATUS_DISRUPTION:
         if ((battleCtx->multiHitCheckFlags & SYSCTL_SKIP_STATUS_CHECK) == FALSE
             && BattleControllerPlayer_CheckStatusDisruption(battleSys, battleCtx) == TRUE) {
@@ -3286,6 +3286,25 @@ static void BattleControllerPlayer_BeforeMove(BattleSystem *battleSys, BattleCon
     case BEFORE_MOVE_STATE_CLEAR_DEFIANT:
         for (int i = 0; i < BattleSystem_GetMaxBattlers(battleSys); i++) {
             battleCtx->turnFlags[i].defiant = FALSE;
+        }
+        battleCtx->beforeMoveCheckState++;
+    case BEFORE_MOVE_STATE_ABILITY_FAILURES:
+        // queenly majesty
+        EmulatorLog("Move Priority: %d, Attacker Priority: %d", CURRENT_MOVE_DATA.priority, battleCtx->clientPriority[battleCtx->attacker]);
+        if (BattleSystem_CountAbility(battleSys, battleCtx, COUNT_ALIVE_BATTLERS_OUR_SIDE, battleCtx->defender, ABILITY_QUEENLY_MAJESTY)) {
+            EmulatorLog("Defender side has Queenly Majesty");
+            if ((Battler_Ability(battleCtx, battleCtx->attacker) != ABILITY_MOLD_BREAKER)
+                && (battleCtx->clientPriority[battleCtx->attacker] > 0 || CURRENT_MOVE_DATA.priority > 0)
+                && (BattleSystem_MoveNotExemptedFromPriorityBlocking(battleCtx, battleCtx->attacker, battleCtx->defender))) {
+                    EmulatorLog("Move blocked by Queenly Majesty");
+                    Battler_UnlockMoveChoice(battleSys, battleCtx, battleCtx->attacker);
+                    LOAD_SUBSEQ(subscript_cannot_use_move);
+                    battleCtx->commandNext = BATTLE_CONTROL_MOVE_FAILED;
+                    battleCtx->command = BATTLE_CONTROL_EXEC_SCRIPT;
+                    battleCtx->moveStatusFlags |= MOVE_STATUS_NO_MORE_WORK;
+                    battleCtx->beforeMoveCheckState = BEFORE_MOVE_START;
+                    return;
+            }
         }
         battleCtx->beforeMoveCheckState = BEFORE_MOVE_START;
     }
@@ -3726,12 +3745,6 @@ static inline int CalcCurrentMoveType(BattleContext *battleCtx)
         switch (Battler_Ability(battleCtx, battleCtx->attacker)) {
             case ABILITY_GALVANIZE:
                 return TYPE_ELECTRIC;
-            // case ABILITY_AERILATE:
-            //     return TYPE_FLYING;
-            // case ABILITY_PIXILATE:
-            //     return TYPE_FAIRY;
-            // case ABILITY_REFRIGERATE:
-            //     return TYPE_ICE;
             default:
                 return TYPE_NORMAL;
         }

@@ -308,4 +308,5 @@ subscript_files = files(
     'subscript_pickpocket.s',
     'subscript_defiant.s',
     'subscript_competitive.s',
+    'subscript_cannot_use_move.s',
 )

@@ -1517,6 +1517,9 @@ u8 BattleSystem_CompareBattlerSpeed(BattleSystem *battleSys, BattleContext *batt
         result = COMPARE_SPEED_SLOWER;
     }
 
+    battleCtx->clientPriority[battler1] = battler1Priority;
+    battleCtx->clientPriority[battler2] = battler2Priority;
+
     return result;
 }
 
@@ -8849,4 +8852,26 @@ BOOL MoveIsAffectedByNormalizeVariants(int move)
         default:
             return TRUE;
     }
+}
+
+BOOL BattleSystem_MoveNotExemptedFromPriorityBlocking(BattleContext *battleCtx, int attacker, int defender)
+{
+    u16 target = CURRENT_MOVE_DATA.range;
+
+    switch (target) 
+    {
+        case RANGE_USER:
+        case RANGE_FIELD:
+        case RANGE_OPPONENT_SIDE:
+        case RANGE_USER_SIDE:
+            return FALSE;
+        default:
+            break;
+    }
+    //doesn't block priority moves that target allies
+    if (defender == BATTLER_ALLY(attacker)) {
+        return FALSE;
+    }
+
+    return TRUE;
 }

@@ -5699,6 +5699,7 @@ static BOOL BtlCmd_EndOfTurnWeatherEffect(BattleSystem *battleSys, BattleContext
             && type1 != TYPE_STEEL && type2 != TYPE_STEEL
             && type1 != TYPE_GROUND && type2 != TYPE_GROUND
             && battleCtx->battleMons[battler].curHP
+            && !(Battler_IgnorableAbility(battleCtx, battleCtx->defender, battleCtx->attacker, ABILITY_OVERCOAT))
             && Battler_Ability(battleCtx, battler) != ABILITY_SAND_VEIL
             && (battleCtx->battleMons[battler].moveEffectsMask & MOVE_EFFECT_NO_WEATHER_DAMAGE) == FALSE) {
             battleCtx->msgMoveTemp = MOVE_SANDSTORM;
@@ -5727,6 +5728,7 @@ static BOOL BtlCmd_EndOfTurnWeatherEffect(BattleSystem *battleSys, BattleContext
                 }
             } else if (type1 != TYPE_ICE
                 && type2 != TYPE_ICE
+                && !(Battler_IgnorableAbility(battleCtx, battleCtx->defender, battleCtx->attacker, ABILITY_OVERCOAT))
                 && Battler_Ability(battleCtx, battler) != ABILITY_SNOW_CLOAK) {
                 battleCtx->msgMoveTemp = MOVE_HAIL;
                 battleCtx->hpCalcTemp = BattleSystem_Divide(battleCtx->battleMons[battler].maxHP * -1, 16);
@@ -9722,8 +9724,6 @@ static BOOL BtlCmd_TryTriggerDefiantOrCompetitive(BattleSystem *battleSys, Battl
     int defiantAddress = BattleScript_Read(battleCtx);
     int competitiveAddress = BattleScript_Read(battleCtx);
 
-    EmulatorLog("Fail Address: %u, Defiant Address: %u, Competitive Address: %u", failAddress, defiantAddress, competitiveAddress);
-
     u8 ability = Battler_Ability(battleCtx, battleCtx->sideEffectMon);
     int addressToGoTo = 0;
 
@@ -9745,10 +9745,8 @@ static BOOL BtlCmd_TryTriggerDefiantOrCompetitive(BattleSystem *battleSys, Battl
         && (battleCtx->battleStatusMask & SYSCTL_FIRST_OF_MULTI_TURN) == FALSE
         && (battleCtx->battleStatusMask2 & SYSCTL_UTURN_ACTIVE) == FALSE)
         {
-            EmulatorLog("Address To Go To: %u", addressToGoTo);
             battleCtx->turnFlags[battleCtx->sideEffectMon].defiant = FALSE;
             battleCtx->sideEffectType = SIDE_EFFECT_TYPE_ABILITY;
-            EmulatorLog("Triggering Defiant/Competitive");
             BattleScript_Iter(battleCtx, addressToGoTo);
             return FALSE;
         }
@@ -11639,6 +11637,7 @@ static void BattleMessageParams_Make(BattleContext *battleCtx, BattleMessagePara
     case TAG_TRCLASS_TRNAME_NICKNAME_NICKNAME:
     case TAG_TRCLASS_TRNAME_NICKNAME_TRNAME:
     case TAG_TRCLASS_TRNAME_TRCLASS_TRNAME:
+    case TAG_NICKNAME_MOVE_NICKNAME_ABILITY:
         tagCount = 4;
         break;
 
@@ -12001,6 +12000,12 @@ static void BattleMessage_Make(BattleSystem *battleSys, BattleContext *battleCtx
         msg->params[3] = BattleMessage_TrainerClassTag(battleSys, battleCtx, msgParams->params[3]);
         msg->params[4] = BattleMessage_TrainerNameTag(battleSys, battleCtx, msgParams->params[4]);
         msg->params[5] = BattleMessage_NameTag(battleSys, battleCtx, msgParams->params[5]);
+        break;
+    case TAG_NICKNAME_MOVE_NICKNAME_ABILITY:
+        msg->params[0] = BattleMessage_NameTag(battleSys, battleCtx, msgParams->params[0]);
+        msg->params[1] = BattleMessage_MoveTag(battleCtx, msgParams->params[1]);
+        msg->params[2] = BattleMessage_NameTag(battleSys, battleCtx, msgParams->params[2]);
+        msg->params[3] = BattleMessage_AbilityTag(battleSys, battleCtx, msgParams->params[3]);
         break;
 
     default:

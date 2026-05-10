@@ -1511,4 +1511,14 @@ int Move_CalcVariableType(BattleSystem *battleSys, BattleContext *battleCtx, Pok
 
 BOOL MoveIsAffectedByNormalizeVariants(int move);
 
+/**
+ *  @brief see if the move should NOT be exempted from priority blocking effects
+ *
+ *  @param sp battle structure
+ *  @param attacker attacker client
+ *  @param defender defender client
+ *  @return TRUE if the move should NOT be exempted from priority blocking effects
+ */
+BOOL BattleSystem_MoveNotExemptedFromPriorityBlocking(BattleContext *battleCtx, int attacker, int defender);
+
 #endif // POKEPLATINUM_BATTLE_BATTLE_LIB_H

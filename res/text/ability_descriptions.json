@@ -1060,6 +1060,20 @@
         "Removes added effects to\n",
         "increase move damage."
       ]
+    },
+    {
+      "id": "pl_msg_00000612_00152",
+      "en_US": [
+        "Protects the Pokémon from\n",
+        "damage from weather."
+      ]
+    },
+    {
+      "id": "pl_msg_00000612_00153",
+      "en_US": [
+        "Makes foes unable to\n",
+        "use priority attacks."
+      ]
     }
   ]
 }

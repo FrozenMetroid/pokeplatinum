@@ -8661,6 +8661,62 @@
         "{STRVAR_1 1, 0, 0} stole the foe’s\n",
         "{STRVAR_1 1, 1, 0}’s {STRVAR_1 8, 2, 0} with its Pickpocket!"
       ]
+    },
+    {
+      "id": "BattleStrings_Text_CannotUseMove_AllyAlly",
+      "en_US": [
+        "{STRVAR_1 1, 0, 0} cannot use {STRVAR_1 5, 1, 0}\n",
+        "because of {STRVAR_1 1, 2, 0}’s\f",
+        "{STRVAR_1 5, 3, 0}!"
+      ]
+    },
+    {
+      "id": "BattleStrings_Text_CannotUseMove_AllyWild",
+      "en_US": [
+        "{STRVAR_1 1, 0, 0} cannot use {STRVAR_1 5, 1, 0}\n",
+        "because of the wild {STRVAR_1 1, 2, 0}’s\f",
+        "{STRVAR_1 5, 3, 0}!"
+      ]
+    },
+    {
+      "id": "BattleStrings_Text_CannotUseMove_AllyFoe",
+      "en_US": [
+        "{STRVAR_1 1, 0, 0} cannot use {STRVAR_1 5, 1, 0}\n",
+        "because of the foe’s {STRVAR_1 1, 2, 0}’s\f",
+        "{STRVAR_1 5, 3, 0}!"
+      ]
+    },
+    {
+      "id": "BattleStrings_Text_CannotUseMove_WildAlly",
+      "en_US": [
+        "The wild {STRVAR_1 1, 0, 0} cannot use\n",
+        "{STRVAR_1 5, 1, 0} because of\f",
+        "{STRVAR_1 1, 2, 0}’s {STRVAR_1 5, 3, 0}!"
+      ]
+    },
+    {
+      "id": "BattleStrings_Text_CannotUseMove_WildWild",
+      "en_US": [
+        "The wild {STRVAR_1 1, 0, 0}’s cannot use\n",
+        "{STRVAR_1 5, 1, 0} because of the wild\f",
+        "{STRVAR_1 1, 2, 0}’s {STRVAR_1 5, 3, 0}!"
+      ]
+    },
+    {
+      "id": "BattleStrings_Text_CannotUseMove_FoeAlly",
+      "en_US": [
+        "The foe’s {STRVAR_1 1, 0, 0} cannot use\n",
+        "{STRVAR_1 5, 1, 0} because of\f",
+        "{STRVAR_1 1, 2, 0}’s {STRVAR_1 5, 3, 0}!"
+      ]
+    },
+    {
+      "id": "BattleStrings_Text_CannotUseMove_FoeFoe",
+      "en_US": [
+        "The foe’s {STRVAR_1 1, 0, 0} cannot use\n",
+        "{STRVAR_1 5, 1, 0} because of the foe\f",
+        "{STRVAR_1 1, 2, 0}’s {STRVAR_1 5, 3, 0}!"
+      ]
     }
   ]
 }
