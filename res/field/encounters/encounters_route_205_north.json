@@ -3,7 +3,7 @@
     "land_encounters": [
         {
             "level": 12,
-            "species": "SPECIES_BIDOOF"
+            "species": "SPECIES_LEDYBA"
         },
         {
             "level": 12,
@@ -59,7 +59,7 @@
         "SPECIES_BUDEW"
     ],
     "night": [
-        "SPECIES_KRICKETOT",
+        "SPECIES_SPINARAK",
         "SPECIES_HOOTHOOT"
     ],
     "radar": [

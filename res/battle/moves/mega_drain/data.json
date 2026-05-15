@@ -4,7 +4,7 @@
     "type": "TYPE_GRASS",
     "power": 40,
     "accuracy": 100,
-    "pp": 15,
+    "pp": 20,
     "effect": {
         "type": "BATTLE_EFFECT_RECOVER_HALF_DAMAGE_DEALT",
         "chance": 0

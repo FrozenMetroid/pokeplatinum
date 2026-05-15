@@ -61,8 +61,8 @@
 #include "constants/union_room_message_types.h"
 #include "constants/villa_visitors.h"
 
-.set DEBUG_GIVE_SHINY_CHARM_FROM_START, 1
-.set DEBUG_FLY_FROM_START, 1
+.set DEBUG_GIVE_SHINY_CHARM_FROM_START, 0
+.set DEBUG_FLY_FROM_START, 0
 
 #define INC_AS_ASM
 // #include "data/field/script_commands.h"

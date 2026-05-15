@@ -4,17 +4,23 @@
     "items": [],
     "ai_flags": [
         "AI_FLAG_BASIC",
+        "AI_FLAG_EVAL_ATTACK",
         "AI_FLAG_PRIORITIZE_EXTREMES"
     ],
     "double_battle": false,
     "party": [
         {
-            "species": "SPECIES_MACHOP",
+            "species": "SPECIES_CROAGUNK",
             "form": 0,
             "level": 21,
             "item": null,
-            "moves": null,
-            "iv_scale": 20,
+            "moves": [
+                "MOVE_FORCE_PALM",
+                "MOVE_POISON_STING",
+                "MOVE_FAKE_OUT",
+                "MOVE_PURSUIT"
+            ],
+            "iv_scale": 30,
             "ball_seal": 0
         },
         {
@@ -22,8 +28,13 @@
             "form": 0,
             "level": 21,
             "item": null,
-            "moves": null,
-            "iv_scale": 20,
+            "moves": [
+                "MOVE_CONFUSION",
+                "MOVE_FORCE_PALM",
+                "MOVE_MEDITATE",
+                "MOVE_BIDE"
+            ],
+            "iv_scale": 30,
             "ball_seal": 0
         }
     ],

@@ -3,7 +3,9 @@
     "class": "TRAINER_CLASS_LASS",
     "items": [],
     "ai_flags": [
-        "AI_FLAG_BASIC"
+        "AI_FLAG_BASIC",
+        "AI_FLAG_EVAL_ATTACK",
+        "AI_FLAG_EXPERT"
     ],
     "double_battle": false,
     "party": [
@@ -15,9 +17,15 @@
             "moves": [
                 "MOVE_PAIN_SPLIT",
                 "MOVE_PSYBEAM",
-                "MOVE_CONFUSE_RAY"
+                "MOVE_CONFUSE_RAY",
+                "MOVE_OMINOUS_WIND"
             ],
-            "iv_scale": 10,
+            "ivnums": [15, 15, 15, 15, 15, 15],
+            "evnums": [0, 0, 0, 40, 40, 0],
+            "nature": "NATURE_HASTY",
+            "ability": "ABILITY_LEVITATE",
+            "ball": "ITEM_POKE_BALL",
+            "iv_scale": 0,
             "ball_seal": 0
         }
     ],

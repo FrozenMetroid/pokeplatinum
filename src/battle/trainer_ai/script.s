@@ -77,6 +77,7 @@ Basic_CheckForImmunity:
     IfLoadedEqualTo ABILITY_FLASH_FIRE, Basic_CheckFireAbsorption
     IfLoadedEqualTo ABILITY_WONDER_GUARD, Basic_CheckWonderGuard
     IfLoadedEqualTo ABILITY_LEVITATE, Basic_CheckGroundAbsorption
+    IfLoadedEqualTo ABILITY_EARTH_EATER, Basic_CheckGroundAbsorption
     IfLoadedEqualTo ABILITY_DRY_SKIN, Basic_CheckWaterAbsorption2 // FIXED: This line should branch on Dry Skin rather than Levitate
     IfLoadedEqualTo ABILITY_SAP_SIPPER, Basic_CheckGrassAbsorption
     GoTo Basic_NoImmunityAbility
@@ -123,9 +124,9 @@ Basic_NoImmunityAbility:
 Basic_CheckSoundproof:
     // Check for immunity to sound-based moves
     LoadBattlerAbility AI_BATTLER_DEFENDER
-    IfLoadedNotEqualTo ABILITY_SOUNDPROOF, Basic_ScoreMoveEffect
+    IfLoadedNotEqualTo ABILITY_SOUNDPROOF, Basic_CheckMoveTypeAbilities
     LoadBattlerAbility AI_BATTLER_ATTACKER
-    IfLoadedEqualTo ABILITY_MOLD_BREAKER, Basic_ScoreMoveEffect
+    IfLoadedEqualTo ABILITY_MOLD_BREAKER, Basic_CheckMoveTypeAbilities
     IfMoveEqualTo MOVE_GROWL, ScoreMinus10
     IfMoveEqualTo MOVE_ROAR, ScoreMinus10
     IfMoveEqualTo MOVE_SING, ScoreMinus10
@@ -137,6 +138,24 @@ Basic_CheckSoundproof:
     IfMoveEqualTo MOVE_GRASS_WHISTLE, ScoreMinus10
     IfMoveEqualTo MOVE_BUG_BUZZ, ScoreMinus10
     IfMoveEqualTo MOVE_CHATTER, ScoreMinus10
+
+Basic_CheckMoveTypeAbilities:
+    LoadBattlerAbility AI_BATTLER_DEFENDER
+    IfLoadedEqualTo ABILITY_RATTLED, Basic_CheckRattled
+    IfLoadedEqualTo ABILITY_JUSTIFIED, Basic_CheckJustified
+    GoTo Basic_ScoreMoveEffect
+
+Basic_CheckRattled:
+    LoadTypeFrom LOAD_MOVE_TYPE
+    IfTempEqualTo TYPE_BUG, ScoreMinus5
+    IfTempEqualTo TYPE_DARK, ScoreMinus5
+    IfTempEqualTo TYPE_GHOST, ScoreMinus5
+    GoTo Basic_ScoreMoveEffect
+
+Basic_CheckJustified:
+    LoadTypeFrom LOAD_MOVE_TYPE
+    IfTempEqualTo TYPE_DARK, ScoreMinus5
+    GoTo Basic_ScoreMoveEffect
 
 Basic_ScoreMoveEffect:
     IfCurrentMoveEffectEqualTo BATTLE_EFFECT_STATUS_SLEEP, Basic_CheckCannotSleep
@@ -207,7 +226,7 @@ Basic_ScoreMoveEffect:
     IfCurrentMoveEffectEqualTo BATTLE_EFFECT_FORESIGHT, Basic_CheckForesight
     IfCurrentMoveEffectEqualTo BATTLE_EFFECT_ALL_FAINT_3_TURNS, Basic_CheckPerishSong
     IfCurrentMoveEffectEqualTo BATTLE_EFFECT_WEATHER_SANDSTORM, Basic_CheckSandstorm
-    IfCurrentMoveEffectEqualTo BATTLE_EFFECT_ATK_UP_2_STATUS_CONFUSION, Basic_CheckCannotConfuse
+    IfCurrentMoveEffectEqualTo BATTLE_EFFECT_ATK_UP_2_STATUS_CONFUSION, Basic_CheckCannotConfuse_StatChange
     IfCurrentMoveEffectEqualTo BATTLE_EFFECT_INFATUATE, Basic_CheckCannotAttract
     IfCurrentMoveEffectEqualTo BATTLE_EFFECT_POWER_BASED_ON_FRIENDSHIP, Basic_CheckNonStandardDamageOrChargeTurn
     IfCurrentMoveEffectEqualTo BATTLE_EFFECT_RANDOM_POWER_MAYBE_HEAL, Basic_CheckNonStandardDamageOrChargeTurn
@@ -236,7 +255,7 @@ Basic_ScoreMoveEffect:
     IfCurrentMoveEffectEqualTo BATTLE_EFFECT_SWALLOW, Basic_CheckCanSpitUpOrSwallow
     IfCurrentMoveEffectEqualTo BATTLE_EFFECT_WEATHER_HAIL, Basic_CheckHail
     IfCurrentMoveEffectEqualTo BATTLE_EFFECT_TORMENT, Basic_CheckTorment
-    IfCurrentMoveEffectEqualTo BATTLE_EFFECT_SP_ATK_UP_CAUSE_CONFUSION, Basic_CheckCannotConfuse
+    IfCurrentMoveEffectEqualTo BATTLE_EFFECT_SP_ATK_UP_CAUSE_CONFUSION, Basic_CheckCannotConfuse_StatChange
     IfCurrentMoveEffectEqualTo BATTLE_EFFECT_STATUS_BURN, Basic_CheckCannotBurn
     IfCurrentMoveEffectEqualTo BATTLE_EFFECT_FAINT_AND_ATK_SP_ATK_DOWN_2, Basic_CheckMemento
     IfCurrentMoveEffectEqualTo BATTLE_EFFECT_HIT_LAST_WHIFF_IF_HIT, Basic_CheckNonStandardDamageOrChargeTurn
@@ -357,6 +376,7 @@ Basic_CheckBellyDrum:
     //   - Special cases for Speed (Trick Room active -> -10) and Accuracy/Evasion (attacker has No Guard -> -10)
 Basic_CheckHighStatStage_Attack:
     LoadBattlerAbility AI_BATTLER_ATTACKER
+    IfLoadedEqualTo ABILITY_CONTRARY, ScoreMinus10
     IfLoadedNotEqualTo ABILITY_SIMPLE, Basic_CheckHighStatStage_Attack_NoSimple
     IfStatStageGreaterThan AI_BATTLER_ATTACKER, BATTLE_STAT_ATTACK, 8, ScoreMinus10
     PopOrEnd 
@@ -367,6 +387,7 @@ Basic_CheckHighStatStage_Attack_NoSimple:
 
 Basic_CheckHighStatStage_Defense:
     LoadBattlerAbility AI_BATTLER_ATTACKER
+    IfLoadedEqualTo ABILITY_CONTRARY, ScoreMinus10
     IfLoadedNotEqualTo ABILITY_SIMPLE, Basic_CheckHighStatStage_Defense_NoSimple
     IfStatStageGreaterThan AI_BATTLER_ATTACKER, BATTLE_STAT_DEFENSE, 8, ScoreMinus10
     PopOrEnd 
@@ -378,6 +399,7 @@ Basic_CheckHighStatStage_Defense_NoSimple:
 Basic_CheckHighStatStage_Speed:
     IfFieldConditionsMask FIELD_CONDITION_TRICK_ROOM, ScoreMinus10
     LoadBattlerAbility AI_BATTLER_ATTACKER
+    IfLoadedEqualTo ABILITY_CONTRARY, ScoreMinus10
     IfLoadedNotEqualTo ABILITY_SIMPLE, Basic_CheckHighStatStage_Speed_NoSimple
     IfStatStageGreaterThan AI_BATTLER_ATTACKER, BATTLE_STAT_SPEED, 8, ScoreMinus10
     PopOrEnd 
@@ -388,6 +410,7 @@ Basic_CheckHighStatStage_Speed_NoSimple:
 
 Basic_CheckHighStatStage_SpAttack:
     LoadBattlerAbility AI_BATTLER_ATTACKER
+    IfLoadedEqualTo ABILITY_CONTRARY, ScoreMinus10
     IfLoadedNotEqualTo ABILITY_SIMPLE, Basic_CheckHighStatStage_SpAttack_NoSimple
     IfStatStageGreaterThan AI_BATTLER_ATTACKER, BATTLE_STAT_SP_ATTACK, 8, ScoreMinus10
     PopOrEnd 
@@ -398,6 +421,7 @@ Basic_CheckHighStatStage_SpAttack_NoSimple:
 
 Basic_CheckHighStatStage_SpAttack_and_Attack:
     LoadBattlerAbility AI_BATTLER_ATTACKER
+    IfLoadedEqualTo ABILITY_CONTRARY, ScoreMinus10
     IfLoadedNotEqualTo ABILITY_SIMPLE, Basic_CheckHighStatStage_SpAttack_and_Attack_NoSimple
     IfStatStageGreaterThan AI_BATTLER_ATTACKER, BATTLE_STAT_SP_ATTACK, 8, ScoreMinus10
     IfStatStageGreaterThan AI_BATTLER_ATTACKER, BATTLE_STAT_ATTACK, 8, ScoreMinus10
@@ -410,6 +434,7 @@ Basic_CheckHighStatStage_SpAttack_and_Attack_NoSimple:
 
 Basic_CheckHighStatStage_SpDefense:
     LoadBattlerAbility AI_BATTLER_ATTACKER
+    IfLoadedEqualTo ABILITY_CONTRARY, ScoreMinus10
     IfLoadedNotEqualTo ABILITY_SIMPLE, Basic_CheckHighStatStage_SpDefense_NoSimple
     IfStatStageGreaterThan AI_BATTLER_ATTACKER, BATTLE_STAT_SP_DEFENSE, 8, ScoreMinus10
     PopOrEnd 
@@ -422,6 +447,7 @@ Basic_CheckHighStatStage_Accuracy:
     LoadBattlerAbility AI_BATTLER_DEFENDER
     IfLoadedEqualTo ABILITY_NO_GUARD, ScoreMinus10
     LoadBattlerAbility AI_BATTLER_ATTACKER
+    IfLoadedEqualTo ABILITY_CONTRARY, ScoreMinus10
     IfLoadedEqualTo ABILITY_NO_GUARD, ScoreMinus10
     IfLoadedNotEqualTo ABILITY_SIMPLE, Basic_CheckHighStatStage_Accuracy_NoSimple
     IfStatStageGreaterThan AI_BATTLER_ATTACKER, BATTLE_STAT_ACCURACY, 8, ScoreMinus10
@@ -435,6 +461,7 @@ Basic_CheckHighStatStage_Evasion:
     LoadBattlerAbility AI_BATTLER_DEFENDER
     IfLoadedEqualTo ABILITY_NO_GUARD, ScoreMinus10
     LoadBattlerAbility AI_BATTLER_ATTACKER
+    IfLoadedEqualTo ABILITY_CONTRARY, ScoreMinus10
     IfLoadedEqualTo ABILITY_NO_GUARD, ScoreMinus10
     IfLoadedNotEqualTo ABILITY_SIMPLE, Basic_CheckHighStatStage_Evasion_NoSimple
     IfStatStageGreaterThan AI_BATTLER_ATTACKER, BATTLE_STAT_EVASION, 8, ScoreMinus10
@@ -453,18 +480,30 @@ Basic_CheckHighStatStage_Evasion_NoSimple:
     //   - If reducing Accuracy or Evasion -> -10 if either battler has No Guard
     //   - If reducing Accuracy -> -10 if the target has Keen Eye
 Basic_CheckLowStatStage_Attack:
+    LoadBattlerAbility AI_BATTLER_DEFENDER
+    IfLoadedEqualTo ABILITY_DEFIANT, ScoreMinus10
+    IfLoadedEqualTo ABILITY_COMPETITIVE, ScoreMinus10
+    IfLoadedEqualTo ABILITY_CONTRARY, ScoreMinus10
     IfStatStageEqualTo AI_BATTLER_DEFENDER, BATTLE_STAT_ATTACK, 0, ScoreMinus10
     LoadBattlerAbility AI_BATTLER_DEFENDER
     IfLoadedEqualTo ABILITY_HYPER_CUTTER, ScoreMinus10
     GoTo Basic_CheckClearBodyEffect
 
 Basic_CheckLowStatStage_Defense:
+    LoadBattlerAbility AI_BATTLER_DEFENDER
+    IfLoadedEqualTo ABILITY_DEFIANT, ScoreMinus10
+    IfLoadedEqualTo ABILITY_COMPETITIVE, ScoreMinus10
+    IfLoadedEqualTo ABILITY_CONTRARY, ScoreMinus10
     IfStatStageEqualTo AI_BATTLER_DEFENDER, BATTLE_STAT_DEFENSE, 0, ScoreMinus10
     LoadBattlerAbility AI_BATTLER_DEFENDER
     IfLoadedEqualTo ABILITY_BIG_PECKS, ScoreMinus10
     GoTo Basic_CheckClearBodyEffect
 
 Basic_CheckLowStatStage_Speed:
+    LoadBattlerAbility AI_BATTLER_DEFENDER
+    IfLoadedEqualTo ABILITY_DEFIANT, ScoreMinus10
+    IfLoadedEqualTo ABILITY_COMPETITIVE, ScoreMinus10
+    IfLoadedEqualTo ABILITY_CONTRARY, ScoreMinus10
     IfFieldConditionsMask FIELD_CONDITION_TRICK_ROOM, ScoreMinus10
     IfStatStageEqualTo AI_BATTLER_DEFENDER, BATTLE_STAT_SPEED, 0, ScoreMinus10
     CheckBattlerAbility AI_BATTLER_DEFENDER, ABILITY_SPEED_BOOST
@@ -472,14 +511,26 @@ Basic_CheckLowStatStage_Speed:
     GoTo Basic_CheckClearBodyEffect
 
 Basic_CheckLowStatStage_SpAttack:
+    LoadBattlerAbility AI_BATTLER_DEFENDER
+    IfLoadedEqualTo ABILITY_DEFIANT, ScoreMinus10
+    IfLoadedEqualTo ABILITY_COMPETITIVE, ScoreMinus10
+    IfLoadedEqualTo ABILITY_CONTRARY, ScoreMinus10
     IfStatStageEqualTo AI_BATTLER_DEFENDER, BATTLE_STAT_SP_ATTACK, 0, ScoreMinus10
     GoTo Basic_CheckClearBodyEffect
 
 Basic_CheckLowStatStage_SpDefense:
+    LoadBattlerAbility AI_BATTLER_DEFENDER
+    IfLoadedEqualTo ABILITY_DEFIANT, ScoreMinus10
+    IfLoadedEqualTo ABILITY_COMPETITIVE, ScoreMinus10
+    IfLoadedEqualTo ABILITY_CONTRARY, ScoreMinus10
     IfStatStageEqualTo AI_BATTLER_DEFENDER, BATTLE_STAT_SP_DEFENSE, 0, ScoreMinus10
     GoTo Basic_CheckClearBodyEffect
 
 Basic_CheckLowStatStage_Accuracy:
+    LoadBattlerAbility AI_BATTLER_DEFENDER
+    IfLoadedEqualTo ABILITY_DEFIANT, ScoreMinus10
+    IfLoadedEqualTo ABILITY_COMPETITIVE, ScoreMinus10
+    IfLoadedEqualTo ABILITY_CONTRARY, ScoreMinus10
     IfStatStageEqualTo AI_BATTLER_DEFENDER, BATTLE_STAT_ACCURACY, 0, ScoreMinus10
     LoadBattlerAbility AI_BATTLER_ATTACKER
     IfLoadedEqualTo ABILITY_NO_GUARD, ScoreMinus10
@@ -489,6 +540,10 @@ Basic_CheckLowStatStage_Accuracy:
     GoTo Basic_CheckClearBodyEffect
 
 Basic_CheckLowStatStage_Evasion:
+    LoadBattlerAbility AI_BATTLER_DEFENDER
+    IfLoadedEqualTo ABILITY_DEFIANT, ScoreMinus10
+    IfLoadedEqualTo ABILITY_COMPETITIVE, ScoreMinus10
+    IfLoadedEqualTo ABILITY_CONTRARY, ScoreMinus10
     IfStatStageEqualTo AI_BATTLER_DEFENDER, BATTLE_STAT_EVASION, 0, ScoreMinus10
     LoadBattlerAbility AI_BATTLER_ATTACKER
     IfLoadedEqualTo ABILITY_NO_GUARD, ScoreMinus10
@@ -637,7 +692,19 @@ Basic_CheckCannotConfuse:
     LoadBattlerAbility AI_BATTLER_DEFENDER
     IfLoadedEqualTo ABILITY_OWN_TEMPO, ScoreMinus10
     IfSideCondition AI_BATTLER_DEFENDER, SIDE_CONDITION_SAFEGUARD, ScoreMinus10
-    PopOrEnd 
+    PopOrEnd
+
+Basic_CheckCannotConfuse_StatChange:
+    // If the target is already confused, score -5.
+    IfVolatileStatus AI_BATTLER_DEFENDER, VOLATILE_CONDITION_CONFUSION, ScoreMinus5
+
+    // If the target otherwise cannot be confused, score -10.
+    LoadBattlerAbility AI_BATTLER_DEFENDER
+    IfLoadedEqualTo ABILITY_OWN_TEMPO, ScoreMinus10
+    IfSideCondition AI_BATTLER_DEFENDER, SIDE_CONDITION_SAFEGUARD, ScoreMinus10
+    LoadBattlerAbility AI_BATTLER_DEFENDER
+    IfLoadedEqualTo ABILITY_CONTRARY, ScorePlus10 // will lower the stats AND confuse
+    PopOrEnd
 
 Basic_CheckAlreadyUnderReflect:
     // If already under the effect of Reflect, score -8.
@@ -755,6 +822,7 @@ Basic_CheckCurse:
     // If the attacker has Simple, treat it like a boosting move for both Attack and Defense.
     // That is, if either Attack or Defense are already +2, score -10.
     LoadBattlerAbility AI_BATTLER_ATTACKER
+    IfLoadedEqualTo ABILITY_CONTRARY, ScoreMinus10
     IfLoadedNotEqualTo ABILITY_SIMPLE, Basic_CheckCurse_NoSimple
     IfStatStageGreaterThan AI_BATTLER_ATTACKER, BATTLE_STAT_ATTACK, 8, ScoreMinus10
     IfStatStageGreaterThan AI_BATTLER_ATTACKER, BATTLE_STAT_DEFENSE, 8, ScoreMinus10
@@ -855,6 +923,9 @@ Basic_CheckMemento:
     IfLoadedEqualTo ABILITY_CLEAR_BODY, ScoreMinus10
     IfLoadedEqualTo ABILITY_WHITE_SMOKE, ScoreMinus10
     IfLoadedEqualTo ABILITY_MAGIC_BOUNCE, ScoreMinus10
+    IfLoadedEqualTo ABILITY_DEFIANT, ScoreMinus10
+    IfLoadedEqualTo ABILITY_COMPETITIVE, ScoreMinus10
+    IfLoadedEqualTo ABILITY_CONTRARY, ScoreMinus10
 
 Basic_CheckMemento_CheckStatStages:
     // If the target's Attack is already at -6, score -10.
@@ -1045,6 +1116,9 @@ Basic_CheckTickle:
     IfLoadedEqualTo ABILITY_WHITE_SMOKE, ScoreMinus10
     IfLoadedEqualTo ABILITY_BIG_PECKS, ScoreMinus1 // still want it to work for the attack drop
     IfLoadedEqualTo ABILITY_MAGIC_BOUNCE, ScoreMinus10
+    IfLoadedEqualTo ABILITY_CONTRARY, ScoreMinus10
+    IfLoadedEqualTo ABILITY_DEFIANT, ScoreMinus10
+    IfLoadedEqualTo ABILITY_COMPETITIVE, ScoreMinus10
 
 Basic_CheckTickle_CheckStatStages:
     // If the target's Attack is at -6, score -10.
@@ -1073,6 +1147,7 @@ Basic_CheckBulkUp:
     // If the attacker's ability is Simple and either Attack or Defense are already at
     // +3, score -10.
     LoadBattlerAbility AI_BATTLER_ATTACKER
+    IfLoadedEqualTo ABILITY_CONTRARY, ScoreMinus10
     IfLoadedNotEqualTo ABILITY_SIMPLE, Basic_CheckBulkUp_NoSimple
     IfStatStageGreaterThan AI_BATTLER_ATTACKER, BATTLE_STAT_ATTACK, 8, ScoreMinus10
     IfStatStageGreaterThan AI_BATTLER_ATTACKER, BATTLE_STAT_DEFENSE, 8, ScoreMinus10
@@ -1094,6 +1169,7 @@ Basic_CheckCalmMind:
     // If the attacker's ability is Simple and either SpAttack or SpDefense are already at
     // +3, score -10.
     LoadBattlerAbility AI_BATTLER_ATTACKER
+    IfLoadedEqualTo ABILITY_CONTRARY, ScoreMinus10
     IfLoadedNotEqualTo ABILITY_SIMPLE, Basic_CheckCalmMind_NoSimple
     IfStatStageGreaterThan AI_BATTLER_ATTACKER, BATTLE_STAT_SP_ATTACK, 8, ScoreMinus10
     IfStatStageGreaterThan AI_BATTLER_ATTACKER, BATTLE_STAT_SP_DEFENSE, 8, ScoreMinus10
@@ -1113,6 +1189,7 @@ Basic_CheckDragonDance:
     // If the attacker's ability is Simple and either Attack or Speed are already at
     // +3, score -10.
     LoadBattlerAbility AI_BATTLER_ATTACKER
+    IfLoadedEqualTo ABILITY_CONTRARY, ScoreMinus10
     IfLoadedNotEqualTo ABILITY_SIMPLE, Basic_CheckDragonDance_NoSimple
     IfStatStageGreaterThan AI_BATTLER_ATTACKER, BATTLE_STAT_ATTACK, 8, ScoreMinus10
     IfStatStageGreaterThan AI_BATTLER_ATTACKER, BATTLE_STAT_SPEED, 8, ScoreMinus10
@@ -1674,6 +1751,9 @@ Basic_CheckCaptivate:
     IfLoadedEqualTo ABILITY_CLEAR_BODY, ScoreMinus10
     IfLoadedEqualTo ABILITY_WHITE_SMOKE, ScoreMinus10
     IfLoadedEqualTo ABILITY_MAGIC_BOUNCE, ScoreMinus10
+    IfLoadedEqualTo ABILITY_DEFIANT, ScoreMinus10
+    IfLoadedEqualTo ABILITY_COMPETITIVE, ScoreMinus10
+    IfLoadedEqualTo ABILITY_CONTRARY, ScoreMinus10
 
 Basic_CheckCaptivate_CheckGender:
     // If the target and the attacker share gender or the target has no gender, score -10.

@@ -34,20 +34,20 @@
             "species": "SPECIES_ZUBAT"
         },
         {
-            "level": 6,
-            "species": "SPECIES_ZUBAT"
+            "level": 4,
+            "species": "SPECIES_MAKUHITA"
+        },
+        {
+            "level": 5,
+            "species": "SPECIES_MAKUHITA"
         },
         {
             "level": 6,
-            "species": "SPECIES_ZUBAT"
+            "species": "SPECIES_MAKUHITA"
         },
         {
             "level": 6,
-            "species": "SPECIES_ZUBAT"
-        },
-        {
-            "level": 6,
-            "species": "SPECIES_ZUBAT"
+            "species": "SPECIES_MAKUHITA"
         }
     ],
     "swarms": [

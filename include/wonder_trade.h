@@ -14,6 +14,7 @@ typedef struct WonderTradeData {
     u8 hiddenAbility; // only used for if the hidden ability is selected, otherwise the ability is determined by the personality value generated in Pokemon_InitWithSpecies and the form of the mon
     u8 partySlot;
     BOOL natDexWonderTrade;
+    BOOL guaranteeItem;
     u16 *finalMessage; // for the attendant to say based on BST of the received mon
     struct Pokemon sentPokemon; // store its data after removing the mon so we know what to show during the trade anim
     struct String *otName;
@@ -34,6 +35,11 @@ typedef struct WonderTradeSpecialCases {
     u8 level2; // what level is the minimum for the next evolution
 }WonderTradeSpecialCases;
 
+typedef struct WonderTradeValidBalls {
+    u16 ball;
+    u16 weight;
+}WonderTradeValidBalls;
+
 enum WonderTradeTaskState {
     WONDER_TRADE_TASK_STATE_GENERATE_SPECIES,
     WONDER_TRADE_TASK_STATE_GENERATE_ABILITY,
@@ -52,7 +58,7 @@ enum WonderTradeTaskState {
 BOOL WonderTrade_GetSpeciesAndForm(WonderTradeData *wonderTradeData, struct FieldSystem_t *fieldSystem);
 void WonderTrade_GetHiddenAbility(WonderTradeData *wonderTradeData, u32 *taskState);
 void WonderTrade_GetItem(WonderTradeData *wonderTradeData, u32 *taskState);
-void WonderTrade_GetBall(WonderTradeData *wonderTradeData, u32 *taskState);
+BOOL WonderTrade_GetBall(WonderTradeData *wonderTradeData);
 void WonderTrade_GiveMon(WonderTradeData *wonderTradeData, struct FieldSystem_t *fieldSystem, u32 *taskState);
 void WonderTrade_GetLevelUpMoves(WonderTradeData *wonderTradeData, u32 *taskState);
 void WonderTrade_GetEggMove(WonderTradeData *wonderTradeData, u32 *taskState);

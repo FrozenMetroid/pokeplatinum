@@ -103,8 +103,6 @@ Additional Abilities:
 - Propeller Tail: This Pokémon's moves cannot be redirected by the likes of Follow Me, Storm Drain, Lightning Rod, etc.
 - Sand Force: Rock, Ground, and Steel-type moves have a 30% increase in power during Sandstorms
 - Flare Boost: Boosts Special Attack damage by 50% when the Pokémon is burned
-
-
     
 Ability Modernizations:
 - Lightning Rod

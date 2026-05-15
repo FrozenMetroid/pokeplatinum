@@ -4,17 +4,23 @@
     "items": [],
     "ai_flags": [
         "AI_FLAG_BASIC",
+        "AI_FLAG_EVAL_ATTACK",
         "AI_FLAG_PRIORITIZE_EXTREMES"
     ],
     "double_battle": false,
     "party": [
         {
-            "species": "SPECIES_MACHOP",
+            "species": "SPECIES_RIOLU",
             "form": 0,
             "level": 23,
             "item": null,
-            "moves": null,
-            "iv_scale": 30,
+            "moves": [
+                "MOVE_FORCE_PALM",
+                "MOVE_QUICK_ATTACK",
+                "MOVE_LEER",
+                "MOVE_BITE"
+            ],
+            "iv_scale": 50,
             "ball_seal": 0
         }
     ],

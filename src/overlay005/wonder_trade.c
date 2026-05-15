@@ -101,20 +101,20 @@ static const WonderTradeSpecialCases wonderTradeSpecialCasesData[] = {
     {0xFFFF, 0xFFFF, 0xFFFF, 0xFF, 0xFF},
 };
 
-static u16 validPokeBalls[] = {
-    ITEM_POKE_BALL,
-    ITEM_GREAT_BALL,
-    ITEM_ULTRA_BALL,
-    ITEM_PREMIER_BALL,
-    ITEM_REPEAT_BALL,
-    ITEM_TIMER_BALL,
-    ITEM_NEST_BALL,
-    ITEM_NET_BALL,
-    ITEM_DIVE_BALL,
-    ITEM_LUXURY_BALL,
-    ITEM_HEAL_BALL,
-    ITEM_QUICK_BALL,
-    ITEM_DUSK_BALL,
+static WonderTradeValidBalls validPokeBalls[] = {
+    {ITEM_POKE_BALL,    30},
+    {ITEM_GREAT_BALL,   20},
+    {ITEM_ULTRA_BALL,   10},
+    {ITEM_REPEAT_BALL,  5},
+    {ITEM_TIMER_BALL,   5},
+    {ITEM_NEST_BALL,    5},
+    {ITEM_NET_BALL,     5},
+    {ITEM_DIVE_BALL,    5},
+    {ITEM_HEAL_BALL,    5},
+    {ITEM_QUICK_BALL,   4},
+    {ITEM_DUSK_BALL,    4},
+    {ITEM_LUXURY_BALL,  1},
+    {ITEM_PREMIER_BALL, 1},
 };
 
 BOOL FieldTask_WonderTrade(FieldTask *task) 
@@ -135,7 +135,9 @@ BOOL FieldTask_WonderTrade(FieldTask *task)
             WonderTrade_GetItem(wonderTradeData, taskState);
             break;
         case WONDER_TRADE_TASK_STATE_GENERATE_BALL:
-            WonderTrade_GetBall(wonderTradeData, taskState);
+            if (WonderTrade_GetBall(wonderTradeData)) {
+                (*taskState)++;
+            }
             break;
         case WONDER_TRADE_TASK_STATE_GIVE_MON:
             WonderTrade_GiveMon(wonderTradeData, fieldSystem, taskState);
@@ -365,11 +367,10 @@ void WonderTrade_GetHiddenAbility(struct WonderTradeData *wonderTradeData, u32 *
 {
 
     u8 hiddenAbility = SpeciesData_GetFormValue(wonderTradeData->species, wonderTradeData->form, SPECIES_DATA_HIDDEN_ABILITY);
-    u8 odds = LCRNG_RandMod(100);
-    if (odds > 94 && hiddenAbility != 0) { // 5% chance (95, 96, 97, 98, 99) to be hidden ability if it exists
+    if ((LCRNG_RandMod(100) > 94) && hiddenAbility != 0) { // 5% chance (95, 96, 97, 98, 99) to be hidden ability if it exists
         wonderTradeData->hiddenAbility = hiddenAbility;
     } else {
-        wonderTradeData->hiddenAbility = 0;
+        wonderTradeData->hiddenAbility = FALSE;
     }
 
     ++(*taskState);
@@ -388,21 +389,29 @@ BOOL WonderTrade_ItemIsForbidden(u16 item)
 
 void WonderTrade_GetItem(struct WonderTradeData *wonderTradeData, u32 *taskState)
 {
-    if (LCRNG_RandMod(10) > 0) { // 90% chance to not have an item
-        ++(*taskState);
+    if (wonderTradeData->guaranteeItem != TRUE) { // if the item is not forced to generate, then roll for it, otherwise just generate an item no matter what
+        if (LCRNG_RandMod(10) > 0) { // 90% chance to not have an item
+            ++(*taskState);
+        } 
     } else {
         wonderTradeData->item = LCRNG_RandMod(MAX_ITEMS);
-        if (!WonderTrade_ItemIsForbidden(wonderTradeData->item)) {  // if you got the chance to generate an item and it was a forbidden item, be nice and let the chance regenerate
+        if (WonderTrade_ItemIsForbidden(wonderTradeData->item) == FALSE) {
             ++(*taskState);
+        } else {
+            wonderTradeData->guaranteeItem = TRUE; // reroll for an item if you passed that roll for getting an item the first time but the item was forbidden
         }
     }
 }
 
-void WonderTrade_GetBall(struct WonderTradeData *wonderTradeData, u32 *taskState)
+BOOL WonderTrade_GetBall(struct WonderTradeData *wonderTradeData)
 {
-    wonderTradeData->ball = validPokeBalls[LCRNG_RandMod(NELEMS(validPokeBalls))];
-    
-    ++(*taskState);
+    u8 pos = LCRNG_RandMod(NELEMS(validPokeBalls));
+    wonderTradeData->ball = validPokeBalls[pos].ball;
+
+    if (LCRNG_RandMod(100) < validPokeBalls[pos].weight) { // weight is out of 100, so this gives the percentage chance for each ball to be selected
+        return TRUE;
+    }
+    return FALSE;
 }
 
 void WonderTrade_GiveMon(struct WonderTradeData *wonderTradeData, struct FieldSystem_t *fieldSystem, u32 *taskState)
@@ -701,7 +710,5 @@ void WonderTrade_TradeGraphics(WonderTradeData *wonderTradeData, struct FieldSys
     taskEnv->receivingMon = wonderTradeData->receivedPokemon;
 
     FieldTask_InitCall(fieldSystem->task, FieldTask_ProcessNPCTrade, taskEnv);
-
-    Heap_Free(data);
     ++(*taskState);
 }

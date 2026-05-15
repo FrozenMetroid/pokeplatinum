@@ -14,8 +14,13 @@
             "form": 0,
             "level": 22,
             "item": null,
-            "moves": null,
-            "iv_scale": 0,
+            "moves": [
+                "MOVE_FLAME_WHEEL",
+                "MOVE_SCRATCH",
+                "MOVE_TAUNT",
+                "MOVE_FAKE_OUT"
+            ],
+            "iv_scale": 30,
             "ball_seal": 0
         }
     ],

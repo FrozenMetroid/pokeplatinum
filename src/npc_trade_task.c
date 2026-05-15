@@ -88,6 +88,8 @@ BOOL FieldTask_ProcessNPCTrade(FieldTask *task)
             // points to the mon in the wonder trade struct for the mon you sent
             Heap_Free(taskEnv->givingMon);
         }
+        Heap_Free(taskEnv->npcTradeData->trainerInfo);
+        Heap_Free(taskEnv->npcTradeData);
         Heap_Free(taskEnv);
         return TRUE;
     }

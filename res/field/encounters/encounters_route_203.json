@@ -7,11 +7,11 @@
         },
         {
             "level": 4,
-            "species": "SPECIES_SHINX"
+            "species": "SPECIES_LEDYBA"
         },
         {
             "level": 5,
-            "species": "SPECIES_STARLY"
+            "species": "SPECIES_SHINX"
         },
         {
             "level": 4,
@@ -60,7 +60,7 @@
     ],
     "night": [
         "SPECIES_KRICKETOT",
-        "SPECIES_ZUBAT"
+        "SPECIES_SPINARAK"
     ],
     "radar": [
         "SPECIES_BIDOOF",
@@ -135,19 +135,19 @@
             "species": "SPECIES_MAGIKARP"
         },
         {
-            "level_max": 10,
+            "level_max": 7,
             "level_min": 5,
-            "species": "SPECIES_MAGIKARP"
+            "species": "SPECIES_GOLDEEN"
         },
         {
             "level_max": 10,
             "level_min": 5,
-            "species": "SPECIES_MAGIKARP"
+            "species": "SPECIES_GOLDEEN"
         },
         {
-            "level_max": 15,
+            "level_max": 12,
             "level_min": 5,
-            "species": "SPECIES_MAGIKARP"
+            "species": "SPECIES_GOLDEEN"
         }
     ],
     "good_rod_rate": 50,

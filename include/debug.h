@@ -35,19 +35,19 @@ DEBUG_GIVE_SHINY_CHARM_FROM_START
     Gives you a Shiny Charm at the start of the game,
     can also just be used for fun
 */
-#define DEBUG_GIVE_SHINY_CHARM_FROM_START
+// #define DEBUG_GIVE_SHINY_CHARM_FROM_START
 
 /*
 DEBUG_SUPREME_OVERLORD
     Debug damage changes when Supreme Overlord is active
 */
-#define DEBUG_SUPREME_OVERLORD
+// #define DEBUG_SUPREME_OVERLORD
 
 /*
 DEBUG_FLY_FROM_START
     Enables Fly everywhere
 */
-#define DEBUG_FLY_FROM_START
+// #define DEBUG_FLY_FROM_START
 
 /*
 DEBUG_FASTER_HP_BARS

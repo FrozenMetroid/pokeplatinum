@@ -6,6 +6,7 @@
     ],
     "ai_flags": [
         "AI_FLAG_BASIC",
+        "AI_FLAG_EVAL_ATTACK",
         "AI_FLAG_EXPERT"
     ],
     "double_battle": false,
@@ -13,28 +14,39 @@
         {
             "species": "SPECIES_DRIFLOON",
             "form": 0,
-            "level": 21,
+            "level": 22,
             "item": null,
             "moves": [
-                "MOVE_PAYBACK",
-                "MOVE_GUST",
+                "MOVE_OMINOUS_WIND",
+                "MOVE_AIR_CUTTER",
                 "MOVE_ASTONISH",
                 "MOVE_MINIMIZE"
             ],
-            "iv_scale": 10,
+            "ivnums": [15, 15, 15, 15, 15, 15],
+            "evnums": [40, 0, 0, 0, 40, 0],
+            "nature": "NATURE_MODEST",
+            "ability": "ABILITY_AFTERMATH",
+            "ball": "ITEM_POKE_BALL",
+            "iv_scale": 0,
             "ball_seal": 0
         },
         {
-            "species": "SPECIES_DRIFLOON",
+            "species": "SPECIES_SHUPPET",
             "form": 0,
-            "level": 21,
+            "level": 22,
             "item": null,
             "moves": [
-                "MOVE_SPIT_UP",
-                "MOVE_SWALLOW",
-                "MOVE_STOCKPILE"
+                "MOVE_SHADOW_SNEAK",
+                "MOVE_PURSUIT",
+                "MOVE_CURSE",
+                "MOVE_SCREECH"
             ],
-            "iv_scale": 10,
+            "ivnums": [15, 15, 15, 15, 15, 15],
+            "evnums": [0, 40, 0, 40, 0, 0],
+            "nature": "NATURE_ADAMANT",
+            "ability": "ABILITY_FRISK",
+            "ball": "ITEM_POKE_BALL",
+            "iv_scale": 0,
             "ball_seal": 0
         }
     ],

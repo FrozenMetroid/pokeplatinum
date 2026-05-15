@@ -667,31 +667,31 @@ Generate_Level:
 
 No_Badges:
 One_Badge:
-    GetRandom VAR_RECEIVED_SPECIES_LEVEL, 20
+    GetRandom VAR_RECEIVED_SPECIES_LEVEL, 16
 	Return
 
 Two_Badges:
-    GetRandom VAR_RECEIVED_SPECIES_LEVEL, 30
+    GetRandom VAR_RECEIVED_SPECIES_LEVEL, 26
 	Return
 
 Three_Badges:
-    GetRandom VAR_RECEIVED_SPECIES_LEVEL, 40
+    GetRandom VAR_RECEIVED_SPECIES_LEVEL, 41
 	Return
 
 Four_Badges:
-    GetRandom VAR_RECEIVED_SPECIES_LEVEL, 50
+    GetRandom VAR_RECEIVED_SPECIES_LEVEL, 51
 	Return
 
 Five_Badges:
-    GetRandom VAR_RECEIVED_SPECIES_LEVEL, 65
+    GetRandom VAR_RECEIVED_SPECIES_LEVEL, 66
 	Return
 
 Six_Badges:
-    GetRandom VAR_RECEIVED_SPECIES_LEVEL, 75
+    GetRandom VAR_RECEIVED_SPECIES_LEVEL, 76
 	Return
 
 Seven_Badges:
-	GetRandom VAR_RECEIVED_SPECIES_LEVEL, 85
+	GetRandom VAR_RECEIVED_SPECIES_LEVEL, 86
 	Return
 
 Quit_Wonder_Trade_Before_Pay:

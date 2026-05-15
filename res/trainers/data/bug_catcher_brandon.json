@@ -9,7 +9,7 @@
     "double_battle": false,
     "party": [
         {
-            "species": "SPECIES_WURMPLE",
+            "species": "SPECIES_SPINARAK",
             "form": 0,
             "level": 10,
             "item": null,
@@ -22,7 +22,7 @@
             "ball_seal": 0
         },
         {
-            "species": "SPECIES_SILCOON",
+            "species": "SPECIES_LEDYBA",
             "form": 0,
             "level": 11,
             "item": null,

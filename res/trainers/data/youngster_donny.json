@@ -3,22 +3,29 @@
     "class": "TRAINER_CLASS_YOUNGSTER",
     "items": [],
     "ai_flags": [
-        "AI_FLAG_BASIC"
+        "AI_FLAG_BASIC",
+        "AI_FLAG_EVAL_ATTACK",
+        "AI_FLAG_EXPERT"
     ],
     "double_battle": false,
     "party": [
         {
             "species": "SPECIES_GASTLY",
             "form": 0,
-            "level": 20,
+            "level": 22,
             "item": null,
             "moves": [
-                "MOVE_SUCKER_PUNCH",
+                "MOVE_OMINOUS_WIND",
                 "MOVE_NIGHT_SHADE",
                 "MOVE_CONFUSE_RAY",
                 "MOVE_CURSE"
             ],
-            "iv_scale": 10,
+            "ivnums": [15, 15, 15, 15, 15, 15],
+            "evnums": [0, 0, 0, 40, 40, 0],
+            "nature": "NATURE_TIMID",
+            "ability": "ABILITY_LEVITATE",
+            "ball": "ITEM_POKE_BALL",
+            "iv_scale": 0,
             "ball_seal": 0
         },
         {
@@ -27,11 +34,17 @@
             "level": 22,
             "item": null,
             "moves": [
-                "MOVE_SPIT_UP",
+                "MOVE_OMINOUS_WIND",
                 "MOVE_SWALLOW",
-                "MOVE_STOCKPILE"
+                "MOVE_STOCKPILE",
+                "MOVE_AIR_CUTTER"
             ],
-            "iv_scale": 10,
+            "ivnums": [15, 15, 15, 15, 15, 15],
+            "evnums": [40, 0, 0, 0, 40, 0],
+            "nature": "NATURE_MODEST",
+            "ability": "ABILITY_AFTERMATH",
+            "ball": "ITEM_GREAT_BALL",
+            "iv_scale": 0,
             "ball_seal": 0
         }
     ],
