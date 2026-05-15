@@ -8717,6 +8717,30 @@
         "{STRVAR_1 5, 1, 0} because of the foe\f",
         "{STRVAR_1 1, 2, 0}’s {STRVAR_1 5, 3, 0}!"
       ]
+    },
+    {
+      "id": "BattleStrings_Text_Unnerve_Ally",
+      "en_US": [
+        "{STRVAR_1 1, 0, 0}’s {STRVAR_1 5, 1, 0} makes the opposing\n",
+        "your Pokémon too nervous to\f",
+        "eat Berries!"
+      ]
+    },
+    {
+      "id": "BattleStrings_Text_Unnerve_Wild",
+      "en_US": [
+        "The wild {STRVAR_1 1, 0, 0}’s {STRVAR_1 5, 1, 0} makes\n",
+        "your Pokémon too nervous to\f",
+        "eat Berries!"
+      ]
+    },
+    {
+      "id": "BattleStrings_Text_Unnerve_Foe",
+      "en_US": [
+        "The foe’s {STRVAR_1 1, 0, 0}’s {STRVAR_1 5, 1, 0} makes\n",
+        "your Pokémon too nervous to\f",
+        "eat Berries!"
+      ]
     }
   ]
 }

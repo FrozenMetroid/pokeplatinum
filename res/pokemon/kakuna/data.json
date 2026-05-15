@@ -1,11 +1,11 @@
 {
     "base_stats": {
-        "hp": 45,
-        "attack": 25,
-        "defense": 50,
+        "hp": 55,
+        "attack": 45,
+        "defense": 60,
         "speed": 35,
-        "special_attack": 25,
-        "special_defense": 25
+        "special_attack": 30,
+        "special_defense": 30
     },
     "types": [ "TYPE_BUG", "TYPE_POISON" ],
     "catch_rate": 120,
@@ -27,7 +27,7 @@
     "base_friendship": 70,
     "exp_rate": "EXP_RATE_MEDIUM_FAST",
     "egg_groups": [ "EGG_GROUP_BUG", "EGG_GROUP_BUG" ],
-    "abilities": [ "ABILITY_SHED_SKIN", "ABILITY_NONE" ],
+    "abilities": [ "ABILITY_SHED_SKIN", "ABILITY_POISON_POINT" ],
     "hiddenAbility": "ABILITY_NONE",
     "safari_flee_rate": 0,
     "body_color": "MON_COLOR_YELLOW",
@@ -35,8 +35,10 @@
     "icon_palette": 2,
     "learnset": {
         "by_level": [
-            [ 0, "MOVE_HARDEN" ],
-            [ 7, "MOVE_HARDEN" ]
+            [0, "MOVE_HARDEN"],
+            [1, "MOVE_TACKLE"],
+            [1, "MOVE_POISON_STING"],
+            [15, "MOVE_BUG_BITE"]
         ],
         "by_tm": [  ],
         "by_tutor": [ "MOVE_IRON_DEFENSE" ]

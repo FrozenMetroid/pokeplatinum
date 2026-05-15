@@ -98,7 +98,8 @@ typedef struct BattleMon {
     u32 piercingEyeAnnounced : 1;
 
     u32 sheerForceActivated : 1;
-    u32 padding_extra : 31;
+    u32 unnerveAnnounced : 1;
+    u32 padding_extra : 30;
 
     u8 ppCur[LEARNED_MOVES_MAX];
     u8 ppUps[LEARNED_MOVES_MAX];

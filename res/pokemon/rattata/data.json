@@ -1,10 +1,10 @@
 {
     "base_stats": {
         "hp": 30,
-        "attack": 56,
+        "attack": 60,
         "defense": 35,
         "speed": 72,
-        "special_attack": 25,
+        "special_attack": 33,
         "special_defense": 35
     },
     "types": [ "TYPE_NORMAL", "TYPE_NORMAL" ],
@@ -28,26 +28,26 @@
     "exp_rate": "EXP_RATE_MEDIUM_FAST",
     "egg_groups": [ "EGG_GROUP_FIELD", "EGG_GROUP_FIELD" ],
     "abilities": [ "ABILITY_RUN_AWAY", "ABILITY_GUTS" ],
-    "hiddenAbility": "ABILITY_NONE",
+    "hiddenAbility": "ABILITY_HUSTLE",
     "safari_flee_rate": 0,
     "body_color": "MON_COLOR_PURPLE",
     "flip_sprite": false,
     "icon_palette": 2,
     "learnset": {
         "by_level": [
-            [ 1, "MOVE_TACKLE" ],
-            [ 1, "MOVE_TAIL_WHIP" ],
-            [ 4, "MOVE_QUICK_ATTACK" ],
-            [ 7, "MOVE_FOCUS_ENERGY" ],
-            [ 10, "MOVE_BITE" ],
-            [ 13, "MOVE_PURSUIT" ],
-            [ 16, "MOVE_HYPER_FANG" ],
-            [ 19, "MOVE_SUCKER_PUNCH" ],
-            [ 22, "MOVE_CRUNCH" ],
-            [ 25, "MOVE_ASSURANCE" ],
-            [ 28, "MOVE_SUPER_FANG" ],
-            [ 31, "MOVE_DOUBLE_EDGE" ],
-            [ 34, "MOVE_ENDEAVOR" ]
+            [1, "MOVE_TACKLE"],
+            [1, "MOVE_TAIL_WHIP"],
+            [4, "MOVE_QUICK_ATTACK"],
+            [7, "MOVE_FOCUS_ENERGY"],
+            [10, "MOVE_BITE"],
+            [12, "MOVE_PURSUIT"],
+            [16, "MOVE_HYPER_FANG"],
+            [19, "MOVE_SUCKER_PUNCH"],
+            [22, "MOVE_CRUNCH"],
+            [25, "MOVE_ASSURANCE"],
+            [28, "MOVE_SUPER_FANG"],
+            [31, "MOVE_DOUBLE_EDGE"],
+            [34, "MOVE_ENDEAVOR"]
         ],
         "by_tm": [
             "TM06",

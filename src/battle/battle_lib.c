@@ -122,6 +122,7 @@ void BattleSystem_InitBattleMon(BattleSystem *battleSys, BattleContext *battleCt
     battleCtx->battleMons[battler].supremeOverlordAnnounced = FALSE;
     battleCtx->battleMons[battler].piercingEyeAnnounced = FALSE;
     battleCtx->battleMons[battler].sheerForceActivated = FALSE;
+    battleCtx->battleMons[battler].unnerveAnnounced = FALSE;
     battleCtx->battleMons[battler].type1 = Pokemon_GetValue(mon, MON_DATA_TYPE_1, NULL);
     battleCtx->battleMons[battler].type2 = Pokemon_GetValue(mon, MON_DATA_TYPE_2, NULL);
     battleCtx->battleMons[battler].gender = Pokemon_GetGender(mon);
@@ -3780,6 +3781,9 @@ enum SwitchInCheckState {
     #ifdef BATTLE_ADD_PIERCING_EYE
     SWITCH_IN_CHECK_STATE_PIERCING_EYE,
     #endif
+    #ifdef BATTLE_ADD_UNNERVE
+    SWITCH_IN_CHECK_STATE_UNNERVE,
+    #endif
     SWITCH_IN_CHECK_STATE_FORM_CHANGE,
     SWITCH_IN_CHECK_STATE_AMULET_COIN,
     SWITCH_IN_CHECK_STATE_FORBIDDEN_STATUS,
@@ -4311,6 +4315,26 @@ int BattleSystem_TriggerEffectOnSwitch(BattleSystem *battleSys, BattleContext *b
                 }
             }
 
+            if (i == maxBattlers) {
+                battleCtx->switchInCheckState++;
+            }
+            break;
+        #endif
+        #ifdef BATTLE_ADD_UNNERVE
+        case SWITCH_IN_CHECK_STATE_UNNERVE:
+            for (i = 0; i < maxBattlers; i++) {
+                battler = battleCtx->monSpeedOrder[i];
+
+                if (battleCtx->battleMons[battler].unnerveAnnounced == FALSE
+                    && battleCtx->battleMons[battler].curHP
+                    && Battler_Ability(battleCtx, battler) == ABILITY_UNNERVE) {
+                    battleCtx->battleMons[battler].unnerveAnnounced = TRUE;
+                    battleCtx->msgBattlerTemp = battler;
+                    subscript = subscript_unnerve;
+                    result = SWITCH_IN_CHECK_RESULT_BREAK;
+                    break;
+                }
+            }
             if (i == maxBattlers) {
                 battleCtx->switchInCheckState++;
             }
@@ -5690,6 +5714,14 @@ u16 Battler_HeldItem(BattleContext *battleCtx, int battler)
     if (battleCtx->battleMons[battler].moveEffectsData.embargoTurns) {
         return ITEM_NONE;
     }
+    
+    #ifdef BATTLE_ADD_UNNERVE
+    if (((Battler_Ability(battleCtx, BATTLER_OPPONENT(battler)) == ABILITY_UNNERVE && battleCtx->battleMons[BATTLER_OPPONENT(battler)].curHP != 0)
+      || (Battler_Ability(battleCtx, BATTLER_ACROSS(battler)) == ABILITY_UNNERVE && battleCtx->battleMons[BATTLER_ACROSS(battler)].curHP != 0))
+     && (Item_IsBerry(battleCtx->battleMons[battler].heldItem))) {
+        return ITEM_NONE;
+    }
+    #endif
 
     return battleCtx->battleMons[battler].heldItem;
 }

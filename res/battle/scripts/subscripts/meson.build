@@ -309,4 +309,5 @@ subscript_files = files(
     'subscript_defiant.s',
     'subscript_competitive.s',
     'subscript_cannot_use_move.s',
+    'subscript_unnerve.s',
 )
