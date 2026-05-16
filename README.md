@@ -17,7 +17,7 @@ Credits:
 - Faster HP Bar
 - Singleplayer Wonder Trade in the Global Terminal
 - Footstep sounds for walking, running, metal, grass, wood, and caves from HeartGold and Soulsilver
-    Metal, Grass, and Wood metatile behavior have not been applied to any maps because of the inability to edit maps in the decomp currently
+    - Metal, Grass, and Wood metatile behavior have not been applied to any maps because of the inability to edit maps in the decomp currently
 - Multiple Premier Balls when buying Poké Balls of any type
 - Shiny Charm
 - Critical Captures and Catching Charm
@@ -28,10 +28,10 @@ Credits:
 - Some Pokémon have moves defined to be learned whenever they evolve, e.g. Close Combat on Infernape
 - Infinite TMs and forgettable HMs
 - Use HMs without teaching the move
-    Must have a Pokémon capable of using the move in your party, the associated Badge if there is one, and the HM in your Bag
+    - Must have a Pokémon capable of using the move in your party, the associated Badge if there is one, and the HM in your Bag
 - Hidden Abilities
-    Use the Ability Patch or find them in the wild with Poké Radar chains!
-    Not all Pokémon have their Hidden Abilities due to those Abilities not being programmed
+    - Use the Ability Patch or find them in the wild with Poké Radar chains!
+    - Not all Pokémon have their Hidden Abilities due to those Abilities not being programmed
 - Ability Capsule and Ability Patch
 - Nature mints
 - Rocky Helmet
@@ -49,28 +49,30 @@ Credits:
 - 1000 steps in Safari Zone instead of 500
 - Toggleable party-wide Exp. Share
 - Honey Trees only take 30 minutes to give an encounter rather than 6 hours
+- Additional Pokémon included in Sinnoh's regional Pokédex to increase encounter variety and type representation:
+    - Aron
+    - Bagon
+    - Electrike
+    - Growlithe
+    - Horsea
+    - Ledyba
+    - Makuhita
+    - Mankey
+    - Sableye
+    - Shroomish 
+    - Smoochum
+    - Spinarak
+    - Vulpix
 - A myriad of changes to the battle system, as documented below
 
 # Battle Changes
 
-HP bar is faster now.
+### Pokémon
 
-The data structure for Trainers has been completely overhauled to be like how it is in HeartGold-Engine -- now Trainers' Pokémon can have custom Poké Balls, Abilities, EVs, IVs, etc.
-
-Currently, the only modifications to stats, abilities, learnsets, etc. have been made to Pokémon within the Sinnoh regional Pokédex, which has been updated to include the following lines to round out less common types, bringing the total from 210 to 230:
-- Aron
-- Bagon
-- Electrike
-- Growlithe
-- Horsea
-- Sableye
-- Shroomish 
-- Smoochum
-- Vulpix
-
-The cursor on the bottom screen during a battle is now able to be moved up from the Run button to the Fight button.
+All Pokémon have received changes to any combination of their learnsets, Abilities, and/or stats.
 
 ### Additional Abilities:
+
 - Piercing Eye (CUSTOM): Lowers foes' Evasion on switch-in. 
 - Artillery (CUSTOM): Raises the power of beam moves (Ice Beam, Bubble Beam, etc.)
 - Supreme Overlord (Supreme Lord in-game): Raises the power of a move by 10% for each fainted ally
@@ -103,62 +105,76 @@ The cursor on the bottom screen during a battle is now able to be moved up from 
 - Propeller Tail: This Pokémon's moves cannot be redirected by the likes of Follow Me, Storm Drain, Lightning Rod, etc.
 - Sand Force: Rock, Ground, and Steel-type moves have a 30% increase in power during Sandstorms
 - Flare Boost: Boosts Special Attack damage by 50% when the Pokémon is burned
+- Sand Rush: Speed is increased by 50% during Sandstorms
+- Slush Rush (unused): Speed is increased by 50% during Hailstorms
+- Unnerve: Opposing Pokémon cannot eat their Berries
+- Big Pecks: The Pokémon's Defense stat cannot be lowered
+- Poison Touch: Moves used by this Pokémon that make contact have a 30% chance to poison the target
     
 ### Ability Modernizations:
+
 - Lightning Rod
 - Sturdy
 - Storm Drain
 - Stench
 - Normalize
 
-### Ability Changes:
+### Other Ability Changes:
+
 - Slow Start: 5 turns -> 3 turns
 - Healer: Guaranteed chance to occur, no longer a 30% chance
 - Damp: Applies a new field condition that dampens the battlefield to reduce Fire-type damage by 50%; the effect is removed when all Pokémon with Damp are switch out or knocked out
 
 ### Battle Item Modernizations:
+
 - Mental Herb
 
 ### Move Modernizations and Changes:
+
 - Toxic when used by a Poison-type is perfectly accurate
 - Moves such as Leech Life and Hi Jump Kick have had their BPs increased to match modern standards
-    Some BP increases are custom, such as Knock Off (now 30BP instead of 65BP), and Fire Spin (50BP instead of 35BP), and some are not changed at all, such as Surf and Thunderbolt
+    - Some BP increases are custom, such as Knock Off (now 30BP instead of 65BP), and Fire Spin (50BP instead of 35BP), and some are not changed at all, such as Surf and Thunderbolt
 - PP has been increased when applicable for modernization, except the nerf to health-restoring moves' PP
-    Ancient Power and Silver Wind's PPs have been increased from 5 to 15
+    - Ancient Power and Silver Wind's PPs have been increased from 5 to 15
     Giga Drain's PP has been increased from 10 to 15
 - Defog removes hazards from both sides of the field
 - Growth raises Special Attack and Attack by one stage; two stages under harsh sunlight
 - Air Slash: 85BP, 100% accurate, 10% flinch
 - Moves that have been updated to be able to be reflected by Magic Coat and Magic Bounce:
-    Disable
-    Defog
-    Embargo
-    Encore
-    Foresight
-    Heal Block
-    Miracle Eye
-    Odor Sleuth
-    Roar/Whirlwind
-    Spikes (!!!)
-    Spite
-    Stealth Rock (!!!)
-    Taunt (!!!)
-    Torment
-    Toxic Spikes (!!!)
+    - Disable
+    - Defog
+    - Embargo
+    - Encore
+    - Foresight
+    - Heal Block
+    - Miracle Eye
+    - Odor Sleuth
+    - Roar/Whirlwind
+    - Spikes (!!!)
+    - Spite
+    - Stealth Rock (!!!)
+    - Taunt (!!!)
+    - Torment
+    - Toxic Spikes (!!!)
 
 ### Miscellaneous Battle System Changes:
+
+- HP bar is faster now (!!!)
+- The data structure for Trainers has been completely overhauled to be like how it is in HeartGold-Engine -- now Trainers' Pokémon can have custom Poké Balls, Abilities, EVs, IVs, etc. (!!!)
 - Ice-types receive a 50% Defense increase when under the effects of Hail (Hail has not been modernized to Snow)
 - Trainer AI has been updated to fix a few bugs, such as not reading Dry Skin as a Water immunity and viewing Storm Drain and Lightning Rod as immunities now
 - Trainer AI should (lol) work with all the new/changed Abilities
 - Paralysis
-    Not ignorable by Magic Guard (Jirachi wins the Clefable matchup even more now)
-    Reduces speed by 50%
-    Electric-types immune
+    - Not ignorable by Magic Guard (Jirachi wins the Clefable matchup even more now)
+    - Reduces speed by 50%
+    - Electric-types immune
 - Burn
-    1/16 damage instead of 1/8
-    Facade is no longer weakened
+    - 1/16 damage instead of 1/8
+    - Facade is no longer weakened
+- The cursor on the bottom screen during a battle is now able to be moved up from the Run button to the Fight button.
 
 # Additional Item Locations
+
 - Evolutionary items like the Magmarizer are purchasable at the Battle Frontier
 - Evolution stone seller in Sunyshore Market
 - Ability Capsule: Battle Frontier, Team Galactic HQ
@@ -174,7 +190,9 @@ The cursor on the bottom screen during a battle is now able to be moved up from 
 - Ability Patch: Battle Frontier
 
 # Encounters
+
 - The Pokédex accurately shows where Pokémon live
 - Murkrow and Misdreavus added back to Eterna Forest at night
 - Encounter Spiritomb at the Hallowed Tower immediately with an Odd Keystone
 - Diamond and Pearl-exclusive Sinnoh encounters have been returned, such as Glameow and Stunky
+- You can complete the Sinnoh regional Pokédex, but not the National Pokédex
