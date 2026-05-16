@@ -5695,15 +5695,19 @@ static BOOL BtlCmd_EndOfTurnWeatherEffect(BattleSystem *battleSys, BattleContext
     int type1 = BattleMon_Get(battleCtx, battler, BATTLEMON_TYPE_1, NULL);
     int type2 = BattleMon_Get(battleCtx, battler, BATTLEMON_TYPE_2, NULL);
 
+    int ability = Battler_Ability(battleCtx, battler);
+
     if (NO_CLOUD_NINE) {
         if (WEATHER_IS_SAND
             && type1 != TYPE_ROCK && type2 != TYPE_ROCK
             && type1 != TYPE_STEEL && type2 != TYPE_STEEL
             && type1 != TYPE_GROUND && type2 != TYPE_GROUND
             && battleCtx->battleMons[battler].curHP
-            && !(Battler_IgnorableAbility(battleCtx, battleCtx->defender, battleCtx->attacker, ABILITY_OVERCOAT))
-            && Battler_Ability(battleCtx, battler) != ABILITY_SAND_VEIL
-            && Battler_Ability(battleCtx, battler) != ABILITY_SAND_FORCE
+            && ability != ABILITY_OVERCOAT
+            && ability != ABILITY_SAND_VEIL
+            && ability != ABILITY_SAND_FORCE
+            && ability != ABILITY_SAND_RUSH
+            && ability != ABILITY_MAGIC_GUARD
             && (battleCtx->battleMons[battler].moveEffectsMask & MOVE_EFFECT_NO_WEATHER_DAMAGE) == FALSE) {
             battleCtx->msgMoveTemp = MOVE_SANDSTORM;
             battleCtx->hpCalcTemp = BattleSystem_Divide(battleCtx->battleMons[battler].maxHP * -1, 16);
@@ -5712,12 +5716,11 @@ static BOOL BtlCmd_EndOfTurnWeatherEffect(BattleSystem *battleSys, BattleContext
         if (WEATHER_IS_SUN
             && battleCtx->battleMons[battler].curHP
             && (battleCtx->battleMons[battler].moveEffectsMask & MOVE_EFFECT_NO_WEATHER_DAMAGE) == FALSE) {
-            if (Battler_Ability(battleCtx, battler) == ABILITY_DRY_SKIN
-                || Battler_Ability(battleCtx, battler) == ABILITY_SOLAR_POWER) {
+            if (ability == ABILITY_DRY_SKIN || ability == ABILITY_SOLAR_POWER) {
                 battleCtx->hpCalcTemp = BattleSystem_Divide(battleCtx->battleMons[battler].maxHP * -1, 8);
             }
 
-            if (Battler_Ability(battleCtx, battler) == ABILITY_SOLAR_POWER) {
+            if (ability == ABILITY_SOLAR_POWER) {
                 battleCtx->scriptTemp = WEATHER_EFFECT_SOLAR_POWER;
             }
         }
@@ -5725,14 +5728,16 @@ static BOOL BtlCmd_EndOfTurnWeatherEffect(BattleSystem *battleSys, BattleContext
         if (WEATHER_IS_HAIL
             && battleCtx->battleMons[battler].curHP
             && (battleCtx->battleMons[battler].moveEffectsMask & MOVE_EFFECT_NO_WEATHER_DAMAGE) == FALSE) {
-            if (Battler_Ability(battleCtx, battler) == ABILITY_ICE_BODY) {
+            if (ability == ABILITY_ICE_BODY) {
                 if (battleCtx->battleMons[battler].curHP < battleCtx->battleMons[battler].maxHP) {
                     battleCtx->hpCalcTemp = BattleSystem_Divide(battleCtx->battleMons[battler].maxHP, 16);
                 }
             } else if (type1 != TYPE_ICE
                 && type2 != TYPE_ICE
-                && !(Battler_IgnorableAbility(battleCtx, battleCtx->defender, battleCtx->attacker, ABILITY_OVERCOAT))
-                && Battler_Ability(battleCtx, battler) != ABILITY_SNOW_CLOAK) {
+                && ability != ABILITY_OVERCOAT
+                && ability != ABILITY_SNOW_CLOAK
+                && ability != ABILITY_SLUSH_RUSH
+                && ability != ABILITY_MAGIC_GUARD) {
                 battleCtx->msgMoveTemp = MOVE_HAIL;
                 battleCtx->hpCalcTemp = BattleSystem_Divide(battleCtx->battleMons[battler].maxHP * -1, 16);
             }
@@ -5741,19 +5746,19 @@ static BOOL BtlCmd_EndOfTurnWeatherEffect(BattleSystem *battleSys, BattleContext
         if (WEATHER_IS_RAIN) {
             if (battleCtx->battleMons[battler].curHP
                 && battleCtx->battleMons[battler].curHP < battleCtx->battleMons[battler].maxHP
-                && Battler_Ability(battleCtx, battler) == ABILITY_RAIN_DISH) {
+                && ability == ABILITY_RAIN_DISH) {
                 battleCtx->hpCalcTemp = BattleSystem_Divide(battleCtx->battleMons[battler].maxHP, 16);
             }
 
             if (battleCtx->battleMons[battler].curHP
                 && battleCtx->battleMons[battler].curHP < battleCtx->battleMons[battler].maxHP
-                && Battler_Ability(battleCtx, battler) == ABILITY_DRY_SKIN) {
+                && ability == ABILITY_DRY_SKIN) {
                 battleCtx->hpCalcTemp = BattleSystem_Divide(battleCtx->battleMons[battler].maxHP, 8);
             }
 
             if (battleCtx->battleMons[battler].curHP
                 && (battleCtx->battleMons[battler].status & MON_CONDITION_ANY)
-                && Battler_Ability(battleCtx, battler) == ABILITY_HYDRATION) {
+                && ability == ABILITY_HYDRATION) {
                 if (battleCtx->battleMons[battler].status & MON_CONDITION_SLEEP) {
                     battleCtx->msgTemp = MSGCOND_SLEEP;
                 } else if (battleCtx->battleMons[battler].status & MON_CONDITION_ANY_POISON) {

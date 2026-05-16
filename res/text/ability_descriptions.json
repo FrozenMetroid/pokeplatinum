@@ -1083,38 +1083,52 @@
       ]
     },
     {
-      "id": "pl_msg_00000612_00154",
+      "id": "pl_msg_00000612_00155",
       "en_US": [
         "Boosts certain moves’\n",
         "power in a sandstorm."
       ]
     },
     {
-      "id": "pl_msg_00000612_00155",
+      "id": "pl_msg_00000612_00156",
       "en_US": [
         "Powers up special\n",
         "attacks when burned."
       ]
     },
     {
-      "id": "pl_msg_00000612_00156",
+      "id": "pl_msg_00000612_00157",
       "en_US": [
         "Protects the Pokémon from\n",
         "Defense-lowering attacks."
       ]
     },
     {
-      "id": "pl_msg_00000612_00157",
+      "id": "pl_msg_00000612_00158",
       "en_US": [
         "May poison targets when\n",
         "contact is made."
       ]
     },
     {
-      "id": "pl_msg_00000612_00158",
+      "id": "pl_msg_00000612_00159",
       "en_US": [
         "Makes the foe nervous and\n",
         "unable to eat Berries."
+      ]
+    },
+    {
+      "id": "pl_msg_00000612_00160",
+      "en_US": [
+        "Boosts the Pokémon’s\n",
+        "Speed in a sandstorm."
+      ]
+    },
+    {
+      "id": "pl_msg_00000612_00161",
+      "en_US": [
+        "Boosts the Pokémon’s\n",
+        "Speed in a hailstorm."
       ]
     }
   ]
