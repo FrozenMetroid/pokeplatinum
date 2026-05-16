@@ -23,6 +23,7 @@
 #include "map_object.h"
 #include "player_avatar.h"
 #include "savedata_misc.h"
+#include "senate_config.h"
 #include "sys_task_manager.h"
 #include "system.h"
 #include "terrain_collision_manager.h"
@@ -156,6 +157,13 @@ BOOL BerryPatches_HarvestBerry(FieldSystem *fieldSystem, MapObject *mapObject)
     patchID = MapObject_GetDataAt(mapObject, 0);
     berryID = BerryPatches_GetPatchBerryID(berryPatches, patchID);
     yieldAmount = BerryPatches_GetPatchYield(berryPatches, patchID);
+
+    #ifdef BATTLE_ADD_HARVEST
+    Pokemon *mon = Party_GetPokemonBySlotIndex(SaveData_GetParty(fieldSystem->saveData), 0); // Get the lead mon
+    if (Pokemon_GetValue(mon, MON_DATA_ABILITY, NULL) == ABILITY_HARVEST) {
+        yieldAmount++;
+    }
+    #endif
 
     FieldSystem_SaveTVSegment_PlantingAndWateringShow(fieldSystem, BerryPatches_ConvertTagNumberToItemID(berryID), BerryPatches_GetPatchYieldRating(berryPatches, patchID), yieldAmount);
     BerryPatches_HarvestPatch(berryPatches, patchID);

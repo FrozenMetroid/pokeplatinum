@@ -8762,6 +8762,48 @@
         "The foe’s {STRVAR_1 1, 0, 0}’s\n",
         "{STRVAR_1 5, 1, 0} dampened the battlefield!"
       ]
+    },
+    {
+      "id": "BattleStrings_Text_HarvestRestoredBerry_Ally",
+      "en_US": [
+        "{STRVAR_1 1, 0, 0}’s Harvest\n",
+        "restored its {STRVAR_1 8, 1, 0}!"
+      ]
+    },
+    {
+      "id": "BattleStrings_Text_HarvestRestoredBerry_Wild",
+      "en_US": [
+        "The wild {STRVAR_1 1, 0, 0}’s Harvest\n",
+        "restored its {STRVAR_1 8, 1, 0}!"
+      ]
+    },
+    {
+      "id": "BattleStrings_Text_HarvestRestoredBerry_Foe",
+      "en_US": [
+        "The foe’s {STRVAR_1 1, 0, 0}’s Harvest\n",
+        "restored its {STRVAR_1 8, 1, 0}!"
+      ]
+    },
+    {
+      "id": "BattleStrings_Text_NeutralizingGas_Ally",
+      "en_US": [
+        "{STRVAR_1 1, 0, 0}’s {STRVAR_1 8, 1, 0}\n",
+        "filled the area!"
+      ]
+    },
+    {
+      "id": "BattleStrings_Text_NeutralizingGas_Wild",
+      "en_US": [
+        "The wild {STRVAR_1 1, 0, 0}’s {STRVAR_1 8, 1, 0}\n",
+        "filled the area!"
+      ]
+    },
+    {
+      "id": "BattleStrings_Text_NeutralizingGas_Foe",
+      "en_US": [
+        "The foe’s {STRVAR_1 1, 0, 0}’s {STRVAR_1 8, 1, 0}\n",
+        "filled the area!"
+      ]
     }
   ]
 }

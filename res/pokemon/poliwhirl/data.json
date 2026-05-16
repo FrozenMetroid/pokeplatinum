@@ -1,11 +1,11 @@
 {
     "base_stats": {
-        "hp": 65,
-        "attack": 65,
+        "hp": 70,
+        "attack": 85,
         "defense": 65,
         "speed": 90,
-        "special_attack": 50,
-        "special_defense": 50
+        "special_attack": 85,
+        "special_defense": 60
     },
     "types": [ "TYPE_WATER", "TYPE_WATER" ],
     "catch_rate": 120,
@@ -28,28 +28,26 @@
     "exp_rate": "EXP_RATE_MEDIUM_SLOW",
     "egg_groups": [ "EGG_GROUP_WATER_1", "EGG_GROUP_WATER_1" ],
     "abilities": [ "ABILITY_WATER_ABSORB", "ABILITY_DAMP" ],
-    "hiddenAbility": "ABILITY_NONE",
+    "hiddenAbility": "ABILITY_SWIFT_SWIM",
     "safari_flee_rate": 0,
     "body_color": "MON_COLOR_BLUE",
     "flip_sprite": true,
     "icon_palette": 0,
     "learnset": {
         "by_level": [
-            [ 1, "MOVE_WATER_SPORT" ],
-            [ 1, "MOVE_BUBBLE" ],
-            [ 1, "MOVE_HYPNOSIS" ],
-            [ 5, "MOVE_BUBBLE" ],
-            [ 8, "MOVE_HYPNOSIS" ],
-            [ 11, "MOVE_WATER_GUN" ],
-            [ 15, "MOVE_DOUBLE_SLAP" ],
-            [ 18, "MOVE_RAIN_DANCE" ],
-            [ 21, "MOVE_BODY_SLAM" ],
-            [ 27, "MOVE_BUBBLE_BEAM" ],
-            [ 32, "MOVE_MUD_SHOT" ],
-            [ 37, "MOVE_BELLY_DRUM" ],
-            [ 43, "MOVE_WAKE_UP_SLAP" ],
-            [ 48, "MOVE_HYDRO_PUMP" ],
-            [ 53, "MOVE_MUD_BOMB" ]
+            [1, "MOVE_WATER_SPORT"],
+            [1, "MOVE_BUBBLE"],
+            [8, "MOVE_HYPNOSIS"],
+            [11, "MOVE_WATER_GUN"],
+            [15, "MOVE_DOUBLE_SLAP"],
+            [18, "MOVE_RAIN_DANCE"],
+            [21, "MOVE_BUBBLE_BEAM"],
+            [25, "MOVE_BODY_SLAM"],
+            [28, "MOVE_MUD_SHOT"],
+            [33, "MOVE_BELLY_DRUM"],
+            [37, "MOVE_MUD_BOMB"],
+            [40, "MOVE_WAKE_UP_SLAP"],
+            [45, "MOVE_HYDRO_PUMP"]
         ],
         "by_tm": [
             "TM01",

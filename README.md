@@ -1,4 +1,4 @@
-# Pokémon Platinum
+# Pokémon Platinum, Senate's Version
 
 This is a personal fork of the decompilation of Pokémon Platinum. For instructions on how to set up the repository, please read [`INSTALL.md`](INSTALL.md). 
 
@@ -10,12 +10,14 @@ Credits:
 - Everyone who contributed to the decompilation, without which this fork would not exist. You all are awesome!
 - Everyone who contributed to HeartGold-Engine, whose work helped me to program things such as modernized Sturdy. Special shoutout to BluRose in particular!
 - RavePossum for multiple tutorials, such as showing EVs, IVs, and nature-affected stats on the summary screen
+- Keyswim for arranging the Battle! Johto Gym Leader theme for Jasmine's fight in the Battleground
 
-- Frozen Metroid (Senate)
+- Senate (aka Frozen Metroid)
 
 # Features
-- Faster HP Bar
+
 - Singleplayer Wonder Trade in the Global Terminal
+- Most if not all Pokémon sprites in battle have been updated to use HeartGold/SoulSilver's and/or my own edits (e.g. improving Hoenn palettes)
 - Footstep sounds for walking, running, metal, grass, wood, and caves from HeartGold and Soulsilver
     - Metal, Grass, and Wood metatile behavior have not been applied to any maps because of the inability to edit maps in the decomp currently
 - Multiple Premier Balls when buying Poké Balls of any type
@@ -44,8 +46,8 @@ Credits:
 - Rebalanced Pokémon and Trainers
 - Some different Pokémon encounters
 - Pokémon that require trading to evolve can now evolve in singleplayer
-    Pokémon that required holding an item to evolve while trading now simply need to hold the item and level up once
-    Pokémon that evolved by trading will now evolve with a Linking Cord
+    - Pokémon that required holding an item to evolve while trading now simply need to hold the item and level up once
+    - Pokémon that evolved by trading will now evolve with a Linking Cord
 - 1000 steps in Safari Zone instead of 500
 - Toggleable party-wide Exp. Share
 - Honey Trees only take 30 minutes to give an encounter rather than 6 hours
@@ -63,6 +65,8 @@ Credits:
     - Smoochum
     - Spinarak
     - Vulpix
+- Gym Leader sprites, as well as some regular Trainers' sprites, have been improved
+- If the player's lead Pokémon has the Ability Harvest, an additional Berry will be harvested when harvesting Berries in the overworld
 - A myriad of changes to the battle system, as documented below
 
 # Battle Changes
@@ -110,6 +114,9 @@ All Pokémon have received changes to any combination of their learnsets, Abilit
 - Unnerve: Opposing Pokémon cannot eat their Berries
 - Big Pecks: The Pokémon's Defense stat cannot be lowered
 - Poison Touch: Moves used by this Pokémon that make contact have a 30% chance to poison the target
+- Wonder Skin: Makes status moves more likely to miss
+- Harvest: 50% chance (or 100% chance in harsh sunlight) to restore a Berry that was consumed in battle
+- Neutralizing Gas: Other Pokémon's Abilities, besides Multitype and Neutralizing Gas, are suppressed
     
 ### Ability Modernizations:
 
@@ -195,4 +202,8 @@ All Pokémon have received changes to any combination of their learnsets, Abilit
 - Murkrow and Misdreavus added back to Eterna Forest at night
 - Encounter Spiritomb at the Hallowed Tower immediately with an Odd Keystone
 - Diamond and Pearl-exclusive Sinnoh encounters have been returned, such as Glameow and Stunky
-- You can complete the Sinnoh regional Pokédex, but not the National Pokédex
+- You can complete the Sinnoh regional Pokédex, but not the National Pokédex, through singleplayer
+
+# Extra Trainers
+
+- Jasmine: Found in the Battleground with the other Gym Leaders after clearing Stark Mountain

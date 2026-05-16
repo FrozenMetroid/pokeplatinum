@@ -1,11 +1,11 @@
 {
     "base_stats": {
-        "hp": 35,
-        "attack": 70,
-        "defense": 55,
+        "hp": 60,
+        "attack": 80,
+        "defense": 75,
         "speed": 25,
-        "special_attack": 45,
-        "special_defense": 55
+        "special_attack": 55,
+        "special_defense": 75
     },
     "types": [ "TYPE_BUG", "TYPE_GRASS" ],
     "catch_rate": 190,
@@ -35,16 +35,22 @@
     "icon_palette": 0,
     "learnset": {
         "by_level": [
-            [ 1, "MOVE_SCRATCH" ],
-            [ 6, "MOVE_STUN_SPORE" ],
-            [ 6, "MOVE_POISON_POWDER" ],
-            [ 11, "MOVE_LEECH_LIFE" ],
-            [ 17, "MOVE_SPORE" ],
-            [ 22, "MOVE_SLASH" ],
-            [ 27, "MOVE_GROWTH" ],
-            [ 33, "MOVE_GIGA_DRAIN" ],
-            [ 38, "MOVE_AROMATHERAPY" ],
-            [ 43, "MOVE_X_SCISSOR" ]
+            [1, "MOVE_SCRATCH"],
+            [1, "MOVE_FURY_CUTTER"],
+            [1, "MOVE_ABSORB"],
+            [6, "MOVE_STUN_SPORE"],
+            [6, "MOVE_POISON_POWDER"],
+            [11, "MOVE_BUG_BITE"],
+            [15, "MOVE_MEGA_DRAIN"],
+            [18, "MOVE_GROWTH"],
+            [22, "MOVE_SLASH"],
+            [26, "MOVE_SPORE"],
+            [30, "MOVE_GIGA_DRAIN"],
+            [34, "MOVE_X_SCISSOR"],
+            [38, "MOVE_CROSS_POISON"],
+            [40, "MOVE_AROMATHERAPY"],
+            [43, "MOVE_LEECH_LIFE"],
+            [47, "MOVE_SEED_BOMB"]
         ],
         "by_tm": [
             "TM06",

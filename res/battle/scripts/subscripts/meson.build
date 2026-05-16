@@ -311,4 +311,6 @@ subscript_files = files(
     'subscript_cannot_use_move.s',
     'subscript_unnerve.s',
     'subscript_damp.s',
+    'subscript_harvest.s',
+    'subscript_neutralizing_gas.s',
 )

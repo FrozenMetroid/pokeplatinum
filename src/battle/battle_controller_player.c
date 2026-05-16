@@ -3035,6 +3035,13 @@ static int BattleControllerPlayer_CheckMoveHitAccuracy(BattleSystem *battleSys, 
         #endif
     }
 
+    #ifdef BATTLE_ADD_WONDER_SKIN
+    if (Battler_Ability(battleCtx, defender) == ABILITY_WONDER_SKIN
+        && (moveClass == CLASS_STATUS)) {
+        hitRate = hitRate * 50 / 100;
+    }
+    #endif
+
     if (battleCtx->fieldConditionsMask & FIELD_CONDITION_GRAVITY) {
         hitRate = hitRate * 10 / 6;
     }
@@ -3413,22 +3420,50 @@ static void BattleControllerPlayer_CheckMoveFailure(BattleSystem *battleSys, Bat
 {
     if (battleCtx->moveStatusFlags & MOVE_STATUS_NO_MORE_WORK) {
         battleCtx->command = BATTLE_CONTROL_LOOP_SPREAD_MOVES;
+        return;
     } else if (battleCtx->moveStatusFlags & MOVE_STATUS_NO_PP) {
         LOAD_SUBSEQ(subscript_no_pp);
         battleCtx->command = BATTLE_CONTROL_EXEC_SCRIPT;
         battleCtx->commandNext = BATTLE_CONTROL_UPDATE_MOVE_BUFFERS;
+        return;
     } else if (battleCtx->multiHitLoop && (battleCtx->moveStatusFlags & MOVE_STATUS_MISSED)) {
         // Thrashing moves have a special status flag.
         battleCtx->moveStatusFlags &= ~MOVE_STATUS_MISSED;
         battleCtx->moveStatusFlags |= MOVE_STATUS_MULTI_HIT_DISRUPTED;
         battleCtx->command = BATTLE_CONTROL_AFTER_MOVE_MESSAGE;
+        return;
     } else if (battleCtx->moveStatusFlags & MOVE_STATUS_DID_NOT_HIT) {
         LOAD_SUBSEQ(subscript_missed);
         battleCtx->command = BATTLE_CONTROL_EXEC_SCRIPT;
         battleCtx->commandNext = BATTLE_CONTROL_LOOP_FAINTED; // crash damage can kill
-    } else {
-        battleCtx->command = BATTLE_CONTROL_USE_MOVE;
+        return;
     }
+
+    BOOL butItFailed = FALSE;
+
+    switch (battleCtx->moveCur)
+    {
+        case MOVE_GASTRO_ACID:
+            if (BattleSystem_CannotSuppressAbility(battleCtx->battleMons[battleCtx->defender].ability)) {
+                butItFailed = TRUE;
+            }
+            break;
+        case MOVE_SKILL_SWAP:
+            if (BattleSystem_CannotSwapAbilities(battleCtx, battleCtx->attacker, battleCtx->defender)) {
+                butItFailed = TRUE;
+            }
+            break;
+        case MOVE_WORRY_SEED:
+            if (BattleSystem_CannotSuppressAbility(battleCtx->battleMons[battleCtx->defender].ability)
+                || Battler_Ability(battleCtx, battleCtx->defender) == ABILITY_TRUANT) {
+                butItFailed = TRUE;
+            }
+            break;
+        default:
+            break;
+    }
+
+    battleCtx->command = BATTLE_CONTROL_USE_MOVE;
 }
 
 static void BattleControllerPlayer_UseMove(BattleSystem *battleSys, BattleContext *battleCtx)

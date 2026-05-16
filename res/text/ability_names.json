@@ -615,7 +615,7 @@
     },
     {
       "id": "pl_msg_00000610_00153",
-      "en_US": "QueenlyMajesty"
+      "en_US": "Queenly Majesty"
     },
     {
       "id": "pl_msg_00000610_00154",
@@ -648,6 +648,18 @@
     {
       "id": "pl_msg_00000610_00161",
       "en_US": "Slush Rush"
+    },
+    {
+      "id": "pl_msg_00000610_00162",
+      "en_US": "Wonder Skin"
+    },
+    {
+      "id": "pl_msg_00000610_00163",
+      "en_US": "Harvest"
+    },
+    {
+      "id": "pl_msg_00000610_00164",
+      "en_US": "Neutralizing Gas"
     }
   ]
 }

@@ -3217,6 +3217,22 @@ u8 Battler_Ability(BattleContext *battleCtx, int battler)
         return ABILITY_NONE;
     }
 
+    #ifdef BATTLE_ADD_NEUTRALIZING_GAS
+    if (battleCtx->battleMons[battler].ability == ABILITY_NEUTRALIZING_GAS
+        && battleCtx->battleMons[battler].statusVolatile & VOLATILE_CONDITION_TRANSFORM) {
+        return ABILITY_NONE;
+    }
+
+    // if any mon on the field has neutralizing gas, then all abilities are suppressed besides those that cannot be suppressed
+    for (int i = 0; i < 4; i++) { // cannot use BattleSystem_GetMaxBattlers here 
+        if ( battleCtx->battleMons[i].ability == ABILITY_NEUTRALIZING_GAS
+            && battleCtx->battleMons[i].curHP
+            && (BattleSystem_CannotSuppressAbility(battleCtx->battleMons[battler].ability) == FALSE)) {
+            return ABILITY_NONE;
+        }
+    }
+    #endif
+
     return battleCtx->battleMons[battler].ability;
 }
 
@@ -3749,6 +3765,22 @@ BOOL BattleSystem_TriggerTurnEndAbility(BattleSystem *battleSys, BattleContext *
         }
         break;
     #endif
+    #ifdef BATTLE_ADD_HARVEST
+    case ABILITY_HARVEST:
+        if ((battleCtx->battleMons[battler].curHP
+            && Item_IsBerry(battleCtx->battleMons[battler].heldItem)
+            && ((BattleSystem_RandNext(battleSys) % 2 == 0)
+            || ((battleCtx->fieldConditionsMask & FIELD_CONDITION_SUNNY)
+            && (NO_CLOUD_NINE))))) {
+            
+            battleCtx->msgItemTemp = battleCtx->recycleItem[battler];
+            battleCtx->recycleItem[battler] = 0;
+            battleCtx->battleMons[battler].heldItem = battleCtx->msgItemTemp;
+            subscript = subscript_harvest;
+            result = TRUE;
+            }
+        break;
+    #endif
     }
 
     if (result == TRUE) {
@@ -3786,6 +3818,9 @@ enum SwitchInCheckState {
     SWITCH_IN_CHECK_STATE_START = 0,
 
     SWITCH_IN_CHECK_STATE_FIELD_WEATHER = SWITCH_IN_CHECK_STATE_START,
+    #ifdef BATTLE_ADD_NEUTRALIZING_GAS
+    SWITCH_IN_CHECK_STATE_NEUTRALIZING_GAS,
+    #endif
     SWITCH_IN_CHECK_STATE_TRACE,
     SWITCH_IN_CHECK_STATE_WEATHER_ABILITIES,
     SWITCH_IN_CHECK_STATE_INTIMIDATE,
@@ -3884,7 +3919,26 @@ int BattleSystem_TriggerEffectOnSwitch(BattleSystem *battleSys, BattleContext *b
 
             battleCtx->switchInCheckState++;
             break;
+        #ifdef BATTLE_ADD_NEUTRALIZING_GAS
+        case SWITCH_IN_CHECK_STATE_NEUTRALIZING_GAS:
+            for (i = 0; i < maxBattlers; i++) {
+                battler = battleCtx->monSpeedOrder[i];
 
+                if (battleCtx->battleMons[battler].neutralizingGasAnnounced == FALSE
+                    && battleCtx->battleMons[battler].curHP
+                    && Battler_Ability(battleCtx, battler) == ABILITY_NEUTRALIZING_GAS) {
+                    battleCtx->battleMons[battler].neutralizingGasAnnounced = TRUE;
+                    battleCtx->msgBattlerTemp = battler;
+                    subscript = subscript_neutralizing_gas;
+                    result = TRUE;
+                    break;
+                }
+            }
+            if (i == maxBattlers) {
+                battleCtx->switchInCheckState++;
+            }
+            break;
+        #endif
         case SWITCH_IN_CHECK_STATE_TRACE:
             for (i = 0; i < maxBattlers; i++) {
                 battler = battleCtx->monSpeedOrder[i];
@@ -8985,4 +9039,32 @@ BOOL BattleSystem_MoveNotExemptedFromPriorityBlocking(BattleContext *battleCtx, 
     }
 
     return TRUE;
+}
+
+#ifdef BATTLE_ADD_NEUTRALIZING_GAS
+BOOL BattleSystem_CannotSuppressAbility(u8 ability)
+{
+    switch (ability) {
+        case ABILITY_MULTITYPE:
+        case ABILITY_NEUTRALIZING_GAS:
+            return TRUE;
+        default:
+            return FALSE;
+    }
+}
+#endif
+
+BOOL BattleSystem_CannotSwapAbilities(BattleContext *battleCtx, int attacker, int defender)
+{
+    u16 abilityAttacker = Battler_Ability(battleCtx, attacker);
+    u16 abilityDefender = Battler_Ability(battleCtx, defender);
+
+    if (abilityAttacker == ABILITY_MULTITYPE || abilityDefender == ABILITY_MULTITYPE) {
+        return TRUE;
+    } else if (abilityAttacker == ABILITY_WONDER_GUARD || abilityDefender == ABILITY_WONDER_GUARD) {
+        return TRUE;
+    } else if (abilityAttacker == ABILITY_NEUTRALIZING_GAS || abilityDefender == ABILITY_NEUTRALIZING_GAS) {
+        return TRUE;
+    }
+    return FALSE;
 }

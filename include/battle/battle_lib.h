@@ -1521,4 +1521,6 @@ BOOL MoveIsAffectedByNormalizeVariants(int move);
  */
 BOOL BattleSystem_MoveNotExemptedFromPriorityBlocking(BattleContext *battleCtx, int attacker, int defender);
 
+// for Neutralizing Gas and Gastro Acid
+BOOL BattleSystem_CannotSuppressAbility(u8 ability);
 #endif // POKEPLATINUM_BATTLE_BATTLE_LIB_H

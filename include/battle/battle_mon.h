@@ -100,7 +100,8 @@ typedef struct BattleMon {
     u32 sheerForceActivated : 1;
     u32 unnerveAnnounced : 1;
     u32 dampAnnounced : 1;
-    u32 padding_extra : 29;
+    u32 neutralizingGasAnnounced : 1;
+    u32 padding_extra : 28;
 
     u8 ppCur[LEARNED_MOVES_MAX];
     u8 ppUps[LEARNED_MOVES_MAX];

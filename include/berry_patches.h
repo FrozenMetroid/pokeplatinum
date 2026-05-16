@@ -3,6 +3,9 @@
 
 #include "constants/heap.h"
 #include "generated/berry_growth_stages.h"
+#include "generated/abilities.h"
+
+#include "savedata.h"
 
 #define MAX_BERRY_PATCHES 128
 

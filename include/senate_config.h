@@ -110,7 +110,11 @@ Currently not working
 
 #define BATTLE_ADD_DAMP_BATTLEFIELD // adds the Damp field condition that weakens Fire-type moves
 
+#define BATTLE_ADD_WONDER_SKIN
 
+#define BATTLE_ADD_HARVEST // also for berry patches giving an additional berry if the lead mon has Harvest
+
+#define BATTLE_ADD_NEUTRALIZING_GAS
 // The following are always applied because they deal with some subscripts and/or things that aren't easily configurable
 // Modernization:
 // 1) Storm Drain and Lightning Rod

@@ -1130,6 +1130,27 @@
         "Boosts the Pokémon’s\n",
         "Speed in a hailstorm."
       ]
+    },
+    {
+      "id": "pl_msg_00000612_00162",
+      "en_US": [
+        "Makes status moves\n",
+        "more likely to miss."
+      ]
+    },
+    {
+      "id": "pl_msg_00000612_00163",
+      "en_US": [
+        "May create another Berry\n",
+        "after one is used."
+      ]
+    },
+    {
+      "id": "pl_msg_00000612_00164",
+      "en_US": [
+        "Nullifies the effects\n",
+        "of other Abilities."
+      ]
     }
   ]
 }
