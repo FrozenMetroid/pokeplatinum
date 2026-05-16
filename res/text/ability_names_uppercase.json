@@ -656,6 +656,10 @@
     {
       "id": "pl_msg_00000611_00164",
       "en_US": "NEUTRALIZING GAS"
+    },
+    {
+      "id": "pl_msg_00000611_00165",
+      "en_US": "WEAK ARMOR"
     }
   ]
 }

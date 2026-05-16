@@ -115,6 +115,8 @@ Currently not working
 #define BATTLE_ADD_HARVEST // also for berry patches giving an additional berry if the lead mon has Harvest
 
 #define BATTLE_ADD_NEUTRALIZING_GAS
+
+#define BATTLE_ADD_WEAK_ARMOR
 // The following are always applied because they deal with some subscripts and/or things that aren't easily configurable
 // Modernization:
 // 1) Storm Drain and Lightning Rod

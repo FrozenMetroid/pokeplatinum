@@ -3064,8 +3064,14 @@ static BOOL BtlCmd_ChangeStatStage(BattleSystem *battleSys, BattleContext *battl
         if (battleCtx->sideEffectType == SIDE_EFFECT_TYPE_ABILITY) {
             battleCtx->msgBuffer.id = BattleStrings_Text_PokemonsAbilityCutsPokemonsStat_AllyAlly; // "{0}'s {1} cuts {2}'s {3}!"
             battleCtx->msgBuffer.tags = TAG_NICKNAME_ABILITY_NICKNAME_STAT;
-            battleCtx->msgBuffer.params[0] = BattleSystem_NicknameTag(battleCtx, battleCtx->attacker);
-            battleCtx->msgBuffer.params[1] = battleCtx->battleMons[battleCtx->attacker].ability;
+            // TODO: Confirm this change works for everything
+            if (battleCtx->attacker != battleCtx->msgBattlerTemp) { // added for Weak Armor
+                battleCtx->msgBuffer.params[0] = BattleSystem_NicknameTag(battleCtx, battleCtx->msgBattlerTemp);
+                battleCtx->msgBuffer.params[1] = battleCtx->battleMons[battleCtx->msgBattlerTemp].ability;
+            } else {
+                battleCtx->msgBuffer.params[0] = BattleSystem_NicknameTag(battleCtx, battleCtx->attacker);
+                battleCtx->msgBuffer.params[1] = battleCtx->battleMons[battleCtx->attacker].ability;
+            }
             battleCtx->msgBuffer.params[2] = BattleSystem_NicknameTag(battleCtx, battleCtx->sideEffectMon);
             battleCtx->msgBuffer.params[3] = BATTLE_STAT_ATTACK + statOffset;
         } else {

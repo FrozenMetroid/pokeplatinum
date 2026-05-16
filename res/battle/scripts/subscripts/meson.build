@@ -313,4 +313,5 @@ subscript_files = files(
     'subscript_damp.s',
     'subscript_harvest.s',
     'subscript_neutralizing_gas.s',
+    'subscript_weak_armor.s',
 )

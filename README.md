@@ -117,6 +117,7 @@ All Pokémon have received changes to any combination of their learnsets, Abilit
 - Wonder Skin: Makes status moves more likely to miss
 - Harvest: 50% chance (or 100% chance in harsh sunlight) to restore a Berry that was consumed in battle
 - Neutralizing Gas: Other Pokémon's Abilities, besides Multitype and Neutralizing Gas, are suppressed
+- Weak Armor: When hit by a physical move, this Pokémon's Defense stat lowers by one stage and its Speed stat rises by two stages
     
 ### Ability Modernizations:
 

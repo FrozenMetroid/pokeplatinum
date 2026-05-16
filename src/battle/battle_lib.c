@@ -4554,226 +4554,247 @@ BOOL BattleSystem_TriggerAbilityOnHit(BattleSystem *battleSys, BattleContext *ba
     } else {
         moveType = CURRENT_MOVE_DATA.type;
     }
+    
+    if (Battler_Ability(battleCtx, battleCtx->attacker) != ABILITY_MOLD_BREAKER)
+    {
+        switch (Battler_Ability(battleCtx, battleCtx->defender)) {
+        case ABILITY_STATIC:
+            if (ATTACKING_MON.curHP
+                && ATTACKING_MON.status == MON_CONDITION_NONE
+                && (battleCtx->moveStatusFlags & MOVE_STATUS_NO_EFFECTS) == FALSE
+                && (battleCtx->battleStatusMask & SYSCTL_FIRST_OF_MULTI_TURN) == FALSE
+                && (battleCtx->battleStatusMask2 & SYSCTL_UTURN_ACTIVE) == FALSE
+                && (DEFENDER_SELF_TURN_FLAGS.physicalDamageTaken || DEFENDER_SELF_TURN_FLAGS.specialDamageTaken)
+                && (CURRENT_MOVE_DATA.flags & MOVE_FLAG_MAKES_CONTACT)
+                && BattleSystem_RandNext(battleSys) % 10 < 3) {
+                battleCtx->sideEffectType = SIDE_EFFECT_TYPE_ABILITY;
+                battleCtx->sideEffectMon = battleCtx->attacker;
+                battleCtx->msgBattlerTemp = battleCtx->defender;
 
-    switch (Battler_Ability(battleCtx, battleCtx->defender)) {
-    case ABILITY_STATIC:
-        if (ATTACKING_MON.curHP
-            && ATTACKING_MON.status == MON_CONDITION_NONE
-            && (battleCtx->moveStatusFlags & MOVE_STATUS_NO_EFFECTS) == FALSE
-            && (battleCtx->battleStatusMask & SYSCTL_FIRST_OF_MULTI_TURN) == FALSE
-            && (battleCtx->battleStatusMask2 & SYSCTL_UTURN_ACTIVE) == FALSE
-            && (DEFENDER_SELF_TURN_FLAGS.physicalDamageTaken || DEFENDER_SELF_TURN_FLAGS.specialDamageTaken)
-            && (CURRENT_MOVE_DATA.flags & MOVE_FLAG_MAKES_CONTACT)
-            && BattleSystem_RandNext(battleSys) % 10 < 3) {
-            battleCtx->sideEffectType = SIDE_EFFECT_TYPE_ABILITY;
-            battleCtx->sideEffectMon = battleCtx->attacker;
-            battleCtx->msgBattlerTemp = battleCtx->defender;
-
-            *subscript = subscript_paralyze;
-            result = TRUE;
-        }
-        break;
-
-    case ABILITY_COLOR_CHANGE:
-
-        if (Battler_Ability(battleCtx, battleCtx->attacker) == ABILITY_SHEER_FORCE && battleCtx->battleMons[battleCtx->attacker].sheerForceActivated == TRUE) { // sheer force doesn't let color change activate
-            return FALSE;
-        }
-        if (DEFENDING_MON.curHP
-            && (battleCtx->moveStatusFlags & MOVE_STATUS_NO_EFFECTS) == FALSE
-            && battleCtx->moveCur != MOVE_STRUGGLE
-            && (DEFENDER_SELF_TURN_FLAGS.physicalDamageTaken || DEFENDER_SELF_TURN_FLAGS.specialDamageTaken)
-            && (battleCtx->battleStatusMask2 & SYSCTL_UTURN_ACTIVE) == FALSE
-            && CURRENT_MOVE_DATA.power
-            && BattleMon_Get(battleCtx, battleCtx->defender, BATTLEMON_TYPE_1, NULL) != moveType
-            && BattleMon_Get(battleCtx, battleCtx->defender, BATTLEMON_TYPE_2, NULL) != moveType) {
-            *subscript = subscript_color_change;
-            battleCtx->msgTemp = moveType;
-            result = TRUE;
-        }
-        break;
-
-    case ABILITY_ROUGH_SKIN:
-        if (ATTACKING_MON.curHP
-            && Battler_Ability(battleCtx, battleCtx->attacker) != ABILITY_MAGIC_GUARD
-            && (battleCtx->moveStatusFlags & MOVE_STATUS_NO_EFFECTS) == FALSE
-            && (battleCtx->battleStatusMask & SYSCTL_FIRST_OF_MULTI_TURN) == FALSE
-            && (battleCtx->battleStatusMask2 & SYSCTL_UTURN_ACTIVE) == FALSE
-            && (DEFENDER_SELF_TURN_FLAGS.physicalDamageTaken || DEFENDER_SELF_TURN_FLAGS.specialDamageTaken)
-            && (CURRENT_MOVE_DATA.flags & MOVE_FLAG_MAKES_CONTACT)) {
-            battleCtx->hpCalcTemp = BattleSystem_Divide(ATTACKING_MON.maxHP * -1, 8);
-            battleCtx->msgBattlerTemp = battleCtx->attacker;
-
-            *subscript = subscript_rough_skin;
-            result = TRUE;
-        }
-        break;
-
-    case ABILITY_EFFECT_SPORE:
-        if (ATTACKING_MON.curHP
-            && ATTACKING_MON.status == MON_CONDITION_NONE
-            && (battleCtx->moveStatusFlags & MOVE_STATUS_NO_EFFECTS) == FALSE
-            && (battleCtx->battleStatusMask & SYSCTL_FIRST_OF_MULTI_TURN) == FALSE
-            && (battleCtx->battleStatusMask2 & SYSCTL_UTURN_ACTIVE) == FALSE
-            && (DEFENDER_SELF_TURN_FLAGS.physicalDamageTaken || DEFENDER_SELF_TURN_FLAGS.specialDamageTaken)
-            && (CURRENT_MOVE_DATA.flags & MOVE_FLAG_MAKES_CONTACT)
-            && BattleSystem_RandNext(battleSys) % 10 < 3) {
-            switch (BattleSystem_RandNext(battleSys) % 3) {
-            case 0:
-            default:
-                *subscript = subscript_poison;
-                break;
-            case 1:
                 *subscript = subscript_paralyze;
-                break;
-            case 2:
-                *subscript = subscript_fall_asleep;
-                break;
-            }
-
-            battleCtx->sideEffectType = SIDE_EFFECT_TYPE_ABILITY;
-            battleCtx->sideEffectMon = battleCtx->attacker;
-            battleCtx->msgBattlerTemp = battleCtx->defender;
-
-            result = TRUE;
-        }
-        break;
-
-    case ABILITY_POISON_POINT:
-        if (ATTACKING_MON.curHP
-            && ATTACKING_MON.status == MON_CONDITION_NONE
-            && (battleCtx->moveStatusFlags & MOVE_STATUS_NO_EFFECTS) == FALSE
-            && (battleCtx->battleStatusMask & SYSCTL_FIRST_OF_MULTI_TURN) == FALSE
-            && (battleCtx->battleStatusMask2 & SYSCTL_UTURN_ACTIVE) == FALSE
-            && (DEFENDER_SELF_TURN_FLAGS.physicalDamageTaken || DEFENDER_SELF_TURN_FLAGS.specialDamageTaken)
-            && (CURRENT_MOVE_DATA.flags & MOVE_FLAG_MAKES_CONTACT)
-            && BattleSystem_RandNext(battleSys) % 10 < 3) {
-            battleCtx->sideEffectType = SIDE_EFFECT_TYPE_ABILITY;
-            battleCtx->sideEffectMon = battleCtx->attacker;
-            battleCtx->msgBattlerTemp = battleCtx->defender;
-
-            *subscript = subscript_poison;
-            result = TRUE;
-        }
-        break;
-
-    case ABILITY_FLAME_BODY:
-        if (ATTACKING_MON.curHP
-            && ATTACKING_MON.status == MON_CONDITION_NONE
-            && (battleCtx->moveStatusFlags & MOVE_STATUS_NO_EFFECTS) == FALSE
-            && (battleCtx->battleStatusMask & SYSCTL_FIRST_OF_MULTI_TURN) == FALSE
-            && (battleCtx->battleStatusMask2 & SYSCTL_UTURN_ACTIVE) == FALSE
-            && (DEFENDER_SELF_TURN_FLAGS.physicalDamageTaken || DEFENDER_SELF_TURN_FLAGS.specialDamageTaken)
-            && (CURRENT_MOVE_DATA.flags & MOVE_FLAG_MAKES_CONTACT)
-            && BattleSystem_RandNext(battleSys) % 10 < 3) {
-            battleCtx->sideEffectType = SIDE_EFFECT_TYPE_ABILITY;
-            battleCtx->sideEffectMon = battleCtx->attacker;
-            battleCtx->msgBattlerTemp = battleCtx->defender;
-
-            *subscript = subscript_burn;
-            result = TRUE;
-        }
-        break;
-
-    case ABILITY_CUTE_CHARM:
-        if (ATTACKING_MON.curHP
-            && (ATTACKING_MON.statusVolatile & VOLATILE_CONDITION_ATTRACT) == FALSE
-            && (battleCtx->moveStatusFlags & MOVE_STATUS_NO_EFFECTS) == FALSE
-            && (battleCtx->battleStatusMask & SYSCTL_FIRST_OF_MULTI_TURN) == FALSE
-            && (battleCtx->battleStatusMask2 & SYSCTL_UTURN_ACTIVE) == FALSE
-            && (DEFENDER_SELF_TURN_FLAGS.physicalDamageTaken || DEFENDER_SELF_TURN_FLAGS.specialDamageTaken)
-            && (CURRENT_MOVE_DATA.flags & MOVE_FLAG_MAKES_CONTACT)
-            && DEFENDING_MON.curHP
-            && BattleSystem_RandNext(battleSys) % 10 < 3) {
-            battleCtx->sideEffectType = SIDE_EFFECT_TYPE_ABILITY;
-            battleCtx->sideEffectMon = battleCtx->attacker;
-            battleCtx->msgBattlerTemp = battleCtx->defender;
-
-            *subscript = subscript_infatuate;
-            result = TRUE;
-        }
-        break;
-
-    case ABILITY_AFTERMATH:
-        if (battleCtx->defender == battleCtx->faintedMon
-            && Battler_Ability(battleCtx, battleCtx->attacker) != ABILITY_MAGIC_GUARD
-            #ifdef BATTLE_BUFF_DAMP
-            && Battler_Ability(battleCtx, battleCtx->attacker) != ABILITY_DAMP
-            #endif
-            && BattleSystem_CountAbility(battleSys, battleCtx, COUNT_ALIVE_BATTLERS, 0, ABILITY_DAMP) == 0
-            && (battleCtx->battleStatusMask2 & SYSCTL_UTURN_ACTIVE) == FALSE
-            && ATTACKING_MON.curHP
-            && (battleCtx->moveStatusFlags & MOVE_STATUS_NO_EFFECTS) == FALSE
-            && (CURRENT_MOVE_DATA.flags & MOVE_FLAG_MAKES_CONTACT)) {
-            battleCtx->hpCalcTemp = BattleSystem_Divide(ATTACKING_MON.maxHP * -1, 4);
-            battleCtx->msgBattlerTemp = battleCtx->attacker;
-
-            *subscript = subscript_aftermath;
-            result = TRUE;
-        }
-        break;
-    #ifdef BATTLE_ADD_RATTLED
-    case ABILITY_RATTLED:
-        if (DEFENDING_MON.curHP
-            && (battleCtx->moveStatusFlags & MOVE_STATUS_NO_EFFECTS) == FALSE
-            && (battleCtx->battleStatusMask2 & SYSCTL_UTURN_ACTIVE) == FALSE
-            && (battleCtx->battleStatusMask & SYSCTL_FIRST_OF_MULTI_TURN) == FALSE
-            && (DEFENDER_SELF_TURN_FLAGS.physicalDamageTaken || DEFENDER_SELF_TURN_FLAGS.specialDamageTaken)
-            && battleCtx->battleMons[battleCtx->defender].statBoosts[BATTLE_STAT_SPEED] < MAX_STAT_STAGE
-            && (moveType == TYPE_DARK || moveType == TYPE_GHOST || moveType == TYPE_BUG)) {
-                battleCtx->sideEffectType = SIDE_EFFECT_TYPE_ABILITY;
-                battleCtx->sideEffectParam = MOVE_SUBSCRIPT_PTR_SPEED_UP_1_STAGE;
-                battleCtx->sideEffectMon = battleCtx->defender;
-                battleCtx->msgBattlerTemp = battleCtx->defender;
-
-                *subscript = subscript_update_stat_stage;
-                result = TRUE;
-        }
-        break;
-    #endif
-    #ifdef BATTLE_ADD_JUSTIFIED
-    case ABILITY_JUSTIFIED:
-        if (DEFENDING_MON.curHP
-            && (battleCtx->moveStatusFlags & MOVE_STATUS_NO_EFFECTS) == FALSE
-            && (battleCtx->battleStatusMask2 & SYSCTL_UTURN_ACTIVE) == FALSE
-            && (battleCtx->battleStatusMask & SYSCTL_FIRST_OF_MULTI_TURN) == FALSE
-            && (DEFENDER_SELF_TURN_FLAGS.physicalDamageTaken || DEFENDER_SELF_TURN_FLAGS.specialDamageTaken)
-            && battleCtx->battleMons[battleCtx->defender].statBoosts[BATTLE_STAT_ATTACK] < MAX_STAT_STAGE
-            && moveType == TYPE_DARK) {
-                battleCtx->sideEffectType = SIDE_EFFECT_TYPE_ABILITY;
-                battleCtx->sideEffectParam = MOVE_SUBSCRIPT_PTR_ATTACK_UP_1_STAGE;
-                battleCtx->sideEffectMon = battleCtx->defender;
-                battleCtx->msgBattlerTemp = battleCtx->defender;
-
-                *subscript = subscript_update_stat_stage;
-                result = TRUE;
-        }
-        break;
-    #endif
-    #ifdef BATTLE_ADD_CURSED_BODY
-    case ABILITY_CURSED_BODY:
-        int moveSlot = Battler_SlotForMove(&ATTACKING_MON, ATTACKER_LAST_MOVE);
-        if (ATTACKING_MON.curHP
-            && (battleCtx->moveStatusFlags & MOVE_STATUS_NO_EFFECTS) == FALSE
-            && (battleCtx->battleStatusMask & SYSCTL_FIRST_OF_MULTI_TURN) == FALSE
-            && (battleCtx->battleStatusMask2 & SYSCTL_UTURN_ACTIVE) == FALSE
-            && (DEFENDER_SELF_TURN_FLAGS.physicalDamageTaken || DEFENDER_SELF_TURN_FLAGS.specialDamageTaken)
-            && (battleCtx->battleMons[battleCtx->attacker].moveEffectsData.disabledTurns == 0)
-            && (moveSlot != 4) // valid move
-            && (battleCtx->battleMons[battleCtx->attacker].ppCur[moveSlot] != 0) // pp isn't 0
-            && (CURRENT_MOVE_DATA.power != 0) // move isn't status move
-            && BattleSystem_RandNext(battleSys) % 10 < 3) {
-
-                battleCtx->battleMons[battleCtx->attacker].moveEffectsData.disabledTurns = 4;
-                battleCtx->battleMons[battleCtx->attacker].moveEffectsData.disabledMove = ATTACKER_LAST_MOVE;
-                battleCtx->sideEffectType = SIDE_EFFECT_TYPE_ABILITY;
-                battleCtx->msgMoveTemp = ATTACKER_LAST_MOVE;
-
-                *subscript = subscript_cursed_body;
                 result = TRUE;
             }
-        break;
-    #endif
+            break;
+
+        case ABILITY_COLOR_CHANGE:
+
+            if (Battler_Ability(battleCtx, battleCtx->attacker) == ABILITY_SHEER_FORCE && battleCtx->battleMons[battleCtx->attacker].sheerForceActivated == TRUE) { // sheer force doesn't let color change activate
+                return FALSE;
+            }
+            if (DEFENDING_MON.curHP
+                && (battleCtx->moveStatusFlags & MOVE_STATUS_NO_EFFECTS) == FALSE
+                && battleCtx->moveCur != MOVE_STRUGGLE
+                && (DEFENDER_SELF_TURN_FLAGS.physicalDamageTaken || DEFENDER_SELF_TURN_FLAGS.specialDamageTaken)
+                && (battleCtx->battleStatusMask2 & SYSCTL_UTURN_ACTIVE) == FALSE
+                && CURRENT_MOVE_DATA.power
+                && BattleMon_Get(battleCtx, battleCtx->defender, BATTLEMON_TYPE_1, NULL) != moveType
+                && BattleMon_Get(battleCtx, battleCtx->defender, BATTLEMON_TYPE_2, NULL) != moveType) {
+                *subscript = subscript_color_change;
+                battleCtx->msgTemp = moveType;
+                result = TRUE;
+            }
+            break;
+
+        case ABILITY_ROUGH_SKIN:
+            if (ATTACKING_MON.curHP
+                && Battler_Ability(battleCtx, battleCtx->attacker) != ABILITY_MAGIC_GUARD
+                && (battleCtx->moveStatusFlags & MOVE_STATUS_NO_EFFECTS) == FALSE
+                && (battleCtx->battleStatusMask & SYSCTL_FIRST_OF_MULTI_TURN) == FALSE
+                && (battleCtx->battleStatusMask2 & SYSCTL_UTURN_ACTIVE) == FALSE
+                && (DEFENDER_SELF_TURN_FLAGS.physicalDamageTaken || DEFENDER_SELF_TURN_FLAGS.specialDamageTaken)
+                && (CURRENT_MOVE_DATA.flags & MOVE_FLAG_MAKES_CONTACT)) {
+                battleCtx->hpCalcTemp = BattleSystem_Divide(ATTACKING_MON.maxHP * -1, 8);
+                battleCtx->msgBattlerTemp = battleCtx->attacker;
+
+                *subscript = subscript_rough_skin;
+                result = TRUE;
+            }
+            break;
+
+        case ABILITY_EFFECT_SPORE:
+            if (ATTACKING_MON.curHP
+                && ATTACKING_MON.status == MON_CONDITION_NONE
+                && (battleCtx->moveStatusFlags & MOVE_STATUS_NO_EFFECTS) == FALSE
+                && (battleCtx->battleStatusMask & SYSCTL_FIRST_OF_MULTI_TURN) == FALSE
+                && (battleCtx->battleStatusMask2 & SYSCTL_UTURN_ACTIVE) == FALSE
+                && (DEFENDER_SELF_TURN_FLAGS.physicalDamageTaken || DEFENDER_SELF_TURN_FLAGS.specialDamageTaken)
+                && (CURRENT_MOVE_DATA.flags & MOVE_FLAG_MAKES_CONTACT)
+                && BattleSystem_RandNext(battleSys) % 10 < 3) {
+                switch (BattleSystem_RandNext(battleSys) % 3) {
+                case 0:
+                default:
+                    *subscript = subscript_poison;
+                    break;
+                case 1:
+                    *subscript = subscript_paralyze;
+                    break;
+                case 2:
+                    *subscript = subscript_fall_asleep;
+                    break;
+                }
+
+                battleCtx->sideEffectType = SIDE_EFFECT_TYPE_ABILITY;
+                battleCtx->sideEffectMon = battleCtx->attacker;
+                battleCtx->msgBattlerTemp = battleCtx->defender;
+
+                result = TRUE;
+            }
+            break;
+
+        case ABILITY_POISON_POINT:
+            if (ATTACKING_MON.curHP
+                && ATTACKING_MON.status == MON_CONDITION_NONE
+                && (battleCtx->moveStatusFlags & MOVE_STATUS_NO_EFFECTS) == FALSE
+                && (battleCtx->battleStatusMask & SYSCTL_FIRST_OF_MULTI_TURN) == FALSE
+                && (battleCtx->battleStatusMask2 & SYSCTL_UTURN_ACTIVE) == FALSE
+                && (DEFENDER_SELF_TURN_FLAGS.physicalDamageTaken || DEFENDER_SELF_TURN_FLAGS.specialDamageTaken)
+                && (CURRENT_MOVE_DATA.flags & MOVE_FLAG_MAKES_CONTACT)
+                && BattleSystem_RandNext(battleSys) % 10 < 3) {
+                battleCtx->sideEffectType = SIDE_EFFECT_TYPE_ABILITY;
+                battleCtx->sideEffectMon = battleCtx->attacker;
+                battleCtx->msgBattlerTemp = battleCtx->defender;
+
+                *subscript = subscript_poison;
+                result = TRUE;
+            }
+            break;
+
+        case ABILITY_FLAME_BODY:
+            if (ATTACKING_MON.curHP
+                && ATTACKING_MON.status == MON_CONDITION_NONE
+                && (battleCtx->moveStatusFlags & MOVE_STATUS_NO_EFFECTS) == FALSE
+                && (battleCtx->battleStatusMask & SYSCTL_FIRST_OF_MULTI_TURN) == FALSE
+                && (battleCtx->battleStatusMask2 & SYSCTL_UTURN_ACTIVE) == FALSE
+                && (DEFENDER_SELF_TURN_FLAGS.physicalDamageTaken || DEFENDER_SELF_TURN_FLAGS.specialDamageTaken)
+                && (CURRENT_MOVE_DATA.flags & MOVE_FLAG_MAKES_CONTACT)
+                && BattleSystem_RandNext(battleSys) % 10 < 3) {
+                battleCtx->sideEffectType = SIDE_EFFECT_TYPE_ABILITY;
+                battleCtx->sideEffectMon = battleCtx->attacker;
+                battleCtx->msgBattlerTemp = battleCtx->defender;
+
+                *subscript = subscript_burn;
+                result = TRUE;
+            }
+            break;
+
+        case ABILITY_CUTE_CHARM:
+            if (ATTACKING_MON.curHP
+                && (ATTACKING_MON.statusVolatile & VOLATILE_CONDITION_ATTRACT) == FALSE
+                && (battleCtx->moveStatusFlags & MOVE_STATUS_NO_EFFECTS) == FALSE
+                && (battleCtx->battleStatusMask & SYSCTL_FIRST_OF_MULTI_TURN) == FALSE
+                && (battleCtx->battleStatusMask2 & SYSCTL_UTURN_ACTIVE) == FALSE
+                && (DEFENDER_SELF_TURN_FLAGS.physicalDamageTaken || DEFENDER_SELF_TURN_FLAGS.specialDamageTaken)
+                && (CURRENT_MOVE_DATA.flags & MOVE_FLAG_MAKES_CONTACT)
+                && DEFENDING_MON.curHP
+                && BattleSystem_RandNext(battleSys) % 10 < 3) {
+                battleCtx->sideEffectType = SIDE_EFFECT_TYPE_ABILITY;
+                battleCtx->sideEffectMon = battleCtx->attacker;
+                battleCtx->msgBattlerTemp = battleCtx->defender;
+
+                *subscript = subscript_infatuate;
+                result = TRUE;
+            }
+            break;
+
+        case ABILITY_AFTERMATH:
+            if (battleCtx->defender == battleCtx->faintedMon
+                && Battler_Ability(battleCtx, battleCtx->attacker) != ABILITY_MAGIC_GUARD
+                #ifdef BATTLE_BUFF_DAMP
+                && Battler_Ability(battleCtx, battleCtx->attacker) != ABILITY_DAMP
+                #endif
+                && BattleSystem_CountAbility(battleSys, battleCtx, COUNT_ALIVE_BATTLERS, 0, ABILITY_DAMP) == 0
+                && (battleCtx->battleStatusMask2 & SYSCTL_UTURN_ACTIVE) == FALSE
+                && ATTACKING_MON.curHP
+                && (battleCtx->moveStatusFlags & MOVE_STATUS_NO_EFFECTS) == FALSE
+                && (CURRENT_MOVE_DATA.flags & MOVE_FLAG_MAKES_CONTACT)) {
+                battleCtx->hpCalcTemp = BattleSystem_Divide(ATTACKING_MON.maxHP * -1, 4);
+                battleCtx->msgBattlerTemp = battleCtx->attacker;
+
+                *subscript = subscript_aftermath;
+                result = TRUE;
+            }
+            break;
+        #ifdef BATTLE_ADD_RATTLED
+        case ABILITY_RATTLED:
+            if (DEFENDING_MON.curHP
+                && (battleCtx->moveStatusFlags & MOVE_STATUS_NO_EFFECTS) == FALSE
+                && (battleCtx->battleStatusMask2 & SYSCTL_UTURN_ACTIVE) == FALSE
+                && (battleCtx->battleStatusMask & SYSCTL_FIRST_OF_MULTI_TURN) == FALSE
+                && (DEFENDER_SELF_TURN_FLAGS.physicalDamageTaken || DEFENDER_SELF_TURN_FLAGS.specialDamageTaken)
+                && battleCtx->battleMons[battleCtx->defender].statBoosts[BATTLE_STAT_SPEED] < MAX_STAT_STAGE
+                && (moveType == TYPE_DARK || moveType == TYPE_GHOST || moveType == TYPE_BUG)) {
+                    battleCtx->sideEffectType = SIDE_EFFECT_TYPE_ABILITY;
+                    battleCtx->sideEffectParam = MOVE_SUBSCRIPT_PTR_SPEED_UP_1_STAGE;
+                    battleCtx->sideEffectMon = battleCtx->defender;
+                    battleCtx->msgBattlerTemp = battleCtx->defender;
+
+                    *subscript = subscript_update_stat_stage;
+                    result = TRUE;
+            }
+            break;
+        #endif
+        #ifdef BATTLE_ADD_JUSTIFIED
+        case ABILITY_JUSTIFIED:
+            if (DEFENDING_MON.curHP
+                && (battleCtx->moveStatusFlags & MOVE_STATUS_NO_EFFECTS) == FALSE
+                && (battleCtx->battleStatusMask2 & SYSCTL_UTURN_ACTIVE) == FALSE
+                && (battleCtx->battleStatusMask & SYSCTL_FIRST_OF_MULTI_TURN) == FALSE
+                && (DEFENDER_SELF_TURN_FLAGS.physicalDamageTaken || DEFENDER_SELF_TURN_FLAGS.specialDamageTaken)
+                && battleCtx->battleMons[battleCtx->defender].statBoosts[BATTLE_STAT_ATTACK] < MAX_STAT_STAGE
+                && moveType == TYPE_DARK) {
+                    battleCtx->sideEffectType = SIDE_EFFECT_TYPE_ABILITY;
+                    battleCtx->sideEffectParam = MOVE_SUBSCRIPT_PTR_ATTACK_UP_1_STAGE;
+                    battleCtx->sideEffectMon = battleCtx->defender;
+                    battleCtx->msgBattlerTemp = battleCtx->defender;
+
+                    *subscript = subscript_update_stat_stage;
+                    result = TRUE;
+            }
+            break;
+        #endif
+        #ifdef BATTLE_ADD_CURSED_BODY
+        case ABILITY_CURSED_BODY:
+            int moveSlot = Battler_SlotForMove(&ATTACKING_MON, battleCtx->moveTemp);
+            if (ATTACKING_MON.curHP
+                && (battleCtx->moveStatusFlags & MOVE_STATUS_NO_EFFECTS) == FALSE
+                && (battleCtx->battleStatusMask & SYSCTL_FIRST_OF_MULTI_TURN) == FALSE
+                && (battleCtx->battleStatusMask2 & SYSCTL_UTURN_ACTIVE) == FALSE
+                && (DEFENDER_SELF_TURN_FLAGS.physicalDamageTaken || DEFENDER_SELF_TURN_FLAGS.specialDamageTaken)
+                && (battleCtx->battleMons[battleCtx->attacker].moveEffectsData.disabledTurns == 0)
+                && (moveSlot != 4) // valid move
+                && (battleCtx->battleMons[battleCtx->attacker].ppCur[moveSlot] != 0) // pp isn't 0
+                && (CURRENT_MOVE_DATA.power != 0) // move isn't status move
+                && BattleSystem_RandNext(battleSys) % 10 < 3) {
+                    
+                    battleCtx->battleMons[battleCtx->attacker].moveEffectsData.disabledTurns = 4;
+                    battleCtx->battleMons[battleCtx->attacker].moveEffectsData.disabledMove = battleCtx->moveTemp;
+                    battleCtx->sideEffectType = SIDE_EFFECT_TYPE_ABILITY;
+                    battleCtx->msgMoveTemp = battleCtx->moveTemp;
+
+                    *subscript = subscript_cursed_body;
+                    result = TRUE;
+                }
+            break;
+        #endif
+        #ifdef BATTLE_ADD_WEAK_ARMOR
+        case ABILITY_WEAK_ARMOR:
+            if (DEFENDING_MON.curHP
+                && (battleCtx->moveStatusFlags & MOVE_STATUS_NO_EFFECTS) == FALSE
+                && (battleCtx->battleStatusMask2 & SYSCTL_UTURN_ACTIVE) == FALSE
+                && (battleCtx->battleStatusMask & SYSCTL_FIRST_OF_MULTI_TURN) == FALSE
+                && (DEFENDER_SELF_TURN_FLAGS.physicalDamageTaken)
+                && (battleCtx->battleMons[battleCtx->defender].statBoosts[BATTLE_STAT_SPEED] < MAX_STAT_STAGE)
+                    || (battleCtx->battleMons[battleCtx->defender].statBoosts[BATTLE_STAT_DEFENSE] > MIN_STAT_STAGE)) {
+                    battleCtx->sideEffectMon = battleCtx->defender;
+                    battleCtx->msgBattlerTemp = battleCtx->defender;
+                    battleCtx->sideEffectType = SIDE_EFFECT_TYPE_ABILITY;
+
+                    *subscript = subscript_weak_armor;
+                    result = TRUE;
+                }
+            break;
+        #endif
+        }
     }
 
     return result;

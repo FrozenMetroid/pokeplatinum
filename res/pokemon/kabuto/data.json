@@ -1,11 +1,11 @@
 {
     "base_stats": {
-        "hp": 30,
-        "attack": 80,
+        "hp": 50,
+        "attack": 90,
         "defense": 90,
-        "speed": 55,
+        "speed": 70,
         "special_attack": 55,
-        "special_defense": 45
+        "special_defense": 55
     },
     "types": [ "TYPE_ROCK", "TYPE_WATER" ],
     "catch_rate": 45,
@@ -28,25 +28,32 @@
     "exp_rate": "EXP_RATE_MEDIUM_FAST",
     "egg_groups": [ "EGG_GROUP_WATER_1", "EGG_GROUP_WATER_3" ],
     "abilities": [ "ABILITY_SWIFT_SWIM", "ABILITY_BATTLE_ARMOR" ],
-    "hiddenAbility": "ABILITY_NONE",
+    "hiddenAbility": "ABILITY_WEAK_ARMOR",
     "safari_flee_rate": 0,
     "body_color": "MON_COLOR_BROWN",
     "flip_sprite": false,
     "icon_palette": 2,
     "learnset": {
         "by_level": [
-            [ 1, "MOVE_SCRATCH" ],
-            [ 1, "MOVE_HARDEN" ],
-            [ 6, "MOVE_ABSORB" ],
-            [ 11, "MOVE_LEER" ],
-            [ 16, "MOVE_MUD_SHOT" ],
-            [ 21, "MOVE_SAND_ATTACK" ],
-            [ 26, "MOVE_ENDURE" ],
-            [ 31, "MOVE_AQUA_JET" ],
-            [ 36, "MOVE_MEGA_DRAIN" ],
-            [ 41, "MOVE_METAL_SOUND" ],
-            [ 46, "MOVE_ANCIENT_POWER" ],
-            [ 51, "MOVE_WRING_OUT" ]
+            [1, "MOVE_SCRATCH"],
+            [1, "MOVE_HARDEN"],
+            [1, "MOVE_BUBBLE"],
+            [1, "MOVE_ENDURE"],
+            [4, "MOVE_SAND_ATTACK"],
+            [6, "MOVE_ABSORB"],
+            [9, "MOVE_LEER"],
+            [12, "MOVE_ROCK_THROW"],
+            [15, "MOVE_MUD_SHOT"],
+            [18, "MOVE_AQUA_JET"],
+            [21, "MOVE_ROCK_TOMB"],
+            [24, "MOVE_MEGA_DRAIN"],
+            [27, "MOVE_BRINE"],
+            [31, "MOVE_WATER_PULSE"],
+            [36, "MOVE_ROCK_SLIDE"],
+            [41, "MOVE_GIGA_DRAIN"],
+            [44, "MOVE_AQUA_TAIL"],
+            [48, "MOVE_STONE_EDGE"],
+            [51, "MOVE_WRING_OUT"]
         ],
         "by_tm": [
             "TM03",
@@ -109,7 +116,7 @@
     "evolutions": [
         [
             "EVO_LEVEL",
-            40,
+            35,
             "SPECIES_KABUTOPS"
         ]
     ],

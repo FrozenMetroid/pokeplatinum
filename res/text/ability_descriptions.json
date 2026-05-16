@@ -1151,6 +1151,13 @@
         "Nullifies the effects\n",
         "of other Abilities."
       ]
+    },
+    {
+      "id": "pl_msg_00000612_00165",
+      "en_US": [
+        "Physical attacks lower\n",
+        "Defense and raise Speed."
+      ]
     }
   ]
 }
