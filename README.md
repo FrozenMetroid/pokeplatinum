@@ -11,7 +11,7 @@ Credits:
 - Everyone who contributed to HeartGold-Engine, whose work helped me to program things such as modernized Sturdy. Special shoutout to BluRose in particular!
 - RavePossum for multiple tutorials, such as showing EVs, IVs, and nature-affected stats on the summary screen
 
-- Senate
+- Frozen Metroid (Senate)
 
 # Features
 - Faster HP Bar
@@ -70,7 +70,7 @@ Currently, the only modifications to stats, abilities, learnsets, etc. have been
 
 The cursor on the bottom screen during a battle is now able to be moved up from the Run button to the Fight button.
 
-Additional Abilities:
+### Additional Abilities:
 - Piercing Eye (CUSTOM): Lowers foes' Evasion on switch-in. 
 - Artillery (CUSTOM): Raises the power of beam moves (Ice Beam, Bubble Beam, etc.)
 - Supreme Overlord (Supreme Lord in-game): Raises the power of a move by 10% for each fainted ally
@@ -104,26 +104,27 @@ Additional Abilities:
 - Sand Force: Rock, Ground, and Steel-type moves have a 30% increase in power during Sandstorms
 - Flare Boost: Boosts Special Attack damage by 50% when the Pokémon is burned
     
-Ability Modernizations:
+### Ability Modernizations:
 - Lightning Rod
 - Sturdy
 - Storm Drain
 - Stench
 - Normalize
 
-Ability Changes:
+### Ability Changes:
 - Slow Start: 5 turns -> 3 turns
 - Healer: Guaranteed chance to occur, no longer a 30% chance
+- Damp: Applies a new field condition that dampens the battlefield to reduce Fire-type damage by 50%; the effect is removed when all Pokémon with Damp are switch out or knocked out
 
-Item Modernizations:
+### Battle Item Modernizations:
 - Mental Herb
 
-Move Modernizations and Changes:
+### Move Modernizations and Changes:
 - Toxic when used by a Poison-type is perfectly accurate
 - Moves such as Leech Life and Hi Jump Kick have had their BPs increased to match modern standards
     Some BP increases are custom, such as Knock Off (now 30BP instead of 65BP), and Fire Spin (50BP instead of 35BP), and some are not changed at all, such as Surf and Thunderbolt
 - PP has been increased when applicable for modernization, except the nerf to health-restoring moves' PP
-    Ancient Power and Silver Wind's PP has been increased from 5 to 15
+    Ancient Power and Silver Wind's PPs have been increased from 5 to 15
     Giga Drain's PP has been increased from 10 to 15
 - Defog removes hazards from both sides of the field
 - Growth raises Special Attack and Attack by one stage; two stages under harsh sunlight
@@ -145,9 +146,10 @@ Move Modernizations and Changes:
     Torment
     Toxic Spikes (!!!)
 
-Miscellaneous Battle System Changes:
+### Miscellaneous Battle System Changes:
 - Ice-types receive a 50% Defense increase when under the effects of Hail (Hail has not been modernized to Snow)
 - Trainer AI has been updated to fix a few bugs, such as not reading Dry Skin as a Water immunity and viewing Storm Drain and Lightning Rod as immunities now
+- Trainer AI should (lol) work with all the new/changed Abilities
 - Paralysis
     Not ignorable by Magic Guard (Jirachi wins the Clefable matchup even more now)
     Reduces speed by 50%
