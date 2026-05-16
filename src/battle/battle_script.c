@@ -5485,6 +5485,7 @@ static BOOL BtlCmd_Transform(BattleSystem *battleSys, BattleContext *battleCtx)
     ATTACKING_MON.piercingEyeAnnounced = FALSE;
     ATTACKING_MON.sheerForceActivated = FALSE;
     ATTACKING_MON.unnerveAnnounced = FALSE;
+    ATTACKING_MON.dampAnnounced = FALSE;
 
     for (i = 0; i < LEARNED_MOVES_MAX; i++) {
         if (MOVE_DATA(ATTACKING_MON.moves[i]).pp < 5) {

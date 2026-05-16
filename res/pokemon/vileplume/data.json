@@ -1,11 +1,11 @@
 {
     "base_stats": {
-        "hp": 75,
-        "attack": 80,
-        "defense": 85,
+        "hp": 85,
+        "attack": 70,
+        "defense": 95,
         "speed": 50,
-        "special_attack": 100,
-        "special_defense": 90
+        "special_attack": 90,
+        "special_defense": 100
     },
     "types": [ "TYPE_GRASS", "TYPE_POISON" ],
     "catch_rate": 45,
@@ -27,21 +27,27 @@
     "base_friendship": 70,
     "exp_rate": "EXP_RATE_MEDIUM_SLOW",
     "egg_groups": [ "EGG_GROUP_GRASS", "EGG_GROUP_GRASS" ],
-    "abilities": [ "ABILITY_CHLOROPHYLL", "ABILITY_NONE" ],
-    "hiddenAbility": "ABILITY_NONE",
+    "abilities": [ "ABILITY_CHLOROPHYLL", "ABILITY_EFFECT_SPORE" ],
+    "hiddenAbility": "ABILITY_STENCH",
     "safari_flee_rate": 0,
     "body_color": "MON_COLOR_RED",
     "flip_sprite": false,
     "icon_palette": 0,
     "learnset": {
         "by_level": [
-            [ 0, "MOVE_PETAL_DANCE" ],
-            [ 1, "MOVE_MEGA_DRAIN" ],
-            [ 1, "MOVE_AROMATHERAPY" ],
-            [ 1, "MOVE_STUN_SPORE" ],
-            [ 1, "MOVE_POISON_POWDER" ],
-            [ 53, "MOVE_PETAL_DANCE" ],
-            [ 65, "MOVE_SOLAR_BEAM" ]
+            [1, "MOVE_MEGA_DRAIN"],
+            [1, "MOVE_AROMATHERAPY"],
+            [1, "MOVE_STUN_SPORE"],
+            [1, "MOVE_POISON_POWDER"],
+            [1, "MOVE_LEECH_SEED"],
+            [1, "MOVE_SLEEP_POWDER"],
+            [1, "MOVE_SLUDGE"],
+            [30, "MOVE_GIGA_DRAIN"],
+            [35, "MOVE_TOXIC"],
+            [38, "MOVE_MOONLIGHT"],
+            [42, "MOVE_SLUDGE_BOMB"],
+            [49, "MOVE_PETAL_DANCE"],
+            [55, "MOVE_SOLAR_BEAM"]
         ],
         "by_tm": [
             "TM06",

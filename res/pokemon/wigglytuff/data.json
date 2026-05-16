@@ -1,11 +1,11 @@
 {
     "base_stats": {
         "hp": 140,
-        "attack": 70,
-        "defense": 45,
-        "speed": 45,
-        "special_attack": 75,
-        "special_defense": 50
+        "attack": 85,
+        "defense": 60,
+        "speed": 50,
+        "special_attack": 85,
+        "special_defense": 60
     },
     "types": [ "TYPE_NORMAL", "TYPE_NORMAL" ],
     "catch_rate": 50,
@@ -27,18 +27,30 @@
     "base_friendship": 70,
     "exp_rate": "EXP_RATE_FAST",
     "egg_groups": [ "EGG_GROUP_FAIRY", "EGG_GROUP_FAIRY" ],
-    "abilities": [ "ABILITY_CUTE_CHARM", "ABILITY_NONE" ],
-    "hiddenAbility": "ABILITY_NONE",
+    "abilities": [ "ABILITY_CUTE_CHARM", "ABILITY_SOUNDPROOF" ],
+    "hiddenAbility": "ABILITY_COMPETITIVE",
     "safari_flee_rate": 0,
     "body_color": "MON_COLOR_PINK",
     "flip_sprite": false,
     "icon_palette": 0,
     "learnset": {
         "by_level": [
-            [ 1, "MOVE_SING" ],
-            [ 1, "MOVE_DISABLE" ],
-            [ 1, "MOVE_DEFENSE_CURL" ],
-            [ 1, "MOVE_DOUBLE_SLAP" ]
+            [0, "MOVE_UPROAR"],
+            [1, "MOVE_SING"],
+            [1, "MOVE_POUND"],
+            [1, "MOVE_DEFENSE_CURL"],
+            [1, "MOVE_ROLLOUT"],
+            [1, "MOVE_DISABLE"],
+            [1, "MOVE_DOUBLE_SLAP"],
+            [1, "MOVE_REST"],
+            [1, "MOVE_SLEEP_TALK"],
+            [1, "MOVE_SNORE"],
+            [30, "MOVE_BODY_SLAM"],
+            [35, "MOVE_HYPER_VOICE"],
+            [39, "MOVE_WAKE_UP_SLAP"],
+            [43, "MOVE_MIMIC"],
+            [47, "MOVE_GYRO_BALL"],
+            [54, "MOVE_DOUBLE_EDGE"]
         ],
         "by_tm": [
             "TM01",

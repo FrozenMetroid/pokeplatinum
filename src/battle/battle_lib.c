@@ -123,6 +123,7 @@ void BattleSystem_InitBattleMon(BattleSystem *battleSys, BattleContext *battleCt
     battleCtx->battleMons[battler].piercingEyeAnnounced = FALSE;
     battleCtx->battleMons[battler].sheerForceActivated = FALSE;
     battleCtx->battleMons[battler].unnerveAnnounced = FALSE;
+    battleCtx->battleMons[battler].dampAnnounced = FALSE;
     battleCtx->battleMons[battler].type1 = Pokemon_GetValue(mon, MON_DATA_TYPE_1, NULL);
     battleCtx->battleMons[battler].type2 = Pokemon_GetValue(mon, MON_DATA_TYPE_2, NULL);
     battleCtx->battleMons[battler].gender = Pokemon_GetGender(mon);
@@ -2208,7 +2209,15 @@ void BattleSystem_UpdateAfterSwitch(BattleSystem *battleSys, BattleContext *batt
     battleCtx->conversion2Battler[battler] = MOVE_NONE;
     battleCtx->conversion2Type[battler] = MOVE_NONE;
     battleCtx->metronomeMove[battler] = MOVE_NONE;
-    battleCtx->fieldConditionsMask &= FLAG_NEGATE(FlagIndex(battler) << FIELD_CONDITION_UPROAR_SHIFT);
+    battleCtx->fieldConditionsMask &= FLAG_NEGATE(FlagIndex(battler) << FIELD_CONDITION_UPROAR_SHIFT); // removes the uproar bits from being set
+
+    #ifdef BATTLE_ADD_DAMP_BATTLEFIELD
+    // if none of the current battlers, including the one just switched in,
+    // have Damp, remove the Damp field condition
+    if (BattleSystem_CountAbility(battleSys, battleCtx, COUNT_ALIVE_BATTLERS, 0, ABILITY_DAMP) == FALSE) {
+        battleCtx->fieldConditionsMask &= ~FIELD_CONDITION_DAMP;
+    }
+    #endif
 
     if (battleCtx->battleMons[battler].moveEffectsMask & MOVE_EFFECT_POWER_TRICK) {
         i = battleCtx->battleMons[battler].attack;
@@ -2287,6 +2296,14 @@ void BattleSystem_CleanupFaintedMon(BattleSystem *battleSys, BattleContext *batt
     battleCtx->conversion2Type[battler] = MOVE_NONE;
     battleCtx->metronomeMove[battler] = MOVE_NONE;
     battleCtx->fieldConditionsMask &= (FlagIndex(battler) << FIELD_CONDITION_UPROAR_SHIFT) ^ 0xFFFFFFFF;
+
+    #ifdef BATTLE_ADD_DAMP_BATTLEFIELD
+    // if none of the currently alive battlers
+    // have Damp, remove the Damp field condition
+    if (BattleSystem_CountAbility(battleSys, battleCtx, COUNT_ALIVE_BATTLERS, 0, ABILITY_DAMP) == FALSE) {
+        battleCtx->fieldConditionsMask &= ~FIELD_CONDITION_DAMP;
+    }
+    #endif
 
     for (i = 0; i < maxBattlers; i++) {
         if (i != battler && BattleSystem_GetBattlerSide(battleSys, i) != BattleSystem_GetBattlerSide(battleSys, battler)) {
@@ -3788,6 +3805,9 @@ enum SwitchInCheckState {
     #ifdef BATTLE_ADD_UNNERVE
     SWITCH_IN_CHECK_STATE_UNNERVE,
     #endif
+    #ifdef BATTLE_ADD_DAMP_BATTLEFIELD
+    SWITCH_IN_CHECK_STATE_DAMP,
+    #endif
     SWITCH_IN_CHECK_STATE_FORM_CHANGE,
     SWITCH_IN_CHECK_STATE_AMULET_COIN,
     SWITCH_IN_CHECK_STATE_FORBIDDEN_STATUS,
@@ -4335,6 +4355,27 @@ int BattleSystem_TriggerEffectOnSwitch(BattleSystem *battleSys, BattleContext *b
                     battleCtx->battleMons[battler].unnerveAnnounced = TRUE;
                     battleCtx->msgBattlerTemp = battler;
                     subscript = subscript_unnerve;
+                    result = SWITCH_IN_CHECK_RESULT_BREAK;
+                    break;
+                }
+            }
+            if (i == maxBattlers) {
+                battleCtx->switchInCheckState++;
+            }
+            break;
+        #endif
+        #ifdef BATTLE_ADD_DAMP_BATTLEFIELD
+        case SWITCH_IN_CHECK_STATE_DAMP:
+            for (i = 0; i < maxBattlers; i++) {
+                battler = battleCtx->monSpeedOrder[i];
+
+                if (battleCtx->battleMons[battler].dampAnnounced == FALSE
+                    && battleCtx->battleMons[battler].curHP
+                    && Battler_Ability(battleCtx, battler) == ABILITY_DAMP
+                    && (battleCtx->fieldConditionsMask & FIELD_CONDITION_DAMP) == FALSE) {
+                    battleCtx->battleMons[battler].dampAnnounced = TRUE;
+                    battleCtx->msgBattlerTemp = battler;
+                    subscript = subscript_damp;
                     result = SWITCH_IN_CHECK_RESULT_BREAK;
                     break;
                 }
@@ -7293,6 +7334,13 @@ int BattleSystem_CalcMoveDamage(BattleSystem *battleSys,
         && BattleSystem_AnyBattlersWithMoveEffect(battleSys, battleCtx, MOVE_EFFECT_WATER_SPORT)) {
         movePower /= 2;
     }
+
+    #ifdef BATTLE_ADD_DAMP_BATTLEFIELD
+    if (moveType == TYPE_FIRE
+        && battleCtx->fieldConditionsMask & FIELD_CONDITION_DAMP) {
+        movePower /= 2;
+    }
+    #endif
 
     #ifndef BATTLE_BUFF_PINCH_ABILITIES
     if (moveType == TYPE_GRASS

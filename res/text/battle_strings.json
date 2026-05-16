@@ -8741,6 +8741,27 @@
         "your Pokémon too nervous to\f",
         "eat Berries!"
       ]
+    },
+    {
+      "id": "BattleStrings_Text_AbilityDampenedBattlefield_Ally",
+      "en_US": [
+        "{STRVAR_1 1, 0, 0}’s {STRVAR_1 5, 1, 0}\n",
+        "dampened the battlefield!"
+      ]
+    },
+    {
+      "id": "BattleStrings_Text_AbilityDampenedBattlefield_Wild",
+      "en_US": [
+        "The wild {STRVAR_1 1, 0, 0}’s\n",
+        "{STRVAR_1 5, 1, 0} dampened the battlefield!"
+      ]
+    },
+    {
+      "id": "BattleStrings_Text_AbilityDampenedBattlefield_Foe",
+      "en_US": [
+        "The foe’s {STRVAR_1 1, 0, 0}’s\n",
+        "{STRVAR_1 5, 1, 0} dampened the battlefield!"
+      ]
     }
   ]
 }
