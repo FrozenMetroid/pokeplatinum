@@ -143,7 +143,7 @@
         ]
     },
     "shadow": {
-        "x_offset": 4,
-        "size": "SHADOW_SIZE_MEDIUM"
+        "x_offset": 0,
+        "size": "SHADOW_SIZE_LARGE"
     }
 }

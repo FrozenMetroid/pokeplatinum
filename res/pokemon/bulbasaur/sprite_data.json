@@ -4,7 +4,7 @@
             "female": 20,
             "male": 20
         },
-        "addl_y_offset": 2,
+        "addl_y_offset": -3,
         "animation": 7,
         "cry_delay": 13,
         "start_delay": 10,
@@ -144,6 +144,6 @@
     },
     "shadow": {
         "x_offset": 1,
-        "size": "SHADOW_SIZE_SMALL"
+        "size": "SHADOW_SIZE_MEDIUM"
     }
 }
