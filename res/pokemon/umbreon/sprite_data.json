@@ -6,18 +6,18 @@
         },
         "addl_y_offset": -1,
         "animation": 1,
-        "cry_delay": 0,
+        "cry_delay": 3,
         "start_delay": 0,
         "frames": [
             {
                 "sprite_frame": 1,
-                "frame_delay": 15,
-                "x_shift": 0,
+                "frame_delay": 19,
+                "x_shift": -3,
                 "y_shift": 0
             },
             {
-                "sprite_frame": 1,
-                "frame_delay": 15,
+                "sprite_frame": -1,
+                "frame_delay": 0,
                 "x_shift": 0,
                 "y_shift": 0
             },

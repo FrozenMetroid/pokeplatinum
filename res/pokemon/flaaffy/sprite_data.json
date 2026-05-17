@@ -5,19 +5,19 @@
             "male": 17
         },
         "addl_y_offset": 0,
-        "animation": 7,
-        "cry_delay": 12,
-        "start_delay": 12,
+        "animation": 2,
+        "cry_delay": 5,
+        "start_delay": 0,
         "frames": [
             {
-                "sprite_frame": 1,
-                "frame_delay": 28,
+                "sprite_frame": 0,
+                "frame_delay": 4,
                 "x_shift": 0,
                 "y_shift": 0
             },
             {
-                "sprite_frame": -1,
-                "frame_delay": 0,
+                "sprite_frame": 1,
+                "frame_delay": 19,
                 "x_shift": 0,
                 "y_shift": 0
             },

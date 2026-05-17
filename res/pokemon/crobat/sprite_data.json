@@ -5,13 +5,31 @@
             "male": 8
         },
         "addl_y_offset": 12,
-        "animation": 11,
+        "animation": 17,
         "cry_delay": 15,
-        "start_delay": 8,
+        "start_delay": 0,
         "frames": [
             {
+                "sprite_frame": 1,
+                "frame_delay": 3,
+                "x_shift": 0,
+                "y_shift": 0
+            },
+            {
                 "sprite_frame": 0,
-                "frame_delay": 1,
+                "frame_delay": 2,
+                "x_shift": 0,
+                "y_shift": 0
+            },
+            {
+                "sprite_frame": 1,
+                "frame_delay": 2,
+                "x_shift": 0,
+                "y_shift": 0
+            },
+            {
+                "sprite_frame": 0,
+                "frame_delay": 6,
                 "x_shift": 0,
                 "y_shift": 0
             },
@@ -22,32 +40,14 @@
                 "y_shift": 0
             },
             {
-                "sprite_frame": -2,
-                "frame_delay": 10,
+                "sprite_frame": 0,
+                "frame_delay": 1,
                 "x_shift": 0,
                 "y_shift": 0
             },
             {
-                "sprite_frame": -1,
-                "frame_delay": 0,
-                "x_shift": 0,
-                "y_shift": 0
-            },
-            {
-                "sprite_frame": -1,
-                "frame_delay": 0,
-                "x_shift": 0,
-                "y_shift": 0
-            },
-            {
-                "sprite_frame": -1,
-                "frame_delay": 0,
-                "x_shift": 0,
-                "y_shift": 0
-            },
-            {
-                "sprite_frame": -1,
-                "frame_delay": 0,
+                "sprite_frame": -6,
+                "frame_delay": 7,
                 "x_shift": 0,
                 "y_shift": 0
             },
@@ -143,7 +143,7 @@
         ]
     },
     "shadow": {
-        "x_offset": 6,
+        "x_offset": -3,
         "size": "SHADOW_SIZE_SMALL"
     }
 }

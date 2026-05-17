@@ -309,12 +309,6 @@ static u32 EncEffects_WildPokemonEffect(Party *wildParty, int mapHeaderID)
             result = ENCEFF_REGI_TRIO;
         }
         break;
-    case SPECIES_MEWTWO:
-    case SPECIES_LUGIA:
-    case SPECIES_HO_OH:
-    case SPECIES_KYOGRE:
-    case SPECIES_GROUDON:
-    case SPECIES_RAYQUAZA:
     case SPECIES_REGIGIGAS:
     case SPECIES_HEATRAN:
     case SPECIES_DARKRAI:
@@ -349,6 +343,16 @@ static u32 EncEffects_WildPokemonEffect(Party *wildParty, int mapHeaderID)
     case SPECIES_DEOXYS:
         if (mapHeaderID != ZONE_ID_PAL_PARK) {
             result = ENCEFF_MINOR_NONSINNOH_LEGENDARY;
+        }
+        break;
+    case SPECIES_MEWTWO:
+    case SPECIES_LUGIA:
+    case SPECIES_HO_OH:
+    case SPECIES_KYOGRE:
+    case SPECIES_GROUDON:
+    case SPECIES_RAYQUAZA:
+        if (mapHeaderID != ZONE_ID_PAL_PARK) {
+            result = ENCEFF_MINOR_LEGENDARIES;
         }
         break;
     default:

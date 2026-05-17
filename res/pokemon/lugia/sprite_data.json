@@ -5,31 +5,31 @@
             "male": 0
         },
         "addl_y_offset": 9,
-        "animation": 3,
+        "animation": 17,
         "cry_delay": 15,
-        "start_delay": 12,
+        "start_delay": 3,
         "frames": [
             {
                 "sprite_frame": 0,
-                "frame_delay": 12,
+                "frame_delay": 14,
                 "x_shift": 0,
                 "y_shift": 0
             },
             {
                 "sprite_frame": 1,
-                "frame_delay": 6,
+                "frame_delay": 7,
                 "x_shift": 0,
                 "y_shift": 0
             },
             {
                 "sprite_frame": 0,
-                "frame_delay": 6,
+                "frame_delay": 9,
                 "x_shift": 0,
                 "y_shift": 0
             },
             {
-                "sprite_frame": -3,
-                "frame_delay": 2,
+                "sprite_frame": 1,
+                "frame_delay": 9,
                 "x_shift": 0,
                 "y_shift": 0
             },
