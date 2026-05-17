@@ -1158,6 +1158,20 @@
         "Physical attacks lower\n",
         "Defense and raise Speed."
       ]
+    },
+    {
+      "id": "pl_msg_00000612_00166",
+      "en_US": [
+        "Reduces damage taken when\n",
+        "HP is full."
+      ]
+    },
+    {
+      "id": "pl_msg_00000612_00167",
+      "en_US": [
+        "Raises Attack if hit\n",
+        "by a wind-based move."
+      ]
     }
   ]
 }

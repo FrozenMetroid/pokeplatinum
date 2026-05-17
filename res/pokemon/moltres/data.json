@@ -1,9 +1,9 @@
 {
     "base_stats": {
         "hp": 90,
-        "attack": 100,
+        "attack": 115,
         "defense": 90,
-        "speed": 90,
+        "speed": 95,
         "special_attack": 125,
         "special_defense": 85
     },
@@ -35,20 +35,22 @@
     "icon_palette": 0,
     "learnset": {
         "by_level": [
-            [ 1, "MOVE_WING_ATTACK" ],
-            [ 1, "MOVE_EMBER" ],
-            [ 8, "MOVE_FIRE_SPIN" ],
-            [ 15, "MOVE_AGILITY" ],
-            [ 22, "MOVE_ENDURE" ],
-            [ 29, "MOVE_ANCIENT_POWER" ],
-            [ 36, "MOVE_FLAMETHROWER" ],
-            [ 43, "MOVE_SAFEGUARD" ],
-            [ 50, "MOVE_AIR_SLASH" ],
-            [ 57, "MOVE_ROOST" ],
-            [ 64, "MOVE_HEAT_WAVE" ],
-            [ 71, "MOVE_SOLAR_BEAM" ],
-            [ 78, "MOVE_SKY_ATTACK" ],
-            [ 85, "MOVE_SUNNY_DAY" ]
+            [1, "MOVE_WING_ATTACK"],
+            [1, "MOVE_EMBER"],
+            [8, "MOVE_FIRE_SPIN"],
+            [15, "MOVE_AGILITY"],
+            [20, "MOVE_ENDURE"],
+            [25, "MOVE_AIR_CUTTER"],
+            [29, "MOVE_ANCIENT_POWER"],
+            [33, "MOVE_AERIAL_ACE"],
+            [36, "MOVE_FLAMETHROWER"],
+            [40, "MOVE_AIR_SLASH"],
+            [43, "MOVE_SAFEGUARD"],
+            [50, "MOVE_HEAT_WAVE"],
+            [55, "MOVE_ROOST"],
+            [60, "MOVE_SKY_ATTACK"],
+            [65, "MOVE_SOLAR_BEAM"],
+            [70, "MOVE_SUNNY_DAY"]
         ],
         "by_tm": [
             "TM05",

@@ -35,18 +35,18 @@
     "icon_palette": 0,
     "learnset": {
         "by_level": [
-            [ 1, "MOVE_POUND" ],
-            [ 1, "MOVE_TRANSFORM" ],
-            [ 10, "MOVE_MEGA_PUNCH" ],
-            [ 20, "MOVE_METRONOME" ],
-            [ 30, "MOVE_PSYCHIC" ],
-            [ 40, "MOVE_BARRIER" ],
-            [ 50, "MOVE_ANCIENT_POWER" ],
-            [ 60, "MOVE_AMNESIA" ],
-            [ 70, "MOVE_ME_FIRST" ],
-            [ 80, "MOVE_BATON_PASS" ],
-            [ 90, "MOVE_NASTY_PLOT" ],
-            [ 100, "MOVE_AURA_SPHERE" ]
+            [1, "MOVE_POUND"],
+            [1, "MOVE_TRANSFORM"],
+            [10, "MOVE_MEGA_PUNCH"],
+            [20, "MOVE_METRONOME"],
+            [30, "MOVE_PSYCHIC"],
+            [40, "MOVE_BARRIER"],
+            [50, "MOVE_ANCIENT_POWER"],
+            [60, "MOVE_AMNESIA"],
+            [70, "MOVE_NASTY_PLOT"],
+            [80, "MOVE_BATON_PASS"],
+            [90, "MOVE_ME_FIRST"],
+            [100, "MOVE_AURA_SPHERE"]
         ],
         "by_tm": [
             "TM01",

@@ -660,6 +660,14 @@
     {
       "id": "pl_msg_00000611_00165",
       "en_US": "WEAK ARMOR"
+    },
+    {
+      "id": "pl_msg_00000611_00166",
+      "en_US": "MULTISCALE"
+    },
+    {
+      "id": "pl_msg_00000611_00167",
+      "en_US": "WIND RIDER"
     }
   ]
 }

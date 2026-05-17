@@ -117,6 +117,12 @@ Currently not working
 #define BATTLE_ADD_NEUTRALIZING_GAS
 
 #define BATTLE_ADD_WEAK_ARMOR
+
+#define BATTLE_ADD_FLUFFY
+
+#define BATTLE_ADD_MULTISCALE
+
+#define BATTLE_ADD_WIND_RIDER
 // The following are always applied because they deal with some subscripts and/or things that aren't easily configurable
 // Modernization:
 // 1) Storm Drain and Lightning Rod

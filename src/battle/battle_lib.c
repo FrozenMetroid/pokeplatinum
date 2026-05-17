@@ -3681,6 +3681,18 @@ int BattleSystem_TriggerImmunityAbility(BattleContext *battleCtx, int attacker, 
         subscript = subscript_sap_sipper;
     }
     #endif
+
+    #ifdef BATTLE_ADD_WIND_RIDER
+    if (Battler_IgnorableAbility(battleCtx, attacker, defender, ABILITY_WIND_RIDER) == TRUE
+        && BattleSystem_MoveIsWindBased(battleCtx->moveCur)
+        && attacker != defender) {
+        battleCtx->sideEffectMon = defender;
+        battleCtx->msgBattlerTemp = defender;
+        battleCtx->sideEffectType = SIDE_EFFECT_TYPE_ABILITY;
+        battleCtx->sideEffectParam = MOVE_SUBSCRIPT_PTR_ATTACK_UP_1_STAGE;
+        subscript = subscript_wind_rider;
+    }
+    #endif
     if (Battler_IgnorableAbility(battleCtx, attacker, defender, ABILITY_DRY_SKIN) == TRUE
         && moveType == TYPE_WATER
         && (battleCtx->battleStatusMask & SYSCTL_FIRST_OF_MULTI_TURN) == FALSE
@@ -3842,6 +3854,9 @@ enum SwitchInCheckState {
     #endif
     #ifdef BATTLE_ADD_DAMP_BATTLEFIELD
     SWITCH_IN_CHECK_STATE_DAMP,
+    #endif
+    #ifdef BATTLE_ADD_WIND_RIDER
+    SWITCH_IN_CHECK_STATE_WIND_RIDER,
     #endif
     SWITCH_IN_CHECK_STATE_FORM_CHANGE,
     SWITCH_IN_CHECK_STATE_AMULET_COIN,
@@ -4430,6 +4445,31 @@ int BattleSystem_TriggerEffectOnSwitch(BattleSystem *battleSys, BattleContext *b
                     battleCtx->battleMons[battler].dampAnnounced = TRUE;
                     battleCtx->msgBattlerTemp = battler;
                     subscript = subscript_damp;
+                    result = SWITCH_IN_CHECK_RESULT_BREAK;
+                    break;
+                }
+            }
+            if (i == maxBattlers) {
+                battleCtx->switchInCheckState++;
+            }
+            break;
+        #endif
+        #ifdef BATTLE_ADD_WIND_RIDER
+        case SWITCH_IN_CHECK_STATE_WIND_RIDER:
+            for (i = 0; i < maxBattlers; i++) {
+                battler = battleCtx->monSpeedOrder[i];
+
+                if (battleCtx->battleMons[battler].windRiderActivated == FALSE
+                    && battleCtx->battleMons[battler].curHP
+                    && Battler_Ability(battleCtx, battler) == ABILITY_WIND_RIDER
+                    && battleCtx->sideConditionsMask[BattleSystem_GetBattlerSide(battleSys, battler)] & SIDE_CONDITION_TAILWIND) {
+                    battleCtx->battleMons[battler].windRiderActivated = TRUE;
+                    battleCtx->sideEffectType = SIDE_EFFECT_TYPE_ABILITY;
+                    battleCtx->sideEffectParam = MOVE_SUBSCRIPT_PTR_ATTACK_UP_1_STAGE;
+                    battleCtx->moveCur = MOVE_TAILWIND;
+                    battleCtx->sideEffectMon = battler;
+                    battleCtx->msgBattlerTemp = battler;
+                    subscript = subscript_update_stat_stage;
                     result = SWITCH_IN_CHECK_RESULT_BREAK;
                     break;
                 }
@@ -7371,6 +7411,7 @@ int BattleSystem_CalcMoveDamage(BattleSystem *battleSys,
         movePower /= 2;
     }
 
+    #ifdef BATTLE_ADD_FLUFFY
     if (Battler_IgnorableAbility(battleCtx, attacker, defender, ABILITY_FLUFFY) == TRUE) {
         if (moveType == TYPE_FIRE) {
             movePower *= 2;
@@ -7379,6 +7420,13 @@ int BattleSystem_CalcMoveDamage(BattleSystem *battleSys,
             movePower /= 2;
         }
     }
+    #endif
+    #ifdef BATTLE_ADD_MULTISCALE
+    if (Battler_IgnorableAbility(battleCtx, attacker, defender, ABILITY_MULTISCALE) == TRUE
+        && defenderParams.curHP == defenderParams.maxHP) {
+        movePower /= 2;
+    }
+    #endif
 
     if (attackerParams.ability == ABILITY_HUSTLE) {
         attackStat = attackStat * 150 / 100;
@@ -9088,4 +9136,24 @@ BOOL BattleSystem_CannotSwapAbilities(BattleContext *battleCtx, int attacker, in
         return TRUE;
     }
     return FALSE;
+}
+
+BOOL BattleSystem_MoveIsWindBased(u16 move)
+{
+    switch (move) {
+        case MOVE_AEROBLAST:
+        case MOVE_AIR_CUTTER:
+        case MOVE_AIR_SLASH:
+        case MOVE_BLIZZARD:
+        case MOVE_GUST:
+        case MOVE_HEAT_WAVE:
+        case MOVE_ICY_WIND:
+        case MOVE_SANDSTORM:
+        case MOVE_TAILWIND:
+        case MOVE_TWISTER:
+        case MOVE_WHIRLWIND:
+            return TRUE;
+        default:
+            return FALSE;
+    }
 }

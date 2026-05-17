@@ -1,6 +1,6 @@
 {
     "name": "Eruption",
-    "class": "CLASS_SPECIAL",
+    "class": "CLASS_PHYSICAL",
     "type": "TYPE_FIRE",
     "power": 150,
     "accuracy": 100,

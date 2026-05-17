@@ -2,10 +2,10 @@
     "base_stats": {
         "hp": 90,
         "attack": 90,
-        "defense": 85,
+        "defense": 95,
         "speed": 100,
         "special_attack": 125,
-        "special_defense": 90
+        "special_defense": 100
     },
     "types": [ "TYPE_ELECTRIC", "TYPE_FLYING" ],
     "catch_rate": 3,
@@ -35,20 +35,23 @@
     "icon_palette": 0,
     "learnset": {
         "by_level": [
-            [ 1, "MOVE_PECK" ],
-            [ 1, "MOVE_THUNDER_SHOCK" ],
-            [ 8, "MOVE_THUNDER_WAVE" ],
-            [ 15, "MOVE_DETECT" ],
-            [ 22, "MOVE_PLUCK" ],
-            [ 29, "MOVE_ANCIENT_POWER" ],
-            [ 36, "MOVE_CHARGE" ],
-            [ 43, "MOVE_AGILITY" ],
-            [ 50, "MOVE_DISCHARGE" ],
-            [ 57, "MOVE_ROOST" ],
-            [ 64, "MOVE_LIGHT_SCREEN" ],
-            [ 71, "MOVE_DRILL_PECK" ],
-            [ 78, "MOVE_THUNDER" ],
-            [ 85, "MOVE_RAIN_DANCE" ]
+            [1, "MOVE_PECK"],
+            [1, "MOVE_THUNDER_SHOCK"],
+            [8, "MOVE_THUNDER_WAVE"],
+            [15, "MOVE_DETECT"],
+            [20, "MOVE_PLUCK"],
+            [25, "MOVE_AIR_CUTTER"],
+            [30, "MOVE_ANCIENT_POWER"],
+            [33, "MOVE_DISCHARGE"],
+            [36, "MOVE_CHARGE"],
+            [43, "MOVE_AGILITY"],
+            [46, "MOVE_DRILL_PECK"],
+            [50, "MOVE_THUNDERBOLT"],
+            [55, "MOVE_ROOST"],
+            [60, "MOVE_AIR_SLASH"],
+            [64, "MOVE_LIGHT_SCREEN"],
+            [70, "MOVE_THUNDER"],
+            [75, "MOVE_RAIN_DANCE"]
         ],
         "by_tm": [
             "TM05",

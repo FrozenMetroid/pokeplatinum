@@ -159,9 +159,11 @@ struct BattleContext {
     int switchedMonTemp;
     int abilityMon;
     int magicCoatMon;
+
     int sideEffectType;
     int sideEffectParam;
     int sideEffectFlags;
+    
     int sideEffectMon;
     int lastBattlerId;
 

@@ -1,11 +1,11 @@
 {
     "base_stats": {
         "hp": 90,
-        "attack": 30,
-        "defense": 15,
-        "speed": 15,
-        "special_attack": 40,
-        "special_defense": 20
+        "attack": 45,
+        "defense": 35,
+        "speed": 20,
+        "special_attack": 45,
+        "special_defense": 35
     },
     "types": [ "TYPE_NORMAL", "TYPE_NORMAL" ],
     "catch_rate": 170,
@@ -27,20 +27,23 @@
     "base_friendship": 70,
     "exp_rate": "EXP_RATE_FAST",
     "egg_groups": [ "EGG_GROUP_UNDISCOVERED", "EGG_GROUP_UNDISCOVERED" ],
-    "abilities": [ "ABILITY_CUTE_CHARM", "ABILITY_NONE" ],
-    "hiddenAbility": "ABILITY_NONE",
+    "abilities": [ "ABILITY_CUTE_CHARM", "ABILITY_SOUNDPROOF" ],
+    "hiddenAbility": "ABILITY_FRIEND_GUARD",
     "safari_flee_rate": 0,
     "body_color": "MON_COLOR_PINK",
     "flip_sprite": true,
     "icon_palette": 1,
     "learnset": {
         "by_level": [
-            [ 1, "MOVE_SING" ],
-            [ 1, "MOVE_CHARM" ],
-            [ 5, "MOVE_DEFENSE_CURL" ],
-            [ 9, "MOVE_POUND" ],
-            [ 13, "MOVE_SWEET_KISS" ],
-            [ 17, "MOVE_COPYCAT" ]
+            [1, "MOVE_POUND"],
+            [1, "MOVE_SING"],
+            [5, "MOVE_CHARM"],
+            [9, "MOVE_DEFENSE_CURL"],
+            [12, "MOVE_UPROAR"],
+            [13, "MOVE_SWEET_KISS"],
+            [17, "MOVE_COPYCAT"],
+            [20, "MOVE_PERISH_SONG"],
+            [25, "MOVE_HYPER_VOICE"]
         ],
         "by_tm": [
             "TM03",

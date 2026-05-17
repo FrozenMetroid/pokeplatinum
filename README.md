@@ -118,6 +118,7 @@ All Pokémon have received changes to any combination of their learnsets, Abilit
 - Harvest: 50% chance (or 100% chance in harsh sunlight) to restore a Berry that was consumed in battle
 - Neutralizing Gas: Other Pokémon's Abilities, besides Multitype and Neutralizing Gas, are suppressed
 - Weak Armor: When hit by a physical move, this Pokémon's Defense stat lowers by one stage and its Speed stat rises by two stages
+- Wind Rider: When hit by a wind move, the Pokémon's Speed stat rises by one stage
     
 ### Ability Modernizations:
 
@@ -164,6 +165,7 @@ All Pokémon have received changes to any combination of their learnsets, Abilit
     - Taunt (!!!)
     - Torment
     - Toxic Spikes (!!!)
+- Eruption is now a physical move to benefit Typhlosion's move to a physical attacker, as well as Groudon; this barely affects any other Pokémon that can learn the move
 
 ### Miscellaneous Battle System Changes:
 

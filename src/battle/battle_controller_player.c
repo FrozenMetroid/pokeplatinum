@@ -1053,6 +1053,13 @@ static void BattleControllerPlayer_CheckFieldConditions(BattleSystem *battleSys,
                         battleCtx->msgBattlerTemp = BattleSystem_SideToBattler(battleSys, battleCtx, side);
                         state = STATE_BREAK_OUT;
                     }
+
+                    for (int index = side; index < maxBattlers; index++) {
+                        if (Battler_Ability(battleCtx, index) == ABILITY_WIND_RIDER)
+                        {
+                            battleCtx->battleMons[index].windRiderActivated = FALSE;
+                        }
+                    }
                 }
 
                 battleCtx->fieldConditionCheckTemp++;
@@ -3529,15 +3536,15 @@ static void BattleControllerPlayer_UpdateHP(BattleSystem *battleSys, BattleConte
         }
 
         // handle sturdy--prevent one-hit ko's if hp == maxhp
-            if ((Battler_Ability(battleCtx, battleCtx->defender) == ABILITY_STURDY ) && (DEFENDING_MON.curHP == DEFENDING_MON.maxHP))
-            {
-                DEFENDER_SELF_TURN_FLAGS.focusItemActivated = TRUE;
-            }
-            // make sure to cancel sturdy if hp != maxhp.  necessary for multi-hit moves
-            else if ((Battler_Ability(battleCtx, battleCtx->defender) == ABILITY_STURDY ) && (DEFENDING_MON.curHP != DEFENDING_MON.maxHP))
-            {
-                DEFENDER_SELF_TURN_FLAGS.focusItemActivated = FALSE;
-            }
+        if ((Battler_Ability(battleCtx, battleCtx->defender) == ABILITY_STURDY ) && (DEFENDING_MON.curHP == DEFENDING_MON.maxHP))
+        {
+            DEFENDER_SELF_TURN_FLAGS.focusItemActivated = TRUE;
+        }
+        // make sure to cancel sturdy if hp != maxhp.  necessary for multi-hit moves
+        else if ((Battler_Ability(battleCtx, battleCtx->defender) == ABILITY_STURDY ) && (DEFENDING_MON.curHP != DEFENDING_MON.maxHP))
+        {
+            DEFENDER_SELF_TURN_FLAGS.focusItemActivated = FALSE;
+        }
 
         if ((DEFENDER_TURN_FLAGS.enduring || DEFENDER_SELF_TURN_FLAGS.focusItemActivated)
             && DEFENDING_MON.curHP + battleCtx->damage <= 0) {

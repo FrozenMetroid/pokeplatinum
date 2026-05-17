@@ -1523,4 +1523,6 @@ BOOL BattleSystem_MoveNotExemptedFromPriorityBlocking(BattleContext *battleCtx, 
 
 // for Neutralizing Gas and Gastro Acid
 BOOL BattleSystem_CannotSuppressAbility(u8 ability);
+
+BOOL BattleSystem_MoveIsWindBased(u16 move);
 #endif // POKEPLATINUM_BATTLE_BATTLE_LIB_H
