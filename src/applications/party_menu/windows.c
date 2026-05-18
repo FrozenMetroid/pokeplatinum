@@ -24,6 +24,7 @@
 #include "pokemon_stats.h"
 #include "render_text.h"
 #include "render_window.h"
+#include "senate_config.h"
 #include "sound_playback.h"
 #include "string_gf.h"
 #include "string_list.h"
@@ -750,6 +751,10 @@ void PartyMenu_LoadContextMenuStrings(PartyMenuApplication *application)
     LoadMenuString(PartyMenu_Text_Enter, PARTY_MENU_STR_ENTER_2);
     LoadMenuString(PartyMenu_Text_Set, PARTY_MENU_STR_SET);
     LoadMenuString(PartyMenu_Text_ContextConfirm, PARTY_MENU_STR_CONFIRM);
+    #ifdef PARTY_MENU_ADD_MOVE_REMINDER
+    LoadMenuString(PartyMenu_Text_MoveRelearner, PARTY_MENU_STR_MOVE_RELEARNER);
+    #endif
+
 
 #undef LoadMenuString
 }

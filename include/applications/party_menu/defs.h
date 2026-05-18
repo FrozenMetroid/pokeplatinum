@@ -24,6 +24,7 @@
 #include "particle_system.h"
 #include "party.h"
 #include "pokedex_heightweight.h"
+#include "senate_config.h"
 #include "sprite.h"
 #include "sprite_system.h"
 #include "string_gf.h"
@@ -95,6 +96,9 @@ enum PartyMenuExitCodes {
     PARTY_MENU_EXIT_CODE_DIG,
     PARTY_MENU_EXIT_CODE_SWEET_SCENT,
     PARTY_MENU_EXIT_CODE_CHATTER
+    #ifdef PARTY_MENU_ADD_MOVE_REMINDER
+    , PARTY_MENU_EXIT_CODE_MOVE_RELEARNER
+    #endif
 };
 
 #define PARTY_MENU_MODE_HIDE_CANCEL_FLAG (1 << 7)
@@ -160,6 +164,9 @@ enum PartyMenuString {
     PARTY_MENU_STR_ENTER_2,
     PARTY_MENU_STR_SET,
     PARTY_MENU_STR_CONFIRM,
+    #ifdef PARTY_MENU_ADD_MOVE_REMINDER
+    PARTY_MENU_STR_MOVE_RELEARNER,
+    #endif
     PARTY_MENU_STR_MOVE0,
     PARTY_MENU_STR_MOVE1,
     PARTY_MENU_STR_MOVE2,

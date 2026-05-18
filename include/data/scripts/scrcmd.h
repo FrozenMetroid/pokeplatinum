@@ -859,6 +859,7 @@ ScriptCommand(SCRCMD_DEBUG_REDUCEPOKEMONLEVEL,                             ScrCm
 ScriptCommand(SCRCMD_WONDERTRADE,                                          ScrCmd_WonderTrade)
 ScriptCommand(SCRCMD_DEBUG_GETSPECIESDATA,                                 ScrCmd_Debug_GetSpeciesData)
 ScriptCommand(SCRCMD_DEBUG_SETMONITEM,                                     ScrCmd_Debug_SetMonItem)
+ScriptCommand(SCRCMD_DEBUG_GIVEALLHMSANDBADGES,                            ScrCmd_Debug_GiveAllHMsandBadges)
 
 // clang-format on
 

@@ -67,6 +67,7 @@
     ScriptEntry CommonScript_GriseousOrbCouldNotBeRemoved @ 0x809
     ScriptEntry CommonScript_AskReuseRepel @ 0x80A
     ScriptEntry CommonScript_ExpShareStatusUpdate @ 0x80B
+    ScriptEntry CommonScript_MoveReminder @ 0x80C
     ScriptEntryEnd
 
 CommonScript_EmptyScript1:
@@ -1707,5 +1708,13 @@ _Message_ExpShareTurnedOff:
     Message CommonStrings_Text_ExpShareOff
     WaitButton
     GoTo _EndDialogue
+
+CommonScript_MoveReminder:
+    OpenMoveReminderMenu VAR_MAP_LOCAL_1F
+    ReturnToField
+    FadeScreenIn
+    WaitFadeScreen
+    ReleaseAll
+    End
 
     .balign 4, 0

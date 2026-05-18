@@ -63,6 +63,7 @@
 
 .set DEBUG_GIVE_SHINY_CHARM_FROM_START, 0
 .set DEBUG_FLY_FROM_START, 0
+.set REMOVE_MOVE_REMINDER_IN_PASTORIA, 1 // since it was added to the party menu
 
 #define INC_AS_ASM
 // #include "data/field/script_commands.h"
@@ -5085,6 +5086,10 @@
     .short SCRCMD_DEBUG_SETMONITEM
     .short \slot
     .short \item
+    .endm
+
+    .macro Debug_GiveAllHMsandBadges
+    .short SCRCMD_DEBUG_GIVEALLHMSANDBADGES
     .endm
 
 

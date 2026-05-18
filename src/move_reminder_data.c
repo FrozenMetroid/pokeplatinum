@@ -25,7 +25,7 @@ void MoveReminderData_Free(MoveReminderData *data)
     Heap_Free(data);
 }
 
-u16 *MoveReminderData_GetMoves(Pokemon *mon, enum HeapID heapID)
+u32 *MoveReminderData_GetMoves(Pokemon *mon, enum HeapID heapID)
 {
     u8 h, i, j;
 
@@ -80,7 +80,7 @@ u16 *MoveReminderData_GetMoves(Pokemon *mon, enum HeapID heapID)
     return reminderMoves;
 }
 
-BOOL MoveReminderData_HasMoves(u16 *moves)
+BOOL MoveReminderData_HasMoves(u32 *moves)
 {
     return moves[0] != LEVEL_UP_MOVESET_TERMINATOR;
 }

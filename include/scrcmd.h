@@ -7,6 +7,7 @@ BOOL sub_02041CC8(ScriptContext *ctx);
 BOOL ScriptContext_WaitForApplicationExit(ScriptContext *ctx);
 BOOL ScrCmd_Debug_SetAllTownsVisited(ScriptContext *ctx);
 BOOL ScrCmd_Debug_GiveAllPokemon(ScriptContext *ctx);
+BOOL ScrCmd_Debug_GiveAllHMsandBadges(ScriptContext *ctx);
 BOOL ScrCmd_Debug_ReducePokemonLevel(ScriptContext *ctx);
 BOOL ScrCmd_WonderTrade(ScriptContext *ctx);
 BOOL ScrCmd_Debug_GetSpeciesData(ScriptContext *ctx);

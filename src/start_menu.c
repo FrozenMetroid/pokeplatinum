@@ -62,6 +62,7 @@
 #include "savedata.h"
 #include "screen_fade.h"
 #include "script_manager.h"
+#include "senate_config.h"
 #include "sound.h"
 #include "sound_playback.h"
 #include "sprite.h"
@@ -1117,6 +1118,14 @@ BOOL StartMenu_ExitPartyMenu(FieldTask *fieldTask)
         menu->taskData = FieldSystem_OpenBag(fieldSystem, &menu->itemUseCtx);
         StartMenu_SetCallback(menu, StartMenu_ExitBag);
         break;
+    #ifdef PARTY_MENU_ADD_MOVE_REMINDER
+    case PARTY_MENU_EXIT_CODE_MOVE_RELEARNER:
+        u16 *var = FieldSystem_GetVarPointer(fieldSystem, VAR_MAP_LOCAL_1F); // 0x401F, not used anywhere else
+        *var = partyMenu->selectedMonSlot;
+        ScriptManager_Start(fieldTask, SCRIPT_ID(COMMON_SCRIPTS, 60), NULL, NULL);
+        menu->state = START_MENU_STATE_9;
+        break;
+    #endif
     default:
         if (partyMenu->mode == PARTY_MENU_MODE_USE_ITEM || partyMenu->mode == PARTY_MENU_MODE_TEACH_MOVE || partyMenu->mode == PARTY_MENU_MODE_TEACH_MOVE_DONE || partyMenu->mode == PARTY_MENU_MODE_USE_EVO_ITEM || partyMenu->mode == PARTY_MENU_MODE_LEVEL_MOVE_DONE) {
             menu->taskData = FieldSystem_OpenBag(fieldSystem, &menu->itemUseCtx);

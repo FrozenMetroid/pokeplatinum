@@ -147,7 +147,7 @@ BOOL ScrCmd_BufferNumber(ScriptContext *ctx)
     StringTemplate **strTemplate = FieldSystem_GetScriptMemberPtr(fieldSystem, SCRIPT_MANAGER_STR_TEMPLATE);
     u8 templateArg = ScriptContext_ReadByte(ctx);
     u16 number = ScriptContext_GetVar(ctx);
-
+    
     StringTemplate_SetNumber(*strTemplate, templateArg, number, GetNumberDigitCount(number), PADDING_MODE_SPACES, CHARSET_MODE_EN);
     return FALSE;
 }

@@ -46,6 +46,8 @@ Currently not working
 // #define ENCOUNTER_EFFECT_TRAINER_NAME_AS_SPRITE
 
 
+#define PARTY_MENU_ADD_MOVE_REMINDER
+
 
 /*
 ===============BATTLE==============

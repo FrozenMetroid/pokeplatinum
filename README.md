@@ -18,6 +18,7 @@ Credits:
 
 - Singleplayer Wonder Trade in the Global Terminal
 - Most if not all Pokémon sprites in battle have been updated to use HeartGold/SoulSilver's and/or my own edits (e.g. improving Hoenn palettes)
+- Move reminder is accessible from the party menu under normal conditions
 - Footstep sounds for walking, running, metal, grass, wood, and caves from HeartGold and Soulsilver
     - Metal, Grass, and Wood metatile behavior have not been applied to any maps because of the inability to edit maps in the decomp currently
 - Multiple Premier Balls when buying Poké Balls of any type
@@ -52,19 +53,19 @@ Credits:
 - Toggleable party-wide Exp. Share
 - Honey Trees only take 30 minutes to give an encounter rather than 6 hours
 - Additional Pokémon included in Sinnoh's regional Pokédex to increase encounter variety and type representation:
-    - Aron
-    - Bagon
-    - Electrike
-    - Growlithe
-    - Horsea
-    - Ledyba
-    - Makuhita
-    - Mankey
-    - Sableye
-    - Shroomish 
-    - Smoochum
-    - Spinarak
-    - Vulpix
+    - Aron (Oreburgh Mine, Iron Island)
+    - Bagon (Route 210)
+    - Electrike (Route 212)
+    - Growlithe (Route 204)
+    - Horsea (Route 219)
+    - Ledyba (Routes 203 and northern 205 during the morning)
+    - Makuhita (Ravaged Path, Victory Road)
+    - Mankey (Uncommon Honey Trees, northern Route 210)
+    - Sableye (Wayward Cave)
+    - Shroomish (Eterna Forest)
+    - Smoochum (Route 216)
+    - Spinarak (Route 203 and northern 205 at night)
+    - Vulpix (Route 209 at night)
 - Gym Leader sprites, as well as some regular Trainers' sprites, have been improved
 - If the player's lead Pokémon has the Ability Harvest, an additional Berry will be harvested when harvesting Berries in the overworld
 - A myriad of changes to the battle system, as documented below
@@ -118,7 +119,7 @@ All Pokémon have received changes to any combination of their learnsets, Abilit
 - Harvest: 50% chance (or 100% chance in harsh sunlight) to restore a Berry that was consumed in battle
 - Neutralizing Gas: Other Pokémon's Abilities, besides Multitype and Neutralizing Gas, are suppressed
 - Weak Armor: When hit by a physical move, this Pokémon's Defense stat lowers by one stage and its Speed stat rises by two stages
-- Wind Rider: When hit by a wind move, the Pokémon's Speed stat rises by one stage
+- Wind Rider: When hit by a wind move, the Pokémon's Attack stat rises by one stage
     
 ### Ability Modernizations:
 
@@ -206,6 +207,8 @@ All Pokémon have received changes to any combination of their learnsets, Abilit
 - Encounter Spiritomb at the Hallowed Tower immediately with an Odd Keystone
 - Diamond and Pearl-exclusive Sinnoh encounters have been returned, such as Glameow and Stunky
 - You can complete the Sinnoh regional Pokédex, but not the National Pokédex, through singleplayer
+- Locations for the additional Pokémon in the regional Pokédex listed above
+- Other locations are searchable in this repository for brevity...
 
 # Extra Trainers
 

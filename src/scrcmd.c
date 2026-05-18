@@ -7256,6 +7256,23 @@ static BOOL ScrCmd_Debug_SetAllTownsVisited(ScriptContext *ctx)
     return FALSE;
 }
 
+static BOOL ScrCmd_Debug_GiveAllHMsandBadges(ScriptContext *ctx)
+{
+    Bag *bag = SaveData_GetBag(ctx->fieldSystem->saveData);
+
+    for (int i = ITEM_HM01; i < ITEM_HM08 + 1; i++) {
+        Bag_TryAddItem(bag, i, 1, HEAP_ID_FIELD1);
+    }
+    
+    for (int i = 0; i < 8; i++) {
+        TrainerInfo_SetBadge(SaveData_GetTrainerInfo(ctx->fieldSystem->saveData), i);
+    }
+
+    Bag_TryAddItem(bag, ITEM_FLAME_MAIL, 1, HEAP_ID_FIELD1);
+    
+    return FALSE;
+}
+
 static BOOL ScrCmd_BottleCapStatIncrease(ScriptContext *ctx)
 {
     u16 partySlot = ScriptContext_GetVar(ctx);

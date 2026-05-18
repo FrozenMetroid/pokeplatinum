@@ -9,7 +9,7 @@ typedef struct MoveReminderData {
     Pokemon *mon;
     TrainerInfo *trainerInfo;
     Options *options;
-    u16 *moves;
+    u32 *moves;
     u16 cursorPos;
     u16 listPos;
     u8 showingContest;
@@ -20,7 +20,7 @@ typedef struct MoveReminderData {
 
 MoveReminderData *MoveReminderData_Alloc(enum HeapID heapID);
 void MoveReminderData_Free(MoveReminderData *data);
-u16 *MoveReminderData_GetMoves(Pokemon *mon, enum HeapID heapID);
-BOOL MoveReminderData_HasMoves(u16 *moves);
+u32 *MoveReminderData_GetMoves(Pokemon *mon, enum HeapID heapID);
+BOOL MoveReminderData_HasMoves(u32 *moves);
 
 #endif // POKEPLATINUM_MOVE_REMINDER_DATA_H

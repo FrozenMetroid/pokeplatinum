@@ -2,11 +2,14 @@
 #include "res/text/bank/pastoria_city_east_house.h"
 
 
-    ScriptEntry PastoriaCityEastHouse_MoveManiac
+    ScriptEntry PastoriaCityEastHouse_MoveManiac // removed 
     ScriptEntry PastoriaCityEastHouse_Youngster
     ScriptEntryEnd
 
 PastoriaCityEastHouse_MoveManiac:
+.if REMOVE_MOVE_REMINDER_IN_PASTORIA
+    GoTo _NormalMoveManiacDialogue
+.endif
     PlaySE SEQ_SE_CONFIRM
     LockAll
     FacePlayer
@@ -80,4 +83,8 @@ PastoriaCityEastHouse_EggsCantLearnMoves:
 
 PastoriaCityEastHouse_Youngster:
     NPCMessage PastoriaCityEastHouse_Text_NewspaperGivesHeartScales
+    End
+
+_NormalMoveManiacDialogue:
+    NPCMessage PastoriaCityEastHouse_Text_RegularMoveManiacDialogue
     End

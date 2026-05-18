@@ -48,6 +48,7 @@
 #include "party.h"
 #include "pokemon.h"
 #include "render_window.h"
+#include "senate_config.h"
 #include "screen_fade.h"
 #include "sound.h"
 #include "sound_playback.h"
@@ -1755,7 +1756,11 @@ static void sub_0207FFC8(PartyMenuApplication *application)
     u8 v1;
 
     Window_EraseMessageBox(&application->windows[32], 1);
+    #ifndef PARTY_MENU_ADD_MOVE_REMINDER
     v0 = Heap_Alloc(HEAP_ID_PARTY_MENU, 8);
+    #else
+    v0 = Heap_Alloc(HEAP_ID_PARTY_MENU, 9);
+    #endif
 
     switch (application->partyMenu->mode) {
     case PARTY_MENU_MODE_FIELD:
@@ -1795,7 +1800,7 @@ BOOL CheckIfInList(u16 value, u16 array[], u32 size)
 {
     for(u32 i = 0; i < size; i++)
     {
-        if(value == array[i])
+        if (value == array[i])
         {
             return TRUE;
         }
@@ -1810,7 +1815,7 @@ static u8 GetContextMenuEntriesForPartyMon(PartyMenuApplication *application, u8
     Pokemon *mon = Party_GetPokemonBySlotIndex(application->partyMenu->party, application->currPartySlot);
     Bag *bag = SaveData_GetBag(SaveData_Ptr());
     u16 move;
-    u8 fieldMoveIndex = 0, i, count = 0, fieldEffect;
+    u8 moveSlot = 0, i, count = 0, fieldEffect;
 
     menuEntriesBuffer[count] = 1;
     count++;
@@ -1837,8 +1842,8 @@ static u8 GetContextMenuEntriesForPartyMon(PartyMenuApplication *application, u8
                     if (hasTMHM) {
                         menuEntriesBuffer[count] = fieldEffect;
                         count++;
-                        PartyMenu_SetKnownFieldMove(application, move, fieldMoveIndex);
-                        fieldMoveIndex++;
+                        PartyMenu_SetKnownFieldMove(application, move, moveSlot);
+                        moveSlot++;
                     }
                 }
             }
@@ -1851,22 +1856,27 @@ static u8 GetContextMenuEntriesForPartyMon(PartyMenuApplication *application, u8
                     if (fieldEffect != 0xFF) {
                         menuEntriesBuffer[count] = fieldEffect;
                         count++;
-                        PartyMenu_SetKnownFieldMove(application, move, fieldMoveIndex);
-                        fieldMoveIndex++;
+                        PartyMenu_SetKnownFieldMove(application, move, moveSlot);
+                        moveSlot++;
                     }
                 }
             }
 
-            menuEntriesBuffer[count] = 0;
+            menuEntriesBuffer[count] = PARTY_MENU_STR_SWITCH;
             count++;
 
             if (Item_IsMail(application->partyMembers[application->currPartySlot].heldItem) == TRUE) {
-                menuEntriesBuffer[count] = 5;
+                menuEntriesBuffer[count] = PARTY_MENU_STR_MAIL;
             } else {
-                menuEntriesBuffer[count] = 2;
+                menuEntriesBuffer[count] = PARTY_MENU_STR_ITEM;
             }
 
             count++;
+
+            #ifdef PARTY_MENU_ADD_MOVE_REMINDER
+            menuEntriesBuffer[count] = PARTY_MENU_STR_MOVE_RELEARNER;
+            count++;
+            #endif
         } else {
             menuEntriesBuffer[count] = 0;
             count++;

@@ -55,6 +55,7 @@ static void PartyMenu_SelectSweetScent(PartyMenuApplication *application, int *p
 static void PartyMenu_SelectChatter(PartyMenuApplication *application, int *partyMenuState);
 static void PartyMenu_SelectMilkDrink(PartyMenuApplication *application, int *partyMenuState);
 static void PartyMenu_SelectSoftboiled(PartyMenuApplication *application, int *partyMenuState);
+static void PartyMenu_SelectMoveRelearner(PartyMenuApplication *application, int *partyMenuState);
 static int PartyMenu_StartFieldMoveHPTransfer(PartyMenuApplication *application);
 static void sub_02084760(PartyMenuApplication *application, int *partyMenuState);
 static void PartyMenu_SelectItem(PartyMenuApplication *application, int *partyMenuState);
@@ -73,7 +74,11 @@ static void sub_020845E8(PartyMenuApplication *application, int *partyMenuState)
 static void sub_020846FC(PartyMenuApplication *application, int *partyMenuState);
 static void PartyMenu_SelectBallSeal(PartyMenuApplication *application, int *partyMenuState);
 
+#ifndef PARTY_MENU_ADD_MOVE_REMINDER
 static const PartyMenuAction sPartyMenuActions[32] = {
+#else
+static const PartyMenuAction sPartyMenuActions[33] = {
+#endif
     PartyMenu_SelectSwitch,
     PartyMenu_SelectSummary,
     PartyMenu_SelectItem,
@@ -90,6 +95,9 @@ static const PartyMenuAction sPartyMenuActions[32] = {
     sub_020846CC, // cancel?
     sub_02084760, // clear screen?
     sub_020846FC, // cancel2
+    #ifdef PARTY_MENU_ADD_MOVE_REMINDER
+    PartyMenu_SelectMoveRelearner, // move relearner
+    #endif
     PartyMenu_SelectCut,
     PartyMenu_SelectFly,
     PartyMenu_SelectSurf,
@@ -995,6 +1003,18 @@ static void PartyMenu_SelectSoftboiled(PartyMenuApplication *application, int *p
         application->monHpTransfer[HP_TRANSFER_JOURNAL_MOVE_IDX] = FIELD_MOVE_SOFTBOILED;
     }
 }
+
+#ifdef PARTY_MENU_ADD_MOVE_REMINDER
+static void PartyMenu_SelectMoveRelearner(PartyMenuApplication *application, int *partyMenuState)
+{
+    application->partyMenu->menuSelectionResult = PARTY_MENU_EXIT_CODE_MOVE_RELEARNER;
+
+    Menu_Free(application->contextMenu, NULL);
+    StringList_Free(application->contextMenuChoices);
+
+    *partyMenuState = PARTY_MENU_STATE_32;
+}
+#endif
 
 static int PartyMenu_StartFieldMoveHPTransfer(PartyMenuApplication *application)
 {

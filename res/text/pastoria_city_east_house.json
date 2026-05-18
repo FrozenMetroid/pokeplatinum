@@ -104,7 +104,22 @@
         "I often go to Solaceon Town for my big\n",
         "brother.\r",
         "The newspaper there gives me Heart\n",
-        "Scales for running errands."
+        "Scales for running errands.\r",
+        "They’re pretty, but uh...\n",
+        "they’re not worth much."
+      ]
+    },
+    {
+      "id": "PastoriaCityEastHouse_Text_RegularMoveManiacDialogue",
+      "en_US": [
+        "The Great Marsh was once planned\n",
+        "to be drained to have more land\f",
+        "for housing, but the people of\f",
+        "Pastoria City voted against it!\r",
+        "The city has become far more\n",
+        "famous for the Great Marsh than\f",
+        "it ever would have with just\f",
+        "plain ol’ houses there."
       ]
     }
   ]

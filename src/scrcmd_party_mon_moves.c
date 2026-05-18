@@ -57,14 +57,14 @@ BOOL ScrCmd_CheckHasLearnableReminderMoves(ScriptContext *ctx)
     u16 partySlot = ScriptContext_GetVar(ctx);
 
     Pokemon *mon = Party_GetPokemonBySlotIndex(SaveData_GetParty(ctx->fieldSystem->saveData), partySlot);
-    u16 *moves = MoveReminderData_GetMoves(mon, HEAP_ID_FIELD3);
+    u32 *moves = MoveReminderData_GetMoves(mon, HEAP_ID_FIELD3);
     *destVar = MoveReminderData_HasMoves(moves);
 
     Heap_Free(moves);
     return FALSE;
 }
 
-static void OpenMenu(ScriptContext *ctx, u16 isMoveTutor, Pokemon *mon, u16 *moves)
+static void OpenMenu(ScriptContext *ctx, u16 isMoveTutor, Pokemon *mon, u32 *moves)
 {
     void **partyManagementData = FieldSystem_GetScriptMemberPtr(ctx->fieldSystem, SCRIPT_MANAGER_PARTY_MANAGEMENT_DATA);
     MoveReminderData *data = MoveReminderData_Alloc(HEAP_ID_FIELD3);
@@ -91,7 +91,7 @@ BOOL ScrCmd_OpenMoveReminderMenu(ScriptContext *ctx)
     u16 partySlot = ScriptContext_GetVar(ctx);
 
     Pokemon *mon = Party_GetPokemonBySlotIndex(SaveData_GetParty(ctx->fieldSystem->saveData), partySlot);
-    u16 *moves = MoveReminderData_GetMoves(mon, HEAP_ID_FIELD3);
+    u32 *moves = MoveReminderData_GetMoves(mon, HEAP_ID_FIELD3);
 
     OpenMenu(ctx, TRUE, mon, moves);
 

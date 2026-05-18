@@ -1027,6 +1027,12 @@
         "{STRVAR_1 1, 0, 0}’s Ability was\n",
         "changed to {STRVAR_1 8, 1, 0}!\r"
       ]
+    },
+    {
+      "id": "PartyMenu_Text_MoveRelearner",
+      "en_US": [
+        "MOVE REMINDER"
+      ]
     }
   ]
 }
