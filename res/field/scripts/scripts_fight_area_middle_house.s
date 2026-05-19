@@ -46,7 +46,7 @@ _SelectMon:
     CloseMessage
     FadeScreenOut COLOR_BLACK
     WaitFadeScreen
-    SelectMoveTutorPokemon // works here even though it's not for a move tutor
+    SelectPartyPokemon
     GetSelectedPartySlot VAR_0x8003
     ReturnToField
     FadeScreenIn COLOR_BLACK

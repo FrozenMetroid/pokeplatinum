@@ -2187,11 +2187,15 @@
     .endm
 
     .macro OpenItemsBag
-    OpenBag 0
+    OpenBag POCKET_ITEMS
     .endm
 
     .macro OpenBerriesBag
-    OpenBag 1
+    OpenBag POCKET_BERRIES
+    .endm
+
+    .macro OpenPokeBallsBag
+    OpenBag POCKET_BALLS
     .endm
 
     .macro GetSelectedItem destVar
@@ -2330,6 +2334,10 @@
 
     .macro SelectMoveTutorPokemon
     .short SCRCMD_SELECTMOVETUTORPOKEMON
+    .endm
+
+    .macro SelectPartyPokemon
+    .short SCRCMD_SELECTMOVETUTORPOKEMON // same thing as above but renaming it for clarity 
     .endm
 
     .macro OpenPartyMenuForUnionRoomBattle
@@ -5090,6 +5098,13 @@
 
     .macro Debug_GiveAllHMsandBadges
     .short SCRCMD_DEBUG_GIVEALLHMSANDBADGES
+    .endm
+
+    .macro ChangePokeBall slot, ball, result
+    .short SCRCMD_CHANGEPOKEBALL
+    .short \slot
+    .short \ball
+    .short \result
     .endm
 
 

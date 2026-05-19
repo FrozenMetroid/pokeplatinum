@@ -1696,7 +1696,7 @@ _EndDialogue:
     End
 
 CommonScript_ExpShareStatusUpdate:
-    PlaySe SEQ_SE_CONFIRM
+    PlaySE SEQ_SE_CONFIRM
     LockAll
     CheckExpShareStatus VAR_RESULT
     GoToIfEq VAR_RESULT, FALSE, _Message_ExpShareTurnedOff

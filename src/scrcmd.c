@@ -3429,18 +3429,12 @@ static BOOL ScrCmd_SaveChosenStarter(ScriptContext *ctx)
 static BOOL ScrCmd_OpenBag(ScriptContext *ctx)
 {
     void **v0;
-    u8 v1;
-
-    if (ScriptContext_ReadByte(ctx) == 0) {
-        v1 = 0;
-    } else {
-        v1 = 1;
-    }
+    u8 pocket = ScriptContext_ReadByte(ctx);
 
     v0 = FieldSystem_GetScriptMemberPtr(ctx->fieldSystem, SCRIPT_MANAGER_PARTY_MANAGEMENT_DATA);
     GF_ASSERT(*v0 == 0);
 
-    *v0 = FieldSystem_CreateBagContext(ctx->fieldSystem, v1);
+    *v0 = FieldSystem_CreateBagContext(ctx->fieldSystem, pocket);
     ScriptContext_Pause(ctx, ScriptContext_WaitForApplicationExit);
 
     return TRUE;
@@ -7421,6 +7415,33 @@ static BOOL ScrCmd_Debug_SetMonItem(ScriptContext *ctx)
 
     Pokemon *mon = Party_GetPokemonBySlotIndex(SaveData_GetParty(ctx->fieldSystem->saveData), partySlot);
     Pokemon_SetValue(mon, MON_DATA_HELD_ITEM, &itemID);
+
+    return FALSE;
+}
+
+static BOOL ScrCmd_ChangePokeBall(ScriptContext *ctx)
+{
+    u8 partySlot = ScriptContext_GetVar(ctx);
+    u16 ball = ScriptContext_GetVar(ctx);
+    u16 *result = ScriptContext_GetVarPointer(ctx);
+
+    Pokemon *mon = Party_GetPokemonBySlotIndex(SaveData_GetParty(ctx->fieldSystem->saveData), partySlot);
+    u16 currentBall = Pokemon_GetValue(mon, MON_DATA_POKEBALL, NULL);
+    if (currentBall == ball) {
+        *result = 0xFFFC; // indicate that the new ball is the same as the old ball, so no change was made
+    } else if (currentBall == ITEM_MASTER_BALL || currentBall == ITEM_SAFARI_BALL // don't want the player to be able to change the ball of a mon caught in a master ball or safari ball since those are supposed to be unobtainable in the player's inventory
+        || currentBall == ITEM_CHERISH_BALL/* || currentBall == ITEM_PARK_BALL*/) {
+        *result = currentBall;
+    } else {
+        Bag *bag = SaveData_GetBag(ctx->fieldSystem->saveData);
+        if (!Bag_TryAddItem(bag, currentBall, 1, HEAP_ID_FIELD1)) { // give the player back the ball they had on the mon
+            *result = 0xFFFE; // indicate failure to add the old ball back to the bag
+        } else {
+            Pokemon_SetValue(mon, MON_DATA_POKEBALL, &ball);
+            Bag_TryRemoveItem(bag, ball, 1, HEAP_ID_FIELD1); // remove the new ball from the bag since it's now on the mon, no error handling since we know it exists in the bag from the previous check when the player selected it
+            *result = 0xFFFF; // indicate success with 0xFFFF
+        }
+    }
 
     return FALSE;
 }

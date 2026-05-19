@@ -87,6 +87,108 @@
         "ought to juggle Boxes smartly, though.\f",
         "I shouldn’t be the one to say so."
       ]
+    },
+    {
+      "id": "HearthomeCityNorthwestHouse_Text_ScientistSpeakFirstTime",
+      "en_US": [
+        "Have you ever caught a Pokémon before\n",
+        "and regretted the Poké Ball you used?\r",
+        "I’ve been working with Bebe to help\n",
+        "Trainers change the Poké Ball a\f",
+        "Pokémon is caught in!\r"
+      ]
+    },
+    {
+      "id": "HearthomeCityNorthwestHouse_Text_WouldYouLikeToTry",
+      "en_US": [
+        "Would you like to try changing your\n",
+        "Pokémon’s Poké Ball?"
+      ]
+    },
+    {
+      "id": "HearthomeCityNorthwestHouse_Text_DeclinedScientist",
+      "en_US": [
+        "Awh, I’ll keep my innovation to\n",
+        "myself then..."
+      ]
+    },
+    {
+      "id": "HearthomeCityNorthwestHouse_Text_ScientistExcited",
+      "en_US": [
+        "Splendid! Which Pokémon should\n",
+        "I work with?\r"
+      ]
+    },
+    {
+      "id": "HearthomeCityNorthwestHouse_Text_EggSelected",
+      "en_US": [
+        "Wah...? That’s an Egg.\n",
+        "It’s not even in a Poké Ball yet!"
+      ]
+    },
+    {
+      "id": "HearthomeCityNorthwestHouse_Text_SelectPokeBall",
+      "en_US": [
+        "I’m excited to change its Poké Ball!\n",
+        "Which one should I change it to?\r"
+      ]
+    },
+    {
+      "id": "HearthomeCityNorthwestHouse_Text_CannotSwapToMasterBall",
+      "en_US": [
+        "That’s a Master Ball! It’s far too\n",
+        "special for me to handle!\r",
+        "You should save that for a\n",
+        "once-in-a-lifetime encounter!"
+      ]
+    },
+    {
+      "id": "HearthomeCityNorthwestHouse_Text_CannotSwapToThisBall",
+      "en_US": [
+        "Huh? This Poké Ball is only\n",
+        "used in special circumstances.\f",
+        "Far be it for me to use it!"
+      ]
+    },
+    {
+      "id": "HearthomeCityNorthwestHouse__Text_CannotChangeBall",
+      "en_US": [
+        "Oh? Your Pokémon was captured with\n",
+        "{STRVAR_1 3, 0, 0}!\r",
+        "I cannot remove such a special\n",
+        "Poké Ball!"
+      ]
+    },
+    {
+      "id": "HearthomeCityNorthwestHouse_Text_CurrentBallIsDesiredBall",
+      "en_US": [
+        "Are you trying to pull something\n",
+        "on me?\r",
+        "Your Pokémon is already contained in\n",
+        "{STRVAR_1 3, 0, 0}!"
+      ]
+    },
+    {
+      "id": "HearthomeCityNorthwestHouse_Text_NoRoomInBagForSwappedBall",
+      "en_US": [
+        "Awh, I’m sorry, you have no more room\n",
+        "in your Bag if I remove the\f",
+        "Poké Ball from your Pokémon!"
+      ]
+    },
+    {
+      "id": "HearthomeCityNorthwestHouse_Text_123Poof",
+      "en_US": [
+        "1, {PAUSE 20}2, and{PAUSE 20}... {PAUSE 20}... {PAUSE 20}... Poof!{WAIT 3}{WAIT 5}\r"
+      ]
+    },
+    {
+      "id": "HearthomeCityNorthwestHouse_Text_PokeBallChangeSuccess",
+      "en_US": [
+        "Oh! It seems to have worked!\n",
+        "Your Pokémon is now contained in\f",
+        "{STRVAR_1 3, 0, 0}!"
+      ]
     }
   ]
 }

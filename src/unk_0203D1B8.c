@@ -293,15 +293,18 @@ void *FieldSystem_CreateBagContext(FieldSystem *fieldSystem, int pocketType)
     static const u8 *pocketList;
     static const u8 berriesPockets[] = { POCKET_BERRIES, POCKET_LIST_END };
     static const u8 itemsPockets[] = { POCKET_ITEMS, POCKET_LIST_END };
+    static const u8 pokeBallsPockets[] = { POCKET_BALLS, POCKET_LIST_END };
     Bag *bag = SaveData_GetBag(fieldSystem->saveData);
 
     switch (pocketType) {
-    case 0:
+    case POCKET_ITEMS:
         pocketList = itemsPockets;
         break;
-    case 1:
+    case POCKET_BERRIES:
         pocketList = berriesPockets;
         break;
+    case POCKET_BALLS:
+        pocketList = pokeBallsPockets;
     default:
         GF_ASSERT(0);
     }
