@@ -11,7 +11,7 @@
         {
             "species": "SPECIES_STUNKY",
             "form": 0,
-            "level": 11,
+            "level": 12,
             "item": null,
             "moves": [
                 "MOVE_POISON_GAS",
@@ -19,7 +19,7 @@
                 "MOVE_SMOG",
                 "MOVE_FURY_SWIPES"
             ],
-            "iv_scale": 0,
+            "iv_scale": 30,
             "ball_seal": 0
         }
     ],

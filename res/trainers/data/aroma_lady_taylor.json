@@ -11,27 +11,27 @@
         {
             "species": "SPECIES_BUDEW",
             "form": 0,
-            "level": 9,
+            "level": 11,
             "item": null,
             "moves": [
                 "MOVE_ABSORB",
                 "MOVE_POISON_STING",
                 "MOVE_GROWTH"
             ],
-            "iv_scale": 15,
+            "iv_scale": 30,
             "ball_seal": 0
         },
         {
             "species": "SPECIES_CHERUBI",
             "form": 0,
-            "level": 11,
+            "level": 13,
             "item": null,
             "moves": [
                 "MOVE_ABSORB",
                 "MOVE_LEECH_SEED",
                 "MOVE_TACKLE"
             ],
-            "iv_scale": 15,
+            "iv_scale": 30,
             "ball_seal": 0
         }
     ],

@@ -7,6 +7,8 @@
 #include "field/field_system_decl.h"
 #include "overlay005/map_prop.h"
 
+#include "generated/gender_ratios.h"
+
 HoneyTreeShakeList *HoneyTree_ShakeDataInit(void);
 void HoneyTree_FreeShakeData(HoneyTreeShakeList **param0);
 BOOL HoneyTree_TryInteract(FieldSystem *fieldSystem, int *eventId);
@@ -16,5 +18,6 @@ void HoneyTree_StopShaking(FieldSystem *fieldSystem);
 int HoneyTree_GetSpecies(FieldSystem *fieldSystem);
 void ov5_021F0030(void *param0, const int param1, MapPropManager *const mapPropManager);
 void HoneyTree_Unslather(FieldSystem *fieldSystem);
+u8 HoneyTree_GetLevel(FieldSystem *fieldSystem, u16 *species);
 
 #endif // POKEPLATINUM_HONEY_TREE_H

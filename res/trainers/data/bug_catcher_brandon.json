@@ -11,27 +11,29 @@
         {
             "species": "SPECIES_SPINARAK",
             "form": 0,
-            "level": 10,
+            "level": 12,
             "item": null,
             "moves": [
                 "MOVE_TACKLE",
                 "MOVE_STRING_SHOT",
-                "MOVE_POISON_STING"
+                "MOVE_POISON_STING",
+                "MOVE_MEGA_DRAIN"
             ],
-            "iv_scale": 15,
+            "iv_scale": 30,
             "ball_seal": 0
         },
         {
             "species": "SPECIES_LEDYBA",
             "form": 0,
-            "level": 11,
+            "level": 13,
             "item": null,
             "moves": [
                 "MOVE_TACKLE",
-                "MOVE_HARDEN",
-                "MOVE_POISON_STING"
+                "MOVE_COMET_PUNCH",
+                "MOVE_BUG_BITE",
+                "MOVE_SUPERSONIC"
             ],
-            "iv_scale": 15,
+            "iv_scale": 30,
             "ball_seal": 0
         }
     ],

@@ -8,21 +8,31 @@
     "double_battle": false,
     "party": [
         {
-            "species": "SPECIES_ZUBAT",
+            "species": "SPECIES_BEAUTIFLY",
             "form": 0,
-            "level": 11,
+            "level": 14,
             "item": null,
-            "moves": null,
-            "iv_scale": 0,
+            "moves": [
+                "MOVE_TACKLE",
+                "MOVE_POISON_STING",
+                "MOVE_GUST",
+                "MOVE_ABSORB"
+            ],
+            "iv_scale": 30,
             "ball_seal": 0
         },
         {
             "species": "SPECIES_ZUBAT",
             "form": 0,
-            "level": 11,
+            "level": 14,
             "item": null,
-            "moves": null,
-            "iv_scale": 0,
+            "moves": [
+                "MOVE_ASTONISH",
+                "MOVE_POISON_STING",
+                "MOVE_WING_ATTACK",
+                "MOVE_SUPERSONIC"
+            ],
+            "iv_scale": 30,
             "ball_seal": 0
         }
     ],

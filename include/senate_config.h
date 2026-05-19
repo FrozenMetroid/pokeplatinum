@@ -34,6 +34,13 @@ Shortened timer for Honey Tree
 #define HONEYTREE_SHORTENED_TIMER
 
 /*
+Honey Tree levels will vary based on Badge
+with 10 being the minimum and 55 being the max with 8 Badges;
+also evolves the Pokemon if it can evolve at that level (50% chance to evolve if it can)
+*/
+#define UPDATE_HONEY_TREE_LEVELS
+
+/*
 Testing for changing banks between headers
 */
 // #define CHANGE_FIELD_BGM_FADE_OUT

@@ -11,7 +11,7 @@
         {
             "species": "SPECIES_GLAMEOW",
             "form": 0,
-            "level": 11,
+            "level": 12,
             "item": null,
             "moves": [
                 "MOVE_GROWL",
@@ -19,7 +19,7 @@
                 "MOVE_TAIL_WHIP",
                 "MOVE_FAKE_OUT"
             ],
-            "iv_scale": 0,
+            "iv_scale": 40,
             "ball_seal": 0
         }
     ],

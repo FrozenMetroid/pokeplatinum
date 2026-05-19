@@ -46,6 +46,7 @@
 #include "roaming_pokemon.h"
 #include "rtc.h"
 #include "save_player.h"
+#include "senate_config.h"
 #include "special_encounter.h"
 #include "system_flags.h"
 #include "system_vars.h"
@@ -1139,38 +1140,38 @@ static void CreateWildMon(u16 species, u8 level, const int partyDest, const Wild
     }
     Pokemon_SetValue(newEncounter, MON_DATA_OT_ID, &encounterFieldParams->trainerID);
 
-    #ifdef TESTING_GIVE_PERFECT_ENCOUNTERS // make the wild mon have perfect IVs and two max EVs based on their highest stats
-    // give the mon perfect IVs
-    u8 iv = 31;
-    for (int i = MON_DATA_HP_IV; i < MON_DATA_IS_EGG; i++) {
-        Pokemon_SetValue(newEncounter, i, &iv);
-    }
-    // give the mon EVs based on its highest stats
-    u8 baseStats[6];
-    SpeciesData *speciesData;
-    u8 form = Pokemon_GetValue(newEncounter, MON_DATA_FORM, NULL);
-    if (form != 0) {
-        speciesData = SpeciesData_FromMonForm(species, form, HEAP_ID_FIELD2);
-    } else {
-        speciesData = SpeciesData_FromMonSpecies(species, HEAP_ID_FIELD2);
-    }
-    for (int i = SPECIES_DATA_BASE_HP; i < SPECIES_DATA_TYPE_1; i++) {
-        baseStats[i] = SpeciesData_GetValue(speciesData, i);
-    }
-    u8 statIds[6] = {
-        MON_DATA_HP_EV,
-        MON_DATA_ATK_EV,
-        MON_DATA_DEF_EV,
-        MON_DATA_SPEED_EV,
-        MON_DATA_SPATK_EV,
-        MON_DATA_SPDEF_EV
-    };
-    u8 highest, secondHighest = 0;
-    u8 ev = 252;
-    Array_ReturnHighestAndSecondHighestSlots(baseStats, &highest, &secondHighest);
-    Pokemon_SetValue(newEncounter, statIds[highest], &ev);
-    Pokemon_SetValue(newEncounter, statIds[secondHighest], &ev);
-    #endif
+#ifdef TESTING_GIVE_PERFECT_ENCOUNTERS // make the wild mon have perfect IVs and two max EVs based on their highest stats
+        // give the mon perfect IVs
+        u8 iv = 31;
+        for (int i = MON_DATA_HP_IV; i < MON_DATA_IS_EGG; i++) {
+            Pokemon_SetValue(newEncounter, i, &iv);
+        }
+        // give the mon EVs based on its highest stats
+        u8 baseStats[6];
+        SpeciesData *speciesData;
+        u8 form = Pokemon_GetValue(newEncounter, MON_DATA_FORM, NULL);
+        if (form != 0) {
+            speciesData = SpeciesData_FromMonForm(species, form, HEAP_ID_FIELD2);
+        } else {
+            speciesData = SpeciesData_FromMonSpecies(species, HEAP_ID_FIELD2);
+        }
+        for (int i = SPECIES_DATA_BASE_HP; i < SPECIES_DATA_TYPE_1; i++) {
+            baseStats[i] = SpeciesData_GetValue(speciesData, i);
+        }
+        u8 statIds[6] = {
+            MON_DATA_HP_EV,
+            MON_DATA_ATK_EV,
+            MON_DATA_DEF_EV,
+            MON_DATA_SPEED_EV,
+            MON_DATA_SPATK_EV,
+            MON_DATA_SPDEF_EV
+        };
+        u8 highest, secondHighest = 0;
+        u8 ev = 252;
+        Array_ReturnHighestAndSecondHighestSlots(baseStats, &highest, &secondHighest);
+        Pokemon_SetValue(newEncounter, statIds[highest], &ev);
+        Pokemon_SetValue(newEncounter, statIds[secondHighest], &ev);
+#endif
 
     if (hasHiddenAbility) {
         SpeciesData *speciesData = Heap_Alloc(HEAP_ID_FIELD2, sizeof(SpeciesData));
@@ -1312,6 +1313,7 @@ void CreateWildMon_HoneyTree(FieldSystem *fieldSystem, FieldBattleDTO *battlePar
     WildEncounters_FieldParams encounterFieldParams;
     InitEncounterFieldParams(fieldSystem, firstPartyMon, NULL, &encounterFieldParams);
 
+    #ifndef UPDATE_HONEY_TREE_LEVELS
     u8 levelVariance = 15 - 5 + 1;
 
     u8 level = 5 + LCRNG_RandMod(levelVariance);
@@ -1323,6 +1325,9 @@ void CreateWildMon_HoneyTree(FieldSystem *fieldSystem, FieldBattleDTO *battlePar
             level = 15;
         }
     }
+    #else
+    u8 level = HoneyTree_GetLevel(fieldSystem, &species);
+    #endif
 
     HoneyTree_Unslather(fieldSystem);
     battleParams->battleStatusMask |= BATTLE_STATUS_HONEY_TREE;

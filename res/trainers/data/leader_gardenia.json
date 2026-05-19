@@ -39,7 +39,7 @@
             "level": 20,
             "item": "ITEM_NONE",
             "moves": [
-                "MOVE_GRASS_KNOT",
+                "MOVE_RAZOR_LEAF",
                 "MOVE_LEECH_SEED",
                 "MOVE_SUNNY_DAY",
                 "MOVE_GROWTH"

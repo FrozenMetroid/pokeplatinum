@@ -17,6 +17,7 @@
 #include "narc.h"
 #include "player_avatar.h"
 #include "save_player.h"
+#include "senate_config.h"
 #include "special_encounter.h"
 #include "terrain_collision_manager.h"
 #include "trainer_info.h"
@@ -494,3 +495,54 @@ void HoneyTree_Unslather(FieldSystem *fieldSystem)
 
     tree->minutesRemaining = 0;
 }
+
+#ifdef UPDATE_HONEY_TREE_LEVELS
+u8 HoneyTree_GetLevel(FieldSystem *fieldSystem, u16 *species) // evolve if the mon can, too
+{
+    u8 minLevel = 10, maxLevel = 55, level = 0;
+    u8 numBadges = TrainerInfo_BadgeCount(SaveData_GetTrainerInfo(fieldSystem->saveData));
+    u16 temp;
+    
+    if (numBadges == 0) {
+        return minLevel; // you can't even access honey trees without a badge but this is a failsafe
+    } else {
+        temp = numBadges * (maxLevel - minLevel);
+        temp /= 8;
+        level = minLevel + temp; // level scales with badges, up to maxLevel at 8 badges
+        level = (LCRNG_RandMod(level) + 1); // now randomize it between 1 and maxLevel
+        if (level < minLevel) {
+            level = minLevel;
+        }
+
+        struct SpeciesEvolution *evoTable = Heap_Alloc(HEAP_ID_BATTLE, MAX_EVOLUTIONS * sizeof(struct SpeciesEvolution));
+        NARC_ReadWholeMemberByIndexPair(evoTable, NARC_INDEX_POKETOOL__PERSONAL__EVO, *species);
+
+        if (evoTable[0].method != EVO_NONE && LCRNG_RandMod(2)) { // 50% chance to evolve the mon if it can evolve by level up
+            for (int j = 0; j < 2; j++) { // do this twice for something like Dustox or Beautifly
+                for (int i = 0; i < MAX_EVOLUTIONS && evoTable[i].method != EVO_NONE; i++) {
+                    if ((evoTable[i].method == EVO_LEVEL && evoTable[i].param <= level) // EVO_LEVEL_FEMALE for combee
+                        || (*species == SPECIES_AIPOM && level >= 32)) { // aipom hardcoded for double hit
+                        *species = evoTable[i].targetSpecies;
+                        break;
+                    } else if (evoTable[i].method == EVO_LEVEL_FEMALE && evoTable[i].param <= level) {
+                        // only combee can evolve with this
+                        // make sure that not all combee above level 21 evolve into Vespiquen following the gender ratio
+                        if (LCRNG_RandMod(256) < GENDER_RATIO_FEMALE_12_5) {
+                            *species = SPECIES_VESPIQUEN;
+                        }
+                    } else if (*species == SPECIES_WURMPLE && level >= 7) { // handle wurmple split evolution
+                        if (LCRNG_RandMod(2)) { // 50/50 for silcoon or cascoon, personality doesn't matter at this point
+                            *species = SPECIES_SILCOON;
+                        } else {
+                            *species = SPECIES_CASCOON;
+                        }
+                        break;
+                    }
+                }
+            }
+        } // no need to check if the mon is at an illegal level for it because none of the starting mons for honey trees are evolved
+        Heap_Free(evoTable);
+        return level;
+    }
+}
+#endif

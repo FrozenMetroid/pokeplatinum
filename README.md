@@ -68,6 +68,7 @@ Credits:
     - Vulpix (Route 209 at night)
 - Gym Leader sprites, as well as some regular Trainers' sprites, have been improved
 - If the player's lead Pokémon has the Ability Harvest, an additional Berry will be harvested when harvesting Berries in the overworld
+- Change your Pokémon's Poké Ball in Bebe's house in Hearthome City
 - A myriad of changes to the battle system, as documented below
 
 # Battle Changes
@@ -166,7 +167,8 @@ All Pokémon have received changes to any combination of their learnsets, Abilit
     - Taunt (!!!)
     - Torment
     - Toxic Spikes (!!!)
-- Eruption is now a physical move to benefit Typhlosion's move to a physical attacker, as well as Groudon; this barely affects any other Pokémon that can learn the move
+- Eruption is now a physical move to benefit Typhlosion's move to a physical attacker, as well as for Groudon's Eruption to feel like a counterpart to Kyogre's Water Spout
+    - This barely affects any other Pokémon that can learn the move as they all have comparable Attack stats to Special Attack
 
 ### Miscellaneous Battle System Changes:
 
@@ -202,13 +204,15 @@ All Pokémon have received changes to any combination of their learnsets, Abilit
 
 # Encounters
 
-- The Pokédex accurately shows where Pokémon live
+- The Pokédex accurately shows where Pokémon can be found
 - Murkrow and Misdreavus added back to Eterna Forest at night
 - Encounter Spiritomb at the Hallowed Tower immediately with an Odd Keystone
 - Diamond and Pearl-exclusive Sinnoh encounters have been returned, such as Glameow and Stunky
 - You can complete the Sinnoh regional Pokédex, but not the National Pokédex, through singleplayer
 - Locations for the additional Pokémon in the regional Pokédex listed above
-- Other locations are searchable in this repository for brevity...
+- Honey Tree encounters' levels are randomized between 10 and 55 based on the number of Badges you currently have (see ``HoneyTree_GetLevel`` for the formula) and have a chance of evolving if the generated level meets their evolution level threshold
+- Other locations are searchable in this repository for brevity... 
+    - Use the search feature of your code editor and search for the Pokémon's name plus "data"; e.g., "Sableyedata" will narrow the search down to Sableye's data file easily
 
 # Extra Trainers
 

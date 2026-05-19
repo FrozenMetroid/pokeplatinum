@@ -11,27 +11,27 @@
         {
             "species": "SPECIES_PACHIRISU",
             "form": 0,
-            "level": 11,
+            "level": 13,
             "item": null,
             "moves": [
                 "MOVE_THUNDER_SHOCK",
                 "MOVE_QUICK_ATTACK",
                 "MOVE_CHARM"
             ],
-            "iv_scale": 15,
+            "iv_scale": 30,
             "ball_seal": 0
         },
         {
             "species": "SPECIES_PACHIRISU",
             "form": 0,
-            "level": 11,
+            "level": 13,
             "item": null,
             "moves": [
                 "MOVE_THUNDER_SHOCK",
                 "MOVE_QUICK_ATTACK",
                 "MOVE_CHARM"
             ],
-            "iv_scale": 15,
+            "iv_scale": 30,
             "ball_seal": 0
         }
     ],
