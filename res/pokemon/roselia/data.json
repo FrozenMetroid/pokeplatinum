@@ -36,6 +36,7 @@
     "learnset": {
         "by_level": [
             [1, "MOVE_SPIKES"],
+            [1, "MOVE_ACID"],
             [1, "MOVE_ABSORB"],
             [4, "MOVE_GROWTH"],
             [7, "MOVE_POISON_STING"],

@@ -3,17 +3,23 @@
     "class": "TRAINER_CLASS_JOGGER",
     "items": [],
     "ai_flags": [
-        "AI_FLAG_BASIC"
+        "AI_FLAG_BASIC",
+        "AI_FLAG_EVAL_ATTACK"
     ],
     "double_battle": false,
     "party": [
         {
-            "species": "SPECIES_STARAVIA",
+            "species": "SPECIES_GROWLITHE",
             "form": 0,
-            "level": 23,
+            "level": 24,
             "item": null,
-            "moves": null,
-            "iv_scale": 0,
+            "moves": [
+                "MOVE_FLAME_WHEEL",
+                "MOVE_BITE",
+                "MOVE_LEER",
+                "MOVE_ROAR"
+            ],
+            "iv_scale": 50,
             "ball_seal": 0
         }
     ],

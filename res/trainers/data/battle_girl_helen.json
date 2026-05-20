@@ -20,7 +20,7 @@
                 "MOVE_FAKE_OUT",
                 "MOVE_PURSUIT"
             ],
-            "iv_scale": 30,
+            "iv_scale": 50,
             "ball_seal": 0
         },
         {
@@ -34,7 +34,7 @@
                 "MOVE_MEDITATE",
                 "MOVE_BIDE"
             ],
-            "iv_scale": 30,
+            "iv_scale": 50,
             "ball_seal": 0
         }
     ],

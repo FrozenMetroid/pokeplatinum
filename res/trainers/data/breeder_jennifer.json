@@ -8,39 +8,59 @@
     "double_battle": false,
     "party": [
         {
-            "species": "SPECIES_BUDEW",
+            "species": "SPECIES_MANTYKE",
             "form": 0,
-            "level": 20,
+            "level": 22,
             "item": null,
-            "moves": null,
-            "iv_scale": 0,
+            "moves": [
+                "MOVE_BUBBLE_BEAM",
+                "MOVE_WING_ATTACK",
+                "MOVE_SUPERSONIC",
+                "MOVE_HEADBUTT"
+            ],
+            "iv_scale": 50,
             "ball_seal": 0
         },
         {
-            "species": "SPECIES_MIME_JR",
+            "species": "SPECIES_TOGEPI",
             "form": 0,
-            "level": 20,
+            "level": 22,
             "item": null,
-            "moves": null,
-            "iv_scale": 0,
+            "moves": [
+                "MOVE_METRONOME",
+                "MOVE_SWIFT",
+                "MOVE_ENCORE",
+                "MOVE_CHARM"
+            ],
+            "iv_scale": 50,
             "ball_seal": 0
         },
         {
             "species": "SPECIES_CLEFFA",
             "form": 0,
-            "level": 20,
+            "level": 22,
             "item": null,
-            "moves": null,
-            "iv_scale": 0,
+            "moves": [
+                "MOVE_CHARM",
+                "MOVE_MAGICAL_LEAF",
+                "MOVE_UPROAR",
+                "MOVE_MOONLIGHT"
+            ],
+            "iv_scale": 50,
             "ball_seal": 0
         },
         {
-            "species": "SPECIES_EEVEE",
+            "species": "SPECIES_CHINGLING",
             "form": 0,
-            "level": 20,
+            "level": 22,
             "item": null,
-            "moves": null,
-            "iv_scale": 0,
+            "moves": [
+                "MOVE_PSYBEAM",
+                "MOVE_UPROAR",
+                "MOVE_ASTONISH",
+                "MOVE_CONFUSE_RAY"
+            ],
+            "iv_scale": 50,
             "ball_seal": 0
         }
     ],

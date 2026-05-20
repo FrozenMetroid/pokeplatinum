@@ -11,7 +11,7 @@
         {
             "species": "SPECIES_SHROOMISH",
             "form": 0,
-            "level": 14,
+            "level": 16,
             "item": null,
             "moves": [
                 "MOVE_LEECH_SEED",

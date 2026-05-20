@@ -20,7 +20,12 @@
                 "MOVE_ENDEAVOR",
                 "MOVE_DOUBLE_TEAM"
             ],
-            "iv_scale": 50,
+            "ivnums": [15, 15, 15, 15, 15, 15],
+            "evnums": [0, 40, 0, 40, 0, 0],
+            "ability": "ABILITY_INTIMIDATE",
+            "nature": "NATURE_JOLLY",
+            "ball": "ITEM_POKE_BALL",
+            "iv_scale": 0,
             "ball_seal": 0
         },
         {
@@ -30,11 +35,16 @@
             "item": null,
             "moves": [
                 "MOVE_MEGA_DRAIN",
-                "MOVE_POISON_STING",
+                "MOVE_ACID",
                 "MOVE_LEECH_SEED",
-                "MOVE_STUN_SPORE"
+                "MOVE_SLEEP_POWDER"
             ],
-            "iv_scale": 50,
+            "ivnums": [15, 15, 15, 15, 15, 15],
+            "evnums": [0, 0, 0, 0, 40, 40],
+            "ability": "ABILITY_POISON_POINT",
+            "nature": "NATURE_SASSY",
+            "ball": "ITEM_POKE_BALL",
+            "iv_scale": 0,
             "ball_seal": 0
         },
         {
@@ -43,12 +53,17 @@
             "level": 23,
             "item": null,
             "moves": [
-                "MOVE_EMBER",
-                "MOVE_TACKLE",
+                "MOVE_FLAME_WHEEL",
                 "MOVE_TAIL_WHIP",
-                "MOVE_GROWL"
+                "MOVE_DOUBLE_KICK",
+                "MOVE_STOMP"
             ],
-            "iv_scale": 50,
+            "ivnums": [15, 15, 15, 15, 15, 15],
+            "evnums": [0, 40, 0, 40, 0, 0],
+            "ability": "ABILITY_FLASH_FIRE",
+            "nature": "NATURE_JOLLY",
+            "ball": "ITEM_POKE_BALL",
+            "iv_scale": 0,
             "ball_seal": 0
         },
         {
@@ -60,9 +75,14 @@
                 "MOVE_BUBBLE_BEAM",
                 "MOVE_PECK",
                 "MOVE_METAL_CLAW",
-                "MOVE_GROWL"
+                "MOVE_SWAGGER"
             ],
-            "iv_scale": 50,
+            "ivnums": [17, 17, 17, 17, 17, 17],
+            "evnums": [50, 25, 0, 0, 25, 0],
+            "ability": "ABILITY_TORRENT",
+            "nature": "NATURE_QUIET",
+            "ball": "ITEM_POKE_BALL",
+            "iv_scale": 0,
             "ball_seal": 0
         }
     ],

@@ -11,7 +11,7 @@
         {
             "species": "SPECIES_BUIZEL",
             "form": 0,
-            "level": 13,
+            "level": 14,
             "item": null,
             "moves": [
                 "MOVE_WATER_GUN",
@@ -25,7 +25,7 @@
         {
             "species": "SPECIES_BEAUTIFLY",
             "form": 0,
-            "level": 13,
+            "level": 14,
             "item": null,
             "moves": [
                 "MOVE_GUST",

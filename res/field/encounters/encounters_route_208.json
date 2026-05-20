@@ -2,35 +2,35 @@
     "land_rate": 20,
     "land_encounters": [
         {
-            "level": 18,
+            "level": 20,
             "species": "SPECIES_BUDEW"
         },
         {
-            "level": 18,
+            "level": 20,
             "species": "SPECIES_BIDOOF"
         },
         {
-            "level": 19,
+            "level": 21,
             "species": "SPECIES_BUDEW"
         },
         {
-            "level": 17,
+            "level": 21,
             "species": "SPECIES_RALTS"
         },
         {
-            "level": 19,
+            "level": 21,
             "species": "SPECIES_ROSELIA"
         },
         {
-            "level": 18,
+            "level": 20,
             "species": "SPECIES_BIBAREL"
         },
         {
-            "level": 18,
+            "level": 20,
             "species": "SPECIES_RALTS"
         },
         {
-            "level": 19,
+            "level": 21,
             "species": "SPECIES_BIBAREL"
         },
         {

@@ -15,23 +15,26 @@
             "level": 20,
             "item": null,
             "moves": [
-                "MOVE_WATER_GUN",
-                "MOVE_SWIFT",
-                "MOVE_QUICK_ATTACK"
+                "MOVE_WATER_PULSE",
+                "MOVE_PURSUIT",
+                "MOVE_QUICK_ATTACK",
+                "MOVE_AQUA_JET"
             ],
-            "iv_scale": 0,
+            "iv_scale": 50,
             "ball_seal": 0
         },
         {
-            "species": "SPECIES_SHINX",
+            "species": "SPECIES_LUXIO",
             "form": 0,
-            "level": 20,
+            "level": 21,
             "item": null,
             "moves": [
                 "MOVE_SPARK",
-                "MOVE_BITE"
+                "MOVE_BITE",
+                "MOVE_TACKLE",
+                "MOVE_DOUBLE_KICK"
             ],
-            "iv_scale": 0,
+            "iv_scale": 50,
             "ball_seal": 0
         }
     ],

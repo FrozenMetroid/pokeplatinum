@@ -37,7 +37,6 @@
         "by_level": [
             [0, "MOVE_MACH_PUNCH"],
             [1, "MOVE_SCRATCH"],
-            [1, "MOVE_BRICK_BREAK"],
             [1, "MOVE_LEER"],
             [1, "MOVE_EMBER"],
             [6, "MOVE_EMBER"],

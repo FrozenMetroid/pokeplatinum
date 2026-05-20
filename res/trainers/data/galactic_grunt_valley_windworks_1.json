@@ -11,7 +11,7 @@
         {
             "species": "SPECIES_GLAMEOW",
             "form": 0,
-            "level": 13,
+            "level": 15,
             "item": null,
             "moves": [
                 "MOVE_SCRATCH",
@@ -19,7 +19,8 @@
                 "MOVE_FAKE_OUT",
                 "MOVE_FURY_SWIPES"
             ],
-            "iv_scale": 30,
+            "ball": "ITEM_GREAT_BALL",
+            "iv_scale": 40,
             "ball_seal": 0
         }
     ],

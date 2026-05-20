@@ -3,17 +3,23 @@
     "class": "TRAINER_CLASS_TWINS",
     "items": [],
     "ai_flags": [
-        "AI_FLAG_BASIC"
+        "AI_FLAG_BASIC",
+        "AI_FLAG_EVAL_ATTACK"
     ],
     "double_battle": true,
     "party": [
         {
-            "species": "SPECIES_BONSLY",
+            "species": "SPECIES_HAPPINY",
             "form": 0,
             "level": 22,
             "item": null,
-            "moves": null,
-            "iv_scale": 0,
+            "moves": [
+                "MOVE_SWEET_KISS",
+                "MOVE_HYPER_VOICE",
+                "MOVE_CHARM",
+                "MOVE_COPYCAT"
+            ],
+            "iv_scale": 50,
             "ball_seal": 0
         },
         {
@@ -21,8 +27,13 @@
             "form": 0,
             "level": 22,
             "item": null,
-            "moves": null,
-            "iv_scale": 0,
+            "moves": [
+                "MOVE_CONFUSION",
+                "MOVE_BARRIER",
+                "MOVE_LIGHT_SCREEN",
+                "MOVE_DOUBLE_SLAP"
+            ],
+            "iv_scale": 50,
             "ball_seal": 0
         }
     ],

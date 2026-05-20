@@ -2,51 +2,51 @@
     "land_rate": 20,
     "land_encounters": [
         {
-            "level": 11,
+            "level": 14,
             "species": "SPECIES_BUNEARY"
         },
         {
-            "level": 10,
+            "level": 13,
             "species": "SPECIES_BUDEW"
         },
         {
-            "level": 10,
+            "level": 13,
             "species": "SPECIES_WURMPLE"
         },
         {
-            "level": 12,
+            "level": 15,
             "species": "SPECIES_KRICKETOT"
         },
         {
-            "level": 11,
+            "level": 14,
             "species": "SPECIES_BUDEW"
         },
         {
-            "level": 12,
+            "level": 15,
             "species": "SPECIES_SHROOMISH"
         },
         {
-            "level": 12,
+            "level": 15,
             "species": "SPECIES_HOOTHOOT"
         },
         {
-            "level": 12,
+            "level": 15,
             "species": "SPECIES_WURMPLE"
         },
         {
-            "level": 13,
+            "level": 16,
             "species": "SPECIES_BEAUTIFLY"
         },
         {
-            "level": 13,
+            "level": 16,
             "species": "SPECIES_DUSTOX"
         },
         {
-            "level": 14,
+            "level": 17,
             "species": "SPECIES_BEAUTIFLY"
         },
         {
-            "level": 14,
+            "level": 17,
             "species": "SPECIES_DUSTOX"
         }
     ],

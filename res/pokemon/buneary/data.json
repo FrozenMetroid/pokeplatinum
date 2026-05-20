@@ -37,7 +37,6 @@
         "by_level": [
             [1, "MOVE_POUND"],
             [1, "MOVE_SPLASH"],
-            [1, "MOVE_POUND"],
             [1, "MOVE_DEFENSE_CURL"],
             [1, "MOVE_FORESIGHT"],
             [5, "MOVE_ENDURE"],

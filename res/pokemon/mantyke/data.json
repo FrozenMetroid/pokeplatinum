@@ -39,7 +39,6 @@
             [1, "MOVE_SIGNAL_BEAM"],
             [1, "MOVE_TACKLE"],
             [1, "MOVE_BUBBLE"],
-            [1, "MOVE_SUPERSONIC"],
             [4, "MOVE_SUPERSONIC"],
             [10, "MOVE_BUBBLE_BEAM"],
             [13, "MOVE_HEADBUTT"],

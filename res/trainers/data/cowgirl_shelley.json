@@ -3,17 +3,23 @@
     "class": "TRAINER_CLASS_COWGIRL",
     "items": [],
     "ai_flags": [
-        "AI_FLAG_BASIC"
+        "AI_FLAG_BASIC",
+        "AI_FLAG_EVAL_ATTACK"
     ],
     "double_battle": false,
     "party": [
         {
-            "species": "SPECIES_PONYTA",
+            "species": "SPECIES_VULPIX",
             "form": 0,
-            "level": 23,
+            "level": 24,
             "item": null,
-            "moves": null,
-            "iv_scale": 0,
+            "moves": [
+                "MOVE_FIRE_SPIN",
+                "MOVE_CONFUSE_RAY",
+                "MOVE_QUICK_ATTACK",
+                "MOVE_CONFUSE_RAY"
+            ],
+            "iv_scale": 50,
             "ball_seal": 0
         }
     ],

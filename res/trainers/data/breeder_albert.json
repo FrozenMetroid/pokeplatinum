@@ -3,44 +3,65 @@
     "class": "TRAINER_CLASS_BREEDER_MALE",
     "items": [],
     "ai_flags": [
-        "AI_FLAG_BASIC"
+        "AI_FLAG_BASIC",
+        "AI_FLAG_EVAL_ATTACK"
     ],
     "double_battle": false,
     "party": [
         {
             "species": "SPECIES_BUDEW",
             "form": 0,
-            "level": 20,
+            "level": 22,
             "item": null,
-            "moves": null,
-            "iv_scale": 0,
+            "moves": [
+                "MOVE_MEGA_DRAIN",
+                "MOVE_GROWTH",
+                "MOVE_POISON_POWDER",
+                "MOVE_ACID"
+            ],
+            "iv_scale": 50,
             "ball_seal": 0
         },
         {
             "species": "SPECIES_BONSLY",
             "form": 0,
-            "level": 20,
+            "level": 22,
             "item": null,
-            "moves": null,
-            "iv_scale": 0,
+            "moves": [
+                "MOVE_ROCK_THROW",
+                "MOVE_LOW_KICK",
+                "MOVE_FLAIL",
+                "MOVE_FAKE_TEARS"
+            ],
+            "iv_scale": 50,
             "ball_seal": 0
         },
         {
             "species": "SPECIES_PICHU",
             "form": 0,
-            "level": 20,
+            "level": 22,
             "item": null,
-            "moves": null,
-            "iv_scale": 0,
+            "moves": [
+                "MOVE_SPARK",
+                "MOVE_QUICK_ATTACK",
+                "MOVE_SWEET_KISS",
+                "MOVE_THUNDER_WAVE"
+            ],
+            "iv_scale": 50,
             "ball_seal": 0
         },
         {
             "species": "SPECIES_EEVEE",
             "form": 0,
-            "level": 20,
+            "level": 22,
             "item": null,
-            "moves": null,
-            "iv_scale": 0,
+            "moves": [
+                "MOVE_QUICK_ATTACK",
+                "MOVE_SAND_ATTACK",
+                "MOVE_BITE",
+                "MOVE_CHARM"
+            ],
+            "iv_scale": 50,
             "ball_seal": 0
         }
     ],

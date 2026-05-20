@@ -20,7 +20,12 @@
                 "MOVE_ENDEAVOR",
                 "MOVE_DOUBLE_TEAM"
             ],
-            "iv_scale": 50,
+            "ivnums": [15, 15, 15, 15, 15, 15],
+            "evnums": [0, 40, 0, 40, 0, 0],
+            "ability": "ABILITY_INTIMIDATE",
+            "nature": "NATURE_JOLLY",
+            "ball": "ITEM_POKE_BALL",
+            "iv_scale": 0,
             "ball_seal": 0
         },
         {
@@ -29,12 +34,17 @@
             "level": 23,
             "item": null,
             "moves": [
-                "MOVE_WATER_GUN",
-                "MOVE_QUICK_ATTACK",
-                "MOVE_PURSUIT",
-                "MOVE_GROWL"
+                "MOVE_AQUA_JET",
+                "MOVE_WATER_PULSE",
+                "MOVE_BITE",
+                "MOVE_SWIFT"
             ],
-            "iv_scale": 50,
+            "ivnums": [15, 15, 15, 15, 15, 15],
+            "evnums": [0, 40, 0, 40, 0, 0],
+            "ability": "ABILITY_SWIFT_SWIM",
+            "nature": "NATURE_ADAMANT",
+            "ball": "ITEM_POKE_BALL",
+            "iv_scale": 0,
             "ball_seal": 0
         },
         {
@@ -43,12 +53,17 @@
             "level": 23,
             "item": null,
             "moves": [
-                "MOVE_EMBER",
-                "MOVE_TACKLE",
+                "MOVE_FLAME_WHEEL",
                 "MOVE_TAIL_WHIP",
-                "MOVE_GROWL"
+                "MOVE_DOUBLE_KICK",
+                "MOVE_STOMP"
             ],
-            "iv_scale": 50,
+            "ivnums": [15, 15, 15, 15, 15, 15],
+            "evnums": [0, 40, 0, 40, 0, 0],
+            "ability": "ABILITY_FLASH_FIRE",
+            "nature": "NATURE_JOLLY",
+            "ball": "ITEM_POKE_BALL",
+            "iv_scale": 0,
             "ball_seal": 0
         },
         {
@@ -58,11 +73,16 @@
             "item": null,
             "moves": [
                 "MOVE_RAZOR_LEAF",
-                "MOVE_TACKLE",
-                "MOVE_ABSORB",
-                "MOVE_WITHDRAW"
+                "MOVE_TAKE_DOWN",
+                "MOVE_BITE",
+                "MOVE_WORRY_SEED"
             ],
-            "iv_scale": 50,
+            "ivnums": [17, 17, 17, 17, 17, 17],
+            "evnums": [50, 25, 25, 0, 0, 0],
+            "ability": "ABILITY_OVERGROW",
+            "nature": "NATURE_ADAMANT",
+            "ball": "ITEM_POKE_BALL",
+            "iv_scale": 0,
             "ball_seal": 0
         }
     ],

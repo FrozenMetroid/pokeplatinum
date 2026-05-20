@@ -4,6 +4,7 @@
     "items": [],
     "ai_flags": [
         "AI_FLAG_BASIC",
+        "AI_FLAG_EVAL_ATTACK",
         "AI_FLAG_PRIORITIZE_EXTREMES"
     ],
     "double_battle": false,
@@ -11,19 +12,29 @@
         {
             "species": "SPECIES_GEODUDE",
             "form": 0,
-            "level": 20,
+            "level": 21,
             "item": null,
-            "moves": null,
-            "iv_scale": 0,
+            "moves": [
+                "MOVE_ROCK_TOMB",
+                "MOVE_MAGNITUDE",
+                "MOVE_TACKLE",
+                "MOVE_SELFDESTRUCT"
+            ],
+            "iv_scale": 50,
             "ball_seal": 0
         },
         {
-            "species": "SPECIES_GEODUDE",
+            "species": "SPECIES_CRANIDOS",
             "form": 0,
-            "level": 20,
+            "level": 21,
             "item": null,
-            "moves": null,
-            "iv_scale": 0,
+            "moves": [
+                "MOVE_HEADBUTT",
+                "MOVE_PURSUIT",
+                "MOVE_ROCK_THROW",
+                "MOVE_SCARY_FACE"
+            ],
+            "iv_scale": 50,
             "ball_seal": 0
         }
     ],

@@ -20,7 +20,12 @@
                 "MOVE_ENDEAVOR",
                 "MOVE_DOUBLE_TEAM"
             ],
-            "iv_scale": 50,
+            "ivnums": [15, 15, 15, 15, 15, 15],
+            "evnums": [0, 40, 0, 40, 0, 0],
+            "ability": "ABILITY_INTIMIDATE",
+            "nature": "NATURE_JOLLY",
+            "ball": "ITEM_POKE_BALL",
+            "iv_scale": 0,
             "ball_seal": 0
         },
         {
@@ -29,12 +34,17 @@
             "level": 23,
             "item": null,
             "moves": [
-                "MOVE_WATER_GUN",
-                "MOVE_QUICK_ATTACK",
-                "MOVE_PURSUIT",
-                "MOVE_GROWL"
+                "MOVE_AQUA_JET",
+                "MOVE_WATER_PULSE",
+                "MOVE_BITE",
+                "MOVE_SWIFT"
             ],
-            "iv_scale": 50,
+            "ivnums": [15, 15, 15, 15, 15, 15],
+            "evnums": [0, 40, 0, 40, 0, 0],
+            "ability": "ABILITY_SWIFT_SWIM",
+            "nature": "NATURE_ADAMANT",
+            "ball": "ITEM_POKE_BALL",
+            "iv_scale": 0,
             "ball_seal": 0
         },
         {
@@ -44,11 +54,16 @@
             "item": null,
             "moves": [
                 "MOVE_MEGA_DRAIN",
-                "MOVE_POISON_STING",
+                "MOVE_ACID",
                 "MOVE_LEECH_SEED",
-                "MOVE_STUN_SPORE"
+                "MOVE_SLEEP_POWDER"
             ],
-            "iv_scale": 50,
+            "ivnums": [15, 15, 15, 15, 15, 15],
+            "evnums": [0, 0, 0, 0, 40, 40],
+            "ability": "ABILITY_POISON_POINT",
+            "nature": "NATURE_SASSY",
+            "ball": "ITEM_POKE_BALL",
+            "iv_scale": 0,
             "ball_seal": 0
         },
         {
@@ -59,10 +74,15 @@
             "moves": [
                 "MOVE_FLAME_WHEEL",
                 "MOVE_MACH_PUNCH",
-                "MOVE_FURY_SWIPES",
-                "MOVE_LEER"
+                "MOVE_TAUNT",
+                "MOVE_FAKE_OUT"
             ],
-            "iv_scale": 50,
+            "ivnums": [17, 17, 17, 17, 17, 17],
+            "evnums": [0, 40, 0, 40, 0, 0],
+            "ability": "ABILITY_BLAZE",
+            "nature": "NATURE_ADAMANT",
+            "ball": "ITEM_POKE_BALL",
+            "iv_scale": 0,
             "ball_seal": 0
         }
     ],

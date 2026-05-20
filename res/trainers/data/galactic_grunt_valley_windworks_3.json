@@ -11,20 +11,20 @@
         {
             "species": "SPECIES_CASCOON",
             "form": 0,
-            "level": 11,
+            "level": 13,
             "item": null,
             "moves": [
                 "MOVE_POISON_STING",
                 "MOVE_TACKLE",
                 "MOVE_HARDEN"
             ],
-            "iv_scale": 30,
+            "iv_scale": 40,
             "ball_seal": 0
         },
         {
             "species": "SPECIES_STUNKY",
             "form": 0,
-            "level": 11,
+            "level": 15,
             "item": null,
             "moves": [
                 "MOVE_POISON_GAS",
@@ -32,7 +32,7 @@
                 "MOVE_SCRATCH",
                 "MOVE_SMOKE_SCREEN"
             ],
-            "iv_scale": 30,
+            "iv_scale": 40,
             "ball_seal": 0
         }
     ],
