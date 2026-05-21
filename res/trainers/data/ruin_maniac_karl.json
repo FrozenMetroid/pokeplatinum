@@ -12,19 +12,29 @@
         {
             "species": "SPECIES_GEODUDE",
             "form": 0,
-            "level": 19,
+            "level": 22,
             "item": null,
-            "moves": null,
-            "iv_scale": 0,
+            "moves": [
+                "MOVE_ROCK_TOMB",
+                "MOVE_MAGNITUDE",
+                "MOVE_FLAIL",
+                "MOVE_ROLLOUT"
+            ],
+            "iv_scale": 50,
             "ball_seal": 0
         },
         {
-            "species": "SPECIES_GEODUDE",
+            "species": "SPECIES_NOSEPASS",
             "form": 0,
-            "level": 21,
+            "level": 23,
             "item": null,
-            "moves": null,
-            "iv_scale": 0,
+            "moves": [
+                "MOVE_THUNDER_SHOCK",
+                "MOVE_ROCK_THROW",
+                "MOVE_THUNDER_WAVE",
+                "MOVE_HARDEN"
+            ],
+            "iv_scale": 50,
             "ball_seal": 0
         },
         {
@@ -32,8 +42,13 @@
             "form": 0,
             "level": 23,
             "item": null,
-            "moves": null,
-            "iv_scale": 0,
+            "moves": [
+                "MOVE_EXTRASENSORY",
+                "MOVE_METAL_SOUND",
+                "MOVE_HYPNOSIS",
+                "MOVE_MIRROR_SHOT"
+            ],
+            "iv_scale": 50,
             "ball_seal": 0
         }
     ],
@@ -41,7 +56,7 @@
         {
             "type": "TRMSG_PRE_BATTLE",
             "en_US": [
-                "Ancient ruins rife with the UNOWN...\n",
+                "Ancient ruins rife with the Unown...\n",
                 "There has to be a meaning!\r",
                 "But its significance eludes me, and\n",
                 "that’s gotten me cranky!\r"

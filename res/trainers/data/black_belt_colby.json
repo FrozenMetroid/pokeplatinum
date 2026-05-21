@@ -4,46 +4,29 @@
     "items": [],
     "ai_flags": [
         "AI_FLAG_BASIC",
+        "AI_FLAG_EVAL_ATTACK",
+        "AI_FLAG_EXPERT",
         "AI_FLAG_PRIORITIZE_EXTREMES"
     ],
     "double_battle": false,
     "party": [
         {
-            "species": "SPECIES_MACHOKE",
-            "form": 0,
-            "level": 23,
-            "item": null,
-            "moves": [
-                "MOVE_KARATE_CHOP",
-                "MOVE_LEER",
-                "MOVE_FORESIGHT"
-            ],
-            "iv_scale": 40,
-            "ball_seal": 0
-        },
-        {
-            "species": "SPECIES_MACHOKE",
-            "form": 0,
-            "level": 25,
-            "item": null,
-            "moves": [
-                "MOVE_LOW_KICK",
-                "MOVE_FORESIGHT"
-            ],
-            "iv_scale": 40,
-            "ball_seal": 0
-        },
-        {
-            "species": "SPECIES_MACHOKE",
+            "species": "SPECIES_HARIYAMA",
             "form": 0,
             "level": 27,
             "item": null,
             "moves": [
-                "MOVE_SUBMISSION",
-                "MOVE_LEER",
-                "MOVE_FORESIGHT"
+                "MOVE_ARM_THRUST",
+                "MOVE_VITAL_THROW",
+                "MOVE_SMELLING_SALT",
+                "MOVE_BRINE"
             ],
-            "iv_scale": 40,
+            "ball": "ITEM_GREAT_BALL",
+            "ivnums": [15, 15, 15, 15, 15, 15],
+            "evnums": [40, 40, 0, 0, 0, 0],
+            "ability": "ABILITY_GUTS",
+            "nature": "NATURE_DOCILE",
+            "iv_scale": 0,
             "ball_seal": 0
         }
     ],

@@ -315,4 +315,5 @@ subscript_files = files(
     'subscript_neutralizing_gas.s',
     'subscript_weak_armor.s',
     'subscript_wind_rider.s',
+    'subscript_but_it_failed_spread.s',
 )

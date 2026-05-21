@@ -1,44 +1,44 @@
 {
-    "land_rate": 20,
+    "land_rate": 23,
     "land_encounters": [
         {
-            "level": 19,
+            "level": 22,
             "species": "SPECIES_STARAVIA"
         },
         {
-            "level": 18,
-            "species": "SPECIES_GEODUDE"
+            "level": 21,
+            "species": "SPECIES_PONYTA"
         },
         {
             "level": 21,
             "species": "SPECIES_SCYTHER"
         },
         {
-            "level": 20,
+            "level": 23,
             "species": "SPECIES_PONYTA"
         },
         {
-            "level": 20,
+            "level": 23,
             "species": "SPECIES_ROSELIA"
         },
         {
-            "level": 19,
-            "species": "SPECIES_PONYTA"
-        },
-        {
-            "level": 19,
-            "species": "SPECIES_SCYTHER"
-        },
-        {
-            "level": 21,
+            "level": 22,
             "species": "SPECIES_ROSELIA"
         },
         {
+            "level": 22,
+            "species": "SPECIES_MIME_JR"
+        },
+        {
+            "level": 21,
+            "species": "SPECIES_BONSLY"
+        },
+        {
             "level": 21,
             "species": "SPECIES_PONYTA"
         },
         {
-            "level": 19,
+            "level": 22,
             "species": "SPECIES_CHANSEY"
         },
         {

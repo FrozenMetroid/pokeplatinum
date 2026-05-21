@@ -12,19 +12,29 @@
         {
             "species": "SPECIES_BRONZOR",
             "form": 0,
-            "level": 23,
+            "level": 25,
             "item": null,
-            "moves": null,
-            "iv_scale": 0,
+            "moves": [
+                "MOVE_EXTRASENSORY",
+                "MOVE_MIRROR_SHOT",
+                "MOVE_METAL_SOUND",
+                "MOVE_HYPNOSIS"
+            ],
+            "iv_scale": 60,
             "ball_seal": 0
         },
         {
             "species": "SPECIES_SHIELDON",
             "form": 0,
-            "level": 23,
+            "level": 24,
             "item": null,
-            "moves": null,
-            "iv_scale": 0,
+            "moves": [
+                "MOVE_TAKE_DOWN",
+                "MOVE_ROCK_TOMB",
+                "MOVE_METAL_CLAW",
+                "MOVE_SWAGGER"
+            ],
+            "iv_scale": 60,
             "ball_seal": 0
         }
     ],

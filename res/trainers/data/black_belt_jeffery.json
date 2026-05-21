@@ -4,6 +4,8 @@
     "items": [],
     "ai_flags": [
         "AI_FLAG_BASIC",
+        "AI_FLAG_EVAL_ATTACK",
+        "AI_FLAG_EXPERT",
         "AI_FLAG_PRIORITIZE_EXTREMES"
     ],
     "double_battle": false,
@@ -16,9 +18,15 @@
             "moves": [
                 "MOVE_BRICK_BREAK",
                 "MOVE_AERIAL_ACE",
-                "MOVE_LEER"
+                "MOVE_BUG_BITE",
+                "MOVE_HORN_ATTACK"
             ],
-            "iv_scale": 40,
+            "ball": "ITEM_POKE_BALL",
+            "ivnums": [15, 15, 15, 15, 15, 15],
+            "evnums": [0, 40, 0, 0, 0, 40],
+            "ability": "ABILITY_GUTS",
+            "nature": "NATURE_ADAMANT",
+            "iv_scale": 0,
             "ball_seal": 0
         }
     ],

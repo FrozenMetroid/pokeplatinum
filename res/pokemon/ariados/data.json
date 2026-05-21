@@ -48,7 +48,7 @@
             [12, "MOVE_MEGA_DRAIN"], 
             [14, "MOVE_BUG_BITE"], 
             [18, "MOVE_SHADOW_SNEAK"], 
-            [21, "MOVE_POISON_FANG"], 
+            [21, "MOVE_POISON_TAIL"], 
             [24, "MOVE_PIN_MISSILE"], 
             [27, "MOVE_SUCKER_PUNCH"], 
             [30, "MOVE_CROSS_POISON"], 

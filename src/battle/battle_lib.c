@@ -3203,7 +3203,7 @@ BOOL BattleSystem_CanWhirlwind(BattleSystem *battleSys, BattleContext *battleCtx
 u8 Battler_Ability(BattleContext *battleCtx, int battler)
 {
     if ((battleCtx->battleMons[battler].moveEffectsMask & MOVE_EFFECT_ABILITY_SUPPRESSED)
-        && battleCtx->battleMons[battler].ability != ABILITY_MULTITYPE) {
+        && BattleSystem_CannotSuppressAbility(battleCtx->battleMons[battler].ability) == FALSE) {
         return ABILITY_NONE;
     }
 
@@ -3684,7 +3684,7 @@ int BattleSystem_TriggerImmunityAbility(BattleContext *battleCtx, int attacker, 
 
     #ifdef BATTLE_ADD_WIND_RIDER
     if (Battler_IgnorableAbility(battleCtx, attacker, defender, ABILITY_WIND_RIDER) == TRUE
-        && BattleSystem_MoveIsWindBased(battleCtx->moveCur)
+        && BattleSystem_IsWindMove(battleCtx->moveCur)
         && attacker != defender) {
         battleCtx->sideEffectMon = defender;
         battleCtx->msgBattlerTemp = defender;
@@ -4873,6 +4873,23 @@ BOOL BattleSystem_TriggerAttackerAbilityOnHit(BattleSystem *battleSys, BattleCon
                 battleCtx->msgBattlerTemp = battleCtx->attacker;
 
                 *subscript = subscript_poison;
+                result = TRUE;
+            }
+        case ABILITY_ACID_MAW:
+            if (DEFENDING_MON.curHP
+                && (battleCtx->moveStatusFlags & MOVE_STATUS_NO_EFFECTS) == FALSE
+                && (battleCtx->battleStatusMask & SYSCTL_FIRST_OF_MULTI_TURN) == FALSE
+                && (battleCtx->battleStatusMask2 & SYSCTL_UTURN_ACTIVE) == FALSE
+                && (DEFENDER_SELF_TURN_FLAGS.physicalDamageTaken || DEFENDER_SELF_TURN_FLAGS.specialDamageTaken)
+                && (!(battleCtx->battleMons[battleCtx->defender].moveEffectsMask & MOVE_EFFECT_ABILITY_SUPPRESSED)) // does not already have Gastro Acid applied
+                && (BattleSystem_IsBitingMove(battleCtx->moveCur))
+                && (!(BattleSystem_CannotSuppressAbility(Battler_Ability(battleCtx, battleCtx->defender))))
+                && (!(Battler_SubstituteWasHit(battleCtx, battleCtx->defender)))) {
+
+                battleCtx->msgAttacker = battleCtx->attacker;
+                battleCtx->msgDefender = battleCtx->defender;
+
+                *subscript = subscript_suppress_target_ability;
                 result = TRUE;
             }
         default:
@@ -7121,7 +7138,7 @@ static const u16 sPunchingMoves[] = {
     MOVE_SKY_UPPERCUT
 };
 
-static const u16 sStrongJawMoves[] = {
+static const u16 sBitingMoves[] = {
     MOVE_BITE,
     MOVE_BUG_BITE, // custom
     MOVE_CRUNCH,
@@ -7594,14 +7611,10 @@ int BattleSystem_CalcMoveDamage(BattleSystem *battleSys,
         }
     }
 
-    if (attackerParams.ability == ABILITY_STRONG_JAW) {
-        for (i = 0; i < NELEMS(sStrongJawMoves); i++) {
-            if (sStrongJawMoves[i] == move) {
-                movePower = movePower * 15 / 10;
-                break;
-            }
+    if (attackerParams.ability == ABILITY_STRONG_JAW
+        && BattleSystem_IsBitingMove(move)) {
+            movePower = movePower * 15 / 10;
         }
-    }
 
     if (attackerParams.ability == ABILITY_SHARPNESS) {
         for (i = 0; i < NELEMS(sSharpnessMoves); i++) {
@@ -9138,7 +9151,7 @@ BOOL BattleSystem_CannotSwapAbilities(BattleContext *battleCtx, int attacker, in
     return FALSE;
 }
 
-BOOL BattleSystem_MoveIsWindBased(u16 move)
+BOOL BattleSystem_IsWindMove(u16 move)
 {
     switch (move) {
         case MOVE_AEROBLAST:
@@ -9156,4 +9169,14 @@ BOOL BattleSystem_MoveIsWindBased(u16 move)
         default:
             return FALSE;
     }
+}
+
+BOOL BattleSystem_IsBitingMove(u16 move)
+{
+    for (int i = 0; i < NELEMS(sBitingMoves); i++) {
+        if (move == sBitingMoves[i]) {
+            return TRUE;
+        }
+    }
+    return FALSE;
 }

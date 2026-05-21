@@ -12,20 +12,21 @@
         {
             "species": "SPECIES_ROSELIA",
             "form": 0,
-            "level": 24,
+            "level": 26,
             "item": null,
             "moves": [
                 "MOVE_TOXIC_SPIKES",
                 "MOVE_GIGA_DRAIN",
-                "MOVE_LEECH_SEED"
+                "MOVE_LEECH_SEED",
+                "MOVE_SLUDGE"
             ],
-            "iv_scale": 50,
+            "iv_scale": 60,
             "ball_seal": 0
         },
         {
-            "species": "SPECIES_RALTS",
+            "species": "SPECIES_KIRLIA",
             "form": 0,
-            "level": 24,
+            "level": 25,
             "item": null,
             "moves": [
                 "MOVE_PSYCHIC",
@@ -33,13 +34,13 @@
                 "MOVE_CALM_MIND",
                 "MOVE_DOUBLE_TEAM"
             ],
-            "iv_scale": 50,
+            "iv_scale": 60,
             "ball_seal": 0
         },
         {
             "species": "SPECIES_LICKITUNG",
             "form": 0,
-            "level": 25,
+            "level": 27,
             "item": null,
             "moves": [
                 "MOVE_SUPERSONIC",
@@ -47,7 +48,7 @@
                 "MOVE_ROLLOUT",
                 "MOVE_DEFENSE_CURL"
             ],
-            "iv_scale": 50,
+            "iv_scale": 60,
             "ball_seal": 0
         }
     ],

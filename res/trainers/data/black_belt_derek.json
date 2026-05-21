@@ -11,10 +11,15 @@
         {
             "species": "SPECIES_CROAGUNK",
             "form": 0,
-            "level": 26,
+            "level": 27,
             "item": null,
-            "moves": null,
-            "iv_scale": 30,
+            "moves": [
+                "MOVE_POISON_FANG",
+                "MOVE_FORCE_PALM",
+                "MOVE_PURSUIT",
+                "MOVE_REVENGE"
+            ],
+            "iv_scale": 60,
             "ball_seal": 0
         }
     ],

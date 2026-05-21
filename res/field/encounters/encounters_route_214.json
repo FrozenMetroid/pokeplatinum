@@ -2,51 +2,51 @@
     "land_rate": 20,
     "land_encounters": [
         {
-            "level": 23,
+            "level": 26,
             "species": "SPECIES_GRAVELER"
         },
         {
-            "level": 21,
-            "species": "SPECIES_GEODUDE"
+            "level": 24,
+            "species": "SPECIES_RHYHORN"
         },
         {
-            "level": 22,
+            "level": 25,
             "species": "SPECIES_GRAVELER"
         },
         {
-            "level": 22,
+            "level": 25,
             "species": "SPECIES_RHYHORN"
         },
         {
-            "level": 23,
+            "level": 26,
             "species": "SPECIES_HOUNDOUR"
         },
         {
-            "level": 23,
-            "species": "SPECIES_RHYHORN"
-        },
-        {
-            "level": 24,
+            "level": 26,
             "species": "SPECIES_HOUNDOUR"
         },
         {
-            "level": 21,
-            "species": "SPECIES_RHYHORN"
-        },
-        {
-            "level": 23,
-            "species": "SPECIES_STUNKY"
+            "level": 26,
+            "species": "SPECIES_GIRAFARIG"
         },
         {
             "level": 24,
+            "species": "SPECIES_SUDOWOODO"
+        },
+        {
+            "level": 26,
             "species": "SPECIES_STUNKY"
         },
         {
-            "level": 23,
+            "level": 27,
             "species": "SPECIES_STUNKY"
         },
         {
-            "level": 24,
+            "level": 26,
+            "species": "SPECIES_STUNKY"
+        },
+        {
+            "level": 27,
             "species": "SPECIES_STUNKY"
         }
     ],

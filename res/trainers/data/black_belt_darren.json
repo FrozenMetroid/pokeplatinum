@@ -4,44 +4,48 @@
     "items": [],
     "ai_flags": [
         "AI_FLAG_BASIC",
+        "AI_FLAG_EVAL_ATTACK",
+        "AI_FLAG_EXPERT",
         "AI_FLAG_PRIORITIZE_EXTREMES"
     ],
     "double_battle": false,
     "party": [
         {
-            "species": "SPECIES_MACHOP",
-            "form": 0,
-            "level": 25,
-            "item": null,
-            "moves": [
-                "MOVE_KARATE_CHOP",
-                "MOVE_FORESIGHT"
-            ],
-            "iv_scale": 40,
-            "ball_seal": 0
-        },
-        {
             "species": "SPECIES_MEDITITE",
             "form": 0,
-            "level": 25,
+            "level": 27,
             "item": null,
             "moves": [
-                "MOVE_CONFUSION",
-                "MOVE_FORCE_PALM"
+                "MOVE_ZEN_HEADBUTT",
+                "MOVE_FORCE_PALM",
+                "MOVE_HIDDEN_POWER",
+                "MOVE_BIDE"
             ],
-            "iv_scale": 40,
+            "ball": "ITEM_POKE_BALL",
+            "ivnums": [14, 15, 14, 14, 15, 15],
+            "evnums": [0, 40, 0, 0, 40, 0],
+            "ability": "ABILITY_PURE_POWER",
+            "nature": "NATURE_BRAVE",
+            "iv_scale": 0,
             "ball_seal": 0
         },
         {
             "species": "SPECIES_MACHOKE",
             "form": 0,
-            "level": 25,
+            "level": 28,
             "item": null,
             "moves": [
-                "MOVE_KARATE_CHOP",
-                "MOVE_FORESIGHT"
+                "MOVE_STRENGTH",
+                "MOVE_FORESIGHT",
+                "MOVE_SEISMIC_TOSS",
+                "MOVE_NONE"
             ],
-            "iv_scale": 40,
+            "ball": "ITEM_POKE_BALL",
+            "ivnums": [15, 15, 15, 15, 15, 15],
+            "evnums": [40, 40, 0, 0, 0, 0],
+            "ability": "ABILITY_GUTS",
+            "nature": "NATURE_DOCILE",
+            "iv_scale": 0,
             "ball_seal": 0
         }
     ],

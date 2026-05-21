@@ -12,43 +12,44 @@
         {
             "species": "SPECIES_GLIGAR",
             "form": 0,
-            "level": 24,
+            "level": 25,
             "item": null,
             "moves": [
                 "MOVE_SCREECH",
                 "MOVE_FEINT_ATTACK",
-                "MOVE_QUICK_ATTACK",
-                "MOVE_POISON_STING"
+                "MOVE_WING_ATTACK",
+                "MOVE_SAND_TOMB"
             ],
-            "iv_scale": 50,
+            "ball": "ITEM_ULTRA_BALL",
+            "iv_scale": 60,
             "ball_seal": 0
         },
         {
             "species": "SPECIES_BUIZEL",
             "form": 0,
-            "level": 24,
+            "level": 26,
             "item": null,
             "moves": [
                 "MOVE_AQUA_JET",
                 "MOVE_SWIFT",
                 "MOVE_PURSUIT",
-                "MOVE_QUICK_ATTACK"
+                "MOVE_WATER_PULSE"
             ],
-            "iv_scale": 50,
+            "iv_scale": 60,
             "ball_seal": 0
         },
         {
             "species": "SPECIES_DRIFBLIM",
             "form": 0,
-            "level": 25,
+            "level": 27,
             "item": null,
             "moves": [
                 "MOVE_SWALLOW",
-                "MOVE_GUST",
+                "MOVE_AIR_CUTTER",
                 "MOVE_STOCKPILE",
                 "MOVE_OMINOUS_WIND"
             ],
-            "iv_scale": 50,
+            "iv_scale": 60,
             "ball_seal": 0
         }
     ],

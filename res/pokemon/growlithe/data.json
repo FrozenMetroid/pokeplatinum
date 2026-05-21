@@ -37,6 +37,7 @@
         "by_level": [
             [1, "MOVE_BITE"],
             [1, "MOVE_ROAR"],
+            [1, "MOVE_GROWL"],
             [6, "MOVE_EMBER"],
             [9, "MOVE_LEER"],
             [14, "MOVE_ODOR_SLEUTH"],

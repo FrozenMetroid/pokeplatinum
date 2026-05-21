@@ -4,35 +4,23 @@
     "items": [],
     "ai_flags": [
         "AI_FLAG_BASIC",
+        "AI_FLAG_EVAL_ATTACK",
         "AI_FLAG_PRIORITIZE_EXTREMES"
     ],
     "double_battle": false,
     "party": [
         {
-            "species": "SPECIES_CROAGUNK",
+            "species": "SPECIES_BRELOOM",
             "form": 0,
-            "level": 21,
+            "level": 27,
             "item": null,
-            "moves": null,
-            "iv_scale": 30,
-            "ball_seal": 0
-        },
-        {
-            "species": "SPECIES_MEDITITE",
-            "form": 0,
-            "level": 24,
-            "item": null,
-            "moves": null,
-            "iv_scale": 30,
-            "ball_seal": 0
-        },
-        {
-            "species": "SPECIES_MACHOP",
-            "form": 0,
-            "level": 24,
-            "item": null,
-            "moves": null,
-            "iv_scale": 30,
+            "moves": [
+                "MOVE_MACH_PUNCH",
+                "MOVE_STRENGTH",
+                "MOVE_HEADBUTT",
+                "MOVE_COUNTER"
+            ],
+            "iv_scale": 60,
             "ball_seal": 0
         }
     ],

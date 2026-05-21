@@ -39,7 +39,6 @@
             [1, "MOVE_NIGHT_SLASH"],
             [1, "MOVE_GUST"],
             [1, "MOVE_FORESIGHT"],
-            [1, "MOVE_DEFOG"],
             [1, "MOVE_QUICK_ATTACK"],
             [5, "MOVE_WING_ATTACK"],
             [7, "MOVE_DETECT"],

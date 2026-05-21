@@ -3,62 +3,86 @@
     "class": "TRAINER_CLASS_COLLECTOR",
     "items": [],
     "ai_flags": [
-        "AI_FLAG_BASIC"
+        "AI_FLAG_BASIC",
+        "AI_FLAG_EVAL_ATTACK"
     ],
     "double_battle": false,
     "party": [
         {
             "species": "SPECIES_SKORUPI",
             "form": 0,
-            "level": 21,
+            "level": 25,
             "item": null,
-            "moves": null,
-            "iv_scale": 0,
+            "moves": [
+                "MOVE_BUG_BITE",
+                "MOVE_POISON_TAIL",
+                "MOVE_PIN_MISSILE",
+                "MOVE_BITE"
+            ],
+            "ball": "ITEM_SAFARI_BALL",
+            "iv_scale": 50,
             "ball_seal": 0
         },
         {
             "species": "SPECIES_TANGELA",
             "form": 0,
-            "level": 21,
+            "level": 25,
             "item": null,
-            "moves": null,
-            "iv_scale": 0,
+            "moves": [
+                "MOVE_MEGA_DRAIN",
+                "MOVE_GROWTH",
+                "MOVE_INGRAIN",
+                "MOVE_POISON_POWDER"
+            ],
+            "ball": "ITEM_SAFARI_BALL",
+            "iv_scale": 50,
             "ball_seal": 0
         },
         {
             "species": "SPECIES_YANMA",
             "form": 0,
-            "level": 21,
+            "level": 25,
             "item": null,
-            "moves": null,
-            "iv_scale": 0,
+            "moves": [
+                "MOVE_AIR_CUTTER",
+                "MOVE_SILVER_WIND",
+                "MOVE_SONIC_BOOM",
+                "MOVE_NIGHT_SLASH"
+            ],
+            "iv_scale": 50,
             "ball_seal": 0
         },
         {
             "species": "SPECIES_CARNIVINE",
             "form": 0,
-            "level": 21,
+            "level": 25,
             "item": null,
-            "moves": null,
-            "iv_scale": 0,
+            "moves": [
+                "MOVE_BITE",
+                "MOVE_VINE_WHIP"
+            ],
+            "ball": "ITEM_SAFARI_BALL",
+            "iv_scale": 50,
             "ball_seal": 0
         },
         {
             "species": "SPECIES_CROAGUNK",
             "form": 0,
-            "level": 21,
+            "level": 25,
             "item": null,
             "moves": null,
-            "iv_scale": 0,
+            "ball": "ITEM_SAFARI_BALL",
+            "iv_scale": 50,
             "ball_seal": 0
         },
         {
             "species": "SPECIES_TROPIUS",
             "form": 0,
-            "level": 21,
+            "level": 25,
             "item": null,
             "moves": null,
-            "iv_scale": 0,
+            "ball": "ITEM_SAFARI_BALL",
+            "iv_scale": 50,
             "ball_seal": 0
         }
     ],

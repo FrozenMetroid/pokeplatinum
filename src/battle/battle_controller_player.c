@@ -3469,8 +3469,16 @@ static void BattleControllerPlayer_CheckMoveFailure(BattleSystem *battleSys, Bat
         default:
             break;
     }
-
-    battleCtx->command = BATTLE_CONTROL_USE_MOVE;
+    if (butItFailed) {
+        battleCtx->msgTemp = battleCtx->defender;
+        LOAD_SUBSEQ(subscript_but_it_failed_spread);
+        battleCtx->command = BATTLE_CONTROL_EXEC_SCRIPT;
+        battleCtx->commandNext = BATTLE_CONTROL_MOVE_FAILED;
+        battleCtx->moveStatusFlags |= MOVE_STATUS_NO_MORE_WORK;
+        battleCtx->beforeMoveCheckState = BEFORE_MOVE_START;
+    } else {
+        battleCtx->command = BATTLE_CONTROL_USE_MOVE;
+    }
 }
 
 static void BattleControllerPlayer_UseMove(BattleSystem *battleSys, BattleContext *battleCtx)

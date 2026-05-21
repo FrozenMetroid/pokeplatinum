@@ -4,33 +4,29 @@
     "items": [],
     "ai_flags": [
         "AI_FLAG_BASIC",
+        "AI_FLAG_EVAL_ATTACK",
+        "AI_FLAG_EXPERT",
         "AI_FLAG_PRIORITIZE_EXTREMES"
     ],
     "double_battle": false,
     "party": [
         {
-            "species": "SPECIES_CROAGUNK",
+            "species": "SPECIES_PRIMEAPE",
             "form": 0,
-            "level": 26,
+            "level": 29,
             "item": null,
             "moves": [
-                "MOVE_SWAGGER",
-                "MOVE_REVENGE",
-                "MOVE_FEINT_ATTACK"
+                "MOVE_FURY_SWIPES",
+                "MOVE_BRICK_BREAK",
+                "MOVE_ASSURANCE",
+                "MOVE_SCREECH"
             ],
-            "iv_scale": 40,
-            "ball_seal": 0
-        },
-        {
-            "species": "SPECIES_MACHOKE",
-            "form": 0,
-            "level": 26,
-            "item": null,
-            "moves": [
-                "MOVE_KARATE_CHOP",
-                "MOVE_FORESIGHT"
-            ],
-            "iv_scale": 40,
+            "ball": "ITEM_GREAT_BALL",
+            "ivnums": [15, 15, 15, 15, 15, 15],
+            "evnums": [0, 40, 0, 40, 0, 0],
+            "ability": "ABILITY_ANGER_POINT",
+            "nature": "NATURE_ADAMANT",
+            "iv_scale": 0,
             "ball_seal": 0
         }
     ],

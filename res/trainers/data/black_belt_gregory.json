@@ -4,35 +4,52 @@
     "items": [],
     "ai_flags": [
         "AI_FLAG_BASIC",
+        "AI_FLAG_EVAL_ATTACK",
         "AI_FLAG_PRIORITIZE_EXTREMES"
     ],
     "double_battle": false,
     "party": [
         {
-            "species": "SPECIES_MACHOP",
+            "species": "SPECIES_MANKEY",
             "form": 0,
-            "level": 23,
+            "level": 24,
             "item": null,
-            "moves": null,
-            "iv_scale": 30,
+            "moves": [
+                "MOVE_KARATE_CHOP",
+                "MOVE_SCREECH",
+                "MOVE_FOCUS_ENERGY",
+                "MOVE_FURY_SWIPES"
+            ],
+            "iv_scale": 60,
             "ball_seal": 0
         },
         {
             "species": "SPECIES_MACHOP",
             "form": 0,
-            "level": 23,
+            "level": 25,
             "item": null,
-            "moves": null,
-            "iv_scale": 30,
+            "moves": [
+                "MOVE_SEISMIC_TOSS",
+                "MOVE_LOW_KICK",
+                "MOVE_FORESIGHT",
+                "MOVE_LEER"
+
+            ],
+            "iv_scale": 60,
             "ball_seal": 0
         },
         {
-            "species": "SPECIES_MACHOP",
+            "species": "SPECIES_MAKUHITA",
             "form": 0,
-            "level": 23,
+            "level": 25,
             "item": null,
-            "moves": null,
-            "iv_scale": 30,
+            "moves": [
+                "MOVE_STRENGTH",
+                "MOVE_BELLY_DRUM",
+                "MOVE_FAKE_OUT",
+                "MOVE_WHIRLWIND"
+            ],
+            "iv_scale": 60,
             "ball_seal": 0
         }
     ],

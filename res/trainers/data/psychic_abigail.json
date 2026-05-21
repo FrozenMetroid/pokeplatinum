@@ -4,6 +4,7 @@
     "items": [],
     "ai_flags": [
         "AI_FLAG_BASIC",
+        "AI_FLAG_EVAL_ATTACK",
         "AI_FLAG_EXPERT"
     ],
     "double_battle": false,
@@ -11,28 +12,43 @@
         {
             "species": "SPECIES_CHINGLING",
             "form": 0,
-            "level": 23,
+            "level": 26,
             "item": null,
-            "moves": null,
-            "iv_scale": 0,
+            "moves": [
+                "MOVE_PSYCHIC",
+                "MOVE_HYPER_VOICE",
+                "MOVE_CONFUSE_RAY",
+                "MOVE_NONE"
+            ],
+            "iv_scale": 70,
             "ball_seal": 0
         },
         {
-            "species": "SPECIES_DRIFLOON",
-            "form": 0,
-            "level": 25,
-            "item": null,
-            "moves": null,
-            "iv_scale": 0,
-            "ball_seal": 0
-        },
-        {
-            "species": "SPECIES_KIRLIA",
+            "species": "SPECIES_SMOOCHUM",
             "form": 0,
             "level": 27,
             "item": null,
-            "moves": null,
-            "iv_scale": 0,
+            "moves": [
+                "MOVE_AURORA_BEAM",
+                "MOVE_PSYCHIC",
+                "MOVE_LOVELY_KISS",
+                "MOVE_FAKE_TEARS"
+            ],
+            "iv_scale": 70,
+            "ball_seal": 0
+        },
+        {
+            "species": "SPECIES_RALTS",
+            "form": 0,
+            "level": 28,
+            "item": null,
+            "moves": [
+                "MOVE_CALM_MIND",
+                "MOVE_PSYCHIC",
+                "MOVE_MAGICAL_LEAF",
+                "MOVE_DOUBLE_TEAM"
+            ],
+            "iv_scale": 70,
             "ball_seal": 0
         }
     ],

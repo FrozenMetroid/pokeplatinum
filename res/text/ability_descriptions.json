@@ -1172,6 +1172,13 @@
         "Raises Attack if hit\n",
         "by a wind-based move."
       ]
+    },
+    {
+      "id": "pl_msg_00000612_00168",
+      "en_US": [
+        "Suppresses the foe’s\n",
+        "Ability with its bite."
+      ]
     }
   ]
 }

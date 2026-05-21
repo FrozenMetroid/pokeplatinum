@@ -6788,21 +6788,21 @@
     {
       "id": "BattleStrings_Text_PokemonsAbilityWasSuppressed_Ally",
       "en_US": [
-        "{STRVAR_1 1, 0, 0}’s ability\n",
+        "{STRVAR_1 1, 0, 0}’s Ability\n",
         "was suppressed!"
       ]
     },
     {
       "id": "BattleStrings_Text_PokemonsAbilityWasSuppressed_Wild",
       "en_US": [
-        "The wild {STRVAR_1 1, 0, 0}’s ability\n",
+        "The wild {STRVAR_1 1, 0, 0}’s Ability\n",
         "was suppressed!"
       ]
     },
     {
       "id": "BattleStrings_Text_PokemonsAbilityWasSuppressed_Foe",
       "en_US": [
-        "The foe’s {STRVAR_1 1, 0, 0}’s ability\n",
+        "The foe’s {STRVAR_1 1, 0, 0}’s Ability\n",
         "was suppressed!"
       ]
     },
@@ -8803,6 +8803,30 @@
       "en_US": [
         "The foe’s {STRVAR_1 1, 0, 0}’s {STRVAR_1 8, 1, 0}\n",
         "filled the area!"
+      ]
+    },
+    {
+      "id": "BattleStrings_Text_PokemonsAbilityWasSuppressedByAcidMaw_Ally",
+      "en_US": [
+        "{STRVAR_1 1, 0, 0}’s {STRVAR_1 3, 1, 0}\n",
+        "was suppressed by {STRVAR_1 8, 2, 0}’s\f",
+        "{STRVAR_1 15, 3, 0}!"
+      ]
+    },
+    {
+      "id": "BattleStrings_Text_PokemonsAbilityWasSuppressedByAcidMaw_Wild",
+      "en_US": [
+        "The wild {STRVAR_1 1, 0, 0}’s {STRVAR_1 3, 1, 0}\n",
+        "was suppressed by {STRVAR_1 8, 2, 0}’s\f",
+        "{STRVAR_1 15, 3, 0}!"
+      ]
+    },
+    {
+      "id": "BattleStrings_Text_PokemonsAbilityWasSuppressedByAcidMaw_Foe",
+      "en_US": [
+        "The foe’s {STRVAR_1 1, 0, 0}’s {STRVAR_1 3, 1, 0}\n",
+        "was suppressed by {STRVAR_1 8, 2, 0}’s\f",
+        "{STRVAR_1 15, 3, 0}!"
       ]
     }
   ]

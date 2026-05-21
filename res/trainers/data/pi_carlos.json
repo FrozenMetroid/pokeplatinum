@@ -17,7 +17,21 @@
                 "MOVE_HORN_DRILL",
                 "MOVE_FLAIL"
             ],
-            "iv_scale": 50,
+            "iv_scale": 70,
+            "ball_seal": 0
+        },
+        {
+            "species": "SPECIES_RHYHORN",
+            "form": 0,
+            "level": 30,
+            "item": null,
+            "moves": [
+                "MOVE_HORN_DRILL",
+                "MOVE_ROCK_BLAST",
+                "MOVE_BITE",
+                "MOVE_MAGNITUDE"
+            ],
+            "iv_scale": 70,
             "ball_seal": 0
         }
     ],
