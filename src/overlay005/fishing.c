@@ -19,6 +19,7 @@
 #include "field_task.h"
 #include "game_records.h"
 #include "heap.h"
+#include "inlines.h"
 #include "map_object.h"
 #include "math_util.h"
 #include "message.h"
@@ -57,7 +58,8 @@ enum FishingActions {
     FUNC_FishingTask_WaitCloseMessage,
     FUNC_FishingTask_PutRodAway,
     FUNC_FishingTask_DelayBeforeFishFishing,
-    FUNC_FishingTask_FinishFishing
+    FUNC_FishingTask_FinishFishing,
+    FUNC_FishingTask_GenerateItem // NEW
 };
 
 typedef struct {
@@ -73,6 +75,7 @@ typedef struct {
     BOOL isFishEncountered;
     BOOL doneFishing;
     BOOL caughtFish;
+    BOOL playItemSE;
     enum FishingActions fishingTask;
     int counter;
     int fishDelayCounter;
@@ -87,6 +90,11 @@ typedef struct {
     Window window;
     MessageLoader *messageLoader;
 } FishingTask;
+
+typedef struct FishingItems {
+    u16 item;
+    u16 weight;
+} FishingItems;
 
 static void GoFish(SysTask *task, void *fishingTaskParam);
 static void *FishingTask_New(u32 fishingTaskSize);
@@ -392,10 +400,27 @@ static BOOL FishingTask_WaitForNoFish(FishingTask *fishingTask, PlayerAvatar *pl
     }
 
     sub_02062A0C(playerMapObject, MAP_OBJ_UNK_A0_00);
-    PrintFishingMessage(fishingTask, CommonStrings_Text_NotEvenANibble);
-
     fishingTask->counter = 16;
-    fishingTask->fishingTask = FUNC_FishingTask_WaitCloseMessage;
+
+    // NEW
+    // chance to generate an item if no fish is encountered, odds are 10% normally, 20% if the first Pokemon in the party has Suction Cups or Sticky Hold
+    u8 itemOdds = 10;
+    Pokemon *mon = Party_GetPokemonBySlotIndex(SaveData_GetParty(fishingTask->fieldSystem->saveData), 0);
+    u8 ability = Pokemon_GetValue(mon, MON_DATA_ABILITY, NULL);
+    if (ability == ABILITY_SUCTION_CUPS || ability == ABILITY_STICKY_HOLD) {
+        itemOdds *= 2;
+    }
+
+    if (LCRNG_RandMod(100) < itemOdds) {
+        // the following two lines are something to do with the exclamation mark
+        sub_02062A0C(playerMapObject, MAP_OBJ_UNK_A0_02);
+        fishingTask->unk_24 = ov5_021F5D8C(playerMapObject, 0, 1, 0);
+
+        fishingTask->fishingTask = FUNC_FishingTask_GenerateItem;
+    } else {
+        PrintFishingMessage(fishingTask, CommonStrings_Text_NotEvenANibble);
+        fishingTask->fishingTask = FUNC_FishingTask_WaitCloseMessage;
+    }
 
     return FALSE;
 }
@@ -409,6 +434,14 @@ static BOOL FishingTask_WaitCloseMessage(FishingTask *fishingTask, PlayerAvatar 
     }
 
     fishingTask->counter = 16;
+
+    if (!Sound_IsEffectPlaying(SEQ_FANFA4) && fishingTask->playItemSE) {
+        Sound_PlayFanfare(SEQ_FANFA4);
+        return FALSE;
+    } else if (Sound_IsBGMPausedByFanfare()) {
+        fishingTask->playItemSE = FALSE; //stop it from playing again
+        return FALSE;
+    }
 
     if (TryCloseFishingMessage(fishingTask) == FALSE) {
         return FALSE;
@@ -461,6 +494,46 @@ static BOOL FishingTask_FinishFishing(FishingTask *fishingTask, PlayerAvatar *pl
     return FALSE;
 }
 
+static BOOL FishingTask_GenerateItem(FishingTask *fishingTask, PlayerAvatar *playerAvatar, MapObject *playerMapObject)
+{
+    sub_02062A0C(playerMapObject, MAP_OBJ_UNK_A0_03); // makes the exclamation mark appear afaik
+
+    static FishingItems sFishingItems[] = {
+        {ITEM_HEART_SCALE,  30},
+        {ITEM_POKE_BALL,    30},
+        {ITEM_GREAT_BALL,   20},
+        {ITEM_ULTRA_BALL,   10},
+        {ITEM_STARDUST,     10},
+        {ITEM_PEARL,        10},
+        {ITEM_DIVE_BALL,    10},
+        {ITEM_KINGS_ROCK,   5},
+        {ITEM_BIG_PEARL,    5},
+        {ITEM_RARE_CANDY,   5},
+        {ITEM_NUGGET,       5},
+    };
+
+    u8 pos = LCRNG_RandMod(NELEMS(sFishingItems));
+    u16 item = sFishingItems[pos].item;
+    
+    if ((LCRNG_RandMod(100) + 1) > sFishingItems[pos].weight) {
+        item = ITEM_HEART_SCALE; // default to Heart Scale as the item generated if the random roll fails
+    }
+
+    StringTemplate_SetItemName(fishingTask->strTemplate, 0, item);
+
+    Bag *bag = SaveData_GetBag(fishingTask->fieldSystem->saveData);
+    if (Bag_TryAddItem(bag, item, 1, HEAP_ID_FIELD1)) {
+        fishingTask->playItemSE = TRUE;
+        PrintFishingMessage(fishingTask, CommonStrings_Text_Fishing_FoundAnItem);
+    } else {
+        PrintFishingMessage(fishingTask, CommonStrings_Text_Fishing_FoundAnItemButNoRoom);
+    }
+
+    fishingTask->fishingTask = FUNC_FishingTask_WaitCloseMessage;
+
+    return FALSE;
+}
+
 static BOOL (*const sFishingActions[])(FishingTask *, PlayerAvatar *, MapObject *) = {
     [FUNC_FishingTask_Start] = FishingTask_Start,
     [FUNC_FishingTask_PreparePlayerAvatar] = FishingTask_PreparePlayerAvatar,
@@ -479,7 +552,8 @@ static BOOL (*const sFishingActions[])(FishingTask *, PlayerAvatar *, MapObject 
     [FUNC_FishingTask_WaitCloseMessage] = FishingTask_WaitCloseMessage,
     [FUNC_FishingTask_PutRodAway] = FishingTask_PutRodAway,
     [FUNC_FishingTask_DelayBeforeFishFishing] = FishingTask_DelayBeforeFishFishing,
-    [FUNC_FishingTask_FinishFishing] = FishingTask_FinishFishing
+    [FUNC_FishingTask_FinishFishing] = FishingTask_FinishFishing,
+    [FUNC_FishingTask_GenerateItem] = FishingTask_GenerateItem // NEW
 };
 
 static void *FishingTask_New(u32 fishingTaskSize)

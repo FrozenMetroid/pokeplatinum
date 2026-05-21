@@ -901,6 +901,19 @@
         "Only the Pokémon that participate in\n",
         "battle will receive experience."
       ]
+    },
+    {
+      "id": "CommonStrings_Text_Fishing_FoundAnItem",
+      "en_US": [
+        "You reeled in a {STRVAR_1 15, 0, 0}!"
+      ]
+    },
+    {
+      "id": "CommonStrings_Text_Fishing_FoundAnItemButNoRoom",
+      "en_US": [
+        "You reeled in a {STRVAR_1 15, 0, 0},\n",
+        "but your Bag is full!"
+      ]
     }
   ]
 }
