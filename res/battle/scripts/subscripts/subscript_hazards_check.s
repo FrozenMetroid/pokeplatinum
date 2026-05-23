@@ -48,4 +48,16 @@ _085:
     WaitButtonABTime 30
 
 _105:
+// TEMP STUFF FOR MATRIARCH ABILITY
+
+//     CompareVarToValue OPCODE_FLAG_ON, BTLVAR_BATTLE_CTX_STATUS, SYSCTL_MON_FAINTED, _End
+//     CompareMonDataToValue OPCODE_EQU, BTLSCR_DEFENDER, BATTLEMON_ABILITY, ABILITY_MATRIARCH, _HandleMatriarch
+//     GoTo _End
+// 
+// _HandleMatriarch:
+//     UpdateVar OPCODE_SET, BTLVAR_CURRENT_MOVE, MOVE_HEAL_ORDER
+//     UpdateMonDataFromVar OPCODE_GET, BTLSCR_DEFENDER, BATTLEMON_MAX_HP, BTLVAR_HP_CALC_TEMP // get defender's max hp
+//     UpdateVar OPCODE_DIV, BTLVAR_HP_CALC_TEMP, 8
+//     Call BATTLE_SUBSCRIPT_MATRIARCH
+// _End:
     End 

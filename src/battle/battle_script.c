@@ -9321,7 +9321,7 @@ static BOOL BtlCmd_TryRestoreStatusOrHPOnSwitch(BattleSystem *battleSys, BattleC
             BattleScript_Iter(battleCtx, jumpNoStatusRestore);
         }
         #ifdef BATTLE_ADD_REGENERATOR
-        if (ability == ABILITY_REGENERATOR) {
+        if (ability == ABILITY_REGENERATOR && (BattleSystem_GetResultMask(battleSys) == BATTLE_IN_PROGRESS)) { // don't make regenerator heal if the battle has ended
             int hp = Pokemon_GetValue(mon, MON_DATA_HP, NULL);
             int hpmax = Pokemon_GetValue(mon, MON_DATA_MAX_HP, NULL);
 

@@ -8828,6 +8828,51 @@
         "was suppressed by {STRVAR_1 8, 2, 0}’s\f",
         "{STRVAR_1 15, 3, 0}!"
       ]
+    },
+    {
+      "id": "BattleStrings_Text_HealedByUnderlings_Ally",
+      "en_US": [
+        "{STRVAR_1 1, 0, 0} was healed\n",
+        "by its underlings!"
+      ]
+    },
+    {
+      "id": "BattleStrings_Text_HealedByUnderlings_Wild",
+      "en_US": [
+        "The wild {STRVAR_1 1, 0, 0} was healed\n",
+        "by its underlings!"
+      ]
+    },
+    {
+      "id": "BattleStrings_Text_HealedByUnderlings_Foe",
+      "en_US": [
+        "The foe’s {STRVAR_1 1, 0, 0} was healed\n",
+        "by its underlings!"
+      ]
+    },
+    {
+      "id": "BattleStrings_Text_PokemonWasPreventedFromMatriarchHealingDueToMove_Ally",
+      "en_US": [
+        "{STRVAR_1 1, 0, 0} was prevented\n",
+        "from healing with {STRVAR_1 6, 1, 0}\f",
+        "due to {STRVAR_1 8, 2, 0}!"
+      ]
+    },
+    {
+      "id": "BattleStrings_Text_PokemonWasPreventedFromMatriarchHealingDueToMove_Wild",
+      "en_US": [
+        "The wild {STRVAR_1 1, 0, 0} was prevented\n",
+        "from healing with {STRVAR_1 6, 1, 0}\f",
+        "due to {STRVAR_1 8, 2, 0}!"
+      ]
+    },
+    {
+      "id": "BattleStrings_Text_PokemonWasPreventedFromMatriarchHealingDueToMove_Foe",
+      "en_US": [
+        "The foe’s {STRVAR_1 1, 0, 0} was prevented\n",
+        "from healing with {STRVAR_1 6, 1, 0}\f",
+        "due to {STRVAR_1 8, 2, 0}!"
+      ]
     }
   ]
 }

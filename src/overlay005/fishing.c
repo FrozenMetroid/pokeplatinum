@@ -499,13 +499,13 @@ static BOOL FishingTask_GenerateItem(FishingTask *fishingTask, PlayerAvatar *pla
     sub_02062A0C(playerMapObject, MAP_OBJ_UNK_A0_03); // makes the exclamation mark appear afaik
 
     static FishingItems sFishingItems[] = {
-        {ITEM_HEART_SCALE,  30},
         {ITEM_POKE_BALL,    30},
         {ITEM_GREAT_BALL,   20},
         {ITEM_ULTRA_BALL,   10},
         {ITEM_STARDUST,     10},
         {ITEM_PEARL,        10},
         {ITEM_DIVE_BALL,    10},
+        {ITEM_HEART_SCALE,  5},
         {ITEM_KINGS_ROCK,   5},
         {ITEM_BIG_PEARL,    5},
         {ITEM_RARE_CANDY,   5},
@@ -516,7 +516,7 @@ static BOOL FishingTask_GenerateItem(FishingTask *fishingTask, PlayerAvatar *pla
     u16 item = sFishingItems[pos].item;
     
     if ((LCRNG_RandMod(100) + 1) > sFishingItems[pos].weight) {
-        item = ITEM_HEART_SCALE; // default to Heart Scale as the item generated if the random roll fails
+        item = ITEM_POKE_BALL; // default to Poké Ball as the item generated if the random roll fails
     }
 
     StringTemplate_SetItemName(fishingTask->strTemplate, 0, item);

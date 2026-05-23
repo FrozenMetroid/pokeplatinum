@@ -82,6 +82,7 @@ All Pokémon have received changes to any combination of their learnsets, Abilit
 - Piercing Eye (CUSTOM): Lowers foes' Evasion on switch-in. 
 - Artillery (CUSTOM): Raises the power of beam moves (Ice Beam, Bubble Beam, etc.)
 - Acid Maw (CUSTOM): Biting moves apply the effect of Gastro Acid on hit
+- Matriarch (CUSTOM): Underlings heal the Pokémon for 1/8 of its maximum health when it takes damage
 - Supreme Overlord (Supreme Lord in-game): Raises the power of a move by 10% for each fainted ally
 - Sharpness: Raises the power of slicing moves (Leaf Blade, Night Slash, etc.)
 - Strong Jaw: Raises the power of biting moves (Crunch, Fire Fang, etc.)

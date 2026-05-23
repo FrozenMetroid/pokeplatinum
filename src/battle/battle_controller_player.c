@@ -1864,6 +1864,36 @@ static void BattleControllerPlayer_TurnEnd(BattleSystem *battleSys, BattleContex
     battleCtx->totalTurns++;
     battleCtx->meFirstTurnOrder++;
 
+    #ifdef BATTLE_ADD_MATRIARCH
+        BOOL startSubscript = FALSE;
+        for (int i = 0; i < BattleSystem_GetMaxBattlers(battleSys); i++) {
+            int battler = battleCtx->monSpeedOrder[i];
+            if ((battleCtx->battleMons[battler].curHP < battleCtx->battleMons[battler].prevHP)
+                && (battleCtx->battleMons[battler].curHP > 0)
+                && Battler_Ability(battleCtx, battler) == ABILITY_MATRIARCH) {
+                if (battleCtx->battleMons[battler].moveEffectsData.healBlockTurns) {
+                    battleCtx->msgBattlerTemp = battler;
+                    LOAD_SUBSEQ(subscript_cannot_heal);
+                    startSubscript = TRUE;
+                } else {
+                    battleCtx->battleStatusMask = (0 << SYSCTL_PLAYED_MOVE_ANIMATION); // so that Heal Order's animation will play
+                    battleCtx->hpCalcTemp = BattleSystem_Divide(battleCtx->battleMons[battler].maxHP, 8);
+                    battleCtx->msgDefender = battler;
+                    battleCtx->moveCur = MOVE_HEAL_ORDER;
+
+                    LOAD_SUBSEQ(subscript_matriarch);
+                    startSubscript = TRUE;
+                }
+            }
+            battleCtx->battleMons[battler].prevHP = battleCtx->battleMons[battler].curHP; // stop this battler from triggering multiple times
+            if (startSubscript) {
+                battleCtx->commandNext = battleCtx->command;
+                battleCtx->command = BATTLE_CONTROL_EXEC_SCRIPT;
+                return;
+            }
+        }
+    #endif
+
     BattleContext_Init(battleCtx);
     BattleSystem_SetupNextTurn(battleSys, battleCtx);
 

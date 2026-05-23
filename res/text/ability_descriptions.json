@@ -1179,6 +1179,13 @@
         "Suppresses the foe’s\n",
         "Ability with its bite."
       ]
+    },
+    {
+      "id": "pl_msg_00000612_00169",
+      "en_US": [
+        "Its underlings rush to\n",
+        "heal its damage."
+      ]
     }
   ]
 }

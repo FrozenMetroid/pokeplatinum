@@ -149,6 +149,9 @@ void BattleSystem_InitBattleMon(BattleSystem *battleSys, BattleContext *battleCt
     battleCtx->battleMons[battler].friendship = Pokemon_GetValue(mon, MON_DATA_FRIENDSHIP, NULL);
     battleCtx->battleMons[battler].curHP = Pokemon_GetValue(mon, MON_DATA_HP, NULL);
     battleCtx->battleMons[battler].maxHP = Pokemon_GetValue(mon, MON_DATA_MAX_HP, NULL);
+    #ifdef BATTLE_ADD_MATRIARCH
+    battleCtx->battleMons[battler].prevHP = battleCtx->battleMons[battler].curHP; // init this and then adjust this later at the end of each turn
+    #endif
     battleCtx->battleMons[battler].exp = Pokemon_GetValue(mon, MON_DATA_EXPERIENCE, NULL);
     battleCtx->battleMons[battler].personality = Pokemon_GetValue(mon, MON_DATA_PERSONALITY, NULL);
     battleCtx->battleMons[battler].OTId = Pokemon_GetValue(mon, MON_DATA_OT_ID, NULL);
@@ -9129,6 +9132,7 @@ BOOL BattleSystem_CannotSuppressAbility(u8 ability)
     switch (ability) {
         case ABILITY_MULTITYPE:
         case ABILITY_NEUTRALIZING_GAS:
+        case ABILITY_MATRIARCH:
             return TRUE;
         default:
             return FALSE;
@@ -9145,9 +9149,17 @@ BOOL BattleSystem_CannotSwapAbilities(BattleContext *battleCtx, int attacker, in
         return TRUE;
     } else if (abilityAttacker == ABILITY_WONDER_GUARD || abilityDefender == ABILITY_WONDER_GUARD) {
         return TRUE;
-    } else if (abilityAttacker == ABILITY_NEUTRALIZING_GAS || abilityDefender == ABILITY_NEUTRALIZING_GAS) {
+    } 
+    #ifdef BATTLE_ADD_NEUTRALIZING_GAS
+    else if (abilityAttacker == ABILITY_NEUTRALIZING_GAS || abilityDefender == ABILITY_NEUTRALIZING_GAS) {
         return TRUE;
     }
+    #endif
+    #ifdef BATTLE_ADD_MATRIARCH
+    else if (abilityAttacker == ABILITY_MATRIARCH || abilityDefender == ABILITY_MATRIARCH) {
+        return TRUE;
+    }
+    #endif
     return FALSE;
 }
 

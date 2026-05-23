@@ -132,6 +132,10 @@ Currently not working
 #define BATTLE_ADD_MULTISCALE
 
 #define BATTLE_ADD_WIND_RIDER
+
+#define BATTLE_ADD_MATRIARCH
+
+
 // The following are always applied because they deal with some subscripts and/or things that aren't easily configurable
 // Modernization:
 // 1) Storm Drain and Lightning Rod

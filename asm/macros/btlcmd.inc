@@ -1160,7 +1160,7 @@
     .long \battler
     .endm
 
-    .macro TryRestoreStatusOnSwitch battler, jump_no_effect
+    .macro TryRestoreStatusOrHPOnSwitch battler, jump_no_effect
     .long BTLCMD_TRYRESTORESTATUSORHPONSWITCH
     .long \battler
     .long (\jump_no_effect-.) / 4 - 1
