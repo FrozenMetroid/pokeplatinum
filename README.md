@@ -8,7 +8,7 @@ You do not have my permission to release a playable patch of this fork for any r
 
 Credits:
 - Everyone who contributed to the decompilation, without which this fork would not exist. You all are awesome!
-- Everyone who contributed to HeartGold-Engine, whose work helped me to program things such as modernized Sturdy. Special shoutout to BluRose in particular!
+- Everyone who contributed to HeartGold-Engine, whose work helped me to program things such as modernized Sturdy, restoring items at the end of a battle, and so much more. Special shoutout to BluRose in particular!
 - RavePossum for multiple tutorials, such as showing EVs, IVs, and nature-affected stats on the summary screen
 - Keyswim for arranging the Battle! Johto Gym Leader theme for Jasmine's fight in the Battleground
 
@@ -131,12 +131,15 @@ All Pokémon have received changes to any combination of their learnsets, Abilit
 - Storm Drain
 - Stench
 - Normalize
+- Plus
+- Minus
 
 ### Other Ability Changes:
 
 - Slow Start: 5 turns -> 3 turns
 - Healer: Guaranteed chance to occur, no longer a 30% chance
-- Damp: Applies a new field condition that dampens the battlefield to reduce Fire-type damage by 50%; the effect is removed when all Pokémon with Damp are switch out or knocked out
+- Damp: Applies a new field condition that dampens the battlefield to reduce Fire-type damage by 50%; the effect is removed when all Pokémon with Damp are switched or knocked out
+- Overgrow, Torrent, Blaze, and Swarm all give a 30% increase to Grass, Water, Fire, and Bug-type moves, respectively, at any HP
 
 ### Battle Item Modernizations:
 
@@ -235,6 +238,8 @@ All Pokémon have received changes to any combination of their learnsets, Abilit
     - 1/16 damage instead of 1/8
     - Facade is no longer weakened
 - The cursor on the bottom screen during a battle is now able to be moved up from the Run button to the Fight button.
+- Return single-use items, excluding Berries, to the Pokémon at the end of a battle
+- Items collected from wild Pokémon at the end of a battle will be put into the Bag
 
 # Additional Item Locations
 

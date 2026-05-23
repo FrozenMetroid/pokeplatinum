@@ -135,6 +135,8 @@ Currently not working
 
 #define BATTLE_ADD_MATRIARCH
 
+#define BATTLE_RESTORE_ITEMS_AT_END_OF_BATTLE
+
 
 // The following are always applied because they deal with some subscripts and/or things that aren't easily configurable
 // Modernization:

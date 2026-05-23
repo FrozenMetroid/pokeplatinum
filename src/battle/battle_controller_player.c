@@ -193,6 +193,13 @@ void *BattleContext_New(BattleSystem *battleSys)
     MoveTable_Load(&battleContext->aiContext.moveTable);
     battleContext->aiContext.itemTable = ItemTable_Load(HEAP_ID_BATTLE);
 
+    #ifdef BATTLE_RESTORE_ITEMS_AT_END_OF_BATTLE
+    Party *playerParty = SaveData_GetParty(SaveData_Ptr());
+    for (int i = 0; i < playerParty->currentCount; i++) {
+        battleContext->itemsToRestore[i] = Pokemon_GetValue(&playerParty->pokemon[i], MON_DATA_HELD_ITEM, NULL);
+    }
+    #endif
+
     return battleContext;
 }
 
@@ -4281,6 +4288,11 @@ static void BattleControllerPlayer_ScreenWipe(BattleSystem *battleSys, BattleCon
 static void BattleControllerPlayer_EndFight(BattleSystem *battleSys, BattleContext *battleCtx)
 {
     u32 battleType = BattleSystem_GetBattleType(battleSys);
+    u16 newItems[MAX_PARTY_SIZE], battleItem;
+    u16 originalQuantity, newQuantity = 0;
+    u8 partyCount = BattleSystem_GetPartyCount(battleSys, BATTLER_US);
+    Pokemon *mon;
+    int i, j;
 
     if ((battleType & BATTLE_TYPE_LINK) == FALSE) {
         Party *playerParty = BattleSystem_GetParty(battleSys, BATTLER_US);
@@ -4291,6 +4303,66 @@ static void BattleControllerPlayer_EndFight(BattleSystem *battleSys, BattleConte
     if (battleType & BATTLE_TYPE_LINK) {
         CommSys_SendMessage(22);
     }
+
+    #ifdef BATTLE_RESTORE_ITEMS_AT_END_OF_BATTLE
+    for (i = 0; i < partyCount; i++) {
+        // some items may have changed during battle so we check what the final items are at the end
+        mon = BattleSystem_GetPartyPokemon(battleSys, BATTLER_US, i);
+        newItems[i] = Pokemon_GetValue(mon, MON_DATA_HELD_ITEM, NULL);
+    }
+
+    for (i = 0; i < partyCount; i++) {
+        battleItem = newItems[i];
+
+        if (battleItem) {
+            for (j = 0; j < partyCount; j++) {
+                if (battleItem == newItems[j]) {
+                    // current item is identical to an item that we've previously handled, move to the next one
+                    if (i > j)
+                    {
+                        continue;
+                    }
+                    else
+                    {
+                        newQuantity++;
+                    }
+                }
+            }
+            for (j = 0; j < partyCount; j++)
+            {
+                if (battleItem == battleCtx->itemsToRestore[j])
+                {
+                    originalQuantity++;
+                }
+            }
+        } else {
+            continue;
+        }
+
+        // can add items to the bag that were stolen in non-Trainer battles
+        if (newQuantity > originalQuantity && (battleType & (BATTLE_TYPE_TRAINER | BATTLE_TYPE_NO_EXPERIENCE)) == FALSE)
+        {
+            Bag_TryAddItem(BattleSystem_GetBag(battleSys), battleItem, newQuantity - originalQuantity, HEAP_ID_BATTLE);
+        }
+    }
+
+    // restore items regardless of if it's a trainer battle--this will also overwrite items gained from trainers
+    for (i = 0; i < partyCount; i++)
+    {
+        battleItem = battleCtx->itemsToRestore[i];
+        mon = BattleSystem_GetPartyPokemon(battleSys, BATTLER_US, i);
+        if (!Item_IsBerry(battleCtx->itemsToRestore[i]))
+        {
+            Pokemon_SetValue(mon, MON_DATA_HELD_ITEM, &battleItem);
+        }
+    }
+
+    // set to zero after the items have already been restored to maybe prevent observed byte loss
+    for (i = 0; i < partyCount; i++)
+    {
+        battleCtx->itemsToRestore[i] = 0;
+    }
+    #endif
 
     battleCtx->command = BATTLE_CONTROL_END_WAIT;
 }

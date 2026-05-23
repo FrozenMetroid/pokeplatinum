@@ -7461,11 +7461,13 @@ int BattleSystem_CalcMoveDamage(BattleSystem *battleSys,
     }
 
     if (attackerParams.ability == ABILITY_PLUS
-        && BattleSystem_CountAbility(battleSys, battleCtx, COUNT_ALIVE_BATTLERS_OUR_SIDE, attacker, ABILITY_MINUS)) {
+        && (BattleSystem_CountAbility(battleSys, battleCtx, COUNT_ALIVE_BATTLERS_OUR_SIDE, attacker, ABILITY_MINUS)
+            || BattleSystem_CountAbility(battleSys, battleCtx, COUNT_ALIVE_BATTLERS_OUR_SIDE, attacker, ABILITY_PLUS))) {
         spAttackStat = spAttackStat * 150 / 100;
     }
     if (attackerParams.ability == ABILITY_MINUS
-        && BattleSystem_CountAbility(battleSys, battleCtx, COUNT_ALIVE_BATTLERS_OUR_SIDE, attacker, ABILITY_PLUS)) {
+        && (BattleSystem_CountAbility(battleSys, battleCtx, COUNT_ALIVE_BATTLERS_OUR_SIDE, attacker, ABILITY_PLUS)
+            || BattleSystem_CountAbility(battleSys, battleCtx, COUNT_ALIVE_BATTLERS_OUR_SIDE, attacker, ABILITY_MINUS))) {
         spAttackStat = spAttackStat * 150 / 100;
     }
 

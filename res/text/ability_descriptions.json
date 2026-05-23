@@ -401,14 +401,14 @@
       "id": "pl_msg_00000612_00057",
       "en_US": [
         "Boosts Sp. Atk if another\n",
-        "Pokémon has Minus."
+        "Pokémon has Minus or Plus."
       ]
     },
     {
       "id": "pl_msg_00000612_00058",
       "en_US": [
         "Boosts Sp. Atk if another\n",
-        "Pokémon has Plus."
+        "Pokémon has Plus or Minus."
       ]
     },
     {
@@ -457,28 +457,28 @@
       "id": "pl_msg_00000612_00065",
       "en_US": [
         "Powers up Grass-type\n",
-        "moves in a pinch."
+        "moves."
       ]
     },
     {
       "id": "pl_msg_00000612_00066",
       "en_US": [
         "Powers up Fire-type\n",
-        "moves in a pinch."
+        "moves."
       ]
     },
     {
       "id": "pl_msg_00000612_00067",
       "en_US": [
         "Powers up Water-type\n",
-        "moves in a pinch."
+        "moves."
       ]
     },
     {
       "id": "pl_msg_00000612_00068",
       "en_US": [
         "Powers up Bug-type\n",
-        "moves in a pinch."
+        "moves."
       ]
     },
     {

@@ -514,22 +514,30 @@ u8 HoneyTree_GetLevel(FieldSystem *fieldSystem, u16 *species) // evolve if the m
             level = minLevel;
         }
 
-        struct SpeciesEvolution *evoTable = Heap_Alloc(HEAP_ID_BATTLE, MAX_EVOLUTIONS * sizeof(struct SpeciesEvolution));
+        struct SpeciesEvolution *evoTable = Heap_Alloc(HEAP_ID_FIELD1, MAX_EVOLUTIONS * sizeof(struct SpeciesEvolution));
         NARC_ReadWholeMemberByIndexPair(evoTable, NARC_INDEX_POKETOOL__PERSONAL__EVO, *species);
 
         if (evoTable[0].method != EVO_NONE && LCRNG_RandMod(2)) { // 50% chance to evolve the mon if it can evolve by level up
             for (int j = 0; j < 2; j++) { // do this twice for something like Dustox or Beautifly
                 for (int i = 0; i < MAX_EVOLUTIONS && evoTable[i].method != EVO_NONE; i++) {
-                    if ((evoTable[i].method == EVO_LEVEL && evoTable[i].param <= level) // EVO_LEVEL_FEMALE for combee
+                    if (((evoTable[i].method == EVO_LEVEL || evoTable[i].method == EVO_LEVEL_MALE) && evoTable[i].param <= level) // EVO_LEVEL_MALE for Burmy -> Mothim
                         || (*species == SPECIES_AIPOM && level >= 32)) { // aipom hardcoded for double hit
                         *species = evoTable[i].targetSpecies;
                         break;
                     } else if (evoTable[i].method == EVO_LEVEL_FEMALE && evoTable[i].param <= level) {
-                        // only combee can evolve with this
-                        // make sure that not all combee above level 21 evolve into Vespiquen following the gender ratio
-                        if (LCRNG_RandMod(256) < GENDER_RATIO_FEMALE_12_5) {
-                            *species = SPECIES_VESPIQUEN;
+                        // make sure that not all combee/burmy above/at level 20/21 evolve into Vespiquen/Wormadam following the gender ratio
+                        if (*species == SPECIES_COMBEE) {
+                            if (LCRNG_RandMod(256) < GENDER_RATIO_FEMALE_12_5) {
+                                *species = SPECIES_VESPIQUEN;
+                            }
+                        } else if (*species == SPECIES_BURMY) {
+                            if (LCRNG_RandMod(256) < GENDER_RATIO_FEMALE_50) {
+                                *species = SPECIES_WORMADAM;
+                            }
+                        } else {
+                            GF_ASSERT(FALSE);
                         }
+                        break;
                     } else if (*species == SPECIES_WURMPLE && level >= 7) { // handle wurmple split evolution
                         if (LCRNG_RandMod(2)) { // 50/50 for silcoon or cascoon, personality doesn't matter at this point
                             *species = SPECIES_SILCOON;
@@ -539,8 +547,8 @@ u8 HoneyTree_GetLevel(FieldSystem *fieldSystem, u16 *species) // evolve if the m
                         break;
                     }
                 }
-            }
-        } // no need to check if the mon is at an illegal level for it because none of the starting mons for honey trees are evolved
+            } // no need to check if the mon is at an illegal level for it because none of the starting mons for honey trees are evolved
+        }
         Heap_Free(evoTable);
         return level;
     }

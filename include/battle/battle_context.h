@@ -317,6 +317,7 @@ struct BattleContext {
     u32 magicBounceTracker : 1; // if any client has already activated magic bounce, another can not activate
     u32 padding_end:31;
     u8 clientPriority[MAX_BATTLERS];
+    u16 itemsToRestore[MAX_PARTY_SIZE];
 };
 
 #endif // POKEPLATINUM_BATTLE_CONTEXT_H
