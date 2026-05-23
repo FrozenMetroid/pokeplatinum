@@ -171,6 +171,7 @@ All Pokémon have received changes to any combination of their learnsets, Abilit
     - Toxic Spikes (!!!)
 - Eruption is now a physical move to benefit Typhlosion's move to a physical attacker, as well as for Groudon's Eruption to feel like a counterpart to Kyogre's Water Spout
     - This barely affects any other Pokémon that can learn the move as they all have comparable Attack stats to Special Attack
+- Tail Glow raises Special Attack by 3 stages
 
 ### Miscellaneous Battle System Changes:
 

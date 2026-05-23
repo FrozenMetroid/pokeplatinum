@@ -203,6 +203,20 @@ Basic_ScoreMoveEffect:
     IfCurrentMoveEffectEqualTo BATTLE_EFFECT_SP_DEF_DOWN_2, Basic_CheckLowStatStage_SpDefense
     IfCurrentMoveEffectEqualTo BATTLE_EFFECT_EVA_DOWN_2, Basic_CheckLowStatStage_Accuracy
     IfCurrentMoveEffectEqualTo BATTLE_EFFECT_ACC_DOWN_2, Basic_CheckLowStatStage_Evasion
+    IfCurrentMoveEffectEqualTo BATTLE_EFFECT_ATK_UP_3, Basic_CheckHighStatStage_Attack
+    IfCurrentMoveEffectEqualTo BATTLE_EFFECT_DEF_UP_3, Basic_CheckHighStatStage_Defense
+    IfCurrentMoveEffectEqualTo BATTLE_EFFECT_SPEED_UP_3, Basic_CheckHighStatStage_Speed
+    IfCurrentMoveEffectEqualTo BATTLE_EFFECT_SP_ATK_UP_3, Basic_CheckHighStatStage_SpAttack
+    IfCurrentMoveEffectEqualTo BATTLE_EFFECT_SP_DEF_UP_3, Basic_CheckHighStatStage_SpDefense
+    IfCurrentMoveEffectEqualTo BATTLE_EFFECT_ACC_UP_3, Basic_CheckHighStatStage_Accuracy
+    IfCurrentMoveEffectEqualTo BATTLE_EFFECT_EVA_UP_3, Basic_CheckHighStatStage_Evasion
+    IfCurrentMoveEffectEqualTo BATTLE_EFFECT_ATK_DOWN_3, Basic_CheckLowStatStage_Attack
+    IfCurrentMoveEffectEqualTo BATTLE_EFFECT_DEF_DOWN_3, Basic_CheckLowStatStage_Defense
+    IfCurrentMoveEffectEqualTo BATTLE_EFFECT_SPEED_DOWN_3, Basic_CheckLowStatStage_Speed
+    IfCurrentMoveEffectEqualTo BATTLE_EFFECT_SP_ATK_DOWN_3, Basic_CheckLowStatStage_SpAttack
+    IfCurrentMoveEffectEqualTo BATTLE_EFFECT_SP_DEF_DOWN_3, Basic_CheckLowStatStage_SpDefense
+    IfCurrentMoveEffectEqualTo BATTLE_EFFECT_EVA_DOWN_3, Basic_CheckLowStatStage_Accuracy
+    IfCurrentMoveEffectEqualTo BATTLE_EFFECT_ACC_DOWN_3, Basic_CheckLowStatStage_Evasion
     IfCurrentMoveEffectEqualTo BATTLE_EFFECT_SET_REFLECT, Basic_CheckAlreadyUnderReflect
     IfCurrentMoveEffectEqualTo BATTLE_EFFECT_STATUS_POISON, Basic_CheckCannotPoison
     IfCurrentMoveEffectEqualTo BATTLE_EFFECT_STATUS_PARALYZE, Basic_CheckCannotParalyze
@@ -1930,6 +1944,20 @@ Expert_Main:
     IfCurrentMoveEffectEqualTo BATTLE_EFFECT_SPEED_DOWN_2, Expert_StatusSpeedDown
     IfCurrentMoveEffectEqualTo BATTLE_EFFECT_SP_ATK_DOWN_2, Expert_StatusSpAttackDown
     IfCurrentMoveEffectEqualTo BATTLE_EFFECT_SP_DEF_DOWN_2, Expert_StatusSpDefenseDown
+    IfCurrentMoveEffectEqualTo BATTLE_EFFECT_EVA_DOWN_2, Expert_StatusAccuracyDown
+    IfCurrentMoveEffectEqualTo BATTLE_EFFECT_ACC_DOWN_2, Expert_StatusEvasionDown
+    IfCurrentMoveEffectEqualTo BATTLE_EFFECT_ATK_UP_3, Expert_StatusAttackUp
+    IfCurrentMoveEffectEqualTo BATTLE_EFFECT_DEF_UP_3, Expert_StatusDefenseUp
+    IfCurrentMoveEffectEqualTo BATTLE_EFFECT_SPEED_UP_3, Expert_StatusSpeedUp
+    IfCurrentMoveEffectEqualTo BATTLE_EFFECT_SP_ATK_UP_3, Expert_StatusSpAttackUp
+    IfCurrentMoveEffectEqualTo BATTLE_EFFECT_SP_DEF_UP_3, Expert_StatusSpDefenseUp
+    IfCurrentMoveEffectEqualTo BATTLE_EFFECT_ACC_UP_3, Expert_StatusAccuracyUp
+    IfCurrentMoveEffectEqualTo BATTLE_EFFECT_EVA_UP_3, Expert_StatusEvasionUp
+    IfCurrentMoveEffectEqualTo BATTLE_EFFECT_ATK_DOWN_3, Expert_StatusAttackDown
+    IfCurrentMoveEffectEqualTo BATTLE_EFFECT_DEF_DOWN_3, Expert_StatusDefenseDown
+    IfCurrentMoveEffectEqualTo BATTLE_EFFECT_SPEED_DOWN_3, Expert_StatusSpeedDown
+    IfCurrentMoveEffectEqualTo BATTLE_EFFECT_SP_ATK_DOWN_3, Expert_StatusSpAttackDown
+    IfCurrentMoveEffectEqualTo BATTLE_EFFECT_SP_DEF_DOWN_3, Expert_StatusSpDefenseDown
     IfCurrentMoveEffectEqualTo BATTLE_EFFECT_EVA_DOWN_2, Expert_StatusAccuracyDown
     IfCurrentMoveEffectEqualTo BATTLE_EFFECT_ACC_DOWN_2, Expert_StatusEvasionDown
     IfCurrentMoveEffectEqualTo BATTLE_EFFECT_SET_REFLECT, Expert_Reflect
@@ -6761,6 +6789,20 @@ SetupFirstTurn_SetupEffects:
     TableEntry BATTLE_EFFECT_SP_DEF_DOWN_2
     TableEntry BATTLE_EFFECT_EVA_DOWN_2
     TableEntry BATTLE_EFFECT_ACC_DOWN_2
+    TableEntry BATTLE_EFFECT_ATK_UP_3
+    TableEntry BATTLE_EFFECT_DEF_UP_3
+    TableEntry BATTLE_EFFECT_SPEED_UP_3
+    TableEntry BATTLE_EFFECT_SP_ATK_UP_3
+    TableEntry BATTLE_EFFECT_SP_DEF_UP_3
+    TableEntry BATTLE_EFFECT_ACC_UP_3
+    TableEntry BATTLE_EFFECT_EVA_UP_3
+    TableEntry BATTLE_EFFECT_ATK_DOWN_3
+    TableEntry BATTLE_EFFECT_DEF_DOWN_3
+    TableEntry BATTLE_EFFECT_SPEED_DOWN_3
+    TableEntry BATTLE_EFFECT_SP_ATK_DOWN_3
+    TableEntry BATTLE_EFFECT_SP_DEF_DOWN_3
+    TableEntry BATTLE_EFFECT_EVA_DOWN_2
+    TableEntry BATTLE_EFFECT_ACC_DOWN_2
     TableEntry BATTLE_EFFECT_SET_REFLECT
     TableEntry BATTLE_EFFECT_STATUS_POISON
     TableEntry BATTLE_EFFECT_STATUS_PARALYZE
@@ -8182,6 +8224,20 @@ CheckHP_DiscourageAtMediumHP:
     TableEntry BATTLE_EFFECT_SP_DEF_DOWN_2
     TableEntry BATTLE_EFFECT_EVA_DOWN_2
     TableEntry BATTLE_EFFECT_ACC_DOWN_2
+    TableEntry BATTLE_EFFECT_ATK_UP_3
+    TableEntry BATTLE_EFFECT_DEF_UP_3
+    TableEntry BATTLE_EFFECT_SPEED_UP_3
+    TableEntry BATTLE_EFFECT_SP_ATK_UP_3
+    TableEntry BATTLE_EFFECT_SP_DEF_UP_3
+    TableEntry BATTLE_EFFECT_ACC_UP_3
+    TableEntry BATTLE_EFFECT_EVA_UP_3
+    TableEntry BATTLE_EFFECT_ATK_DOWN_3
+    TableEntry BATTLE_EFFECT_DEF_DOWN_3
+    TableEntry BATTLE_EFFECT_SPEED_DOWN_3
+    TableEntry BATTLE_EFFECT_SP_ATK_DOWN_3
+    TableEntry BATTLE_EFFECT_SP_DEF_DOWN_3
+    TableEntry BATTLE_EFFECT_EVA_DOWN_3
+    TableEntry BATTLE_EFFECT_ACC_DOWN_3
     TableEntry BATTLE_EFFECT_CONVERSION2
     TableEntry BATTLE_EFFECT_PREVENT_STATUS
     TableEntry BATTLE_EFFECT_MAX_ATK_LOSE_HALF_MAX_HP
@@ -8230,6 +8286,20 @@ CheckHP_DiscourageAtLowHP:
     TableEntry BATTLE_EFFECT_SP_DEF_DOWN_2
     TableEntry BATTLE_EFFECT_EVA_DOWN_2
     TableEntry BATTLE_EFFECT_ACC_DOWN_2
+    TableEntry BATTLE_EFFECT_ATK_UP_3
+    TableEntry BATTLE_EFFECT_DEF_UP_3
+    TableEntry BATTLE_EFFECT_SPEED_UP_3
+    TableEntry BATTLE_EFFECT_SP_ATK_UP_3
+    TableEntry BATTLE_EFFECT_SP_DEF_UP_3
+    TableEntry BATTLE_EFFECT_ACC_UP_3
+    TableEntry BATTLE_EFFECT_EVA_UP_3
+    TableEntry BATTLE_EFFECT_ATK_DOWN_3
+    TableEntry BATTLE_EFFECT_DEF_DOWN_3
+    TableEntry BATTLE_EFFECT_SPEED_DOWN_3
+    TableEntry BATTLE_EFFECT_SP_ATK_DOWN_3
+    TableEntry BATTLE_EFFECT_SP_DEF_DOWN_3
+    TableEntry BATTLE_EFFECT_EVA_DOWN_3
+    TableEntry BATTLE_EFFECT_ACC_DOWN_3
     TableEntry BATTLE_EFFECT_RAISE_ATK_WHEN_HIT
     TableEntry BATTLE_EFFECT_CONVERSION2
     TableEntry BATTLE_EFFECT_NEXT_ATTACK_ALWAYS_HITS
@@ -8284,6 +8354,20 @@ CheckHP_Target_DiscourageAtMediumHP:
     TableEntry BATTLE_EFFECT_SP_DEF_DOWN_2
     TableEntry BATTLE_EFFECT_EVA_DOWN_2
     TableEntry BATTLE_EFFECT_ACC_DOWN_2
+    TableEntry BATTLE_EFFECT_ATK_UP_3
+    TableEntry BATTLE_EFFECT_DEF_UP_3
+    TableEntry BATTLE_EFFECT_SPEED_UP_3
+    TableEntry BATTLE_EFFECT_SP_ATK_UP_3
+    TableEntry BATTLE_EFFECT_SP_DEF_UP_3
+    TableEntry BATTLE_EFFECT_ACC_UP_3
+    TableEntry BATTLE_EFFECT_EVA_UP_3
+    TableEntry BATTLE_EFFECT_ATK_DOWN_3
+    TableEntry BATTLE_EFFECT_DEF_DOWN_3
+    TableEntry BATTLE_EFFECT_SPEED_DOWN_3
+    TableEntry BATTLE_EFFECT_SP_ATK_DOWN_3
+    TableEntry BATTLE_EFFECT_SP_DEF_DOWN_3
+    TableEntry BATTLE_EFFECT_EVA_DOWN_3
+    TableEntry BATTLE_EFFECT_ACC_DOWN_3
     TableEntry BATTLE_EFFECT_STATUS_POISON
     TableEntry BATTLE_EFFECT_AVERAGE_HP
     TableEntry BATTLE_EFFECT_ALL_FAINT_3_TURNS
@@ -8339,6 +8423,20 @@ CheckHP_Target_DiscourageAtLowHP:
     TableEntry BATTLE_EFFECT_SP_DEF_DOWN_2
     TableEntry BATTLE_EFFECT_EVA_DOWN_2
     TableEntry BATTLE_EFFECT_ACC_DOWN_2
+    TableEntry BATTLE_EFFECT_ATK_UP_3
+    TableEntry BATTLE_EFFECT_DEF_UP_3
+    TableEntry BATTLE_EFFECT_SPEED_UP_3
+    TableEntry BATTLE_EFFECT_SP_ATK_UP_3
+    TableEntry BATTLE_EFFECT_SP_DEF_UP_3
+    TableEntry BATTLE_EFFECT_ACC_UP_3
+    TableEntry BATTLE_EFFECT_EVA_UP_3
+    TableEntry BATTLE_EFFECT_ATK_DOWN_3
+    TableEntry BATTLE_EFFECT_DEF_DOWN_3
+    TableEntry BATTLE_EFFECT_SPEED_DOWN_3
+    TableEntry BATTLE_EFFECT_SP_ATK_DOWN_3
+    TableEntry BATTLE_EFFECT_SP_DEF_DOWN_3
+    TableEntry BATTLE_EFFECT_EVA_DOWN_3
+    TableEntry BATTLE_EFFECT_ACC_DOWN_3
     TableEntry BATTLE_EFFECT_STATUS_POISON
     TableEntry BATTLE_EFFECT_STATUS_PARALYZE
     TableEntry BATTLE_EFFECT_AVERAGE_HP
