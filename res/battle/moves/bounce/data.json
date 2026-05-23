@@ -2,9 +2,9 @@
     "name": "Bounce",
     "class": "CLASS_PHYSICAL",
     "type": "TYPE_FLYING",
-    "power": 85,
-    "accuracy": 85,
-    "pp": 5,
+    "power": 80,
+    "accuracy": 95,
+    "pp": 15,
     "effect": {
         "type": "BATTLE_EFFECT_BOUNCE",
         "chance": 30

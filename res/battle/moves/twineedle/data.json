@@ -2,7 +2,7 @@
     "name": "Twineedle",
     "class": "CLASS_PHYSICAL",
     "type": "TYPE_BUG",
-    "power": 25,
+    "power": 30,
     "accuracy": 100,
     "pp": 20,
     "effect": {

@@ -2,7 +2,7 @@
     "name": "Shadow Ball",
     "class": "CLASS_SPECIAL",
     "type": "TYPE_GHOST",
-    "power": 80,
+    "power": 85,
     "accuracy": 100,
     "pp": 15,
     "effect": {

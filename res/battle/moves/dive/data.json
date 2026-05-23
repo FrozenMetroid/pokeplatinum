@@ -2,7 +2,7 @@
     "name": "Dive",
     "class": "CLASS_PHYSICAL",
     "type": "TYPE_WATER",
-    "power": 80,
+    "power": 90,
     "accuracy": 100,
     "pp": 10,
     "effect": {

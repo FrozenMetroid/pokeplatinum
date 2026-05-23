@@ -1,10 +1,10 @@
 {
     "name": "Cut",
     "class": "CLASS_PHYSICAL",
-    "type": "TYPE_NORMAL",
-    "power": 50,
-    "accuracy": 95,
-    "pp": 30,
+    "type": "TYPE_STEEL",
+    "power": 60,
+    "accuracy": 100,
+    "pp": 15,
     "effect": {
         "type": "BATTLE_EFFECT_HIT",
         "chance": 0

@@ -2,7 +2,7 @@
     "name": "Thunder Fang",
     "class": "CLASS_PHYSICAL",
     "type": "TYPE_ELECTRIC",
-    "power": 75,
+    "power": 80,
     "accuracy": 95,
     "pp": 15,
     "effect": {

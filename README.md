@@ -172,6 +172,53 @@ All Pokémon have received changes to any combination of their learnsets, Abilit
 - Eruption is now a physical move to benefit Typhlosion's move to a physical attacker, as well as for Groudon's Eruption to feel like a counterpart to Kyogre's Water Spout
     - This barely affects any other Pokémon that can learn the move as they all have comparable Attack stats to Special Attack
 - Tail Glow raises Special Attack by 3 stages
+- Needle Arm: 60BP -> 90BP
+- Zen Headbutt: 90% accuracy -> 100%
+- Double Slap, Fury Attack, Fury Swipes: 15BP -> 20BP, 85% accuracy -> 90%
+- Comet Punch: 15BP -> 20BP, 85% accuracy -> 100%
+- Fire/Ice/Thunder Punch: 75BP -> 85BP
+- Fire/Ice/Thunder Fang: 65BP -> 80BP
+- Cut: Normal-type -> Steel-type, 95% accuracy -> 100% accuracy, 30PP -> 15PP
+- Fly: 95% accuracy -> 100% accuracy
+- Slam: 80BP -> 70BP, 75% accuracy -> 100% accuracy
+- Mega Kick: 120BP -> 110BP, 75% accuracy -> 85%, 5PP -> 10PP
+- Wrap: 15BP -> 30BP
+- Poison Sting: 15BP -> 35BP, 30% effect chance -> 20%
+- Twineedle: 25BP -> 30BP
+- Submission: 80BP -> 100BP, 80% accuracy -> 90%
+- Absorb: 20BP -> 30BP
+- Mega Drain: 40BP -> 50BP, 20PP -> 25PP
+- Fire Spin, Clamp, Whirlpool, and Sand Tomb: 35BP -> 50BP, 85% accuracy -> 95%
+- Egg Bomb: 75% accuracy -> 90%
+- Smog: 30BP -> 50BP, 70% accuracy -> 95%, 20PP -> 15PP, 40% effect chance -> 20%
+- Spike Cannon: Normal-type -> Steel-type
+- Constrict: 10BP -> 35BP
+- Kinesis: 80% accuracy -> 100%
+- Rock Slide: 90% accuracy -> 100%, 30% effect chance -> 10%
+- Triple Kick: 10BP -> 15BP
+- Sweet Kiss: 75% accuracy -> 85%
+- Steel Wing: 90% accuracy -> 100%
+- Iron Tail: 75% accuracy -> 85%
+- Shadow Ball: 80BP -> 85BP
+- Rock Smash: 40BP -> 50BP
+- Dive: 80BP -> 90BP
+- Luster Purge: 5PP -> 10PP
+- Mist Ball: 5PP -> 10PP
+- Hyper Voice: 10PP -> 15PP
+- Grass Whistle: 55% accuracy -> 75%
+- Shadow Punch: 60BP -> 80BP
+- Bounce: 85BP -> 80BP, 85% accuracy -> 95%, 5PP -> 15PP
+- Poison Tail: 50BP -> 75BP, 25PP -> 15PP
+- Pluck: 60BP -> 75BP, 20PP -> 15PP
+- Dragon Rush: 75% accuracy -> 90%
+- Mud Bomb: 65BP -> 75BP, 85% accuracy -> 90%, 10PP -> 15PP, 30% effect chance -> 15%
+- Mirror Shot: 65BP -> 75BP, 85% accuracy -> 90%, 30% effect chance -> 20%
+- Rock Climb: Normal-type -> Rock-type, 90BP -> 85BP, 85% accuracy -> 90
+- Rock Wrecker: 150BP -> 120BP, effect change: lower user's Special Defense and Defense by one stage, 90% accuracy -> 100
+- Gunk Shot: 80% accuracy -> 85
+- Chatter: 65BP -> 75BP
+- Roar of Time: 90% accuracy -> 100, 150BP -> 200BP
+- Magma Storm: 80% accuracy -> 85
 
 ### Miscellaneous Battle System Changes:
 

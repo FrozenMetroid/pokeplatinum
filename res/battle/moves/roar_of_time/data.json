@@ -2,8 +2,8 @@
     "name": "Roar of Time",
     "class": "CLASS_SPECIAL",
     "type": "TYPE_DRAGON",
-    "power": 150,
-    "accuracy": 90,
+    "power": 200,
+    "accuracy": 100,
     "pp": 5,
     "effect": {
         "type": "BATTLE_EFFECT_RECHARGE_AFTER",

@@ -2,9 +2,9 @@
     "name": "Mega Kick",
     "class": "CLASS_PHYSICAL",
     "type": "TYPE_NORMAL",
-    "power": 120,
-    "accuracy": 75,
-    "pp": 5,
+    "power": 110,
+    "accuracy": 85,
+    "pp": 10,
     "effect": {
         "type": "BATTLE_EFFECT_HIT",
         "chance": 0

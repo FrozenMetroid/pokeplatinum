@@ -2,7 +2,7 @@
     "name": "Constrict",
     "class": "CLASS_PHYSICAL",
     "type": "TYPE_NORMAL",
-    "power": 10,
+    "power": 35,
     "accuracy": 100,
     "pp": 35,
     "effect": {

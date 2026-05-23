@@ -2,7 +2,7 @@
     "name": "Needle Arm",
     "class": "CLASS_PHYSICAL",
     "type": "TYPE_GRASS",
-    "power": 60,
+    "power": 90,
     "accuracy": 100,
     "pp": 15,
     "effect": {

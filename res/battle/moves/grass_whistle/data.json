@@ -3,7 +3,7 @@
     "class": "CLASS_STATUS",
     "type": "TYPE_GRASS",
     "power": 0,
-    "accuracy": 55,
+    "accuracy": 75,
     "pp": 15,
     "effect": {
         "type": "BATTLE_EFFECT_STATUS_SLEEP",

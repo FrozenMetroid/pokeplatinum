@@ -2,12 +2,12 @@
     "name": "Smog",
     "class": "CLASS_SPECIAL",
     "type": "TYPE_POISON",
-    "power": 30,
-    "accuracy": 90,
-    "pp": 20,
+    "power": 50,
+    "accuracy": 95,
+    "pp": 15,
     "effect": {
         "type": "BATTLE_EFFECT_POISON_HIT",
-        "chance": 40
+        "chance": 20
     },
     "range": "RANGE_SINGLE_TARGET",
     "priority": 0,

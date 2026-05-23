@@ -4,7 +4,7 @@
     "type": "TYPE_PSYCHIC",
     "power": 70,
     "accuracy": 100,
-    "pp": 5,
+    "pp": 10,
     "effect": {
         "type": "BATTLE_EFFECT_LOWER_SP_DEF_HIT",
         "chance": 50

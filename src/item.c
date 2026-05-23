@@ -2551,7 +2551,7 @@ const ItemArchiveIDs sItemArchiveIDs[] = {
     [ITEM_HM01] = {
         .dataID = 0x18E,
         .iconID = hm_NCGR,
-        .paletteID = tm_normal_NCLR,
+        .paletteID = tm_steel_NCLR,
         .gen3ID = GBA_ITEM_HM01,
     },
     [ITEM_HM02] = {

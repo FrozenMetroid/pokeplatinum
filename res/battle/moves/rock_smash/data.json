@@ -2,7 +2,7 @@
     "name": "Rock Smash",
     "class": "CLASS_PHYSICAL",
     "type": "TYPE_FIGHTING",
-    "power": 40,
+    "power": 50,
     "accuracy": 100,
     "pp": 15,
     "effect": {

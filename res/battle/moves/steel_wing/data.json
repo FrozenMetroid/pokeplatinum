@@ -3,7 +3,7 @@
     "class": "CLASS_PHYSICAL",
     "type": "TYPE_STEEL",
     "power": 70,
-    "accuracy": 90,
+    "accuracy": 100,
     "pp": 25,
     "effect": {
         "type": "BATTLE_EFFECT_RAISE_DEF_HIT",

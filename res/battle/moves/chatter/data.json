@@ -2,7 +2,7 @@
     "name": "Chatter",
     "class": "CLASS_SPECIAL",
     "type": "TYPE_FLYING",
-    "power": 65,
+    "power": 75,
     "accuracy": 100,
     "pp": 20,
     "effect": {

@@ -2,8 +2,8 @@
     "name": "Submission",
     "class": "CLASS_PHYSICAL",
     "type": "TYPE_FIGHTING",
-    "power": 80,
-    "accuracy": 80,
+    "power": 100,
+    "accuracy": 90,
     "pp": 25,
     "effect": {
         "type": "BATTLE_EFFECT_RECOIL_QUARTER",

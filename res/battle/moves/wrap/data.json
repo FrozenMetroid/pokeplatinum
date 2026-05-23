@@ -2,7 +2,7 @@
     "name": "Wrap",
     "class": "CLASS_PHYSICAL",
     "type": "TYPE_NORMAL",
-    "power": 15,
+    "power": 30,
     "accuracy": 90,
     "pp": 20,
     "effect": {

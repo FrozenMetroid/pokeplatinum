@@ -2,9 +2,9 @@
     "name": "Poison Tail",
     "class": "CLASS_PHYSICAL",
     "type": "TYPE_POISON",
-    "power": 50,
+    "power": 75,
     "accuracy": 100,
-    "pp": 25,
+    "pp": 15,
     "effect": {
         "type": "BATTLE_EFFECT_HIGH_CRITICAL_POISON_HIT",
         "chance": 10

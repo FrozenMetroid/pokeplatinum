@@ -3,7 +3,7 @@
     "class": "CLASS_PHYSICAL",
     "type": "TYPE_POISON",
     "power": 120,
-    "accuracy": 80,
+    "accuracy": 85,
     "pp": 5,
     "effect": {
         "type": "BATTLE_EFFECT_POISON_HIT",

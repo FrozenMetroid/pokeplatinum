@@ -1,7 +1,7 @@
 {
     "name": "Spike Cannon",
     "class": "CLASS_PHYSICAL",
-    "type": "TYPE_NORMAL",
+    "type": "TYPE_STEEL",
     "power": 20,
     "accuracy": 100,
     "pp": 15,
