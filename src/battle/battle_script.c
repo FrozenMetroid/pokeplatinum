@@ -2814,6 +2814,12 @@ static BOOL BtlCmd_UpdateVar(BattleSystem *battleSys, BattleContext *battleCtx)
         *var &= srcVal;
         break;
 
+    case OPCODE_RANDOM_MOD:
+        if (srcVal != 0) {
+            *var = BattleSystem_RandNext(battleSys) % srcVal;
+        }
+        break;
+
     default:
         GF_ASSERT(FALSE);
         break;
@@ -9802,38 +9808,41 @@ static BOOL BtlCmd_TriggerAttackerAbilityOnHit(BattleSystem *battleSys, BattleCo
 static BOOL BtlCmd_CheckMoveFailureMimesis(BattleSystem *battleSys, BattleContext *battleCtx)
 {
     BattleScript_Iter(battleCtx, 1);
-    u32 inBattler = BattleScript_Read(battleCtx);
+    u32 inDefender = BattleScript_Read(battleCtx);
+    u32 inAttacker = BattleScript_Read(battleCtx);
     int jumpMoveFail = BattleScript_Read(battleCtx);
 
-    u32 battler = BattleScript_Battler(battleSys, battleCtx, inBattler);
+    u32 defender = BattleScript_Battler(battleSys, battleCtx, inDefender);
+    u32 attacker = BattleScript_Battler(battleSys, battleCtx, inAttacker);
 
-    if (Battler_Ability(battleCtx, battler) == ABILITY_SOUNDPROOF) { // blocks every Mimesis move
-        BattleScript_Iter(battleCtx, jumpMoveFail);
-        return FALSE;
-    }
+    u8 defenderAbility = Battler_Ability(battleCtx, defender);
+    int defenderSide = BattleSystem_GetBattlerSide(battleSys, defender);
 
-    battleCtx->damage = BattleSystem_ApplyTypeChart(battleSys,
+    battleCtx->damage = BattleSystem_ApplyTypeChart(battleSys, // doing this to check for move immunity before the move is executed
         battleCtx,
         battleCtx->moveCur,
         battleCtx->moveType,
-        battleCtx->attacker,
-        battleCtx->defender,
+        attacker,
+        defender,
         battleCtx->damage,
         &battleCtx->moveStatusFlags);
 
-    if (BattleContext_MoveFailed(battleCtx, battler)
-        || battleCtx->moveStatusFlags & MOVE_STATUS_DID_NOT_HIT
-        || (battleCtx->moveCur == MOVE_GROWL && battleCtx->battleMons[battler].statBoosts[BATTLE_STAT_ATTACK] == MIN_STAT_STAGE)
-        || (battleCtx->moveCur == MOVE_SCREECH && battleCtx->battleMons[battler].statBoosts[BATTLE_STAT_DEFENSE] == MIN_STAT_STAGE)
-        || (battleCtx->moveCur == MOVE_HOWL && battleCtx->battleMons[battler].statBoosts[BATTLE_STAT_ATTACK] == MAX_STAT_STAGE)
-        /*|| (battleCtx->moveCur == MOVE_CHATTER)*/
-
+    if (battleCtx->moveStatusFlags & MOVE_STATUS_DID_NOT_HIT
+        || defenderAbility == ABILITY_SOUNDPROOF
+        || (battleCtx->moveCur == MOVE_GROWL && battleCtx->battleMons[defender].statBoosts[BATTLE_STAT_ATTACK] == MIN_STAT_STAGE)
+        || (battleCtx->moveCur == MOVE_SCREECH && battleCtx->battleMons[defender].statBoosts[BATTLE_STAT_DEFENSE] == MIN_STAT_STAGE)
+        || (battleCtx->moveCur == MOVE_HOWL && battleCtx->battleMons[defender].statBoosts[BATTLE_STAT_ATTACK] == MAX_STAT_STAGE)
+        || (battleCtx->moveCur == MOVE_METAL_SOUND && battleCtx->battleMons[defender].statBoosts[BATTLE_STAT_SP_DEFENSE] == MIN_STAT_STAGE)
+        || (battleCtx->moveCur == MOVE_SUPERSONIC // the mimesis user is guaranteed to land Supersonic outside of this conditions
+            && (((battleCtx->battleMons[defender].statusVolatile & VOLATILE_CONDITION_CONFUSION) || defenderAbility == ABILITY_OWN_TEMPO) 
+                || (battleCtx->sideConditionsMask[defenderSide] & SIDE_CONDITION_SAFEGUARD)))
+        ) {
         // Perish Song handled with its own battle command
-
-        // I check for sleep status before this command so no need to add Sing here
-        /*|| (battleCtx->moveCur == MOVE_SING && (battleCtx->battleMons[battler].status & MON_CONDITION_ANY))*/) {
+        // mimesis moves that put the target to sleep, such as Sing wouldn't make sense, so they are not included, nor is Snore since the user would be asleep
         BattleScript_Iter(battleCtx, jumpMoveFail);
     }
+
+    battleCtx->scriptTemp = BattleSystem_TriggerImmunityAbility(battleCtx, attacker, defender);
 
     return FALSE;
 }

@@ -14,21 +14,24 @@ _Use_Move:
     Wait
     CompareVarToValue OPCODE_EQU, BTLVAR_CURRENT_MOVE, MOVE_PERISH_SONG, _TryPerishSong // stop the perish song animation from playing if it would fail
 _CheckOtherMoveFailures:
-    CheckMoveFailureMimesis BTLSCR_ATTACKER, _ButItFailed
+
+    CheckMoveFailureMimesis BTLSCR_DEFENDER, BTLSCR_ATTACKER, _ButItFailed // check if the attacker's copied move will fail against the defender (e.g. the defender has Soundproof or the current move is Growl and the defender's Defense can't go down further)
+    CompareVarToValue OPCODE_GT, BTLVAR_SCRIPT_TEMP, 0, _QueueImmunitySubscript
     PlayMoveAnimation BTLSCR_ATTACKER
     Wait
-    
     UpdateVar OPCODE_SET, BTLVAR_SIDE_EFFECT_TYPE, SIDE_EFFECT_TYPE_DIRECT // makes the stat animations show up properly 
-    CompareVarToValue OPCODE_EQU, BTLVAR_CURRENT_MOVE, MOVE_GROWL, PostAnimation_Growl // update stat if possible
-    CompareVarToValue OPCODE_EQU, BTLVAR_CURRENT_MOVE, MOVE_SCREECH, PostAnimation_Screech // update stat if possible
-    CompareVarToValue OPCODE_EQU, BTLVAR_CURRENT_MOVE, MOVE_HOWL, PostAnimation_Howl // update stat if possible
-    CompareVarToValue OPCODE_EQU, BTLVAR_CURRENT_MOVE, MOVE_PERISH_SONG, _End
-
-    // Hyper Voice is the only one that will deal damage
+    CompareVarToValue OPCODE_EQU, BTLVAR_CURRENT_MOVE, MOVE_GROWL, PostAnimation_Growl
+    CompareVarToValue OPCODE_EQU, BTLVAR_CURRENT_MOVE, MOVE_SCREECH, PostAnimation_Screech
+    CompareVarToValue OPCODE_EQU, BTLVAR_CURRENT_MOVE, MOVE_HOWL, PostAnimation_Howl
+    CompareVarToValue OPCODE_EQU, BTLVAR_CURRENT_MOVE, MOVE_METAL_SOUND, PostAnimation_MetalSound
+    CompareVarToValue OPCODE_EQU, BTLVAR_CURRENT_MOVE, MOVE_SUPERSONIC, _ApplyConfusion
+    CompareVarToValue OPCODE_EQU, BTLVAR_CURRENT_MOVE, MOVE_PERISH_SONG, _End // skip damage
+    // Hyper Voice and Bug Buzz deal damage
     CalcCrit 
     CalcDamage
     Call BATTLE_SUBSCRIPT_UPDATE_HP
     Wait
+    CompareVarToValue OPCODE_EQU, BTLVAR_CURRENT_MOVE, MOVE_BUG_BUZZ, _CheckLowerSpDef
 _End:
     End
 
@@ -55,4 +58,26 @@ PostAnimation_Screech:
 
 PostAnimation_Howl:
     UpdateVar OPCODE_SET, BTLVAR_SIDE_EFFECT_PARAM, MOVE_SUBSCRIPT_PTR_ATTACK_UP_1_STAGE
+    UpdateVarFromVar OPCODE_SET, BTLVAR_SIDE_EFFECT_MON, BTLVAR_ATTACKER
+    GoTo _Update_Stat_Stage
+
+_QueueImmunitySubscript:
+    CallFromVar BTLVAR_SCRIPT_TEMP
+    End
+
+_ApplyConfusion:
+    Call BATTLE_SUBSCRIPT_CONFUSE
+    End
+
+PostAnimation_MetalSound:
+    UpdateVar OPCODE_SET, BTLVAR_SIDE_EFFECT_PARAM, MOVE_SUBSCRIPT_PTR_SP_DEFENSE_DOWN_2_STAGES
+    GoTo _Update_Stat_Stage
+
+_CheckLowerSpDef:
+    UpdateVar OPCODE_RANDOM_MOD, BTLVAR_CALC_TEMP, 10
+    CompareVarToValue OPCODE_EQU, BTLVAR_CALC_TEMP, 0, _LowerSpDefWithBugBuzz // 1 in 10 chance (0-9)
+    GoTo _End
+
+_LowerSpDefWithBugBuzz:
+    UpdateVar OPCODE_SET, BTLVAR_SIDE_EFFECT_PARAM, MOVE_SUBSCRIPT_PTR_SP_DEFENSE_DOWN_1_STAGE
     GoTo _Update_Stat_Stage

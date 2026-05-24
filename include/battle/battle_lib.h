@@ -1526,5 +1526,5 @@ BOOL BattleSystem_CannotSuppressAbility(u8 ability);
 
 BOOL BattleSystem_IsWindMove(u16 move);
 BOOL BattleSystem_IsBitingMove(u16 move);
-BOOL BattleSystem_IsVoiceMove(u16 move);
+BOOL BattleSystem_IsMimesisMove(u16 move);
 #endif // POKEPLATINUM_BATTLE_BATTLE_LIB_H

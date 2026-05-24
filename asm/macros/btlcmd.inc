@@ -1266,9 +1266,10 @@
     .long (\jump_no_effect-.) / 4 - 1
     .endm
 
-    .macro CheckMoveFailureMimesis battler, jump_no_effect
+    .macro CheckMoveFailureMimesis inDefender, inAttacker, jump_no_effect
     .long BTLCMD_CHECKMOVEFAILUREMIMESIS
-    .long \battler
+    .long \inDefender
+    .long \inAttacker
     .long (\jump_no_effect-.) / 4 - 1
     .endm
     

@@ -5020,6 +5020,9 @@ enum AfterMoveHitState {
     #ifdef BATTLE_ADD_PICKPOCKET
     AFTER_MOVE_HIT_STATE_PICKPOCKET,
     #endif
+    #ifdef BATTLE_ADD_MIMESIS
+    AFTER_MOVE_HIT_STATE_MIMESIS,
+    #endif
     AFTER_MOVE_HIT_STATE_END
 };
 
@@ -5045,7 +5048,6 @@ static BOOL BattleControllerPlayer_TriggerAfterMoveHitEffects(BattleSystem *batt
     if (BattleControllerPlayer_AnyFainted(battleCtx, battleCtx->command, battleCtx->command, TRUE) == TRUE) {
         return TRUE;
     }
-
     do {
         switch (battleCtx->afterMoveHitCheckState) {
         case AFTER_MOVE_HIT_STATE_RAGE:
@@ -5117,10 +5119,63 @@ static BOOL BattleControllerPlayer_TriggerAfterMoveHitEffects(BattleSystem *batt
                     battleCtx->msgItemTemp = battleCtx->battleMons[battleCtx->attacker].heldItem;
 
                     LOAD_SUBSEQ(subscript_pickpocket);
+                    battleCtx->commandNext = battleCtx->command;
                     battleCtx->command = BATTLE_CONTROL_EXEC_SCRIPT;
 
                     machineState = STATE_BREAK_OUT;
             }
+            battleCtx->afterMoveHitCheckState++;
+            break;
+        #endif
+        #ifdef BATTLE_ADD_MIMESIS
+        case AFTER_MOVE_HIT_STATE_MIMESIS:
+            u32 opponent = BattleSystem_CountAbility(battleSys, battleCtx, COUNT_ALIVE_BATTLERS, 0, ABILITY_MIMESIS); // if anyone on the field has Mimesis; can't just check the defender ability because of Howl where the defender would be the attacker
+            if (DEFENDING_MON.curHP
+                && (ATTACKING_MON.curHP)
+                && ((battleCtx->moveStatusFlags & MOVE_STATUS_NO_EFFECTS) == FALSE)
+                && (battleCtx->battleStatusMask2 & SYSCTL_UTURN_ACTIVE) == FALSE
+                && (battleCtx->battleStatusMask & SYSCTL_FIRST_OF_MULTI_TURN) == FALSE
+                && (!(battleCtx->moveStatusFlags & MOVE_STATUS_DID_NOT_HIT))
+                && (BattleSystem_IsMimesisMove(battleCtx->moveCur))
+                && (opponent)) {
+                    if ((DEFENDER_TURN_FLAGS.magicCoat && (CURRENT_MOVE_DATA.flags & MOVE_FLAG_CAN_MAGIC_COAT))
+                        || (DEFENDER_TURN_FLAGS.snatching && CURRENT_MOVE_DATA.class == CLASS_STATUS)) { // Dancer doesn't work with Magic Coat or Snatching so I'm doing the same with Mimesis
+                        machineState = STATE_BREAK_OUT;
+                        battleCtx->afterMoveHitCheckState++;
+                        break;
+                    }
+                    u8 temp;
+                    for (int i = 0; i < BattleSystem_GetMaxBattlers(battleSys); i++) {
+                        if (i != battleCtx->attacker && /*(opponent & FlagIndex(i))*/ Battler_Ability(battleCtx, i) == ABILITY_MIMESIS) { // attacker's mimesis should not activate
+                            if (CURRENT_MOVE_DATA.range == RANGE_USER || CURRENT_MOVE_DATA.range == RANGE_USER_SIDE) {
+                                battleCtx->sideEffectMon = i;
+                                battleCtx->attacker = i;
+                                battleCtx->msgBattlerTemp = i;
+                            } else {
+                                temp = battleCtx->attacker;
+                                battleCtx->attacker = battleCtx->defender;
+                                battleCtx->defender = temp;
+                                battleCtx->msgBattlerTemp = temp;
+                                battleCtx->sideEffectMon = temp;
+                            }
+                            battleCtx->battleStatusMask = (0 << SYSCTL_PLAYED_MOVE_ANIMATION); // so that mimicked move's animation will play
+                            battleCtx->msgMoveTemp = battleCtx->moveCur;
+                            battleCtx->sideEffectType = SIDE_EFFECT_TYPE_ABILITY;
+                            // also swap previously used moves for Encore and Mirror Move so that they will work correctly with the mimicked move
+                            DEFENDER_LAST_MOVE = battleCtx->moveCur;
+                            temp = battleCtx->moveCopied[battleCtx->defender];
+                            battleCtx->moveCopied[battleCtx->defender] = battleCtx->moveCopied[battleCtx->attacker];    
+                            battleCtx->moveCopied[battleCtx->attacker] = temp;
+                                
+                            LOAD_SUBSEQ(subscript_mimesis);
+                            battleCtx->commandNext = battleCtx->command;
+                            battleCtx->command = BATTLE_CONTROL_EXEC_SCRIPT;
+                        }
+                    }
+    
+
+                    machineState = STATE_BREAK_OUT;
+                }
             battleCtx->afterMoveHitCheckState++;
             break;
         #endif
