@@ -2,51 +2,51 @@
     "land_rate": 20,
     "land_encounters": [
         {
-            "level": 24,
+            "level": 28,
             "species": "SPECIES_SHELLOS"
         },
         {
-            "level": 23,
+            "level": 27,
             "species": "SPECIES_BUIZEL"
         },
         {
-            "level": 23,
+            "level": 27,
             "species": "SPECIES_CHATOT"
         },
         {
-            "level": 25,
+            "level": 29,
             "species": "SPECIES_CHATOT"
         },
         {
-            "level": 25,
+            "level": 29,
             "species": "SPECIES_WINGULL"
         },
         {
-            "level": 25,
+            "level": 29,
             "species": "SPECIES_SHELLOS"
         },
         {
-            "level": 24,
+            "level": 28,
             "species": "SPECIES_WINGULL"
         },
         {
-            "level": 26,
+            "level": 30,
             "species": "SPECIES_WINGULL"
         },
         {
-            "level": 25,
+            "level": 29,
             "species": "SPECIES_BUIZEL"
         },
         {
-            "level": 26,
+            "level": 30,
             "species": "SPECIES_SHELLOS"
         },
         {
-            "level": 25,
+            "level": 29,
             "species": "SPECIES_BUIZEL"
         },
         {
-            "level": 26,
+            "level": 30,
             "species": "SPECIES_SHELLOS"
         }
     ],
@@ -122,7 +122,7 @@
             "species": "SPECIES_GASTRODON"
         }
     ],
-    "old_rod_rate": 25,
+    "old_rod_rate": 29,
     "old_rod_encounters": [
         {
             "level_max": 6,
@@ -163,17 +163,17 @@
             "species": "SPECIES_REMORAID"
         },
         {
-            "level_max": 25,
+            "level_max": 29,
             "level_min": 10,
             "species": "SPECIES_MAGIKARP"
         },
         {
-            "level_max": 25,
+            "level_max": 29,
             "level_min": 10,
             "species": "SPECIES_REMORAID"
         },
         {
-            "level_max": 25,
+            "level_max": 29,
             "level_min": 10,
             "species": "SPECIES_REMORAID"
         }

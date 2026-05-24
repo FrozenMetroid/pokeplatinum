@@ -5,16 +5,23 @@
         "ITEM_FULL_RESTORE"
     ],
     "ai_flags": [
-        "AI_FLAG_BASIC"
+        "AI_FLAG_BASIC",
+        "AI_FLAG_EVAL_ATTACK",
+        "AI_FLAG_EXPERT"
     ],
     "double_battle": false,
     "party": [
         {
             "species": "SPECIES_CHATOT",
             "form": 0,
-            "level": 27,
+            "level": 30,
             "item": null,
-            "moves": null,
+            "moves": [
+                "MOVE_UPROAR",
+                "MOVE_AIR_CUTTER",
+                "MOVE_TAUNT",
+                "MOVE_MIMIC"
+            ],
             "iv_scale": 0,
             "ball_seal": 22
         }

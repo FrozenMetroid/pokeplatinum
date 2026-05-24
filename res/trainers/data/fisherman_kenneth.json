@@ -3,35 +3,52 @@
     "class": "TRAINER_CLASS_FISHERMAN",
     "items": [],
     "ai_flags": [
-        "AI_FLAG_BASIC"
+        "AI_FLAG_BASIC",
+        "AI_FLAG_EVAL_ATTACK"
     ],
     "double_battle": false,
     "party": [
         {
             "species": "SPECIES_REMORAID",
             "form": 0,
-            "level": 25,
+            "level": 27,
             "item": null,
-            "moves": null,
-            "iv_scale": 0,
+            "moves": [
+                "MOVE_BULLET_SEED",
+                "MOVE_PSYBEAM",
+                "MOVE_BUBBLE_BEAM",
+                "MOVE_AURORA_BEAM"
+            ],
+            "ability": "ABILITY_ARTILLERY",
+            "iv_scale": 80,
             "ball_seal": 0
         },
         {
-            "species": "SPECIES_REMORAID",
+            "species": "SPECIES_FINNEON",
             "form": 0,
-            "level": 25,
+            "level": 27,
             "item": null,
-            "moves": null,
-            "iv_scale": 0,
+            "moves": [
+                "MOVE_WATER_PULSE",
+                "MOVE_AIR_CUTTER",
+                "MOVE_SILVER_WIND",
+                "MOVE_ATTRACT"
+            ],
+            "iv_scale": 80,
             "ball_seal": 0
         },
         {
             "species": "SPECIES_GYARADOS",
             "form": 0,
-            "level": 28,
+            "level": 30,
             "item": null,
-            "moves": null,
-            "iv_scale": 0,
+            "moves": [
+                "MOVE_BITE",
+                "MOVE_WATER_PULSE",
+                "MOVE_DRAGON_RAGE",
+                "MOVE_FLAIL"
+            ],
+            "iv_scale": 80,
             "ball_seal": 0
         }
     ],

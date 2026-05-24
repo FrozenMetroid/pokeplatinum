@@ -3,7 +3,9 @@
     "class": "TRAINER_CLASS_FISHERMAN",
     "items": [],
     "ai_flags": [
-        "AI_FLAG_BASIC"
+        "AI_FLAG_BASIC",
+        "AI_FLAG_EVAL_ATTACK",
+        "AI_FLAG_EXPERT"
     ],
     "double_battle": false,
     "party": [
@@ -14,9 +16,16 @@
             "item": null,
             "moves": [
                 "MOVE_WATER_PULSE",
-                "MOVE_MAGNITUDE"
+                "MOVE_MAGNITUDE",
+                "MOVE_RAIN_DANCE",
+                "MOVE_THRASH"
             ],
-            "iv_scale": 10,
+            "nature": "NATURE_ADAMANT",
+            "ability": "ABILITY_OBLIVIOUS",
+            "ivnums": [15, 15, 15, 15, 15, 15],
+            "evnums": [50, 50, 0, 0, 0, 0],
+            "ball": "ITEM_POKE_BALL",
+            "iv_scale": 0,
             "ball_seal": 0
         }
     ],

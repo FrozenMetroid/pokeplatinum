@@ -36,8 +36,8 @@
     "learnset": {
         "by_level": [
             [0, "MOVE_BITE"],
+            [0, "MOVE_WATER_GUN"],
             [1, "MOVE_THRASH"],
-            [1, "MOVE_WATER_PULSE"],
             [1, "MOVE_TACKLE"],
             [1, "MOVE_FLAIL"],
             [20, "MOVE_LEER"],

@@ -8873,6 +8873,63 @@
         "from healing with {STRVAR_1 6, 1, 0}\f",
         "due to {STRVAR_1 8, 2, 0}!"
       ]
+    },
+    {
+      "id": "BattleStrings_Text_Mimesis_AllyAlly",
+      "en_US": [
+        "{STRVAR_1 1, 0, 0} mimics {STRVAR_1 5, 2, 0}’s\n",
+        "{STRVAR_1 8, 3, 0} with its {STRVAR_1 10, 1, 0}!"
+      ]
+    },
+    {
+      "id": "BattleStrings_Text_Mimesis_AllyWild",
+      "en_US": [
+        "{STRVAR_1 1, 0, 0} mimics\n",
+        "the wild {STRVAR_1 5, 2, 0}’s\f",
+        "{STRVAR_1 10, 3, 0} with its\f",
+        "{STRVAR_1 6, 1, 0}!"
+      ]
+    },
+    {
+      "id": "BattleStrings_Text_Mimesis_AllyFoe",
+      "en_US": [
+        "{STRVAR_1 1, 0, 0} mimics\n",
+        "the foe’s {STRVAR_1 5, 2, 0}’s\f",
+        "{STRVAR_1 10, 3, 0} with its\f",
+        "{STRVAR_1 6, 1, 0}!"
+      ]
+    },
+    {
+      "id": "BattleStrings_Text_Mimesis_WildAlly",
+      "en_US": [
+        "The wild {STRVAR_1 5, 0, 0} mimics\n",
+        "{STRVAR_1 1, 2, 0}’s {STRVAR_1 10, 3, 0}\f",
+        "with its {STRVAR_1 6, 1, 0}!"
+      ]
+    },
+    {
+      "id": "BattleStrings_Text_Mimesis_WildWild",
+      "en_US": [
+        "The wild {STRVAR_1 5, 0, 0} mimics\n",
+        "the wild {STRVAR_1 1, 2, 0}’s {STRVAR_1 10, 3, 0}\f",
+        "with its {STRVAR_1 6, 1, 0}!"
+      ]
+    },
+    {
+      "id": "BattleStrings_Text_Mimesis_FoeAlly",
+      "en_US": [
+        "The foe’s {STRVAR_1 1, 0, 0} mimics\n",
+        "{STRVAR_1 1, 2, 0}’s {STRVAR_1 10, 3, 0}\f",
+        "with its {STRVAR_1 6, 1, 0}!"
+      ]
+    },
+    {
+      "id": "BattleStrings_Text_Mimesis_FoeFoe",
+      "en_US": [
+        "The foe’s {STRVAR_1 1, 0, 0} mimics\n",
+        "The foe’s {STRVAR_1 1, 2, 0}’s {STRVAR_1 10, 3, 0}\f",
+        "with its {STRVAR_1 6, 1, 0}!"
+      ]
     }
   ]
 }

@@ -3,22 +3,29 @@
     "class": "TRAINER_CLASS_TUBER_MALE",
     "items": [],
     "ai_flags": [
-        "AI_FLAG_BASIC"
+        "AI_FLAG_BASIC",
+        "AI_FLAG_EVAL_ATTACK",
+        "AI_FLAG_EXPERT"
     ],
     "double_battle": false,
     "party": [
         {
             "species": "SPECIES_BIBAREL",
             "form": 0,
-            "level": 32,
+            "level": 33,
             "item": null,
             "moves": [
-                "MOVE_WATER_GUN",
+                "MOVE_AQUA_JET",
                 "MOVE_ROLLOUT",
-                "MOVE_HYPER_FANG",
+                "MOVE_TAKE_DOWN",
                 "MOVE_YAWN"
             ],
-            "iv_scale": 10,
+            "nature": "NATURE_ADAMANT",
+            "ability": "ABILITY_UNAWARE",
+            "ivnums": [15, 15, 15, 15, 15, 15],
+            "evnums": [50, 50, 0, 0, 0, 0],
+            "ball": "ITEM_POKE_BALL",
+            "iv_scale": 0,
             "ball_seal": 0
         }
     ],

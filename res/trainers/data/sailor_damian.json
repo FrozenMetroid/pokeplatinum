@@ -3,34 +3,48 @@
     "class": "TRAINER_CLASS_SAILOR",
     "items": [],
     "ai_flags": [
-        "AI_FLAG_BASIC"
+        "AI_FLAG_BASIC",
+        "AI_FLAG_EVAL_ATTACK",
+        "AI_FLAG_EXPERT"
     ],
     "double_battle": false,
     "party": [
         {
-            "species": "SPECIES_WINGULL",
+            "species": "SPECIES_QUAGSIRE",
             "form": 0,
-            "level": 31,
+            "level": 32,
             "item": null,
             "moves": [
                 "MOVE_WATER_PULSE",
-                "MOVE_WING_ATTACK",
-                "MOVE_QUICK_ATTACK"
+                "MOVE_MUD_BOMB",
+                "MOVE_AMNESIA",
+                "MOVE_ANCIENT_POWER"
             ],
-            "iv_scale": 10,
+            "nature": "NATURE_MODEST",
+            "ability": "ABILITY_WATER_ABSORB",
+            "ivnums": [15, 15, 15, 15, 15, 15],
+            "evnums": [50, 0, 0, 0, 50, 0],
+            "ball": "ITEM_DIVE_BALL",
+            "iv_scale": 0,
             "ball_seal": 0
         },
         {
             "species": "SPECIES_PELIPPER",
             "form": 0,
-            "level": 31,
+            "level": 32,
             "item": null,
             "moves": [
                 "MOVE_WATER_PULSE",
-                "MOVE_WING_ATTACK",
-                "MOVE_QUICK_ATTACK"
+                "MOVE_AIR_CUTTER",
+                "MOVE_AQUA_RING",
+                "MOVE_SUPERSONIC"
             ],
-            "iv_scale": 10,
+            "nature": "NATURE_MODEST",
+            "ability": "ABILITY_HYDRATION",
+            "ivnums": [15, 15, 15, 15, 15, 15],
+            "evnums": [50, 0, 0, 0, 50, 0],
+            "ball": "ITEM_POKE_BALL",
+            "iv_scale": 0,
             "ball_seal": 0
         }
     ],

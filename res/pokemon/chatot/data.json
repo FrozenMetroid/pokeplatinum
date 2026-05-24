@@ -27,7 +27,7 @@
     "base_friendship": 35,
     "exp_rate": "EXP_RATE_MEDIUM_SLOW",
     "egg_groups": [ "EGG_GROUP_FLYING", "EGG_GROUP_FLYING" ],
-    "abilities": [ "ABILITY_KEEN_EYE", "ABILITY_TANGLED_FEET" ],
+    "abilities": [ "ABILITY_MIMESIS", "ABILITY_TANGLED_FEET" ],
     "hiddenAbility": "ABILITY_BIG_PECKS",
     "safari_flee_rate": 0,
     "body_color": "MON_COLOR_BLACK",

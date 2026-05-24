@@ -5,17 +5,24 @@
         "ITEM_FULL_RESTORE"
     ],
     "ai_flags": [
-        "AI_FLAG_BASIC"
+        "AI_FLAG_BASIC",
+        "AI_FLAG_EVAL_ATTACK",
+        "AI_FLAG_EXPERT"
     ],
     "double_battle": false,
     "party": [
         {
             "species": "SPECIES_ROSELIA",
             "form": 0,
-            "level": 27,
+            "level": 30,
             "item": null,
-            "moves": null,
-            "iv_scale": 0,
+            "moves": [
+                "MOVE_PROTECT",
+                "MOVE_GIGA_DRAIN",
+                "MOVE_LEECH_SEED",
+                "MOVE_SLEEP_POWDER"
+            ],
+            "iv_scale": 110,
             "ball_seal": 0
         }
     ],

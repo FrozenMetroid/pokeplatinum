@@ -5,7 +5,7 @@ _000:
 
     PlayMoveAnimationOnMons 0, BTLSCR_MSG_DEFENDER, BTLSCR_ATTACKER // reverse order so that Heal Order's animation is put on the defender
     Wait
-    UpdateVar OPCODE_FLAG_ON, BTLVAR_BATTLE_CTX_STATUS, SYSCTL_SKIP_SPRITE_BLINK
+    // UpdateVar OPCODE_FLAG_ON, BTLVAR_BATTLE_CTX_STATUS, SYSCTL_SKIP_SPRITE_BLINK
     UpdateVar OPCODE_FLAG_OFF, BTLVAR_BATTLE_CTX_STATUS, SYSCTL_SKIP_SPRITE_BLINK
     UpdateHealthBox BTLSCR_MSG_DEFENDER
     Wait 

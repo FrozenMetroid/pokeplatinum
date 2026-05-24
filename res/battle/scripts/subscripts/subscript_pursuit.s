@@ -37,10 +37,14 @@ _060:
     Call BATTLE_SUBSCRIPT_CRITICAL_HIT
     Call BATTLE_SUBSCRIPT_MOVE_FOLLOWUP_MESSAGE
     CompareMonDataToValue OPCODE_EQU, BTLSCR_DEFENDER, BATTLEMON_CUR_HP, 0, _166
-    TriggerAbilityOnHit _090
+    TriggerDefenderAbilityOnHit _090
     CallFromVar BTLVAR_SCRIPT_TEMP
 
 _090:
+    TriggerAttackerAbilityOnHit _CheckTriggerHeldItem
+    CallFromVar BTLVAR_SCRIPT_TEMP
+
+_CheckTriggerHeldItem:
     TriggerHeldItemOnHit _094
     CallFromVar BTLVAR_SCRIPT_TEMP
 
@@ -83,10 +87,14 @@ _158:
 
 _166:
     Call BATTLE_SUBSCRIPT_FAINT_CHECK_DESTINY_BOND
-    TriggerAbilityOnHit _172
+    TriggerDefenderAbilityOnHit _172
     CallFromVar BTLVAR_SCRIPT_TEMP
 
 _172:
+    TriggerAttackerAbilityOnHit _CheckTriggerHeldItem_2
+    CallFromVar BTLVAR_SCRIPT_TEMP
+
+_CheckTriggerHeldItem_2:
     TriggerHeldItemOnHit _176
     CallFromVar BTLVAR_SCRIPT_TEMP
 

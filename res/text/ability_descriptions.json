@@ -1186,6 +1186,13 @@
         "Its underlings rush to\n",
         "heal its damage."
       ]
+    },
+    {
+      "id": "pl_msg_00000612_00170",
+      "en_US": [
+        "Repeats another Pokémon’s\n",
+        "voice move immediately."
+      ]
     }
   ]
 }

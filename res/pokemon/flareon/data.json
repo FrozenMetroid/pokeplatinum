@@ -35,7 +35,7 @@
     "icon_palette": 0,
     "learnset": {
         "by_level": [
-            [0, "MOVE_EMBER"],
+            [0, "MOVE_FIRE_SPIN"],
             [1, "MOVE_TAIL_WHIP"],
             [1, "MOVE_TACKLE"],
             [1, "MOVE_HELPING_HAND"],
@@ -43,7 +43,7 @@
             [15, "MOVE_EMBER"],
             [19, "MOVE_DOUBLE_KICK"],
             [22, "MOVE_QUICK_ATTACK"],
-            [25, "MOVE_FIRE_SPIN"],
+            [25, "MOVE_FLAME_WHEEL"],
             [29, "MOVE_SCARY_FACE"],
             [31, "MOVE_FIRE_FANG"],
             [34, "MOVE_CRUNCH"],

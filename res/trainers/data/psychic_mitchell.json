@@ -4,6 +4,7 @@
     "items": [],
     "ai_flags": [
         "AI_FLAG_BASIC",
+        "AI_FLAG_EVAL_ATTACK",
         "AI_FLAG_EXPERT"
     ],
     "double_battle": false,
@@ -13,8 +14,13 @@
             "form": 0,
             "level": 26,
             "item": null,
-            "moves": null,
-            "iv_scale": 0,
+            "moves": [
+                "MOVE_SHADOW_SNEAK",
+                "MOVE_SHADOW_BALL",
+                "MOVE_WILL_O_WISP",
+                "MOVE_FEINT_ATTACK"
+            ],
+            "iv_scale": 70,
             "ball_seal": 0
         },
         {
@@ -22,8 +28,13 @@
             "form": 0,
             "level": 26,
             "item": null,
-            "moves": null,
-            "iv_scale": 0,
+            "moves": [
+                "MOVE_KINESIS",
+                "MOVE_DISABLE",
+                "MOVE_MIRACLE_EYE",
+                "MOVE_HIDDEN_POWER"
+            ],
+            "iv_scale": 70,
             "ball_seal": 0
         }
     ],

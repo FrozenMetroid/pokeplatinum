@@ -4,10 +4,14 @@
 _000:
     CheckBlackOut BTLSCR_DEFENDER, _172
     TryReplaceFaintedMon BTLSCR_ATTACKER, TRUE, _172
-    TriggerAbilityOnHit _010
+    TriggerDefenderAbilityOnHit _010
     CallFromVar BTLVAR_SCRIPT_TEMP
 
 _010:
+    TriggerAttackerAbilityOnHit _CheckTriggerHeldItem
+    CallFromVar BTLVAR_SCRIPT_TEMP
+
+_CheckTriggerHeldItem:
     TriggerHeldItemOnPivotMove _014
     CallFromVar BTLVAR_SCRIPT_TEMP
 

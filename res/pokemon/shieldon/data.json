@@ -46,10 +46,10 @@
             [22, "MOVE_SWAGGER"],
             [25, "MOVE_ANCIENT_POWER"],
             [28, "MOVE_ROCK_SLIDE"],
-            [31, "MOVE_ROCK_SLIDE"],
+            [31, "MOVE_IRON_HEAD"],
             [34, "MOVE_ENDURE"],
             [37, "MOVE_METAL_BURST"],
-            [40, "MOVE_IRON_HEAD"]
+            [40, "MOVE_IRON_TAIL"]
         ],
         "by_tm": [
             "TM05",

@@ -3,26 +3,38 @@
     "class": "TRAINER_CLASS_SWIMMER_FEMALE",
     "items": [],
     "ai_flags": [
-        "AI_FLAG_BASIC"
+        "AI_FLAG_BASIC",
+        "AI_FLAG_EVAL_ATTACK"
     ],
     "double_battle": false,
     "party": [
         {
-            "species": "SPECIES_PSYDUCK",
+            "species": "SPECIES_GOLDUCK",
             "form": 0,
-            "level": 31,
+            "level": 35,
             "item": null,
-            "moves": null,
-            "iv_scale": 0,
+            "moves": [
+                "MOVE_EXTRASENSORY",
+                "MOVE_BRINE",
+                "MOVE_PSYCH_UP",
+                "MOVE_AQUA_JET"
+            ],
+            "iv_scale": 110,
             "ball_seal": 0
         },
         {
             "species": "SPECIES_AZUMARILL",
             "form": 0,
-            "level": 35,
+            "level": 37,
             "item": null,
-            "moves": null,
-            "iv_scale": 0,
+            "moves": [
+                "MOVE_BODY_SLAM",
+                "MOVE_AQUA_JET",
+                "MOVE_AQUA_TAIL",
+                "MOVE_ROLLOUT"
+            ],
+            "ability": "ABILITY_PURE_POWER",
+            "iv_scale": 110,
             "ball_seal": 0
         }
     ],

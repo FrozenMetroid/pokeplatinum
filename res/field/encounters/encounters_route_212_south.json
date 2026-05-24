@@ -2,52 +2,52 @@
     "land_rate": 20,
     "land_encounters": [
         {
-            "level": 23,
+            "level": 27,
             "species": "SPECIES_SHELLOS"
         },
         {
-            "level": 24,
+            "level": 28,
             "species": "SPECIES_QUAGSIRE"
         },
         {
-            "level": 25,
+            "level": 29,
             "species": "SPECIES_BUIZEL"
         },
         {
-            "level": 24,
+            "level": 28,
             "species": "SPECIES_SHELLOS"
         },
         {
-            "level": 26,
+            "level": 30,
             "species": "SPECIES_QUAGSIRE"
         },
         {
-            "level": 25,
-            "species": "SPECIES_SHELLOS"
+            "level": 29,
+            "species": "SPECIES_SHROOMISH"
         },
         {
-            "level": 24,
+            "level": 28,
             "species": "SPECIES_CROAGUNK"
         },
         {
-            "level": 25,
+            "level": 29,
             "species": "SPECIES_CROAGUNK"
         },
         {
-            "level": 23,
-            "species": "SPECIES_BUIZEL"
+            "level": 29,
+            "species": "SPECIES_CARNIVINE"
         },
         {
-            "level": 26,
-            "species": "SPECIES_SHELLOS"
+            "level": 29,
+            "species": "SPECIES_MOTHIM"
         },
         {
-            "level": 23,
-            "species": "SPECIES_BUIZEL"
+            "level": 30,
+            "species": "SPECIES_CARNIVINE"
         },
         {
-            "level": 26,
-            "species": "SPECIES_SHELLOS"
+            "level": 30,
+            "species": "SPECIES_MOTHIM"
         }
     ],
     "swarms": [
@@ -122,7 +122,7 @@
             "species": "SPECIES_TENTACRUEL"
         }
     ],
-    "old_rod_rate": 25,
+    "old_rod_rate": 29,
     "old_rod_encounters": [
         {
             "level_max": 6,
@@ -163,17 +163,17 @@
             "species": "SPECIES_REMORAID"
         },
         {
-            "level_max": 25,
+            "level_max": 29,
             "level_min": 10,
             "species": "SPECIES_MAGIKARP"
         },
         {
-            "level_max": 25,
+            "level_max": 29,
             "level_min": 10,
             "species": "SPECIES_REMORAID"
         },
         {
-            "level_max": 25,
+            "level_max": 29,
             "level_min": 10,
             "species": "SPECIES_REMORAID"
         }

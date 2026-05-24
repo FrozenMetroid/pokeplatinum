@@ -39,7 +39,6 @@
             [1, "MOVE_MAGNET_RISE"],
             [1, "MOVE_TACKLE"],
             [1, "MOVE_PROTECT"],
-            [1, "MOVE_TAUNT"],
             [1, "MOVE_METAL_SOUND"],
             [5, "MOVE_TAUNT"],
             [7, "MOVE_METAL_CLAW"],

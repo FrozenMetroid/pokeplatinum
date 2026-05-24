@@ -3,35 +3,51 @@
     "class": "TRAINER_CLASS_COLLECTOR",
     "items": [],
     "ai_flags": [
-        "AI_FLAG_BASIC"
+        "AI_FLAG_BASIC",
+        "AI_FLAG_EVAL_ATTACK"
     ],
     "double_battle": false,
     "party": [
         {
             "species": "SPECIES_JOLTEON",
             "form": 0,
-            "level": 24,
+            "level": 29,
             "item": null,
-            "moves": null,
-            "iv_scale": 0,
+            "moves": [
+                "MOVE_SHOCK_WAVE",
+                "MOVE_DOUBLE_KICK",
+                "MOVE_SAND_ATTACK",
+                "MOVE_QUICK_ATTACK"
+            ],
+            "iv_scale": 80,
             "ball_seal": 0
         },
         {
             "species": "SPECIES_VAPOREON",
             "form": 0,
-            "level": 24,
+            "level": 29,
             "item": null,
-            "moves": null,
-            "iv_scale": 0,
+            "moves": [
+                "MOVE_BUBBLE_BEAM",
+                "MOVE_BITE",
+                "MOVE_SAND_ATTACK",
+                "MOVE_QUICK_ATTACK"
+            ],
+            "iv_scale": 80,
             "ball_seal": 0
         },
         {
             "species": "SPECIES_FLAREON",
             "form": 0,
-            "level": 24,
+            "level": 29,
             "item": null,
-            "moves": null,
-            "iv_scale": 0,
+            "moves": [
+                "MOVE_FIRE_SPIN",
+                "MOVE_BITE",
+                "MOVE_QUICK_ATTACK",
+                "MOVE_DOUBLE_KICK"
+            ],
+            "iv_scale": 80,
             "ball_seal": 0
         }
     ],

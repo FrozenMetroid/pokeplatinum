@@ -3250,15 +3250,14 @@ static void BattleControllerPlayer_ExecScript(BattleSystem *battleSys, BattleCon
 
 enum BeforeMoveState {
     BEFORE_MOVE_START = 0,
-
-    BEFORE_MOVE_STATE_QUICK_CLAW = BEFORE_MOVE_START,
+    BEFORE_MOVE_STATE_CLEAR_DEFIANT = BEFORE_MOVE_START,
+    BEFORE_MOVE_STATE_QUICK_CLAW,
     BEFORE_MOVE_STATE_STATUS_DISRUPTION,
     BEFORE_MOVE_STATE_CHECK_OBEDIENCE,
     BEFORE_MOVE_STATE_DECREMENT_PP,
     BEFORE_MOVE_STATE_CHECK_TARGET_EXISTS,
     BEFORE_MOVE_STATE_CHECK_STOLEN,
     BEFORE_MOVE_STATE_REDIRECT_TARGET,
-    BEFORE_MOVE_STATE_CLEAR_DEFIANT,
     BEFORE_MOVE_STATE_ABILITY_FAILURES,
 
     BEFORE_MOVE_END,
@@ -3267,6 +3266,11 @@ enum BeforeMoveState {
 static void BattleControllerPlayer_BeforeMove(BattleSystem *battleSys, BattleContext *battleCtx)
 {
     switch (battleCtx->beforeMoveCheckState) {
+    case BEFORE_MOVE_STATE_CLEAR_DEFIANT:
+        for (int i = 0; i < BattleSystem_GetMaxBattlers(battleSys); i++) {
+            battleCtx->turnFlags[i].defiant = FALSE;
+        }
+        battleCtx->beforeMoveCheckState++;
     case BEFORE_MOVE_STATE_QUICK_CLAW:
         BattleControllerPlayer_LoadQuickClawCheck(battleSys, battleCtx);
         battleCtx->beforeMoveCheckState++;
@@ -3332,12 +3336,6 @@ static void BattleControllerPlayer_BeforeMove(BattleSystem *battleSys, BattleCon
 
     case BEFORE_MOVE_STATE_REDIRECT_TARGET:
         BattleSystem_CheckRedirectionAbilities(battleSys, battleCtx, battleCtx->attacker, battleCtx->moveCur);
-        battleCtx->beforeMoveCheckState++;
-
-    case BEFORE_MOVE_STATE_CLEAR_DEFIANT:
-        for (int i = 0; i < BattleSystem_GetMaxBattlers(battleSys); i++) {
-            battleCtx->turnFlags[i].defiant = FALSE;
-        }
         battleCtx->beforeMoveCheckState++;
     case BEFORE_MOVE_STATE_ABILITY_FAILURES:
         // queenly majesty
@@ -3714,7 +3712,7 @@ static void BattleControllerPlayer_AfterMoveMessage(BattleSystem *battleSys, Bat
 
         case ONE_HIT_TRIGGER_DEFENDER_ABILITY:
             battleCtx->afterMoveMessageState++;
-            if (BattleSystem_TriggerAbilityOnHit(battleSys, battleCtx, &abilitySeq) == TRUE) {
+            if (BattleSystem_TriggerDefenderAbilityOnHit(battleSys, battleCtx, &abilitySeq) == TRUE) {
                 LOAD_SUBSEQ(abilitySeq);
                 battleCtx->commandNext = battleCtx->command;
                 battleCtx->command = BATTLE_CONTROL_EXEC_SCRIPT;
@@ -3779,7 +3777,7 @@ static void BattleControllerPlayer_AfterMoveMessage(BattleSystem *battleSys, Bat
 
         case MULTI_HIT_TRIGGER_DEFENDER_ABILITY:
             battleCtx->afterMoveMessageState++;
-            if (BattleSystem_TriggerAbilityOnHit(battleSys, battleCtx, &abilitySeq) == TRUE) {
+            if (BattleSystem_TriggerDefenderAbilityOnHit(battleSys, battleCtx, &abilitySeq) == TRUE) {
                 LOAD_SUBSEQ(abilitySeq);
                 battleCtx->commandNext = battleCtx->command;
                 battleCtx->command = BATTLE_CONTROL_EXEC_SCRIPT;

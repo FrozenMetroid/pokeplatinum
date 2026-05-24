@@ -40,7 +40,7 @@
                 "MOVE_MUD_BOMB",
                 "MOVE_BRINE",
                 "MOVE_RECOVER",
-                "MOVE_YAWN"
+                "MOVE_SLUDGE"
             ],
             "iv_scale": 0,
             "ivnums": [31, 31, 31, 31, 31, 31],

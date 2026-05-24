@@ -317,4 +317,5 @@ subscript_files = files(
     'subscript_wind_rider.s',
     'subscript_but_it_failed_spread.s',
     'subscript_matriarch.s',
+    'subscript_mimesis.s',
 )

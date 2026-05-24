@@ -285,7 +285,7 @@ static BOOL BtlCmd_LoadPartyGaugeGraphics(BattleSystem *battleSys, BattleContext
 static BOOL BtlCmd_FreePartyGaugeGraphics(BattleSystem *battleSys, BattleContext *battleCtx);
 static BOOL BtlCmd_IncrementGameRecord(BattleSystem *battleSys, BattleContext *battleCtx);
 static BOOL BtlCmd_RestoreSprite(BattleSystem *battleSys, BattleContext *battleCtx);
-static BOOL BtlCmd_TriggerAbilityOnHit(BattleSystem *battleSys, BattleContext *battleCtx);
+static BOOL BtlCmd_TriggerDefenderAbilityOnHit(BattleSystem *battleSys, BattleContext *battleCtx);
 static BOOL BtlCmd_SpriteToOAM(BattleSystem *battleSys, BattleContext *battleCtx);
 static BOOL BtlCmd_OAMToSprite(BattleSystem *battleSys, BattleContext *battleCtx);
 static BOOL BtlCmd_CheckBlackOut(BattleSystem *battleSys, BattleContext *battleCtx);
@@ -316,6 +316,8 @@ static BOOL BtlCmd_WaitABScreenTap(BattleSystem *battleSys, BattleContext *battl
 static BOOL BtlCmd_CheckSunnyWeather(BattleSystem *battleSys, BattleContext *battleCtx);
 static BOOL BtlCmd_SetAIAbility(BattleSystem *battleSys, BattleContext *battleCtx);
 static BOOL BtlCmd_TryTriggerDefiantOrCompetitive(BattleSystem *battleSys, BattleContext *battleCtx);
+static BOOL BtlCmd_TriggerAttackerAbilityOnHit(BattleSystem *battleSys, BattleContext *battleCtx);
+static BOOL BtlCmd_CheckMoveFailureMimesis(BattleSystem *battleSys, BattleContext *battleCtx);
 
 static int BattleScript_Read(BattleContext *battleCtx);
 static void BattleScript_Iter(BattleContext *battleCtx, int i);
@@ -8888,12 +8890,12 @@ static BOOL BtlCmd_RestoreSprite(BattleSystem *battleSys, BattleContext *battleC
  * @param battleCtx
  * @return FALSE
  */
-static BOOL BtlCmd_TriggerAbilityOnHit(BattleSystem *battleSys, BattleContext *battleCtx)
+static BOOL BtlCmd_TriggerDefenderAbilityOnHit(BattleSystem *battleSys, BattleContext *battleCtx)
 {
     BattleScript_Iter(battleCtx, 1);
     int jumpNoEffect = BattleScript_Read(battleCtx);
 
-    if (BattleSystem_TriggerAbilityOnHit(battleSys, battleCtx, &battleCtx->scriptTemp) == FALSE) {
+    if (BattleSystem_TriggerDefenderAbilityOnHit(battleSys, battleCtx, &battleCtx->scriptTemp) == FALSE) {
         BattleScript_Iter(battleCtx, jumpNoEffect);
     }
 
@@ -9767,6 +9769,71 @@ static BOOL BtlCmd_TryTriggerDefiantOrCompetitive(BattleSystem *battleSys, Battl
         }
 
     BattleScript_Iter(battleCtx, failAddress);
+
+    return FALSE;
+}
+
+/**
+ * @brief Triggers an attacker's ability when a move hits its target.
+ *
+ * Inputs:
+ * 1. The distance to jump if there are no effects to trigger.
+ *
+ * Side effects:
+ * - battleCtx->scriptTemp will be set to the subroutine sequence to execute
+ * for any triggered effect.
+ *
+ * @param battleSys
+ * @param battleCtx
+ * @return FALSE
+ */
+static BOOL BtlCmd_TriggerAttackerAbilityOnHit(BattleSystem *battleSys, BattleContext *battleCtx)
+{
+    BattleScript_Iter(battleCtx, 1);
+    int jumpNoEffect = BattleScript_Read(battleCtx);
+
+    if (BattleSystem_TriggerAttackerAbilityOnHit(battleSys, battleCtx, &battleCtx->scriptTemp) == FALSE) {
+        BattleScript_Iter(battleCtx, jumpNoEffect);
+    }
+
+    return FALSE;
+}
+
+static BOOL BtlCmd_CheckMoveFailureMimesis(BattleSystem *battleSys, BattleContext *battleCtx)
+{
+    BattleScript_Iter(battleCtx, 1);
+    u32 inBattler = BattleScript_Read(battleCtx);
+    int jumpMoveFail = BattleScript_Read(battleCtx);
+
+    u32 battler = BattleScript_Battler(battleSys, battleCtx, inBattler);
+
+    if (Battler_Ability(battleCtx, battler) == ABILITY_SOUNDPROOF) { // blocks every Mimesis move
+        BattleScript_Iter(battleCtx, jumpMoveFail);
+        return FALSE;
+    }
+
+    battleCtx->damage = BattleSystem_ApplyTypeChart(battleSys,
+        battleCtx,
+        battleCtx->moveCur,
+        battleCtx->moveType,
+        battleCtx->attacker,
+        battleCtx->defender,
+        battleCtx->damage,
+        &battleCtx->moveStatusFlags);
+
+    if (BattleContext_MoveFailed(battleCtx, battler)
+        || battleCtx->moveStatusFlags & MOVE_STATUS_DID_NOT_HIT
+        || (battleCtx->moveCur == MOVE_GROWL && battleCtx->battleMons[battler].statBoosts[BATTLE_STAT_ATTACK] == MIN_STAT_STAGE)
+        || (battleCtx->moveCur == MOVE_SCREECH && battleCtx->battleMons[battler].statBoosts[BATTLE_STAT_DEFENSE] == MIN_STAT_STAGE)
+        || (battleCtx->moveCur == MOVE_HOWL && battleCtx->battleMons[battler].statBoosts[BATTLE_STAT_ATTACK] == MAX_STAT_STAGE)
+        /*|| (battleCtx->moveCur == MOVE_CHATTER)*/
+
+        // Perish Song handled with its own battle command
+
+        // I check for sleep status before this command so no need to add Sing here
+        /*|| (battleCtx->moveCur == MOVE_SING && (battleCtx->battleMons[battler].status & MON_CONDITION_ANY))*/) {
+        BattleScript_Iter(battleCtx, jumpMoveFail);
+    }
 
     return FALSE;
 }

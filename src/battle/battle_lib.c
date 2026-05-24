@@ -4567,7 +4567,7 @@ int BattleSystem_RandomOpponent(BattleSystem *battleSys, BattleContext *battleCt
     return chosen;
 }
 
-BOOL BattleSystem_TriggerAbilityOnHit(BattleSystem *battleSys, BattleContext *battleCtx, int *subscript)
+BOOL BattleSystem_TriggerDefenderAbilityOnHit(BattleSystem *battleSys, BattleContext *battleCtx, int *subscript)
 {
     BOOL result = FALSE;
     u8 moveType;
@@ -4837,6 +4837,32 @@ BOOL BattleSystem_TriggerAbilityOnHit(BattleSystem *battleSys, BattleContext *ba
                 }
             break;
         #endif
+        #ifdef BATTLE_ADD_MIMESIS
+        case ABILITY_MIMESIS:
+            if (DEFENDING_MON.curHP
+                && (battleCtx->moveStatusFlags & MOVE_STATUS_NO_EFFECTS) == FALSE
+                && (battleCtx->battleStatusMask2 & SYSCTL_UTURN_ACTIVE) == FALSE
+                && (battleCtx->battleStatusMask & SYSCTL_FIRST_OF_MULTI_TURN) == FALSE
+                && (BattleSystem_IsVoiceMove(battleCtx->moveCur))
+                && (!DEFENDER_TURN_FLAGS.snatching)
+                && (!(DEFENDER_TURN_FLAGS.magicCoat) && (CURRENT_MOVE_DATA.flags & MOVE_FLAG_CAN_MIRROR_MOVE))
+                && (!(battleCtx->moveStatusFlags & MOVE_STATUS_DID_NOT_HIT))) {
+                    battleCtx->battleStatusMask = (0 << SYSCTL_PLAYED_MOVE_ANIMATION); // so that mimicked move's animation will play
+                    battleCtx->msgMoveTemp = battleCtx->moveCur;
+
+                    // swap the attacker and the defender so that the defender becomes the attacker for the mimicked move
+                    u8 temp = battleCtx->attacker;
+                    battleCtx->attacker = battleCtx->defender;
+                    battleCtx->defender = temp;
+                    battleCtx->msgBattlerTemp = temp;
+                    battleCtx->sideEffectType = SIDE_EFFECT_TYPE_ABILITY;
+                    battleCtx->sideEffectMon = temp;
+
+                    *subscript = subscript_mimesis;
+                    result = TRUE;
+                }
+            break;
+         #endif
         }
     }
 
@@ -7189,6 +7215,18 @@ static const u16 sArtilleryMoves[] = {
     MOVE_SOLAR_BEAM,
 };
 
+static const u16 sVoiceMoves[] = {
+    // MOVE_ROAR, // would not work with Mimesis
+    MOVE_CHATTER, // intentionally fails
+    MOVE_GROWL,
+    MOVE_HOWL,
+    MOVE_HYPER_VOICE,
+    MOVE_PERISH_SONG,
+    MOVE_SCREECH,
+    // MOVE_SING, // would not work with Mimesis because a successful hit makes the mon fall asleep
+    // MOVE_UPROAR, // don't want the mon to be locked into this move
+};
+
 typedef struct DamageCalcParams {
     u16 species;
     u16 form;
@@ -9189,6 +9227,16 @@ BOOL BattleSystem_IsBitingMove(u16 move)
 {
     for (int i = 0; i < NELEMS(sBitingMoves); i++) {
         if (move == sBitingMoves[i]) {
+            return TRUE;
+        }
+    }
+    return FALSE;
+}
+
+BOOL BattleSystem_IsVoiceMove(u16 move)
+{
+    for (int i = 0; i < NELEMS(sVoiceMoves); i++) {
+        if (move == sVoiceMoves[i]) {
             return TRUE;
         }
     }

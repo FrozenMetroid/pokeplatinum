@@ -49,6 +49,7 @@
                 "MOVE_SONIC_BOOM",
                 "MOVE_NIGHT_SLASH"
             ],
+            "ball": "ITEM_SAFARI_BALL",
             "iv_scale": 50,
             "ball_seal": 0
         },
@@ -59,7 +60,9 @@
             "item": null,
             "moves": [
                 "MOVE_BITE",
-                "MOVE_VINE_WHIP"
+                "MOVE_RAZOR_LEAF",
+                "MOVE_INGRAIN",
+                "MOVE_GROWTH"
             ],
             "ball": "ITEM_SAFARI_BALL",
             "iv_scale": 50,
@@ -70,7 +73,12 @@
             "form": 0,
             "level": 25,
             "item": null,
-            "moves": null,
+            "moves": [
+                "MOVE_POISON_FANG",
+                "MOVE_BRICK_BREAK",
+                "MOVE_PURSUIT",
+                "MOVE_FAKE_OUT"
+            ],
             "ball": "ITEM_SAFARI_BALL",
             "iv_scale": 50,
             "ball_seal": 0
@@ -80,7 +88,12 @@
             "form": 0,
             "level": 25,
             "item": null,
-            "moves": null,
+            "moves": [
+                "MOVE_RAZOR_LEAF",
+                "MOVE_LEECH_SEED",
+                "MOVE_AIR_CUTTER",
+                "MOVE_LEER"
+            ],
             "ball": "ITEM_SAFARI_BALL",
             "iv_scale": 50,
             "ball_seal": 0

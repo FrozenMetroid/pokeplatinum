@@ -3,7 +3,9 @@
     "class": "TRAINER_CLASS_FISHERMAN",
     "items": [],
     "ai_flags": [
-        "AI_FLAG_BASIC"
+        "AI_FLAG_BASIC",
+        "AI_FLAG_EVAL_ATTACK",
+        "AI_FLAG_EXPERT"
     ],
     "double_battle": false,
     "party": [
@@ -13,38 +15,55 @@
             "level": 28,
             "item": null,
             "moves": [
-                "MOVE_WATER_PULSE",
+                "MOVE_AQUA_JET",
                 "MOVE_PECK",
-                "MOVE_FLAIL",
-                "MOVE_SUPERSONIC"
+                "MOVE_HORN_ATTACK",
+                "MOVE_RAIN_DANCE"
             ],
-            "iv_scale": 10,
+            "nature": "NATURE_ADAMANT",
+            "ability": "ABILITY_SWIFT_SWIM",
+            "ivnums": [15, 15, 15, 15, 15, 15],
+            "evnums": [50, 50, 0, 0, 0, 0],
+            "ball": "ITEM_POKE_BALL",
+            "iv_scale": 0,
             "ball_seal": 0
         },
         {
             "species": "SPECIES_SEAKING",
             "form": 0,
-            "level": 31,
+            "level": 32,
             "item": null,
             "moves": [
-                "MOVE_WATER_PULSE",
-                "MOVE_FURY_ATTACK",
-                "MOVE_FLAIL",
-                "MOVE_SUPERSONIC"
+                "MOVE_AQUA_JET",
+                "MOVE_BOUNCE",
+                "MOVE_HORN_ATTACK",
+                "MOVE_RAIN_DANCE"
             ],
-            "iv_scale": 10,
+            "nature": "NATURE_ADAMANT",
+            "ability": "ABILITY_SWIFT_SWIM",
+            "ivnums": [15, 15, 15, 15, 15, 15],
+            "evnums": [50, 50, 0, 0, 0, 0],
+            "ball": "ITEM_POKE_BALL",
+            "iv_scale": 0,
             "ball_seal": 0
         },
         {
             "species": "SPECIES_GYARADOS",
             "form": 0,
-            "level": 31,
+            "level": 32,
             "item": null,
             "moves": [
                 "MOVE_THRASH",
-                "MOVE_BITE"
+                "MOVE_BITE",
+                "MOVE_WATER_PULSE",
+                "MOVE_ICE_FANG"
             ],
-            "iv_scale": 10,
+            "nature": "NATURE_HASTY",
+            "ability": "ABILITY_INTIMIDATE",
+            "ivnums": [15, 15, 15, 15, 15, 15],
+            "evnums": [50, 0, 0, 50, 0, 0],
+            "ball": "ITEM_POKE_BALL",
+            "iv_scale": 0,
             "ball_seal": 0
         }
     ],

@@ -873,7 +873,7 @@ int BattleSystem_RandomOpponent(BattleSystem *battleSys, BattleContext *battleCt
  * @return TRUE if the returned subscript param should be loaded for a
  * triggered effect.
  */
-BOOL BattleSystem_TriggerAbilityOnHit(BattleSystem *battleSys, BattleContext *battleCtx, int *subscript);
+BOOL BattleSystem_TriggerDefenderAbilityOnHit(BattleSystem *battleSys, BattleContext *battleCtx, int *subscript);
 
 
 /**
@@ -1526,4 +1526,5 @@ BOOL BattleSystem_CannotSuppressAbility(u8 ability);
 
 BOOL BattleSystem_IsWindMove(u16 move);
 BOOL BattleSystem_IsBitingMove(u16 move);
+BOOL BattleSystem_IsVoiceMove(u16 move);
 #endif // POKEPLATINUM_BATTLE_BATTLE_LIB_H

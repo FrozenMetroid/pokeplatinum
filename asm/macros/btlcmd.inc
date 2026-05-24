@@ -1102,8 +1102,8 @@
     .long \battler
     .endm
 
-    .macro TriggerAbilityOnHit jump_no_effect
-    .long BTLCMD_TRIGGERABILITYONHIT
+    .macro TriggerDefenderAbilityOnHit jump_no_effect
+    .long BTLCMD_TRIGGERDEFENDERABILITYONHIT
     .long (\jump_no_effect-.) / 4 - 1
     .endm
 
@@ -1259,6 +1259,17 @@
     .long (((\failAddress - .) / 4) - 3)
     .long (((\defiantAddress - .) / 4) - 2)
     .long (((\competitiveAddress - .) / 4) - 1)
+    .endm
+
+    .macro TriggerAttackerAbilityOnHit jump_no_effect
+    .long BTLCMD_TRIGGERATTACKERABILITYONHIT
+    .long (\jump_no_effect-.) / 4 - 1
+    .endm
+
+    .macro CheckMoveFailureMimesis battler, jump_no_effect
+    .long BTLCMD_CHECKMOVEFAILUREMIMESIS
+    .long \battler
+    .long (\jump_no_effect-.) / 4 - 1
     .endm
     
     .text

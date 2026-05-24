@@ -37,7 +37,6 @@
         "by_level": [
             [0, "MOVE_METAL_CLAW"],
             [1, "MOVE_POUND"],
-            [1, "MOVE_GROWL"],
             [4, "MOVE_GROWL"],
             [6, "MOVE_BUBBLE"],
             [9, "MOVE_WATER_SPORT"],

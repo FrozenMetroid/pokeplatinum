@@ -2,52 +2,52 @@
     "land_rate": 20,
     "land_encounters": [
         {
-            "level": 23,
+            "level": 29,
             "species": "SPECIES_ROSELIA"
         },
         {
-            "level": 21,
+            "level": 27,
             "species": "SPECIES_MARILL"
         },
         {
-            "level": 23,
+            "level": 29,
             "species": "SPECIES_STARAVIA"
         },
         {
-            "level": 22,
+            "level": 28,
             "species": "SPECIES_KIRLIA"
         },
         {
-            "level": 22,
+            "level": 28,
             "species": "SPECIES_ROSELIA"
         },
         {
-            "level": 21,
-            "species": "SPECIES_STARAVIA"
+            "level": 27,
+            "species": "SPECIES_GLAMEOW"
         },
         {
-            "level": 24,
+            "level": 29,
             "species": "SPECIES_KIRLIA"
         },
         {
-            "level": 24,
+            "level": 29,
             "species": "SPECIES_KIRLIA"
         },
         {
-            "level": 23,
+            "level": 29,
             "species": "SPECIES_ELECTRIKE"
         },
         {
-            "level": 24,
+            "level": 28,
             "species": "SPECIES_ELECTRIKE"
         },
         {
-            "level": 23,
-            "species": "SPECIES_ELECTRIKE"
+            "level": 30,
+            "species": "SPECIES_MANECTRIC"
         },
         {
-            "level": 24,
-            "species": "SPECIES_ELECTRIKE"
+            "level": 30,
+            "species": "SPECIES_MANECTRIC"
         }
     ],
     "swarms": [

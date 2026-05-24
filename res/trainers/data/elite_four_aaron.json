@@ -59,13 +59,13 @@
                 "MOVE_ATTACK_ORDER",
                 "MOVE_DEFEND_ORDER",
                 "MOVE_HEAL_ORDER",
-                "MOVE_POWER_GEM"
+                "MOVE_AIR_SLASH"
             ],
             "iv_scale": 0,
             "ivnums": [31, 31, 31, 31, 31, 31],
             "evnums": [180, 0, 90, 0, 0, 90],
             "ball": "ITEM_POKE_BALL",
-            "ability": "ABILITY_PRESSURE",
+            "ability": "ABILITY_MATRIARCH",
             "nature": "NATURE_RELAXED",
             "ball_seal": 0
         },

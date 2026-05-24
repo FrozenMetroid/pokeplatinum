@@ -3,47 +3,67 @@
     "class": "TRAINER_CLASS_SAILOR",
     "items": [],
     "ai_flags": [
-        "AI_FLAG_BASIC"
+        "AI_FLAG_BASIC",
+        "AI_FLAG_EVAL_ATTACK",
+        "AI_FLAG_EXPERT"
     ],
     "double_battle": false,
     "party": [
         {
-            "species": "SPECIES_WINGULL",
+            "species": "SPECIES_PRINPLUP",
             "form": 0,
-            "level": 29,
+            "level": 31,
             "item": null,
             "moves": [
-                "MOVE_WATER_PULSE",
-                "MOVE_WING_ATTACK",
-                "MOVE_SUPERSONIC"
+                "MOVE_BRINE",
+                "MOVE_METAL_CLAW",
+                "MOVE_PLUCK",
+                "MOVE_ICY_WIND"
             ],
-            "iv_scale": 10,
+            "nature": "NATURE_DOCILE",
+            "ability": "ABILITY_TORRENT",
+            "ivnums": [15, 15, 15, 15, 15, 15],
+            "evnums": [50, 50, 0, 0, 50, 0],
+            "ball": "ITEM_POKE_BALL",
+            "iv_scale": 0,
             "ball_seal": 0
         },
         {
-            "species": "SPECIES_SHELLOS",
+            "species": "SPECIES_GASTRODON",
             "form": 0,
-            "level": 30,
+            "level": 32,
             "item": null,
             "moves": [
                 "MOVE_WATER_PULSE",
                 "MOVE_MUD_BOMB",
-                "MOVE_RAIN_DANCE"
+                "MOVE_RAIN_DANCE",
+                "MOVE_YAWN"
             ],
-            "iv_scale": 10,
+            "nature": "NATURE_MODEST",
+            "ability": "ABILITY_STICKY_HOLD",
+            "ivnums": [15, 15, 15, 15, 15, 15],
+            "evnums": [50, 0, 0, 0, 50, 0],
+            "ball": "ITEM_POKE_BALL",
+            "iv_scale": 0,
             "ball_seal": 0
         },
         {
             "species": "SPECIES_GOLDUCK",
             "form": 0,
-            "level": 31,
+            "level": 33,
             "item": null,
             "moves": [
                 "MOVE_FURY_SWIPES",
-                "MOVE_CONFUSION",
-                "MOVE_WATER_PULSE"
+                "MOVE_EXTRASENSORY",
+                "MOVE_WATER_PULSE",
+                "MOVE_RAIN_DANCE"
             ],
-            "iv_scale": 10,
+            "nature": "NATURE_HASTY",
+            "ability": "ABILITY_SWIFT_SWIM",
+            "ivnums": [15, 15, 15, 15, 15, 15],
+            "evnums": [50, 50, 0, 0, 0, 0],
+            "ball": "ITEM_POKE_BALL",
+            "iv_scale": 0,
             "ball_seal": 0
         }
     ],

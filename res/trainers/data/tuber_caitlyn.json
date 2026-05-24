@@ -3,7 +3,9 @@
     "class": "TRAINER_CLASS_TUBER_FEMALE",
     "items": [],
     "ai_flags": [
-        "AI_FLAG_BASIC"
+        "AI_FLAG_BASIC",
+        "AI_FLAG_EVAL_ATTACK",
+        "AI_FLAG_EXPERT"
     ],
     "double_battle": false,
     "party": [
@@ -17,7 +19,12 @@
                 "MOVE_SLAM",
                 "MOVE_CHARM"
             ],
-            "iv_scale": 10,
+            "nature": "NATURE_SERIOUS",
+            "ability": "ABILITY_THICK_FAT",
+            "ivnums": [15, 15, 15, 15, 15, 15],
+            "evnums": [50, 25, 0, 0, 25, 0],
+            "ball": "ITEM_POKE_BALL",
+            "iv_scale": 0,
             "ball_seal": 0
         },
         {
@@ -31,7 +38,12 @@
                 "MOVE_DEFENSE_CURL",
                 "MOVE_AQUA_RING"
             ],
-            "iv_scale": 10,
+            "nature": "NATURE_HASTY",
+            "ability": "ABILITY_THICK_FAT",
+            "ivnums": [15, 15, 15, 15, 15, 15],
+            "evnums": [50, 25, 0, 0, 25, 0],
+            "ball": "ITEM_POKE_BALL",
+            "iv_scale": 0,
             "ball_seal": 0
         },
         {
@@ -40,12 +52,17 @@
             "level": 31,
             "item": null,
             "moves": [
-                "MOVE_BUBBLE_BEAM",
-                "MOVE_DOUBLE_EDGE",
+                "MOVE_AQUA_JET",
+                "MOVE_BODY_SLAM",
                 "MOVE_ROLLOUT",
                 "MOVE_AQUA_RING"
             ],
-            "iv_scale": 10,
+            "nature": "NATURE_ADAMANT",
+            "ability": "ABILITY_PURE_POWER",
+            "ivnums": [15, 15, 15, 15, 15, 15],
+            "evnums": [50, 25, 0, 0, 25, 0],
+            "ball": "ITEM_GREAT_BALL",
+            "iv_scale": 0,
             "ball_seal": 0
         }
     ],
