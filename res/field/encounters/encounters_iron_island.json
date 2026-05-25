@@ -1,72 +1,72 @@
 {
-    "land_rate": 0,
+    "land_rate": 20,
     "land_encounters": [
         {
-            "level": 0,
-            "species": "SPECIES_NONE"
+            "level": 32,
+            "species": "SPECIES_SKARMORY"
         },
         {
-            "level": 0,
-            "species": "SPECIES_NONE"
+            "level": 32,
+            "species": "SPECIES_GRAVELER"
         },
         {
-            "level": 0,
-            "species": "SPECIES_NONE"
+            "level": 33,
+            "species": "SPECIES_SKARMORY"
         },
         {
-            "level": 0,
-            "species": "SPECIES_NONE"
+            "level": 33,
+            "species": "SPECIES_GRAVELER"
         },
         {
-            "level": 0,
-            "species": "SPECIES_NONE"
+            "level": 31,
+            "species": "SPECIES_LAIRON"
         },
         {
-            "level": 0,
-            "species": "SPECIES_NONE"
+            "level": 31,
+            "species": "SPECIES_LAIRON"
         },
         {
-            "level": 0,
-            "species": "SPECIES_NONE"
+            "level": 30,
+            "species": "SPECIES_ONIX"
         },
         {
-            "level": 0,
-            "species": "SPECIES_NONE"
+            "level": 31,
+            "species": "SPECIES_ONIX"
         },
         {
-            "level": 0,
-            "species": "SPECIES_NONE"
+            "level": 33,
+            "species": "SPECIES_STEELIX"
         },
         {
-            "level": 0,
-            "species": "SPECIES_NONE"
+            "level": 35,
+            "species": "SPECIES_SKARMORY"
         },
         {
-            "level": 0,
-            "species": "SPECIES_NONE"
+            "level": 34,
+            "species": "SPECIES_STEELIX"
         },
         {
-            "level": 0,
-            "species": "SPECIES_NONE"
+            "level": 35,
+            "species": "SPECIES_SKARMORY"
         }
     ],
     "swarms": [
-        "SPECIES_NONE",
-        "SPECIES_NONE"
+        "SPECIES_SKARMORY",
+        "SPECIES_SKARMORY"
     ],
     "day": [
-        "SPECIES_NONE",
-        "SPECIES_NONE"
+        "SPECIES_SKARMORY",
+        "SPECIES_GRAVELER"
     ],
     "night": [
-        "SPECIES_NONE",
-        "SPECIES_NONE"
+        "SPECIES_SKARMORY",
+        "SPECIES_GRAVELER"
     ],
     "radar": [
-        "SPECIES_NONE",
-        "SPECIES_NONE",
-        "SPECIES_NONE",
-        "SPECIES_NONE"
+        "SPECIES_MAWILE",
+        "SPECIES_MAWILE",
+        "SPECIES_SKARMORY",
+        "SPECIES_SKARMORY"
     ],
     "rate_form0": 0,
     "rate_form1": 0,
@@ -75,24 +75,24 @@
     "rate_form4": 0,
     "unown_table": 0,
     "ruby": [
-        "SPECIES_NONE",
-        "SPECIES_NONE"
+        "SPECIES_MAWILE",
+        "SPECIES_MAWILE"
     ],
     "sapphire": [
-        "SPECIES_NONE",
-        "SPECIES_NONE"
+        "SPECIES_LAIRON",
+        "SPECIES_LAIRON"
     ],
     "emerald": [
-        "SPECIES_NONE",
-        "SPECIES_NONE"
+        "SPECIES_BELDUM",
+        "SPECIES_BELDUM"
     ],
     "firered": [
-        "SPECIES_NONE",
-        "SPECIES_NONE"
+        "SPECIES_MAGNETON",
+        "SPECIES_MAGNETON"
     ],
     "leafgreen": [
-        "SPECIES_NONE",
-        "SPECIES_NONE"
+        "SPECIES_MAGNETON",
+        "SPECIES_MAGNETON"
     ],
     "surf_rate": 10,
     "surf_encounters": [

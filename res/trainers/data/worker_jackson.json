@@ -3,47 +3,47 @@
     "class": "TRAINER_CLASS_WORKER",
     "items": [],
     "ai_flags": [
-        "AI_FLAG_BASIC"
+        "AI_FLAG_BASIC",
+        "AI_FLAG_EVAL_ATTACK"
     ],
     "double_battle": false,
     "party": [
         {
             "species": "SPECIES_MAGNEMITE",
             "form": 0,
-            "level": 34,
+            "level": 35,
             "item": null,
             "moves": [
-                "MOVE_MAGNET_BOMB",
-                "MOVE_SPARK",
-                "MOVE_THUNDER_WAVE"
+                "MOVE_FLASH_CANNON",
+                "MOVE_THUNDERBOLT",
+                "MOVE_THUNDER_WAVE",
+                "MOVE_SONIC_BOOM"
             ],
-            "iv_scale": 10,
+            "ability": "ABILITY_STURDY",
+            "nature": "NATURE_MODEST",
+            "ivnums": [25, 25, 25, 25, 25, 25],
+            "evnums": [80, 0, 0, 0, 80, 0],
+            "ball": "ITEM_POKE_BALL",
+            "iv_scale": 0,
             "ball_seal": 0
         },
         {
-            "species": "SPECIES_MAGNEMITE",
+            "species": "SPECIES_SKARMORY",
             "form": 0,
-            "level": 34,
+            "level": 37,
             "item": null,
             "moves": [
-                "MOVE_MAGNET_BOMB",
-                "MOVE_SPARK",
-                "MOVE_THUNDER_WAVE"
+                "MOVE_IRON_HEAD",
+                "MOVE_WING_ATTACK",
+                "MOVE_SPIKES",
+                "MOVE_SANDSTORM"
             ],
-            "iv_scale": 10,
-            "ball_seal": 0
-        },
-        {
-            "species": "SPECIES_MAGNEMITE",
-            "form": 0,
-            "level": 34,
-            "item": null,
-            "moves": [
-                "MOVE_MAGNET_BOMB",
-                "MOVE_SPARK",
-                "MOVE_THUNDER_WAVE"
-            ],
-            "iv_scale": 10,
+            "ability": "ABILITY_STURDY",
+            "nature": "NATURE_ADAMANT",
+            "ivnums": [25, 25, 25, 25, 25, 25],
+            "evnums": [80, 80, 0, 0, 0, 0],
+            "ball": "ITEM_POKE_BALL",
+            "iv_scale": 0,
             "ball_seal": 0
         }
     ],

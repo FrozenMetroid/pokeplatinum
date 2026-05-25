@@ -3,20 +3,29 @@
     "class": "TRAINER_CLASS_WORKER",
     "items": [],
     "ai_flags": [
-        "AI_FLAG_BASIC"
+        "AI_FLAG_BASIC",
+        "AI_FLAG_EVAL_ATTACK",
+        "AI_FLAG_EXPERT"
     ],
     "double_battle": false,
     "party": [
         {
-            "species": "SPECIES_MAGNEMITE",
+            "species": "SPECIES_LUCARIO",
             "form": 0,
             "level": 37,
             "item": null,
             "moves": [
-                "MOVE_SPARK",
-                "MOVE_MAGNET_BOMB"
+                "MOVE_IRON_TAIL",
+                "MOVE_CLOSE_COMBAT",
+                "MOVE_BONE_RUSH",
+                "MOVE_QUICK_ATTACK"
             ],
-            "iv_scale": 10,
+            "ability": "ABILITY_INNER_FOCUS",
+            "nature": "NATURE_JOLLY",
+            "ivnums": [25, 25, 25, 25, 25, 25],
+            "evnums": [0, 80, 0, 80, 0, 0],
+            "ball": "ITEM_POKE_BALL",
+            "iv_scale": 0,
             "ball_seal": 0
         }
     ],

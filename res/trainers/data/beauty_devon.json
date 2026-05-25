@@ -24,7 +24,7 @@
         },
         {
             "species": "SPECIES_WORMADAM",
-            "form": 1,
+            "form": 2,
             "level": 27,
             "item": null,
             "moves": [
@@ -38,7 +38,7 @@
         },
         {
             "species": "SPECIES_WORMADAM",
-            "form": 2,
+            "form": 1,
             "level": 27,
             "item": null,
             "moves": [

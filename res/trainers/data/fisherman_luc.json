@@ -3,53 +3,39 @@
     "class": "TRAINER_CLASS_FISHERMAN",
     "items": [],
     "ai_flags": [
-        "AI_FLAG_BASIC"
+        "AI_FLAG_BASIC",
+        "AI_FLAG_EVAL_ATTACK"
     ],
     "double_battle": false,
     "party": [
         {
             "species": "SPECIES_REMORAID",
             "form": 0,
-            "level": 29,
+            "level": 34,
             "item": null,
-            "moves": null,
-            "iv_scale": 0,
+            "moves": [
+                "MOVE_BUBBLE_BEAM",
+                "MOVE_PSYBEAM",
+                "MOVE_AURORA_BEAM",
+                "MOVE_FOCUS_ENERGY"
+            ],
+            "ability": "ABILITY_ARTILLERY",
+            "iv_scale": 130,
             "ball_seal": 0
         },
         {
-            "species": "SPECIES_REMORAID",
+            "species": "SPECIES_OCTILLERY",
             "form": 0,
-            "level": 29,
+            "level": 38,
             "item": null,
-            "moves": null,
-            "iv_scale": 0,
-            "ball_seal": 0
-        },
-        {
-            "species": "SPECIES_REMORAID",
-            "form": 0,
-            "level": 30,
-            "item": null,
-            "moves": null,
-            "iv_scale": 0,
-            "ball_seal": 0
-        },
-        {
-            "species": "SPECIES_GYARADOS",
-            "form": 0,
-            "level": 31,
-            "item": null,
-            "moves": null,
-            "iv_scale": 0,
-            "ball_seal": 0
-        },
-        {
-            "species": "SPECIES_REMORAID",
-            "form": 0,
-            "level": 31,
-            "item": null,
-            "moves": null,
-            "iv_scale": 0,
+            "moves": [
+                "MOVE_OCTAZOOKA",
+                "MOVE_AURORA_BEAM",
+                "MOVE_GUNK_SHOT",
+                "MOVE_WRING_OUT"
+            ],
+            "ability": "ABILITY_SUCTION_CUPS",
+            "iv_scale": 130,
             "ball_seal": 0
         }
     ],
@@ -71,8 +57,6 @@
         {
             "type": "TRMSG_POST_BATTLE",
             "en_US": [
-                "I was counting on strength in numbers,\n",
-                "but...\r",
                 "Packing it in and going home sounds good\n",
                 "at a time like this...\n"
             ]

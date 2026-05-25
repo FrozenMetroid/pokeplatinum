@@ -4,36 +4,49 @@
     "items": [],
     "ai_flags": [
         "AI_FLAG_BASIC",
-        "AI_FLAG_PRIORITIZE_EXTREMES"
+        "AI_FLAG_EVAL_ATTACK",
+        "AI_FLAG_EXPERT",
+        "AI_FLAG_PRIORITIZE_EXTREMES",
+        "AI_FLAG_WEATHER"
     ],
     "double_battle": false,
     "party": [
         {
-            "species": "SPECIES_STEELIX",
-            "form": 0,
-            "level": 35,
-            "item": null,
-            "moves": [
-                "MOVE_IRON_TAIL",
-                "MOVE_ROCK_SLIDE",
-                "MOVE_SANDSTORM",
-                "MOVE_SCREECH"
-            ],
-            "iv_scale": 40,
-            "ball_seal": 0
-        },
-        {
-            "species": "SPECIES_STEELIX",
+            "species": "SPECIES_PROBOPASS",
             "form": 0,
             "level": 37,
             "item": null,
             "moves": [
-                "MOVE_IRON_TAIL",
-                "MOVE_ROCK_SLIDE",
-                "MOVE_SANDSTORM",
-                "MOVE_SCREECH"
+                "MOVE_ANCIENT_POWER",
+                "MOVE_THUNDERBOLT",
+                "MOVE_FLASH_CANNON",
+                "MOVE_SANDSTORM"
             ],
-            "iv_scale": 40,
+            "ability": "ABILITY_STURDY",
+            "nature": "NATURE_MODEST",
+            "ivnums": [25, 25, 25, 25, 25, 25],
+            "evnums": [0, 0, 80, 0, 80, 0],
+            "ball": "ITEM_POKE_BALL",
+            "iv_scale": 0,
+            "ball_seal": 0
+        },
+        {
+            "species": "SPECIES_EMPOLEON",
+            "form": 0,
+            "level": 38,
+            "item": null,
+            "moves": [
+                "MOVE_BRINE",
+                "MOVE_FLASH_CANNON",
+                "MOVE_ICY_WIND",
+                "MOVE_BIDE"
+            ],
+            "ability": "ABILITY_TORRENT",
+            "nature": "NATURE_MODEST",
+            "ivnums": [25, 25, 25, 25, 25, 25],
+            "evnums": [0, 0, 80, 0, 80, 0],
+            "ball": "ITEM_POKE_BALL",
+            "iv_scale": 0,
             "ball_seal": 0
         }
     ],

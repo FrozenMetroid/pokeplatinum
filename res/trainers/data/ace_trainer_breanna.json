@@ -10,42 +10,41 @@
     "double_battle": false,
     "party": [
         {
-            "species": "SPECIES_BRONZOR",
+            "species": "SPECIES_BRONZONG",
             "form": 0,
-            "level": 35,
+            "level": 37,
             "item": null,
             "moves": [
                 "MOVE_GYRO_BALL",
                 "MOVE_EXTRASENSORY",
-                "MOVE_CONFUSE_RAY"
+                "MOVE_CONFUSE_RAY",
+                "MOVE_ZEN_HEADBUTT"
             ],
-            "iv_scale": 60,
+            "ability": "ABILITY_HEATPROOF",
+            "nature": "NATURE_SERIOUS",
+            "ivnums": [25, 25, 25, 25, 25, 25],
+            "evnums": [80, 40, 0, 0, 40, 0],
+            "ball": "ITEM_POKE_BALL",
+            "iv_scale": 0,
             "ball_seal": 0
         },
         {
-            "species": "SPECIES_BRONZOR",
-            "form": 0,
-            "level": 36,
-            "item": null,
-            "moves": [
-                "MOVE_GYRO_BALL",
-                "MOVE_EXTRASENSORY",
-                "MOVE_CONFUSE_RAY"
-            ],
-            "iv_scale": 60,
-            "ball_seal": 0
-        },
-        {
-            "species": "SPECIES_BRONZOR",
-            "form": 0,
+            "species": "SPECIES_WORMADAM",
+            "form": 2,
             "level": 38,
             "item": null,
             "moves": [
-                "MOVE_GYRO_BALL",
-                "MOVE_EXTRASENSORY",
-                "MOVE_CONFUSE_RAY"
+                "MOVE_FLASH_CANNON",
+                "MOVE_BUG_BUZZ",
+                "MOVE_PSYBEAM",
+                "MOVE_METAL_SOUND"
             ],
-            "iv_scale": 60,
+            "ability": "ABILITY_FILTER",
+            "nature": "NATURE_MODEST",
+            "ivnums": [25, 25, 25, 25, 25, 25],
+            "evnums": [80, 0, 0, 0, 80, 0],
+            "ball": "ITEM_POKE_BALL",
+            "iv_scale": 0,
             "ball_seal": 0
         }
     ],

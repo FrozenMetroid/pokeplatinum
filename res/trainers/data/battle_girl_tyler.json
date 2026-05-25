@@ -4,6 +4,7 @@
     "items": [],
     "ai_flags": [
         "AI_FLAG_BASIC",
+        "AI_FLAG_EVAL_ATTACK",
         "AI_FLAG_PRIORITIZE_EXTREMES"
     ],
     "double_battle": false,
@@ -13,8 +14,13 @@
             "form": 0,
             "level": 38,
             "item": null,
-            "moves": null,
-            "iv_scale": 30,
+            "moves": [
+                "MOVE_ZEN_HEADBUTT",
+                "MOVE_DRAIN_PUNCH",
+                "MOVE_THUNDER_PUNCH",
+                "MOVE_BIDE"
+            ],
+            "iv_scale": 130,
             "ball_seal": 0
         }
     ],

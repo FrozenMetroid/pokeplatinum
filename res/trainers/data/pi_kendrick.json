@@ -4,6 +4,8 @@
     "items": [],
     "ai_flags": [
         "AI_FLAG_BASIC",
+        "AI_FLAG_EVAL_ATTACK",
+        "AI_FLAG_EXPERT",
         "AI_FLAG_RISKY"
     ],
     "double_battle": false,
@@ -17,7 +19,7 @@
                 "MOVE_HORN_DRILL",
                 "MOVE_REVERSAL"
             ],
-            "iv_scale": 50,
+            "iv_scale": 80,
             "ball_seal": 0
         }
     ],

@@ -12,15 +12,20 @@
         {
             "species": "SPECIES_SCIZOR",
             "form": 0,
-            "level": 40,
+            "level": 39,
             "item": null,
             "moves": [
-                "MOVE_METAL_CLAW",
+                "MOVE_CUT",
                 "MOVE_X_SCISSOR",
                 "MOVE_SLASH",
                 "MOVE_PURSUIT"
             ],
-            "iv_scale": 60,
+            "ability": "ABILITY_TECHNICIAN",
+            "nature": "NATURE_IMPISH",
+            "ivnums": [25, 25, 25, 25, 25, 25],
+            "evnums": [0, 80, 80, 0, 0, 0],
+            "ball": "ITEM_ULTRA_BALL",
+            "iv_scale": 0,
             "ball_seal": 0
         }
     ],

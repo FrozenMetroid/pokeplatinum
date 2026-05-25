@@ -4,6 +4,8 @@
     "items": [],
     "ai_flags": [
         "AI_FLAG_BASIC",
+        "AI_FLAG_EVAL_ATTACK",
+        "AI_FLAG_EXPERT",
         "AI_FLAG_PRIORITIZE_EXTREMES"
     ],
     "double_battle": false,
@@ -13,17 +15,27 @@
             "form": 0,
             "level": 35,
             "item": null,
-            "moves": null,
-            "iv_scale": 0,
+            "moves": [
+                "MOVE_ROCK_BLAST",
+                "MOVE_DIG",
+                "MOVE_ROCK_POLISH",
+                "MOVE_BODY_SLAM"
+            ],
+            "iv_scale": 130,
             "ball_seal": 0
         },
         {
             "species": "SPECIES_RHYHORN",
             "form": 0,
-            "level": 35,
+            "level": 36,
             "item": null,
-            "moves": null,
-            "iv_scale": 0,
+            "moves": [
+                "MOVE_ROCK_SLIDE",
+                "MOVE_HORN_DRILL",
+                "MOVE_BITE",
+                "MOVE_ROCK_TOMB"
+            ],
+            "iv_scale": 130,
             "ball_seal": 0
         }
     ],

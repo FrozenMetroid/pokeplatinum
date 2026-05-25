@@ -4,6 +4,8 @@
     "items": [],
     "ai_flags": [
         "AI_FLAG_BASIC",
+        "AI_FLAG_EVAL_ATTACK",
+        "AI_FLAG_EXPERT",
         "AI_FLAG_PRIORITIZE_EXTREMES"
     ],
     "double_battle": false,
@@ -15,11 +17,16 @@
             "item": null,
             "moves": [
                 "MOVE_IRON_TAIL",
-                "MOVE_TAUNT",
-                "MOVE_TORMENT",
+                "MOVE_CURSE",
+                "MOVE_EARTHQUAKE",
                 "MOVE_SCREECH"
             ],
-            "iv_scale": 40,
+            "ability": "ABILITY_STURDY",
+            "nature": "NATURE_IMPISH",
+            "ivnums": [25, 25, 25, 25, 25, 25],
+            "evnums": [0, 80, 80, 0, 0, 0],
+            "ball": "ITEM_POKE_BALL",
+            "iv_scale": 0,
             "ball_seal": 0
         }
     ],

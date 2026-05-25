@@ -8,21 +8,31 @@
     "double_battle": false,
     "party": [
         {
-            "species": "SPECIES_GLAMEOW",
+            "species": "SPECIES_BEAUTIFLY",
             "form": 0,
-            "level": 35,
+            "level": 37,
             "item": null,
-            "moves": null,
-            "iv_scale": 30,
+            "moves": [
+                "MOVE_AIR_CUTTER",
+                "MOVE_SILVER_WIND",
+                "MOVE_MEGA_DRAIN",
+                "MOVE_MORNING_SUN"
+            ],
+            "iv_scale": 130,
             "ball_seal": 0
         },
         {
             "species": "SPECIES_MURKROW",
             "form": 0,
-            "level": 35,
+            "level": 39,
             "item": null,
-            "moves": null,
-            "iv_scale": 30,
+            "moves": [
+                "MOVE_DRILL_PECK",
+                "MOVE_ASSURANCE",
+                "MOVE_NIGHT_SHADE",
+                "MOVE_MEAN_LOOK"
+            ],
+            "iv_scale": 130,
             "ball_seal": 0
         }
     ],

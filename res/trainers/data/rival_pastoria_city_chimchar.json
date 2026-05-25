@@ -12,57 +12,77 @@
         {
             "species": "SPECIES_STARAVIA",
             "form": 0,
-            "level": 34,
+            "level": 33,
             "item": null,
             "moves": [
-                "MOVE_WING_ATTACK",
+                "MOVE_AERIAL_ACE",
                 "MOVE_QUICK_ATTACK",
                 "MOVE_ENDEAVOR",
                 "MOVE_DOUBLE_TEAM"
             ],
-            "iv_scale": 80,
+            "ability": "ABILITY_INTIMIDATE",
+            "ivnums": [20, 20, 20, 20, 20, 20],
+            "evnums": [0, 60, 0, 60, 0, 0],
+            "ball": "ITEM_POKE_BALL",
+            "nature": "NATURE_ADAMANT",
+            "iv_scale": 0,
             "ball_seal": 0
         },
         {
             "species": "SPECIES_ROSELIA",
             "form": 0,
-            "level": 32,
+            "level": 34,
             "item": null,
             "moves": [
-                "MOVE_MEGA_DRAIN",
-                "MOVE_POISON_STING",
+                "MOVE_GIGA_DRAIN",
+                "MOVE_SLUDGE",
                 "MOVE_LEECH_SEED",
-                "MOVE_MAGICAL_LEAF"
+                "MOVE_GROWTH"
             ],
-            "iv_scale": 80,
+            "ability": "ABILITY_NATURAL_CURE",
+            "ivnums": [20, 20, 20, 20, 20, 20],
+            "evnums": [60, 0, 0, 0, 60, 0],
+            "ball": "ITEM_POKE_BALL",
+            "nature": "NATURE_MODEST",
+            "iv_scale": 0,
             "ball_seal": 0
         },
         {
-            "species": "SPECIES_PONYTA",
+            "species": "SPECIES_RAPIDASH",
             "form": 0,
-            "level": 32,
+            "level": 34,
             "item": null,
             "moves": [
-                "MOVE_EMBER",
-                "MOVE_STOMP",
-                "MOVE_TAIL_WHIP",
-                "MOVE_GROWL"
+                "MOVE_BLAZE_KICK",
+                "MOVE_TAKE_DOWN",
+                "MOVE_DOUBLE_KICK",
+                "MOVE_QUICK_ATTACK"
             ],
-            "iv_scale": 80,
+            "ability": "ABILITY_FLAME_BODY",
+            "ivnums": [20, 20, 20, 20, 20, 20],
+            "evnums": [0, 60, 0, 60, 0, 0],
+            "ball": "ITEM_POKE_BALL",
+            "nature": "NATURE_JOLLY",
+            "iv_scale": 0,
             "ball_seal": 0
         },
         {
             "species": "SPECIES_PRINPLUP",
             "form": 0,
-            "level": 36,
+            "level": 35,
             "item": null,
             "moves": [
-                "MOVE_BUBBLE_BEAM",
-                "MOVE_PECK",
+                "MOVE_BRINE",
+                "MOVE_ICY_WIND",
                 "MOVE_METAL_CLAW",
-                "MOVE_GROWL"
+                "MOVE_PLUCK"
             ],
-            "iv_scale": 80,
+            "ability": "ABILITY_TORRENT",
+            "ivnums": [25, 25, 25, 25, 25, 25],
+            "evnums": [80, 40, 0, 0, 40, 0],
+            "ball": "ITEM_POKE_BALL",
+            "nature": "NATURE_BRAVE",
+            "iv_scale": 0,
             "ball_seal": 10
         }
     ],

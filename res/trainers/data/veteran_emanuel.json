@@ -29,7 +29,7 @@
             "item": null,
             "moves": [
                 "MOVE_EXTRASENSORY",
-                "MOVE_TACKLE",
+                "MOVE_MIRROR_SHOT",
                 "MOVE_CONFUSE_RAY"
             ],
             "iv_scale": 100,

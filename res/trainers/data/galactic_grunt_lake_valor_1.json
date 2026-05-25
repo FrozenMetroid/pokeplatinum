@@ -3,7 +3,8 @@
     "class": "TRAINER_CLASS_GALACTIC_GRUNT_MALE",
     "items": [],
     "ai_flags": [
-        "AI_FLAG_BASIC"
+        "AI_FLAG_BASIC",
+        "AI_FLAG_EVAL_ATTACK"
     ],
     "double_battle": false,
     "party": [
@@ -12,8 +13,13 @@
             "form": 0,
             "level": 37,
             "item": null,
-            "moves": null,
-            "iv_scale": 30,
+            "moves": [
+                "MOVE_POISON_FANG",
+                "MOVE_WING_ATTACK",
+                "MOVE_CRUNCH",
+                "MOVE_CONFUSE_RAY"
+            ],
+            "iv_scale": 130,
             "ball_seal": 0
         }
     ],

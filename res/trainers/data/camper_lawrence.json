@@ -10,12 +10,17 @@
     "double_battle": false,
     "party": [
         {
-            "species": "SPECIES_AIPOM",
+            "species": "SPECIES_AMBIPOM",
             "form": 0,
-            "level": 34,
+            "level": 37,
             "item": null,
-            "moves": null,
-            "iv_scale": 0,
+            "moves": [
+                "MOVE_FAKE_OUT",
+                "MOVE_ARM_THRUST",
+                "MOVE_DOUBLE_HIT",
+                "MOVE_SCREECH"
+            ],
+            "iv_scale": 130,
             "ball_seal": 0
         },
         {
@@ -23,8 +28,13 @@
             "form": 0,
             "level": 36,
             "item": null,
-            "moves": null,
-            "iv_scale": 0,
+            "moves": [
+                "MOVE_SURF",
+                "MOVE_AQUA_JET",
+                "MOVE_CRUNCH",
+                "MOVE_QUICK_ATTACK"
+            ],
+            "iv_scale": 130,
             "ball_seal": 0
         }
     ],

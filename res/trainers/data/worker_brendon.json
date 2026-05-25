@@ -3,35 +3,38 @@
     "class": "TRAINER_CLASS_WORKER",
     "items": [],
     "ai_flags": [
-        "AI_FLAG_BASIC"
+        "AI_FLAG_BASIC",
+        "AI_FLAG_EVAL_ATTACK"
     ],
     "double_battle": false,
     "party": [
         {
-            "species": "SPECIES_GEODUDE",
+            "species": "SPECIES_WEEZING",
             "form": 0,
-            "level": 33,
+            "level": 37,
             "item": null,
-            "moves": null,
-            "iv_scale": 0,
+            "moves": [
+                "MOVE_SLUDGE_BOMB",
+                "MOVE_ASSURANCE",
+                "MOVE_DOUBLE_HIT",
+                "MOVE_HAZE"
+            ],
+            "ability": "ABILITY_LEVITATE",
+            "iv_scale": 130,
             "ball_seal": 0
         },
         {
-            "species": "SPECIES_GEODUDE",
+            "species": "SPECIES_MACHAMP",
             "form": 0,
-            "level": 33,
+            "level": 37,
             "item": null,
-            "moves": null,
-            "iv_scale": 0,
-            "ball_seal": 0
-        },
-        {
-            "species": "SPECIES_MACHOKE",
-            "form": 0,
-            "level": 36,
-            "item": null,
-            "moves": null,
-            "iv_scale": 0,
+            "moves": [
+                "MOVE_BRICK_BREAK",
+                "MOVE_FORESIGHT",
+                "MOVE_SEISMIC_TOSS",
+                "MOVE_KNOCK_OFF"
+            ],
+            "iv_scale": 130,
             "ball_seal": 0
         }
     ],

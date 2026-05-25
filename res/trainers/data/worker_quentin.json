@@ -8,30 +8,31 @@
     "double_battle": false,
     "party": [
         {
-            "species": "SPECIES_MAGNEMITE",
-            "form": 0,
-            "level": 34,
-            "item": null,
-            "moves": null,
-            "iv_scale": 0,
-            "ball_seal": 0
-        },
-        {
-            "species": "SPECIES_MACHOP",
-            "form": 0,
-            "level": 34,
-            "item": null,
-            "moves": null,
-            "iv_scale": 0,
-            "ball_seal": 0
-        },
-        {
             "species": "SPECIES_GRAVELER",
             "form": 0,
-            "level": 34,
+            "level": 36,
             "item": null,
-            "moves": null,
-            "iv_scale": 0,
+            "moves": [
+                "MOVE_EARTHQUAKE",
+                "MOVE_ROCK_SLIDE",
+                "MOVE_ROCK_POLISH",
+                "MOVE_BODY_SLAM"
+            ],
+            "iv_scale": 130,
+            "ball_seal": 0
+        },
+        {
+            "species": "SPECIES_MAGMAR",
+            "form": 0,
+            "level": 35,
+            "item": null,
+            "moves": [
+                "MOVE_FIRE_PUNCH",
+                "MOVE_WILL_O_WISP",
+                "MOVE_CONFUSE_RAY",
+                "MOVE_FEINT_ATTACK"
+            ],
+            "iv_scale": 130,
             "ball_seal": 0
         }
     ],

@@ -79,6 +79,7 @@
                 "MOVE_BONE_RUSH",
                 "MOVE_BLAZE_KICK"
             ],
+            "ball": "ITEM_LUXURY_BALL",
             "iv_scale": 200,
             "ball_seal": 0
         }

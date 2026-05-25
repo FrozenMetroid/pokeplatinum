@@ -4,6 +4,7 @@
     "items": [],
     "ai_flags": [
         "AI_FLAG_BASIC",
+        "AI_FLAG_EVAL_ATTACK",
         "AI_FLAG_EXPERT"
     ],
     "double_battle": false,
@@ -13,8 +14,13 @@
             "form": 0,
             "level": 28,
             "item": null,
-            "moves": null,
-            "iv_scale": 0,
+            "moves": [
+                "MOVE_MEGA_DRAIN",
+                "MOVE_LEECH_SEED",
+                "MOVE_PROTECT",
+                "MOVE_SLEEP_POWDER"
+            ],
+            "iv_scale": 80,
             "ball_seal": 0
         }
     ],

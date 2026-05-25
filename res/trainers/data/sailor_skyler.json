@@ -3,26 +3,38 @@
     "class": "TRAINER_CLASS_SAILOR",
     "items": [],
     "ai_flags": [
-        "AI_FLAG_BASIC"
+        "AI_FLAG_BASIC",
+        "AI_FLAG_EVAL_ATTACK"
     ],
     "double_battle": false,
     "party": [
         {
-            "species": "SPECIES_MANTYKE",
+            "species": "SPECIES_MANTINE",
             "form": 0,
-            "level": 32,
+            "level": 37,
             "item": null,
-            "moves": null,
-            "iv_scale": 0,
+            "moves": [
+                "MOVE_SURF",
+                "MOVE_ROOST",
+                "MOVE_CONFUSE_RAY",
+                "MOVE_AIR_CUTTER"
+            ],
+            "ball": "ITEM_DIVE_BALL",
+            "iv_scale": 130,
             "ball_seal": 0
         },
         {
-            "species": "SPECIES_MACHOKE",
+            "species": "SPECIES_PRIMEAPE",
             "form": 0,
-            "level": 34,
+            "level": 37,
             "item": null,
-            "moves": null,
-            "iv_scale": 0,
+            "moves": [
+                "MOVE_THRASH",
+                "MOVE_BRICK_BREAK",
+                "MOVE_ASSURANCE",
+                "MOVE_FIRE_PUNCH"
+            ],
+            "iv_scale": 130,
             "ball_seal": 0
         }
     ],

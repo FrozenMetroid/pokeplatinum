@@ -51,7 +51,8 @@
             [35, "MOVE_COVET"],
             [38, "MOVE_THUNDERBOLT"],
             [41, "MOVE_LAST_RESORT"],
-            [45, "MOVE_HYPER_FANG"]
+            [45, "MOVE_HYPER_FANG"],
+            [51, "MOVE_THUNDER"]
         ],
         "by_tm": [
             "TM06",

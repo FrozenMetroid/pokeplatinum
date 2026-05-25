@@ -12,29 +12,39 @@
         {
             "species": "SPECIES_STARAPTOR",
             "form": 0,
-            "level": 36,
+            "level": 37,
             "item": null,
             "moves": [
                 "MOVE_AERIAL_ACE",
                 "MOVE_TAKE_DOWN",
                 "MOVE_QUICK_ATTACK",
-                "MOVE_DOUBLE_TEAM"
+                "MOVE_CLOSE_COMBAT"
             ],
-            "iv_scale": 100,
+            "ability": "ABILITY_INTIMIDATE",
+            "nature": "NATURE_JOLLY",
+            "ivnums": [31, 31, 31, 31, 31, 31],
+            "evnums": [0, 60, 0, 60, 0, 0],
+            "ball": "ITEM_POKE_BALL",
+            "iv_scale": 0,
             "ball_seal": 0
         },
         {
             "species": "SPECIES_FLOATZEL",
             "form": 0,
-            "level": 35,
+            "level": 36,
             "item": null,
             "moves": [
                 "MOVE_AQUA_JET",
-                "MOVE_PURSUIT",
+                "MOVE_CRUNCH",
                 "MOVE_QUICK_ATTACK",
-                "MOVE_SWIFT"
+                "MOVE_SURF"
             ],
-            "iv_scale": 100,
+            "ability": "ABILITY_SWIFT_SWIM",
+            "nature": "NATURE_ADAMANT",
+            "ivnums": [31, 31, 31, 31, 31, 31],
+            "evnums": [0, 60, 0, 60, 0, 0],
+            "ball": "ITEM_POKE_BALL",
+            "iv_scale": 0,
             "ball_seal": 0
         },
         {
@@ -46,37 +56,52 @@
                 "MOVE_BRICK_BREAK",
                 "MOVE_AERIAL_ACE",
                 "MOVE_NIGHT_SLASH",
-                "MOVE_HORN_ATTACK"
+                "MOVE_BUG_BITE"
             ],
-            "iv_scale": 100,
+            "ability": "ABILITY_SWARM",
+            "nature": "NATURE_CAREFUL",
+            "ivnums": [31, 31, 31, 31, 31, 31],
+            "evnums": [0, 60, 0, 0, 0, 60],
+            "ball": "ITEM_NEST_BALL",
+            "iv_scale": 0,
             "ball_seal": 0
         },
         {
             "species": "SPECIES_RAPIDASH",
             "form": 0,
-            "level": 35,
+            "level": 37,
             "item": null,
             "moves": [
-                "MOVE_FIRE_SPIN",
+                "MOVE_BLAZE_KICK",
                 "MOVE_TAKE_DOWN",
-                "MOVE_STOMP",
-                "MOVE_TAIL_WHIP"
+                "MOVE_DOUBLE_KICK",
+                "MOVE_AGILITY"
             ],
-            "iv_scale": 100,
+            "ability": "ABILITY_FLAME_BODY",
+            "nature": "NATURE_JOLLY",
+            "ivnums": [31, 31, 31, 31, 31, 31],
+            "evnums": [0, 60, 0, 60, 0, 0],
+            "ball": "ITEM_POKE_BALL",
+            "iv_scale": 0,
             "ball_seal": 0
         },
         {
             "species": "SPECIES_TORTERRA",
             "form": 0,
-            "level": 38,
+            "level": 39,
             "item": null,
             "moves": [
                 "MOVE_RAZOR_LEAF",
                 "MOVE_BITE",
-                "MOVE_MEGA_DRAIN",
+                "MOVE_EARTHQUAKE",
                 "MOVE_LEECH_SEED"
             ],
-            "iv_scale": 100,
+            "ability": "ABILITY_OVERGROW",
+            "nature": "NATURE_ADAMANT",
+            "ivnums": [31, 31, 31, 31, 31, 31],
+            "evnums": [0, 80, 80, 0, 0, 0],
+            "ball": "ITEM_POKE_BALL",
+            "iv_scale": 0,
             "ball_seal": 10
         }
     ],

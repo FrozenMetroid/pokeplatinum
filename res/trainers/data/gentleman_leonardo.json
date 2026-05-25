@@ -5,7 +5,9 @@
         "ITEM_FULL_RESTORE"
     ],
     "ai_flags": [
-        "AI_FLAG_BASIC"
+        "AI_FLAG_BASIC",
+        "AI_FLAG_EVAL_ATTACK",
+        "AI_FLAG_EXPERT"
     ],
     "double_battle": false,
     "party": [
@@ -17,11 +19,11 @@
             "moves": [
                 "MOVE_MIMIC",
                 "MOVE_SING",
-                "MOVE_FURY_ATTACK",
+                "MOVE_PLUCK",
                 "MOVE_ROOST"
             ],
             "ability": "ABILITY_MIMESIS",
-            "iv_scale": 0,
+            "iv_scale": 80,
             "ball_seal": 0
         }
     ],

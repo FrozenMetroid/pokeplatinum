@@ -3,7 +3,8 @@
     "class": "TRAINER_CLASS_POKEFAN_FEMALE",
     "items": [],
     "ai_flags": [
-        "AI_FLAG_BASIC"
+        "AI_FLAG_BASIC",
+        "AI_FLAG_EVAL_ATTACK"
     ],
     "double_battle": false,
     "party": [
@@ -12,8 +13,13 @@
             "form": 0,
             "level": 26,
             "item": "ITEM_SITRUS_BERRY",
-            "moves": null,
-            "iv_scale": 0,
+            "moves": [
+                "MOVE_VOLT_TACKLE",
+                "MOVE_QUICK_ATTACK",
+                "MOVE_SWEET_KISS",
+                "MOVE_THUNDER_WAVE"
+            ],
+            "iv_scale": 80,
             "ball_seal": 0
         },
         {
@@ -21,8 +27,13 @@
             "form": 0,
             "level": 26,
             "item": "ITEM_SITRUS_BERRY",
-            "moves": null,
-            "iv_scale": 0,
+            "moves": [
+                "MOVE_CHARGE_BEAM",
+                "MOVE_THUNDER_WAVE",
+                "MOVE_SWIFT",
+                "MOVE_FLATTER"
+            ],
+            "iv_scale": 80,
             "ball_seal": 0
         }
     ],

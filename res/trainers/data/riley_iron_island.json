@@ -5,7 +5,8 @@
     "ai_flags": [
         "AI_FLAG_BASIC",
         "AI_FLAG_EVAL_ATTACK",
-        "AI_FLAG_EXPERT"
+        "AI_FLAG_EXPERT",
+        "AI_FLAG_TAG_STRATEGY"
     ],
     "double_battle": false,
     "party": [
@@ -15,12 +16,36 @@
             "level": 41,
             "item": null,
             "moves": [
-                "MOVE_METAL_CLAW",
+                "MOVE_IRON_HEAD",
                 "MOVE_FORCE_PALM",
                 "MOVE_QUICK_ATTACK",
                 "MOVE_BONE_RUSH"
             ],
-            "iv_scale": 30,
+            "ability": "ABILITY_INNER_FOCUS",
+            "ivnums": [31, 31, 31, 31, 31, 31],
+            "evnums": [0, 80, 0, 80, 0, 0],
+            "ball": "ITEM_LUXURY_BALL",
+            "nature": "NATURE_JOLLY",
+            "iv_scale": 0,
+            "ball_seal": 0
+        },
+        {
+            "species": "SPECIES_ABSOL",
+            "form": 0,
+            "level": 39,
+            "item": null,
+            "moves": [
+                "MOVE_SLASH",
+                "MOVE_SWORDS_DANCE",
+                "MOVE_ASSURANCE",
+                "MOVE_FUTURE_SIGHT"
+            ],
+            "ability": "ABILITY_SHARPNESS",
+            "ivnums": [31, 31, 31, 31, 31, 31],
+            "evnums": [0, 80, 0, 80, 0, 0],
+            "ball": "ITEM_POKE_BALL",
+            "nature": "NATURE_JOLLY",
+            "iv_scale": 0,
             "ball_seal": 0
         }
     ],

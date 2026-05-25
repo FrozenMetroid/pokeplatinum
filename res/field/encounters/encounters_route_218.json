@@ -2,31 +2,31 @@
     "land_rate": 20,
     "land_encounters": [
         {
-            "level": 28,
+            "level": 32,
             "species": "SPECIES_GASTRODON"
         },
         {
-            "level": 29,
+            "level": 33,
             "species": "SPECIES_FLOATZEL"
         },
         {
-            "level": 28,
+            "level": 32,
             "species": "SPECIES_CHATOT"
         },
         {
-            "level": 30,
+            "level": 34,
             "species": "SPECIES_CHATOT"
         },
         {
-            "level": 29,
+            "level": 33,
             "species": "SPECIES_MR_MIME"
         },
         {
-            "level": 30,
+            "level": 34,
             "species": "SPECIES_MR_MIME"
         },
         {
-            "level": 30,
+            "level": 34,
             "species": "SPECIES_FLOATZEL"
         },
         {
@@ -34,19 +34,19 @@
             "species": "SPECIES_MR_MIME"
         },
         {
-            "level": 28,
+            "level": 32,
             "species": "SPECIES_GLAMEOW"
         },
         {
-            "level": 30,
+            "level": 34,
             "species": "SPECIES_PURUGLY"
         },
         {
-            "level": 29,
+            "level": 33,
             "species": "SPECIES_GLAMEOW"
         },
         {
-            "level": 30,
+            "level": 34,
             "species": "SPECIES_PURUGLY"
         }
     ],
@@ -97,12 +97,12 @@
     "surf_rate": 10,
     "surf_encounters": [
         {
-            "level_max": 30,
+            "level_max": 34,
             "level_min": 20,
             "species": "SPECIES_TENTACOOL"
         },
         {
-            "level_max": 30,
+            "level_max": 34,
             "level_min": 20,
             "species": "SPECIES_SHELLOS"
         },
@@ -182,12 +182,12 @@
     "super_rod_encounters": [
         {
             "level_max": 40,
-            "level_min": 30,
+            "level_min": 34,
             "species": "SPECIES_GYARADOS"
         },
         {
             "level_max": 40,
-            "level_min": 30,
+            "level_min": 34,
             "species": "SPECIES_LUMINEON"
         },
         {

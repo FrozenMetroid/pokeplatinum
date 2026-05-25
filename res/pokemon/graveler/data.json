@@ -38,7 +38,6 @@
             [1, "MOVE_TACKLE"],
             [1, "MOVE_DEFENSE_CURL"],
             [1, "MOVE_MUD_SPORT"],
-            [1, "MOVE_ROCK_POLISH"],
             [4, "MOVE_MUD_SPORT"],
             [8, "MOVE_ROCK_THROW"],
             [12, "MOVE_FLAIL"],

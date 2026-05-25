@@ -14,8 +14,13 @@
             "form": 0,
             "level": 35,
             "item": null,
-            "moves": null,
-            "iv_scale": 50,
+            "moves": [
+                "MOVE_MUDDY_WATER",
+                "MOVE_MUD_BOMB",
+                "MOVE_YAWN",
+                "MOVE_SLAM"
+            ],
+            "iv_scale": 130,
             "ball_seal": 0
         },
         {
@@ -23,8 +28,13 @@
             "form": 0,
             "level": 36,
             "item": null,
-            "moves": null,
-            "iv_scale": 50,
+            "moves": [
+                "MOVE_CLOSE_COMBAT",
+                "MOVE_AERIAL_ACE",
+                "MOVE_QUICK_ATTACK",
+                "MOVE_ENDEAVOR"
+            ],
+            "iv_scale": 130,
             "ball_seal": 0
         },
         {
@@ -32,8 +42,13 @@
             "form": 0,
             "level": 38,
             "item": null,
-            "moves": null,
-            "iv_scale": 50,
+            "moves": [
+                "MOVE_DIG",
+                "MOVE_CRUNCH",
+                "MOVE_SLACK_OFF",
+                "MOVE_YAWN"
+            ],
+            "iv_scale": 130,
             "ball_seal": 0
         }
     ],

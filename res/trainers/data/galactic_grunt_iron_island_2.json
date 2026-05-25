@@ -10,28 +10,43 @@
         {
             "species": "SPECIES_GLAMEOW",
             "form": 0,
-            "level": 34,
+            "level": 35,
             "item": null,
-            "moves": null,
-            "iv_scale": 30,
+            "moves": [
+                "MOVE_CRUNCH",
+                "MOVE_FAKE_OUT",
+                "MOVE_SLASH",
+                "MOVE_CHARM"
+            ],
+            "iv_scale": 130,
             "ball_seal": 0
         },
         {
             "species": "SPECIES_STUNKY",
             "form": 0,
-            "level": 34,
+            "level": 35,
             "item": null,
-            "moves": null,
-            "iv_scale": 30,
+            "moves": [
+                "MOVE_POISON_TAIL",
+                "MOVE_FEINT_ATTACK",
+                "MOVE_SLASH",
+                "MOVE_SCREECH"
+            ],
+            "iv_scale": 130,
             "ball_seal": 0
         },
         {
             "species": "SPECIES_CROAGUNK",
             "form": 0,
-            "level": 34,
+            "level": 35,
             "item": null,
-            "moves": null,
-            "iv_scale": 30,
+            "moves": [
+                "MOVE_POISON_FANG",
+                "MOVE_FORCE_PALM",
+                "MOVE_PURSUIT",
+                "MOVE_FAKE_OUT"
+            ],
+            "iv_scale": 130,
             "ball_seal": 0
         }
     ],

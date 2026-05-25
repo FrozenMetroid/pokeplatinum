@@ -3,35 +3,51 @@
     "class": "TRAINER_CLASS_GALACTIC_GRUNT_MALE",
     "items": [],
     "ai_flags": [
-        "AI_FLAG_BASIC"
+        "AI_FLAG_BASIC",
+        "AI_FLAG_EVAL_ATTACK"
     ],
     "double_battle": false,
     "party": [
         {
-            "species": "SPECIES_ZUBAT",
+            "species": "SPECIES_ARIADOS",
             "form": 0,
-            "level": 34,
+            "level": 35,
             "item": null,
-            "moves": null,
-            "iv_scale": 30,
+            "moves": [
+                "MOVE_CROSS_POISON",
+                "MOVE_BUG_BITE",
+                "MOVE_PIN_MISSILE",
+                "MOVE_SUCKER_PUNCH"
+            ],
+            "iv_scale": 130,
             "ball_seal": 0
         },
         {
             "species": "SPECIES_HOUNDOUR",
             "form": 0,
-            "level": 34,
+            "level": 35,
             "item": null,
-            "moves": null,
-            "iv_scale": 30,
+            "moves": [
+                "MOVE_FIRE_FANG",
+                "MOVE_CRUNCH",
+                "MOVE_WILL_O_WISP",
+                "MOVE_FIRE_SPIN"
+            ],
+            "iv_scale": 130,
             "ball_seal": 0
         },
         {
             "species": "SPECIES_GOLBAT",
             "form": 0,
-            "level": 34,
+            "level": 35,
             "item": null,
-            "moves": null,
-            "iv_scale": 30,
+            "moves": [
+                "MOVE_CRUNCH",
+                "MOVE_POISON_FANG",
+                "MOVE_AERIAL_ACE",
+                "MOVE_CONFUSE_RAY"
+            ],
+            "iv_scale": 130,
             "ball_seal": 0
         }
     ],

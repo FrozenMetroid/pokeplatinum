@@ -6,7 +6,8 @@
         "ITEM_SUPER_POTION"
     ],
     "ai_flags": [
-        "AI_FLAG_BASIC"
+        "AI_FLAG_BASIC",
+        "AI_FLAG_EVAL_ATTACK"
     ],
     "double_battle": false,
     "party": [
@@ -15,17 +16,27 @@
             "form": 0,
             "level": 19,
             "item": "ITEM_SITRUS_BERRY",
-            "moves": null,
-            "iv_scale": 0,
+            "moves": [
+                "MOVE_SPARK",
+                "MOVE_THUNDER_WAVE",
+                "MOVE_SWEET_KISS",
+                "MOVE_QUICK_ATTACK"
+            ],
+            "iv_scale": 60,
             "ball_seal": 0
         },
         {
-            "species": "SPECIES_PICHU",
+            "species": "SPECIES_PACHIRISU",
             "form": 0,
-            "level": 19,
+            "level": 22,
             "item": "ITEM_SITRUS_BERRY",
-            "moves": null,
-            "iv_scale": 0,
+            "moves": [
+                "MOVE_THUNDER_SHOCK",
+                "MOVE_QUICK_ATTACK",
+                "MOVE_SWIFT",
+                "MOVE_CHARM"
+            ],
+            "iv_scale": 60,
             "ball_seal": 0
         },
         {
@@ -33,8 +44,13 @@
             "form": 0,
             "level": 22,
             "item": "ITEM_SITRUS_BERRY",
-            "moves": null,
-            "iv_scale": 0,
+            "moves": [
+                "MOVE_SPARK",
+                "MOVE_THUNDER_WAVE",
+                "MOVE_SLAM",
+                "MOVE_QUICK_ATTACK"
+            ],
+            "iv_scale": 60,
             "ball_seal": 7
         }
     ],
