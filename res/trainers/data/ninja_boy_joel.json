@@ -3,44 +3,38 @@
     "class": "TRAINER_CLASS_NINJA_BOY",
     "items": [],
     "ai_flags": [
-        "AI_FLAG_BASIC"
+        "AI_FLAG_BASIC",
+        "AI_FLAG_EVAL_ATTACK"
     ],
     "double_battle": false,
     "party": [
         {
-            "species": "SPECIES_ZUBAT",
+            "species": "SPECIES_DUSTOX",
             "form": 0,
-            "level": 29,
+            "level": 34,
             "item": null,
-            "moves": null,
-            "iv_scale": 0,
+            "moves": [
+                "MOVE_SILVER_WIND",
+                "MOVE_PSYBEAM",
+                "MOVE_SLUDGE",
+                "MOVE_MOONLIGHT"
+            ],
+            "iv_scale": 120,
             "ball_seal": 0
         },
         {
-            "species": "SPECIES_SKORUPI",
+            "species": "SPECIES_VESPIQUEN",
             "form": 0,
-            "level": 29,
+            "level": 35,
             "item": null,
-            "moves": null,
-            "iv_scale": 0,
-            "ball_seal": 0
-        },
-        {
-            "species": "SPECIES_STUNKY",
-            "form": 0,
-            "level": 29,
-            "item": null,
-            "moves": null,
-            "iv_scale": 0,
-            "ball_seal": 0
-        },
-        {
-            "species": "SPECIES_GOLBAT",
-            "form": 0,
-            "level": 29,
-            "item": null,
-            "moves": null,
-            "iv_scale": 0,
+            "moves": [
+                "MOVE_POISON_TAIL",
+                "MOVE_ATTACK_ORDER",
+                "MOVE_HEAL_ORDER",
+                "MOVE_AIR_CUTTER"
+            ],
+            "ability": "ABILITY_PRESSURE",
+            "iv_scale": 120,
             "ball_seal": 0
         }
     ],

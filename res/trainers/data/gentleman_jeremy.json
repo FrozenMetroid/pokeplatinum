@@ -22,7 +22,8 @@
                 "MOVE_TAUNT",
                 "MOVE_MIMIC"
             ],
-            "iv_scale": 0,
+            "ability": "ABILITY_MIMESIS",
+            "iv_scale": 110,
             "ball_seal": 22
         }
     ],

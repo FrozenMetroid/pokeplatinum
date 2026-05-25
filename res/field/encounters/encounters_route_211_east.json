@@ -2,27 +2,27 @@
     "land_rate": 20,
     "land_encounters": [
         {
-            "level": 27,
+            "level": 30,
             "species": "SPECIES_MEDITITE"
         },
         {
-            "level": 28,
+            "level": 31,
             "species": "SPECIES_GRAVELER"
         },
         {
-            "level": 28,
+            "level": 31,
             "species": "SPECIES_MEDITITE"
         },
         {
-            "level": 29,
+            "level": 32,
             "species": "SPECIES_MEDITITE"
         },
         {
-            "level": 28,
+            "level": 31,
             "species": "SPECIES_CHINGLING"
         },
         {
-            "level": 29,
+            "level": 32,
             "species": "SPECIES_MACHOKE"
         },
         {
@@ -30,23 +30,23 @@
             "species": "SPECIES_CHINGLING"
         },
         {
-            "level": 29,
+            "level": 32,
             "species": "SPECIES_BRONZOR"
         },
         {
             "level": 30,
-            "species": "SPECIES_MACHOKE"
+            "species": "SPECIES_HARIYAMA"
         },
         {
-            "level": 29,
+            "level": 32,
             "species": "SPECIES_BRONZOR"
         },
         {
             "level": 30,
-            "species": "SPECIES_MACHOKE"
+            "species": "SPECIES_HARIYAMA"
         },
         {
-            "level": 29,
+            "level": 32,
             "species": "SPECIES_BRONZOR"
         }
     ],
@@ -59,7 +59,7 @@
         "SPECIES_MEDITITE"
     ],
     "night": [
-        "SPECIES_ZUBAT",
+        "SPECIES_GOLBAT",
         "SPECIES_NOCTOWL"
     ],
     "radar": [

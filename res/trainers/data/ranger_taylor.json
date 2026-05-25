@@ -12,19 +12,30 @@
         {
             "species": "SPECIES_CARNIVINE",
             "form": 0,
-            "level": 28,
+            "level": 31,
             "item": null,
-            "moves": null,
-            "iv_scale": 50,
+            "moves": [
+                "MOVE_BITE",
+                "MOVE_POISON_FANG",
+                "MOVE_RAZOR_LEAF",
+                "MOVE_BIND"
+            ],
+            "ability": "ABILITY_STRONG_JAW",
+            "iv_scale": 110,
             "ball_seal": 0
         },
         {
-            "species": "SPECIES_LUXIO",
+            "species": "SPECIES_ELECTABUZZ",
             "form": 0,
             "level": 30,
             "item": null,
-            "moves": null,
-            "iv_scale": 50,
+            "moves": [
+                "MOVE_SPARK",
+                "MOVE_SWIFT",
+                "MOVE_LOW_KICK",
+                "MOVE_QUICK_ATTACK"
+            ],
+            "iv_scale": 110,
             "ball_seal": 0
         }
     ],

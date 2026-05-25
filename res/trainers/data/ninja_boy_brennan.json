@@ -3,26 +3,37 @@
     "class": "TRAINER_CLASS_NINJA_BOY",
     "items": [],
     "ai_flags": [
-        "AI_FLAG_BASIC"
+        "AI_FLAG_BASIC",
+        "AI_FLAG_EVAL_ATTACK"
     ],
     "double_battle": false,
     "party": [
         {
-            "species": "SPECIES_ZUBAT",
+            "species": "SPECIES_GOLBAT",
             "form": 0,
-            "level": 30,
+            "level": 32,
             "item": null,
-            "moves": null,
-            "iv_scale": 0,
+            "moves": [
+                "MOVE_CRUNCH",
+                "MOVE_WING_ATTACK",
+                "MOVE_POISON_FANG",
+                "MOVE_CONFUSE_RAY"
+            ],
+            "iv_scale": 120,
             "ball_seal": 0
         },
         {
             "species": "SPECIES_SKORUPI",
             "form": 0,
-            "level": 32,
+            "level": 33,
             "item": null,
-            "moves": null,
-            "iv_scale": 0,
+            "moves": [
+                "MOVE_X_SCISSOR",
+                "MOVE_POISON_TAIL",
+                "MOVE_KNOCK_OFF",
+                "MOVE_TOXIC_SPIKES"
+            ],
+            "iv_scale": 120,
             "ball_seal": 0
         }
     ],

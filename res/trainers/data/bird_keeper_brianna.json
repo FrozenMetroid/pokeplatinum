@@ -12,17 +12,31 @@
             "form": 0,
             "level": 31,
             "item": null,
-            "moves": null,
-            "iv_scale": 50,
+            "moves": [
+                "MOVE_AIR_CUTTER",
+                "MOVE_ROOST",
+                "MOVE_UPROAR",
+                "MOVE_REFLECT"
+            ],
+            "ball": "ITEM_NEST_BALL",
+            "ability": "ABILITY_PIERCING_EYE",
+            "iv_scale": 120,
             "ball_seal": 0
         },
         {
             "species": "SPECIES_NOCTOWL",
             "form": 0,
-            "level": 33,
+            "level": 36,
             "item": null,
-            "moves": null,
-            "iv_scale": 50,
+            "moves": [
+                "MOVE_AIR_SLASH",
+                "MOVE_HYPNOSIS",
+                "MOVE_DREAM_EATER",
+                "MOVE_UPROAR"
+            ],
+            "ball": "ITEM_NEST_BALL",
+            "ability": "ABILITY_PIERCING_EYE",
+            "iv_scale": 120,
             "ball_seal": 0
         }
     ],

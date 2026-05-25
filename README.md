@@ -58,6 +58,7 @@ Credits:
     - Electrike (Route 212)
     - Growlithe (Route 204)
     - Horsea (Route 219)
+    - Koffing (Fuego Ironworks)
     - Ledyba (Routes 203 and northern 205 during the morning)
     - Makuhita (Ravaged Path, Victory Road)
     - Mankey (Uncommon Honey Trees, northern Route 210)
@@ -152,11 +153,10 @@ All Pokémon have received changes to any combination of their learnsets, Abilit
 - Moves such as Leech Life and Hi Jump Kick have had their BPs increased to match modern standards
     - Some BP increases are custom, such as Knock Off (now 30BP instead of 65BP), and Fire Spin (50BP instead of 35BP), and some are not changed at all, such as Surf and Thunderbolt
 - PP has been increased when applicable for modernization, except the nerf to health-restoring moves' PP
-    - Ancient Power and Silver Wind's PPs have been increased from 5 to 15
+    - Ancient Power, Ominous Wind, and Silver Wind's PPs have been increased from 5 to 15
     Giga Drain's PP has been increased from 10 to 15
 - Defog removes hazards from both sides of the field
 - Growth raises Special Attack and Attack by one stage; two stages under harsh sunlight
-- Air Slash: 85BP, 100% accurate, 10% flinch
 - Moves that have been updated to be able to be reflected by Magic Coat and Magic Bounce:
     - Disable
     - Defog
@@ -176,6 +176,7 @@ All Pokémon have received changes to any combination of their learnsets, Abilit
 - Eruption is now a physical move to benefit Typhlosion's move to a physical attacker, as well as for Groudon's Eruption to feel like a counterpart to Kyogre's Water Spout
     - This barely affects any other Pokémon that can learn the move as they all have comparable Attack stats to Special Attack
 - Tail Glow raises Special Attack by 3 stages
+- Air Slash: 75BP -> 85BP, 100% accurate, 30% flinch -> 10% flinch
 - Needle Arm: 60BP -> 90BP
 - Zen Headbutt: 90% accuracy -> 100%
 - Double Slap, Fury Attack, Fury Swipes: 15BP -> 20BP, 85% accuracy -> 90%
@@ -226,6 +227,8 @@ All Pokémon have received changes to any combination of their learnsets, Abilit
 
 ### Miscellaneous Battle System Changes:
 
+- Trainers' Pokémon with forms have the correct stats
+    - Previously, Pokémon with forms that have different stats, such as Wormadam, always used the stats of the base form
 - HP bar is faster now (!!!)
 - The data structure for Trainers has been completely overhauled to be like how it is in HeartGold-Engine -- now Trainers' Pokémon can have custom Poké Balls, Abilities, EVs, IVs, etc. (!!!)
 - Ice-types receive a 50% Defense increase when under the effects of Hail (Hail has not been modernized to Snow)

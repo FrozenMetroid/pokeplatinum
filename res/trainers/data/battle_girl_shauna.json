@@ -1,38 +1,40 @@
 {
-    "name": "Sean",
-    "class": "TRAINER_CLASS_BLACK_BELT",
+    "name": "Shauna",
+    "class": "TRAINER_CLASS_BATTLE_GIRL",
     "items": [],
     "ai_flags": [
         "AI_FLAG_BASIC",
+        "AI_FLAG_EVAL_ATTACK",
         "AI_FLAG_PRIORITIZE_EXTREMES"
     ],
     "double_battle": false,
     "party": [
         {
-            "species": "SPECIES_CROAGUNK",
+            "species": "SPECIES_TOXICROAK",
             "form": 0,
-            "level": 31,
+            "level": 36,
             "item": null,
-            "moves": null,
-            "iv_scale": 30,
-            "ball_seal": 0
-        },
-        {
-            "species": "SPECIES_MEDITITE",
-            "form": 0,
-            "level": 31,
-            "item": null,
-            "moves": null,
-            "iv_scale": 30,
+            "moves": [
+                "MOVE_DRAIN_PUNCH",
+                "MOVE_SUCKER_PUNCH",
+                "MOVE_POISON_FANG",
+                "MOVE_SWAGGER"
+            ],
+            "iv_scale": 120,
             "ball_seal": 0
         },
         {
             "species": "SPECIES_MACHOKE",
             "form": 0,
-            "level": 31,
+            "level": 34,
             "item": null,
-            "moves": null,
-            "iv_scale": 30,
+            "moves": [
+                "MOVE_SEISMIC_TOSS",
+                "MOVE_BRICK_BREAK",
+                "MOVE_FORESIGHT",
+                "MOVE_LEER"
+            ],
+            "iv_scale": 120,
             "ball_seal": 0
         }
     ],

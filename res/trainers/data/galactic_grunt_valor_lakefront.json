@@ -8,12 +8,18 @@
     "double_battle": false,
     "party": [
         {
-            "species": "SPECIES_CROAGUNK",
+            "species": "SPECIES_GLIGAR",
             "form": 0,
-            "level": 31,
+            "level": 34,
             "item": null,
-            "moves": null,
-            "iv_scale": 30,
+            "moves": [
+                "MOVE_AERIAL_ACE",
+                "MOVE_MAGNITUDE",
+                "MOVE_FURY_CUTTER",
+                "MOVE_SWORDS_DANCE"
+            ],
+            "ball": "ITEM_GREAT_BALL",
+            "iv_scale": 120,
             "ball_seal": 0
         }
     ],

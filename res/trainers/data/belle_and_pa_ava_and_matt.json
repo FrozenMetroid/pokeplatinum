@@ -3,26 +3,40 @@
     "class": "TRAINER_CLASS_BELLE_AND_PA",
     "items": [],
     "ai_flags": [
-        "AI_FLAG_BASIC"
+        "AI_FLAG_BASIC",
+        "AI_FLAG_EVAL_ATTACK",
+        "AI_FLAG_EXPERT"
     ],
     "double_battle": true,
     "party": [
         {
-            "species": "SPECIES_PONYTA",
+            "species": "SPECIES_MILTANK",
             "form": 0,
             "level": 24,
             "item": null,
-            "moves": null,
-            "iv_scale": 0,
+            "moves": [
+                "MOVE_HEADBUTT",
+                "MOVE_MILK_DRINK",
+                "MOVE_DEFENSE_CURL",
+                "MOVE_ROLLOUT"
+            ],
+            "ability": "ABILITY_SCRAPPY",
+            "iv_scale": 60,
             "ball_seal": 0
         },
         {
-            "species": "SPECIES_RAPIDASH",
+            "species": "SPECIES_TAUROS",
             "form": 0,
             "level": 24,
             "item": null,
-            "moves": null,
-            "iv_scale": 0,
+            "moves": [
+                "MOVE_PAYBACK",
+                "MOVE_HORN_ATTACK",
+                "MOVE_SCARY_FACE",
+                "MOVE_TAIL_WHIP"
+            ],
+            "ability": "ABILITY_ANGER_POINT",
+            "iv_scale": 60,
             "ball_seal": 0
         }
     ],

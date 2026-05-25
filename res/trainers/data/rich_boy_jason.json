@@ -5,17 +5,24 @@
         "ITEM_FULL_RESTORE"
     ],
     "ai_flags": [
-        "AI_FLAG_BASIC"
+        "AI_FLAG_BASIC",
+        "AI_FLAG_EVAL_ATTACK",
+        "AI_FLAG_TAG_STRATEGY"
     ],
     "double_battle": false,
     "party": [
         {
             "species": "SPECIES_PRINPLUP",
             "form": 0,
-            "level": 27,
+            "level": 32,
             "item": null,
-            "moves": null,
-            "iv_scale": 0,
+            "moves": [
+                "MOVE_PLUCK",
+                "MOVE_AQUA_JET",
+                "MOVE_FURY_ATTACK",
+                "MOVE_ICY_WIND"
+            ],
+            "iv_scale": 110,
             "ball_seal": 23
         }
     ],

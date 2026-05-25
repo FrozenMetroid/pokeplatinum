@@ -3,26 +3,37 @@
     "class": "TRAINER_CLASS_PARASOL_LADY",
     "items": [],
     "ai_flags": [
-        "AI_FLAG_BASIC"
+        "AI_FLAG_BASIC",
+        "AI_FLAG_EVAL_ATTACK"
     ],
     "double_battle": false,
     "party": [
         {
-            "species": "SPECIES_GOLDEEN",
+            "species": "SPECIES_WOOPER",
             "form": 0,
-            "level": 27,
+            "level": 29,
             "item": null,
-            "moves": null,
-            "iv_scale": 0,
+            "moves": [
+                "MOVE_MUD_SHOT",
+                "MOVE_WATER_PULSE",
+                "MOVE_SLAM",
+                "MOVE_YAWN"
+            ],
+            "iv_scale": 110,
             "ball_seal": 0
         },
         {
             "species": "SPECIES_BIBAREL",
             "form": 0,
-            "level": 27,
+            "level": 30,
             "item": null,
-            "moves": null,
-            "iv_scale": 0,
+            "moves": [
+                "MOVE_HYPER_FANG",
+                "MOVE_AQUA_JET",
+                "MOVE_AMNESIA",
+                "MOVE_ROLLOUT"
+            ],
+            "iv_scale": 110,
             "ball_seal": 0
         }
     ],

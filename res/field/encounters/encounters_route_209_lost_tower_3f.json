@@ -23,31 +23,31 @@
         },
         {
             "level": 18,
-            "species": "SPECIES_GASTLY"
-        },
-        {
-            "level": 20,
             "species": "SPECIES_ZUBAT"
         },
         {
-            "level": 21,
-            "species": "SPECIES_GASTLY"
+            "level": 20,
+            "species": "SPECIES_MISDREAVUS"
         },
         {
             "level": 21,
-            "species": "SPECIES_GASTLY"
+            "species": "SPECIES_MISDREAVUS"
         },
         {
             "level": 21,
-            "species": "SPECIES_GASTLY"
+            "species": "SPECIES_MURKROW"
+        },
+        {
+            "level": 20,
+            "species": "SPECIES_MURKROW"
         },
         {
             "level": 21,
-            "species": "SPECIES_GASTLY"
+            "species": "SPECIES_MURKROW"
         },
         {
-            "level": 21,
-            "species": "SPECIES_GOLBAT"
+            "level": 20,
+            "species": "SPECIES_MURKROW"
         }
     ],
     "swarms": [

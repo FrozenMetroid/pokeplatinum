@@ -3,7 +3,9 @@
     "class": "TRAINER_CLASS_DOUBLE_TEAM",
     "items": [],
     "ai_flags": [
-        "AI_FLAG_BASIC"
+        "AI_FLAG_BASIC",
+        "AI_FLAG_EVAL_ATTACK",
+        "AI_FLAG_EXPERT"
     ],
     "double_battle": true,
     "party": [
@@ -12,8 +14,14 @@
             "form": 0,
             "level": 36,
             "item": null,
-            "moves": null,
-            "iv_scale": 50,
+            "moves": [
+                "MOVE_ICE_FANG",
+                "MOVE_AQUA_TAIL",
+                "MOVE_BITE",
+                "MOVE_THRASH"
+            ],
+            "ability": "ABILITY_INTIMIDATE",
+            "iv_scale": 120,
             "ball_seal": 0
         },
         {
@@ -21,8 +29,14 @@
             "form": 0,
             "level": 36,
             "item": null,
-            "moves": null,
-            "iv_scale": 50,
+            "moves": [
+                "MOVE_QUICK_ATTACK",
+                "MOVE_THUNDERBOLT",
+                "MOVE_THUNDER_WAVE",
+                "MOVE_HELPING_HAND"
+            ],
+            "ability": "ABILITY_LIGHTNING_ROD",
+            "iv_scale": 120,
             "ball_seal": 0
         }
     ],

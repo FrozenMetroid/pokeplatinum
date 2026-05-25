@@ -237,7 +237,7 @@ const VsSeekerRematchData gVsSeekerRematchData[] = {
     NoUniqueRematches(TRAINER_JOGGER_RAUL),
     NoUniqueRematches(TRAINER_BLACK_BELT_KYLE),
     NoUniqueRematches(TRAINER_BLACK_BELT_ADAM),
-    NoUniqueRematches(TRAINER_BLACK_BELT_SEAN),
+    NoUniqueRematches(TRAINER_BATTLE_GIRL_SHAUNA),
     NoUniqueRematches(TRAINER_DUMMY_126),
     NoUniqueRematches(TRAINER_BLACK_BELT_GREGORY),
     NoUniqueRematches(TRAINER_BLACK_BELT_DEREK),

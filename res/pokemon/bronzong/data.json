@@ -42,6 +42,7 @@
             [1, "MOVE_CONFUSION"],
             [1, "MOVE_HYPNOSIS"],
             [1, "MOVE_IMPRISON"],
+            [1, "MOVE_MIRROR_SHOT"],
             [7, "MOVE_HYPNOSIS"],
             [12, "MOVE_IMPRISON"],
             [14, "MOVE_CONFUSE_RAY"],

@@ -3,17 +3,24 @@
     "class": "TRAINER_CLASS_BIRD_KEEPER",
     "items": [],
     "ai_flags": [
-        "AI_FLAG_BASIC"
+        "AI_FLAG_BASIC",
+        "AI_FLAG_EVAL_ATTACK"
     ],
     "double_battle": false,
     "party": [
         {
-            "species": "SPECIES_NOCTOWL",
+            "species": "SPECIES_ALTARIA",
             "form": 0,
-            "level": 34,
+            "level": 36,
             "item": null,
-            "moves": null,
-            "iv_scale": 50,
+            "moves": [
+                "MOVE_DRAGON_BREATH",
+                "MOVE_AIR_SLASH",
+                "MOVE_SING",
+                "MOVE_FURY_ATTACK"
+            ],
+            "ability": "ABILITY_NATURAL_CURE",
+            "iv_scale": 120,
             "ball_seal": 0
         }
     ],
@@ -21,8 +28,8 @@
         {
             "type": "TRMSG_PRE_BATTLE",
             "en_US": [
-                "I go everywhere with my NOCTOWL.\n",
-                "We’re gonna show you owl best! Ha!\r"
+                "I go everywhere with my Altaria.\n",
+                "We’re gonna show you our best!\r"
             ]
         },
         {
@@ -36,13 +43,13 @@
             "type": "TRMSG_POST_BATTLE",
             "en_US": [
                 "Even on cold days, just being with\n",
-                "my NOCTOWL keeps me warm!\n"
+                "my Altaria keeps me warm!\n"
             ]
         },
         {
             "type": "TRMSG_REMATCH",
             "en_US": [
-                "I curled up inside my NOCTOWL’s wings\n",
+                "I curled up inside my Altaria’s wings\n",
                 "and waited for you to return!\r"
             ]
         }

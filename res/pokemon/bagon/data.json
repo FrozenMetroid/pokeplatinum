@@ -37,18 +37,18 @@
         "by_level": [
             [1, "MOVE_RAGE"],
             [1, "MOVE_BITE"],
+            [5, "MOVE_LEER"],
             [7, "MOVE_EMBER"],
-            [10, "MOVE_LEER"],
+            [11, "MOVE_DRAGON_RAGE"],
             [14, "MOVE_HEADBUTT"],
-            [18, "MOVE_DRAGON_RAGE"],
-            [25, "MOVE_SCARY_FACE"],
-            [31, "MOVE_FIRE_FANG"],
-            [35, "MOVE_ZEN_HEADBUTT"],
-            [40, "MOVE_DRAGON_CLAW"],
-            [46, "MOVE_CRUNCH"],
-            [50, "MOVE_DRAGON_RUSH"],
-            [55, "MOVE_DOUBLE_EDGE"],
-            [60, "MOVE_OUTRAGE"]
+            [17, "MOVE_SCARY_FACE"],
+            [21, "MOVE_FIRE_FANG"],
+            [24, "MOVE_ZEN_HEADBUTT"],
+            [27, "MOVE_DRAGON_CLAW"],
+            [31, "MOVE_CRUNCH"],
+            [36, "MOVE_DRAGON_RUSH"],
+            [41, "MOVE_DOUBLE_EDGE"],
+            [50, "MOVE_OUTRAGE"]
         ],
         "by_tm": [
             "TM02",

@@ -9,12 +9,18 @@
     "double_battle": false,
     "party": [
         {
-            "species": "SPECIES_MACHOKE",
+            "species": "SPECIES_MEDICHAM",
             "form": 0,
-            "level": 34,
+            "level": 35,
             "item": null,
-            "moves": null,
-            "iv_scale": 30,
+            "moves": [
+                "MOVE_PSYCHIC",
+                "MOVE_BRICK_BREAK",
+                "MOVE_CALM_MIND",
+                "MOVE_HIDDEN_POWER"
+            ],
+            "ability": "ABILITY_PURE_POWER",
+            "iv_scale": 120,
             "ball_seal": 0
         }
     ],

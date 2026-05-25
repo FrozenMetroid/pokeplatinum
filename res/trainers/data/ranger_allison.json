@@ -14,17 +14,28 @@
             "form": 0,
             "level": 29,
             "item": null,
-            "moves": null,
-            "iv_scale": 50,
+            "moves": [
+                "MOVE_BUBBLE_BEAM",
+                "MOVE_AQUA_JET",
+                "MOVE_BODY_SLAM",
+                "MOVE_ROLLOUT"
+            ],
+            "ability": "ABILITY_PURE_POWER",
+            "iv_scale": 110,
             "ball_seal": 0
         },
         {
             "species": "SPECIES_LEAFEON",
             "form": 0,
-            "level": 29,
+            "level": 31,
             "item": null,
-            "moves": null,
-            "iv_scale": 50,
+            "moves": [
+                "MOVE_RAZOR_LEAF",
+                "MOVE_DIG",
+                "MOVE_QUICK_ATTACK",
+                "MOVE_BITE"
+            ],
+            "iv_scale": 110,
             "ball_seal": 0
         }
     ],

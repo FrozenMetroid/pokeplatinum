@@ -15,6 +15,7 @@
             "level": 45,
             "item": null,
             "moves": null,
+            "ability": "ABILITY_MIMESIS",
             "iv_scale": 0,
             "ball_seal": 22
         }

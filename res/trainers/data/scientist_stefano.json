@@ -11,17 +11,31 @@
     "double_battle": false,
     "party": [
         {
-            "species": "SPECIES_KADABRA",
+            "species": "SPECIES_RALTS",
             "form": 0,
-            "level": 30,
+            "level": 26,
+            "item": null,
+            "moves": [
+                "MOVE_PSYCHIC",
+                "MOVE_MAGICAL_LEAF",
+                "MOVE_DOUBLE_TEAM",
+                "MOVE_IMPRISON"
+            ],
+            "iv_scale": 110,
+            "ball_seal": 0
+        },
+        {
+            "species": "SPECIES_PORYGON2",
+            "form": 0,
+            "level": 32,
             "item": null,
             "moves": [
                 "MOVE_PSYBEAM",
-                "MOVE_DISABLE",
-                "MOVE_KINESIS",
-                "MOVE_ICE_PUNCH"
+                "MOVE_SHOCK_WAVE",
+                "MOVE_TRI_ATTACK",
+                "MOVE_RECOVER"
             ],
-            "iv_scale": 0,
+            "iv_scale": 110,
             "ball_seal": 0
         }
     ],

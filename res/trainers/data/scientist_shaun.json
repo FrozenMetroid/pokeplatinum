@@ -6,6 +6,7 @@
     ],
     "ai_flags": [
         "AI_FLAG_BASIC",
+        "AI_FLAG_EVAL_ATTACK",
         "AI_FLAG_EXPERT"
     ],
     "double_battle": false,
@@ -13,27 +14,29 @@
         {
             "species": "SPECIES_MAGNEMITE",
             "form": 0,
-            "level": 30,
+            "level": 29,
             "item": null,
             "moves": [
-                "MOVE_SPARK",
-                "MOVE_MAGNET_BOMB"
+                "MOVE_CHARGE_BEAM",
+                "MOVE_MIRROR_SHOT",
+                "MOVE_SUPERSONIC",
+                "MOVE_SONIC_BOOM"
             ],
-            "iv_scale": 0,
+            "iv_scale": 110,
             "ball_seal": 0
         },
         {
             "species": "SPECIES_KADABRA",
             "form": 0,
-            "level": 26,
+            "level": 31,
             "item": null,
             "moves": [
                 "MOVE_PSYBEAM",
                 "MOVE_DISABLE",
                 "MOVE_KINESIS",
-                "MOVE_THUNDER_PUNCH"
+                "MOVE_HIDDEN_POWER"
             ],
-            "iv_scale": 0,
+            "iv_scale": 110,
             "ball_seal": 0
         }
     ],

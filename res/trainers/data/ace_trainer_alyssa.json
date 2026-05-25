@@ -20,7 +20,7 @@
                 "MOVE_SHOCK_WAVE",
                 "MOVE_AERIAL_ACE"
             ],
-            "iv_scale": 50,
+            "iv_scale": 120,
             "ball_seal": 0
         },
         {
@@ -34,7 +34,7 @@
                 "MOVE_ASSURANCE",
                 "MOVE_LIGHT_SCREEN"
             ],
-            "iv_scale": 50,
+            "iv_scale": 120,
             "ball_seal": 0
         },
         {
@@ -43,11 +43,12 @@
             "level": 33,
             "item": null,
             "moves": [
-                "MOVE_MEGA_DRAIN",
+                "MOVE_RAZOR_LEAF",
                 "MOVE_BITE",
-                "MOVE_CURSE"
+                "MOVE_CURSE",
+                "MOVE_TAKE_DOWN"
             ],
-            "iv_scale": 50,
+            "iv_scale": 120,
             "ball_seal": 0
         }
     ],

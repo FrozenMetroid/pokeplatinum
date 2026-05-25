@@ -14,8 +14,27 @@
             "form": 0,
             "level": 34,
             "item": null,
-            "moves": null,
-            "iv_scale": 50,
+            "moves": [
+                "MOVE_DRAGON_CLAW",
+                "MOVE_DIG",
+                "MOVE_SLASH",
+                "MOVE_BITE"
+            ],
+            "iv_scale": 120,
+            "ball_seal": 17
+        },
+        {
+            "species": "SPECIES_BAGON",
+            "form": 0,
+            "level": 34,
+            "item": null,
+            "moves": [
+                "MOVE_DRAGON_CLAW",
+                "MOVE_FIRE_FANG",
+                "MOVE_HEADBUTT",
+                "MOVE_ZEN_HEADBUTT"
+            ],
+            "iv_scale": 120,
             "ball_seal": 17
         }
     ],

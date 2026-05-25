@@ -12,33 +12,33 @@
         {
             "species": "SPECIES_SCYTHER",
             "form": 0,
-            "level": 32,
+            "level": 34,
             "item": null,
             "moves": [
                 "MOVE_SLASH",
                 "MOVE_WING_ATTACK",
                 "MOVE_PURSUIT",
-                "MOVE_QUICK_ATTACK"
+                "MOVE_BUG_BITE"
             ],
-            "iv_scale": 50,
+            "iv_scale": 110,
             "ball_seal": 0
         },
         {
             "species": "SPECIES_PROBOPASS",
             "form": 0,
-            "level": 31,
+            "level": 33,
             "item": null,
             "moves": [
                 "MOVE_THUNDER_WAVE",
                 "MOVE_ROCK_SLIDE",
                 "MOVE_MAGNET_BOMB",
-                "MOVE_IRON_DEFENSE"
+                "MOVE_THUNDERBOLT"
             ],
-            "iv_scale": 50,
+            "iv_scale": 110,
             "ball_seal": 0
         },
         {
-            "species": "SPECIES_LUXIO",
+            "species": "SPECIES_LUXRAY",
             "form": 0,
             "level": 34,
             "item": null,
@@ -48,7 +48,7 @@
                 "MOVE_SWAGGER",
                 "MOVE_DOUBLE_TEAM"
             ],
-            "iv_scale": 50,
+            "iv_scale": 110,
             "ball_seal": 0
         }
     ],

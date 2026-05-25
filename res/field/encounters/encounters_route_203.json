@@ -7,7 +7,7 @@
         },
         {
             "level": 4,
-            "species": "SPECIES_LEDYBA"
+            "species": "SPECIES_BIDOOF"
         },
         {
             "level": 5,
@@ -56,7 +56,7 @@
     ],
     "day": [
         "SPECIES_STARLY",
-        "SPECIES_BIDOOF"
+        "SPECIES_LEDYBA"
     ],
     "night": [
         "SPECIES_KRICKETOT",

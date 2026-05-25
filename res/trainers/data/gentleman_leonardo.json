@@ -20,6 +20,7 @@
                 "MOVE_FURY_ATTACK",
                 "MOVE_ROOST"
             ],
+            "ability": "ABILITY_MIMESIS",
             "iv_scale": 0,
             "ball_seal": 0
         }

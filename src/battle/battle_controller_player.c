@@ -1883,7 +1883,7 @@ static void BattleControllerPlayer_TurnEnd(BattleSystem *battleSys, BattleContex
                     LOAD_SUBSEQ(subscript_cannot_heal);
                     startSubscript = TRUE;
                 } else {
-                    battleCtx->battleStatusMask = (0 << SYSCTL_PLAYED_MOVE_ANIMATION); // so that Heal Order's animation will play
+                    battleCtx->battleStatusMask &= ~(1 << SYSCTL_PLAYED_MOVE_ANIMATION); // so that Heal Order's animation will play
                     battleCtx->hpCalcTemp = BattleSystem_Divide(battleCtx->battleMons[battler].maxHP, 8);
                     battleCtx->msgDefender = battler;
                     battleCtx->moveCur = MOVE_HEAL_ORDER;
@@ -5158,7 +5158,7 @@ static BOOL BattleControllerPlayer_TriggerAfterMoveHitEffects(BattleSystem *batt
                                 battleCtx->msgBattlerTemp = temp;
                                 battleCtx->sideEffectMon = temp;
                             }
-                            battleCtx->battleStatusMask = (0 << SYSCTL_PLAYED_MOVE_ANIMATION); // so that mimicked move's animation will play
+                            battleCtx->battleStatusMask &= ~(1 << SYSCTL_PLAYED_MOVE_ANIMATION); // so that mimicked move's animation will play
                             battleCtx->msgMoveTemp = battleCtx->moveCur;
                             battleCtx->sideEffectType = SIDE_EFFECT_TYPE_ABILITY;
                             // also swap previously used moves for Encore and Mirror Move so that they will work correctly with the mimicked move

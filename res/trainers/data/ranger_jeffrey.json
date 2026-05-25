@@ -12,10 +12,15 @@
         {
             "species": "SPECIES_MONFERNO",
             "form": 0,
-            "level": 31,
+            "level": 33,
             "item": null,
-            "moves": null,
-            "iv_scale": 50,
+            "moves": [
+                "MOVE_SUNNY_DAY",
+                "MOVE_FLAME_WHEEL",
+                "MOVE_MACH_PUNCH",
+                "MOVE_FURY_SWIPES"
+            ],
+            "iv_scale": 110,
             "ball_seal": 0
         }
     ],

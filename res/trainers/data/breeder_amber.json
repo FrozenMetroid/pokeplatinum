@@ -3,17 +3,23 @@
     "class": "TRAINER_CLASS_BREEDER_FEMALE",
     "items": [],
     "ai_flags": [
-        "AI_FLAG_BASIC"
+        "AI_FLAG_BASIC",
+        "AI_FLAG_EVAL_ATTACK"
     ],
     "double_battle": false,
     "party": [
         {
-            "species": "SPECIES_MAGBY",
+            "species": "SPECIES_HAPPINY",
             "form": 0,
             "level": 23,
             "item": null,
-            "moves": null,
-            "iv_scale": 0,
+            "moves": [
+                "MOVE_HYPER_VOICE",
+                "MOVE_SWEET_KISS",
+                "MOVE_COPYCAT",
+                "MOVE_CHARM"
+            ],
+            "iv_scale": 60,
             "ball_seal": 0
         },
         {
@@ -21,8 +27,13 @@
             "form": 0,
             "level": 23,
             "item": null,
-            "moves": null,
-            "iv_scale": 0,
+            "moves": [
+                "MOVE_CHARM",
+                "MOVE_SWIFT",
+                "MOVE_ENCORE",
+                "MOVE_SWEET_KISS"
+            ],
+            "iv_scale": 60,
             "ball_seal": 0
         }
     ],

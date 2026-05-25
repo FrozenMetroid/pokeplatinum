@@ -45,12 +45,12 @@
             "y": 0
         },
         {
-            "id": "LOCALID_BLACK_BELT_SEAN",
-            "graphics_id": "OBJ_EVENT_GFX_BLACK_BELT",
+            "id": "LOCALID_BATTLE_GIRL_SHAUNA",
+            "graphics_id": "OBJ_EVENT_GFX_BATTLE_GIRL",
             "movement_type": "MOVEMENT_TYPE_WALK_BACK_AND_FORTH",
             "trainer_type": "TRAINER_TYPE_NORMAL",
             "hidden_flag": "0",
-            "script": "TRAINER_BLACK_BELT_SEAN",
+            "script": "TRAINER_BATTLE_GIRL_SHAUNA",
             "initial_dir": 3,
             "data": [
                 2

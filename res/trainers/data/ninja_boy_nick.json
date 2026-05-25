@@ -3,26 +3,38 @@
     "class": "TRAINER_CLASS_NINJA_BOY",
     "items": [],
     "ai_flags": [
-        "AI_FLAG_BASIC"
+        "AI_FLAG_BASIC",
+        "AI_FLAG_EVAL_ATTACK"
     ],
     "double_battle": false,
     "party": [
         {
             "species": "SPECIES_SKORUPI",
             "form": 0,
-            "level": 32,
+            "level": 34,
             "item": null,
-            "moves": null,
-            "iv_scale": 0,
+            "moves": [
+                "MOVE_POISON_TAIL",
+                "MOVE_BITE",
+                "MOVE_PIN_MISSILE",
+                "MOVE_X_SCISSOR"
+            ],
+            "iv_scale": 120,
             "ball_seal": 0
         },
         {
-            "species": "SPECIES_CROAGUNK",
+            "species": "SPECIES_KOFFING",
             "form": 0,
-            "level": 30,
+            "level": 34,
             "item": null,
-            "moves": null,
-            "iv_scale": 0,
+            "moves": [
+                "MOVE_SLUDGE",
+                "MOVE_POISON_GAS",
+                "MOVE_ASSURANCE",
+                "MOVE_SELFDESTRUCT"
+            ],
+            "ability": "ABILITY_LEVITATE",
+            "iv_scale": 120,
             "ball_seal": 25
         }
     ],

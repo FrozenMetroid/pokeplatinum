@@ -4836,7 +4836,8 @@ static void BoxPokemon_CalcAbility(BoxPokemon *boxMon)
     int monAbility2 = SpeciesData_GetFormValue(monSpecies, monForm, SPECIES_DATA_ABILITY_2);
     int hiddenAbility = SpeciesData_GetFormValue(monSpecies, monForm, SPECIES_DATA_HIDDEN_ABILITY);
 
-    if (BoxPokemon_GetValue(boxMon, MON_DATA_HIDDEN_ABILITY_SET, NULL)) { // priority to hidden ability if set
+    if (BoxPokemon_GetValue(boxMon, MON_DATA_HIDDEN_ABILITY_SET, NULL)
+        && hiddenAbility != ABILITY_NONE) { // priority to hidden ability if set
         BoxPokemon_SetValue(boxMon, MON_DATA_ABILITY, &hiddenAbility);
     } else if (monAbility2 != ABILITY_NONE) {
         if (monPersonality & 1) {

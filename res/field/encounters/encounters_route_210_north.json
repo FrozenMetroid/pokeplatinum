@@ -2,39 +2,39 @@
     "land_rate": 20,
     "land_encounters": [
         {
-            "level": 27,
+            "level": 31,
             "species": "SPECIES_SWABLU"
         },
         {
-            "level": 28,
+            "level": 32,
             "species": "SPECIES_BIBAREL"
         },
         {
-            "level": 27,
+            "level": 31,
             "species": "SPECIES_SCYTHER"
         },
         {
-            "level": 27,
+            "level": 31,
             "species": "SPECIES_MEDITITE"
         },
         {
-            "level": 29,
+            "level": 33,
             "species": "SPECIES_MEDITITE"
         },
         {
-            "level": 28,
+            "level": 32,
             "species": "SPECIES_SWABLU"
         },
         {
-            "level": 29,
+            "level": 33,
             "species": "SPECIES_SCYTHER"
         },
         {
-            "level": 29,
+            "level": 33,
             "species": "SPECIES_BIBAREL"
         },
         {
-            "level": 29,
+            "level": 33,
             "species": "SPECIES_PRIMEAPE"
         },
         {
@@ -42,11 +42,11 @@
             "species": "SPECIES_PRIMEAPE"
         },
         {
-            "level": 26,
+            "level": 29,
             "species": "SPECIES_BAGON"
         },
         {
-            "level": 27,
+            "level": 30,
             "species": "SPECIES_BAGON"
         }
     ],

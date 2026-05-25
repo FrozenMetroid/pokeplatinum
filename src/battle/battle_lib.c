@@ -7202,7 +7202,7 @@ static const u16 sMimesisMoves[] = {
     // MOVE_SING, // would not work because a successful hit makes the mon fall asleep
     // MOVE_GRASS_WHISTLE, // same thing as Sing
     // MOVE_SNORE, // would have to be asleep and then that doesn't make sense
-    // MOVE_UPROAR, // don't want the mon to be locked into this move
+    MOVE_UPROAR, // will only be used once and not locked into using it
 };
 
 typedef struct DamageCalcParams {

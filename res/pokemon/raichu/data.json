@@ -35,11 +35,24 @@
     "icon_palette": 0,
     "learnset": {
         "by_level": [
-            [ 0, "MOVE_THUNDER_PUNCH" ],
-            [ 1, "MOVE_THUNDER_SHOCK" ],
-            [ 1, "MOVE_TAIL_WHIP" ],
-            [ 1, "MOVE_QUICK_ATTACK" ],
-            [ 1, "MOVE_THUNDERBOLT" ]
+            [0, "MOVE_THUNDER_PUNCH"],
+            [1, "MOVE_THUNDER_SHOCK"],
+            [1, "MOVE_TAIL_WHIP"],
+            [1, "MOVE_QUICK_ATTACK"],
+            [1, "MOVE_GROWL"],
+            [1, "MOVE_CHARM"],
+            [1, "MOVE_TAIL_WHIP"],
+            [1, "MOVE_THUNDER_WAVE"],
+            [1, "MOVE_QUICK_ATTACK"],
+            [1, "MOVE_SPARK"],
+            [1, "MOVE_SLAM"],
+            [1, "MOVE_DOUBLE_TEAM"],
+            [1, "MOVE_DISCHARGE"],
+            [1, "MOVE_AGILITY"],
+            [35, "MOVE_THUNDERBOLT"],
+            [38, "MOVE_LIGHT_SCREEN"],
+            [42, "MOVE_BODY_SLAM"],
+            [46, "MOVE_THUNDER"]
         ],
         "by_tm": [
             "TM01",

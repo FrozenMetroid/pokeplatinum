@@ -5777,6 +5777,7 @@ static BOOL ScrCmd_ChangeDeoxysForm(ScriptContext *ctx)
 
         if (Pokemon_GetValue(mon, MON_DATA_SPECIES, NULL) == SPECIES_DEOXYS) {
             Pokemon_SetValue(mon, MON_DATA_FORM, &form);
+            Pokemon_CalcAbility(mon);
             Pokemon_CalcLevelAndStats(mon);
             Pokedex_Capture(pokedex, mon);
         }

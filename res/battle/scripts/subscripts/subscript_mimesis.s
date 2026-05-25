@@ -26,7 +26,8 @@ _CheckOtherMoveFailures:
     CompareVarToValue OPCODE_EQU, BTLVAR_CURRENT_MOVE, MOVE_METAL_SOUND, PostAnimation_MetalSound
     CompareVarToValue OPCODE_EQU, BTLVAR_CURRENT_MOVE, MOVE_SUPERSONIC, _ApplyConfusion
     CompareVarToValue OPCODE_EQU, BTLVAR_CURRENT_MOVE, MOVE_PERISH_SONG, _End // skip damage
-    // Hyper Voice and Bug Buzz deal damage
+    // Hyper Voice, Bug Buzz, and Uproar deal damage
+    // Uproar will not lock the Mimesis mon into using it -- too much of a hassle and would be too disruptive to that Pokemon to involuntarily lose its actions if someone spams Uproar on it
     CalcCrit 
     CalcDamage
     Call BATTLE_SUBSCRIPT_UPDATE_HP

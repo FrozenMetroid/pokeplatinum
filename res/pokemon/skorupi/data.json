@@ -45,11 +45,11 @@
             [19, "MOVE_POISON_TAIL"],
             [23, "MOVE_SCARY_FACE"],
             [28, "MOVE_TOXIC_SPIKES"],
-            [34, "MOVE_X_SCISSOR"],
-            [39, "MOVE_POISON_JAB"],
-            [42, "MOVE_CRUNCH"],
-            [45, "MOVE_CROSS_POISON"],
-            [50, "MOVE_NIGHT_SLASH"]
+            [32, "MOVE_X_SCISSOR"],
+            [35, "MOVE_POISON_JAB"],
+            [38, "MOVE_CRUNCH"],
+            [41, "MOVE_CROSS_POISON"],
+            [45, "MOVE_NIGHT_SLASH"]
         ],
         "by_tm": [
             "TM06",
