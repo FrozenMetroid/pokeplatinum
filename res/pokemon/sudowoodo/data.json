@@ -35,10 +35,6 @@
     "icon_palette": 1,
     "learnset": {
         "by_level": [
-            [1, "MOVE_COPYCAT"],
-            [1, "MOVE_FLAIL"],
-            [1, "MOVE_LOW_KICK"],
-            [1, "MOVE_ROCK_THROW"],
             [1, "MOVE_SLAM"],
             [1, "MOVE_FAKE_TEARS"],
             [1, "MOVE_COPYCAT"],

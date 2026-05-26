@@ -61,11 +61,15 @@ Credits:
     - Koffing (Fuego Ironworks)
     - Ledyba (Routes 203 and northern 205 during the morning)
     - Makuhita (Ravaged Path, Victory Road)
+    - Mareep (Route 209)
     - Mankey (Uncommon Honey Trees, northern Route 210)
+    - Miltank (Route 210)
     - Sableye (Wayward Cave)
     - Shroomish (Eterna Forest)
+    - Skarmory (Iron Island)
     - Smoochum (Route 216)
     - Spinarak (Route 203 and northern 205 at night)
+    - Tauros (Route 210)
     - Vulpix (Route 209 at night)
 - Gym Leader sprites, as well as some regular Trainers' sprites, have been improved
 - If the player's lead Pokémon has the Ability Harvest, an additional Berry will be harvested when harvesting Berries in the overworld
@@ -116,7 +120,7 @@ All Pokémon have received changes to any combination of their learnsets, Abilit
 - Sand Force: Rock, Ground, and Steel-type moves have a 30% increase in power during Sandstorms
 - Flare Boost: Boosts Special Attack damage by 50% when the Pokémon is burned
 - Sand Rush: Speed is increased by 50% during Sandstorms
-- Slush Rush (unused): Speed is increased by 50% during Hailstorms
+- Slush Rush: Speed is increased by 50% during Hailstorms
 - Unnerve: Opposing Pokémon cannot eat their Berries
 - Big Pecks: The Pokémon's Defense stat cannot be lowered
 - Poison Touch: Moves used by this Pokémon that make contact have a 30% chance to poison the target

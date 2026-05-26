@@ -9,15 +9,15 @@
     "double_battle": false,
     "party": [
         {
-            "species": "SPECIES_VULPIX",
+            "species": "SPECIES_MAREEP",
             "form": 0,
             "level": 24,
             "item": null,
             "moves": [
-                "MOVE_FIRE_SPIN",
-                "MOVE_CONFUSE_RAY",
-                "MOVE_QUICK_ATTACK",
-                "MOVE_CONFUSE_RAY"
+                "MOVE_SHOCK_WAVE",
+                "MOVE_CHARGE",
+                "MOVE_TACKLE",
+                "MOVE_COTTON_SPORE"
             ],
             "iv_scale": 50,
             "ball_seal": 0

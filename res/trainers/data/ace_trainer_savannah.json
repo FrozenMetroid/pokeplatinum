@@ -18,37 +18,33 @@
                 "MOVE_ICE_FANG",
                 "MOVE_CRUNCH",
                 "MOVE_HAIL",
-                "MOVE_PROTECT"
+                "MOVE_BLIZZARD"
             ],
-            "iv_scale": 60,
+            "ability": "ABILITY_SERENE_GRACE",
+            "nature": "NATURE_DOCILE",
+            "ivnums": [25, 25, 25, 25, 25, 25],
+            "evnums": [0, 80, 0, 0, 80, 0],
+            "ball": "ITEM_POKE_BALL",
+            "iv_scale": 0,
             "ball_seal": 0
         },
         {
-            "species": "SPECIES_SNORUNT",
-            "form": 0,
-            "level": 40,
-            "item": null,
-            "moves": [
-                "MOVE_ICE_FANG",
-                "MOVE_CRUNCH",
-                "MOVE_HAIL",
-                "MOVE_PROTECT"
-            ],
-            "iv_scale": 60,
-            "ball_seal": 0
-        },
-        {
-            "species": "SPECIES_GLALIE",
+            "species": "SPECIES_MEDICHAM",
             "form": 0,
             "level": 42,
             "item": null,
             "moves": [
-                "MOVE_ICE_FANG",
-                "MOVE_CRUNCH",
-                "MOVE_HAIL",
-                "MOVE_PROTECT"
+                "MOVE_ICE_PUNCH",
+                "MOVE_ZEN_HEADBUTT",
+                "MOVE_BRICK_BREAK",
+                "MOVE_FIRE_PUNCH"
             ],
-            "iv_scale": 60,
+            "ability": "ABILITY_PURE_POWER",
+            "nature": "NATURE_ADAMANT",
+            "ivnums": [25, 25, 25, 25, 25, 25],
+            "evnums": [0, 80, 0, 80, 0, 0],
+            "ball": "ITEM_HEAL_BALL",
+            "iv_scale": 0,
             "ball_seal": 0
         }
     ],

@@ -3,35 +3,51 @@
     "class": "TRAINER_CLASS_SKIER_MALE",
     "items": [],
     "ai_flags": [
-        "AI_FLAG_BASIC"
+        "AI_FLAG_BASIC",
+        "AI_FLAG_EVAL_ATTACK"
     ],
     "double_battle": false,
     "party": [
         {
-            "species": "SPECIES_SNORUNT",
+            "species": "SPECIES_GLALIE",
             "form": 0,
-            "level": 36,
+            "level": 40,
             "item": null,
-            "moves": null,
-            "iv_scale": 0,
+            "moves": [
+                "MOVE_ICE_BEAM",
+                "MOVE_CRUNCH",
+                "MOVE_AVALANCHE",
+                "MOVE_HEADBUTT"
+            ],
+            "iv_scale": 150,
             "ball_seal": 0
         },
         {
-            "species": "SPECIES_SWINUB",
+            "species": "SPECIES_PILOSWINE",
             "form": 0,
-            "level": 36,
+            "level": 40,
             "item": null,
-            "moves": null,
-            "iv_scale": 0,
+            "moves": [
+                "MOVE_EARTHQUAKE",
+                "MOVE_ICE_SHARD",
+                "MOVE_AVALANCHE",
+                "MOVE_ROCK_CLIMB"
+            ],
+            "iv_scale": 150,
             "ball_seal": 0
         },
         {
-            "species": "SPECIES_SNOVER",
+            "species": "SPECIES_ABOMASNOW",
             "form": 0,
-            "level": 36,
+            "level": 40,
             "item": null,
-            "moves": null,
-            "iv_scale": 0,
+            "moves": [
+                "MOVE_GRASS_WHISTLE",
+                "MOVE_LEECH_SEED",
+                "MOVE_PROTECT",
+                "MOVE_GIGA_DRAIN"
+            ],
+            "iv_scale": 150,
             "ball_seal": 0
         }
     ],

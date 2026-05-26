@@ -23,15 +23,15 @@
             "ball_seal": 0
         },
         {
-            "species": "SPECIES_SWINUB",
+            "species": "SPECIES_FLAAFFY",
             "form": 0,
             "level": 23,
             "item": null,
             "moves": [
-                "MOVE_MUD_SPORT",
-                "MOVE_HEADBUTT",
-                "MOVE_MUD_SLAP",
-                "MOVE_POWDER_SNOW"
+                "MOVE_SHOCK_WAVE",
+                "MOVE_THUNDER_WAVE",
+                "MOVE_TACKLE",
+                "MOVE_CHARGE"
             ],
             "iv_scale": 60,
             "ball_seal": 0

@@ -12,15 +12,15 @@
         {
             "species": "SPECIES_MR_MIME",
             "form": 0,
-            "level": 37,
+            "level": 38,
             "item": null,
             "moves": [
-                "MOVE_PSYBEAM",
-                "MOVE_MIMIC",
+                "MOVE_EXTRASENSORY",
+                "MOVE_MAGICAL_LEAF",
                 "MOVE_REFLECT",
                 "MOVE_LIGHT_SCREEN"
             ],
-            "iv_scale": 50,
+            "iv_scale": 150,
             "ball_seal": 0
         },
         {
@@ -34,7 +34,7 @@
                 "MOVE_PURSUIT",
                 "MOVE_CONFUSE_RAY"
             ],
-            "iv_scale": 50,
+            "iv_scale": 150,
             "ball_seal": 0
         },
         {
@@ -45,10 +45,11 @@
             "moves": [
                 "MOVE_SLASH",
                 "MOVE_X_SCISSOR",
-                "MOVE_QUICK_ATTACK",
+                "MOVE_AERIAL_ACE",
                 "MOVE_FURY_CUTTER"
             ],
-            "iv_scale": 50,
+            "ability": "ABILITY_TECHNICIAN",
+            "iv_scale": 150,
             "ball_seal": 0
         }
     ],

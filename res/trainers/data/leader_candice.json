@@ -33,22 +33,22 @@
             "ball_seal": 0
         },
         {
-            "species": "SPECIES_WEAVILE",
+            "species": "SPECIES_GLACEON",
             "form": 0,
             "level": 43,
-            "item": "ITEM_CHOPLE_BERRY",
+            "item": "ITEM_SITRUS_BERRY",
             "moves": [
-                "MOVE_ICE_PUNCH",
-                "MOVE_NIGHT_SLASH",
-                "MOVE_LOW_KICK",
-                "MOVE_CRUSH_CLAW"
+                "MOVE_BLIZZARD",
+                "MOVE_WATER_PULSE",
+                "MOVE_HAIL",
+                "MOVE_DOUBLE_TEAM"
             ],
             "iv_scale": 0,
             "ivnums": [31, 31, 31, 31, 31, 31],
-            "evnums": [0, 120, 0, 120, 0, 0],
+            "evnums": [0, 0, 120, 0, 120, 0],
             "ball": "ITEM_POKE_BALL",
-            "ability": "ABILITY_PRESSURE",
-            "nature": "NATURE_JOLLY",
+            "ability": "ABILITY_SNOW_CLOAK",
+            "nature": "NATURE_BOLD",
             "ball_seal": 0
         },
         {

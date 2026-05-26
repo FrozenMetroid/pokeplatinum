@@ -4,17 +4,23 @@
     "items": [],
     "ai_flags": [
         "AI_FLAG_BASIC",
+        "AI_FLAG_EVAL_ATTACK",
         "AI_FLAG_PRIORITIZE_EXTREMES"
     ],
     "double_battle": false,
     "party": [
         {
-            "species": "SPECIES_MACHOKE",
+            "species": "SPECIES_HERACROSS",
             "form": 0,
             "level": 40,
             "item": null,
-            "moves": null,
-            "iv_scale": 30,
+            "moves": [
+                "MOVE_BUG_BITE",
+                "MOVE_BRICK_BREAK",
+                "MOVE_AERIAL_ACE",
+                "MOVE_HORN_ATTACK"
+            ],
+            "iv_scale": 150,
             "ball_seal": 0
         }
     ],

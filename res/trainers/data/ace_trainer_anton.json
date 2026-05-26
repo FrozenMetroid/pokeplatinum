@@ -12,13 +12,20 @@
         {
             "species": "SPECIES_GLALIE",
             "form": 0,
-            "level": 44,
+            "level": 42,
             "item": null,
             "moves": [
                 "MOVE_ICE_BEAM",
-                "MOVE_CRUNCH"
+                "MOVE_CRUNCH",
+                "MOVE_AVALANCHE",
+                "MOVE_ROCK_SLIDE"
             ],
-            "iv_scale": 50,
+            "ability": "ABILITY_SOLID_ROCK",
+            "nature": "NATURE_SERIOUS",
+            "ivnums": [25, 25, 25, 25, 25, 25],
+            "evnums": [0, 80, 0, 0, 80, 0],
+            "ball": "ITEM_GREAT_BALL",
+            "iv_scale": 0,
             "ball_seal": 0
         }
     ],

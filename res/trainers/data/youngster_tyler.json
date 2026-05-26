@@ -18,6 +18,20 @@
             ],
             "iv_scale": 10,
             "ball_seal": 0
+        },
+        {
+            "species": "SPECIES_MAREEP",
+            "form": 0,
+            "level": 8,
+            "item": null,
+            "moves": [
+                "MOVE_THUNDER_SHOCK",
+                "MOVE_CHARGE",
+                "MOVE_TACKLE",
+                "MOVE_GROWL"
+            ],
+            "iv_scale": 10,
+            "ball_seal": 0
         }
     ],
     "messages": [

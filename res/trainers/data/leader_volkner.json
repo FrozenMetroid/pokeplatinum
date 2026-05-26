@@ -32,21 +32,21 @@
             "ball_seal": 0
         },
         {
-            "species": "SPECIES_PACHIRISU",
+            "species": "SPECIES_AMPHAROS",
             "form": 0,
             "level": 48,
             "item": "ITEM_SITRUS_BERRY",
             "moves": [
                 "MOVE_CHARGE_BEAM",
-                "MOVE_THUNDER_WAVE",
-                "MOVE_SUPER_FANG",
-                "MOVE_CHARM"
+                "MOVE_POWER_GEM",
+                "MOVE_SIGNAL_BEAM",
+                "MOVE_DRAGON_PULSE"
             ],
             "iv_scale": 0,
             "ivnums": [31, 31, 31, 31, 31, 31],
             "evnums": [140, 0, 0, 0, 70, 70],
             "ball": "ITEM_POKE_BALL",
-            "ability": "ABILITY_LIGHTNING_ROD",
+            "ability": "ABILITY_STATIC",
             "nature": "NATURE_CALM",
             "ball_seal": 0
         },

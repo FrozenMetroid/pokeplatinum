@@ -17,24 +17,34 @@
             "moves": [
                 "MOVE_ICE_SHARD",
                 "MOVE_SWAGGER",
-                "MOVE_ICY_WIND",
+                "MOVE_BLIZZARD",
                 "MOVE_WOOD_HAMMER"
             ],
-            "iv_scale": 60,
+            "ability": "ABILITY_SNOW_WARNING",
+            "nature": "NATURE_BASHFUL",
+            "ivnums": [25, 25, 25, 25, 25, 25],
+            "evnums": [0, 80, 0, 0, 80, 0],
+            "ball": "ITEM_POKE_BALL",
+            "iv_scale": 0,
             "ball_seal": 0
         },
         {
             "species": "SPECIES_SNEASEL",
             "form": 0,
             "level": 42,
-            "item": null,
+            "item": "ITEM_FOCUS_BAND",
             "moves": [
-                "MOVE_ICY_WIND",
+                "MOVE_AVALANCHE",
                 "MOVE_SLASH",
                 "MOVE_FEINT_ATTACK",
-                "MOVE_QUICK_ATTACK"
+                "MOVE_LOW_KICK"
             ],
-            "iv_scale": 60,
+            "ability": "ABILITY_FRISK",
+            "nature": "NATURE_ADAMANT",
+            "ivnums": [25, 25, 25, 25, 25, 25],
+            "evnums": [0, 80, 0, 80, 0, 0],
+            "ball": "ITEM_POKE_BALL",
+            "iv_scale": 0,
             "ball_seal": 0
         }
     ],

@@ -3,26 +3,23 @@
     "class": "TRAINER_CLASS_SKIER_FEMALE",
     "items": [],
     "ai_flags": [
-        "AI_FLAG_BASIC"
+        "AI_FLAG_BASIC",
+        "AI_FLAG_EVAL_ATTACK"
     ],
     "double_battle": false,
     "party": [
         {
-            "species": "SPECIES_SWINUB",
+            "species": "SPECIES_JYNX",
             "form": 0,
-            "level": 36,
+            "level": 41,
             "item": null,
-            "moves": null,
-            "iv_scale": 0,
-            "ball_seal": 0
-        },
-        {
-            "species": "SPECIES_SNOVER",
-            "form": 0,
-            "level": 38,
-            "item": null,
-            "moves": null,
-            "iv_scale": 0,
+            "moves": [
+                "MOVE_ICE_BEAM",
+                "MOVE_EXTRASENSORY",
+                "MOVE_FAKE_TEARS",
+                "MOVE_LOVELY_KISS"
+            ],
+            "iv_scale": 150,
             "ball_seal": 0
         }
     ],

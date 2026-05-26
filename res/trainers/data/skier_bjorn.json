@@ -3,17 +3,23 @@
     "class": "TRAINER_CLASS_SKIER_MALE",
     "items": [],
     "ai_flags": [
-        "AI_FLAG_BASIC"
+        "AI_FLAG_BASIC",
+        "AI_FLAG_EVAL_ATTACK"
     ],
     "double_battle": false,
     "party": [
         {
             "species": "SPECIES_SWINUB",
             "form": 0,
-            "level": 36,
+            "level": 37,
             "item": null,
-            "moves": null,
-            "iv_scale": 0,
+            "moves": [
+                "MOVE_EARTHQUAKE",
+                "MOVE_HEADBUTT",
+                "MOVE_ROCK_TOMB",
+                "MOVE_ICE_SHARD"
+            ],
+            "iv_scale": 150,
             "ball_seal": 0
         },
         {
@@ -21,8 +27,13 @@
             "form": 0,
             "level": 38,
             "item": null,
-            "moves": null,
-            "iv_scale": 0,
+            "moves": [
+                "MOVE_ICE_PUNCH",
+                "MOVE_SLASH",
+                "MOVE_KNOCK_OFF",
+                "MOVE_LOW_KICK"
+            ],
+            "iv_scale": 150,
             "ball_seal": 0
         }
     ],

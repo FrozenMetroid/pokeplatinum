@@ -17,10 +17,10 @@
             "moves": [
                 "MOVE_DOUBLE_HIT",
                 "MOVE_U_TURN",
-                "MOVE_SAND_ATTACK",
+                "MOVE_ARM_THRUST",
                 "MOVE_SCREECH"
             ],
-            "iv_scale": 50,
+            "iv_scale": 150,
             "ball_seal": 0
         },
         {
@@ -31,10 +31,10 @@
             "moves": [
                 "MOVE_PSYBEAM",
                 "MOVE_SIGNAL_BEAM",
-                "MOVE_CONVERSION_2",
+                "MOVE_TRI_ATTACK",
                 "MOVE_RECOVER"
             ],
-            "iv_scale": 50,
+            "iv_scale": 150,
             "ball_seal": 0
         }
     ],

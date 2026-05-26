@@ -3,35 +3,32 @@
     "class": "TRAINER_CLASS_SKIER_MALE",
     "items": [],
     "ai_flags": [
-        "AI_FLAG_BASIC"
+        "AI_FLAG_BASIC",
+        "AI_FLAG_EVAL_ATTACK"
     ],
     "double_battle": false,
     "party": [
         {
             "species": "SPECIES_SNOVER",
             "form": 0,
-            "level": 35,
+            "level": 38,
             "item": null,
             "moves": null,
-            "iv_scale": 0,
+            "iv_scale": 150,
             "ball_seal": 0
         },
         {
-            "species": "SPECIES_SNOVER",
+            "species": "SPECIES_GOLDUCK",
             "form": 0,
-            "level": 36,
+            "level": 39,
             "item": null,
-            "moves": null,
-            "iv_scale": 0,
-            "ball_seal": 0
-        },
-        {
-            "species": "SPECIES_SNOVER",
-            "form": 0,
-            "level": 37,
-            "item": null,
-            "moves": null,
-            "iv_scale": 0,
+            "moves": [
+                "MOVE_ICE_BEAM",
+                "MOVE_SURF",
+                "MOVE_EXTRASENSORY",
+                "MOVE_PSYCH_UP"
+            ],
+            "iv_scale": 150,
             "ball_seal": 0
         }
     ],

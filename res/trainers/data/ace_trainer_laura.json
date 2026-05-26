@@ -15,12 +15,26 @@
             "level": 42,
             "item": null,
             "moves": [
-                "MOVE_AIR_SLASH",
+                "MOVE_AERIAL_ACE",
                 "MOVE_BODY_SLAM",
-                "MOVE_MAGICAL_LEAF",
-                "MOVE_SWEET_SCENT"
+                "MOVE_LEAF_BLADE",
+                "MOVE_LEECH_SEED"
             ],
-            "iv_scale": 50,
+            "iv_scale": 150,
+            "ball_seal": 0
+        },
+        {
+            "species": "SPECIES_SKARMORY",
+            "form": 0,
+            "level": 41,
+            "item": null,
+            "moves": [
+                "MOVE_AERIAL_ACE",
+                "MOVE_IRON_HEAD",
+                "MOVE_SLASH",
+                "MOVE_AGILITY"
+            ],
+            "iv_scale": 150,
             "ball_seal": 0
         }
     ],

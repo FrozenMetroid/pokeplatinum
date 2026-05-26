@@ -15,26 +15,36 @@
             "level": 40,
             "item": null,
             "moves": [
-                "MOVE_ICY_WIND",
+                "MOVE_ICE_PUNCH",
                 "MOVE_SLASH",
                 "MOVE_SCREECH",
                 "MOVE_FEINT_ATTACK"
             ],
-            "iv_scale": 60,
+            "ability": "ABILITY_INNER_FOCUS",
+            "nature": "NATURE_ADAMANT",
+            "ivnums": [25, 25, 25, 25, 25, 25],
+            "evnums": [0, 80, 0, 80, 0, 0],
+            "ball": "ITEM_QUICK_BALL",
+            "iv_scale": 0,
             "ball_seal": 0
         },
         {
-            "species": "SPECIES_SNEASEL",
+            "species": "SPECIES_TENTACRUEL",
             "form": 0,
             "level": 43,
             "item": null,
             "moves": [
-                "MOVE_ICY_WIND",
-                "MOVE_SLASH",
-                "MOVE_SCREECH",
-                "MOVE_FEINT_ATTACK"
+                "MOVE_BRINE",
+                "MOVE_ICE_BEAM",
+                "MOVE_SLUDGE_BOMB",
+                "MOVE_SUBSTITUTE"
             ],
-            "iv_scale": 60,
+            "ability": "ABILITY_LIQUID_OOZE",
+            "nature": "NATURE_MODEST",
+            "ivnums": [25, 25, 25, 25, 25, 25],
+            "evnums": [80, 0, 0, 0, 80, 0],
+            "ball": "ITEM_POKE_BALL",
+            "iv_scale": 0,
             "ball_seal": 0
         }
     ],

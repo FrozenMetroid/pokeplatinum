@@ -18,9 +18,9 @@
                 "MOVE_THUNDERBOLT",
                 "MOVE_SWIFT",
                 "MOVE_QUICK_ATTACK",
-                "MOVE_THUNDER_WAVE"
+                "MOVE_THUNDER_PUNCH"
             ],
-            "iv_scale": 50,
+            "iv_scale": 150,
             "ball_seal": 0
         },
         {
@@ -31,10 +31,10 @@
             "moves": [
                 "MOVE_FLAMETHROWER",
                 "MOVE_FEINT_ATTACK",
-                "MOVE_SMOG",
+                "MOVE_SUNNY_DAY",
                 "MOVE_WILL_O_WISP"
             ],
-            "iv_scale": 50,
+            "iv_scale": 150,
             "ball_seal": 0
         }
     ],

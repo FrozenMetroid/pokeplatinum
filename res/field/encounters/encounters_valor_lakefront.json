@@ -7,7 +7,7 @@
         },
         {
             "level": 25,
-            "species": "SPECIES_BIBAREL"
+            "species": "SPECIES_FLAAFFY"
         },
         {
             "level": 26,
@@ -39,7 +39,7 @@
         },
         {
             "level": 27,
-            "species": "SPECIES_BIBAREL"
+            "species": "SPECIES_FLAAFFY"
         },
         {
             "level": 28,
@@ -47,12 +47,12 @@
         },
         {
             "level": 27,
-            "species": "SPECIES_BIBAREL"
+            "species": "SPECIES_FLAAFFY"
         }
     ],
     "swarms": [
         "SPECIES_GIRAFARIG",
-        "SPECIES_BIBAREL"
+        "SPECIES_FLAAFFY"
     ],
     "day": [
         "SPECIES_STARAVIA",

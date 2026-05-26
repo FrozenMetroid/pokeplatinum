@@ -3,7 +3,8 @@
     "class": "TRAINER_CLASS_SKIER_FEMALE",
     "items": [],
     "ai_flags": [
-        "AI_FLAG_BASIC"
+        "AI_FLAG_BASIC",
+        "AI_FLAG_EVAL_ATTACK"
     ],
     "double_battle": false,
     "party": [
@@ -12,8 +13,13 @@
             "form": 0,
             "level": 39,
             "item": null,
-            "moves": null,
-            "iv_scale": 0,
+            "moves": [
+                "MOVE_ICE_BEAM",
+                "MOVE_CRUNCH",
+                "MOVE_HEADBUTT",
+                "MOVE_ICE_SHARD"
+            ],
+            "iv_scale": 150,
             "ball_seal": 0
         }
     ],

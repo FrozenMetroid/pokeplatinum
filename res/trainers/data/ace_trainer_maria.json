@@ -15,12 +15,12 @@
             "level": 38,
             "item": null,
             "moves": [
-                "MOVE_WATER_PULSE",
-                "MOVE_CONFUSION",
+                "MOVE_SURF",
+                "MOVE_EXTRASENSORY",
                 "MOVE_DISABLE",
                 "MOVE_SCREECH"
             ],
-            "iv_scale": 50,
+            "iv_scale": 150,
             "ball_seal": 0
         },
         {
@@ -31,10 +31,10 @@
             "moves": [
                 "MOVE_FIRE_BLAST",
                 "MOVE_TAKE_DOWN",
-                "MOVE_FURY_ATTACK",
+                "MOVE_BLAZE_KICK",
                 "MOVE_WILL_O_WISP"
             ],
-            "iv_scale": 50,
+            "iv_scale": 150,
             "ball_seal": 0
         },
         {
@@ -45,10 +45,10 @@
             "moves": [
                 "MOVE_ROCK_SLIDE",
                 "MOVE_LOW_KICK",
-                "MOVE_FLAIL",
-                "MOVE_ENDURE"
+                "MOVE_FEINT_ATTACK",
+                "MOVE_BODY_SLAM"
             ],
-            "iv_scale": 50,
+            "iv_scale": 150,
             "ball_seal": 0
         }
     ],
