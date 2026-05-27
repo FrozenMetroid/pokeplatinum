@@ -3,17 +3,23 @@
     "class": "TRAINER_CLASS_GALACTIC_GRUNT_FEMALE",
     "items": [],
     "ai_flags": [
-        "AI_FLAG_BASIC"
+        "AI_FLAG_BASIC",
+        "AI_FLAG_EVAL_ATTACK"
     ],
     "double_battle": false,
     "party": [
         {
-            "species": "SPECIES_STUNKY",
+            "species": "SPECIES_ARIADOS",
             "form": 0,
             "level": 43,
             "item": null,
-            "moves": null,
-            "iv_scale": 30,
+            "moves": [
+                "MOVE_POISON_JAB",
+                "MOVE_X_SCISSOR",
+                "MOVE_SUCKER_PUNCH",
+                "MOVE_TOXIC_SPIKES"
+            ],
+            "iv_scale": 150,
             "ball_seal": 0
         }
     ],

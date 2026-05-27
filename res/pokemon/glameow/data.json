@@ -108,7 +108,8 @@
             "MOVE_QUICK_ATTACK",
             "MOVE_SAND_ATTACK",
             "MOVE_FAKE_TEARS",
-            "MOVE_ASSURANCE"
+            "MOVE_ASSURANCE",
+            "MOVE_FLAIL"
         ]
     },
     "evolutions": [

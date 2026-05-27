@@ -3,26 +3,23 @@
     "class": "TRAINER_CLASS_GALACTIC_GRUNT_FEMALE",
     "items": [],
     "ai_flags": [
-        "AI_FLAG_BASIC"
+        "AI_FLAG_BASIC",
+        "AI_FLAG_EVAL_ATTACK"
     ],
     "double_battle": false,
     "party": [
         {
-            "species": "SPECIES_HOUNDOUR",
+            "species": "SPECIES_ROSERADE",
             "form": 0,
             "level": 40,
             "item": null,
-            "moves": null,
-            "iv_scale": 30,
-            "ball_seal": 0
-        },
-        {
-            "species": "SPECIES_GLAMEOW",
-            "form": 0,
-            "level": 42,
-            "item": null,
-            "moves": null,
-            "iv_scale": 30,
+            "moves": [
+                "MOVE_SLUDGE_BOMB",
+                "MOVE_TOXIC_SPIKES",
+                "MOVE_LEECH_SEED",
+                "MOVE_EXTRASENSORY"
+            ],
+            "iv_scale": 150,
             "ball_seal": 0
         }
     ],

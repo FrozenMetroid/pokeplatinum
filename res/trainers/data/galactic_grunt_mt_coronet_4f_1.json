@@ -10,28 +10,29 @@
         {
             "species": "SPECIES_HOUNDOUR",
             "form": 0,
-            "level": 40,
+            "level": 42,
             "item": null,
-            "moves": null,
-            "iv_scale": 30,
+            "moves": [
+                "MOVE_FLAMETHROWER",
+                "MOVE_CRUNCH",
+                "MOVE_HOWL",
+                "MOVE_SUNNY_DAY"
+            ],
+            "iv_scale": 130,
             "ball_seal": 0
         },
         {
             "species": "SPECIES_GOLBAT",
             "form": 0,
-            "level": 40,
+            "level": 43,
             "item": null,
-            "moves": null,
-            "iv_scale": 30,
-            "ball_seal": 0
-        },
-        {
-            "species": "SPECIES_HOUNDOUR",
-            "form": 0,
-            "level": 40,
-            "item": null,
-            "moves": null,
-            "iv_scale": 30,
+            "moves": [
+                "MOVE_CRUNCH",
+                "MOVE_AERIAL_ACE",
+                "MOVE_LEECH_LIFE",
+                "MOVE_POISON_FANG"
+            ],
+            "iv_scale": 130,
             "ball_seal": 0
         }
     ],

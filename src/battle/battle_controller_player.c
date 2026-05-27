@@ -5139,7 +5139,7 @@ static BOOL BattleControllerPlayer_TriggerAfterMoveHitEffects(BattleSystem *batt
                 && (BattleSystem_IsMimesisMove(battleCtx->moveCur))
                 && (opponent)) {
                     if ((DEFENDER_TURN_FLAGS.magicCoat && (CURRENT_MOVE_DATA.flags & MOVE_FLAG_CAN_MAGIC_COAT))
-                        || (DEFENDER_TURN_FLAGS.snatching && CURRENT_MOVE_DATA.class == CLASS_STATUS)) { // Dancer doesn't work with Magic Coat or Snatching so I'm doing the same with Mimesis
+                        || (DEFENDER_TURN_FLAGS.snatching && (CURRENT_MOVE_DATA.flags & MOVE_FLAG_CAN_SNATCH))) { // Dancer doesn't work with Magic Coat or Snatching so I'm doing the same with Mimesis
                         machineState = STATE_BREAK_OUT;
                         battleCtx->afterMoveHitCheckState++;
                         break;

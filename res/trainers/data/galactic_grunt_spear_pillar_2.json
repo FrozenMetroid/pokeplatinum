@@ -3,26 +3,48 @@
     "class": "TRAINER_CLASS_GALACTIC_GRUNT_FEMALE",
     "items": [],
     "ai_flags": [
-        "AI_FLAG_BASIC"
+        "AI_FLAG_BASIC",
+        "AI_FLAG_EVAL_ATTACK",
+        "AI_FLAG_TAG_STRATEGY"
     ],
     "double_battle": false,
     "party": [
         {
-            "species": "SPECIES_STUNKY",
+            "species": "SPECIES_BRONZONG",
             "form": 0,
-            "level": 41,
+            "level": 44,
             "item": null,
-            "moves": null,
-            "iv_scale": 30,
+            "moves": [
+                "MOVE_GRAVITY",
+                "MOVE_TAUNT",
+                "MOVE_PSYCHIC",
+                "MOVE_GYRO_BALL"
+            ],
+            "ability": "ABILITY_LEVITATE",
+            "nature": "NATURE_RELAXED",
+            "ivnums": [25, 25, 25, 0, 25, 25],
+            "evnums": [80, 40, 40, 0, 0, 0],
+            "ball": "ITEM_DUSK_BALL",
+            "iv_scale": 0,
             "ball_seal": 0
         },
         {
-            "species": "SPECIES_GLAMEOW",
+            "species": "SPECIES_NINETALES",
             "form": 0,
-            "level": 41,
+            "level": 44,
             "item": null,
-            "moves": null,
-            "iv_scale": 30,
+            "moves": [
+                "MOVE_FLAMETHROWER",
+                "MOVE_DARK_PULSE",
+                "MOVE_NASTY_PLOT",
+                "MOVE_FIRE_SPIN"
+            ],
+            "ability": "ABILITY_FLASH_FIRE",
+            "nature": "NATURE_MODEST",
+            "ivnums": [25, 25, 25, 25, 25, 25],
+            "evnums": [0, 0, 0, 80, 80, 0],
+            "ball": "ITEM_DUSK_BALL",
+            "iv_scale": 0,
             "ball_seal": 0
         }
     ],

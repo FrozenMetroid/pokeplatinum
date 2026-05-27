@@ -13,31 +13,60 @@
     "double_battle": false,
     "party": [
         {
-            "species": "SPECIES_SNEASEL",
+            "species": "SPECIES_WEAVILE",
             "form": 0,
             "level": 44,
             "item": "ITEM_NONE",
             "moves": [
                 "MOVE_SLASH",
                 "MOVE_ICE_PUNCH",
-                "MOVE_QUICK_ATTACK",
+                "MOVE_NIGHT_SLASH",
                 "MOVE_SCREECH"
             ],
-            "iv_scale": 250,
+            "ability": "ABILITY_INNER_FOCUS",
+            "ivnums": [31, 31, 31, 31, 31, 31],
+            "evnums": [0, 100, 0, 100, 0, 0],
+            "ball": "ITEM_DUSK_BALL",
+            "nature": "NATURE_ADAMANT",
+            "iv_scale": 0,
             "ball_seal": 0
         },
         {
-            "species": "SPECIES_CROBAT",
+            "species": "SPECIES_GLISCOR",
             "form": 0,
             "level": 44,
             "item": "ITEM_NONE",
             "moves": [
-                "MOVE_POISON_FANG",
-                "MOVE_AIR_CUTTER",
-                "MOVE_BITE",
-                "MOVE_SUPERSONIC"
+                "MOVE_EARTHQUAKE",
+                "MOVE_CRUNCH",
+                "MOVE_SWORDS_DANCE",
+                "MOVE_TOXIC"
             ],
-            "iv_scale": 250,
+            "ability": "ABILITY_HYPER_CUTTER",
+            "ivnums": [31, 31, 31, 31, 31, 31],
+            "evnums": [100, 0, 100, 0, 0, 0],
+            "ball": "ITEM_DUSK_BALL",
+            "nature": "NATURE_IMPISH",
+            "iv_scale": 0,
+            "ball_seal": 0
+        },
+        {
+            "species": "SPECIES_DUSCLOPS",
+            "form": 0,
+            "level": 44,
+            "item": "ITEM_NONE",
+            "moves": [
+                "MOVE_SHADOW_PUNCH",
+                "MOVE_PAIN_SPLIT",
+                "MOVE_WILL_O_WISP",
+                "MOVE_TAUNT"
+            ],
+            "ability": "ABILITY_CURSED_BODY",
+            "ivnums": [31, 31, 31, 31, 31, 31],
+            "evnums": [0, 75, 50, 0, 0, 75],
+            "ball": "ITEM_DUSK_BALL",
+            "nature": "NATURE_CAREFUL",
+            "iv_scale": 0,
             "ball_seal": 0
         },
         {
@@ -46,12 +75,17 @@
             "level": 46,
             "item": "ITEM_SITRUS_BERRY",
             "moves": [
-                "MOVE_DRILL_PECK",
-                "MOVE_NIGHT_SHADE",
-                "MOVE_ASTONISH",
-                "MOVE_FEINT_ATTACK"
+                "MOVE_AIR_SLASH",
+                "MOVE_HEAT_WAVE",
+                "MOVE_DARK_PULSE",
+                "MOVE_NASTY_PLOT"
             ],
-            "iv_scale": 250,
+            "ability": "ABILITY_SUPREME_OVERLORD",
+            "ivnums": [31, 31, 31, 31, 31, 31],
+            "evnums": [0, 0, 0, 120, 120, 0],
+            "ball": "ITEM_DUSK_BALL",
+            "nature": "NATURE_TIMID",
+            "iv_scale": 0,
             "ball_seal": 0
         }
     ],

@@ -3,26 +3,23 @@
     "class": "TRAINER_CLASS_GALACTIC_GRUNT_MALE",
     "items": [],
     "ai_flags": [
-        "AI_FLAG_BASIC"
+        "AI_FLAG_BASIC",
+        "AI_FLAG_EVAL_ATTACK"
     ],
     "double_battle": false,
     "party": [
         {
-            "species": "SPECIES_MURKROW",
+            "species": "SPECIES_UMBREON",
             "form": 0,
-            "level": 39,
+            "level": 40,
             "item": null,
-            "moves": null,
-            "iv_scale": 30,
-            "ball_seal": 0
-        },
-        {
-            "species": "SPECIES_STUNKY",
-            "form": 0,
-            "level": 39,
-            "item": null,
-            "moves": null,
-            "iv_scale": 30,
+            "moves": [
+                "MOVE_TOXIC",
+                "MOVE_CRUNCH",
+                "MOVE_CONFUSE_RAY",
+                "MOVE_MOONLIGHT"
+            ],
+            "iv_scale": 150,
             "ball_seal": 0
         }
     ],
@@ -36,7 +33,7 @@
         },
         {
             "type": "TRMSG_DEFEAT",
-            "en_US": "Oh, it was my own Pokémon’s smell...\n"
+            "en_US": "My stolen Pokémon is weak...\n"
         },
         {
             "type": "TRMSG_POST_BATTLE",

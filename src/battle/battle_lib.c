@@ -8762,6 +8762,8 @@ int BattleAI_PostKOSwitchIn(BattleSystem *battleSys, int battler)
     // ties by party-order. If no such Pokemon exists, proceed to Stage 2.
     //
     // Mono-type Pokemon are regarded as being dual-type of the same type.
+    //
+    // Mons with Supreme Overlord will be discouraged if they have any non-fainted teammates
     while (battlersDisregarded != 0x3F) {
         maxScore = 0;
         picked = 6;
@@ -8769,6 +8771,12 @@ int BattleAI_PostKOSwitchIn(BattleSystem *battleSys, int battler)
         for (i = 0; i < partySize; i++) {
             mon = BattleSystem_GetPartyPokemon(battleSys, battler, i);
             monSpecies = Pokemon_GetValue(mon, MON_DATA_SPECIES_OR_EGG, NULL);
+
+            if (Pokemon_GetValue(mon, MON_DATA_ABILITY, NULL) == ABILITY_SUPREME_OVERLORD
+                && (BattleSystem_GetFaintedTeammateCount(battleSys, battler) > 0)) {
+                    battlersDisregarded |= FlagIndex(i);
+                    continue;
+            }
 
             if (monSpecies != SPECIES_NONE
                 && monSpecies != SPECIES_EGG
@@ -8778,6 +8786,7 @@ int BattleAI_PostKOSwitchIn(BattleSystem *battleSys, int battler)
                 && battleCtx->selectedPartySlot[slot2] != i
                 && i != battleCtx->aiSwitchedPartySlot[slot1]
                 && i != battleCtx->aiSwitchedPartySlot[slot2]) {
+
                 defenderType1 = BattleMon_Get(battleCtx, defender, BATTLEMON_TYPE_1, NULL);
                 defenderType2 = BattleMon_Get(battleCtx, defender, BATTLEMON_TYPE_2, NULL);
                 monType1 = Pokemon_GetValue(mon, MON_DATA_TYPE_1, NULL);
@@ -8844,6 +8853,11 @@ int BattleAI_PostKOSwitchIn(BattleSystem *battleSys, int battler)
     for (i = 0; i < partySize; i++) {
         mon = BattleSystem_GetPartyPokemon(battleSys, battler, i);
         monSpecies = Pokemon_GetValue(mon, MON_DATA_SPECIES_OR_EGG, NULL);
+
+        if (Pokemon_GetValue(mon, MON_DATA_ABILITY, NULL) == ABILITY_SUPREME_OVERLORD
+            && (BattleSystem_GetFaintedTeammateCount(battleSys, battler) > 0)) {
+                continue;
+        }
 
         if (monSpecies != SPECIES_NONE
             && monSpecies != SPECIES_EGG

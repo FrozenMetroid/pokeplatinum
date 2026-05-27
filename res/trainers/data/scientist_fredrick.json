@@ -6,36 +6,37 @@
     ],
     "ai_flags": [
         "AI_FLAG_BASIC",
+        "AI_FLAG_EVAL_ATTACK",
         "AI_FLAG_EXPERT"
     ],
     "double_battle": false,
     "party": [
         {
-            "species": "SPECIES_KIRLIA",
+            "species": "SPECIES_GIRAFARIG",
             "form": 0,
             "level": 40,
             "item": null,
             "moves": [
                 "MOVE_PSYCHIC",
-                "MOVE_MAGICAL_LEAF",
-                "MOVE_HYPNOSIS",
-                "MOVE_FUTURE_SIGHT"
+                "MOVE_DOUBLE_HIT",
+                "MOVE_DOUBLE_KICK",
+                "MOVE_ASSURANCE"
             ],
-            "iv_scale": 0,
+            "iv_scale": 150,
             "ball_seal": 0
         },
         {
             "species": "SPECIES_KADABRA",
             "form": 0,
-            "level": 40,
+            "level": 41,
             "item": null,
             "moves": [
                 "MOVE_PSYCHIC",
-                "MOVE_PSYCHO_CUT",
+                "MOVE_ENERGY_BALL",
                 "MOVE_THUNDER_WAVE",
                 "MOVE_RECOVER"
             ],
-            "iv_scale": 0,
+            "iv_scale": 150,
             "ball_seal": 0
         }
     ],

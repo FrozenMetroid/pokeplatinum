@@ -3,26 +3,23 @@
     "class": "TRAINER_CLASS_GALACTIC_GRUNT_MALE",
     "items": [],
     "ai_flags": [
-        "AI_FLAG_BASIC"
+        "AI_FLAG_BASIC",
+        "AI_FLAG_EVAL_ATTACK"
     ],
     "double_battle": false,
     "party": [
         {
-            "species": "SPECIES_STUNKY",
+            "species": "SPECIES_RHYDON",
             "form": 0,
-            "level": 38,
+            "level": 42,
             "item": null,
-            "moves": null,
-            "iv_scale": 30,
-            "ball_seal": 0
-        },
-        {
-            "species": "SPECIES_CROAGUNK",
-            "form": 0,
-            "level": 40,
-            "item": null,
-            "moves": null,
-            "iv_scale": 30,
+            "moves": [
+                "MOVE_EARTHQUAKE",
+                "MOVE_ROCK_SLIDE",
+                "MOVE_HORN_DRILL",
+                "MOVE_CRUNCH"
+            ],
+            "iv_scale": 150,
             "ball_seal": 0
         }
     ],

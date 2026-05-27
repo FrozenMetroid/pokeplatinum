@@ -6,50 +6,65 @@
         "AI_FLAG_BASIC",
         "AI_FLAG_EVAL_ATTACK",
         "AI_FLAG_EXPERT",
-        "AI_FLAG_SETUP_FIRST_TURN"
+        "AI_FLAG_TAG_STRATEGY"
     ],
     "double_battle": false,
     "party": [
         {
-            "species": "SPECIES_BRONZOR",
+            "species": "SPECIES_MAGMAR",
             "form": 0,
-            "level": 44,
+            "level": 45,
             "item": "ITEM_NONE",
             "moves": [
-                "MOVE_GYRO_BALL",
-                "MOVE_EXTRASENSORY",
-                "MOVE_LIGHT_SCREEN",
-                "MOVE_CONFUSE_RAY"
+                "MOVE_HEAT_WAVE",
+                "MOVE_THUNDERBOLT",
+                "MOVE_FOCUS_PUNCH",
+                "MOVE_SMOKE_SCREEN"
             ],
-            "iv_scale": 200,
+            "ability": "ABILITY_FLAME_BODY",
+            "nature": "NATURE_HASTY",
+            "ivnums": [31, 31, 31, 31, 31, 31],
+            "evnums": [0, 25, 0, 100, 75, 0],
+            "ball": "ITEM_DUSK_BALL",
+            "iv_scale": 0,
             "ball_seal": 0
         },
         {
-            "species": "SPECIES_GOLBAT",
+            "species": "SPECIES_MISMAGIUS",
             "form": 0,
-            "level": 44,
+            "level": 46,
             "item": "ITEM_NONE",
             "moves": [
-                "MOVE_AIR_CUTTER",
-                "MOVE_BITE",
-                "MOVE_POISON_FANG",
+                "MOVE_SHADOW_BALL",
+                "MOVE_POWER_GEM",
+                "MOVE_ENERGY_BALL",
                 "MOVE_CONFUSE_RAY"
             ],
-            "iv_scale": 200,
+            "ability": "ABILITY_LEVITATE",
+            "nature": "NATURE_MODEST",
+            "ivnums": [31, 31, 31, 31, 31, 31],
+            "evnums": [0, 0, 0, 100, 100, 0],
+            "ball": "ITEM_DUSK_BALL",
+            "iv_scale": 0,
             "ball_seal": 0
         },
         {
             "species": "SPECIES_PURUGLY",
             "form": 0,
-            "level": 46,
+            "level": 47,
             "item": "ITEM_SITRUS_BERRY",
             "moves": [
-                "MOVE_SLASH",
-                "MOVE_SHADOW_CLAW",
+                "MOVE_BODY_SLAM",
+                "MOVE_CRUNCH",
                 "MOVE_AERIAL_ACE",
                 "MOVE_HYPNOSIS"
             ],
-            "iv_scale": 200,
+            "ability": "ABILITY_THICK_FAT",
+            "nature": "NATURE_ADAMANT",
+            "ivnums": [31, 31, 31, 31, 31, 31],
+            "evnums": [0, 120, 0, 120, 0, 0],
+            "ball": "ITEM_DUSK_BALL",
+            "iv_scale": 0,
             "ball_seal": 0
         }
     ],

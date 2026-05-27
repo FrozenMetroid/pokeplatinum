@@ -20,7 +20,7 @@
                 "MOVE_SWEET_KISS",
                 "MOVE_SING"
             ],
-            "ability": "ABILITY_FOREWARN",
+            "ability": "ABILITY_OBLIVIOUS",
             "ivnums": [12, 12, 12, 12, 12, 12],
             "evnums": [0, 0, 0, 30, 30, 0],
             "ball": "ITEM_DUSK_BALL",

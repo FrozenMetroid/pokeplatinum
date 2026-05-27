@@ -3,7 +3,8 @@
     "class": "TRAINER_CLASS_GALACTIC_GRUNT_MALE",
     "items": [],
     "ai_flags": [
-        "AI_FLAG_BASIC"
+        "AI_FLAG_BASIC",
+        "AI_FLAG_EVAL_ATTACK"
     ],
     "double_battle": false,
     "party": [
@@ -12,17 +13,27 @@
             "form": 0,
             "level": 38,
             "item": null,
-            "moves": null,
-            "iv_scale": 30,
+            "moves": [
+                "MOVE_CRUNCH",
+                "MOVE_FIRE_BLAST",
+                "MOVE_HOWL",
+                "MOVE_SCARY_FACE"
+            ],
+            "iv_scale": 150,
             "ball_seal": 0
         },
         {
-            "species": "SPECIES_MURKROW",
+            "species": "SPECIES_MAGNETON",
             "form": 0,
             "level": 40,
             "item": null,
-            "moves": null,
-            "iv_scale": 30,
+            "moves": [
+                "MOVE_FLASH_CANNON",
+                "MOVE_THUNDERBOLT",
+                "MOVE_TRI_ATTACK",
+                "MOVE_LIGHT_SCREEN"
+            ],
+            "iv_scale": 150,
             "ball_seal": 0
         }
     ],

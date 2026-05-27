@@ -3,26 +3,48 @@
     "class": "TRAINER_CLASS_GALACTIC_GRUNT_MALE",
     "items": [],
     "ai_flags": [
-        "AI_FLAG_BASIC"
+        "AI_FLAG_BASIC",
+        "AI_FLAG_EVAL_ATTACK",
+        "AI_FLAG_TAG_STRATEGY"
     ],
     "double_battle": false,
     "party": [
         {
-            "species": "SPECIES_CROAGUNK",
+            "species": "SPECIES_DRAPION",
             "form": 0,
-            "level": 39,
+            "level": 44,
             "item": null,
-            "moves": null,
-            "iv_scale": 30,
+            "moves": [
+                "MOVE_TOXIC_SPIKES",
+                "MOVE_PROTECT",
+                "MOVE_EARTHQUAKE",
+                "MOVE_CRUNCH"
+            ],
+            "ability": "ABILITY_BATTLE_ARMOR",
+            "nature": "NATURE_IMPISH",
+            "ivnums": [25, 25, 25, 25, 25, 25],
+            "evnums": [80, 40, 40, 0, 0, 0],
+            "ball": "ITEM_DUSK_BALL",
+            "iv_scale": 0,
             "ball_seal": 0
         },
         {
-            "species": "SPECIES_CROAGUNK",
+            "species": "SPECIES_CROBAT",
             "form": 0,
-            "level": 43,
+            "level": 44,
             "item": null,
-            "moves": null,
-            "iv_scale": 30,
+            "moves": [
+                "MOVE_CRUNCH",
+                "MOVE_TOXIC",
+                "MOVE_FLY",
+                "MOVE_LEECH_LIFE"
+            ],
+            "ability": "ABILITY_INNER_FOCUS",
+            "nature": "NATURE_ADAMANT",
+            "ivnums": [25, 25, 25, 25, 25, 25],
+            "evnums": [0, 80, 0, 80, 0, 0],
+            "ball": "ITEM_DUSK_BALL",
+            "iv_scale": 0,
             "ball_seal": 0
         }
     ],

@@ -118,7 +118,8 @@
             "MOVE_SHADOW_SNEAK",
             "MOVE_CURSE",
             "MOVE_SPITE",
-            "MOVE_OMINOUS_WIND"
+            "MOVE_OMINOUS_WIND",
+            "MOVE_NASTY_PLOT"
         ]
     },
     "evolutions": [

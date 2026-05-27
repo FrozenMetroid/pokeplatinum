@@ -3,17 +3,24 @@
     "class": "TRAINER_CLASS_GALACTIC_GRUNT_MALE",
     "items": [],
     "ai_flags": [
-        "AI_FLAG_BASIC"
+        "AI_FLAG_BASIC",
+        "AI_FLAG_EVAL_ATTACK"
     ],
     "double_battle": false,
     "party": [
         {
-            "species": "SPECIES_GOLBAT",
+            "species": "SPECIES_CROBAT",
             "form": 0,
             "level": 41,
             "item": null,
-            "moves": null,
-            "iv_scale": 30,
+            "moves": [
+                "MOVE_LEECH_LIFE",
+                "MOVE_POISON_FANG",
+                "MOVE_CRUNCH",
+                "MOVE_CONFUSE_RAY"
+            ],
+            "ball": "ITEM_QUICK_BALL",
+            "iv_scale": 150,
             "ball_seal": 0
         }
     ],

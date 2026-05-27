@@ -115,7 +115,8 @@
             "MOVE_PERISH_SONG",
             "MOVE_PSYCHO_SHIFT",
             "MOVE_SCREECH",
-            "MOVE_FEINT_ATTACK"
+            "MOVE_FEINT_ATTACK",
+            "MOVE_BRAVE_BIRD"
         ]
     },
     "evolutions": [

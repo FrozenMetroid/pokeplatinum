@@ -9,6 +9,7 @@
         "AI_FLAG_BASIC",
         "AI_FLAG_EVAL_ATTACK",
         "AI_FLAG_EXPERT",
+        "AI_FLAG_SETUP_FIRST_TURN",
         "AI_FLAG_WEATHER"
     ],
     "double_battle": false,

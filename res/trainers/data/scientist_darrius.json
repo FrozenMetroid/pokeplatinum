@@ -6,12 +6,13 @@
     ],
     "ai_flags": [
         "AI_FLAG_BASIC",
+        "AI_FLAG_EVAL_ATTACK",
         "AI_FLAG_EXPERT"
     ],
     "double_battle": false,
     "party": [
         {
-            "species": "SPECIES_PORYGON2",
+            "species": "SPECIES_PORYGON_Z",
             "form": 0,
             "level": 42,
             "item": null,
@@ -21,7 +22,7 @@
                 "MOVE_ICE_BEAM",
                 "MOVE_TRI_ATTACK"
             ],
-            "iv_scale": 0,
+            "iv_scale": 150,
             "ball_seal": 0
         }
     ],

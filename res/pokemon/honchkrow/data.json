@@ -51,6 +51,7 @@
             [1, "MOVE_AIR_CUTTER"],
             [1, "MOVE_TAUNT"],
             [1, "MOVE_FEATHER_DANCE"],
+            [1, "MOVE_AIR_SLASH"],
             [37, "MOVE_DRILL_PECK"],
             [41, "MOVE_MEAN_LOOK"],
             [44, "MOVE_SWAGGER"],
@@ -110,7 +111,8 @@
             "MOVE_HEAT_WAVE",
             "MOVE_SUCKER_PUNCH",
             "MOVE_SWIFT",
-            "MOVE_UPROAR"
+            "MOVE_UPROAR",
+            "MOVE_ICY_WIND"
         ]
     },
     "evolutions": [  ],

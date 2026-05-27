@@ -3,35 +3,37 @@
     "class": "TRAINER_CLASS_GALACTIC_GRUNT_FEMALE",
     "items": [],
     "ai_flags": [
-        "AI_FLAG_BASIC"
+        "AI_FLAG_BASIC",
+        "AI_FLAG_EVAL_ATTACK"
     ],
     "double_battle": false,
     "party": [
         {
-            "species": "SPECIES_GOLBAT",
+            "species": "SPECIES_TOXICROAK",
             "form": 0,
-            "level": 39,
+            "level": 42,
             "item": null,
-            "moves": null,
-            "iv_scale": 30,
+            "moves": [
+                "MOVE_SLUDGE_BOMB",
+                "MOVE_FOCUS_BLAST",
+                "MOVE_NASTY_PLOT",
+                "MOVE_MUD_BOMB"
+            ],
+            "iv_scale": 150,
             "ball_seal": 0
         },
         {
-            "species": "SPECIES_CROAGUNK",
+            "species": "SPECIES_LUXRAY",
             "form": 0,
-            "level": 40,
+            "level": 43,
             "item": null,
-            "moves": null,
-            "iv_scale": 30,
-            "ball_seal": 0
-        },
-        {
-            "species": "SPECIES_MURKROW",
-            "form": 0,
-            "level": 41,
-            "item": null,
-            "moves": null,
-            "iv_scale": 30,
+            "moves": [
+                "MOVE_CRUNCH",
+                "MOVE_THUNDER_FANG",
+                "MOVE_EXTRASENSORY",
+                "MOVE_DOUBLE_KICK"
+            ],
+            "iv_scale": 150,
             "ball_seal": 0
         }
     ],
