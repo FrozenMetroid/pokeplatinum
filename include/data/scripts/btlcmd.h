@@ -235,6 +235,8 @@ ScriptCommand(BTLCMD_SETAIABILITY,                   BtlCmd_SetAIAbility)
 ScriptCommand(BTLCMD_TRYTRIGGERDEFIANTORCOMPETITIVE, BtlCmd_TryTriggerDefiantOrCompetitive)
 ScriptCommand(BTLCMD_TRIGGERATTACKERABILITYONHIT,    BtlCmd_TriggerAttackerAbilityOnHit)
 ScriptCommand(BTLCMD_CHECKMOVEFAILUREMIMESIS,        BtlCmd_CheckMoveFailureMimesis)
+ScriptCommand(BTLCMD_STARTTAILWINDCOUNTER,           BtlCmd_StartTailwindCounter)
+ScriptCommand(BTLCMD_CHECKTAILWINDACTIVE,            BtlCmd_CheckTailwindActive)
 
 // clang-format on
 

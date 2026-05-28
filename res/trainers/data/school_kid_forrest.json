@@ -18,9 +18,15 @@
             "moves": [
                 "MOVE_THUNDERBOLT",
                 "MOVE_TRI_ATTACK",
-                "MOVE_MIRROR_SHOT"
+                "MOVE_FLASH_CANNON",
+                "MOVE_MAGNET_RISE"
             ],
-            "iv_scale": 10,
+            "ability": "ABILITY_STURDY",
+            "nature": "NATURE_MODEST",
+            "ivnums": [31, 31, 31, 31, 31, 31],
+            "evnums": [0, 0, 100, 0, 100, 0],
+            "ball": "ITEM_POKE_BALL",
+            "iv_scale": 0,
             "ball_seal": 0
         }
     ],

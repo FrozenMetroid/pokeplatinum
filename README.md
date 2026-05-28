@@ -1,40 +1,46 @@
 # Pokémon Platinum, Senate's Version
 
-This is a personal fork of the decompilation of Pokémon Platinum. For instructions on how to set up the repository, please read [`INSTALL.md`](INSTALL.md). 
+This is a personal fork of the decompilation of Pokémon Platinum to make my ideal version of Pokémon Platinum. I have included my own balancing ideas, as well as many features as documented below to improve my experience with Platinum. I hope you enjoy it!
 
-A full release will not be made given that this is a personal project for my own enjoyment; however, you are able to build the ROM and play it for yourself if you want, or use it to source ideas or features. If you do use any of my original work or are inspired by something I have done, please credit me.
+For instructions on how to set up the repository if you're interested in modifying it for yourself, please read [`INSTALL.md`](INSTALL.md) for the installation steps for PokePlatinum.
 
-You do not have my permission to release a playable patch of this fork for any reason.
+You are able to build the ROM and modify it for yourself if you want, or use it to source ideas or features for your own projects. If you do use any of my original work or are inspired by something I have done, *please credit me*.
+
+**You do not have my permission to release a patch of this fork for any reason**. 
+
+The only official patch of this fork will be found in the [Legacy Edition Discord](https://discord.gg/EyU36eAJ5). I am **NOT** affiliated with any other source -- if you have downloaded this code and/or a patch of this project from anywhere other than my official fork or the Legacy server, you have been scammed and you are supporting the wrong people!
+
+*No monetary support has ever been accepted, nor will it ever be accepted, for any of my work on any ROMhacking project.*
 
 Credits:
 - Everyone who contributed to the decompilation, without which this fork would not exist. You all are awesome!
 - Everyone who contributed to HeartGold-Engine, whose work helped me to program things such as modernized Sturdy, restoring items at the end of a battle, and so much more. Special shoutout to BluRose in particular!
-- RavePossum for multiple tutorials, such as showing EVs, IVs, and nature-affected stats on the summary screen
+- RavePossum for multiple tutorials, such as showing EVs, IVs, and nature-affected stats on the summary screen, for the decomp
 - Keyswim for arranging the Battle! Johto Gym Leader theme for Jasmine's fight in the Battleground
 
-- Senate (aka Frozen Metroid)
+Thank you!
 
 # Features
 
 - Singleplayer Wonder Trade in the Global Terminal
 - Most if not all Pokémon sprites in battle have been updated to use HeartGold/SoulSilver's and/or my own edits (e.g. improving Hoenn palettes)
-- Move reminder is accessible from the party menu under normal conditions
+- Move reminder is accessible from the party menu outside of special situations
 - Footstep sounds for walking, running, metal, grass, wood, and caves from HeartGold and Soulsilver
     - Metal, Grass, and Wood metatile behavior have not been applied to any maps because of the inability to edit maps in the decomp currently
 - Multiple Premier Balls when buying Poké Balls of any type
 - Shiny Charm
-- Critical Captures and Catching Charm
+- Critical Capture
+- Catching Charm
 - Oval Charm
-- Debug/testing code for nearly perfect wild encounters and perfect starters
+- Debug/testing code for nearly perfect wild encounters and perfect starters (see ``testing.h`` for the config)
 - Lowercase Pokémon names
-- Redone encounters and Trainers (WIP)
 - Some Pokémon have moves defined to be learned whenever they evolve, e.g. Close Combat on Infernape
 - Infinite TMs and forgettable HMs
 - Use HMs without teaching the move
     - Must have a Pokémon capable of using the move in your party, the associated Badge if there is one, and the HM in your Bag
 - Hidden Abilities
     - Use the Ability Patch or find them in the wild with Poké Radar chains!
-    - Not all Pokémon have their Hidden Abilities due to those Abilities not being programmed
+    - Not all Pokémon have their Hidden Abilities due to those Abilities not being programmed (e.g. Infiltrator Crobat)
 - Ability Capsule and Ability Patch
 - Nature mints
 - Rocky Helmet
@@ -45,7 +51,7 @@ Credits:
 - Show EVs and IVs on the Summary Screen
 - Reduced BP prices at the Battle Frontier shops for less grinding
 - Rebalanced Pokémon and Trainers
-- Some different Pokémon encounters
+- Some different Pokémon encounters and/or levels of wild Pokémon
 - Pokémon that require trading to evolve can now evolve in singleplayer
     - Pokémon that required holding an item to evolve while trading now simply need to hold the item and level up once
     - Pokémon that evolved by trading will now evolve with a Linking Cord
@@ -82,14 +88,16 @@ Credits:
 
 All Pokémon have received changes to any combination of their learnsets, Abilities, and/or stats.
 
+For brevity, use the search feature of your code editor and search for the Pokémon's name plus "data"; e.g., "Sableyedata" will narrow the search down to Sableye's data file easily
+
 ### Additional Abilities:
 
 - Piercing Eye (CUSTOM): Lowers foes' Evasion on switch-in. 
 - Artillery (CUSTOM): Raises the power of beam moves (Ice Beam, Bubble Beam, etc.)
 - Acid Maw (CUSTOM): Biting moves apply the effect of Gastro Acid on hit
 - Matriarch (CUSTOM): Underlings heal the Pokémon for 1/8 of its maximum health when it takes damage
-- Mimesis (CUSTOM): The user copies and uses voice-related moves, such as Hyper Voice, similarly to the Ability Dancer
-- Supreme Overlord (Supreme Lord in-game): Raises the power of a move by 10% for each fainted ally
+- Mimesis (CUSTOM): The user copies and uses sound moves, such as Hyper Voice, similarly to the Ability Dancer
+- Supreme Overlord ("Supreme Lord" in-game): Raises the power of a move by 10% for each fainted ally
 - Sharpness: Raises the power of slicing moves (Leaf Blade, Night Slash, etc.)
 - Strong Jaw: Raises the power of biting moves (Crunch, Fire Fang, etc.)
 - Rocky Payload: Raises the power of Rock-type moves
@@ -157,8 +165,6 @@ All Pokémon have received changes to any combination of their learnsets, Abilit
 - Moves such as Leech Life and Hi Jump Kick have had their BPs increased to match modern standards
     - Some BP increases are custom, such as Knock Off (now 30BP instead of 65BP), and Fire Spin (50BP instead of 35BP), and some are not changed at all, such as Surf and Thunderbolt
 - PP has been increased when applicable for modernization, except the nerf to health-restoring moves' PP
-    - Ancient Power, Ominous Wind, and Silver Wind's PPs have been increased from 5 to 15
-    Giga Drain's PP has been increased from 10 to 15
 - Defog removes hazards from both sides of the field
 - Growth raises Special Attack and Attack by one stage; two stages under harsh sunlight
 - Moves that have been updated to be able to be reflected by Magic Coat and Magic Bounce:
@@ -228,6 +234,10 @@ All Pokémon have received changes to any combination of their learnsets, Abilit
 - Chatter: 65BP -> 75BP
 - Roar of Time: 90% accuracy -> 100, 150BP -> 200BP
 - Magma Storm: 80% accuracy -> 85
+- Giga Drain: 65BP -> 75BPP, 10PP -> 15PP
+- Ancient Power: 5PP -> 15PP
+- Ominous Wind: 5PP -> 15PP
+- Silver Wind: 5PP -> 15PP
 
 ### Miscellaneous Battle System Changes:
 
@@ -248,6 +258,9 @@ All Pokémon have received changes to any combination of their learnsets, Abilit
 - The cursor on the bottom screen during a battle is now able to be moved up from the Run button to the Fight button.
 - Return single-use items, excluding Berries, to the Pokémon at the end of a battle
 - Items collected from wild Pokémon at the end of a battle will be put into the Bag
+- Trainers will withold their Supreme Overlord Pokémon until all other fainted teammates are defeated
+- Tailwind has been modernized to last 4 turns
+- Razor Wind will deal double damage when Tailwind is in effect on the user's side of the field
 
 # Additional Item Locations
 
@@ -274,9 +287,14 @@ All Pokémon have received changes to any combination of their learnsets, Abilit
 - You can complete the Sinnoh regional Pokédex, but not the National Pokédex, through singleplayer
 - Locations for the additional Pokémon in the regional Pokédex listed above
 - Honey Tree encounters' levels are randomized between 10 and 55 based on the number of Badges you currently have (see ``HoneyTree_GetLevel`` for the formula) and have a chance of evolving if the generated level meets their evolution level threshold
-- Other locations are searchable in this repository for brevity... 
-    - Use the search feature of your code editor and search for the Pokémon's name plus "data"; e.g., "Sableyedata" will narrow the search down to Sableye's data file easily
+- Other locations are searchable in this repository for brevity...
 
 # Extra Trainers
 
 - Jasmine: Found in the Battleground with the other Gym Leaders after clearing Stark Mountain
+
+# Miscellaneous Changes
+
+- Earthquake TM in Wayward Cave requires Strength now that TMs are infinite
+    - Gible is still accessible at the same point in progression as vanilla Platinum
+- Exp. Share moved to Oreburgh City Poké Center; must have seen 20 species in the Pokédex to receive it (must battle every Trainer before Roark)

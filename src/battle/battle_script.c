@@ -318,6 +318,8 @@ static BOOL BtlCmd_SetAIAbility(BattleSystem *battleSys, BattleContext *battleCt
 static BOOL BtlCmd_TryTriggerDefiantOrCompetitive(BattleSystem *battleSys, BattleContext *battleCtx);
 static BOOL BtlCmd_TriggerAttackerAbilityOnHit(BattleSystem *battleSys, BattleContext *battleCtx);
 static BOOL BtlCmd_CheckMoveFailureMimesis(BattleSystem *battleSys, BattleContext *battleCtx);
+static BOOL BtlCmd_StartTailwindCounter(BattleSystem *battleSys, BattleContext *battleCtx);
+static BOOL BtlCmd_CheckTailwindActive(BattleSystem *battleSys, BattleContext *battleCtx);
 
 static int BattleScript_Read(BattleContext *battleCtx);
 static void BattleScript_Iter(BattleContext *battleCtx, int i);
@@ -9843,6 +9845,33 @@ static BOOL BtlCmd_CheckMoveFailureMimesis(BattleSystem *battleSys, BattleContex
     }
 
     battleCtx->scriptTemp = BattleSystem_TriggerImmunityAbility(battleCtx, attacker, defender);
+
+    return FALSE;
+}
+
+static BOOL BtlCmd_StartTailwindCounter(BattleSystem *battleSys, BattleContext *battleCtx)
+{
+    BattleScript_Iter(battleCtx, 1);
+    u32 inAttacker = BattleScript_Read(battleCtx);
+
+    u32 battler = BattleScript_Battler(battleSys, battleCtx, inAttacker);
+
+    battleCtx->tailwindCounter[BattleSystem_GetBattlerSide(battleSys, battler)] = 4; // set tailwind counter to 4, since it will be decremented at the end of the turn, making it last for the intended 3 turns
+
+    return FALSE;
+}
+
+
+static BOOL BtlCmd_CheckTailwindActive(BattleSystem *battleSys, BattleContext *battleCtx)
+{
+    BattleScript_Iter(battleCtx, 1);
+    u32 inBattler = BattleScript_Read(battleCtx);
+    int jumpIfNoTailwind = BattleScript_Read(battleCtx);
+
+    u32 battler = BattleScript_Battler(battleSys, battleCtx, inBattler);
+    if (battleCtx->tailwindCounter[BattleSystem_GetBattlerSide(battleSys, battler)]) {
+        BattleScript_Iter(battleCtx, jumpIfNoTailwind);
+    }
 
     return FALSE;
 }

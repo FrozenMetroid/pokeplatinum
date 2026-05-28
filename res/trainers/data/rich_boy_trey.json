@@ -5,7 +5,8 @@
         "ITEM_FULL_RESTORE"
     ],
     "ai_flags": [
-        "AI_FLAG_BASIC"
+        "AI_FLAG_BASIC",
+        "AI_FLAG_EVAL_ATTACK"
     ],
     "double_battle": false,
     "party": [
@@ -14,8 +15,13 @@
             "form": 0,
             "level": 45,
             "item": null,
-            "moves": null,
-            "iv_scale": 0,
+            "moves": [
+                "MOVE_THUNDER_FANG",
+                "MOVE_CRUNCH",
+                "MOVE_DISCHARGE",
+                "MOVE_SWAGGER"
+            ],
+            "iv_scale": 150,
             "ball_seal": 4
         }
     ],

@@ -139,6 +139,10 @@ Currently not working
 
 #define BATTLE_ADD_MIMESIS
 
+#define BATTLE_ADD_TAILWIND_AND_RAZOR_WIND_BOOST
+
+#define BATTLE_UPDATE_TAILWIND_TURNS // Tailwind now lasts 4 turns instead of 3
+
 
 // The following are always applied because they deal with some subscripts and/or things that aren't easily configurable
 // Modernization:

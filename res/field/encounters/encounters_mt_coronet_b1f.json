@@ -3,7 +3,7 @@
     "land_encounters": [
         {
             "level": 33,
-            "species": "SPECIES_BRONZOR"
+            "species": "SPECIES_BRONZONG"
         },
         {
             "level": 34,
@@ -11,7 +11,7 @@
         },
         {
             "level": 33,
-            "species": "SPECIES_MEDITITE"
+            "species": "SPECIES_MEDICHAM"
         },
         {
             "level": 32,
@@ -23,7 +23,7 @@
         },
         {
             "level": 35,
-            "species": "SPECIES_MEDITITE"
+            "species": "SPECIES_MEDICHAM"
         },
         {
             "level": 32,
@@ -51,7 +51,7 @@
         }
     ],
     "swarms": [
-        "SPECIES_BRONZOR",
+        "SPECIES_BRONZONG",
         "SPECIES_GRAVELER"
     ],
     "day": [

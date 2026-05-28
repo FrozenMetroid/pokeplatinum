@@ -6,6 +6,7 @@
     ],
     "ai_flags": [
         "AI_FLAG_BASIC",
+        "AI_FLAG_EVAL_ATTACK",
         "AI_FLAG_EXPERT"
     ],
     "double_battle": false,
@@ -18,10 +19,15 @@
             "moves": [
                 "MOVE_LAST_RESORT",
                 "MOVE_SUPER_FANG",
-                "MOVE_DISCHARGE",
+                "MOVE_THUNDERBOLT",
                 "MOVE_SWEET_KISS"
             ],
-            "iv_scale": 10,
+            "ability": "ABILITY_LIGHTNING_ROD",
+            "nature": "NATURE_RELAXED",
+            "ivnums": [31, 31, 31, 31, 31, 31],
+            "evnums": [0, 0, 100, 50, 50, 0],
+            "ball": "ITEM_QUICK_BALL",
+            "iv_scale": 0,
             "ball_seal": 0
         }
     ],

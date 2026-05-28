@@ -3,22 +3,28 @@
     "class": "TRAINER_CLASS_GUITARIST",
     "items": [],
     "ai_flags": [
-        "AI_FLAG_BASIC"
+        "AI_FLAG_BASIC",
+        "AI_FLAG_EVAL_ATTACK"
     ],
     "double_battle": false,
     "party": [
         {
-            "species": "SPECIES_RAICHU",
+            "species": "SPECIES_FLAAFFY",
             "form": 0,
-            "level": 47,
+            "level": 45,
             "item": null,
             "moves": [
                 "MOVE_THUNDERBOLT",
-                "MOVE_SLAM",
+                "MOVE_SIGNAL_BEAM",
                 "MOVE_THUNDER_WAVE",
-                "MOVE_QUICK_ATTACK"
+                "MOVE_POWER_GEM"
             ],
-            "iv_scale": 10,
+            "ability": "ABILITY_STATIC",
+            "nature": "NATURE_MODEST",
+            "ivnums": [31, 31, 31, 31, 31, 31],
+            "evnums": [100, 0, 0, 0, 100, 0],
+            "ball": "ITEM_POKE_BALL",
+            "iv_scale": 0,
             "ball_seal": 0
         }
     ],

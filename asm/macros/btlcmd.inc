@@ -21,6 +21,8 @@
     .equ FALSE, 0
     .equ TRUE, 1
 
+    .equ BATTLE_UPDATE_TAILWIND_TURNS, TRUE
+
     .macro PlayEncounterAnimation
     .long BTLCMD_PLAYENCOUNTERANIMATION
     .endm
@@ -1272,6 +1274,18 @@
     .long \inAttacker
     .long (\jump_no_effect-.) / 4 - 1
     .endm
+
+    .macro StartTailwindCounter inAttacker
+    .long BTLCMD_STARTTAILWINDCOUNTER
+    .long \inAttacker
+    .endm
+
+    .macro CheckTailwindActive inAttacker, address
+    .long BTLCMD_CHECKTAILWINDACTIVE
+    .long \inAttacker
+    .long (\address-.) / 4 - 1
+    .endm
+
     
     .text
     .globl _start

@@ -21,7 +21,8 @@
                 "MOVE_CHARM"
             ],
             "ability": "ABILITY_HEALER",
-            "iv_scale": 30,
+            "ball": "ITEM_HEAL_BALL",
+            "iv_scale": 100,
             "ball_seal": 0
         }
     ],

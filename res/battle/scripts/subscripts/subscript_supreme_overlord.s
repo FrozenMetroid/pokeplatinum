@@ -2,7 +2,7 @@
 
 
 _000:
-    // {STRVAR_1 1, 0, 0} gained strength\nfrom the fallen!
+    // {0} gained strength from the fallen with its {1}!
     PrintMessage BattleStrings_Text_SupremeOverlord_Ally, TAG_NICKNAME_ABILITY, BTLSCR_MSG_TEMP, BTLSCR_MSG_BATTLER_TEMP
     Wait 
     WaitButtonABTime 30

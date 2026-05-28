@@ -8,12 +8,17 @@
     "double_battle": false,
     "party": [
         {
-            "species": "SPECIES_MAGIKARP",
+            "species": "SPECIES_WHISCASH",
             "form": 0,
-            "level": 42,
+            "level": 45,
             "item": null,
-            "moves": null,
-            "iv_scale": 0,
+            "moves": [
+                "MOVE_MUD_BOMB",
+                "MOVE_SURF",
+                "MOVE_TICKLE",
+                "MOVE_AMNESIA"
+            ],
+            "iv_scale": 150,
             "ball_seal": 0
         },
         {
@@ -21,8 +26,13 @@
             "form": 0,
             "level": 45,
             "item": null,
-            "moves": null,
-            "iv_scale": 0,
+            "moves": [
+                "MOVE_BOUNCE",
+                "MOVE_AQUA_TAIL",
+                "MOVE_ICE_FANG",
+                "MOVE_FLAIL"
+            ],
+            "iv_scale": 150,
             "ball_seal": 0
         }
     ],

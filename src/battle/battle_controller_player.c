@@ -1047,7 +1047,35 @@ static void BattleControllerPlayer_CheckFieldConditions(BattleSystem *battleSys,
 
             StepFieldConditionCheck(battleCtx, state);
             break;
+        #ifdef BATTLE_UPDATE_TAILWIND_TURNS
+        case FIELD_COND_CHECK_STATE_TAILWIND:
+            while (battleCtx->fieldConditionCheckTemp < NUM_BATTLE_SIDES) {
+                side = battleCtx->fieldConditionCheckTemp;
 
+                if (battleCtx->tailwindCounter[side]) {
+                    if (--battleCtx->tailwindCounter[side] == 0) {
+                        PrepareSubroutineSequence(battleCtx, subscript_tailwind_end);
+                        battleCtx->msgBattlerTemp = BattleSystem_SideToBattler(battleSys, battleCtx, side);
+                        state = STATE_BREAK_OUT;
+                    }
+
+                    for (int index = side; index < maxBattlers; index++) {
+                        if (Battler_Ability(battleCtx, index) == ABILITY_WIND_RIDER)
+                        {
+                            battleCtx->battleMons[index].windRiderActivated = FALSE;
+                        }
+                    }
+                }
+
+                battleCtx->fieldConditionCheckTemp++;
+                if (state) {
+                    break;
+                }
+            }
+
+            StepFieldConditionCheck(battleCtx, state);
+            break;
+        #else
         case FIELD_COND_CHECK_STATE_TAILWIND:
             while (battleCtx->fieldConditionCheckTemp < NUM_BATTLE_SIDES) {
                 side = battleCtx->fieldConditionCheckTemp;
@@ -1077,6 +1105,7 @@ static void BattleControllerPlayer_CheckFieldConditions(BattleSystem *battleSys,
 
             StepFieldConditionCheck(battleCtx, state);
             break;
+        #endif
 
         case FIELD_COND_CHECK_STATE_LUCKY_CHANT:
             while (battleCtx->fieldConditionCheckTemp < NUM_BATTLE_SIDES) {

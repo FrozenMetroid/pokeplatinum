@@ -10,30 +10,41 @@
     "double_battle": false,
     "party": [
         {
-            "species": "SPECIES_ELECTABUZZ",
+            "species": "SPECIES_ROTOM",
             "form": 0,
             "level": 47,
             "item": null,
             "moves": [
                 "MOVE_THUNDERBOLT",
-                "MOVE_SHOCK_WAVE",
-                "MOVE_QUICK_ATTACK",
-                "MOVE_IRON_TAIL"
+                "MOVE_SHADOW_BALL",
+                "MOVE_SIGNAL_BEAM",
+                "MOVE_THUNDER_WAVE"
             ],
-            "iv_scale": 60,
+            "ability": "ABILITY_LEVITATE",
+            "nature": "NATURE_TIMID",
+            "ivnums": [31, 31, 31, 31, 31, 31],
+            "evnums": [0, 0, 0, 100, 100, 0],
+            "ball": "ITEM_PREMIER_BALL",
+            "iv_scale": 0,
             "ball_seal": 0
         },
         {
-            "species": "SPECIES_MAGNETON",
+            "species": "SPECIES_MAGNEZONE",
             "form": 0,
             "level": 48,
             "item": null,
             "moves": [
                 "MOVE_THUNDERBOLT",
                 "MOVE_TRI_ATTACK",
-                "MOVE_MIRROR_SHOT"
+                "MOVE_FLASH_CANNON",
+                "MOVE_REFLECT"
             ],
-            "iv_scale": 60,
+            "ability": "ABILITY_ANALYTIC",
+            "nature": "NATURE_QUIET",
+            "ivnums": [31, 31, 31, 31, 31, 31],
+            "evnums": [0, 0, 0, 100, 100, 0],
+            "ball": "ITEM_POKE_BALL",
+            "iv_scale": 0,
             "ball_seal": 0
         }
     ],

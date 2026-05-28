@@ -98,7 +98,8 @@
             "MOVE_HOWL",
             "MOVE_HEAT_WAVE",
             "MOVE_DOUBLE_EDGE",
-            "MOVE_FLARE_BLITZ"
+            "MOVE_FLARE_BLITZ",
+            "MOVE_MORNING_SUN"
         ]
     },
     "evolutions": [

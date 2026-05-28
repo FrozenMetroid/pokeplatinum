@@ -5,47 +5,51 @@
     "ai_flags": [
         "AI_FLAG_BASIC",
         "AI_FLAG_EVAL_ATTACK",
-        "AI_FLAG_EXPERT"
+        "AI_FLAG_EXPERT",
+        "AI_FLAG_WEATHER"
     ],
     "double_battle": false,
     "party": [
         {
             "species": "SPECIES_CHERRIM",
             "form": 0,
-            "level": 34,
+            "level": 35,
             "item": null,
             "moves": [
                 "MOVE_PETAL_DANCE",
-                "MOVE_MAGICAL_LEAF",
-                "MOVE_LEECH_SEED"
+                "MOVE_WEATHER_BALL",
+                "MOVE_LEECH_SEED",
+                "MOVE_SUNNY_DAY"
             ],
-            "iv_scale": 50,
+            "iv_scale": 120,
             "ball_seal": 0
         },
         {
-            "species": "SPECIES_AZUMARILL",
+            "species": "SPECIES_CLEFABLE",
             "form": 0,
             "level": 34,
             "item": null,
             "moves": [
-                "MOVE_DOUBLE_EDGE",
-                "MOVE_BUBBLE_BEAM",
-                "MOVE_AQUA_RING"
+                "MOVE_SWIFT",
+                "MOVE_FLAMETHROWER",
+                "MOVE_ICE_BEAM",
+                "MOVE_THUNDERBOLT"
             ],
-            "iv_scale": 50,
+            "iv_scale": 100,
             "ball_seal": 0
         },
         {
-            "species": "SPECIES_LOPUNNY",
+            "species": "SPECIES_HIPPOPOTAS",
             "form": 0,
             "level": 35,
             "item": null,
             "moves": [
-                "MOVE_JUMP_KICK",
-                "MOVE_QUICK_ATTACK",
-                "MOVE_CHARM"
+                "MOVE_EARTHQUAKE",
+                "MOVE_PROTECT",
+                "MOVE_CRUNCH",
+                "MOVE_TAKE_DOWN"
             ],
-            "iv_scale": 50,
+            "iv_scale": 100,
             "ball_seal": 0
         }
     ],

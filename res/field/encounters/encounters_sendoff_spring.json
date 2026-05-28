@@ -27,7 +27,7 @@
         },
         {
             "level": 37,
-            "species": "SPECIES_GRAVELER"
+            "species": "SPECIES_KIRLIA"
         },
         {
             "level": 37,
@@ -60,7 +60,7 @@
     ],
     "night": [
         "SPECIES_DUSCLOPS",
-        "SPECIES_GOLBAT"
+        "SPECIES_BANETTE"
     ],
     "radar": [
         "SPECIES_BIBAREL",

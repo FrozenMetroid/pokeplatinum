@@ -12,8 +12,13 @@
             "form": 0,
             "level": 35,
             "item": null,
-            "moves": null,
-            "iv_scale": 0,
+            "moves": [
+                "MOVE_BRINE",
+                "MOVE_SLUDGE",
+                "MOVE_BARRIER",
+                "MOVE_SUPERSONIC"
+            ],
+            "iv_scale": 100,
             "ball_seal": 0
         }
     ],

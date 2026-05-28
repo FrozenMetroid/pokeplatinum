@@ -20,7 +20,7 @@
                 "MOVE_ENDEAVOR",
                 "MOVE_QUICK_ATTACK"
             ],
-            "iv_scale": 50,
+            "iv_scale": 100,
             "ball_seal": 0
         },
         {
@@ -30,9 +30,25 @@
             "item": null,
             "moves": [
                 "MOVE_DOUBLE_HIT",
-                "MOVE_PSYCHIC"
+                "MOVE_PSYCHIC",
+                "MOVE_ASSURANCE",
+                "MOVE_DOUBLE_KICK"
             ],
-            "iv_scale": 50,
+            "iv_scale": 100,
+            "ball_seal": 0
+        },
+        {
+            "species": "SPECIES_SUDOWOODO",
+            "form": 0,
+            "level": 35,
+            "item": null,
+            "moves": [
+                "MOVE_ROCK_SLIDE",
+                "MOVE_FLAIL",
+                "MOVE_LOW_KICK",
+                "MOVE_FEINT_ATTACK"
+            ],
+            "iv_scale": 100,
             "ball_seal": 0
         }
     ],

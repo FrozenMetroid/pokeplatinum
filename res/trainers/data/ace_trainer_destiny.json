@@ -5,7 +5,8 @@
     "ai_flags": [
         "AI_FLAG_BASIC",
         "AI_FLAG_EVAL_ATTACK",
-        "AI_FLAG_EXPERT"
+        "AI_FLAG_EXPERT",
+        "AI_FLAG_SETUP_FIRST_TURN"
     ],
     "double_battle": false,
     "party": [
@@ -16,25 +17,35 @@
             "item": null,
             "moves": [
                 "MOVE_THUNDERBOLT",
-                "MOVE_SHOCK_WAVE",
+                "MOVE_LIGHT_SCREEN",
                 "MOVE_QUICK_ATTACK",
                 "MOVE_IRON_TAIL"
             ],
-            "iv_scale": 60,
+            "ability": "ABILITY_STATIC",
+            "nature": "NATURE_MODEST",
+            "ivnums": [31, 31, 31, 31, 31, 31],
+            "evnums": [0, 0, 0, 100, 100, 0],
+            "ball": "ITEM_POKE_BALL",
+            "iv_scale": 0,
             "ball_seal": 0
         },
         {
-            "species": "SPECIES_RAICHU",
+            "species": "SPECIES_PACHIRISU",
             "form": 0,
             "level": 48,
             "item": null,
             "moves": [
                 "MOVE_THUNDERBOLT",
-                "MOVE_DIG",
-                "MOVE_THUNDER_WAVE",
-                "MOVE_LIGHT_SCREEN"
+                "MOVE_FAKE_TEARS",
+                "MOVE_SUPER_FANG",
+                "MOVE_SUBSTITUTE"
             ],
-            "iv_scale": 60,
+            "ability": "ABILITY_LIGHTNING_ROD",
+            "nature": "NATURE_MODEST",
+            "ivnums": [31, 31, 31, 31, 31, 31],
+            "evnums": [0, 0, 0, 100, 100, 0],
+            "ball": "ITEM_GREAT_BALL",
+            "iv_scale": 0,
             "ball_seal": 0
         }
     ],

@@ -3,7 +3,8 @@
     "class": "TRAINER_CLASS_SWIMMER_FEMALE",
     "items": [],
     "ai_flags": [
-        "AI_FLAG_BASIC"
+        "AI_FLAG_BASIC",
+        "AI_FLAG_EVAL_ATTACK"
     ],
     "double_battle": false,
     "party": [
@@ -14,11 +15,11 @@
             "item": null,
             "moves": [
                 "MOVE_AQUA_JET",
-                "MOVE_SONIC_BOOM",
+                "MOVE_BITE",
                 "MOVE_QUICK_ATTACK",
                 "MOVE_ATTRACT"
             ],
-            "iv_scale": 0,
+            "iv_scale": 100,
             "ball_seal": 0
         },
         {
@@ -27,12 +28,12 @@
             "level": 32,
             "item": null,
             "moves": [
-                "MOVE_CONFUSION",
+                "MOVE_ZEN_HEADBUTT",
                 "MOVE_BRICK_BREAK",
                 "MOVE_MEDITATE",
                 "MOVE_LIGHT_SCREEN"
             ],
-            "iv_scale": 0,
+            "iv_scale": 100,
             "ball_seal": 0
         },
         {
@@ -41,12 +42,12 @@
             "level": 32,
             "item": null,
             "moves": [
-                "MOVE_WATER_PULSE",
+                "MOVE_SURF",
                 "MOVE_HORN_ATTACK",
                 "MOVE_AQUA_RING",
                 "MOVE_CAPTIVATE"
             ],
-            "iv_scale": 0,
+            "iv_scale": 100,
             "ball_seal": 15
         }
     ],

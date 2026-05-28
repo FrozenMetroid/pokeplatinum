@@ -1335,9 +1335,15 @@ u8 BattleSystem_CompareBattlerSpeed(BattleSystem *battleSys, BattleContext *batt
         battler1Speed *= 2;
     }
 
+    #ifndef BATTLE_UPDATE_TAILWIND_TURNS
     if (battleCtx->sideConditionsMask[BattleSystem_GetBattlerSide(battleSys, battler1)] & SIDE_CONDITION_TAILWIND) {
         battler1Speed *= 2;
     }
+    #else
+    if (battleCtx->tailwindCounter[BattleSystem_GetBattlerSide(battleSys, battler1)]) {
+        battler1Speed *= 2;
+    }
+    #endif
 
     if (battler1ItemEffect == HOLD_EFFECT_SOMETIMES_PRIORITY) {
         if (battleCtx->speedRand[battler1] % (100 / battler1ItemParam) == 0) {
@@ -1405,9 +1411,15 @@ u8 BattleSystem_CompareBattlerSpeed(BattleSystem *battleSys, BattleContext *batt
         battler2Speed *= 2;
     }
 
+    #ifndef BATTLE_UPDATE_TAILWIND_TURNS
     if (battleCtx->sideConditionsMask[BattleSystem_GetBattlerSide(battleSys, battler2)] & SIDE_CONDITION_TAILWIND) {
         battler2Speed *= 2;
     }
+    #else
+    if (battleCtx->tailwindCounter[BattleSystem_GetBattlerSide(battleSys, battler2)]) {
+        battler2Speed *= 2;
+    }
+    #endif
 
     if (battler2ItemEffect == HOLD_EFFECT_SOMETIMES_PRIORITY) {
         if (battleCtx->speedRand[battler2] % (100 / battler2ItemParam) == 0) {
@@ -4465,7 +4477,11 @@ int BattleSystem_TriggerEffectOnSwitch(BattleSystem *battleSys, BattleContext *b
                 if (battleCtx->battleMons[battler].windRiderActivated == FALSE
                     && battleCtx->battleMons[battler].curHP
                     && Battler_Ability(battleCtx, battler) == ABILITY_WIND_RIDER
+                    #ifdef BATTLE_UPDATE_TAILWIND_TURNS
                     && battleCtx->sideConditionsMask[BattleSystem_GetBattlerSide(battleSys, battler)] & SIDE_CONDITION_TAILWIND) {
+                    #else
+                    && (battleCtx->tailwindCounter[BattleSystem_GetBattlerSide(battleSys, battler)])) {
+                    #endif
                     battleCtx->battleMons[battler].windRiderActivated = TRUE;
                     battleCtx->sideEffectType = SIDE_EFFECT_TYPE_ABILITY;
                     battleCtx->sideEffectParam = MOVE_SUBSCRIPT_PTR_ATTACK_UP_1_STAGE;
@@ -7500,6 +7516,18 @@ int BattleSystem_CalcMoveDamage(BattleSystem *battleSys,
     if (moveType == TYPE_FIRE
         && battleCtx->fieldConditionsMask & FIELD_CONDITION_DAMP) {
         movePower /= 2;
+    }
+    #endif
+
+    #ifdef BATTLE_ADD_TAILWIND_AND_RAZOR_WIND_BOOST
+    if (move == MOVE_RAZOR_WIND 
+        && MoveIsOnDamagingTurn(battleCtx, move) 
+        #ifndef BATTLE_UPDATE_TAILWIND_TURNS
+        && battleCtx->sideConditionsMask[BattleSystem_GetBattlerSide(battleSys, battleCtx->attacker)] & SIDE_CONDITION_TAILWIND) {
+        #else
+        && battleCtx->tailwindCounter[BattleSystem_GetBattlerSide(battleSys, battleCtx->attacker)] > 0) {
+        #endif
+        movePower *= 2;
     }
     #endif
 

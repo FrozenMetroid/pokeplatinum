@@ -318,6 +318,7 @@ struct BattleContext {
     u32 padding_end:31;
     u8 clientPriority[MAX_BATTLERS];
     u16 itemsToRestore[MAX_PARTY_SIZE];
+    u8 tailwindCounter[NUM_BATTLE_SIDES];
 };
 
 #endif // POKEPLATINUM_BATTLE_CONTEXT_H
