@@ -88,8 +88,9 @@ Thank you!
 ### Pokémon
 
 All Pokémon have received changes to any combination of their learnsets, Abilities, and/or stats.
+ - For brevity, use the search feature of your code editor and search for the Pokémon's name plus "data"; e.g., "Sableyedata" will narrow the search down to Sableye's data file easily
 
-For brevity, use the search feature of your code editor and search for the Pokémon's name plus "data"; e.g., "Sableyedata" will narrow the search down to Sableye's data file easily
+Wild and Wonder Trade Pokémon will have randomly generated movesets based on what they can learn in the level-up learnset at the generated level, with the latter also having a chance for TM and Egg moves.
 
 ### Additional Abilities:
 
@@ -128,7 +129,8 @@ For brevity, use the search feature of your code editor and search for the Poké
 - Queenly Majesty: Moves with increased priority cannot be used against this Pokémon
 - Propeller Tail: This Pokémon's moves cannot be redirected by the likes of Follow Me, Storm Drain, Lightning Rod, etc.
 - Sand Force: Rock, Ground, and Steel-type moves have a 30% increase in power during Sandstorms
-- Flare Boost: Boosts Special Attack damage by 50% when the Pokémon is burned
+- Flare Boost: Boosts special damage by 50% when the Pokémon is burned
+- Toxic Boost: Boosts physical damage by 50% when the Pokémon is poisoned
 - Sand Rush: Speed is increased by 50% during Sandstorms
 - Slush Rush: Speed is increased by 50% during Hailstorms
 - Unnerve: Opposing Pokémon cannot eat their Berries

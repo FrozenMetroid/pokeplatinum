@@ -692,6 +692,10 @@
     {
       "id": "pl_msg_00000611_00173",
       "en_US": "MERCILESS"
+    },
+    {
+      "id": "pl_msg_00000611_00174",
+      "en_US": "TOXIC BOOST"
     }
   ]
 }

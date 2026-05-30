@@ -1214,6 +1214,13 @@
         "It lands critical hits\n",
         "when the foe is poisoned."
       ]
+    },
+    {
+      "id": "pl_msg_00000612_00174",
+      "en_US": [
+        "Powers up physical attacks\n",
+        "when poisoned."
+      ]
     }
   ]
 }

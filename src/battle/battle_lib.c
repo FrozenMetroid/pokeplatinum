@@ -7395,6 +7395,12 @@ int BattleSystem_CalcMoveDamage(BattleSystem *battleSys,
         movePower = movePower * 15 / 10;
     }
 
+    if (attackerParams.ability == ABILITY_TOXIC_BOOST
+        && (attackerParams.statusMask & (MON_CONDITION_POISON | MON_CONDITION_TOXIC))
+        && moveClass == CLASS_PHYSICAL) {
+        movePower = movePower * 15 / 10;
+    }
+
     if (attackerParams.ability == ABILITY_HUGE_POWER || attackerParams.ability == ABILITY_PURE_POWER) {
         attackStat = attackStat * 2;
     }
