@@ -3901,6 +3901,9 @@ enum SwitchInCheckState {
     #ifdef BATTLE_ADD_WIND_RIDER
     SWITCH_IN_CHECK_STATE_WIND_RIDER,
     #endif
+    #ifdef BATTLE_ADD_CELESTIAL_BODY
+    SWITCH_IN_CHECK_STATE_CELESTIAL_BODY,
+    #endif
     SWITCH_IN_CHECK_STATE_FORM_CHANGE,
     SWITCH_IN_CHECK_STATE_AMULET_COIN,
     SWITCH_IN_CHECK_STATE_FORBIDDEN_STATUS,
@@ -4517,6 +4520,26 @@ int BattleSystem_TriggerEffectOnSwitch(BattleSystem *battleSys, BattleContext *b
                     battleCtx->sideEffectMon = battler;
                     battleCtx->msgBattlerTemp = battler;
                     subscript = subscript_update_stat_stage;
+                    result = SWITCH_IN_CHECK_RESULT_BREAK;
+                    break;
+                }
+            }
+            if (i == maxBattlers) {
+                battleCtx->switchInCheckState++;
+            }
+            break;
+        #endif
+        #ifdef BATTLE_ADD_CELESTIAL_BODY
+        case SWITCH_IN_CHECK_STATE_CELESTIAL_BODY:
+            for (i = 0; i < maxBattlers; i++) {
+                battler = battleCtx->monSpeedOrder[i];
+
+                if (battleCtx->battleMons[battler].celestialBodyAnnounced == FALSE
+                    && battleCtx->battleMons[battler].curHP
+                    && Battler_Ability(battleCtx, battler) == ABILITY_CELESTIAL_BODY) {
+                    battleCtx->battleMons[battler].celestialBodyAnnounced = TRUE;
+                    battleCtx->msgBattlerTemp = battler;
+                    subscript = subscript_celestial_body;
                     result = SWITCH_IN_CHECK_RESULT_BREAK;
                     break;
                 }

@@ -145,6 +145,8 @@ Currently not working
 
 #define BATTLE_UPDATE_TAILWIND_TURNS // Tailwind now lasts 4 turns instead of 3
 
+#define BATTLE_ADD_CELESTIAL_BODY
+
 
 // The following are always applied because they deal with some subscripts and/or things that aren't easily configurable
 // Modernization:

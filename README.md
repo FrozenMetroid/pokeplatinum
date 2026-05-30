@@ -100,6 +100,7 @@ Wild and Wonder Trade Pokémon will have randomly generated movesets based on wh
 - Matriarch (CUSTOM): Underlings heal the Pokémon for 1/8 of its maximum health when it takes damage
 - Mimesis (CUSTOM): The user copies and uses sound moves, such as Hyper Voice, similarly to the Ability Dancer
 - Heat Sink (CUSTOM): This Pokémon draws in all Fire-type moves to raise Sp. Attack, like Storm Drain and Lightning Rod
+- Celestial Body (CUSTOM): This Pokémon applies Gravity upon switching in
 - Supreme Overlord ("Supreme Lord" in-game): Raises the power of a move by 10% for each fainted ally
 - Sharpness: Raises the power of slicing moves (Leaf Blade, Night Slash, etc.)
 - Strong Jaw: Raises the power of biting moves (Crunch, Fire Fang, etc.)

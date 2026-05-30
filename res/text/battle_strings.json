@@ -8933,6 +8933,27 @@
         "The foe’s {STRVAR_1 1, 2, 0}’s {STRVAR_1 10, 3, 0}\f",
         "with its {STRVAR_1 6, 1, 0}!"
       ]
+    },
+    {
+      "id": "BattleStrings_Text_CelestialBody_Ally",
+      "en_US": [
+        "{STRVAR_1 1, 0, 0}’s {STRVAR_1 6, 1, 0}\n",
+        "cosmically alters the field!"
+      ]
+    },
+    {
+      "id": "BattleStrings_Text_CelestialBody_Wild",
+      "en_US": [
+        "The wild {STRVAR_1 1, 0, 0}’s {STRVAR_1 6, 1, 0}\n",
+        "cosmically alters the field!"
+      ]
+    },
+    {
+      "id": "BattleStrings_Text_CelestialBody_Foe",
+      "en_US": [
+        "The foe’s {STRVAR_1 1, 0, 0}’s {STRVAR_1 6, 1, 0}\n",
+        "cosmically alters the field!"
+      ]
     }
   ]
 }
