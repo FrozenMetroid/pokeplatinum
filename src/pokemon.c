@@ -4836,8 +4836,8 @@ static void BoxPokemon_CalcAbility(BoxPokemon *boxMon)
     int monAbility2 = SpeciesData_GetFormValue(monSpecies, monForm, SPECIES_DATA_ABILITY_2);
     int hiddenAbility = SpeciesData_GetFormValue(monSpecies, monForm, SPECIES_DATA_HIDDEN_ABILITY);
 
-    if (BoxPokemon_GetValue(boxMon, MON_DATA_HIDDEN_ABILITY_SET, NULL)
-        && hiddenAbility != ABILITY_NONE) { // priority to hidden ability if set
+    if (BoxPokemon_GetValue(boxMon, MON_DATA_HIDDEN_ABILITY_SET, NULL) // priority to hidden ability if set
+        && hiddenAbility != ABILITY_NONE) { // must include this for mons like Shedinja that don't have a Hidden Ability but the previous mon in the evolutionary tree does
         BoxPokemon_SetValue(boxMon, MON_DATA_ABILITY, &hiddenAbility);
     } else if (monAbility2 != ABILITY_NONE) {
         if (monPersonality & 1) {
@@ -5443,4 +5443,18 @@ void sub_02078E0C(UnkStruct_02078B40 *param0, Pokemon *mon)
     Pokemon_EncryptData(&mon->party, sizeof(PartyPokemon), mon->box.personality);
     mon->box.checksum = Pokemon_GetDataChecksum(&mon->box.dataBlocks, sizeof(PokemonDataBlock) * 4);
     Pokemon_EncryptData(&mon->box.dataBlocks, sizeof(PokemonDataBlock) * 4, mon->box.checksum);
+}
+
+void Pokemon_SetWildHiddenAbility(Pokemon *newEncounter, u16 species)
+{
+    u8 hasHiddenAbility = TRUE;
+    SpeciesData *speciesData = Heap_Alloc(HEAP_ID_FIELD2, sizeof(SpeciesData));
+    SpeciesData_FromMonForm(species, Pokemon_GetValue(newEncounter, MON_DATA_FORM, NULL), speciesData);
+
+    u8 hiddenAbility = SpeciesData_GetValue(speciesData, SPECIES_DATA_HIDDEN_ABILITY);
+    if (hiddenAbility != ABILITY_NONE) {
+        Pokemon_SetValue(newEncounter, MON_DATA_ABILITY, &hiddenAbility);
+        Pokemon_SetValue(newEncounter, MON_DATA_HIDDEN_ABILITY_SET, &hasHiddenAbility);
+    }
+    Heap_Free(speciesData);
 }

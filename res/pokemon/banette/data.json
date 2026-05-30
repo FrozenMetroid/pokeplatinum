@@ -112,7 +112,10 @@
             "MOVE_SPITE",
             "MOVE_TRICK",
             "MOVE_KNOCK_OFF",
-            "MOVE_SUCKER_PUNCH"
+            "MOVE_SUCKER_PUNCH",
+            "MOVE_ICE_PUNCH",
+            "MOVE_FIRE_PUNCH",
+            "MOVE_THUNDER_PUNCH"
         ]
     },
     "evolutions": [  ],

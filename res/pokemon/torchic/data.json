@@ -1,7 +1,7 @@
 {
     "base_stats": {
-        "hp": 45,
-        "attack": 60,
+        "hp": 50,
+        "attack": 70,
         "defense": 40,
         "speed": 45,
         "special_attack": 70,
@@ -28,24 +28,26 @@
     "exp_rate": "EXP_RATE_MEDIUM_SLOW",
     "egg_groups": [ "EGG_GROUP_FIELD", "EGG_GROUP_FIELD" ],
     "abilities": [ "ABILITY_BLAZE", "ABILITY_NONE" ],
-    "hiddenAbility": "ABILITY_NONE",
+    "hiddenAbility": "ABILITY_SPEED_BOOST",
     "safari_flee_rate": 0,
     "body_color": "MON_COLOR_RED",
     "flip_sprite": false,
     "icon_palette": 0,
     "learnset": {
         "by_level": [
-            [ 1, "MOVE_SCRATCH" ],
-            [ 1, "MOVE_GROWL" ],
-            [ 7, "MOVE_FOCUS_ENERGY" ],
-            [ 10, "MOVE_EMBER" ],
-            [ 16, "MOVE_PECK" ],
-            [ 19, "MOVE_SAND_ATTACK" ],
-            [ 25, "MOVE_FIRE_SPIN" ],
-            [ 28, "MOVE_QUICK_ATTACK" ],
-            [ 34, "MOVE_SLASH" ],
-            [ 37, "MOVE_MIRROR_MOVE" ],
-            [ 43, "MOVE_FLAMETHROWER" ]
+            [1, "MOVE_SCRATCH"],
+            [1, "MOVE_GROWL"],
+            [7, "MOVE_EMBER"],
+            [10, "MOVE_FOCUS_ENERGY"],
+            [13, "MOVE_PECK"],
+            [15, "MOVE_SAND_ATTACK"],
+            [18, "MOVE_FIRE_SPIN"],
+            [22, "MOVE_QUICK_ATTACK"],
+            [25, "MOVE_SLASH"],
+            [29, "MOVE_MIRROR_MOVE"],
+            [32, "MOVE_FLAMETHROWER"],
+            [36, "MOVE_DRILL_PECK"],
+            [41, "MOVE_FIRE_BLAST"]
         ],
         "by_tm": [
             "TM06",

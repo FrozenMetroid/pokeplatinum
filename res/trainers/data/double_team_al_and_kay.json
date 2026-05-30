@@ -3,7 +3,9 @@
     "class": "TRAINER_CLASS_DOUBLE_TEAM",
     "items": [],
     "ai_flags": [
-        "AI_FLAG_BASIC"
+        "AI_FLAG_BASIC",
+        "AI_FLAG_EVAL_ATTACK",
+        "AI_FLAG_EXPERT"
     ],
     "double_battle": true,
     "party": [
@@ -15,9 +17,14 @@
             "moves": [
                 "MOVE_CLOSE_COMBAT",
                 "MOVE_BRAVE_BIRD",
-                "MOVE_GROWL",
+                "MOVE_ENDEAVOR",
                 "MOVE_QUICK_ATTACK"
             ],
+            "ability": "ABILITY_INTIMIDATE",
+            "nature": "NATURE_JOLLY",
+            "ivnums": [31, 31, 31, 31, 31, 31],
+            "evnums": [0, 120, 0, 120, 0, 0],
+            "ball": "ITEM_POKE_BALL",
             "iv_scale": 0,
             "ball_seal": 0
         },
@@ -29,9 +36,14 @@
             "moves": [
                 "MOVE_DOUBLE_HIT",
                 "MOVE_AERIAL_ACE",
-                "MOVE_SHOCK_WAVE",
-                "MOVE_WATER_PULSE"
+                "MOVE_FAKE_OUT",
+                "MOVE_HELPING_HAND"
             ],
+            "ability": "ABILITY_TECHNICIAN",
+            "nature": "NATURE_ADAMANT",
+            "ivnums": [31, 31, 31, 31, 31, 31],
+            "evnums": [0, 120, 0, 120, 0, 0],
+            "ball": "ITEM_POKE_BALL",
             "iv_scale": 0,
             "ball_seal": 0
         }

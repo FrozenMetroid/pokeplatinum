@@ -1,6 +1,8 @@
 #include "macros/btlcmd.inc"
 
 
+_NewTailwindHandling:
+    CheckTailwindActive BTLSCR_ATTACKER, _SkipChargeTurn
 _000:
     CompareMonDataToValue OPCODE_FLAG_SET, BTLSCR_ATTACKER, BATTLEMON_VOLATILE_STATUS, VOLATILE_CONDITION_MOVE_LOCKED, _031
     CompareVarToValue OPCODE_FLAG_SET, BTLVAR_BATTLE_CTX_STATUS, SYSCTL_LAST_OF_MULTI_TURN, _031
@@ -11,6 +13,8 @@ _000:
 
 _024:
     Call BATTLE_SUBSCRIPT_ITEM_SKIP_CHARGE_TURN
+
+_SkipChargeTurn:
     CompareVarToValue OPCODE_EQU, BTLVAR_DEFENDER, BATTLER_NONE, _037
 
 _031:

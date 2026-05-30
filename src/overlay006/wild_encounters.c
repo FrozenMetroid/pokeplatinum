@@ -1046,15 +1046,7 @@ static void CreateWildMonShinyWithGenderOrNature(const u16 species, const u8 lev
     Pokemon_InitWith(newEncounter, species, level, INIT_IVS_RANDOM, TRUE, newEncounterPersonality, OTID_SET, encounterFieldParams->trainerID);
     
     if (hasHiddenAbility) {
-        SpeciesData *speciesData = Heap_Alloc(HEAP_ID_FIELD2, sizeof(SpeciesData));
-        SpeciesData_FromMonForm(species, Pokemon_GetValue(newEncounter, MON_DATA_FORM, NULL), speciesData);
-
-        u8 hiddenAbility = SpeciesData_GetValue(speciesData, SPECIES_DATA_HIDDEN_ABILITY);
-        if (hiddenAbility != ABILITY_NONE) {
-            Pokemon_SetValue(newEncounter, MON_DATA_ABILITY, &hiddenAbility);
-            Pokemon_SetValue(newEncounter, MON_DATA_HIDDEN_ABILITY_SET, &hasHiddenAbility);
-        }
-        Heap_Free(speciesData);
+        Pokemon_SetWildHiddenAbility(newEncounter, species);
     }
 
     GF_ASSERT(AddWildMonToParty(partySlot, encounterFieldParams, newEncounter, battleParams));
@@ -1174,15 +1166,7 @@ static void CreateWildMon(u16 species, u8 level, const int partyDest, const Wild
 #endif
 
     if (hasHiddenAbility) {
-        SpeciesData *speciesData = Heap_Alloc(HEAP_ID_FIELD2, sizeof(SpeciesData));
-        SpeciesData_FromMonForm(species, Pokemon_GetValue(newEncounter, MON_DATA_FORM, NULL), speciesData);
-
-        u8 hiddenAbility = SpeciesData_GetValue(speciesData, SPECIES_DATA_HIDDEN_ABILITY);
-        if (hiddenAbility != ABILITY_NONE) {
-            Pokemon_SetValue(newEncounter, MON_DATA_ABILITY, &hiddenAbility);
-            Pokemon_SetValue(newEncounter, MON_DATA_HIDDEN_ABILITY_SET, &hasHiddenAbility);
-        }
-        Heap_Free(speciesData);
+        Pokemon_SetWildHiddenAbility(newEncounter, species);
     }
 
     GF_ASSERT(AddWildMonToParty(partyDest, encounterFieldParams, newEncounter, battleParams));

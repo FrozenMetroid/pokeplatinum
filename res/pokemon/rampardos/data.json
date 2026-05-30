@@ -51,7 +51,8 @@
             [32, "MOVE_ROCK_SLIDE"],
             [36, "MOVE_ZEN_HEADBUTT"],
             [40, "MOVE_SCREECH"],
-            [44, "MOVE_IRON_HEAD"],
+            [43, "MOVE_IRON_HEAD"],
+            [47, "MOVE_DOUBLE_EDGE"],
             [50, "MOVE_HEAD_SMASH"]
         ],
         "by_tm": [

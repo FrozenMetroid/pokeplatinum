@@ -3,35 +3,51 @@
     "class": "TRAINER_CLASS_SAILOR",
     "items": [],
     "ai_flags": [
-        "AI_FLAG_BASIC"
+        "AI_FLAG_BASIC",
+        "AI_FLAG_EVAL_ATTACK"
     ],
     "double_battle": false,
     "party": [
         {
             "species": "SPECIES_PELIPPER",
             "form": 0,
-            "level": 40,
+            "level": 45,
             "item": null,
-            "moves": null,
-            "iv_scale": 0,
+            "moves": [
+                "MOVE_SURF",
+                "MOVE_AIR_SLASH",
+                "MOVE_ROOST",
+                "MOVE_RAIN_DANCE"
+            ],
+            "iv_scale": 160,
             "ball_seal": 0
         },
         {
             "species": "SPECIES_MACHOKE",
             "form": 0,
-            "level": 42,
+            "level": 46,
             "item": null,
-            "moves": null,
-            "iv_scale": 0,
+            "moves": [
+                "MOVE_STRENGTH",
+                "MOVE_BULLET_PUNCH",
+                "MOVE_FORESIGHT",
+                "MOVE_FIRE_PUNCH"
+            ],
+            "iv_scale": 160,
             "ball_seal": 0
         },
         {
             "species": "SPECIES_GASTRODON",
             "form": 0,
-            "level": 44,
+            "level": 46,
             "item": null,
-            "moves": null,
-            "iv_scale": 0,
+            "moves": [
+                "MOVE_WATERFALL",
+                "MOVE_EARTHQUAKE",
+                "MOVE_BODY_SLAM",
+                "MOVE_RECOVER"
+            ],
+            "iv_scale": 160,
             "ball_seal": 0
         }
     ],

@@ -167,7 +167,7 @@ GBAToDSSpeciesStruct sGBAToDSSpecies[] = {
     { 0x1A4, 0x1A4 }
 };
 
-static u16 sSpeciesWithNewAbilities[] = {
+static u16 sSpeciesWithNewAbilities[] = { // ugh deal with this someday COME BACK TO THIS
     SPECIES_PIDGEY,
     SPECIES_PIDGEOTTO,
     SPECIES_PIDGEOT,

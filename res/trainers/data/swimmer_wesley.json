@@ -19,7 +19,7 @@
                 "MOVE_AQUA_JET",
                 "MOVE_QUICK_ATTACK"
             ],
-            "iv_scale": 0,
+            "iv_scale": 160,
             "ball_seal": 0
         },
         {
@@ -27,8 +27,13 @@
             "form": 0,
             "level": 46,
             "item": null,
-            "moves": null,
-            "iv_scale": 0,
+            "moves": [
+                "MOVE_TOXIC",
+                "MOVE_POISON_JAB",
+                "MOVE_WATERFALL",
+                "MOVE_WRAP"
+            ],
+            "iv_scale": 160,
             "ball_seal": 0
         }
     ],

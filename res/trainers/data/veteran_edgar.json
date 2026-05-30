@@ -12,7 +12,7 @@
         {
             "species": "SPECIES_PORYGON_Z",
             "form": 0,
-            "level": 46,
+            "level": 48,
             "item": null,
             "moves": [
                 "MOVE_HYPER_BEAM",
@@ -20,35 +20,50 @@
                 "MOVE_PSYCHIC",
                 "MOVE_THUNDERBOLT"
             ],
-            "iv_scale": 100,
+            "ability": "ABILITY_ADAPTABILITY",
+            "nature": "NATURE_TIMID",
+            "ivnums": [31, 31, 31, 31, 31, 31],
+            "evnums": [0, 0, 0, 120, 120, 0],
+            "ball": "ITEM_POKE_BALL",
+            "iv_scale": 0,
             "ball_seal": 0
         },
         {
             "species": "SPECIES_TANGROWTH",
             "form": 0,
-            "level": 46,
+            "level": 47,
             "item": null,
             "moves": [
-                "MOVE_POWER_WHIP",
-                "MOVE_MEGA_DRAIN",
+                "MOVE_ENERGY_BALL",
+                "MOVE_ANCIENT_POWER",
                 "MOVE_TOXIC",
-                "MOVE_SLAM"
+                "MOVE_KNOCK_OFF"
             ],
-            "iv_scale": 100,
+            "ability": "ABILITY_REGENERATOR",
+            "nature": "NATURE_RELAXED",
+            "ivnums": [31, 31, 31, 31, 31, 31],
+            "evnums": [0, 60, 120, 0, 60, 0],
+            "ball": "ITEM_POKE_BALL",
+            "iv_scale": 0,
             "ball_seal": 0
         },
         {
             "species": "SPECIES_EMPOLEON",
             "form": 0,
-            "level": 46,
+            "level": 49,
             "item": null,
             "moves": [
-                "MOVE_BRINE",
-                "MOVE_DRILL_PECK",
-                "MOVE_METAL_CLAW",
-                "MOVE_GROWL"
+                "MOVE_SURF",
+                "MOVE_ICE_BEAM",
+                "MOVE_FLASH_CANNON",
+                "MOVE_FEATHER_DANCE"
             ],
-            "iv_scale": 100,
+            "ability": "ABILITY_TORRENT",
+            "nature": "NATURE_MODEST",
+            "ivnums": [31, 31, 31, 31, 31, 31],
+            "evnums": [0, 0, 60, 0, 120, 60],
+            "ball": "ITEM_POKE_BALL",
+            "iv_scale": 0,
             "ball_seal": 0
         }
     ],

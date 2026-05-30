@@ -31,7 +31,7 @@
 static const u16 sNoDamageCalcMoveEffects[] = {
     BATTLE_EFFECT_HALVE_DEFENSE,
     BATTLE_EFFECT_RECOVER_DAMAGE_SLEEP,
-    BATTLE_EFFECT_CHARGE_TURN_HIGH_CRIT,
+    BATTLE_EFFECT_RAZOR_WIND,
     BATTLE_EFFECT_CHARGE_TURN_HIGH_CRIT_FLINCH,
     BATTLE_EFFECT_RECHARGE_AFTER,
     BATTLE_EFFECT_CHARGE_TURN_DEF_UP,
@@ -178,6 +178,7 @@ static void AICmd_IfBattlerFainted(BattleSystem *battleSys, BattleContext *battl
 static void AICmd_IfBattlerNotFainted(BattleSystem *battleSys, BattleContext *battleCtx);
 static void AICmd_LoadAbility(BattleSystem *battleSys, BattleContext *battleCtx);
 static void AICmd_LoadTauntedTurns(BattleSystem *battleSys, BattleContext *battleCtx);
+static void AICmd_LoadTailwindTurns(BattleSystem *battleSys, BattleContext *battleCtx);
 
 static u8 TrainerAI_MainSingles(BattleSystem *battleSys, BattleContext *battleCtx);
 static u8 TrainerAI_MainDoubles(BattleSystem *battleSys, BattleContext *battleCtx);
@@ -4227,4 +4228,14 @@ static void AICmd_LoadTauntedTurns(BattleSystem *battleSys, BattleContext *battl
     u8 battler = AIScript_Battler(battleCtx, inBattler);
 
     AI_CONTEXT.calcTemp = battleCtx->battleMons[battler].moveEffectsData.tauntedTurns;
+}
+
+static void AICmd_LoadTailwindTurns(BattleSystem *battleSys, BattleContext *battleCtx)
+{
+    AIScript_Iter(battleCtx, 1);
+
+    int inBattler = AIScript_Read(battleCtx);
+    u8 battler = AIScript_Battler(battleCtx, inBattler);
+
+    AI_CONTEXT.calcTemp = battleCtx->tailwindCounter[BattleSystem_GetBattlerSide(battleSys, battler)];
 }

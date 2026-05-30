@@ -6,7 +6,7 @@
     "accuracy": 100,
     "pp": 10,
     "effect": {
-        "type": "BATTLE_EFFECT_CHARGE_TURN_HIGH_CRIT",
+        "type": "BATTLE_EFFECT_RAZOR_WIND",
         "chance": 0
     },
     "range": "RANGE_ADJACENT_OPPONENTS",

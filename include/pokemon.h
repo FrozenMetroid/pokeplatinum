@@ -951,4 +951,6 @@ int Pokemon_GetFormNarcIndex(int monSpecies, int monForm);
 
 void SpeciesData_LoadForm(int monSpecies, int monForm, SpeciesData *speciesData);
 
+void Pokemon_SetWildHiddenAbility(Pokemon *mon, u16 species);
+
 #endif // POKEPLATINUM_POKEMON_H

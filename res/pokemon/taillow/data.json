@@ -1,11 +1,11 @@
 {
     "base_stats": {
-        "hp": 40,
-        "attack": 55,
-        "defense": 30,
+        "hp": 45,
+        "attack": 65,
+        "defense": 35,
         "speed": 85,
         "special_attack": 30,
-        "special_defense": 30
+        "special_defense": 35
     },
     "types": [ "TYPE_NORMAL", "TYPE_FLYING" ],
     "catch_rate": 200,
@@ -27,24 +27,27 @@
     "base_friendship": 70,
     "exp_rate": "EXP_RATE_MEDIUM_SLOW",
     "egg_groups": [ "EGG_GROUP_FLYING", "EGG_GROUP_FLYING" ],
-    "abilities": [ "ABILITY_GUTS", "ABILITY_NONE" ],
-    "hiddenAbility": "ABILITY_NONE",
+    "abilities": [ "ABILITY_GUTS", "ABILITY_INNER_FOCUS" ],
+    "hiddenAbility": "ABILITY_SCRAPPY",
     "safari_flee_rate": 0,
     "body_color": "MON_COLOR_BLUE",
     "flip_sprite": false,
     "icon_palette": 2,
     "learnset": {
         "by_level": [
-            [ 1, "MOVE_PECK" ],
-            [ 1, "MOVE_GROWL" ],
-            [ 4, "MOVE_FOCUS_ENERGY" ],
-            [ 8, "MOVE_QUICK_ATTACK" ],
-            [ 13, "MOVE_WING_ATTACK" ],
-            [ 19, "MOVE_DOUBLE_TEAM" ],
-            [ 26, "MOVE_ENDEAVOR" ],
-            [ 34, "MOVE_AERIAL_ACE" ],
-            [ 43, "MOVE_AGILITY" ],
-            [ 53, "MOVE_AIR_SLASH" ]
+            [1, "MOVE_PECK"],
+            [1, "MOVE_GROWL"],
+            [4, "MOVE_FOCUS_ENERGY"],
+            [8, "MOVE_QUICK_ATTACK"],
+            [11, "MOVE_WING_ATTACK"],
+            [14, "MOVE_DOUBLE_TEAM"],
+            [18, "MOVE_SLAM"],
+            [23, "MOVE_ENDEAVOR"],
+            [27, "MOVE_AERIAL_ACE"],
+            [31, "MOVE_AGILITY"],
+            [35, "MOVE_AIR_SLASH"],
+            [40, "MOVE_PLUCK"],
+            [44, "MOVE_BRAVE_BIRD"]
         ],
         "by_tm": [
             "TM06",

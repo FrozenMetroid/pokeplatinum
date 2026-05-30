@@ -3,25 +3,47 @@
     "class": "TRAINER_CLASS_BIRD_KEEPER",
     "items": [],
     "ai_flags": [
-        "AI_FLAG_BASIC"
+        "AI_FLAG_BASIC",
+        "AI_FLAG_EVAL_ATTACK",
+        "AI_FLAG_EXPERT"
     ],
     "double_battle": false,
     "party": [
         {
             "species": "SPECIES_NOCTOWL",
             "form": 0,
-            "level": 45,
+            "level": 47,
             "item": null,
-            "moves": null,
+            "moves": [
+                "MOVE_PSYCHIC",
+                "MOVE_AIR_SLASH",
+                "MOVE_REFLECT",
+                "MOVE_HYPNOSIS"
+            ],
+            "ability": "ABILITY_PIERCING_EYE",
+            "nature": "NATURE_MODEST",
+            "ivnums": [31, 31, 31, 31, 31, 31],
+            "evnums": [0, 0, 0, 0, 120, 120],
+            "ball": "ITEM_NEST_BALL",
             "iv_scale": 0,
             "ball_seal": 0
         },
         {
-            "species": "SPECIES_TOGETIC",
+            "species": "SPECIES_SKARMORY",
             "form": 0,
-            "level": 47,
+            "level": 48,
             "item": null,
-            "moves": null,
+            "moves": [
+                "MOVE_DRILL_PECK",
+                "MOVE_IRON_HEAD",
+                "MOVE_SPIKES",
+                "MOVE_WHIRLWIND"
+            ],
+            "ability": "ABILITY_STURDY",
+            "nature": "NATURE_RELAXED",
+            "ivnums": [31, 31, 31, 31, 31, 31],
+            "evnums": [0, 120, 120, 0, 0, 0],
+            "ball": "ITEM_NEST_BALL",
             "iv_scale": 0,
             "ball_seal": 0
         }

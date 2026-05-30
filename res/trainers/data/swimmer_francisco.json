@@ -3,17 +3,23 @@
     "class": "TRAINER_CLASS_SWIMMER_MALE",
     "items": [],
     "ai_flags": [
-        "AI_FLAG_BASIC"
+        "AI_FLAG_BASIC",
+        "AI_FLAG_EVAL_ATTACK"
     ],
     "double_battle": false,
     "party": [
         {
-            "species": "SPECIES_TENTACOOL",
+            "species": "SPECIES_SEADRA",
             "form": 0,
-            "level": 41,
+            "level": 44,
             "item": null,
-            "moves": null,
-            "iv_scale": 0,
+            "moves": [
+                "MOVE_SURF",
+                "MOVE_DRAGON_PULSE",
+                "MOVE_AURORA_BEAM",
+                "MOVE_FOCUS_ENERGY"
+            ],
+            "iv_scale": 160,
             "ball_seal": 0
         },
         {
@@ -21,8 +27,13 @@
             "form": 0,
             "level": 45,
             "item": null,
-            "moves": null,
-            "iv_scale": 0,
+            "moves": [
+                "MOVE_BRICK_BREAK",
+                "MOVE_WATERFALL",
+                "MOVE_SLASH",
+                "MOVE_ZEN_HEADBUTT"
+            ],
+            "iv_scale": 160,
             "ball_seal": 0
         }
     ],

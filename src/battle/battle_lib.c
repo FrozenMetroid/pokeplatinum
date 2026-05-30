@@ -3106,7 +3106,7 @@ BOOL Move_IsMultiTurn(BattleContext *battleCtx, int move)
 {
     switch (MOVE_DATA(move).effect) {
     case BATTLE_EFFECT_BIDE:
-    case BATTLE_EFFECT_CHARGE_TURN_HIGH_CRIT:
+    case BATTLE_EFFECT_RAZOR_WIND:
     case BATTLE_EFFECT_CHARGE_TURN_HIGH_CRIT_FLINCH:
     case BATTLE_EFFECT_CHARGE_TURN_DEF_UP:
     case BATTLE_EFFECT_SKIP_CHARGE_TURN_IN_SUN:
@@ -8422,7 +8422,7 @@ static BOOL MoveIsOnDamagingTurn(BattleContext *battleCtx, int move)
 {
     switch (MOVE_DATA(move).effect) {
     case BATTLE_EFFECT_BIDE:
-    case BATTLE_EFFECT_CHARGE_TURN_HIGH_CRIT:
+    case BATTLE_EFFECT_RAZOR_WIND:
     case BATTLE_EFFECT_CHARGE_TURN_HIGH_CRIT_FLINCH:
     case BATTLE_EFFECT_CHARGE_TURN_DEF_UP:
     case BATTLE_EFFECT_SKIP_CHARGE_TURN_IN_SUN:

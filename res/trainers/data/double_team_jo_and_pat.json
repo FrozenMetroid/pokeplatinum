@@ -3,7 +3,9 @@
     "class": "TRAINER_CLASS_DOUBLE_TEAM",
     "items": [],
     "ai_flags": [
-        "AI_FLAG_BASIC"
+        "AI_FLAG_BASIC",
+        "AI_FLAG_EVAL_ATTACK",
+        "AI_FLAG_EXPERT"
     ],
     "double_battle": true,
     "party": [
@@ -13,11 +15,16 @@
             "level": 50,
             "item": null,
             "moves": [
-                "MOVE_WATER_PULSE",
-                "MOVE_AQUA_RING",
+                "MOVE_HYDRO_PUMP",
+                "MOVE_AIR_CUTTER",
                 "MOVE_CAPTIVATE",
                 "MOVE_SILVER_WIND"
             ],
+            "ability": "ABILITY_STORM_DRAIN",
+            "nature": "NATURE_MODEST",
+            "ivnums": [31, 31, 31, 31, 31, 31],
+            "evnums": [120, 0, 0, 0, 120, 0],
+            "ball": "ITEM_DIVE_BALL",
             "iv_scale": 0,
             "ball_seal": 0
         },
@@ -27,11 +34,16 @@
             "level": 50,
             "item": null,
             "moves": [
-                "MOVE_FIRE_BLAST",
-                "MOVE_STOMP",
+                "MOVE_BLAZE_KICK",
+                "MOVE_JUMP_KICK",
                 "MOVE_QUICK_ATTACK",
-                "MOVE_IRON_TAIL"
+                "MOVE_BOUNCE"
             ],
+            "ability": "ABILITY_FLASH_FIRE",
+            "nature": "NATURE_ADAMANT",
+            "ivnums": [31, 31, 31, 31, 31, 31],
+            "evnums": [0, 120, 0, 120, 0, 0],
+            "ball": "ITEM_POKE_BALL",
             "iv_scale": 0,
             "ball_seal": 0
         }

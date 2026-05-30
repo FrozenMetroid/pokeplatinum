@@ -10,21 +10,60 @@
     "double_battle": false,
     "party": [
         {
-            "species": "SPECIES_ALTARIA",
-            "form": 0,
-            "level": 45,
-            "item": null,
-            "moves": null,
-            "iv_scale": 50,
-            "ball_seal": 0
-        },
-        {
-            "species": "SPECIES_GABITE",
+            "species": "SPECIES_SHELGON",
             "form": 0,
             "level": 47,
             "item": null,
-            "moves": null,
-            "iv_scale": 50,
+            "moves": [
+                "MOVE_DRAGON_PULSE",
+                "MOVE_FLAMETHROWER",
+                "MOVE_CRUNCH",
+                "MOVE_DOUBLE_EDGE"
+            ],
+            "ability": "ABILITY_ROCK_HEAD",
+            "nature": "NATURE_DOCILE",
+            "ivnums": [31, 31, 31, 31, 31, 31],
+            "evnums": [120, 60, 0, 0, 60, 0],
+            "ball": "ITEM_POKE_BALL",
+            "iv_scale": 0,
+            "ball_seal": 0
+        },
+        {
+            "species": "SPECIES_ALTARIA",
+            "form": 0,
+            "level": 49,
+            "item": null,
+            "moves": [
+                "MOVE_DRAGON_PULSE",
+                "MOVE_AIR_SLASH",
+                "MOVE_SING",
+                "MOVE_ROOST"
+            ],
+            "ability": "ABILITY_NATURAL_CURE",
+            "nature": "NATURE_MODEST",
+            "ivnums": [31, 31, 31, 31, 31, 31],
+            "evnums": [120, 0, 0, 0, 120, 0],
+            "ball": "ITEM_PREMIER_BALL",
+            "iv_scale": 0,
+            "ball_seal": 0
+        },
+        {
+            "species": "SPECIES_KINGDRA",
+            "form": 0,
+            "level": 47,
+            "item": null,
+            "moves": [
+                "MOVE_SURF",
+                "MOVE_AURORA_BEAM",
+                "MOVE_DRAGON_PULSE",
+                "MOVE_DRAGON_DANCE"
+            ],
+            "ability": "ABILITY_SNIPER",
+            "nature": "NATURE_TIMID",
+            "ivnums": [31, 31, 31, 31, 31, 31],
+            "evnums": [0, 0, 0, 120, 120, 0],
+            "ball": "ITEM_POKE_BALL",
+            "iv_scale": 0,
             "ball_seal": 0
         }
     ],

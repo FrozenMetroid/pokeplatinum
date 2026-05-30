@@ -12,7 +12,7 @@
         {
             "species": "SPECIES_MAMOSWINE",
             "form": 0,
-            "level": 45,
+            "level": 47,
             "item": null,
             "moves": [
                 "MOVE_BLIZZARD",
@@ -20,21 +20,31 @@
                 "MOVE_ROCK_SLIDE",
                 "MOVE_GIGA_IMPACT"
             ],
-            "iv_scale": 50,
+            "ability": "ABILITY_THICK_FAT",
+            "nature": "NATURE_DOCILE",
+            "ivnums": [31, 31, 31, 31, 31, 31],
+            "evnums": [120, 80, 0, 0, 40, 0],
+            "ball": "ITEM_POKE_BALL",
+            "iv_scale": 0,
             "ball_seal": 0
         },
         {
             "species": "SPECIES_MOTHIM",
             "form": 0,
-            "level": 46,
+            "level": 48,
             "item": null,
             "moves": [
-                "MOVE_SILVER_WIND",
+                "MOVE_BUG_BUZZ",
                 "MOVE_AIR_SLASH",
                 "MOVE_PSYCHIC",
                 "MOVE_TOXIC"
             ],
-            "iv_scale": 50,
+            "ability": "ABILITY_TINTED_LENS",
+            "nature": "NATURE_TIMID",
+            "ivnums": [31, 31, 31, 31, 31, 31],
+            "evnums": [0, 0, 0, 120, 120, 0],
+            "ball": "ITEM_POKE_BALL",
+            "iv_scale": 0,
             "ball_seal": 0
         },
         {
@@ -45,10 +55,15 @@
             "moves": [
                 "MOVE_HEAD_SMASH",
                 "MOVE_ZEN_HEADBUTT",
-                "MOVE_ANCIENT_POWER",
+                "MOVE_DOUBLE_EDGE",
                 "MOVE_SCREECH"
             ],
-            "iv_scale": 50,
+            "ability": "ABILITY_ROCK_HEAD",
+            "nature": "NATURE_ADAMANT",
+            "ivnums": [31, 31, 31, 31, 31, 31],
+            "evnums": [0, 120, 0, 120, 0, 0],
+            "ball": "ITEM_GREAT_BALL",
+            "iv_scale": 0,
             "ball_seal": 0
         }
     ],

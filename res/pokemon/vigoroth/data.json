@@ -1,11 +1,11 @@
 {
     "base_stats": {
-        "hp": 80,
-        "attack": 80,
-        "defense": 80,
+        "hp": 90,
+        "attack": 90,
+        "defense": 90,
         "speed": 90,
-        "special_attack": 55,
-        "special_defense": 55
+        "special_attack": 60,
+        "special_defense": 60
     },
     "types": [ "TYPE_NORMAL", "TYPE_NORMAL" ],
     "catch_rate": 120,
@@ -28,25 +28,27 @@
     "exp_rate": "EXP_RATE_SLOW",
     "egg_groups": [ "EGG_GROUP_FIELD", "EGG_GROUP_FIELD" ],
     "abilities": [ "ABILITY_VITAL_SPIRIT", "ABILITY_NONE" ],
-    "hiddenAbility": "ABILITY_NONE",
+    "hiddenAbility": "ABILITY_INNER_FOCUS",
     "safari_flee_rate": 0,
     "body_color": "MON_COLOR_WHITE",
     "flip_sprite": false,
     "icon_palette": 2,
     "learnset": {
         "by_level": [
-            [ 1, "MOVE_SCRATCH" ],
-            [ 1, "MOVE_FOCUS_ENERGY" ],
-            [ 1, "MOVE_ENCORE" ],
-            [ 1, "MOVE_UPROAR" ],
-            [ 7, "MOVE_ENCORE" ],
-            [ 13, "MOVE_UPROAR" ],
-            [ 19, "MOVE_FURY_SWIPES" ],
-            [ 25, "MOVE_ENDURE" ],
-            [ 31, "MOVE_SLASH" ],
-            [ 37, "MOVE_COUNTER" ],
-            [ 43, "MOVE_FOCUS_PUNCH" ],
-            [ 49, "MOVE_REVERSAL" ]
+            [1, "MOVE_SCRATCH"],
+            [1, "MOVE_FOCUS_ENERGY"],
+            [1, "MOVE_ENCORE"],
+            [1, "MOVE_UPROAR"],
+            [7, "MOVE_ENCORE"],
+            [13, "MOVE_UPROAR"],
+            [18, "MOVE_FURY_SWIPES"],
+            [24, "MOVE_ENDURE"],
+            [28, "MOVE_SLASH"],
+            [33, "MOVE_LOW_KICK"],
+            [37, "MOVE_COUNTER"],
+            [40, "MOVE_FOCUS_PUNCH"],
+            [44, "MOVE_NIGHT_SLASH"],
+            [49, "MOVE_REVERSAL"]
         ],
         "by_tm": [
             "TM01",

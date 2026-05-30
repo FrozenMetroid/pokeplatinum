@@ -3,26 +3,32 @@
     "class": "TRAINER_CLASS_BIRD_KEEPER",
     "items": [],
     "ai_flags": [
-        "AI_FLAG_BASIC"
+        "AI_FLAG_BASIC",
+        "AI_FLAG_EVAL_ATTACK"
     ],
     "double_battle": false,
     "party": [
         {
             "species": "SPECIES_TAILLOW",
             "form": 0,
-            "level": 51,
+            "level": 54,
             "item": null,
-            "moves": null,
-            "iv_scale": 0,
+            "moves": [
+                "MOVE_BRAVE_BIRD",
+                "MOVE_QUICK_ATTACK",
+                "MOVE_ENDEAVOR",
+                "MOVE_SLAM"
+            ],
+            "iv_scale": 200,
             "ball_seal": 0
         },
         {
             "species": "SPECIES_FARFETCHD",
             "form": 0,
-            "level": 53,
+            "level": 55,
             "item": null,
             "moves": null,
-            "iv_scale": 0,
+            "iv_scale": 200,
             "ball_seal": 0
         },
         {
@@ -31,7 +37,7 @@
             "level": 55,
             "item": null,
             "moves": null,
-            "iv_scale": 0,
+            "iv_scale": 200,
             "ball_seal": 0
         }
     ],

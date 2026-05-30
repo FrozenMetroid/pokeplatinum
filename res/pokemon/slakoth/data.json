@@ -1,11 +1,11 @@
 {
     "base_stats": {
-        "hp": 60,
-        "attack": 60,
-        "defense": 60,
-        "speed": 30,
-        "special_attack": 35,
-        "special_defense": 35
+        "hp": 80,
+        "attack": 75,
+        "defense": 75,
+        "speed": 5,
+        "special_attack": 45,
+        "special_defense": 45
     },
     "types": [ "TYPE_NORMAL", "TYPE_NORMAL" ],
     "catch_rate": 255,
@@ -28,22 +28,26 @@
     "exp_rate": "EXP_RATE_SLOW",
     "egg_groups": [ "EGG_GROUP_FIELD", "EGG_GROUP_FIELD" ],
     "abilities": [ "ABILITY_TRUANT", "ABILITY_NONE" ],
-    "hiddenAbility": "ABILITY_NONE",
+    "hiddenAbility": "ABILITY_SLOW_START",
     "safari_flee_rate": 0,
     "body_color": "MON_COLOR_BROWN",
     "flip_sprite": false,
     "icon_palette": 2,
     "learnset": {
         "by_level": [
-            [ 1, "MOVE_SCRATCH" ],
-            [ 1, "MOVE_YAWN" ],
-            [ 7, "MOVE_ENCORE" ],
-            [ 13, "MOVE_SLACK_OFF" ],
-            [ 19, "MOVE_FEINT_ATTACK" ],
-            [ 25, "MOVE_AMNESIA" ],
-            [ 31, "MOVE_COVET" ],
-            [ 37, "MOVE_COUNTER" ],
-            [ 43, "MOVE_FLAIL" ]
+            [1, "MOVE_SCRATCH"],
+            [1, "MOVE_YAWN"],
+            [7, "MOVE_ENCORE"],
+            [10, "MOVE_SLACK_OFF"],
+            [15, "MOVE_COVET"],
+            [19, "MOVE_FEINT_ATTACK"],
+            [23, "MOVE_AMNESIA"],
+            [28, "MOVE_SLASH"],
+            [31, "MOVE_REST"],
+            [31, "MOVE_SLEEP_TALK"],
+            [31, "MOVE_SNORE"],
+            [37, "MOVE_COUNTER"],
+            [43, "MOVE_FLAIL"]
         ],
         "by_tm": [
             "TM01",

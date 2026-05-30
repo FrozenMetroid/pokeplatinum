@@ -183,7 +183,7 @@ Basic_ScoreMoveEffect:
     IfCurrentMoveEffectEqualTo BATTLE_EFFECT_STATUS_BADLY_POISON, Basic_CheckCannotPoison
     IfCurrentMoveEffectEqualTo BATTLE_EFFECT_SET_LIGHT_SCREEN, Basic_CheckAlreadyUnderLightScreen
     IfCurrentMoveEffectEqualTo BATTLE_EFFECT_ONE_HIT_KO, Basic_CheckOHKOWouldFail
-    IfCurrentMoveEffectEqualTo BATTLE_EFFECT_CHARGE_TURN_HIGH_CRIT, Basic_CheckNonStandardDamageOrChargeTurn
+    IfCurrentMoveEffectEqualTo BATTLE_EFFECT_RAZOR_WIND, Basic_CheckNonStandardDamageOrChargeTurn
     IfCurrentMoveEffectEqualTo BATTLE_EFFECT_HALVE_HP, Basic_CheckNonStandardDamageOrChargeTurn
     IfCurrentMoveEffectEqualTo BATTLE_EFFECT_40_DAMAGE_FLAT, Basic_CheckNonStandardDamageOrChargeTurn
     IfCurrentMoveEffectEqualTo BATTLE_EFFECT_PREVENT_STAT_REDUCTION, Basic_CheckAlreadyUnderMist
@@ -1926,7 +1926,7 @@ Expert_Main:
     IfCurrentMoveEffectEqualTo BATTLE_EFFECT_SET_LIGHT_SCREEN, Expert_LightScreen
     IfCurrentMoveEffectEqualTo BATTLE_EFFECT_REST, Expert_Rest
     IfCurrentMoveEffectEqualTo BATTLE_EFFECT_ONE_HIT_KO, Expert_OHKOMove
-    IfCurrentMoveEffectEqualTo BATTLE_EFFECT_CHARGE_TURN_HIGH_CRIT, Expert_ChargeTurnNoInvuln
+    IfCurrentMoveEffectEqualTo BATTLE_EFFECT_RAZOR_WIND, Expert_ChargeTurnNoInvuln
     IfCurrentMoveEffectEqualTo BATTLE_EFFECT_HALVE_HP, Expert_SuperFang
     IfCurrentMoveEffectEqualTo BATTLE_EFFECT_BIND_HIT, Expert_BindingMove
     IfCurrentMoveEffectEqualTo BATTLE_EFFECT_HIGH_CRITICAL, Expert_HighCritical
@@ -4254,6 +4254,8 @@ Expert_ChargeTurnNoInvuln:
     //
     // If the move would skip its charge turn in Sun and the current weather is Sun, score +2.
     //
+    // If the move would skip its charge turn in Tailwind and Tailwind is currently active, score +2.
+    //
     // If the attacker is holding a Power Herb, score +2.
     //
     // If the opponent knows the move Protect, score -2.
@@ -4263,7 +4265,14 @@ Expert_ChargeTurnNoInvuln:
     IfMoveEffectivenessEquals TYPE_MULTI_QUARTER_DAMAGE, Expert_ChargeTurnNoInvuln_ScoreMinus2
     IfMoveEffectivenessEquals TYPE_MULTI_HALF_DAMAGE, Expert_ChargeTurnNoInvuln_ScoreMinus2
     IfCurrentMoveEffectEqualTo BATTLE_EFFECT_SKIP_CHARGE_TURN_IN_SUN, Expert_ChargeTurnNoInvuln_CheckForSunnyWeather
+    IfCurrentMoveEffectEqualTo BATTLE_EFFECT_RAZOR_WIND, Expert_ChargeTurnNoInvuln_CheckForTailwind
     GoTo Expert_ChargeTurnNoInvuln_CheckForPowerHerb
+
+Expert_ChargeTurnNoInvuln_CheckForTailwind:
+    LoadTailwindTurns AI_BATTLER_ATTACKER
+    IfLoadedEqualTo 0, Expert_ChargeTurnNoInvuln_CheckForPowerHerb
+    AddToMoveScore 2
+    GoTo Expert_ChargeTurnNoInvuln_End
 
 Expert_ChargeTurnNoInvuln_CheckForSunnyWeather:
     LoadCurrentWeather 

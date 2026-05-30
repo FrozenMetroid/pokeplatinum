@@ -17,6 +17,7 @@ Credits:
 - Everyone who contributed to HeartGold-Engine, whose work helped me to program things such as modernized Sturdy, restoring items at the end of a battle, and so much more. Special shoutout to BluRose in particular!
 - RavePossum for multiple tutorials, such as showing EVs, IVs, and nature-affected stats on the summary screen, for the decomp
 - Keyswim for arranging the Battle! Johto Gym Leader theme for Jasmine's fight in the Battleground
+- Alphamy Cadilius for his framework for the HM system rework for our other project, Legacy, that was largely ported here
 
 Thank you!
 
@@ -167,6 +168,8 @@ For brevity, use the search feature of your code editor and search for the Poké
 - PP has been increased when applicable for modernization, except the nerf to health-restoring moves' PP
 - Defog removes hazards from both sides of the field
 - Growth raises Special Attack and Attack by one stage; two stages under harsh sunlight
+- Razor Wind will deal double damage when Tailwind is in effect on the user's side of the field
+    - It will also only take one turn to use Razor Wind if Tailwind is in effect on the user's side of the field
 - Moves that have been updated to be able to be reflected by Magic Coat and Magic Bounce:
     - Disable
     - Defog
@@ -260,7 +263,6 @@ For brevity, use the search feature of your code editor and search for the Poké
 - Items collected from wild Pokémon at the end of a battle will be put into the Bag
 - Trainers will withold their Supreme Overlord Pokémon until all other fainted teammates are defeated
 - Tailwind has been modernized to last 4 turns
-- Razor Wind will deal double damage when Tailwind is in effect on the user's side of the field
 
 # Additional Item Locations
 
