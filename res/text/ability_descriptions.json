@@ -1193,6 +1193,13 @@
         "Repeats another Pokémon’s\n",
         "voice move immediately."
       ]
+    },
+    {
+      "id": "pl_msg_00000612_00171",
+      "en_US": [
+        "Can poison the foe even if\n",
+        "it’s Steel or Poison type."
+      ]
     }
   ]
 }
