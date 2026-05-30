@@ -98,6 +98,7 @@ For brevity, use the search feature of your code editor and search for the Poké
 - Acid Maw (CUSTOM): Biting moves apply the effect of Gastro Acid on hit
 - Matriarch (CUSTOM): Underlings heal the Pokémon for 1/8 of its maximum health when it takes damage
 - Mimesis (CUSTOM): The user copies and uses sound moves, such as Hyper Voice, similarly to the Ability Dancer
+- Heat Sink (CUSTOM): This Pokémon draws in all Fire-type moves to raise Sp. Attack, like Storm Drain and Lightning Rod
 - Supreme Overlord ("Supreme Lord" in-game): Raises the power of a move by 10% for each fainted ally
 - Sharpness: Raises the power of slicing moves (Leaf Blade, Night Slash, etc.)
 - Strong Jaw: Raises the power of biting moves (Crunch, Fire Fang, etc.)
@@ -138,7 +139,8 @@ For brevity, use the search feature of your code editor and search for the Poké
 - Neutralizing Gas: Other Pokémon's Abilities, besides Multitype and Neutralizing Gas, are suppressed
 - Weak Armor: When hit by a physical move, this Pokémon's Defense stat lowers by one stage and its Speed stat rises by two stages
 - Wind Rider: When hit by a wind move, the Pokémon's Attack stat rises by one stage
-    
+- Corrosion: This Pokémon can apply the poison status to Steel and Poison-type Pokémon
+
 ### Ability Modernizations:
 
 - Lightning Rod

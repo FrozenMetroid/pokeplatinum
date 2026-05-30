@@ -684,6 +684,10 @@
     {
       "id": "pl_msg_00000611_00171",
       "en_US": "CORROSION"
+    },
+    {
+      "id": "pl_msg_00000611_00172",
+      "en_US": "HEAT SINK"
     }
   ]
 }

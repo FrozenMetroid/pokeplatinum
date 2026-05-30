@@ -1879,6 +1879,24 @@ void BattleSystem_CheckRedirectionAbilities(BattleSystem *battleSys, BattleConte
                 battleCtx->selfTurnFlags[battler].stormDrainActivated = TRUE;
                 battleCtx->defender = battler;
             }
+        } else if (moveType == TYPE_FIRE
+        && (MOVE_DATA(move).range == RANGE_SINGLE_TARGET || MOVE_DATA(move).range == RANGE_RANDOM_OPPONENT)
+        && (battleCtx->battleStatusMask & SYSCTL_FIRST_OF_MULTI_TURN) == FALSE
+        && BattleSystem_CountAbility(battleSys, battleCtx, COUNT_ALIVE_BATTLERS_EXCEPT_ME, attacker, ABILITY_HEAT_SINK)) {
+            for (int i = 0; i < maxBattlers; i++) {
+                battler = battleCtx->monSpeedOrder[i];
+            
+                if (Battler_Ability(battleCtx, battler) == ABILITY_HEAT_SINK
+                    && battleCtx->battleMons[battler].curHP
+                    && attacker != battler) {
+                    break;
+                }
+            }
+
+            if (battler != battleCtx->defender) {
+                battleCtx->selfTurnFlags[battler].heatSinkActivated = TRUE;
+                battleCtx->defender = battler;
+            }
         }
     }
 
@@ -1897,6 +1915,16 @@ BOOL BattleSystem_TriggerRedirectionAbilities(BattleSystem *battleSys, BattleCon
 
     if ((battleCtx->moveStatusFlags & MOVE_STATUS_NO_EFFECTS) == FALSE && DEFENDER_SELF_TURN_FLAGS.stormDrainActivated) {
         battleCtx->selfTurnFlags[battleCtx->defender].stormDrainActivated = FALSE;
+
+        LOAD_SUBSEQ(subscript_lightning_rod_redirected);
+        battleCtx->commandNext = battleCtx->command;
+        battleCtx->command = BATTLE_CONTROL_EXEC_SCRIPT;
+
+        result = TRUE;
+    }
+
+    if ((battleCtx->moveStatusFlags & MOVE_STATUS_NO_EFFECTS) == FALSE && DEFENDER_SELF_TURN_FLAGS.heatSinkActivated) {
+        battleCtx->selfTurnFlags[battleCtx->defender].heatSinkActivated = FALSE;
 
         LOAD_SUBSEQ(subscript_lightning_rod_redirected);
         battleCtx->commandNext = battleCtx->command;

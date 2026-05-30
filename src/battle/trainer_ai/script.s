@@ -75,6 +75,7 @@ Basic_CheckForImmunity:
     IfLoadedEqualTo ABILITY_WATER_ABSORB, Basic_CheckWaterAbsorption
     IfLoadedEqualTo ABILITY_STORM_DRAIN, Basic_CheckWaterAbsorption
     IfLoadedEqualTo ABILITY_FLASH_FIRE, Basic_CheckFireAbsorption
+    IfLoadedEqualTo ABILITY_HEAT_SINK, Basic_CheckFireAbsorption
     IfLoadedEqualTo ABILITY_WONDER_GUARD, Basic_CheckWonderGuard
     IfLoadedEqualTo ABILITY_LEVITATE, Basic_CheckGroundAbsorption
     IfLoadedEqualTo ABILITY_EARTH_EATER, Basic_CheckGroundAbsorption
@@ -7747,6 +7748,8 @@ TagStrategy_CheckLavaPlume:
 TagStrategy_SpreadFireMove:
     CheckBattlerAbility AI_BATTLER_ATTACKER_PARTNER, ABILITY_DRY_SKIN
     IfLoadedEqualTo AI_HAVE, ScoreMinus3
+    CheckBattlerAbility AI_BATTLER_ATTACKER_PARTNER, ABILITY_HEAT_SINK
+    IfLoadedEqualTo AI_HAVE, ScorePlus1
     CheckBattlerAbility AI_BATTLER_ATTACKER_PARTNER, ABILITY_FLASH_FIRE
     IfLoadedEqualTo AI_HAVE, ScorePlus3
     CheckBattlerAbility AI_BATTLER_ATTACKER_PARTNER, ABILITY_TELEPATHY

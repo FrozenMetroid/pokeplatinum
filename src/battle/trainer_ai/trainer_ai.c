@@ -3682,6 +3682,7 @@ static BOOL AI_HasAbsorbAbilityInParty(BattleSystem *battleSys, BattleContext *b
     moveType = MOVE_DATA(battleCtx->moveHit[battler]).type;
     if (moveType == TYPE_FIRE) {
         checkAbility = ABILITY_FLASH_FIRE;
+        checkAbility2 = ABILITY_HEAT_SINK;
     } else if (moveType == TYPE_WATER) {
         checkAbility = ABILITY_WATER_ABSORB;
         checkAbility2 = ABILITY_STORM_DRAIN;

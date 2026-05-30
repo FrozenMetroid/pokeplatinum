@@ -6660,7 +6660,7 @@ static BOOL BtlCmd_MagicCoat(BattleSystem *battleSys, BattleContext *battleCtx)
         battleCtx->defender = attacker;
     } else {
         target = BattleSystem_Defender(battleSys, battleCtx, battleCtx->attacker, battleCtx->moveCur, TRUE, RANGE_SINGLE_TARGET);
-        if (battleCtx->selfTurnFlags[target].lightningRodActivated || battleCtx->selfTurnFlags[target].stormDrainActivated) {
+        if (battleCtx->selfTurnFlags[target].lightningRodActivated || battleCtx->selfTurnFlags[target].stormDrainActivated || battleCtx->selfTurnFlags[target].heatSinkActivated) {
             battleCtx->defender = target;
         } else {
             battleCtx->defender = attacker;

@@ -1200,6 +1200,13 @@
         "Can poison the foe even if\n",
         "it’s Steel or Poison type."
       ]
+    },
+    {
+      "id": "pl_msg_00000612_00172",
+      "en_US": [
+        "Draws in all Fire-type\n",
+        "moves to up Sp. Attack."
+      ]
     }
   ]
 }
