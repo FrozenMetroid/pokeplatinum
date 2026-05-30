@@ -1207,6 +1207,13 @@
         "Draws in all Fire-type\n",
         "moves to up Sp. Attack."
       ]
+    },
+    {
+      "id": "pl_msg_00000612_00173",
+      "en_US": [
+        "It lands critical hits\n",
+        "when the foe is poisoned."
+      ]
     }
   ]
 }

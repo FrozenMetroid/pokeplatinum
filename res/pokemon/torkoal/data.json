@@ -1,11 +1,11 @@
 {
     "base_stats": {
-        "hp": 70,
-        "attack": 85,
+        "hp": 80,
+        "attack": 90,
         "defense": 140,
         "speed": 20,
-        "special_attack": 85,
-        "special_defense": 70
+        "special_attack": 90,
+        "special_defense": 75
     },
     "types": [ "TYPE_FIRE", "TYPE_FIRE" ],
     "catch_rate": 90,
@@ -35,21 +35,24 @@
     "icon_palette": 0,
     "learnset": {
         "by_level": [
-            [ 1, "MOVE_EMBER" ],
-            [ 4, "MOVE_SMOG" ],
-            [ 7, "MOVE_WITHDRAW" ],
-            [ 12, "MOVE_CURSE" ],
-            [ 17, "MOVE_FIRE_SPIN" ],
-            [ 20, "MOVE_SMOKE_SCREEN" ],
-            [ 23, "MOVE_RAPID_SPIN" ],
-            [ 28, "MOVE_FLAMETHROWER" ],
-            [ 33, "MOVE_BODY_SLAM" ],
-            [ 36, "MOVE_PROTECT" ],
-            [ 39, "MOVE_LAVA_PLUME" ],
-            [ 44, "MOVE_IRON_DEFENSE" ],
-            [ 49, "MOVE_AMNESIA" ],
-            [ 52, "MOVE_FLAIL" ],
-            [ 55, "MOVE_HEAT_WAVE" ]
+            [1, "MOVE_EMBER"],
+            [1, "MOVE_SMOG"],
+            [5, "MOVE_WITHDRAW"],
+            [10, "MOVE_CURSE"],
+            [13, "MOVE_FIRE_SPIN"],
+            [16, "MOVE_SMOKE_SCREEN"],
+            [19, "MOVE_YAWN"],
+            [22, "MOVE_RAPID_SPIN"],
+            [25, "MOVE_GYRO_BALL"],
+            [28, "MOVE_FLAMETHROWER"],
+            [33, "MOVE_BODY_SLAM"],
+            [36, "MOVE_PROTECT"],
+            [39, "MOVE_LAVA_PLUME"],
+            [43, "MOVE_IRON_DEFENSE"],
+            [47, "MOVE_AMNESIA"],
+            [50, "MOVE_EARTH_POWER"],
+            [54, "MOVE_HEAT_WAVE"],
+            [58, "MOVE_EARTHQUAKE"]
         ],
         "by_tm": [
             "TM06",

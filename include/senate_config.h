@@ -60,6 +60,8 @@ Currently not working
 ===============BATTLE==============
 */
 
+#define INIT_MON_RANDOM_MOVES // randomize the moves that a mon gets when it's generated at a certain level instead of just giving it the most recent moves in its learnset for that level; also applies to Wonder Trade mons
+
 #define BATTLE_EXPANDED_TRAINER_STRUCT // this is the big one
 
 #define BATTLE_ADD_CRITICAL_CAPTURES

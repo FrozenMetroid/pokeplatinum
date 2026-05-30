@@ -447,6 +447,12 @@ void WonderTrade_GiveMon(struct WonderTradeData *wonderTradeData, struct FieldSy
 
 void WonderTrade_GetLevelUpMoves(struct WonderTradeData *wonderTradeData, u32 *taskState)
 {
+    #ifndef INIT_MON_RANDOM_MOVES
+    // randomize the moves from what it can learn by the generated level
+
+    // only do this if you don't already do this in BoxPokemon_SetDefaultMoves to save time 
+    // since the following will be redundant otherwise
+
     u32 *levelUpLearnset = Heap_Alloc(HEAP_ID_FIELD1, MAX_LEARNSET_ENTRIES * sizeof(u32));
     Pokemon_LoadLevelUpMovesOf(wonderTradeData->species, wonderTradeData->form, levelUpLearnset);
     wonderTradeData->availableLearnsetMoves = 0;
@@ -482,6 +488,7 @@ void WonderTrade_GetLevelUpMoves(struct WonderTradeData *wonderTradeData, u32 *t
         }
     }
     Heap_Free(levelUpLearnset);
+    #endif
     (*taskState)++;
 }
 

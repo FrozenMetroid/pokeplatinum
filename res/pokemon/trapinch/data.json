@@ -1,11 +1,11 @@
 {
     "base_stats": {
-        "hp": 45,
+        "hp": 50,
         "attack": 100,
-        "defense": 45,
+        "defense": 60,
         "speed": 10,
         "special_attack": 45,
-        "special_defense": 45
+        "special_defense": 60
     },
     "types": [ "TYPE_GROUND", "TYPE_GROUND" ],
     "catch_rate": 255,
@@ -28,25 +28,26 @@
     "exp_rate": "EXP_RATE_MEDIUM_SLOW",
     "egg_groups": [ "EGG_GROUP_BUG", "EGG_GROUP_BUG" ],
     "abilities": [ "ABILITY_HYPER_CUTTER", "ABILITY_ARENA_TRAP" ],
-    "hiddenAbility": "ABILITY_NONE",
+    "hiddenAbility": "ABILITY_SHEER_FORCE",
     "safari_flee_rate": 0,
     "body_color": "MON_COLOR_BROWN",
     "flip_sprite": false,
     "icon_palette": 0,
     "learnset": {
         "by_level": [
-            [ 1, "MOVE_BITE" ],
-            [ 9, "MOVE_SAND_ATTACK" ],
-            [ 17, "MOVE_FEINT_ATTACK" ],
-            [ 25, "MOVE_SAND_TOMB" ],
-            [ 33, "MOVE_CRUNCH" ],
-            [ 41, "MOVE_DIG" ],
-            [ 49, "MOVE_SANDSTORM" ],
-            [ 57, "MOVE_HYPER_BEAM" ],
-            [ 65, "MOVE_EARTH_POWER" ],
-            [ 73, "MOVE_EARTHQUAKE" ],
-            [ 81, "MOVE_FEINT" ],
-            [ 89, "MOVE_FISSURE" ]
+            [1, "MOVE_BITE"],
+            [1, "MOVE_SAND_TOMB"],
+            [5, "MOVE_SAND_ATTACK"],
+            [10, "MOVE_BUG_BITE"],
+            [15, "MOVE_FEINT_ATTACK"],
+            [20, "MOVE_FEINT"],
+            [25, "MOVE_DIG"],
+            [28, "MOVE_CRUNCH"],
+            [33, "MOVE_EARTHQUAKE"],
+            [38, "MOVE_SANDSTORM"],
+            [42, "MOVE_HYPER_BEAM"],
+            [45, "MOVE_EARTH_POWER"],
+            [50, "MOVE_FISSURE"]
         ],
         "by_tm": [
             "TM06",

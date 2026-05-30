@@ -7979,7 +7979,8 @@ int BattleSystem_CalcCriticalMulti(BattleSystem *battleSys, BattleContext *battl
         effectiveCritStage = 4;
     }
 
-    if (BattleSystem_RandNext(battleSys) % sCriticalStageRates[effectiveCritStage] == 0
+    if ((BattleSystem_RandNext(battleSys) % sCriticalStageRates[effectiveCritStage] == 0
+        || ((battleCtx->battleMons[defender].status & STATUS_POISON_ALL) && attackerAbility == ABILITY_MERCILESS))
         && Battler_IgnorableAbility(battleCtx, attacker, defender, ABILITY_BATTLE_ARMOR) == FALSE
         && Battler_IgnorableAbility(battleCtx, attacker, defender, ABILITY_SHELL_ARMOR) == FALSE
         && (sideConditions & SIDE_CONDITION_LUCKY_CHANT) == FALSE

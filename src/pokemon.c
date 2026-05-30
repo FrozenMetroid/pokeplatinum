@@ -3870,7 +3870,9 @@ static void BoxPokemon_SetDefaultMoves(BoxPokemon *boxMon)
 
     Pokemon_LoadLevelUpMovesOf(monSpecies, monForm, monLevelUpMoves);
 
-    for (int i = 0; monLevelUpMoves[i] != LEARNSET_SENTINEL_ENTRY; i++) {
+    #ifndef INIT_MON_RANDOM_MOVES
+
+    for (int i = 0; monLevelUpMoves[i] != LEVEL_UP_LEARNSET_END; i++) {
         if (LEVEL_UP_LEARNSET_LEVEL(monLevelUpMoves[i]) <= monLevel) {
             u16 monLevelUpMoveID = LEVEL_UP_LEARNSET_MOVE(monLevelUpMoves[i]);
             if (BoxPokemon_AddMove(boxMon, monLevelUpMoveID) == LEARNSET_ALL_SLOTS_FILLED) {
@@ -3880,6 +3882,50 @@ static void BoxPokemon_SetDefaultMoves(BoxPokemon *boxMon)
             break;
         }
     }
+
+    #else
+
+    u8 numMoves = 0, i = 0, j = 0;
+    u16 move, level;
+    BOOL alreadyKnowsMove = FALSE;
+    while (numMoves < MAX_LEARNSET_ENTRIES) { // figure out how many moves the mon should have at its current level
+        move = LEVEL_UP_LEARNSET_MOVE(monLevelUpMoves[numMoves]);
+        level = LEVEL_UP_LEARNSET_LEVEL(monLevelUpMoves[numMoves]);
+        if (move == MOVE_NONE || move == LEVEL_UP_LEARNSET_END || level > monLevel) {
+            break;
+        }
+        numMoves++;
+    }
+    if (numMoves > LEARNED_MOVES_MAX) { // randomize from however many moves the mon can learn at its current level if it can learn more than the max number of moves
+        while (i < LEARNED_MOVES_MAX) {
+            alreadyKnowsMove = FALSE;
+            move = LEVEL_UP_LEARNSET_MOVE(monLevelUpMoves[LCRNG_RandMod(numMoves)]);
+            for (j = 0; j < LEARNED_MOVES_MAX; j++) { // check if the mon already knows the move at any move slot
+                if (move == BoxPokemon_GetValue(boxMon, MON_DATA_MOVE1 + j, NULL)) {
+                    alreadyKnowsMove = TRUE;
+                    break;
+                }
+            }
+            if (!alreadyKnowsMove) {
+                if (BoxPokemon_AddMove(boxMon, move) == LEARNSET_ALL_SLOTS_FILLED) {
+                    BoxPokemon_ReplaceMove(boxMon, move);
+                }
+                i++;
+            }
+        }
+    } else { // don't randomize the moves and just give the mon the first numMoves moves in its learnset
+        for (i = 0; monLevelUpMoves[i] != LEVEL_UP_LEARNSET_END; i++) {
+            if (LEVEL_UP_LEARNSET_LEVEL(monLevelUpMoves[i]) <= monLevel) {
+                u16 monLevelUpMoveID = LEVEL_UP_LEARNSET_MOVE(monLevelUpMoves[i]);
+                if (BoxPokemon_AddMove(boxMon, monLevelUpMoveID) == LEARNSET_ALL_SLOTS_FILLED) {
+                    BoxPokemon_ReplaceMove(boxMon, monLevelUpMoveID);
+                }
+            } else {
+                break;
+            }
+        }
+    }
+    #endif
 
     Heap_Free(monLevelUpMoves);
     BoxPokemon_ExitDecryptionContext(boxMon, reencrypt);
