@@ -88,6 +88,24 @@
         "Balance is what’s needed.\n",
         "That’s the key."
       ]
+    },
+    {
+      "id": "ForeignBuilding_Text_Ellipses",
+      "en_US": [
+        ".{PAUSE 20}.{PAUSE 20}.{PAUSE 20}\r"
+      ]
+    },
+    {
+      "id": "ForeignBuilding_Text_Unknown_Character",
+      "en_US": [
+        "Oh? You interrupted my thoughts.\r",
+        "This place.{PAUSE 20}.{PAUSE 20}.{PAUSE 20}\n",
+        "It’s as though fate brings people here.\f",
+        "Wouldn’t you agree?\r",
+        "...No?\r",
+        "Hmph... Your narrow vision\n",
+        "astounds me.\r"
+      ]
     }
   ]
 }

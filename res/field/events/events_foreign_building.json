@@ -135,6 +135,21 @@
             "x": 15,
             "z": 10,
             "y": 0
+        },
+        {
+            "id": "9",
+            "graphics_id": "OBJ_EVENT_GFX_UNKNOWN_CHARACTER",
+            "movement_type": "MOVEMENT_TYPE_NONE",
+            "trainer_type": "TRAINER_TYPE_NONE",
+            "hidden_flag": "FLAG_HIDE_FOREIGN_BUILDING_UNKNOWN_CHARACTER",
+            "script": 10,
+            "initial_dir": 0,
+            "data": [],
+            "movement_range_x": 0,
+            "movement_range_z": 0,
+            "x": 11,
+            "z": 15,
+            "y": 0
         }
     ],
     "warp_events": [

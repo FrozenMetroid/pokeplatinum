@@ -471,6 +471,7 @@ const UnkStruct_ov5_021FB97C Unk_ov5_021FB97C[] = {
     { 0x111, &Unk_ov5_021FAFB0 },
     { 0x112, &Unk_ov5_021FB0DC },
     { 0x113, &Unk_ov5_021FB0DC },
+    { OBJ_EVENT_GFX_UNKNOWN_CHARACTER, &Unk_ov5_021FAFD8 },
     { 0xffff, NULL }
 };
 
@@ -915,6 +916,7 @@ const UnkStruct_ov5_021ED2D0 Unk_ov5_021FC9B4[] = {
     { 0x111, 0x16E },
     { 0x112, 0x16B },
     { 0x113, 0x16C },
+    { OBJ_EVENT_GFX_UNKNOWN_CHARACTER, 0x1D6 }, // btx 470
     { 0xffff, 0x0 }
 };
 
@@ -1574,6 +1576,7 @@ const UnkStruct_ov5_021EDD04 Unk_ov5_021FD77C[] = {
     { 0x111, 0x9, 0xE, Unk_ov5_021FB11C },
     { 0x112, 0x9, 0xD, Unk_ov5_021FB248 },
     { 0x113, 0x9, 0xD, Unk_ov5_021FB248 },
+    { OBJ_EVENT_GFX_UNKNOWN_CHARACTER, 0x0, 0x0, Unk_ov5_021FB2C0 },
     { 0xffff, 0xffff, 0xffff, NULL }
 };
 
@@ -1842,6 +1845,7 @@ const UnkStruct_ov5_021ECD10 Unk_ov5_021FC194[] = {
     { 0x111, 0x1, 0x0, 0x1, 0x1, 0x0 },
     { 0x112, 0x1, 0x0, 0x1, 0x1, 0x0 },
     { 0x113, 0x1, 0x0, 0x1, 0x1, 0x0 },
+    { OBJ_EVENT_GFX_UNKNOWN_CHARACTER, 0x1, 0x1, 0x1, 0x1, 0x0 },
     { 0xffff, 0x0, 0x0, 0x0, 0x0, 0x0 }
 };
 
