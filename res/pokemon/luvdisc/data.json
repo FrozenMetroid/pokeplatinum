@@ -36,7 +36,7 @@
     "learnset": {
         "by_level": [
             [1, "MOVE_WATER_GUN"],
-            [4, "MOVE_CHARM"],
+            [4, "MOVE_WATER_SPORT"],
             [7, "MOVE_AQUA_JET"],
             [9, "MOVE_AGILITY"],
             [14, "MOVE_SWIFT"],

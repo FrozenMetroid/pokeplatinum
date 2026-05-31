@@ -1,11 +1,11 @@
 {
     "base_stats": {
-        "hp": 40,
-        "attack": 55,
-        "defense": 80,
+        "hp": 60,
+        "attack": 80,
+        "defense": 90,
         "speed": 30,
-        "special_attack": 35,
-        "special_defense": 60
+        "special_attack": 50,
+        "special_defense": 70
     },
     "types": [ "TYPE_STEEL", "TYPE_PSYCHIC" ],
     "catch_rate": 3,
@@ -28,7 +28,7 @@
     "exp_rate": "EXP_RATE_SLOW",
     "egg_groups": [ "EGG_GROUP_MINERAL", "EGG_GROUP_MINERAL" ],
     "abilities": [ "ABILITY_CLEAR_BODY", "ABILITY_NONE" ],
-    "hiddenAbility": "ABILITY_NONE",
+    "hiddenAbility": "ABILITY_TOUGH_CLAWS",
     "safari_flee_rate": 0,
     "body_color": "MON_COLOR_BLUE",
     "flip_sprite": false,

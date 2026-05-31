@@ -1,11 +1,11 @@
 {
     "base_stats": {
-        "hp": 35,
-        "attack": 64,
-        "defense": 85,
-        "speed": 32,
-        "special_attack": 74,
-        "special_defense": 55
+        "hp": 60,
+        "attack": 65,
+        "defense": 125,
+        "speed": 30,
+        "special_attack": 75,
+        "special_defense": 95
     },
     "types": [ "TYPE_WATER", "TYPE_WATER" ],
     "catch_rate": 255,
@@ -27,18 +27,28 @@
     "base_friendship": 70,
     "exp_rate": "EXP_RATE_ERRATIC",
     "egg_groups": [ "EGG_GROUP_WATER_1", "EGG_GROUP_WATER_1" ],
-    "abilities": [ "ABILITY_SHELL_ARMOR", "ABILITY_NONE" ],
-    "hiddenAbility": "ABILITY_NONE",
+    "abilities": [ "ABILITY_SHELL_ARMOR", "ABILITY_STURDY" ],
+    "hiddenAbility": "ABILITY_RATTLED",
     "safari_flee_rate": 0,
     "body_color": "MON_COLOR_BLUE",
     "flip_sprite": false,
     "icon_palette": 0,
     "learnset": {
         "by_level": [
-            [ 1, "MOVE_CLAMP" ],
-            [ 1, "MOVE_WATER_GUN" ],
-            [ 1, "MOVE_WHIRLPOOL" ],
-            [ 1, "MOVE_IRON_DEFENSE" ]
+            [1, "MOVE_CLAMP"],
+            [1, "MOVE_WATER_GUN"],
+            [1, "MOVE_WHIRLPOOL"],
+            [1, "MOVE_IRON_DEFENSE"],
+            [5, "MOVE_REFRESH"],
+            [10, "MOVE_BARRIER"],
+            [15, "MOVE_WATER_PULSE"],
+            [20, "MOVE_ENDURE"],
+            [25, "MOVE_PROTECT"],
+            [30, "MOVE_PSYBEAM"],
+            [35, "MOVE_BRINE"],
+            [40, "MOVE_AQUA_RING"],
+            [45, "MOVE_HYDRO_PUMP"],
+            [50, "MOVE_PSYCHIC"]
         ],
         "by_tm": [
             "TM03",
@@ -51,6 +61,7 @@
             "TM18",
             "TM21",
             "TM27",
+            "TM29",
             "TM32",
             "TM42",
             "TM43",

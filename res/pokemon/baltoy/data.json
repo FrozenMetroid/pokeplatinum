@@ -1,11 +1,11 @@
 {
     "base_stats": {
-        "hp": 40,
-        "attack": 40,
-        "defense": 55,
+        "hp": 60,
+        "attack": 60,
+        "defense": 70,
         "speed": 55,
-        "special_attack": 40,
-        "special_defense": 70
+        "special_attack": 60,
+        "special_defense": 90
     },
     "types": [ "TYPE_GROUND", "TYPE_PSYCHIC" ],
     "catch_rate": 255,

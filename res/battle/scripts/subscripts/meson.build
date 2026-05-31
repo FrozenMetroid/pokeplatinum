@@ -319,4 +319,6 @@ subscript_files = files(
     'subscript_matriarch.s',
     'subscript_mimesis.s',
     'subscript_celestial_body.s',
+    'subscript_protean.s',
+    'subscript_blocked_by_bulletproof.s',
 )

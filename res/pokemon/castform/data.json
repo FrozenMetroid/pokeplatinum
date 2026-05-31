@@ -1,11 +1,11 @@
 {
     "base_stats": {
         "hp": 70,
-        "attack": 70,
-        "defense": 70,
-        "speed": 70,
-        "special_attack": 70,
-        "special_defense": 70
+        "attack": 65,
+        "defense": 85,
+        "speed": 85,
+        "special_attack": 95,
+        "special_defense": 85
     },
     "types": [ "TYPE_NORMAL", "TYPE_NORMAL" ],
     "catch_rate": 45,
@@ -35,14 +35,30 @@
     "icon_palette": 0,
     "learnset": {
         "by_level": [
-            [ 1, "MOVE_TACKLE" ],
-            [ 10, "MOVE_WATER_GUN" ],
-            [ 10, "MOVE_EMBER" ],
-            [ 10, "MOVE_POWDER_SNOW" ],
-            [ 20, "MOVE_RAIN_DANCE" ],
-            [ 20, "MOVE_SUNNY_DAY" ],
-            [ 20, "MOVE_HAIL" ],
-            [ 30, "MOVE_WEATHER_BALL" ]
+            [1, "MOVE_RAIN_DANCE"],
+            [1, "MOVE_SUNNY_DAY"],
+            [1, "MOVE_HAIL"],
+            [1, "MOVE_SANDSTORM"],
+            [1, "MOVE_OMINOUS_WIND"],
+            [1, "MOVE_WHIRLWIND"],
+            [1, "MOVE_TWISTER"],
+            [1, "MOVE_TACKLE"],
+            [10, "MOVE_WATER_GUN"],
+            [10, "MOVE_EMBER"],
+            [10, "MOVE_POWDER_SNOW"],
+            [15, "MOVE_GUST"],
+            [20, "MOVE_RAZOR_WIND"],
+            [25, "MOVE_AIR_CUTTER"],
+            [30, "MOVE_WEATHER_BALL"],
+            [30, "MOVE_TAILWIND"],
+            [35, "MOVE_WATER_PULSE"],
+            [35, "MOVE_FIRE_SPIN"],
+            [35, "MOVE_ICY_WIND"],
+            [40, "MOVE_AIR_SLASH"],
+            [45, "MOVE_BLIZZARD"],
+            [50, "MOVE_THUNDER"],
+            [55, "MOVE_HYDRO_PUMP"],
+            [60, "MOVE_FIRE_BLAST"]
         ],
         "by_tm": [
             "TM03",

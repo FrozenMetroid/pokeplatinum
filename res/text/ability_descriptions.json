@@ -1225,8 +1225,22 @@
     {
       "id": "pl_msg_00000610_00175",
       "en_US": [
-        "Applies the effects of\n",
-        "Gravity upon switching in."
+        "Changes the Pokémon’s\n",
+        "type to the move’s type."
+      ]
+    },
+    {
+      "id": "pl_msg_00000610_00176",
+      "en_US": [
+        "Powers up moves that\n",
+        "make direct contact."
+      ]
+    },
+    {
+      "id": "pl_msg_00000610_00177",
+      "en_US": [
+        "Protects the Pokémon from\n",
+        "some ball and bomb moves."
       ]
     }
   ]

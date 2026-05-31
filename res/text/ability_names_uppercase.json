@@ -700,6 +700,18 @@
     {
       "id": "pl_msg_00000611_00175",
       "en_US": "CELESTIAL BODY"
+    },
+    {
+      "id": "pl_msg_00000611_00176",
+      "en_US": "PROTEAN"
+    },
+    {
+      "id": "pl_msg_00000611_00177",
+      "en_US": "TOUGH CLAWS"
+    },
+    {
+      "id": "pl_msg_00000611_00178",
+      "en_US": "BULLETPROOF"
     }
   ]
 }

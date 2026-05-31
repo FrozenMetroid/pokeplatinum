@@ -3659,6 +3659,29 @@ static u16 sSoundMoves[] = {
     MOVE_CHATTER,
 };
 
+static u16 sBulletproofMoves[] = {
+    MOVE_POUND,
+    MOVE_AURA_SPHERE,
+    MOVE_BARRAGE,
+    MOVE_BULLET_SEED,
+    MOVE_EGG_BOMB,
+    MOVE_ENERGY_BALL,
+    MOVE_FOCUS_BLAST,
+    MOVE_GYRO_BALL,
+    MOVE_ICE_BALL,
+    MOVE_MAGNET_BOMB,
+    MOVE_MIST_BALL,
+    MOVE_MUD_BOMB,
+    MOVE_OCTAZOOKA,
+    MOVE_ROCK_BLAST,
+    MOVE_ROCK_WRECKER,
+    MOVE_SEED_BOMB,
+    MOVE_SHADOW_BALL,
+    MOVE_SLUDGE_BOMB,
+    MOVE_WEATHER_BALL,
+    MOVE_ZAP_CANNON,
+};
+
 int BattleSystem_TriggerImmunityAbility(BattleContext *battleCtx, int attacker, int defender)
 {
     int subscript = NULL, moveType;
@@ -3707,6 +3730,15 @@ int BattleSystem_TriggerImmunityAbility(BattleContext *battleCtx, int attacker, 
         for (int i = 0; i < NELEMS(sSoundMoves); i++) {
             if (sSoundMoves[i] == battleCtx->moveCur) {
                 subscript = subscript_blocked_by_soundproof;
+                break;
+            }
+        }
+    }
+
+    if (Battler_IgnorableAbility(battleCtx, attacker, defender, ABILITY_BULLETPROOF) == TRUE) {
+        for (int i = 0; i < NELEMS(sBulletproofMoves); i++) {
+            if (sBulletproofMoves[i] == battleCtx->moveCur) {
+                subscript = subscript_blocked_by_bulletproof;
                 break;
             }
         }
@@ -7408,6 +7440,11 @@ int BattleSystem_CalcMoveDamage(BattleSystem *battleSys,
         && move != MOVE_STRUGGLE
         && movePower <= 60) {
         movePower = movePower * 15 / 10;
+    }
+
+    if (attackerParams.ability == ABILITY_TOUGH_CLAWS
+        && (CURRENT_MOVE_DATA.flags & MOVE_FLAG_MAKES_CONTACT)) {
+        movePower = movePower * 13 / 10;
     }
 
     moveClass = MOVE_DATA(move).class;

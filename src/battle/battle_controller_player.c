@@ -2882,7 +2882,8 @@ static BOOL BattleControllerPlayer_TriggerImmunityAbilities(BattleSystem *battle
             int nextSeq = BattleSystem_TriggerImmunityAbility(battleCtx, battleCtx->attacker, battleCtx->defender);
 
             if ((nextSeq && (battleCtx->moveStatusFlags & MOVE_STATUS_DID_NOT_HIT) == FALSE)
-                || nextSeq == subscript_blocked_by_soundproof) {
+                || nextSeq == subscript_blocked_by_soundproof
+                || nextSeq == subscript_blocked_by_bulletproof) {
                 LOAD_SUBSEQ(nextSeq);
                 battleCtx->commandNext = battleCtx->command;
                 battleCtx->command = BATTLE_CONTROL_EXEC_SCRIPT;
@@ -3287,6 +3288,7 @@ enum BeforeMoveState {
     BEFORE_MOVE_STATE_CHECK_TARGET_EXISTS,
     BEFORE_MOVE_STATE_CHECK_STOLEN,
     BEFORE_MOVE_STATE_REDIRECT_TARGET,
+    BEFORE_MOVE_STATE_PROTEAN,
     BEFORE_MOVE_STATE_ABILITY_FAILURES,
 
     BEFORE_MOVE_END,
@@ -3366,6 +3368,21 @@ static void BattleControllerPlayer_BeforeMove(BattleSystem *battleSys, BattleCon
     case BEFORE_MOVE_STATE_REDIRECT_TARGET:
         BattleSystem_CheckRedirectionAbilities(battleSys, battleCtx, battleCtx->attacker, battleCtx->moveCur);
         battleCtx->beforeMoveCheckState++;
+    case BEFORE_MOVE_STATE_PROTEAN:
+        if (Battler_Ability(battleCtx, battleCtx->attacker) == ABILITY_PROTEAN) {
+            u8 moveType = CalcMoveType(battleCtx, battleCtx->attacker, battleCtx->moveCur);
+            if (moveType != BattleMon_Get(battleCtx, battleCtx->attacker, BATTLEMON_TYPE_1, NULL) || moveType != BattleMon_Get(battleCtx, battleCtx->attacker, BATTLEMON_TYPE_2, NULL)) {
+
+                LOAD_SUBSEQ(subscript_protean); // type change happens here
+                battleCtx->msgTemp = moveType;
+                battleCtx->msgBattlerTemp = battleCtx->attacker;
+                battleCtx->commandNext = battleCtx->command;
+                battleCtx->command = BATTLE_CONTROL_EXEC_SCRIPT;
+                return;
+            }
+        } else {
+            battleCtx->beforeMoveCheckState++;
+        }
     case BEFORE_MOVE_STATE_ABILITY_FAILURES:
         // queenly majesty
         if (BattleSystem_CountAbility(battleSys, battleCtx, COUNT_ALIVE_BATTLERS_OUR_SIDE, battleCtx->defender, ABILITY_QUEENLY_MAJESTY)) {
@@ -3381,7 +3398,6 @@ static void BattleControllerPlayer_BeforeMove(BattleSystem *battleSys, BattleCon
                     return;
             }
         }
-        battleCtx->beforeMoveCheckState = BEFORE_MOVE_START;
     }
 
     if (battleCtx->moveStatusFlags & MOVE_STATUS_NO_EFFECTS) {
