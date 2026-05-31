@@ -81,6 +81,7 @@ Thank you!
 - Gym Leader sprites, as well as some regular Trainers' sprites, have been improved
 - If the player's lead Pokémon has the Ability Harvest, an additional Berry will be harvested when harvesting Berries in the overworld
 - Change your Pokémon's Poké Ball in Bebe's house in Hearthome City
+- Reset your Pokémon's EVs in the middle house of the Fight Area by talking to the man in the top right corner
 - A myriad of changes to the battle system, as documented below
 
 # Battle Changes

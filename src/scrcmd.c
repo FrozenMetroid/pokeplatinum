@@ -7446,3 +7446,28 @@ static BOOL ScrCmd_ChangePokeBall(ScriptContext *ctx)
 
     return FALSE;
 }
+
+static BOOL ScrCmd_ResetEVs(ScriptContext *ctx)
+{
+    u8 partySlot = ScriptContext_GetVar(ctx);
+    u16 *result = ScriptContext_GetVarPointer(ctx);
+
+    *result = FALSE;
+
+    Pokemon *mon = Party_GetPokemonBySlotIndex(SaveData_GetParty(ctx->fieldSystem->saveData), partySlot);
+
+    int i;
+    for (i = 0; i < 6; i++) { // first find if there are any EVs that are not already 0
+        if (Pokemon_GetValue(mon, MON_DATA_HP_EV + i, NULL) != 0) {
+            *result = TRUE; // will only be set to true if there is at least one EV that is not already 0
+        }
+    }
+    u8 effortValue = 0;
+    if (*result == TRUE) { // if any EVs are not already 0, then reset all EVs to 0
+        for (i = 0; i < 6; i++) {
+            Pokemon_SetValue(mon, MON_DATA_HP_EV + i, &effortValue);
+        }
+    }
+
+    return FALSE;
+}

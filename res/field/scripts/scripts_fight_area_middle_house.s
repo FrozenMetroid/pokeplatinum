@@ -2,13 +2,13 @@
 #include "res/text/bank/fight_area_middle_house.h"
 
 
-    ScriptEntry FightArea_MiddleHouse_BottleCapGuy
+    ScriptEntry FightAreaMiddleHouse_BottleCapGuy
     ScriptEntry FightAreaMiddleHouse_SchoolKidM
     ScriptEntry FightAreaMiddleHouse_Youngster
+    ScriptEntry FightAreaMiddleHouse_BasePointFanatic
     ScriptEntryEnd
 
-FightArea_MiddleHouse_BottleCapGuy:
-    PrintMonPersonality 0
+FightAreaMiddleHouse_BottleCapGuy:
     LockAll
     FacePlayer
     PlaySE SEQ_SE_CONFIRM
@@ -134,5 +134,46 @@ FightAreaMiddleHouse_SchoolKidM:
 FightAreaMiddleHouse_Youngster:
     NPCMessage FightAreaMiddleHouse_Text_CheckOutGlobalTerminal
     End
+
+FightAreaMiddleHouse_BasePointFanatic:
+    LockAll
+    FacePlayer
+    PlaySE SEQ_SE_CONFIRM
+    Message pl_msg_00000197_BasePointsFanatic_Intro
+    ShowYesNoMenu VAR_RESULT
+    GoToIfEq VAR_RESULT, MENU_NO, FightAreaMiddleHouse_DeclinedBasePointsFanatic
+    Message pl_msg_00000197_BasePointsFanatic_AskSelectPokemon
+    CloseMessage
+    FadeScreenOut COLOR_BLACK
+    WaitFadeScreen
+    SelectPartyPokemon
+    GetSelectedPartySlot VAR_0x8000
+    ReturnToField
+    FadeScreenIn COLOR_BLACK
+    WaitFadeScreen
+    GoToIfEq VAR_0x8000, PARTY_SLOT_NONE, FightAreaMiddleHouse_DeclinedBasePointsFanatic
+    BufferPartyMonNickname 0, VAR_0x8000
+    Message pl_msg_00000197_BasePointsFanatic_Confirm
+    ShowYesNoMenu VAR_RESULT
+    GoToIfEq VAR_RESULT, MENU_NO, FightAreaMiddleHouse_DeclinedBasePointsFanatic
+    CloseMessage
+    ResetEVs VAR_0x8000, VAR_RESULT
+    GoToIfEq VAR_RESULT, FALSE, FightAreaMiddleHouse_ZeroEvs
+    FadeScreenOut COLOR_BLACK
+    WaitFadeScreen
+    PlayFanfare SEQ_FANFA2
+    WaitFanfare
+    FadeScreenIn COLOR_BLACK
+    WaitFadeScreen
+    Message pl_msg_00000197_BasePointsFanatic_Finished
+    GoTo _EndDialogue
+
+FightAreaMiddleHouse_DeclinedBasePointsFanatic:
+    Message pl_msg_00000197_BasePointsFanatic_Declined
+    GoTo _EndDialogue
+
+FightAreaMiddleHouse_ZeroEvs:
+    Message pl_msg_00000197_BasePointsFanatic_ZeroEvs
+    GoTo _EndDialogue
 
     .balign 4, 0

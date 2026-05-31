@@ -13,5 +13,6 @@ BOOL ScrCmd_WonderTrade(ScriptContext *ctx);
 BOOL ScrCmd_Debug_GetSpeciesData(ScriptContext *ctx);
 BOOL ScrCmd_Debug_SetMonItem(ScriptContext *ctx);
 BOOL ScrCmd_ChangePokeBall(ScriptContext *ctx);
+BOOL ScrCmd_ResetEVs(ScriptContext *ctx);
 
 #endif // POKEPLATINUM_SCRCMD_H

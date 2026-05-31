@@ -157,6 +157,51 @@
         "Ahh, wonderful! Which Pokémon shall\n",
         "I help now?\r"
       ]
+    },
+    {
+      "id": "pl_msg_00000197_BasePointsFanatic_Intro",
+      "en_US": [
+        "Wahaha, I’m a base points fanatic!\n",
+        "Have you brought me a Pokémon that\f",
+        "I may steal -- I mean, borrow --\f",
+        "base points from?"
+      ]
+    },
+    {
+      "id": "pl_msg_00000197_BasePointsFanatic_Declined",
+      "en_US": [
+        "But... Wow...\n",
+        "I thought you would let me, ugh."
+      ]
+    },
+    {
+      "id": "pl_msg_00000197_BasePointsFanatic_AskSelectPokemon",
+      "en_US": [
+        "Wahaha, excellent! Whom shall I\n",
+        "borrow from?\r"
+      ]
+    },
+    {
+      "id": "pl_msg_00000197_BasePointsFanatic_Confirm",
+      "en_US": [
+        "Are you sure you want me to\n",
+        "take {STRVAR_1 3, 0, 0}’s base points?"
+      ]
+    },
+    {
+      "id": "pl_msg_00000197_BasePointsFanatic_Finished",
+      "en_US": [
+        "Bam! Your {STRVAR_1 3, 0, 0}’s base points\n",
+        "are all mine! Thank you!"
+      ]
+    },
+    {
+      "id": "pl_msg_00000197_BasePointsFanatic_ZeroEvs",
+      "en_US": [
+        "What are you playing at?\n",
+        "This Pokémon doesn’t even have\f",
+        "any base points for me to take!"
+      ]
     }
   ]
 }

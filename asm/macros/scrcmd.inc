@@ -5107,6 +5107,12 @@
     .short \result
     .endm
 
+    .macro ResetEVs slot, resultVar
+    .short SCRCMD_RESETEVS
+    .short \slot
+    .short \resultVar
+    .endm
+
 
 // CONVENIENCE MACROS
 
