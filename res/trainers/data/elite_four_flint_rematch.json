@@ -8,7 +8,8 @@
     "ai_flags": [
         "AI_FLAG_BASIC",
         "AI_FLAG_EVAL_ATTACK",
-        "AI_FLAG_EXPERT"
+        "AI_FLAG_EXPERT",
+        "AI_FLAG_WEATHER"
     ],
     "double_battle": false,
     "party": [
@@ -16,70 +17,95 @@
             "species": "SPECIES_HOUNDOOM",
             "form": 0,
             "level": 68,
-            "item": "ITEM_NONE",
+            "item": "ITEM_HEAT_ROCK",
             "moves": [
                 "MOVE_FLAMETHROWER",
-                "MOVE_SLUDGE_BOMB",
+                "MOVE_THUNDER_FANG",
                 "MOVE_DARK_PULSE",
                 "MOVE_SUNNY_DAY"
             ],
-            "iv_scale": 250,
+            "ability": "ABILITY_SOLAR_POWER",
+            "nature": "NATURE_HASTY",
+            "ivnums": [31, 31, 31, 31, 31, 31],
+            "evnums": [0, 100, 0, 252, 152, 0],
+            "ball": "ITEM_POKE_BALL",
+            "iv_scale": 0,
             "ball_seal": 0
         },
         {
-            "species": "SPECIES_FLAREON",
+            "species": "SPECIES_CAMERUPT",
             "form": 0,
             "level": 71,
-            "item": "ITEM_NONE",
+            "item": "ITEM_PASSHO_BERRY",
             "moves": [
-                "MOVE_OVERHEAT",
-                "MOVE_GIGA_IMPACT",
-                "MOVE_QUICK_ATTACK",
-                "MOVE_WILL_O_WISP"
+                "MOVE_ERUPTION",
+                "MOVE_FIRE_BLAST",
+                "MOVE_EARTH_POWER",
+                "MOVE_STONE_EDGE"
             ],
-            "iv_scale": 250,
+            "ability": "ABILITY_SOLID_ROCK",
+            "nature": "NATURE_BRAVE",
+            "ivnums": [31, 31, 31, 31, 31, 31],
+            "evnums": [252, 128, 0, 0, 128, 0],
+            "ball": "ITEM_POKE_BALL",
+            "iv_scale": 0,
             "ball_seal": 0
         },
         {
-            "species": "SPECIES_RAPIDASH",
+            "species": "SPECIES_NINETALES",
             "form": 0,
             "level": 69,
-            "item": "ITEM_NONE",
+            "item": "ITEM_PETAYA_BERRY",
             "moves": [
-                "MOVE_FLARE_BLITZ",
-                "MOVE_SOLAR_BEAM",
-                "MOVE_BOUNCE",
-                "MOVE_SUNNY_DAY"
+                "MOVE_NASTY_PLOT",
+                "MOVE_FIRE_BLAST",
+                "MOVE_ENERGY_BALL",
+                "MOVE_EXTRASENSORY"
             ],
-            "iv_scale": 250,
+            "ability": "ABILITY_SERENE_GRACE",
+            "nature": "NATURE_MODEST",
+            "ivnums": [31, 31, 31, 31, 31, 31],
+            "evnums": [0, 0, 0, 252, 252, 0],
+            "ball": "ITEM_POKE_BALL",
+            "iv_scale": 0,
             "ball_seal": 0
         },
         {
             "species": "SPECIES_INFERNAPE",
             "form": 0,
             "level": 71,
-            "item": "ITEM_NONE",
+            "item": "ITEM_EXPERT_BELT",
             "moves": [
                 "MOVE_FLARE_BLITZ",
                 "MOVE_THUNDER_PUNCH",
                 "MOVE_MACH_PUNCH",
                 "MOVE_EARTHQUAKE"
             ],
-            "iv_scale": 250,
+            "ability": "ABILITY_IRON_FIST",
+            "nature": "NATURE_JOLLY",
+            "ivnums": [31, 31, 31, 31, 31, 31],
+            "evnums": [0, 252, 0, 252, 0, 0],
+            "ball": "ITEM_POKE_BALL",
+            "iv_scale": 0,
             "ball_seal": 0
         },
         {
             "species": "SPECIES_MAGMORTAR",
             "form": 0,
             "level": 73,
-            "item": "ITEM_SITRUS_BERRY",
+            "item": "ITEM_POWER_HERB",
             "moves": [
                 "MOVE_FLAMETHROWER",
                 "MOVE_THUNDERBOLT",
                 "MOVE_SOLAR_BEAM",
-                "MOVE_HYPER_BEAM"
+                "MOVE_PSYCHIC"
             ],
-            "iv_scale": 250,
+            "ability": "ABILITY_FLAME_BODY",
+            "nature": "NATURE_MODEST",
+            "ivnums": [31, 31, 31, 31, 31, 31],
+            "evnums": [252, 0, 0, 0, 252, 0],
+            "ball": "ITEM_TIMER_BALL",
+            "iv_scale": 0,
             "ball_seal": 13
         }
     ],

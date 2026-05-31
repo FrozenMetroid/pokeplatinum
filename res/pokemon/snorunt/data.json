@@ -91,7 +91,8 @@
             "MOVE_SPIKES",
             "MOVE_ROLLOUT",
             "MOVE_DISABLE",
-            "MOVE_BIDE"
+            "MOVE_BIDE",
+            "MOVE_WEATHER_BALL"
         ]
     },
     "evolutions": [

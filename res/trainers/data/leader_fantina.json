@@ -67,7 +67,7 @@
             "ball": "ITEM_DUSK_BALL",
             "ability": "ABILITY_LEVITATE",
             "nature": "NATURE_HASTY",
-            "ball_seal": 0
+            "ball_seal": 5
         }
     ],
     "messages": [

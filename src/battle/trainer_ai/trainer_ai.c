@@ -202,6 +202,7 @@ static BOOL AI_HasSuperEffectiveMove(BattleSystem *battleSys, BattleContext *bat
 static BOOL AI_HasAbsorbAbilityInParty(BattleSystem *battleSys, BattleContext *battleCtx, int battler);
 static BOOL AI_HasPartyMemberWithSuperEffectiveMove(BattleSystem *battleSys, BattleContext *battleCtx, int battler, u32 checkEffectiveness, u8 rand);
 static BOOL AI_IsAsleepWithNaturalCure(BattleSystem *battleSys, BattleContext *battleCtx, int battler);
+static BOOL AI_HasRegenerator(BattleSystem *battleSys, BattleContext *battleCtx, int battler);
 static BOOL AI_IsHeavilyStatBoosted(BattleSystem *battleSys, BattleContext *battleCtx, int battler);
 static BOOL TrainerAI_ShouldSwitch(BattleSystem *battleSys, BattleContext *battleCtx, int battler);
 static BOOL TrainerAI_ShouldUseItem(BattleSystem *battleSys, int battler);
@@ -3881,6 +3882,37 @@ static BOOL AI_IsAsleepWithNaturalCure(BattleSystem *battleSys, BattleContext *b
     return FALSE;
 }
 
+static BOOL AI_HasRegenerator(BattleSystem *battleSys, BattleContext *battleCtx, int battler)
+{
+    // don't switch if the battler doesn't have Regenerator or is above 50% HP
+    if (Battler_Ability(battleCtx, battler) != ABILITY_REGENERATOR
+        || battleCtx->battleMons[battler].curHP >= (battleCtx->battleMons[battler].maxHP / 2)) {
+        return FALSE;
+    }
+
+    // If we have a super-effective move against either opponent, do not switch ~33% of the time.
+    if (AI_HasSuperEffectiveMove(battleSys, battleCtx, battler, TRUE) && BattleSystem_RandNext(battleSys) % 3 != 0) {
+        return FALSE;
+    }
+
+    u8 faintedTeammates = BattleSystem_GetFaintedTeammateCount(battleSys, battler);
+    u8 partyCount = BattleSystem_GetPartyCount(battleSys, battler);
+
+    if (faintedTeammates == partyCount - 1) {
+        // If we only have one Pokemon left, do not switch.
+        return FALSE;
+    }
+
+    // Randomly switch 50% of the time, following post-KO switch logic.
+    if (BattleSystem_RandNext(battleSys) & 1) {
+        battleCtx->aiSwitchedPartySlot[battler] = 6;
+        return TRUE;
+    }
+    
+
+    return FALSE;
+}
+
 /**
  * @brief Check if the AI's current battler is heavily stat-boosted (that is,
  * if the sum of its total positive stat stage changes is greater than or
@@ -4002,6 +4034,12 @@ static BOOL TrainerAI_ShouldSwitch(BattleSystem *battleSys, BattleContext *battl
         // 25% of the time, switch to a party member with an immunity to the last move that hit
         // this battler which also has a super-effective move against an opposing Pokemon.
         if (AI_HasPartyMemberWithSuperEffectiveMove(battleSys, battleCtx, battler, 0x4, 3)) {
+            return TRUE;
+        }
+
+        // 50% of the time, switch to a party member so that Regenerator
+        // heals the battler if the battler has the ability and is below 50% HP.
+        if (AI_HasRegenerator(battleSys, battleCtx, battler)) {
             return TRUE;
         }
     }

@@ -1,10 +1,10 @@
 {
     "base_stats": {
         "hp": 70,
-        "attack": 90,
+        "attack": 105,
         "defense": 65,
         "speed": 95,
-        "special_attack": 105,
+        "special_attack": 90,
         "special_defense": 65
     },
     "types": [ "TYPE_NORMAL", "TYPE_PSYCHIC" ],
@@ -90,6 +90,7 @@
             "TM67",
             "TM70",
             "TM73",
+            "TM75",
             "TM77",
             "TM78",
             "TM82",

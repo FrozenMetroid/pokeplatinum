@@ -69,7 +69,6 @@ static BOOL MoveCannotTriggerAnticipation(BattleContext *battleCtx, int move);
 static int CalcMoveType(BattleSystem *battleSys, BattleContext *battleCtx, int item, int move);
 static BOOL IntimidateCheckHelper(BattleContext *battleCtx, u32 client);
 static BOOL IsPowderMove(u16 moveID);
-static u32 BattleSystem_GetFaintedTeammateCount(BattleSystem *battleSys, u32 client);
 static int BattleMon_GetAdjustedSpecies(BattleContext *battleCtx, int battler);
 BOOL Battle_CanStealHeldItemFromAttacker(BattleSystem *battleSys, BattleContext *battleCtx);
 
@@ -9202,7 +9201,7 @@ static BOOL IsPowderMove(u16 moveID)
 
 #ifdef BATTLE_ADD_SUPREME_OVERLORD
 
-static u32 BattleSystem_GetFaintedTeammateCount(BattleSystem *battleSys, u32 client) // fills out fainted teammates for specified client
+int BattleSystem_GetFaintedTeammateCount(BattleSystem *battleSys, int client) // fills out fainted teammates for specified client
 { 
     u16 hp;
     u8 numFainted = 0;

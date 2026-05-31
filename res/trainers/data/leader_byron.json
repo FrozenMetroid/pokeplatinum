@@ -42,7 +42,7 @@
                 "MOVE_BUG_BITE",
                 "MOVE_IRON_HEAD",
                 "MOVE_BULLET_PUNCH",
-                "MOVE_CLOSE_COMBAT"
+                "MOVE_AERIAL_ACE"
             ],
             "iv_scale": 0,
             "ivnums": [31, 31, 31, 31, 31, 31],

@@ -1,11 +1,11 @@
 {
     "base_stats": {
         "hp": 69,
-        "attack": 69,
+        "attack": 59,
         "defense": 76,
-        "speed": 91,
-        "special_attack": 69,
-        "special_defense": 86
+        "speed": 101,
+        "special_attack": 90,
+        "special_defense": 95
     },
     "types": [ "TYPE_WATER", "TYPE_WATER" ],
     "catch_rate": 75,
@@ -57,7 +57,7 @@
             [51, "MOVE_AIR_SLASH"],
             [54, "MOVE_SIGNAL_BEAM"],
             [58, "MOVE_HYDRO_PUMP"],
-            [65, "MOVE_TAIL_GLOW"]
+            [64, "MOVE_TAIL_GLOW"]
         ],
         "by_tm": [
             "TM03",

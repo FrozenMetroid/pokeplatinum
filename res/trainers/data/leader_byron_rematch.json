@@ -13,73 +13,98 @@
     "double_battle": false,
     "party": [
         {
-            "species": "SPECIES_SKARMORY",
+            "species": "SPECIES_FORRETRESS",
             "form": 0,
             "level": 61,
-            "item": "ITEM_NONE",
+            "item": "ITEM_OCCA_BERRY",
             "moves": [
-                "MOVE_NIGHT_SLASH",
-                "MOVE_DRILL_PECK",
-                "MOVE_ROCK_TOMB",
+                "MOVE_PIN_MISSILE",
+                "MOVE_GYRO_BALL",
+                "MOVE_SPIKES",
                 "MOVE_STEALTH_ROCK"
             ],
-            "iv_scale": 200,
+            "ability": "ABILITY_STURDY",
+            "nature": "NATURE_IMPISH",
+            "ivnums": [31, 31, 31, 31, 31, 31],
+            "evnums": [252, 0, 252, 0, 0, 0],
+            "ball": "ITEM_POKE_BALL",
+            "iv_scale": 0,
             "ball_seal": 0
         },
         {
             "species": "SPECIES_STEELIX",
             "form": 0,
-            "level": 61,
-            "item": "ITEM_NONE",
+            "level": 63,
+            "item": "ITEM_PASSHO_BERRY",
             "moves": [
                 "MOVE_GYRO_BALL",
-                "MOVE_ICE_FANG",
-                "MOVE_DRAGON_BREATH",
-                "MOVE_SANDSTORM"
+                "MOVE_THUNDER_FANG",
+                "MOVE_EARTHQUAKE",
+                "MOVE_CURSE"
             ],
-            "iv_scale": 200,
+            "ability": "ABILITY_STURDY",
+            "nature": "NATURE_SASSY",
+            "ivnums": [31, 31, 31, 31, 31, 31],
+            "evnums": [252, 0, 0, 0, 0, 252],
+            "ball": "ITEM_POKE_BALL",
+            "iv_scale": 0,
             "ball_seal": 0
         },
         {
             "species": "SPECIES_MAGNEZONE",
             "form": 0,
-            "level": 62,
-            "item": "ITEM_NONE",
+            "level": 64,
+            "item": "ITEM_SHUCA_BERRY",
             "moves": [
                 "MOVE_FLASH_CANNON",
                 "MOVE_THUNDERBOLT",
-                "MOVE_SUPERSONIC",
-                "MOVE_THUNDER_WAVE"
+                "MOVE_MAGNET_RISE",
+                "MOVE_METAL_SOUND"
             ],
-            "iv_scale": 200,
+            "ability": "ABILITY_STURDY",
+            "nature": "NATURE_MODEST",
+            "ivnums": [31, 31, 31, 31, 31, 31],
+            "evnums": [0, 0, 0, 0, 252, 252],
+            "ball": "ITEM_POKE_BALL",
+            "iv_scale": 0,
+            "ball_seal": 0
+        },
+        {
+            "species": "SPECIES_METAGROSS",
+            "form": 0,
+            "level": 64,
+            "item": "ITEM_EXPERT_BELT",
+            "moves": [
+                "MOVE_METEOR_MASH",
+                "MOVE_ZEN_HEADBUTT",
+                "MOVE_ICE_PUNCH",
+                "MOVE_HAMMER_ARM"
+            ],
+            "ability": "ABILITY_TOUGH_CLAWS",
+            "nature": "NATURE_ADAMANT",
+            "ivnums": [31, 31, 31, 31, 31, 31],
+            "evnums": [252, 252, 0, 0, 0, 0],
+            "ball": "ITEM_POKE_BALL",
+            "iv_scale": 0,
             "ball_seal": 0
         },
         {
             "species": "SPECIES_BASTIODON",
             "form": 0,
-            "level": 63,
-            "item": "ITEM_NONE",
-            "moves": [
-                "MOVE_METAL_BURST",
-                "MOVE_ANCIENT_POWER",
-                "MOVE_IRON_DEFENSE",
-                "MOVE_REST"
-            ],
-            "iv_scale": 200,
-            "ball_seal": 0
-        },
-        {
-            "species": "SPECIES_AGGRON",
-            "form": 0,
             "level": 65,
-            "item": "ITEM_SITRUS_BERRY",
+            "item": "ITEM_LEFTOVERS",
             "moves": [
                 "MOVE_METAL_BURST",
+                "MOVE_CURSE",
                 "MOVE_STONE_EDGE",
-                "MOVE_EARTHQUAKE",
-                "MOVE_AVALANCHE"
+                "MOVE_IRON_HEAD"
             ],
-            "iv_scale": 200,
+            "ability": "ABILITY_FILTER",
+            "nature": "NATURE_CAREFUL",
+            "ivnums": [31, 31, 31, 31, 31, 31],
+            "evnums": [252, 0, 152, 0, 0, 100],
+            "ball": "ITEM_TIMER_BALL",
+            "iv_scale": 0,
             "ball_seal": 0
         }
     ],
@@ -95,7 +120,7 @@
             "type": "TRMSG_DEFEAT",
             "en_US": [
                 "Hmm!\n",
-                "My sturdy Pokémon--defeated!\n"
+                "My sturdy Pokémon -- defeated!\n"
             ]
         }
     ]
