@@ -1,9 +1,9 @@
 {
     "base_stats": {
-        "hp": 50,
+        "hp": 90,
         "attack": 70,
         "defense": 160,
-        "speed": 90,
+        "speed": 50,
         "special_attack": 70,
         "special_defense": 160
     },
@@ -35,22 +35,25 @@
     "icon_palette": 0,
     "learnset": {
         "by_level": [
-            [ 1, "MOVE_LEER" ],
-            [ 1, "MOVE_WRAP" ],
-            [ 9, "MOVE_NIGHT_SHADE" ],
-            [ 17, "MOVE_TELEPORT" ],
-            [ 25, "MOVE_KNOCK_OFF" ],
-            [ 33, "MOVE_SPIKES" ],
-            [ 41, "MOVE_PSYCHIC" ],
-            [ 49, "MOVE_SNATCH" ],
-            [ 57, "MOVE_PSYCHO_SHIFT" ],
-            [ 65, "MOVE_ZEN_HEADBUTT" ],
-            [ 73, "MOVE_IRON_DEFENSE" ],
-            [ 73, "MOVE_AMNESIA" ],
-            [ 81, "MOVE_RECOVER" ],
-            [ 89, "MOVE_PSYCHO_BOOST" ],
-            [ 97, "MOVE_COUNTER" ],
-            [ 97, "MOVE_MIRROR_COAT" ]
+            [1, "MOVE_CONFUSION"],
+            [1, "MOVE_WRAP"],
+            [1, "MOVE_LEER"],
+            [9, "MOVE_NIGHT_SHADE"],
+            [17, "MOVE_TELEPORT"],
+            [25, "MOVE_KNOCK_OFF"],
+            [30, "MOVE_SPIKES"],
+            [35, "MOVE_METEOR_MASH"],
+            [41, "MOVE_PSYCHIC"],
+            [49, "MOVE_SNATCH"],
+            [57, "MOVE_PSYCHO_SHIFT"],
+            [65, "MOVE_ZEN_HEADBUTT"],
+            [73, "MOVE_IRON_DEFENSE"],
+            [73, "MOVE_AMNESIA"],
+            [73, "MOVE_COSMIC_POWER"],
+            [81, "MOVE_RECOVER"],
+            [89, "MOVE_PSYCHO_BOOST"],
+            [97, "MOVE_COUNTER"],
+            [97, "MOVE_MIRROR_COAT"]
         ],
         "by_tm": [
             "TM01",

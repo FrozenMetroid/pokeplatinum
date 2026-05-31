@@ -3,26 +3,37 @@
     "class": "TRAINER_CLASS_SWIMMER_FEMALE",
     "items": [],
     "ai_flags": [
-        "AI_FLAG_BASIC"
+        "AI_FLAG_BASIC",
+        "AI_FLAG_EVAL_ATTACK"
     ],
     "double_battle": false,
     "party": [
         {
             "species": "SPECIES_SURSKIT",
             "form": 0,
-            "level": 52,
+            "level": 53,
             "item": null,
-            "moves": null,
-            "iv_scale": 0,
+            "moves": [
+                "MOVE_HYDRO_PUMP",
+                "MOVE_BUG_BUZZ",
+                "MOVE_ATTRACT",
+                "MOVE_QUICK_ATTACK"
+            ],
+            "iv_scale": 200,
             "ball_seal": 0
         },
         {
             "species": "SPECIES_LOMBRE",
             "form": 0,
-            "level": 54,
+            "level": 55,
             "item": null,
-            "moves": null,
-            "iv_scale": 0,
+            "moves": [
+                "MOVE_RAIN_DANCE",
+                "MOVE_TEETER_DANCE",
+                "MOVE_GIGA_DRAIN",
+                "MOVE_BRINE"
+            ],
+            "iv_scale": 200,
             "ball_seal": 0
         }
     ],

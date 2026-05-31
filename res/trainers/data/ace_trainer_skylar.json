@@ -5,22 +5,23 @@
     "ai_flags": [
         "AI_FLAG_BASIC",
         "AI_FLAG_EVAL_ATTACK",
-        "AI_FLAG_EXPERT"
+        "AI_FLAG_EXPERT",
+        "AI_FLAG_WEATHER"
     ],
     "double_battle": false,
     "party": [
         {
-            "species": "SPECIES_LOUDRED",
+            "species": "SPECIES_EXEGGUTOR",
             "form": 0,
             "level": 58,
             "item": null,
             "moves": [
-                "MOVE_HYPER_VOICE",
-                "MOVE_BITE",
-                "MOVE_SUPERSONIC",
-                "MOVE_SCREECH"
+                "MOVE_PSYCHIC",
+                "MOVE_GIGA_DRAIN",
+                "MOVE_LEECH_SEED",
+                "MOVE_REFLECT"
             ],
-            "iv_scale": 50,
+            "iv_scale": 200,
             "ball_seal": 0
         },
         {
@@ -31,10 +32,11 @@
             "moves": [
                 "MOVE_HEAD_SMASH",
                 "MOVE_ZEN_HEADBUTT",
-                "MOVE_ANCIENT_POWER",
+                "MOVE_IRON_HEAD",
                 "MOVE_SCREECH"
             ],
-            "iv_scale": 50,
+            "ability": "ABILITY_ROCK_HEAD",
+            "iv_scale": 200,
             "ball_seal": 0
         },
         {
@@ -44,11 +46,11 @@
             "item": null,
             "moves": [
                 "MOVE_AIR_SLASH",
-                "MOVE_WATER_PULSE",
+                "MOVE_HYDRO_PUMP",
                 "MOVE_ROOST",
-                "MOVE_QUICK_ATTACK"
+                "MOVE_TAILWIND"
             ],
-            "iv_scale": 50,
+            "iv_scale": 200,
             "ball_seal": 0
         }
     ],

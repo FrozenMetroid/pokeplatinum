@@ -10,30 +10,45 @@
     "double_battle": false,
     "party": [
         {
-            "species": "SPECIES_SKARMORY",
+            "species": "SPECIES_GRUMPIG",
             "form": 0,
-            "level": 54,
+            "level": 57,
             "item": null,
-            "moves": null,
-            "iv_scale": 50,
+            "moves": [
+                "MOVE_PSYCHIC",
+                "MOVE_REST",
+                "MOVE_POWER_GEM",
+                "MOVE_TEETER_DANCE"
+            ],
+            "iv_scale": 200,
             "ball_seal": 0
         },
         {
-            "species": "SPECIES_GOLDUCK",
+            "species": "SPECIES_SMEARGLE",
             "form": 0,
-            "level": 54,
+            "level": 55,
             "item": null,
-            "moves": null,
-            "iv_scale": 50,
+            "moves": [
+                "MOVE_SPORE",
+                "MOVE_NIGHTMARE",
+                "MOVE_DREAM_EATER",
+                "MOVE_U_TURN"
+            ],
+            "iv_scale": 200,
             "ball_seal": 0
         },
         {
             "species": "SPECIES_DONPHAN",
             "form": 0,
-            "level": 54,
+            "level": 55,
             "item": null,
-            "moves": null,
-            "iv_scale": 50,
+            "moves": [
+                "MOVE_EARTHQUAKE",
+                "MOVE_STONE_EDGE",
+                "MOVE_KNOCK_OFF",
+                "MOVE_ICE_FANG"
+            ],
+            "iv_scale": 200,
             "ball_seal": 0
         }
     ],

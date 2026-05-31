@@ -14,8 +14,13 @@
             "form": 0,
             "level": 60,
             "item": null,
-            "moves": null,
-            "iv_scale": 50,
+            "moves": [
+                "MOVE_DRAGON_CLAW",
+                "MOVE_FLY",
+                "MOVE_FIRE_BLAST",
+                "MOVE_EARTHQUAKE"
+            ],
+            "iv_scale": 200,
             "ball_seal": 0
         }
     ],

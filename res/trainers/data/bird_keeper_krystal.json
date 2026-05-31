@@ -3,35 +3,51 @@
     "class": "TRAINER_CLASS_BIRD_KEEPER",
     "items": [],
     "ai_flags": [
-        "AI_FLAG_BASIC"
+        "AI_FLAG_BASIC",
+        "AI_FLAG_EVAL_ATTACK"
     ],
     "double_battle": false,
     "party": [
         {
-            "species": "SPECIES_STARAVIA",
+            "species": "SPECIES_SWELLOW",
             "form": 0,
-            "level": 55,
+            "level": 58,
             "item": null,
-            "moves": null,
-            "iv_scale": 0,
+            "moves": [
+                "MOVE_BRAVE_BIRD",
+                "MOVE_QUICK_ATTACK",
+                "MOVE_BODY_SLAM",
+                "MOVE_AGILITY"
+            ],
+            "iv_scale": 200,
             "ball_seal": 0
         },
         {
-            "species": "SPECIES_FEAROW",
+            "species": "SPECIES_DELIBIRD",
             "form": 0,
             "level": 57,
             "item": null,
-            "moves": null,
-            "iv_scale": 0,
+            "moves": [
+                "MOVE_ICE_BEAM",
+                "MOVE_PLUCK",
+                "MOVE_PRESENT",
+                "MOVE_AERIAL_ACE"
+            ],
+            "iv_scale": 200,
             "ball_seal": 0
         },
         {
-            "species": "SPECIES_NOCTOWL",
+            "species": "SPECIES_DODRIO",
             "form": 0,
             "level": 59,
             "item": null,
-            "moves": null,
-            "iv_scale": 0,
+            "moves": [
+                "MOVE_TRI_ATTACK",
+                "MOVE_DRILL_PECK",
+                "MOVE_JUMP_KICK",
+                "MOVE_ACUPRESSURE"
+            ],
+            "iv_scale": 200,
             "ball_seal": 0
         }
     ],

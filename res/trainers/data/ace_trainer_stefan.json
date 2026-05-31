@@ -14,8 +14,13 @@
             "form": 0,
             "level": 58,
             "item": null,
-            "moves": null,
-            "iv_scale": 50,
+            "moves": [
+                "MOVE_ROCK_SLIDE",
+                "MOVE_SANDSTORM",
+                "MOVE_EARTHQUAKE",
+                "MOVE_CRUNCH"
+            ],
+            "iv_scale": 200,
             "ball_seal": 0
         },
         {
@@ -23,8 +28,27 @@
             "form": 0,
             "level": 61,
             "item": null,
-            "moves": null,
-            "iv_scale": 50,
+            "moves": [
+                "MOVE_LEAF_BLADE",
+                "MOVE_EARTHQUAKE",
+                "MOVE_SYNTHESIS",
+                "MOVE_LEECH_SEED"
+            ],
+            "iv_scale": 200,
+            "ball_seal": 0
+        },
+        {
+            "species": "SPECIES_EXPLOUD",
+            "form": 0,
+            "level": 61,
+            "item": null,
+            "moves": [
+                "MOVE_FOCUS_BLAST",
+                "MOVE_HYPER_VOICE",
+                "MOVE_CRUNCH",
+                "MOVE_HYPER_BEAM"
+            ],
+            "iv_scale": 200,
             "ball_seal": 0
         }
     ],

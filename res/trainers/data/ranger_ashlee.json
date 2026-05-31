@@ -12,19 +12,29 @@
         {
             "species": "SPECIES_LINOONE",
             "form": 0,
-            "level": 55,
+            "level": 56,
             "item": null,
-            "moves": null,
-            "iv_scale": 50,
+            "moves": [
+                "MOVE_BODY_SLAM",
+                "MOVE_DIG",
+                "MOVE_SEED_BOMB",
+                "MOVE_NONE"
+            ],
+            "iv_scale": 200,
             "ball_seal": 0
         },
         {
             "species": "SPECIES_ARBOK",
             "form": 0,
-            "level": 55,
+            "level": 57,
             "item": null,
-            "moves": null,
-            "iv_scale": 50,
+            "moves": [
+                "MOVE_GUNK_SHOT",
+                "MOVE_CRUNCH",
+                "MOVE_ICE_FANG",
+                "MOVE_THUNDER_FANG"
+            ],
+            "iv_scale": 200,
             "ball_seal": 0
         }
     ],

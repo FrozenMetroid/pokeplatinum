@@ -12,7 +12,7 @@
         {
             "species": "SPECIES_PINSIR",
             "form": 0,
-            "level": 55,
+            "level": 58,
             "item": null,
             "moves": [
                 "MOVE_SUPERPOWER",
@@ -20,13 +20,13 @@
                 "MOVE_SWORDS_DANCE",
                 "MOVE_ROCK_TOMB"
             ],
-            "iv_scale": 50,
+            "iv_scale": 200,
             "ball_seal": 0
         },
         {
             "species": "SPECIES_LANTURN",
             "form": 0,
-            "level": 56,
+            "level": 57,
             "item": null,
             "moves": [
                 "MOVE_DISCHARGE",
@@ -34,7 +34,7 @@
                 "MOVE_SURF",
                 "MOVE_CONFUSE_RAY"
             ],
-            "iv_scale": 50,
+            "iv_scale": 200,
             "ball_seal": 0
         }
     ],

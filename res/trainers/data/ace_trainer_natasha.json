@@ -20,21 +20,21 @@
                 "MOVE_LIGHT_SCREEN",
                 "MOVE_SHADOW_BALL"
             ],
-            "iv_scale": 50,
+            "iv_scale": 200,
             "ball_seal": 0
         },
         {
-            "species": "SPECIES_GARDEVOIR",
+            "species": "SPECIES_CORSOLA",
             "form": 0,
             "level": 59,
             "item": null,
             "moves": [
-                "MOVE_PSYCHIC",
-                "MOVE_MAGICAL_LEAF",
-                "MOVE_CALM_MIND",
-                "MOVE_FOCUS_BLAST"
+                "MOVE_HYDRO_PUMP",
+                "MOVE_POWER_GEM",
+                "MOVE_RECOVER",
+                "MOVE_EARTH_POWER"
             ],
-            "iv_scale": 50,
+            "iv_scale": 200,
             "ball_seal": 0
         },
         {
@@ -44,11 +44,11 @@
             "item": null,
             "moves": [
                 "MOVE_RECOVER",
-                "MOVE_FORCE_PALM",
+                "MOVE_HI_JUMP_KICK",
                 "MOVE_PSYCHIC",
                 "MOVE_ROCK_SLIDE"
             ],
-            "iv_scale": 50,
+            "iv_scale": 200,
             "ball_seal": 0
         }
     ],

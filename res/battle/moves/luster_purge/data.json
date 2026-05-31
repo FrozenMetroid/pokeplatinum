@@ -2,7 +2,7 @@
     "name": "Luster Purge",
     "class": "CLASS_SPECIAL",
     "type": "TYPE_PSYCHIC",
-    "power": 70,
+    "power": 95,
     "accuracy": 100,
     "pp": 10,
     "effect": {

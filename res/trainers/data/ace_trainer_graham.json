@@ -14,8 +14,13 @@
             "form": 0,
             "level": 55,
             "item": null,
-            "moves": null,
-            "iv_scale": 50,
+            "moves": [
+                "MOVE_RAPID_SPIN",
+                "MOVE_FAKE_OUT",
+                "MOVE_LOW_KICK",
+                "MOVE_KARATE_CHOP"
+            ],
+            "iv_scale": 200,
             "ball_seal": 0
         },
         {
@@ -23,8 +28,14 @@
             "form": 0,
             "level": 59,
             "item": null,
-            "moves": null,
-            "iv_scale": 50,
+            "moves": [
+                "MOVE_MACH_PUNCH",
+                "MOVE_THUNDER_PUNCH",
+                "MOVE_FIRE_PUNCH",
+                "MOVE_ICE_PUNCH"
+            ],
+            "ability": "ABILITY_IRON_FIST",
+            "iv_scale": 200,
             "ball_seal": 0
         }
     ],

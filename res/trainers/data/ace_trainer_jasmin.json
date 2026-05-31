@@ -18,9 +18,23 @@
                 "MOVE_CROSS_POISON",
                 "MOVE_CRUNCH",
                 "MOVE_X_SCISSOR",
-                "MOVE_AERIAL_ACE"
+                "MOVE_FIRE_FANG"
             ],
-            "iv_scale": 50,
+            "iv_scale": 200,
+            "ball_seal": 0
+        },
+        {
+            "species": "SPECIES_KABUTOPS",
+            "form": 0,
+            "level": 61,
+            "item": null,
+            "moves": [
+                "MOVE_NIGHT_SLASH",
+                "MOVE_STONE_EDGE",
+                "MOVE_X_SCISSOR",
+                "MOVE_AQUA_JET"
+            ],
+            "iv_scale": 200,
             "ball_seal": 0
         }
     ],

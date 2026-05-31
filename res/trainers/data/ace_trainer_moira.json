@@ -10,17 +10,17 @@
     "double_battle": false,
     "party": [
         {
-            "species": "SPECIES_SANDSLASH",
+            "species": "SPECIES_NIDOQUEEN",
             "form": 0,
             "level": 56,
             "item": null,
             "moves": [
-                "MOVE_SLASH",
-                "MOVE_GYRO_BALL",
-                "MOVE_DIG",
-                "MOVE_X_SCISSOR"
+                "MOVE_EARTH_POWER",
+                "MOVE_SLUDGE_BOMB",
+                "MOVE_TOXIC_SPIKES",
+                "MOVE_ICE_BEAM"
             ],
-            "iv_scale": 50,
+            "iv_scale": 200,
             "ball_seal": 0
         },
         {
@@ -31,10 +31,11 @@
             "moves": [
                 "MOVE_MUDDY_WATER",
                 "MOVE_RECOVER",
-                "MOVE_BODY_SLAM",
-                "MOVE_PROTECT"
+                "MOVE_SLUDGE_BOMB",
+                "MOVE_EARTH_POWER"
             ],
-            "iv_scale": 50,
+            "ability": "ABILITY_SAND_FORCE",
+            "iv_scale": 200,
             "ball_seal": 0
         },
         {
@@ -48,7 +49,7 @@
                 "MOVE_ANCIENT_POWER",
                 "MOVE_COSMIC_POWER"
             ],
-            "iv_scale": 50,
+            "iv_scale": 200,
             "ball_seal": 0
         }
     ],

@@ -16,11 +16,11 @@
             "item": null,
             "moves": [
                 "MOVE_NIGHT_SLASH",
-                "MOVE_POISON_FANG",
-                "MOVE_WRING_OUT",
+                "MOVE_POISON_TAIL",
+                "MOVE_FIRE_FANG",
                 "MOVE_GLARE"
             ],
-            "iv_scale": 50,
+            "iv_scale": 200,
             "ball_seal": 0
         },
         {
@@ -30,25 +30,26 @@
             "item": null,
             "moves": [
                 "MOVE_NIGHT_SLASH",
-                "MOVE_POWER_GEM",
+                "MOVE_SLASH",
                 "MOVE_FEINT_ATTACK",
                 "MOVE_FAKE_OUT"
             ],
-            "iv_scale": 50,
+            "iv_scale": 200,
             "ball_seal": 0
         },
         {
-            "species": "SPECIES_ABSOL",
+            "species": "SPECIES_KECLEON",
             "form": 0,
             "level": 56,
             "item": null,
             "moves": [
-                "MOVE_NIGHT_SLASH",
-                "MOVE_PSYCHO_CUT",
+                "MOVE_SHADOW_CLAW",
+                "MOVE_RECOVER",
                 "MOVE_SLASH",
-                "MOVE_QUICK_ATTACK"
+                "MOVE_SCREECH"
             ],
-            "iv_scale": 50,
+            "ability": "ABILITY_PROTEAN",
+            "iv_scale": 200,
             "ball_seal": 0
         }
     ],

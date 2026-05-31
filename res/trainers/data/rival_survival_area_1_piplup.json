@@ -23,7 +23,12 @@
                 "MOVE_STEEL_WING",
                 "MOVE_U_TURN"
             ],
-            "iv_scale": 250,
+            "ability": "ABILITY_INTIMIDATE",
+            "nature": "NATURE_JOLLY",
+            "ivnums": [31, 31, 31, 31, 31, 31],
+            "evnums": [0, 160, 0, 160, 0, 0],
+            "ball": "ITEM_POKE_BALL",
+            "iv_scale": 0,
             "ball_seal": 0
         },
         {
@@ -37,7 +42,12 @@
                 "MOVE_ICE_FANG",
                 "MOVE_BRICK_BREAK"
             ],
-            "iv_scale": 250,
+            "ability": "ABILITY_SWIFT_SWIM",
+            "nature": "NATURE_JOLLY",
+            "ivnums": [31, 31, 31, 31, 31, 31],
+            "evnums": [0, 160, 0, 160, 0, 0],
+            "ball": "ITEM_POKE_BALL",
+            "iv_scale": 0,
             "ball_seal": 0
         },
         {
@@ -51,7 +61,12 @@
                 "MOVE_NIGHT_SLASH",
                 "MOVE_ROCK_SLIDE"
             ],
-            "iv_scale": 250,
+            "ability": "ABILITY_GUTS",
+            "nature": "NATURE_ADAMANT",
+            "ivnums": [31, 31, 31, 31, 31, 31],
+            "evnums": [160, 160, 0, 0, 0, 0],
+            "ball": "ITEM_POKE_BALL",
+            "iv_scale": 0,
             "ball_seal": 0
         },
         {
@@ -60,26 +75,36 @@
             "level": 59,
             "item": "ITEM_NONE",
             "moves": [
-                "MOVE_FIRE_BLAST",
-                "MOVE_SUNNY_DAY",
+                "MOVE_FLARE_BLITZ",
+                "MOVE_JUMP_KICK",
                 "MOVE_BOUNCE",
-                "MOVE_WILL_O_WISP"
+                "MOVE_MEGAHORN"
             ],
-            "iv_scale": 250,
+            "ability": "ABILITY_FLAME_BODY",
+            "nature": "NATURE_JOLLY",
+            "ivnums": [31, 31, 31, 31, 31, 31],
+            "evnums": [0, 160, 0, 160, 0, 0],
+            "ball": "ITEM_POKE_BALL",
+            "iv_scale": 0,
             "ball_seal": 0
         },
         {
             "species": "SPECIES_SNORLAX",
             "form": 0,
             "level": 63,
-            "item": "ITEM_NONE",
+            "item": "ITEM_CHESTO_BERRY",
             "moves": [
                 "MOVE_BODY_SLAM",
                 "MOVE_CRUNCH",
                 "MOVE_EARTHQUAKE",
                 "MOVE_REST"
             ],
-            "iv_scale": 250,
+            "ability": "ABILITY_THICK_FAT",
+            "nature": "NATURE_ADAMANT",
+            "ivnums": [31, 31, 31, 31, 31, 31],
+            "evnums": [160, 160, 0, 0, 0, 0],
+            "ball": "ITEM_POKE_BALL",
+            "iv_scale": 0,
             "ball_seal": 0
         },
         {
@@ -88,12 +113,17 @@
             "level": 65,
             "item": "ITEM_SITRUS_BERRY",
             "moves": [
-                "MOVE_LEAF_STORM",
+                "MOVE_LEAF_BLADE",
                 "MOVE_EARTHQUAKE",
                 "MOVE_CRUNCH",
-                "MOVE_LEECH_SEED"
+                "MOVE_STONE_EDGE"
             ],
-            "iv_scale": 250,
+            "ability": "ABILITY_OVERGROW",
+            "nature": "NATURE_IMPISH",
+            "ivnums": [31, 31, 31, 31, 31, 31],
+            "evnums": [0, 200, 200, 0, 0, 0],
+            "ball": "ITEM_POKE_BALL",
+            "iv_scale": 0,
             "ball_seal": 24
         }
     ],

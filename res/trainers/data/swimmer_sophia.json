@@ -3,26 +3,37 @@
     "class": "TRAINER_CLASS_SWIMMER_FEMALE",
     "items": [],
     "ai_flags": [
-        "AI_FLAG_BASIC"
+        "AI_FLAG_BASIC",
+        "AI_FLAG_EVAL_ATTACK"
     ],
     "double_battle": false,
     "party": [
         {
-            "species": "SPECIES_DELIBIRD",
+            "species": "SPECIES_CLAMPERL",
             "form": 0,
-            "level": 53,
+            "level": 54,
             "item": null,
-            "moves": null,
-            "iv_scale": 0,
+            "moves": [
+                "MOVE_CLAMP",
+                "MOVE_IRON_DEFENSE",
+                "MOVE_AQUA_RING",
+                "MOVE_BARRIER"
+            ],
+            "iv_scale": 200,
             "ball_seal": 0
         },
         {
-            "species": "SPECIES_MANTINE",
+            "species": "SPECIES_MARSHTOMP",
             "form": 0,
-            "level": 53,
+            "level": 55,
             "item": null,
-            "moves": null,
-            "iv_scale": 0,
+            "moves": [
+                "MOVE_SURF",
+                "MOVE_MUD_BOMB",
+                "MOVE_BIDE",
+                "MOVE_ROCK_TOMB"
+            ],
+            "iv_scale": 200,
             "ball_seal": 0
         }
     ],

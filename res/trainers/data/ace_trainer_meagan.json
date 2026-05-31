@@ -17,10 +17,11 @@
             "moves": [
                 "MOVE_FAKE_OUT",
                 "MOVE_CAPTIVATE",
-                "MOVE_FEINT_ATTACK",
-                "MOVE_DOUBLE_EDGE"
+                "MOVE_THUNDERBOLT",
+                "MOVE_HYPER_VOICE"
             ],
-            "iv_scale": 50,
+            "ability": "ABILITY_WONDER_SKIN",
+            "iv_scale": 200,
             "ball_seal": 0
         },
         {
@@ -31,10 +32,10 @@
             "moves": [
                 "MOVE_ICE_SHARD",
                 "MOVE_AVALANCHE",
-                "MOVE_RAZOR_LEAF",
+                "MOVE_SEED_BOMB",
                 "MOVE_WATER_PULSE"
             ],
-            "iv_scale": 50,
+            "iv_scale": 200,
             "ball_seal": 0
         }
     ],

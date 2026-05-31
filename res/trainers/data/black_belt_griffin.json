@@ -9,7 +9,7 @@
     "double_battle": false,
     "party": [
         {
-            "species": "SPECIES_BRELOOM",
+            "species": "SPECIES_HITMONLEE",
             "form": 0,
             "level": 58,
             "item": null,
@@ -19,21 +19,21 @@
                 "MOVE_SEED_BOMB",
                 "MOVE_SKY_UPPERCUT"
             ],
-            "iv_scale": 30,
+            "iv_scale": 200,
             "ball_seal": 0
         },
         {
-            "species": "SPECIES_MEDICHAM",
+            "species": "SPECIES_BLAZIKEN",
             "form": 0,
             "level": 58,
             "item": null,
             "moves": [
-                "MOVE_DETECT",
-                "MOVE_PSYCHIC",
-                "MOVE_HI_JUMP_KICK",
-                "MOVE_ICE_PUNCH"
+                "MOVE_JUMP_KICK",
+                "MOVE_BLAZE_KICK",
+                "MOVE_DRILL_PECK",
+                "MOVE_QUICK_ATTACK"
             ],
-            "iv_scale": 30,
+            "iv_scale": 200,
             "ball_seal": 0
         }
     ],

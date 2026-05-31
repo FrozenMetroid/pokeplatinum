@@ -18,70 +18,95 @@
             "species": "SPECIES_STARAPTOR",
             "form": 0,
             "level": 81,
-            "item": "ITEM_NONE",
+            "item": "ITEM_MUSCLE_BAND",
             "moves": [
                 "MOVE_CLOSE_COMBAT",
                 "MOVE_BRAVE_BIRD",
                 "MOVE_QUICK_ATTACK",
                 "MOVE_U_TURN"
             ],
-            "iv_scale": 250,
+            "ability": "ABILITY_RECKLESS",
+            "nature": "NATURE_JOLLY",
+            "ivnums": [31, 31, 31, 31, 31, 31],
+            "evnums": [0, 252, 0, 252, 0, 0],
+            "ball": "ITEM_POKE_BALL",
+            "iv_scale": 0,
             "ball_seal": 0
         },
         {
             "species": "SPECIES_FLOATZEL",
             "form": 0,
             "level": 79,
-            "item": "ITEM_NONE",
+            "item": "ITEM_MYSTIC_WATER",
             "moves": [
                 "MOVE_AQUA_JET",
                 "MOVE_CRUNCH",
                 "MOVE_ICE_FANG",
                 "MOVE_BRICK_BREAK"
             ],
-            "iv_scale": 250,
+            "ability": "ABILITY_SWIFT_SWIM",
+            "nature": "NATURE_JOLLY",
+            "ivnums": [31, 31, 31, 31, 31, 31],
+            "evnums": [0, 252, 0, 252, 0, 0],
+            "ball": "ITEM_POKE_BALL",
+            "iv_scale": 0,
             "ball_seal": 0
         },
         {
             "species": "SPECIES_HERACROSS",
             "form": 0,
             "level": 81,
-            "item": "ITEM_NONE",
+            "item": "ITEM_FLAME_ORB",
             "moves": [
                 "MOVE_MEGAHORN",
                 "MOVE_CLOSE_COMBAT",
                 "MOVE_NIGHT_SLASH",
                 "MOVE_STONE_EDGE"
             ],
-            "iv_scale": 250,
+            "ability": "ABILITY_GUTS",
+            "nature": "NATURE_ADAMANT",
+            "ivnums": [31, 31, 31, 31, 31, 31],
+            "evnums": [252, 252, 0, 0, 0, 0],
+            "ball": "ITEM_POKE_BALL",
+            "iv_scale": 0,
             "ball_seal": 0
         },
         {
             "species": "SPECIES_RAPIDASH",
             "form": 0,
             "level": 79,
-            "item": "ITEM_NONE",
+            "item": "ITEM_LIFE_ORB",
             "moves": [
-                "MOVE_FIRE_BLAST",
+                "MOVE_FLARE_BLITZ",
                 "MOVE_SUNNY_DAY",
                 "MOVE_MEGAHORN",
-                "MOVE_WILL_O_WISP"
+                "MOVE_JUMP_KICK"
             ],
-            "iv_scale": 250,
+            "ability": "ABILITY_FLAME_BODY",
+            "nature": "NATURE_JOLLY",
+            "ivnums": [31, 31, 31, 31, 31, 31],
+            "evnums": [0, 252, 0, 252, 0, 0],
+            "ball": "ITEM_POKE_BALL",
+            "iv_scale": 0,
             "ball_seal": 0
         },
         {
             "species": "SPECIES_SNORLAX",
             "form": 0,
             "level": 83,
-            "item": "ITEM_NONE",
+            "item": "ITEM_LEFTOVERS",
             "moves": [
                 "MOVE_GIGA_IMPACT",
                 "MOVE_CRUNCH",
                 "MOVE_EARTHQUAKE",
                 "MOVE_ZEN_HEADBUTT"
             ],
-            "iv_scale": 250,
+            "ability": "ABILITY_IMMUNITY",
+            "nature": "NATURE_ADAMANT",
+            "ivnums": [31, 31, 31, 31, 31, 31],
+            "evnums": [252, 252, 0, 0, 0, 0],
+            "ball": "ITEM_POKE_BALL",
+            "iv_scale": 0,
             "ball_seal": 0
         },
         {
@@ -90,12 +115,17 @@
             "level": 85,
             "item": "ITEM_SITRUS_BERRY",
             "moves": [
-                "MOVE_LEAF_STORM",
+                "MOVE_LEAF_BLADE",
                 "MOVE_EARTHQUAKE",
-                "MOVE_CRUNCH",
+                "MOVE_CURSE",
                 "MOVE_STONE_EDGE"
             ],
-            "iv_scale": 250,
+            "ability": "ABILITY_SHELL_ARMOR",
+            "nature": "NATURE_ADAMANT",
+            "ivnums": [31, 31, 31, 31, 31, 31],
+            "evnums": [252, 252, 0, 0, 0, 0],
+            "ball": "ITEM_POKE_BALL",
+            "iv_scale": 0,
             "ball_seal": 24
         }
     ],

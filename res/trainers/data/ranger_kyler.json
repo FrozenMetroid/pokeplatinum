@@ -10,30 +10,45 @@
     "double_battle": false,
     "party": [
         {
-            "species": "SPECIES_EXEGGCUTE",
+            "species": "SPECIES_CRADILY",
             "form": 0,
-            "level": 55,
+            "level": 57,
             "item": null,
-            "moves": null,
-            "iv_scale": 50,
+            "moves": [
+                "MOVE_GIGA_DRAIN",
+                "MOVE_ANCIENT_POWER",
+                "MOVE_LEECH_LIFE",
+                "MOVE_CONFUSE_RAY"
+            ],
+            "iv_scale": 200,
             "ball_seal": 0
         },
         {
             "species": "SPECIES_ZANGOOSE",
             "form": 0,
-            "level": 55,
+            "level": 57,
             "item": null,
-            "moves": null,
-            "iv_scale": 50,
+            "moves": [
+                "MOVE_CRUSH_CLAW",
+                "MOVE_SHADOW_CLAW",
+                "MOVE_CLOSE_COMBAT",
+                "MOVE_SWORDS_DANCE"
+            ],
+            "iv_scale": 200,
             "ball_seal": 0
         },
         {
-            "species": "SPECIES_EMPOLEON",
+            "species": "SPECIES_VENOMOTH",
             "form": 0,
             "level": 58,
             "item": null,
-            "moves": null,
-            "iv_scale": 50,
+            "moves": [
+                "MOVE_BUG_BUZZ",
+                "MOVE_PSYCHIC",
+                "MOVE_GIGA_DRAIN",
+                "MOVE_SLUDGE_BOMB"
+            ],
+            "iv_scale": 200,
             "ball_seal": 0
         }
     ],

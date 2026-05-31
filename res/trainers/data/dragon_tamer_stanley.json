@@ -14,8 +14,13 @@
             "form": 0,
             "level": 55,
             "item": null,
-            "moves": null,
-            "iv_scale": 50,
+            "moves": [
+                "MOVE_DRAGON_PULSE",
+                "MOVE_SURF",
+                "MOVE_SAFEGUARD",
+                "MOVE_THUNDER"
+            ],
+            "iv_scale": 200,
             "ball_seal": 0
         },
         {
@@ -23,8 +28,13 @@
             "form": 0,
             "level": 57,
             "item": null,
-            "moves": null,
-            "iv_scale": 50,
+            "moves": [
+                "MOVE_DRAGON_CLAW",
+                "MOVE_EARTHQUAKE",
+                "MOVE_AERIAL_ACE",
+                "MOVE_DRAGON_DANCE"
+            ],
+            "iv_scale": 200,
             "ball_seal": 0
         }
     ],

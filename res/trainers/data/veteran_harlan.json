@@ -18,9 +18,9 @@
                 "MOVE_ENDEAVOR",
                 "MOVE_SUPER_FANG",
                 "MOVE_CRUNCH",
-                "MOVE_QUICK_ATTACK"
+                "MOVE_FLAME_WHEEL"
             ],
-            "iv_scale": 100,
+            "iv_scale": 200,
             "ball_seal": 0
         },
         {
@@ -34,7 +34,7 @@
                 "MOVE_TOXIC",
                 "MOVE_FLY"
             ],
-            "iv_scale": 100,
+            "iv_scale": 200,
             "ball_seal": 0
         },
         {
@@ -44,11 +44,11 @@
             "item": null,
             "moves": [
                 "MOVE_LEAF_STORM",
-                "MOVE_FEINT_ATTACK",
+                "MOVE_DARK_PULSE",
                 "MOVE_EXTRASENSORY",
                 "MOVE_QUICK_ATTACK"
             ],
-            "iv_scale": 100,
+            "iv_scale": 200,
             "ball_seal": 0
         }
     ],

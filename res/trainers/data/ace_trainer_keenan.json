@@ -10,30 +10,45 @@
     "double_battle": false,
     "party": [
         {
-            "species": "SPECIES_PRIMEAPE",
+            "species": "SPECIES_MASQUERAIN",
             "form": 0,
             "level": 58,
             "item": null,
-            "moves": null,
-            "iv_scale": 50,
+            "moves": [
+                "MOVE_HYDRO_PUMP",
+                "MOVE_BUG_BUZZ",
+                "MOVE_AIR_SLASH",
+                "MOVE_AGILITY"
+            ],
+            "iv_scale": 200,
             "ball_seal": 0
         },
         {
-            "species": "SPECIES_ELECTABUZZ",
+            "species": "SPECIES_PLUSLE",
             "form": 0,
             "level": 58,
             "item": null,
-            "moves": null,
-            "iv_scale": 50,
+            "moves": [
+                "MOVE_THUNDERBOLT",
+                "MOVE_SIGNAL_BEAM",
+                "MOVE_NASTY_PLOT",
+                "MOVE_SWEET_KISS"
+            ],
+            "iv_scale": 200,
             "ball_seal": 0
         },
         {
-            "species": "SPECIES_BANETTE",
+            "species": "SPECIES_SUNFLORA",
             "form": 0,
             "level": 59,
             "item": null,
-            "moves": null,
-            "iv_scale": 50,
+            "moves": [
+                "MOVE_SUNNY_DAY",
+                "MOVE_LEAF_STORM",
+                "MOVE_WEATHER_BALL",
+                "MOVE_SYNTHESIS"
+            ],
+            "iv_scale": 200,
             "ball_seal": 0
         }
     ],

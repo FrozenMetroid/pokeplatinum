@@ -4,6 +4,7 @@
     "items": [],
     "ai_flags": [
         "AI_FLAG_BASIC",
+        "AI_FLAG_EVAL_ATTACK",
         "AI_FLAG_PRIORITIZE_EXTREMES"
     ],
     "double_battle": false,
@@ -19,21 +20,21 @@
                 "MOVE_SKY_UPPERCUT",
                 "MOVE_SPORE"
             ],
-            "iv_scale": 30,
+            "iv_scale": 200,
             "ball_seal": 0
         },
         {
-            "species": "SPECIES_TOXICROAK",
+            "species": "SPECIES_POLIWRATH",
             "form": 0,
             "level": 58,
             "item": null,
             "moves": [
-                "MOVE_SLUDGE_BOMB",
-                "MOVE_NASTY_PLOT",
-                "MOVE_FOCUS_BLAST",
-                "MOVE_DARK_PULSE"
+                "MOVE_WATERFALL",
+                "MOVE_ICE_PUNCH",
+                "MOVE_FOCUS_PUNCH",
+                "MOVE_DRAIN_PUNCH"
             ],
-            "iv_scale": 30,
+            "iv_scale": 200,
             "ball_seal": 0
         }
     ],

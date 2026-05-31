@@ -4,22 +4,23 @@
     "items": [],
     "ai_flags": [
         "AI_FLAG_BASIC",
+        "AI_FLAG_EVAL_ATTACK",
         "AI_FLAG_PRIORITIZE_EXTREMES"
     ],
     "double_battle": false,
     "party": [
         {
-            "species": "SPECIES_MACHAMP",
+            "species": "SPECIES_HITMONLEE",
             "form": 0,
             "level": 60,
             "item": null,
             "moves": [
-                "MOVE_CROSS_CHOP",
-                "MOVE_FIRE_PUNCH",
-                "MOVE_ICE_PUNCH",
-                "MOVE_THUNDER_PUNCH"
+                "MOVE_HI_JUMP_KICK",
+                "MOVE_MEGA_KICK",
+                "MOVE_BLAZE_KICK",
+                "MOVE_ROLLING_KICK"
             ],
-            "iv_scale": 30,
+            "iv_scale": 200,
             "ball_seal": 0
         }
     ],

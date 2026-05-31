@@ -10,19 +10,29 @@
         {
             "species": "SPECIES_LUVDISC",
             "form": 0,
-            "level": 52,
+            "level": 54,
             "item": null,
-            "moves": null,
-            "iv_scale": 0,
+            "moves": [
+                "MOVE_SWEET_KISS",
+                "MOVE_ATTRACT",
+                "MOVE_SURF",
+                "MOVE_ICE_BEAM"
+            ],
+            "iv_scale": 200,
             "ball_seal": 0
         },
         {
             "species": "SPECIES_LAPRAS",
             "form": 0,
-            "level": 54,
+            "level": 56,
             "item": null,
-            "moves": null,
-            "iv_scale": 0,
+            "moves": [
+                "MOVE_WATERFALL",
+                "MOVE_ICE_SHARD",
+                "MOVE_PERISH_SONG",
+                "MOVE_BODY_SLAM"
+            ],
+            "iv_scale": 200,
             "ball_seal": 0
         }
     ],

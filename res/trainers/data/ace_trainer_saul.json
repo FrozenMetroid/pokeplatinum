@@ -17,10 +17,10 @@
             "moves": [
                 "MOVE_THRASH",
                 "MOVE_ZEN_HEADBUTT",
-                "MOVE_SWAGGER",
+                "MOVE_IRON_HEAD",
                 "MOVE_PAYBACK"
             ],
-            "iv_scale": 50,
+            "iv_scale": 200,
             "ball_seal": 12
         }
     ],

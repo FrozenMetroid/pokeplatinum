@@ -124,7 +124,8 @@
             "MOVE_STEEL_WING",
             "MOVE_DRAGON_BREATH",
             "MOVE_CURSE",
-            "MOVE_ASSURANCE"
+            "MOVE_ASSURANCE",
+            "MOVE_BRAVE_BIRD"
         ]
     },
     "evolutions": [  ],

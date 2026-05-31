@@ -12,28 +12,44 @@
         {
             "species": "SPECIES_SPINDA",
             "form": 0,
-            "level": 54,
+            "level": 57,
             "item": null,
-            "moves": null,
-            "iv_scale": 50,
+            "moves": [
+                "MOVE_TEETER_DANCE",
+                "MOVE_CALM_MIND",
+                "MOVE_HYPER_VOICE",
+                "MOVE_SHADOW_BALL"
+            ],
+            "ability": "ABILITY_SIMPLE",
+            "iv_scale": 200,
             "ball_seal": 0
         },
         {
             "species": "SPECIES_KECLEON",
             "form": 0,
-            "level": 54,
+            "level": 57,
             "item": null,
-            "moves": null,
-            "iv_scale": 50,
+            "moves": [
+                "MOVE_SHADOW_SNEAK",
+                "MOVE_SLASH",
+                "MOVE_NIGHT_SLASH",
+                "MOVE_SCREECH"
+            ],
+            "iv_scale": 200,
             "ball_seal": 0
         },
         {
             "species": "SPECIES_GRANBULL",
             "form": 0,
-            "level": 54,
+            "level": 57,
             "item": null,
-            "moves": null,
-            "iv_scale": 50,
+            "moves": [
+                "MOVE_RETURN",
+                "MOVE_ICE_FANG",
+                "MOVE_FIRE_FANG",
+                "MOVE_CRUNCH"
+            ],
+            "iv_scale": 200,
             "ball_seal": 0
         }
     ],

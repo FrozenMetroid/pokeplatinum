@@ -3,17 +3,23 @@
     "class": "TRAINER_CLASS_SWIMMER_FEMALE",
     "items": [],
     "ai_flags": [
-        "AI_FLAG_BASIC"
+        "AI_FLAG_BASIC",
+        "AI_FLAG_EVAL_ATTACK"
     ],
     "double_battle": false,
     "party": [
         {
-            "species": "SPECIES_MARILL",
+            "species": "SPECIES_CHINCHOU",
             "form": 0,
             "level": 54,
             "item": null,
-            "moves": null,
-            "iv_scale": 0,
+            "moves": [
+                "MOVE_SURF",
+                "MOVE_THUNDERBOLT",
+                "MOVE_THUNDER_WAVE",
+                "MOVE_SIGNAL_BEAM"
+            ],
+            "iv_scale": 200,
             "ball_seal": 0
         },
         {
@@ -21,8 +27,13 @@
             "form": 0,
             "level": 54,
             "item": null,
-            "moves": null,
-            "iv_scale": 0,
+            "moves": [
+                "MOVE_ICE_BALL",
+                "MOVE_DEFENSE_CURL",
+                "MOVE_SURF",
+                "MOVE_ROLLOUT"
+            ],
+            "iv_scale": 200,
             "ball_seal": 0
         },
         {
@@ -30,8 +41,13 @@
             "form": 0,
             "level": 54,
             "item": null,
-            "moves": null,
-            "iv_scale": 0,
+            "moves": [
+                "MOVE_WATER_SPOUT",
+                "MOVE_REST",
+                "MOVE_SLEEP_TALK",
+                "MOVE_SURF"
+            ],
+            "iv_scale": 200,
             "ball_seal": 0
         }
     ],
