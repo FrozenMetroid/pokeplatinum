@@ -4,6 +4,7 @@
     "items": [],
     "ai_flags": [
         "AI_FLAG_BASIC",
+        "AI_FLAG_EVAL_ATTACK",
         "AI_FLAG_PRIORITIZE_EXTREMES"
     ],
     "double_battle": false,
@@ -11,19 +12,30 @@
         {
             "species": "SPECIES_HERACROSS",
             "form": 0,
-            "level": 54,
+            "level": 55,
             "item": null,
-            "moves": null,
-            "iv_scale": 30,
+            "moves": [
+                "MOVE_MEGAHORN",
+                "MOVE_CLOSE_COMBAT",
+                "MOVE_AERIAL_ACE",
+                "MOVE_SWORDS_DANCE"
+            ],
+            "iv_scale": 200,
             "ball_seal": 0
         },
         {
             "species": "SPECIES_MACHAMP",
             "form": 0,
-            "level": 54,
+            "level": 55,
             "item": null,
-            "moves": null,
-            "iv_scale": 30,
+            "moves": [
+                "MOVE_CROSS_CHOP",
+                "MOVE_BULLET_PUNCH",
+                "MOVE_STONE_EDGE",
+                "MOVE_FIRE_BLAST"
+            ],
+            "ability": "ABILITY_NO_GUARD",
+            "iv_scale": 200,
             "ball_seal": 0
         }
     ],

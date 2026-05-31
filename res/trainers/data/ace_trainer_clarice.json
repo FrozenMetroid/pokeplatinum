@@ -5,7 +5,8 @@
     "ai_flags": [
         "AI_FLAG_BASIC",
         "AI_FLAG_EVAL_ATTACK",
-        "AI_FLAG_EXPERT"
+        "AI_FLAG_EXPERT",
+        "AI_FLAG_BATON_PASS"
     ],
     "double_battle": false,
     "party": [
@@ -16,25 +17,26 @@
             "item": null,
             "moves": [
                 "MOVE_GUNK_SHOT",
-                "MOVE_YAWN",
+                "MOVE_TOXIC",
                 "MOVE_BODY_SLAM",
                 "MOVE_PROTECT"
             ],
-            "iv_scale": 50,
+            "ability": "ABILITY_CORROSION",
+            "iv_scale": 200,
             "ball_seal": 0
         },
         {
-            "species": "SPECIES_NINETALES",
+            "species": "SPECIES_VOLBEAT",
             "form": 0,
             "level": 54,
             "item": null,
             "moves": [
-                "MOVE_WILL_O_WISP",
-                "MOVE_FLAMETHROWER",
-                "MOVE_DARK_PULSE",
-                "MOVE_EXTRASENSORY"
+                "MOVE_TAIL_GLOW",
+                "MOVE_BUG_BUZZ",
+                "MOVE_THUNDERBOLT",
+                "MOVE_BATON_PASS"
             ],
-            "iv_scale": 50,
+            "iv_scale": 200,
             "ball_seal": 0
         },
         {
@@ -48,7 +50,7 @@
                 "MOVE_DISCHARGE",
                 "MOVE_HYPER_BEAM"
             ],
-            "iv_scale": 50,
+            "iv_scale": 200,
             "ball_seal": 0
         }
     ],

@@ -51,7 +51,8 @@
             [34, "MOVE_ASSURANCE"], 
             [37, "MOVE_POISON_JAB"], 
             [40, "MOVE_ENDEAVOR"], 
-            [44, "MOVE_AGILITY"]
+            [44, "MOVE_AGILITY"],
+            [47, "MOVE_NIGHT_SLASH"]
         ],
         "by_tm": [
             "TM06",

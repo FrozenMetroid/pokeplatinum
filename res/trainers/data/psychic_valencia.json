@@ -10,7 +10,7 @@
     "double_battle": false,
     "party": [
         {
-            "species": "SPECIES_CHIMECHO",
+            "species": "SPECIES_ALAKAZAM",
             "form": 0,
             "level": 46,
             "item": null,
@@ -18,12 +18,12 @@
                 "MOVE_PSYCHIC",
                 "MOVE_RECOVER",
                 "MOVE_SHADOW_BALL",
-                "MOVE_HYPER_VOICE"
+                "MOVE_REFLECT"
             ],
-            "ability": "ABILITY_LEVITATE",
+            "ability": "ABILITY_SYNCHRONIZE",
             "nature": "NATURE_MODEST",
             "ivnums": [31, 31, 31, 31, 31, 31],
-            "evnums": [0, 0, 0, 0, 120, 120],
+            "evnums": [0, 0, 0, 120, 120, 0],
             "ball": "ITEM_HEAL_BALL",
             "iv_scale": 0,
             "ball_seal": 0

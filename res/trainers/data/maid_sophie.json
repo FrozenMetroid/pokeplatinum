@@ -3,7 +3,8 @@
     "class": "TRAINER_CLASS_MAID",
     "items": [],
     "ai_flags": [
-        "AI_FLAG_BASIC"
+        "AI_FLAG_BASIC",
+        "AI_FLAG_EVAL_ATTACK"
     ],
     "double_battle": false,
     "party": [
@@ -18,7 +19,7 @@
                 "MOVE_METEOR_MASH",
                 "MOVE_ENDURE"
             ],
-            "iv_scale": 0,
+            "iv_scale": 100,
             "ball_seal": 0
         }
     ],

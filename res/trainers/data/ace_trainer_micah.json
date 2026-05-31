@@ -20,7 +20,7 @@
                 "MOVE_PURSUIT",
                 "MOVE_METEOR_MASH"
             ],
-            "iv_scale": 50,
+            "iv_scale": 200,
             "ball_seal": 0
         },
         {
@@ -29,12 +29,12 @@
             "level": 56,
             "item": null,
             "moves": [
-                "MOVE_WATER_PULSE",
+                "MOVE_HYDRO_PUMP",
                 "MOVE_ZEN_HEADBUTT",
                 "MOVE_ENERGY_BALL",
                 "MOVE_FAKE_OUT"
             ],
-            "iv_scale": 50,
+            "iv_scale": 200,
             "ball_seal": 0
         }
     ],

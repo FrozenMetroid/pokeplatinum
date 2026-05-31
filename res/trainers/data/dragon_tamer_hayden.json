@@ -5,7 +5,8 @@
     "ai_flags": [
         "AI_FLAG_BASIC",
         "AI_FLAG_EVAL_ATTACK",
-        "AI_FLAG_EXPERT"
+        "AI_FLAG_EXPERT",
+        "AI_FLAG_WEATHER"
     ],
     "double_battle": false,
     "party": [
@@ -14,8 +15,13 @@
             "form": 0,
             "level": 56,
             "item": null,
-            "moves": null,
-            "iv_scale": 50,
+            "moves": [
+                "MOVE_DRAGON_PULSE",
+                "MOVE_AIR_SLASH",
+                "MOVE_FLAMETHROWER",
+                "MOVE_COTTON_SPORE"
+            ],
+            "iv_scale": 200,
             "ball_seal": 0
         },
         {
@@ -23,8 +29,13 @@
             "form": 0,
             "level": 56,
             "item": null,
-            "moves": null,
-            "iv_scale": 50,
+            "moves": [
+                "MOVE_SURF",
+                "MOVE_ICE_BEAM",
+                "MOVE_SLUDGE_BOMB",
+                "MOVE_RAIN_DANCE"
+            ],
+            "iv_scale": 200,
             "ball_seal": 0
         }
     ],

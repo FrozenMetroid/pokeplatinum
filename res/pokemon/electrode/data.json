@@ -85,7 +85,8 @@
             "TM82",
             "TM83",
             "TM87",
-            "TM90"
+            "TM90",
+            "TM91"
         ],
         "by_tutor": [
             "MOVE_ROLLOUT",

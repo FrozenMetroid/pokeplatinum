@@ -14,8 +14,27 @@
             "form": 0,
             "level": 57,
             "item": null,
-            "moves": null,
-            "iv_scale": 0,
+            "moves": [
+                "MOVE_CRUNCH",
+                "MOVE_FLY",
+                "MOVE_THUNDER_FANG",
+                "MOVE_FIRE_FANG"
+            ],
+            "iv_scale": 200,
+            "ball_seal": 0
+        },
+        {
+            "species": "SPECIES_OMASTAR",
+            "form": 0,
+            "level": 56,
+            "item": null,
+            "moves": [
+                "MOVE_SURF",
+                "MOVE_POWER_GEM",
+                "MOVE_GIGA_DRAIN",
+                "MOVE_ROCK_BLAST"
+            ],
+            "iv_scale": 200,
             "ball_seal": 0
         }
     ],

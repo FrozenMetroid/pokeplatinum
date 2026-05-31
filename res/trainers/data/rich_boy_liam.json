@@ -5,7 +5,8 @@
         "ITEM_FULL_RESTORE"
     ],
     "ai_flags": [
-        "AI_FLAG_BASIC"
+        "AI_FLAG_BASIC",
+        "AI_FLAG_EVAL_ATTACK"
     ],
     "double_battle": false,
     "party": [
@@ -14,7 +15,12 @@
             "form": 0,
             "level": 35,
             "item": "ITEM_RARE_CANDY",
-            "moves": null,
+            "moves": [
+                "MOVE_FLING",
+                "MOVE_SOFTBOILED",
+                "MOVE_EGG_BOMB",
+                "MOVE_PSYCHIC"
+            ],
             "iv_scale": 250,
             "ball_seal": 26
         }

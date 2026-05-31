@@ -17,24 +17,24 @@
             "moves": [
                 "MOVE_EXTRASENSORY",
                 "MOVE_FAKE_OUT",
-                "MOVE_FEINT_ATTACK",
-                "MOVE_RAZOR_LEAF"
+                "MOVE_NIGHT_SLASH",
+                "MOVE_LEAF_BLADE"
             ],
-            "iv_scale": 50,
+            "iv_scale": 200,
             "ball_seal": 0
         },
         {
-            "species": "SPECIES_GYARADOS",
+            "species": "SPECIES_WALREIN",
             "form": 0,
             "level": 57,
             "item": null,
             "moves": [
-                "MOVE_AQUA_TAIL",
-                "MOVE_HYDRO_PUMP",
-                "MOVE_DRAGON_DANCE",
-                "MOVE_ICE_FANG"
+                "MOVE_WATERFALL",
+                "MOVE_ICE_FANG",
+                "MOVE_HYPER_FANG",
+                "MOVE_REST"
             ],
-            "iv_scale": 50,
+            "iv_scale": 200,
             "ball_seal": 0
         }
     ],

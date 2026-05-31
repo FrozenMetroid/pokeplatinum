@@ -20,7 +20,7 @@
                 "MOVE_SWORDS_DANCE",
                 "MOVE_ENDEAVOR"
             ],
-            "iv_scale": 50,
+            "iv_scale": 200,
             "ball_seal": 0
         },
         {
@@ -32,9 +32,9 @@
                 "MOVE_DIZZY_PUNCH",
                 "MOVE_CRUNCH",
                 "MOVE_OUTRAGE",
-                "MOVE_EARTHQUAKE"
+                "MOVE_HAMMER_ARM"
             ],
-            "iv_scale": 50,
+            "iv_scale": 200,
             "ball_seal": 0
         }
     ],
