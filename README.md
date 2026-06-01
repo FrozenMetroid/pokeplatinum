@@ -280,7 +280,7 @@ Wild and Wonder Trade Pokémon will have randomly generated movesets based on wh
 
 - Evolutionary items like the Magmarizer are purchasable at the Battle Frontier
 - Evolution stone seller in Sunyshore Market
-- Ability Capsule: Battle Frontier, Team Galactic HQ
+- Ability Capsule: Battle Frontier, Team Galactic HQ, Pickup
 - Rocky Helmet: Battle Frontier, Iron Island
 - Eviolite: Battle Frontier
 - Prism Scale: Battle Frontier, first time completing a Contest
@@ -291,6 +291,9 @@ Wild and Wonder Trade Pokémon will have randomly generated movesets based on wh
 - Life Orb: Battle Frontier
 - Lucky Egg: Battle Frontier
 - Ability Patch: Battle Frontier
+
+- Pickup Table:
+    - Replaced TMs Focus Punch, Rest, and Earthquake with Lucky Egg, Ability Capsule, and PP Max respectively since TMs are infinite now
 
 # Encounters
 
