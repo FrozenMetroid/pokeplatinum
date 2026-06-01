@@ -125,12 +125,12 @@ Route202_DoCatchingTutorial:
 
 Route202_DawnToGetYouStartedIllGiveYouFivePokeBalls:
     BufferPlayerName 0
-    Message Route202_Text_DawnToGetYouStartedIllGiveYouFivePokeBalls
+    Message Route202_Text_DawnToGetYouStartedIllGiveYouTenPokeBalls
     GoTo Route202_GivePokeballs
 
 Route202_LucasHereIllGiveYouFivePokeballsToGetYouStarted:
     BufferPlayerName 0
-    Message Route202_Text_LucasHereIllGiveYouFivePokeballsToGetYouStarted
+    Message Route202_Text_LucasHereIllGiveYouTenPokeballsToGetYouStarted
     GoTo Route202_GivePokeballs
 
 Route202_GivePokeballs:

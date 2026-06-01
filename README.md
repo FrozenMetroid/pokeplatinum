@@ -62,7 +62,7 @@ Thank you!
     - Aron (Oreburgh Mine, Iron Island)
     - Bagon (Route 210)
     - Electrike (Route 212)
-    - Growlithe (Route 204)
+    - Growlithe (Route 204, north)
     - Horsea (Route 219)
     - Koffing (Fuego Ironworks)
     - Ledyba (Routes 203 and northern 205 during the morning)
@@ -166,7 +166,7 @@ Wild and Wonder Trade Pokémon will have randomly generated movesets based on wh
 - Slow Start: 5 turns -> 3 turns
 - Healer: Guaranteed chance to occur, no longer a 30% chance
 - Damp: Applies a new field condition that dampens the battlefield to reduce Fire-type damage by 50%; the effect is removed when all Pokémon with Damp are switched or knocked out
-- Overgrow, Torrent, Blaze, and Swarm all give a 30% increase to Grass, Water, Fire, and Bug-type moves, respectively, at any HP
+- Overgrow, Torrent, Blaze, and Swarm all give a 20% increase to Grass, Water, Fire, and Bug-type moves, respectively, at any HP
 
 ### Battle Item Modernizations:
 

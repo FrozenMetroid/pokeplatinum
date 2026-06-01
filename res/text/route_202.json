@@ -33,7 +33,7 @@
       ]
     },
     {
-      "id": "Route202_Text_DawnToGetYouStartedIllGiveYouFivePokeBalls",
+      "id": "Route202_Text_DawnToGetYouStartedIllGiveYouTenPokeBalls",
       "en_US": [
         "Dawn: Giggle...\n",
         "See? Isn’t it neat?\r",
@@ -47,7 +47,7 @@
         "if you make them sleep or something\f",
         "by using a Pokémon’s move.\r",
         "OK, {STRVAR_1 3, 0, 0}, to get you\n",
-        "started, I’ll give you five\f",
+        "started, I’ll give you ten\f",
         "Poké Balls!\r"
       ]
     },
@@ -94,7 +94,7 @@
       ]
     },
     {
-      "id": "Route202_Text_LucasHereIllGiveYouFivePokeballsToGetYouStarted",
+      "id": "Route202_Text_LucasHereIllGiveYouTenPokeballsToGetYouStarted",
       "en_US": [
         "Lucas: And that’s how it’s done.\r",
         "Actually, I should have lowered the\n",
@@ -107,7 +107,7 @@
         "catch if you make one of your\f",
         "Pokémon put them to sleep or such.\r",
         "Here, {STRVAR_1 3, 0, 0}, I’ll give you\n",
-        "five Poké Balls to get you started.\r"
+        "ten Poké Balls to get you started.\r"
       ]
     },
     {

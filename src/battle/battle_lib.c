@@ -7647,16 +7647,16 @@ int BattleSystem_CalcMoveDamage(BattleSystem *battleSys,
     }
     #else
     if (moveType == TYPE_GRASS && attackerParams.ability == ABILITY_OVERGROW) {
-        movePower = movePower * 130 / 100;
+        movePower = movePower * 12 / 10;
     }
     if (moveType == TYPE_FIRE && attackerParams.ability == ABILITY_BLAZE) {
-        movePower = movePower * 130 / 100;
+        movePower = movePower * 12 / 10;
     }
     if (moveType == TYPE_WATER && attackerParams.ability == ABILITY_TORRENT) {
-        movePower = movePower * 130 / 100;
+        movePower = movePower * 12 / 10;
     }
     if (moveType == TYPE_BUG && attackerParams.ability == ABILITY_SWARM) {
-        movePower = movePower * 130 / 100;
+        movePower = movePower * 12 / 10;
     }
     #endif
 
