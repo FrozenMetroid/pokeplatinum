@@ -24,6 +24,7 @@ Thank you!
 # Features
 
 - Singleplayer Wonder Trade in the Global Terminal
+- Toggleable party-wide Exp. Share
 - Most if not all Pokémon sprites in battle have been updated to use HeartGold/SoulSilver's and/or my own edits (e.g. improving Hoenn palettes)
 - Move reminder is accessible from the party menu outside of special situations
 - Footstep sounds for walking, running, metal, grass, wood, and caves from HeartGold and Soulsilver
@@ -33,7 +34,6 @@ Thank you!
 - Critical Capture
 - Catching Charm
 - Oval Charm
-- Debug/testing code for nearly perfect wild encounters and perfect starters (see ``testing.h`` for the config)
 - Lowercase Pokémon names
 - Some Pokémon have moves defined to be learned whenever they evolve, e.g. Close Combat on Infernape
 - Infinite TMs and forgettable HMs
@@ -41,7 +41,7 @@ Thank you!
     - Must have a Pokémon capable of using the move in your party, the associated Badge if there is one, and the HM in your Bag
 - Hidden Abilities
     - Use the Ability Patch or find them in the wild with Poké Radar chains!
-    - Not all Pokémon have their Hidden Abilities due to those Abilities not being programmed (e.g. Infiltrator Crobat)
+    - Not all Pokémon have their Hidden Abilities due to those Abilities not being programmed (e.g. Infiltrator is missing)
 - Ability Capsule and Ability Patch
 - Nature mints
 - Rocky Helmet
@@ -55,11 +55,10 @@ Thank you!
 - Some different Pokémon encounters and/or levels of wild Pokémon
 - Pokémon that require trading to evolve can now evolve in singleplayer
     - Pokémon that required holding an item to evolve while trading now simply need to hold the item and level up once
-    - Pokémon that evolved by trading will now evolve with a Linking Cord
+    - Pokémon that evolved by trading without a held item will now evolve with a Linking Cord
 - 1000 steps in Safari Zone instead of 500
-- Toggleable party-wide Exp. Share
 - Honey Trees only take 30 minutes to give an encounter rather than 6 hours
-- Additional Pokémon included in Sinnoh's regional Pokédex to increase encounter variety and type representation:
+- Additional Pokémon included in Sinnoh's regional Pokédex to increase encounter variety and type representation, as well as to add to certain Trainer classes that were lacking fitting options:
     - Aron (Oreburgh Mine, Iron Island)
     - Bagon (Route 210)
     - Electrike (Route 212)
@@ -82,6 +81,8 @@ Thank you!
 - If the player's lead Pokémon has the Ability Harvest, an additional Berry will be harvested when harvesting Berries in the overworld
 - Change your Pokémon's Poké Ball in Bebe's house in Hearthome City
 - Reset your Pokémon's EVs in the middle house of the Fight Area by talking to the man in the top right corner
+- The player immediately has the Running Shoes
+- Debug/testing code for nearly perfect wild encounters and perfect starters (see ``testing.h`` for the config to enable these features if you are modifying this repository)
 - A myriad of changes to the battle system, as documented below
 
 # Battle Changes
@@ -144,6 +145,11 @@ Wild and Wonder Trade Pokémon will have randomly generated movesets based on wh
 - Weak Armor: When hit by a physical move, this Pokémon's Defense stat lowers by one stage and its Speed stat rises by two stages
 - Wind Rider: When hit by a wind move, the Pokémon's Attack stat rises by one stage
 - Corrosion: This Pokémon can apply the poison status to Steel and Poison-type Pokémon
+- Merciless: This Pokémon will land critical hits if the target is poisoned
+- Protean: This Pokémon changes its type to the type of whatever move it uses
+- Tough Claws: Moves used by this Pokémon that make contact deal 30% more damage
+- Bulletproof: This Pokémon is completely protected from some ball and bomb moves, such as Shadow Ball
+- Multiscale: This Pokémon received 50% less damage if it is at max HP
 
 ### Ability Modernizations:
 
