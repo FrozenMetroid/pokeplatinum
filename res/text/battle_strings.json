@@ -8954,6 +8954,13 @@
         "The foe’s {STRVAR_1 1, 0, 0}’s {STRVAR_1 6, 1, 0}\n",
         "cosmically alters the field!"
       ]
+    },
+    {
+      "id": "BattleStrings_Text_PartyGainedExpPoints",
+      "en_US": [
+        "The rest of the party gained\n",
+        "{STRVAR_1 54, 1, 0} Exp. Points!\r"
+      ]
     }
   ]
 }

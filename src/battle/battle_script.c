@@ -10194,7 +10194,21 @@ static void BattleScript_GetExpTask(SysTask *task, void *inData)
             msg.tags = TAG_NICKNAME_NUM;
             msg.params[0] = expBattler | (slot << 8);
             msg.params[1] = totalExp;
-            data->tmpData[GET_EXP_MSG_INDEX] = BattleMessage_Print(data->battleSys, msgLoader, &msg, BattleSystem_GetTextSpeed(data->battleSys));
+            if (slot == data->battleCtx->selectedPartySlot[expBattler]
+                || !BattleSystem_PokemonIsOT(data->battleSys, mon)) {
+                data->tmpData[GET_EXP_MSG_INDEX] = BattleMessage_Print(data->battleSys, msgLoader, &msg, BattleSystem_GetTextSpeed(data->battleSys));
+            } else if (!data->battleCtx->partyReceivedEXPTextDone) {
+                msg.id = BattleStrings_Text_PartyGainedExpPoints;
+                data->tmpData[GET_EXP_MSG_INDEX] = BattleMessage_Print(data->battleSys, msgLoader, &msg, BattleSystem_GetTextSpeed(data->battleSys));
+                data->battleCtx->partyReceivedEXPTextDone = TRUE;
+            } else {
+                // 1. active battler slot has already received the "gained exp" message
+                // 1.1. this slot is not the active battler slot
+                // 1.2. This slot doesn't get boosted exp and doesn't needs the message shown explicitly for it
+                // 2. The "party gained exp" message has already been shown
+                data->seqNum = SEQ_GET_EXP_CHECK_LEVEL_UP;
+                break;
+            }
             data->tmpData[GET_EXP_MSG_DELAY] = 30 / 4;
             data->seqNum++;
         } else {

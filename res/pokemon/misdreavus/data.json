@@ -8,7 +8,7 @@
         "special_defense": 90
     },
     "types": [ "TYPE_GHOST", "TYPE_GHOST" ],
-    "catch_rate": 45,
+    "catch_rate": 100,
     "base_exp_reward": 147,
     "ev_yields": {
         "hp": 0,

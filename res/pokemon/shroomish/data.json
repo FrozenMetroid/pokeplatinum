@@ -93,7 +93,8 @@
             "MOVE_HELPING_HAND",
             "MOVE_WORRY_SEED",
             "MOVE_WAKE_UP_SLAP",
-            "MOVE_SEED_BOMB"
+            "MOVE_SEED_BOMB",
+            "MOVE_SWEET_SCENT"
         ]
     },
     "evolutions": [

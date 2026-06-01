@@ -8,7 +8,7 @@
         "special_defense": 45
     },
     "types": [ "TYPE_DARK", "TYPE_FLYING" ],
-    "catch_rate": 30,
+    "catch_rate": 120,
     "base_exp_reward": 107,
     "ev_yields": {
         "hp": 0,

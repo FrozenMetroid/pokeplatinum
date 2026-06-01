@@ -17,7 +17,7 @@
                 "MOVE_LEECH_SEED",
                 "MOVE_BULLET_SEED",
                 "MOVE_TACKLE",
-                "MOVE_STUN_SPORE"
+                "MOVE_SWEET_SCENT"
             ],
             "iv_scale": 20,
             "ball_seal": 0
