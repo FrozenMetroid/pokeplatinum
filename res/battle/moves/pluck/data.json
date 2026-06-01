@@ -2,9 +2,9 @@
     "name": "Pluck",
     "class": "CLASS_PHYSICAL",
     "type": "TYPE_FLYING",
-    "power": 75,
+    "power": 60,
     "accuracy": 100,
-    "pp": 15,
+    "pp": 20,
     "effect": {
         "type": "BATTLE_EFFECT_EAT_BERRY",
         "chance": 0

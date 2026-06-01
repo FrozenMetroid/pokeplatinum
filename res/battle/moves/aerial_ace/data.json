@@ -2,7 +2,7 @@
     "name": "Aerial Ace",
     "class": "CLASS_PHYSICAL",
     "type": "TYPE_FLYING",
-    "power": 60,
+    "power": 75,
     "accuracy": 0,
     "pp": 20,
     "effect": {

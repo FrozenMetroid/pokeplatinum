@@ -239,7 +239,6 @@ Wild and Wonder Trade Pokémon will have randomly generated movesets based on wh
 - Shadow Punch: 60BP -> 80BP
 - Bounce: 85BP -> 80BP, 85% accuracy -> 95%, 5PP -> 15PP
 - Poison Tail: 50BP -> 75BP, 25PP -> 15PP
-- Pluck: 60BP -> 75BP, 20PP -> 15PP
 - Dragon Rush: 75% accuracy -> 90%
 - Mud Bomb: 65BP -> 75BP, 85% accuracy -> 90%, 10PP -> 15PP, 30% effect chance -> 15%
 - Mirror Shot: 65BP -> 75BP, 85% accuracy -> 90%, 30% effect chance -> 20%
@@ -253,6 +252,7 @@ Wild and Wonder Trade Pokémon will have randomly generated movesets based on wh
 - Ancient Power: 5PP -> 15PP
 - Ominous Wind: 5PP -> 15PP
 - Silver Wind: 5PP -> 15PP
+- Aerial Ace: 60BP -> 75BP
 
 ### Miscellaneous Battle System Changes:
 
@@ -280,7 +280,7 @@ Wild and Wonder Trade Pokémon will have randomly generated movesets based on wh
 
 - Evolutionary items like the Magmarizer are purchasable at the Battle Frontier
 - Evolution stone seller in Sunyshore Market
-- Ability Capsule: Battle Frontier, Team Galactic HQ, Pickup
+- Ability Capsule: Battle Frontier, Team Galactic HQ, Pickup, Poké Mart after 2 Badges
 - Rocky Helmet: Battle Frontier, Iron Island
 - Eviolite: Battle Frontier
 - Prism Scale: Battle Frontier, first time completing a Contest
@@ -291,6 +291,8 @@ Wild and Wonder Trade Pokémon will have randomly generated movesets based on wh
 - Life Orb: Battle Frontier
 - Lucky Egg: Battle Frontier
 - Ability Patch: Battle Frontier
+- PP UP: Poké Mart after 5 Badges
+- PP Max: Poké Mart after 8 Badges
 
 - Pickup Table:
     - Replaced TMs Focus Punch, Rest, and Earthquake with Lucky Egg, Ability Capsule, and PP Max respectively since TMs are infinite now
