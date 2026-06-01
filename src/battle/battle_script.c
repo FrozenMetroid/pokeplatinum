@@ -2279,6 +2279,8 @@ static BOOL BtlCmd_CalcExpGain(BattleSystem *battleSys, BattleContext *battleCtx
         Pokemon *mon;
         BOOL partyWideExpShare = SaveData_GetExpShareStatus(SaveData_Ptr());
 
+        battleCtx->slotBoostedEXPMask = 0;
+
         for (i = 0; i < Party_GetCurrentCount(BattleSystem_GetParty(battleSys, BATTLER_US)); i++) {
             mon = BattleSystem_GetPartyPokemon(battleSys, BATTLER_US, i);
 
@@ -2286,6 +2288,12 @@ static BOOL BtlCmd_CalcExpGain(BattleSystem *battleSys, BattleContext *battleCtx
                 if (battleCtx->sideGetExpMask[(battleCtx->faintedMon >> 1) & 1] & FlagIndex(i)) {
                     totalMonsGainingExp++;
                 }
+            }
+
+            // figure out which mons get boosted exp for the proper message to be displayed
+            // when gaining exp
+            if (BattleSystem_PokemonIsOT(battleSys, mon) == FALSE) {
+                battleCtx->slotBoostedEXPMask |= (1 << i);
             }
         }
 
@@ -10195,9 +10203,10 @@ static void BattleScript_GetExpTask(SysTask *task, void *inData)
             msg.params[0] = expBattler | (slot << 8);
             msg.params[1] = totalExp;
             if (slot == data->battleCtx->selectedPartySlot[expBattler]
-                || !BattleSystem_PokemonIsOT(data->battleSys, mon)) {
+                || (data->battleCtx->slotBoostedEXPMask & (1 << slot))) { // if the active battler slot or if the slot got boosted exp and needs the message shown explicitly for it
                 data->tmpData[GET_EXP_MSG_INDEX] = BattleMessage_Print(data->battleSys, msgLoader, &msg, BattleSystem_GetTextSpeed(data->battleSys));
-            } else if (!data->battleCtx->partyReceivedEXPTextDone) {
+                data->battleCtx->slotBoostedEXPMask &= ~(1 << slot); // clear the mask for this slot since the message is now shown
+            } else if (!data->battleCtx->partyReceivedEXPTextDone && !data->battleCtx->slotBoostedEXPMask) { // if the "party gained exp" message hasn't been shown and there are no more boosted exp slots left that need their own message
                 msg.id = BattleStrings_Text_PartyGainedExpPoints;
                 data->tmpData[GET_EXP_MSG_INDEX] = BattleMessage_Print(data->battleSys, msgLoader, &msg, BattleSystem_GetTextSpeed(data->battleSys));
                 data->battleCtx->partyReceivedEXPTextDone = TRUE;
@@ -10205,7 +10214,7 @@ static void BattleScript_GetExpTask(SysTask *task, void *inData)
                 // 1. active battler slot has already received the "gained exp" message
                 // 1.1. this slot is not the active battler slot
                 // 1.2. This slot doesn't get boosted exp and doesn't needs the message shown explicitly for it
-                // 2. The "party gained exp" message has already been shown
+                // 2. The "party gained exp" message has already been shown and there are no more boosted exp slots left that need their own message
                 data->seqNum = SEQ_GET_EXP_CHECK_LEVEL_UP;
                 break;
             }

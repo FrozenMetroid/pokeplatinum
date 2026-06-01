@@ -317,7 +317,8 @@ struct BattleContext {
     u32 padding3154_01 : 31;
     u32 magicBounceTracker : 1; // if any client has already activated magic bounce, another can not activate
     u32 partyReceivedEXPTextDone : 1; // used to track whether the "Gained EXP points" message has been shown for the party during EXP gain, so that it only shows once
-    u32 padding_end:30;
+    u32 slotBoostedEXPMask : 6; // track which slots receive boosted exp
+    u32 padding_end:24;
     u8 clientPriority[MAX_BATTLERS];
     u16 itemsToRestore[MAX_PARTY_SIZE];
     u8 tailwindCounter[NUM_BATTLE_SIDES];
