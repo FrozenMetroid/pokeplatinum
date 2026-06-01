@@ -252,7 +252,7 @@ From your terminal, navigate to the path in which you will store the repository.
 Users of WSL 1 should ensure that their target is on the Windows file drive.
 
 ```bash
-git clone https://github.com/pret/pokeplatinum
+git clone https://github.com/FrozenMetroid/pokeplatinum
 cd pokeplatinum
 ```
 
@@ -284,7 +284,7 @@ ROM_REVISION=0 make
 
 If you need further assistance, feel free to ask a question in the `#pokeplatinum`
 channel of the `pret` Discord (see `README.md` for contact information) or [open
-an issue](https://github.com/pret/pokeplatinum/issues/new).
+an issue](https://github.com/FrozenMetroid/pokeplatinum/issues/new).
 
 ## 4. Debugger Support
 

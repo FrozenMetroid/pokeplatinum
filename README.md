@@ -99,7 +99,7 @@ Wild and Wonder Trade Pokémon will have randomly generated movesets based on wh
 - Piercing Eye (CUSTOM): Lowers foes' Evasion on switch-in. 
 - Artillery (CUSTOM): Raises the power of beam moves (Ice Beam, Bubble Beam, etc.)
 - Acid Maw (CUSTOM): Biting moves apply the effect of Gastro Acid on hit
-- Matriarch (CUSTOM): Underlings heal the Pokémon for 1/8 of its maximum health when it takes damage
+- Matriarch (CUSTOM): Underlings heal the Pokémon for 1/8 of its maximum health at the end of the turn if it has taken damage
 - Mimesis (CUSTOM): The user copies and uses sound moves, such as Hyper Voice, similarly to the Ability Dancer
 - Heat Sink (CUSTOM): This Pokémon draws in all Fire-type moves to raise Sp. Attack, like Storm Drain and Lightning Rod
 - Celestial Body (CUSTOM): This Pokémon applies Gravity upon switching in
@@ -111,20 +111,20 @@ Wild and Wonder Trade Pokémon will have randomly generated movesets based on wh
 - Friend Guard: Reduces damage done to allies by 25%
 - Justified: Raises Attack if hit by a Dark-type move
 - Earth Eater: Restores HP if hit by a Ground-type move
-- Healer: An ally Pokémon's status condition (Burn, Poison, etc.) is removed at the end of the turn
+- Healer: An ally Pokémon's status condition (Burn, Poison, etc.) is healed at the end of the turn
 - Analytic: Raises the power of moves by 30% if the user moves last
-- Cursed Body: 30% chance to disable a move used on the Pokémon
+- Cursed Body: 30% chance to disable an offensive move used on the Pokémon
 - Regenerator: Restores 30% of max HP when switching out
 - Moxie: Raises Attack stage for any Pokémon that is knocked out
 - Rattled: Raises Speed stage if hit by a Dark, Ghost, or Bug-type move
-- Sap Sipper: Raises Attack if it would be hit by a Grass-type move
+- Sap Sipper: Raises Attack if it would be hit by a Grass-type move and is immune
 - Magic Bounce: Reflects status moves back at the user
-- Heavy Metal: Doubles weight (useless now without Heavy Slam)
+- Heavy Metal: Doubles weight (unused)
 - Light Metal: Halves weight
 - Pickpocket: This Pokémon will steal the attacker's item if they have one and if this Pokémon does not already have an item
 - Telepathy: Allies are unable to damage this Pokémon
 - Galvanize: Normal-type moves become Electric-type
-- Fluffy: Reduces damage done by moves that make contact by 50%; Fire-type moves deal 2x damage
+- Fluffy: Reduces damage done by moves that make contact by 50%; Fire-type moves deal 2x damage to this Pokémon
 - Defiant: Raises Attack if any stat is lowered
 - Competitive: Raises Sp. Attack if any stat is lowered
 - Sheer Force: Removes additional effects from most moves, as well as Life Orb and Shell Bell, to increase move power
@@ -141,9 +141,9 @@ Wild and Wonder Trade Pokémon will have randomly generated movesets based on wh
 - Poison Touch: Moves used by this Pokémon that make contact have a 30% chance to poison the target
 - Wonder Skin: Makes status moves more likely to miss
 - Harvest: 50% chance (or 100% chance in harsh sunlight) to restore a Berry that was consumed in battle
-- Neutralizing Gas: Other Pokémon's Abilities, besides Multitype and Neutralizing Gas, are suppressed
+- Neutralizing Gas: Other Pokémon's Abilities, besides a few exclusions, are suppressed
 - Weak Armor: When hit by a physical move, this Pokémon's Defense stat lowers by one stage and its Speed stat rises by two stages
-- Wind Rider: When hit by a wind move, the Pokémon's Attack stat rises by one stage
+- Wind Rider: When hit by a wind move, the Pokémon's Attack stat rises by one stage and the Pokémon receives 0 damage from the move
 - Corrosion: This Pokémon can apply the poison status to Steel and Poison-type Pokémon
 - Merciless: This Pokémon will land critical hits if the target is poisoned
 - Protean: This Pokémon changes its type to the type of whatever move it uses
@@ -274,7 +274,7 @@ Wild and Wonder Trade Pokémon will have randomly generated movesets based on wh
 - Return single-use items, excluding Berries, to the Pokémon at the end of a battle
 - Items collected from wild Pokémon at the end of a battle will be put into the Bag
 - Trainers will withold their Supreme Overlord Pokémon until all other fainted teammates are defeated
-- Tailwind has been modernized to last 4 turns
+- Tailwind has been modernized to last 4 turns (effectively 3 turns)
 
 # Additional Item Locations
 
@@ -311,4 +311,4 @@ Wild and Wonder Trade Pokémon will have randomly generated movesets based on wh
 
 - Earthquake TM in Wayward Cave requires Strength now that TMs are infinite
     - Gible is still accessible at the same point in progression as vanilla Platinum
-- Exp. Share moved to Oreburgh City Poké Center; must have seen 20 species in the Pokédex to receive it (must battle every Trainer before Roark)
+- Exp. Share moved to Oreburgh City Poké Center; must have seen 20 species in the Pokédex to receive it, which is possible before Roark
