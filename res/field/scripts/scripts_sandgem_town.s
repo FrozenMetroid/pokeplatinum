@@ -547,8 +547,8 @@ SandgemTown_LetYourFamilyKnowYoureHelpingProfRowan:
     ApplyMovement LOCALID_COUNTERPART, SandgemTown_CounterpartFacePlayerWest
     ApplyMovement LOCALID_PLAYER, SandgemTown_PlayerFaceCounterpartEast
     WaitMovement
-    ApplyMovement LOCALID_COUNTERPART, SandgemTown_CounterpartExclamationMark
-    WaitMovement
+    // ApplyMovement LOCALID_COUNTERPART, SandgemTown_CounterpartExclamationMark
+    // WaitMovement
     GetPlayerGender VAR_RESULT
     GoToIfEq VAR_RESULT, GENDER_MALE, SandgemTown_DawnLetYourFamilyKnowYoureHelpingProfRowan
     GoToIfEq VAR_RESULT, GENDER_FEMALE, SandgemTown_LucasLetYourFamilyKnowYoureHelpingProfRowan
@@ -571,9 +571,38 @@ SandgemTown_CounterpartLeave:
     WaitMovement
     Common_FadeToDefaultMusic3
     RemoveObject LOCALID_COUNTERPART
+    GetPlayerMapPos VAR_0x8004, VAR_0x8005
+    SubVar VAR_0x8004, 8
+    SetPosition LOCALID_RIVAL_MOM, VAR_0x8004, 0, VAR_0x8005, 3
+    ApplyMovement LOCALID_RIVAL_MOM, SandgemTown_BarryMom_Approach
+    WaitMovement
+    PlaySE SEQ_SE_CONFIRM
+    BufferPlayerName 0
+    BufferRivalName 1
+    Message SandgemTown_Text_BarryMomGiveParcel
+    SetVar VAR_0x8004, ITEM_PARCEL
+    SetVar VAR_0x8005, 1
+    Common_GiveItemQuantity
+    BufferPlayerName 0
+    Message SandgemTown_Text_BarryMomThanks
+    CloseMessage
+    ApplyMovement LOCALID_RIVAL_MOM, SandgemTown_BarryMom_Leave
+    WaitMovement
+    RemoveObject LOCALID_RIVAL_MOM
+    SetFlag FLAG_RECEIVED_PARCEL
     SetVar VAR_SANDGEM_TOWN_STATE, 2
     ReleaseAll
     End
+
+.balign 4, 0
+SandgemTown_BarryMom_Approach:
+    WalkNormalEast 7
+    EndMovement
+
+.balign 4, 0
+SandgemTown_BarryMom_Leave:
+    WalkNormalWest 8
+    EndMovement
 
     .balign 4, 0
 SandgemTown_Movement_ProfRowanExitLab:

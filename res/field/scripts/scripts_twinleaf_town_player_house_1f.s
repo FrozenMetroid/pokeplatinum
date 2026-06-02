@@ -17,7 +17,7 @@
     ScriptEntryEnd
 
 TwinleafTownPlayerHouse1F_OnTransition:
-    CallIfEq VAR_PLAYER_HOUSE_STATE, 3, TwinleafTownPlayerHouse1F_SetMomPositionForCutsceneAfterRivalBattle
+    CallIfEq VAR_PLAYER_HOUSE_STATE, EVENT_STATE_PLAYER_HOUSE_AFTER_201_RIVAL_BATTLE, TwinleafTownPlayerHouse1F_SetMomPositionForCutsceneAfterRivalBattle
     CallIfSet FLAG_RECEIVED_PARCEL, TwinleafTownPlayerHouse1F_HideRivalsMom
     End
 
@@ -126,8 +126,9 @@ TwinleafTownPlayerHouse1F_OnFrame_CutsceneAfterRivalBattle:
     BufferRivalName 0
     BufferPlayerName 1
     Message TwinleafTownPlayerHouse1F_Text_WowThatsWhatHappenedToYou
-    SetVar VAR_PLAYER_HOUSE_STATE, 4
-    GoTo TwinleafTownPlayerHouse1F_CloseMessage
+    SetVar VAR_PLAYER_HOUSE_STATE, EVENT_STATE_PLAYER_HOUSE_AFTER_RETURN_AFTER_RIVAL_BATTLE
+    // GoTo TwinleafTownPlayerHouse1F_CloseMessage
+    GoTo TwinleafTownPlayerHouse1F_MomGiveJournal
 
     .balign 4, 0
 TwinleafTownPlayerHouse1F_Movement_MomWalkFromKitchenToCouch:
@@ -156,9 +157,12 @@ TwinleafTownPlayerHouse1F_Mom:
     LockAll
     FacePlayer
     GoToIfSet FLAG_UNK_0x0002, TwinleafTownPlayerHouse1F_DoMomMessage
-    GoToIfGe VAR_PLAYER_HOUSE_STATE, 7, TwinleafTownPlayerHouse1F_CallTakeAQuickRest2
-    GoToIfEq VAR_PLAYER_HOUSE_STATE, 6, TwinleafTownPlayerHouse1F_EnjoyYourAdventure
-    GoToIfSet FLAG_HAS_POKEDEX, TwinleafTownPlayerHouse1F_MomGiveJournal
+    GoToIfGe VAR_PLAYER_HOUSE_STATE, EVENT_STATE_PLAYER_HOUSE_FINAL, TwinleafTownPlayerHouse1F_CallTakeAQuickRest2
+    GoToIfEq VAR_PLAYER_HOUSE_STATE, EVENT_STATE_PLAYER_HOUSE_RECEIVED_JOURNAL, TwinleafTownPlayerHouse1F_EnjoyYourAdventure
+
+    // mom now gives journal after battling the rival on 201
+    // GoToIfSet FLAG_HAS_POKEDEX, TwinleafTownPlayerHouse1F_MomGiveJournal
+
     GoToIfGe VAR_PLAYER_HOUSE_STATE, 5, TwinleafTownPlayerHouse1F_CallTakeAQuickRest
     GoToIfGe VAR_PLAYER_HOUSE_STATE, 4, TwinleafTownPlayerHouse1F_GoingToSandgemIsAnAdventure
     GoToIfSet FLAG_UNK_0x00F8, TwinleafTownPlayerHouse1F_IsntRivalWaitingForYou
@@ -233,199 +237,22 @@ TwinleafTownPlayerHouse1F_EnjoyYourAdventure:
     GoTo TwinleafTownPlayerHouse1F_CloseMessage
 
 TwinleafTownPlayerHouse1F_MomGiveJournal:
-    Call TwinleafTownPlayerHouse1F_TakeAQuickRest
-    BufferPlayerName 0
-    Message TwinleafTownPlayerHouse1F_Text_YourMomsGotYourBack
+    // Call TwinleafTownPlayerHouse1F_TakeAQuickRest
+    // BufferPlayerName 0
+    // Message TwinleafTownPlayerHouse1F_Text_YourMomsGotYourBack
     SetVar VAR_0x8004, ITEM_JOURNAL
     SetVar VAR_0x8005, 1
     Common_GiveItemQuantity
     GiveJournal
     Message TwinleafTownPlayerHouse1F_Text_ThatsAJournal
-    GetPlayerDir VAR_0x8007
-    GoToIfEq VAR_0x8007, DIR_SOUTH, TwinleafTownPlayerHouse1F_MotherTurnAwaySouth
-    GoTo TwinleafTownPlayerHouse1F_MotherTurnAwayNorth
-    End
-
-TwinleafTownPlayerHouse1F_MotherTurnAwaySouth:
-    ApplyMovement LOCALID_MOM, TwinleafTownPlayerHouse1F_Movement_MotherTurnAwaySouth
-    WaitMovement
-    GoTo TwinleafTownPlayerHouse1F_RivalsMomEnters
-    End
-
-TwinleafTownPlayerHouse1F_MotherTurnAwayNorth:
-    ApplyMovement LOCALID_MOM, TwinleafTownPlayerHouse1F_Movement_MotherTurnAwayNorth
-    WaitMovement
-    GoTo TwinleafTownPlayerHouse1F_RivalsMomEnters
-    End
-
-TwinleafTownPlayerHouse1F_RivalsMomEnters:
-    Message TwinleafTownPlayerHouse1F_Text_IWishICouldGoInstead
-    FacePlayer
-    BufferPlayerName 0
-    Message TwinleafTownPlayerHouse1F_Text_GoEnjoyYourAdventure
+    WaitButton
     CloseMessage
-    PlaySE SEQ_SE_DP_DOOR_OPEN
-    ClearFlag FLAG_HIDE_TWINLEAF_TOWN_PLAYER_HOUSE_1F_RIVAL_MOM
-    AddObject LOCALID_RIVAL_MOM
-    WaitSE SEQ_SE_DP_DOOR_OPEN
-    ApplyMovement LOCALID_MOM, TwinleafTownPlayerHouse1F_Movement_MomNoticeRivalsMom
-    ApplyMovement LOCALID_PLAYER, TwinleafTownPlayerHouse1F_Movement_PlayerFaceRivalsMom
-    WaitMovement
-    ApplyMovement LOCALID_RIVAL_MOM, TwinleafTownPlayerHouse1F_Movement_RivalsMomEnter
-    WaitMovement
-    CallIfEq VAR_0x8007, DIR_NORTH, TwinleafTownPlayerHouse1F_PlayerTurnWestToRivalsMom
-    BufferRivalName 1
-    Message TwinleafTownPlayerHouse1F_Text_AskIsRivalHere
-    ApplyMovement LOCALID_MOM, TwinleafTownPlayerHouse1F_Movement_MomWalkOnSpotSouth
-    WaitMovement
-    Message TwinleafTownPlayerHouse1F_Text_NoHesNot
-    BufferRivalName 1
-    Message TwinleafTownPlayerHouse1F_Text_HeMustHaveLeftAlready
-    BufferPlayerName 0
-    Message TwinleafTownPlayerHouse1F_Text_PlayerWillDeliverThat
-    GoToIfEq VAR_0x8007, DIR_NORTH, TwinleafTownPlayerHouse1F_PlayerAndMomFaceEachOtherNorth
-    GoToIfEq VAR_0x8007, DIR_SOUTH, TwinleafTownPlayerHouse1F_PlayerAndMomFaceEachOtherSouth
-    GoToIfEq VAR_0x8007, DIR_WEST, TwinleafTownPlayerHouse1F_PlayerAndMomFaceEachOtherWest
-    GoToIfEq VAR_0x8007, DIR_EAST, TwinleafTownPlayerHouse1F_PlayerAndMomFaceEachOtherEast
-    End
-
-TwinleafTownPlayerHouse1F_PlayerTurnWestToRivalsMom:
-    ApplyMovement LOCALID_PLAYER, TwinleafTownPlayerHouse1F_Movement_PlayerTurnWestToFaceRivalsMom
-    WaitMovement
-    Return
-
-TwinleafTownPlayerHouse1F_PlayerAndMomFaceEachOtherNorth:
-    ApplyMovement LOCALID_MOM, TwinleafTownPlayerHouse1F_Movement_MomTurnSouthToPlayer
-    ApplyMovement LOCALID_PLAYER, TwinleafTownPlayerHouse1F_Movement_PlayerTurnNorthToMom
-    WaitMovement
-    GoTo TwinleafTownPlayerHouse1F_WontYouPlayer
-    End
-
-TwinleafTownPlayerHouse1F_PlayerAndMomFaceEachOtherSouth:
-    ApplyMovement LOCALID_MOM, TwinleafTownPlayerHouse1F_Movement_MomTurnNorthToPlayer
-    ApplyMovement LOCALID_PLAYER, TwinleafTownPlayerHouse1F_Movement_PlayerTurnSouthToMom
-    WaitMovement
-    GoTo TwinleafTownPlayerHouse1F_WontYouPlayer
-    End
-
-TwinleafTownPlayerHouse1F_PlayerAndMomFaceEachOtherWest:
-    ApplyMovement LOCALID_MOM, TwinleafTownPlayerHouse1F_Movement_MomTurnEastToPlayer
-    ApplyMovement LOCALID_PLAYER, TwinleafTownPlayerHouse1F_Movement_PlayerTurnWestToMom
-    WaitMovement
-    GoTo TwinleafTownPlayerHouse1F_WontYouPlayer
-    End
-
-TwinleafTownPlayerHouse1F_PlayerAndMomFaceEachOtherEast:
-    ApplyMovement LOCALID_MOM, TwinleafTownPlayerHouse1F_Movement_MomTurnWestToPlayer
-    ApplyMovement LOCALID_PLAYER, TwinleafTownPlayerHouse1F_Movement_PlayerTurnEastToMom
-    WaitMovement
-    GoTo TwinleafTownPlayerHouse1F_WontYouPlayer
-    End
-
-TwinleafTownPlayerHouse1F_WontYouPlayer:
-    Message TwinleafTownPlayerHouse1F_Text_WontYouPlayer
-    CloseMessage
-    GoToIfEq VAR_0x8007, DIR_NORTH, TwinleafTownPlayerHouse1F_PlayerAndRivalsMomFaceEachOtherNorth
-    GoToIfEq VAR_0x8007, DIR_SOUTH, TwinleafTownPlayerHouse1F_PlayerAndRivalsMomFaceEachOtherSouth
-    GoToIfEq VAR_0x8007, DIR_WEST, TwinleafTownPlayerHouse1F_PlayerAndRivalsMomFaceEachOtherWest
-    GoToIfEq VAR_0x8007, DIR_EAST, TwinleafTownPlayerHouse1F_PlayerAndRivalsMomFaceEachOtherEast
-    End
-
-TwinleafTownPlayerHouse1F_PlayerAndRivalsMomFaceEachOtherNorth:
-    ApplyMovement LOCALID_RIVAL_MOM, TwinleafTownPlayerHouse1F_Movement_RivalsMomTurnEastToPlayer
-    ApplyMovement LOCALID_PLAYER, TwinleafTownPlayerHouse1F_Movement_PlayerTurnWestToRivalsMom
-    WaitMovement
-    GoTo TwinleafTownPlayerHouse1F_PleaseTakeThisToRivalForMe
-    End
-
-TwinleafTownPlayerHouse1F_PlayerAndRivalsMomFaceEachOtherSouth:
-    ApplyMovement LOCALID_RIVAL_MOM, TwinleafTownPlayerHouse1F_Movement_RivalsMomWalkNorthToPlayer
-    ApplyMovement LOCALID_PLAYER, TwinleafTownPlayerHouse1F_Movement_PlayerTurnWestToRivalsMomWithDelay
-    WaitMovement
-    GoTo TwinleafTownPlayerHouse1F_PleaseTakeThisToRivalForMe
-    End
-
-TwinleafTownPlayerHouse1F_PlayerAndRivalsMomFaceEachOtherWest:
-    ApplyMovement LOCALID_RIVAL_MOM, TwinleafTownPlayerHouse1F_Movement_RivalsMomWalkEastToPlayer
-    ApplyMovement LOCALID_PLAYER, TwinleafTownPlayerHouse1F_Movement_PlayerTurnSouthToRivalsMomWithDelay
-    WaitMovement
-    GoTo TwinleafTownPlayerHouse1F_PleaseTakeThisToRivalForMe
-    End
-
-TwinleafTownPlayerHouse1F_PlayerAndRivalsMomFaceEachOtherEast:
-    ApplyMovement LOCALID_RIVAL_MOM, TwinleafTownPlayerHouse1F_Movement_RivalsMomTurnNorthToPlayer
-    ApplyMovement LOCALID_PLAYER, TwinleafTownPlayerHouse1F_Movement_PlayerTurnSouthToRivalsMom
-    WaitMovement
-    GoTo TwinleafTownPlayerHouse1F_PleaseTakeThisToRivalForMe
-    End
-
-TwinleafTownPlayerHouse1F_PleaseTakeThisToRivalForMe:
-    BufferPlayerName 0
-    BufferRivalName 1
-    GetPlayerGender VAR_RESULT
-    GoToIfEq VAR_RESULT, GENDER_MALE, TwinleafTownPlayerHouse1F_PleaseTakeThisToRivalForMeMale
-    GoTo TwinleafTownPlayerHouse1F_PleaseTakeThisToRivalForMeFemale
-    End
-
-TwinleafTownPlayerHouse1F_PleaseTakeThisToRivalForMeMale:
-    Message TwinleafTownPlayerHouse1F_Text_PleaseTakeThisToRivalForMeMale
-    GoTo TwinleafTownPlayerHouse1F_ReceiveParcel
-    End
-
-TwinleafTownPlayerHouse1F_PleaseTakeThisToRivalForMeFemale:
-    Message TwinleafTownPlayerHouse1F_Text_PleaseTakeThisToRivalForMeFemale
-    GoTo TwinleafTownPlayerHouse1F_ReceiveParcel
-    End
-
-TwinleafTownPlayerHouse1F_ReceiveParcel:
-    SetVar VAR_0x8004, ITEM_PARCEL
-    SetVar VAR_0x8005, 1
-    Common_GiveItemQuantity
-    SetFlag FLAG_RECEIVED_PARCEL
-    Message TwinleafTownPlayerHouse1F_Text_EnjoyYourAdventure
-    BufferRivalName 1
-    Message TwinleafTownPlayerHouse1F_Text_HedProbablyHeadStraightToJubilife
-    CloseMessage
-    GoToIfEq VAR_0x8007, DIR_NORTH, TwinleafTownPlayerHouse1F_RivalsMomLeaveNorth
-    GoToIfEq VAR_0x8007, DIR_SOUTH, TwinleafTownPlayerHouse1F_RivalsMomLeaveSouth
-    GoToIfEq VAR_0x8007, DIR_WEST, TwinleafTownPlayerHouse1F_RivalsMomLeaveWest
-    GoToIfEq VAR_0x8007, DIR_EAST, TwinleafTownPlayerHouse1F_RivalsMomLeaveEast
-    End
-
-TwinleafTownPlayerHouse1F_RivalsMomLeaveNorth:
-    ApplyMovement LOCALID_RIVAL_MOM, TwinleafTownPlayerHouse1F_Movement_RivalsMomLeaveNorth
-    ApplyMovement LOCALID_PLAYER, TwinleafTownPlayerHouse1F_Movement_PlayerWatchRivalsMomLeaveNorth
-    WaitMovement
-    GoTo TwinleafTownPlayerHouse1F_RemoveRivalsMom
-    End
-
-TwinleafTownPlayerHouse1F_RivalsMomLeaveSouth:
-    ApplyMovement LOCALID_RIVAL_MOM, TwinleafTownPlayerHouse1F_Movement_RivalsMomLeaveSouth
-    ApplyMovement LOCALID_PLAYER, TwinleafTownPlayerHouse1F_Movement_PlayerWatchRivalsMomLeaveSouth
-    ApplyMovement LOCALID_MOM, TwinleafTownPlayerHouse1F_Movement_MomWatchRivalsMomLeaveSouth
-    WaitMovement
-    GoTo TwinleafTownPlayerHouse1F_RemoveRivalsMom
-    End
-
-TwinleafTownPlayerHouse1F_RivalsMomLeaveWest:
-    ApplyMovement LOCALID_RIVAL_MOM, TwinleafTownPlayerHouse1F_Movement_RivalsMomLeaveWest
-    ApplyMovement LOCALID_MOM, TwinleafTownPlayerHouse1F_Movement_MomWatchRivalsMomLeaveWest
-    WaitMovement
-    GoTo TwinleafTownPlayerHouse1F_RemoveRivalsMom
-    End
-
-TwinleafTownPlayerHouse1F_RivalsMomLeaveEast:
-    ApplyMovement LOCALID_RIVAL_MOM, TwinleafTownPlayerHouse1F_Movement_RivalsMomLeaveEast
-    ApplyMovement LOCALID_PLAYER, TwinleafTownPlayerHouse1F_Movement_PlayerWatchRivalsMomLeaveEast
-    WaitMovement
-    GoTo TwinleafTownPlayerHouse1F_RemoveRivalsMom
-    End
-
-TwinleafTownPlayerHouse1F_RemoveRivalsMom:
-    PlaySE SEQ_SE_DP_KAIDAN2
-    RemoveObject LOCALID_RIVAL_MOM
-    SetVar VAR_PLAYER_HOUSE_STATE, 6
+    SetVar VAR_PLAYER_HOUSE_STATE, EVENT_STATE_PLAYER_HOUSE_RECEIVED_JOURNAL
     ReleaseAll
+    End
+
+TwinleafTownPlayerHouse1F_Unused3:
+    // removed when the rival's mom would come in to give the parcel
     End
 
 TwinleafTownPlayerHouse1F_TakeAQuickRest:
@@ -470,17 +297,6 @@ TwinleafTownPlayerHouse1F_LateNightTakeAQuickRest:
 TwinleafTownPlayerHouse1F_GoingToSandgemIsAnAdventure:
     Message TwinleafTownPlayerHouse1F_Text_GoingToSandgemIsAnAdventure
     GoTo TwinleafTownPlayerHouse1F_CloseMessage
-
-TwinleafTownPlayerHouse1F_Unused2:
-    BufferRivalName 0
-    BufferPlayerName 1
-    Message TwinleafTownPlayerHouse1F_Text_WowThatsWhatHappenedToYou
-    WaitButton
-    CloseMessage
-    AddItem ITEM_POTION, 1, VAR_RESULT
-    SetVar VAR_PLAYER_HOUSE_STATE, 4
-    ReleaseAll
-    End
 
 TwinleafTownPlayerHouse1F_IsntRivalWaitingForYou:
     BufferRivalName 0

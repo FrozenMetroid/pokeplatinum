@@ -151,15 +151,9 @@
     {
       "id": "SandgemTown_Text_DawnLetYourFamilyKnowYoureHelpingProfRowan",
       "en_US": [
-        "Oh, that’s right!\n",
-        "{STRVAR_1 3, 0, 0}...\r",
-        "Don’t you need to let your family\n",
-        "know that you’re going to be helping\f",
-        "Prof. Rowan with the Pokédex?\r",
-        "You may need to go far away, so I\n",
-        "think you should let someone know.\r",
-        "Oh, but before you go, heal up your\n",
-        "Pokémon at the Pokémon Center.\r",
+        "You should heal up your\n",
+        "Pokémon at the Pokémon Center\f",
+        "before you leave any towns!\r",
         "It will be a lot less scary that way.\n",
         "OK, bye now!\r"
       ]
@@ -199,15 +193,9 @@
     {
       "id": "SandgemTown_Text_LucasLetYourFamilyKnowYoureHelpingProfRowan",
       "en_US": [
-        "Oh, yeah, right!\n",
-        "{STRVAR_1 3, 0, 0}...\r",
-        "You should let your family know\n",
-        "you’re helping Prof. Rowan put\f",
-        "together his Pokédex.\r",
-        "Sometimes, you have to go far away,\n",
-        "so you should let someone know.\r",
-        "Oh, but first, go heal up your\n",
-        "Pokémon at the Pokémon Center.\r",
+        "You should heal up your\n",
+        "Pokémon at the Pokémon Center\f",
+        "before you leave any towns!\r",
         "You’ll be safe then.\n",
         "OK, be seeing you!\r"
       ]
@@ -278,6 +266,29 @@
       "en_US": [
         "Heal Your Pokémon!\n",
         "Pokémon Center"
+      ]
+    },
+    {
+      "id": "SandgemTown_Text_BarryMomGiveParcel",
+      "en_US": [
+        "Hiya, {STRVAR_1 3, 0, 0}!\n",
+        "Are you on your way out\f",
+        "of Sandgem Town?\r",
+        "You are? That’s great!\n",
+        "I was just on my way to Jubilife City\f",
+        "to find {STRVAR_6 1, 1, 0}, but...\r",
+        "Could you please give {STRVAR_6 1, 1, 0}\n",
+        "this when you spot him next since you\f",
+        "are heading that way?\r"
+      ]
+    },
+    {
+      "id": "SandgemTown_Text_BarryMomThanks",
+      "en_US": [
+        "Thank you! I’m sure he’ll benefit\n",
+        "from it!\r",
+        "Good luck on your journey,\n",
+        "{STRVAR_1 3, 0, 0}!\r"
       ]
     }
   ]

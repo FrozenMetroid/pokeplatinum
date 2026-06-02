@@ -16,8 +16,8 @@
 
 TwinleafTown_OnTransition:
     CallIfEq VAR_UNK_0x40F4, 1, _004F
-    CallIfEq VAR_PLAYER_HOUSE_STATE, 4, TwinleafTown_SetPlayerHouseState5
-    CallIfEq VAR_PLAYER_HOUSE_STATE, 6, TwinleafTown_SetPlayerHouseState7
+    CallIfEq VAR_PLAYER_HOUSE_STATE, EVENT_STATE_PLAYER_HOUSE_AFTER_RETURN_AFTER_RIVAL_BATTLE, TwinleafTown_SetPlayerHouseState5
+    CallIfEq VAR_PLAYER_HOUSE_STATE, EVENT_STATE_PLAYER_HOUSE_RECEIVED_JOURNAL, TwinleafTown_SetPlayerHouseState7
     End
 
 _004F:
@@ -25,11 +25,11 @@ _004F:
     Return
 
 TwinleafTown_SetPlayerHouseState7:
-    SetVar VAR_PLAYER_HOUSE_STATE, 7
+    SetVar VAR_PLAYER_HOUSE_STATE, EVENT_STATE_PLAYER_HOUSE_FINAL
     Return
 
 TwinleafTown_SetPlayerHouseState5:
-    SetVar VAR_PLAYER_HOUSE_STATE, 5
+    SetVar VAR_PLAYER_HOUSE_STATE, EVENT_STATE_PLAYER_HOUSE_UNUSED
     Return
 
 TwinleafTown_Guitarist:

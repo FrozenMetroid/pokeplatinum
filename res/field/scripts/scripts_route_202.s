@@ -101,6 +101,8 @@ Route202_DawnIHaventShownYouHowToCatchAPokemon:
     BufferCounterpartName 0
     BufferPlayerName 1
     Message Route202_Text_DawnIHaventShownYouHowToCatchAPokemon
+    ShowYesNoMenu VAR_RESULT
+    GoToIfEq VAR_RESULT, MENU_NO, Route202_SkipCatchingTutorial
     GoTo Route202_DoCatchingTutorial
 
 Route202_LucasDoYouKnowHowToCatchAPokemon:
@@ -108,7 +110,27 @@ Route202_LucasDoYouKnowHowToCatchAPokemon:
     BufferCounterpartName 0
     BufferPlayerName 1
     Message Route202_Text_LucasDoYouKnowHowToCatchAPokemon
+    ShowYesNoMenu VAR_RESULT
+    GoToIfEq VAR_RESULT, MENU_NO, Route202_SkipCatchingTutorial
     GoTo Route202_DoCatchingTutorial
+
+Route202_SkipCatchingTutorial:
+    CloseMessage
+    ApplyMovement LOCALID_COUNTERPART, Route202_Movement_CounterpartExclamation
+    WaitMovement
+    BufferPlayerName 0
+    GetPlayerGender VAR_RESULT
+    GoToIfEq VAR_RESULT, GENDER_MALE, Route202_DawnSkipCatchingTutorial
+    GoToIfEq VAR_RESULT, GENDER_FEMALE, Route202_LucasSkipCatchingTutorial
+    End
+
+Route202_DawnSkipCatchingTutorial:
+    Message Route202_Text_DawnSkipCatchingTutorial
+    GoTo Route202_GivePokeballs
+
+Route202_LucasSkipCatchingTutorial:
+    Message Route202_Text_LucasSkipCatchingTutorial
+    GoTo Route202_GivePokeballs
 
 Route202_DoCatchingTutorial:
     CloseMessage
@@ -157,8 +179,15 @@ Route202_CounterpartLeave:
     WaitMovement
     RemoveObject LOCALID_COUNTERPART
     SetVar VAR_ROUTE_202_STATE, 1
+    GetCurrentBGM VAR_RESULT
+    CallIfEq VAR_RESULT, SEQ_THE_BOY, Route202_ResetBGM
+    CallIfEq VAR_RESULT, SEQ_THE_GIRL, Route202_ResetBGM
     ReleaseAll
     End
+
+Route202_ResetBGM:
+    Common_FadeToDefaultMusic
+    Return
 
 Route202_TellYourFamily:
     GetPlayerGender VAR_RESULT
@@ -358,6 +387,11 @@ Route202_Movement_PlayerStepBackEast:
     .balign 4, 0
 Route202_Movement_PlayerWalkWestIntoTallGrass:
     WalkNormalWest 2
+    EndMovement
+
+.balign 4, 0
+Route202_Movement_CounterpartExclamation:
+    EmoteExclamationMark
     EndMovement
 
 Route202_Counterpart:

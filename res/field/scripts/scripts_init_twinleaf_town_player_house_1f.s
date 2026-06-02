@@ -8,7 +8,7 @@
 InitScriptFrameTable:
     InitScriptGoToIfEqual VAR_PLAYER_HOUSE_STATE, 0, 2
     InitScriptGoToIfEqual VAR_PLAYER_HOUSE_POSTGAME_STATE, 1, 11
-    InitScriptGoToIfEqual VAR_PLAYER_HOUSE_STATE, 3, 3
+    InitScriptGoToIfEqual VAR_PLAYER_HOUSE_STATE, EVENT_STATE_PLAYER_HOUSE_AFTER_201_RIVAL_BATTLE, 3
     InitScriptFrameTableEnd
 
     InitScriptEnd

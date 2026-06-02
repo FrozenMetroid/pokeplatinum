@@ -34,6 +34,7 @@
 #include "generated/time_of_day.h"
 #include "generated/trainer_score_events.h"
 #include "generated/trainers.h"
+#include "generated/vars_states.h"
 #include "generated/villa_furniture_type.h"
 #include "constants/accessories.h"
 #include "constants/animation_tags.h"

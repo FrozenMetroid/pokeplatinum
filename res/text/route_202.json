@@ -221,6 +221,28 @@
         "same kind of Pokémon, you should\f",
         "consider using Repels.\r"
       ]
+    },
+    {
+      "id": "Route202_Text_DawnSkipCatchingTutorial",
+      "en_US": [
+        "Oh? Wow, you’re such a good Trainer\n",
+        "if you already know how to catch\f",
+        "Pokémon!\r",
+        "OK, {STRVAR_1 3, 0, 0}, to get you\n",
+        "started, I’ll give you ten\f",
+        "Poké Balls!\r"
+      ]
+    },
+    {
+      "id": "Route202_Text_LucasSkipCatchingTutorial",
+      "en_US": [
+        "Wow... You already know how to\n",
+        "catch Pokémon?\r",
+        "Where’d you learn that?!\n",
+        "Regardless, that’s pretty cool!\r",
+        "Here, {STRVAR_1 3, 0, 0}, I’ll give you\n",
+        "ten Poké Balls to get you started.\r"
+      ]
     }
   ]
 }
