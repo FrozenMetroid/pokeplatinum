@@ -222,21 +222,21 @@ GalacticHQControlRoom_FlickerLakeGuardians:
 
 GalacticHQControlRoom_SaturnPlayerFaceEachOtherNorth:
     ApplyMovement LOCALID_SATURN, GalacticHQControlRoom_Movement_SaturnFacePlayerWest
-    ApplyMovement LOCALID_PLAYER, GalacticHQControlRoom_Movement_PlayerWalkOnSpotEast
+    ApplyMovement LOCALID_PLAYER, GalacticHQControlRoom_Movement_WalkOnSpotEast
     WaitMovement
     GoTo GalacticHQControlRoom_RemoveSaturn
     End
 
 GalacticHQControlRoom_SaturnPlayerFaceEachOtherWest:
     ApplyMovement LOCALID_SATURN, GalacticHQControlRoom_Movement_SaturnFacePlayerNorth
-    ApplyMovement LOCALID_PLAYER, GalacticHQControlRoom_Movement_PlayerWalkOnSpotSouth
+    ApplyMovement LOCALID_PLAYER, GalacticHQControlRoom_Movement_WalkOnSpotSouth
     WaitMovement
     GoTo GalacticHQControlRoom_RemoveSaturn
     End
 
 GalacticHQControlRoom_SaturnPlayerFaceEachOtherEast:
     ApplyMovement LOCALID_SATURN, GalacticHQControlRoom_Movement_SaturnFacePlayerWest
-    ApplyMovement LOCALID_PLAYER, GalacticHQControlRoom_Movement_PlayerWalkOnSpotEast
+    ApplyMovement LOCALID_PLAYER, GalacticHQControlRoom_Movement_WalkOnSpotEast
     WaitMovement
     GoTo GalacticHQControlRoom_RemoveSaturn
     End
@@ -252,6 +252,18 @@ GalacticHQControlRoom_RemoveSaturn:
     SetFlag FLAG_HIDE_MT_CORONET_2F_CAVE_PAINTING
     ClearFlag FLAG_HIDE_MT_CORONET_2F_CAVE_PAINTING_SHARDS
     SetVar VAR_MT_CORONET_2F_STATE, 1
+    ApplyMovement LOCALID_CHARON, GalacticHQControlRoom_Movement_WalkOnSpotEast
+    ApplyMovement LOCALID_PLAYER, GalacticHQControlRoom_Movement_WalkOnSpotWest
+    WaitMovement
+    PlaySE SEQ_SE_CONFIRM
+    Message GalacticHQControlRoom_Text_CharonGiveSecretKey
+    SetVar VAR_0x8004, ITEM_SECRET_KEY
+    SetVar VAR_0x8005, 1
+    Common_GiveItemQuantity
+    Message GalacticHQControlRoom_Text_CharonThatKeyUnlocksAHiddenLab
+    WaitButton
+    CloseMessage
+    SetVar VAR_DISTRIBUTION_EVENT_ROTOM, 0x1103 // the wall in the building also checks this value, not just that you have the key
     ReleaseAll
     End
 
@@ -295,12 +307,12 @@ GalacticHQControlRoom_Movement_UxieMoveSouth:
     EndMovement
 
     .balign 4, 0
-GalacticHQControlRoom_Movement_PlayerWalkOnSpotEast:
+GalacticHQControlRoom_Movement_WalkOnSpotEast:
     WalkOnSpotNormalEast
     EndMovement
 
     .balign 4, 0
-GalacticHQControlRoom_Movement_PlayerWalkOnSpotSouth:
+GalacticHQControlRoom_Movement_WalkOnSpotSouth:
     WalkOnSpotNormalSouth
     EndMovement
 
@@ -345,7 +357,7 @@ GalacticHQControlRoom_Charon:
     WaitMovement
     Message GalacticHQControlRoom_Text_WhereWouldTheyGo
     CloseMessage
-    ApplyMovement LOCALID_SATURN, GalacticHQControlRoom_Movement_SaturnWalkOnSpotWest
+    ApplyMovement LOCALID_SATURN, GalacticHQControlRoom_Movement_WalkOnSpotWest
     WaitMovement
     WaitTime 20, VAR_RESULT
     Message GalacticHQControlRoom_Text_WhatAreYouSaying
@@ -369,7 +381,7 @@ GalacticHQControlRoom_PerhapsAnotherOption:
     End
 
     .balign 4, 0
-GalacticHQControlRoom_Movement_SaturnWalkOnSpotWest:
+GalacticHQControlRoom_Movement_WalkOnSpotWest:
     WalkOnSpotNormalWest
     EndMovement
 

@@ -105,7 +105,7 @@ TeamGalacticEternaBuilding1F_WallBlockingRotomsRoom:
     PlaySE SEQ_SE_DP_W062
     FadeScreenOut FADE_SCREEN_SPEED_FAST, COLOR_WHITE
     WaitFadeScreen
-    RemoveObject LOCALID_WALL_BLOCKING_ROTOMS_ROOM
+    RemoveObject LOCALID_WALL_BLOCKING_ROTOMS_ROOM // also sets the flag for it
     WaitSE SEQ_SE_DP_W062
     FadeScreenIn FADE_SCREEN_SPEED_FAST, COLOR_WHITE
     WaitFadeScreen

@@ -170,6 +170,34 @@
         "It’s Team Galactic’s sinister machine.\n",
         "Azelf had been sealed inside it."
       ]
+    },
+    {
+      "id": "GalacticHQControlRoom_Text_CharonGiveSecretKey",
+      "en_US": [
+        "Charon: I struggle to know why a child\n",
+        "would meddle with the affairs of\f",
+        "Team Galactic!",
+        "Even my genius cannot understand what\n",
+        "drives your altruism, if it can\f",
+        "even be called that!\r",
+        "It is this part of humanity that\n",
+        "Cyrus seeks to purge from the world --\f",
+        "your altruism can only be drive by\f",
+        "some twisted selfishness!\r",
+        "You have potential then, yes...\n",
+        "Take this, child. Maybe my research\f",
+        "won’t be too complex for you.\r"
+      ]
+    },
+    {
+      "id": "GalacticHQControlRoom_Text_CharonThatKeyUnlocksAHiddenLab",
+      "en_US": [
+        "That key unlocks my hidden lab...\n",
+        "My research is lost on the imbeciles\f",
+        "under Cyrus’s command, but I suspect\f",
+        "there are more surprises\f",
+        "up your sleeves. Humph."
+      ]
     }
   ]
 }
