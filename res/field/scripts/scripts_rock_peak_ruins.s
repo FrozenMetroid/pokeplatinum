@@ -28,7 +28,7 @@ RockPeakRuins_Statue:
     GoToIfEq VAR_ROCK_PEAK_RUINS_STATE, RUINS_STATE_CAUGHT_REGI, RockPeakRuins_CaughtRegirockStatueStoppedEmanatingPower
     GoToIfEq VAR_ROCK_PEAK_RUINS_STATE, RUINS_STATE_DID_NOT_CATCH_REGI, RockPeakRuins_DidNotCatchRegirockStatueStoppedEmanatingPower
     GoToIfUnset FLAG_GAME_COMPLETED, RockPeakRuins_ItsAStatueOfAPokemonItSeemsToExudePower
-    CheckPartyHasFatefulEncounterRegigigas VAR_RESULT
+    GetNationalDexEnabled VAR_RESULT
     GoToIfEq VAR_RESULT, 0, RockPeakRuins_ItsAStatueOfAPokemonFromSomewhereSomethingSpokeOut
     GoToIfEq VAR_ROCK_PEAK_RUINS_STATE, RUINS_STATE_ACTIVATED_STATUE, RockPeakRuins_EncounterRegirock
     GoToIfLt VAR_ROCK_PEAK_RUINS_STATE, RUINS_STATE_ACTIVATED_ALL_DOTS, RockPeakRuins_ItsAStatueOfAPokemonFromSomewhereSomethingSpokeOut
@@ -44,7 +44,7 @@ RockPeakRuins_EncounterRegirock:
     Message RockPeakRuins_Text_RegirockCry
     WaitCry
     CloseMessage
-    StartLegendaryBattle SPECIES_REGIROCK, 30
+    StartLegendaryBattle SPECIES_REGIROCK, 60
     CheckWonBattle VAR_RESULT
     GoToIfEq VAR_RESULT, FALSE, RockPeakRuins_BlackOut
     CheckDidNotCapture VAR_RESULT

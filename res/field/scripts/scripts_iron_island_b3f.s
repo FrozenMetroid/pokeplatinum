@@ -8,7 +8,10 @@
     ScriptEntryEnd
 
 IronIslandB3F_OnLoad:
-    CheckPartyHasFatefulEncounterRegigigas VAR_MAP_LOCAL_4
+    // NEW:
+    // can encounter Registeel if you have the National Pokédex
+    // rather than needing a special Regigigas
+    GetNationalDexEnabled VAR_MAP_LOCAL_4
     GoToIfEq VAR_MAP_LOCAL_4, FALSE, IronIslandB3F_RemoveWarpIronRuinsWithRegisteel
     GoToIfEq VAR_MAP_LOCAL_4, TRUE, IronIslandB3F_RemoveWarpIronRuinsWithoutRegisteel
     End
@@ -16,7 +19,7 @@ IronIslandB3F_OnLoad:
 IronIslandB3F_OnTransition:
     InitPersistedMapFeaturesForPlatformLift
     CallIfNe VAR_IRON_RUINS_STATE, RUINS_STATE_CAUGHT_REGI, IronIslandB3F_ResetIronRuinsState
-    CheckPartyHasFatefulEncounterRegigigas VAR_MAP_LOCAL_4
+    GetNationalDexEnabled VAR_MAP_LOCAL_4
     GoToIfEq VAR_MAP_LOCAL_4, FALSE, IronIslandB3F_RemoveWarpIronRuinsWithRegisteel
     GoToIfEq VAR_MAP_LOCAL_4, TRUE, IronIslandB3F_RemoveWarpIronRuinsWithoutRegisteel
     End

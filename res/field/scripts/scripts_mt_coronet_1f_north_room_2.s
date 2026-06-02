@@ -8,7 +8,10 @@
 
 MtCoronet1FNorthRoom2_OnTransition:
     CallIfNe VAR_ICEBERG_RUINS_STATE, RUINS_STATE_CAUGHT_REGI, MtCoronet1FNorthRoom2_ResetIcebergRuinsState
-    CheckPartyHasFatefulEncounterRegigigas VAR_MAP_LOCAL_1
+    // NEW:
+    // can encounter Regice if you have the National Pokédex
+    // rather than needing a special Regigigas
+    GetNationalDexEnabled VAR_MAP_LOCAL_1
     GoToIfEq VAR_MAP_LOCAL_1, FALSE, MtCoronet1FNorthRoom2_RemoveWarpIcebergRuinsWithRegice
     GoToIfEq VAR_MAP_LOCAL_1, TRUE, MtCoronet1FNorthRoom2_RemoveWarpIcebergRuinsWithoutRegice
     End
@@ -18,7 +21,7 @@ MtCoronet1FNorthRoom2_ResetIcebergRuinsState:
     Return
 
 MtCoronet1FNorthRoom2_OnLoad:
-    CheckPartyHasFatefulEncounterRegigigas VAR_MAP_LOCAL_1
+    GetNationalDexEnabled VAR_MAP_LOCAL_1
     GoToIfEq VAR_MAP_LOCAL_1, FALSE, MtCoronet1FNorthRoom2_RemoveWarpIcebergRuinsWithRegice
     GoToIfEq VAR_MAP_LOCAL_1, TRUE, MtCoronet1FNorthRoom2_RemoveWarpIcebergRuinsWithoutRegice
     End

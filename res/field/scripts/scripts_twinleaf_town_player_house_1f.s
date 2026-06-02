@@ -14,6 +14,7 @@
     ScriptEntry TwinleafTownPlayerHouse1F_KitchenSink
     ScriptEntry TwinleafTownPlayerHouse1F_KitchenCounter
     ScriptEntry TwinleafTownPlayerHouse1F_OnFrame_Postgame
+    ScriptEntry TwinleafTownPlayerHouse1F_OnFrame_PostChampionRematch
     ScriptEntryEnd
 
 TwinleafTownPlayerHouse1F_OnTransition:
@@ -583,4 +584,23 @@ TwinleafTownPlayerHouse1F_KitchenCounter:
     EventMessage TwinleafTownPlayerHouse1F_Text_ThisIsWhereMomDoesHerDeliciousCooking
     End
 
+TwinleafTownPlayerHouse1F_OnFrame_PostChampionRematch:
+    LockAll
+    ApplyMovement LOCALID_PLAYER, TwinleafTownPlayerHouse1F_Movement_PlayerFaceMom
+    ApplyMovement LOCALID_MOM, TwinleafTownPlayerHouse1F_Movement_MomWalkFromCouchToPlayer
+    WaitMovement
+    BufferPlayerName 0
+    Message TwinleafTownPlayerHouse1F_Text_GiveOaksLetter
+    SetVar VAR_0x8004, ITEM_OAKS_LETTER
+    SetVar VAR_0x8005, 1
+    Common_GiveItemQuantity
+    Message TwinleafTownPlayerHouse1F_Text_HeWasInAHurry
+    CloseMessage
+    WaitTime 5, VAR_RESULT
+    ApplyMovement LOCALID_MOM, TwinleafTownPlayerHouse1F_Movement_MomWalkFromPlayerToCouch
+    WaitMovement
+    SetVar VAR_SHAYMIN_EVENT_STATE, EVENT_STATE_SHAYMIN_OAK_LETTER_RECEIVED
+    SetVar VAR_DISTRIBUTION_EVENT_SHAYMIN, 0x1112
+    ReleaseAll
+    End
     .balign 4, 0

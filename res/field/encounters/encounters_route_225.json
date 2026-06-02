@@ -7,7 +7,7 @@
         },
         {
             "level": 49,
-            "species": "SPECIES_GRAVELER"
+            "species": "SPECIES_DONPHAN"
         },
         {
             "level": 48,
@@ -26,8 +26,8 @@
             "species": "SPECIES_RATICATE"
         },
         {
-            "level": 50,
-            "species": "SPECIES_MACHOKE"
+            "level": 48,
+            "species": "SPECIES_GLIGAR"
         },
         {
             "level": 49,
@@ -35,19 +35,19 @@
         },
         {
             "level": 47,
-            "species": "SPECIES_SPEAROW"
+            "species": "SPECIES_RHYHORN"
         },
         {
             "level": 47,
-            "species": "SPECIES_RATTATA"
+            "species": "SPECIES_PHANPY"
         },
         {
             "level": 47,
-            "species": "SPECIES_SPEAROW"
+            "species": "SPECIES_RHYHORN"
         },
         {
             "level": 47,
-            "species": "SPECIES_RATTATA"
+            "species": "SPECIES_PHANPY"
         }
     ],
     "swarms": [

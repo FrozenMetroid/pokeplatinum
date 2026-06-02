@@ -73,6 +73,11 @@ PokemonLeagueChampionRoom_CreateJournalEventDefeatedCynthia:
 
 PokemonLeagueChampionRoom_CreateJournalEventDefeatedRematchCynthia:
     CreateJournalEvent LOCATION_EVENT_BEAT_CHAMPION, TRAINER_CHAMPION_CYNTHIA_REMATCH, 0, 0, 0
+    CallIfEq VAR_SHAYMIN_EVENT_STATE, EVENT_STATE_SHAYMIN_NOT_STARTED, PokemonLeagueChampionRoom_TriggerReceiveOakLetter
+    Return
+
+PokemonLeagueChampionRoom_TriggerReceiveOakLetter:
+    SetVar VAR_SHAYMIN_EVENT_STATE, EVENT_STATE_SHAYMIN_TRIGGER_RECEIVE_OAK_LETTER
     Return
 
 PokemonLeagueChampionRoom_BlackOut:

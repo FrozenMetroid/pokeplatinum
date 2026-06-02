@@ -28,7 +28,7 @@ IronRuins_Statue:
     GoToIfEq VAR_IRON_RUINS_STATE, RUINS_STATE_CAUGHT_REGI, IronRuins_CaughtRegisteelStatueStoppedEmanatingPower
     GoToIfEq VAR_IRON_RUINS_STATE, RUINS_STATE_DID_NOT_CATCH_REGI, IronRuins_DidNotCatchRegisteelStatueStoppedEmanatingPower
     GoToIfUnset FLAG_GAME_COMPLETED, IronRuins_ItsAStatueOfAPokemonBecomeStrongerYouMust
-    CheckPartyHasFatefulEncounterRegigigas VAR_RESULT
+    GetNationalDexEnabled VAR_RESULT
     GoToIfEq VAR_RESULT, 0, IronRuins_ItsAStatueOfAPokemon
     GoToIfEq VAR_IRON_RUINS_STATE, RUINS_STATE_ACTIVATED_STATUE, IronRuins_EncounterRegisteel
     GoToIfLt VAR_IRON_RUINS_STATE, RUINS_STATE_ACTIVATED_ALL_DOTS, IronRuins_ItsAStatueOfAPokemon

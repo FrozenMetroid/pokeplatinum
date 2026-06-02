@@ -301,12 +301,23 @@ Wild and Wonder Trade Pokémon will have randomly generated movesets based on wh
 
 - The Pokédex accurately shows where Pokémon can be found
 - Murkrow and Misdreavus added back to Eterna Forest at night
-- Encounter Spiritomb at the Hallowed Tower immediately with an Odd Keystone
 - Diamond and Pearl-exclusive Sinnoh encounters have been returned, such as Glameow and Stunky
 - You can complete the Sinnoh regional Pokédex, but not the National Pokédex, through singleplayer
 - Locations for the additional Pokémon in the regional Pokédex listed above
 - Honey Tree encounters' levels are randomized between 10 and 55 based on the number of Badges you currently have (see ``HoneyTree_GetLevel`` for the formula) and have a chance of evolving if the generated level meets their evolution level threshold
 - Other locations are searchable in this repository for brevity...
+- Legendaries/Mythicals & Special Encounters:
+    - Regi Trio (Regirock, Regice, Registeel)
+        - Once you have the National Pokédex, you can encounter these Titans in their caves from vanilla Platinum
+        - They are now level 60 rather than level 30
+    - Shaymin
+        - Beat the Elite Four and the Champion's rematch teams for the first time to receive Oak's Letter from the Mom after walking downstairs in the player's house
+    - Rotom
+        - Rotom can still be encounted at night in the Old Chateau after gaining HM01 Cut and the Forest Badge
+        - Rotom's forms will be unlocked with the Secret Key that you obtain from Charon during the events of the story in Galactic HQ
+    - Spiritomb
+        - Encounter Spiritomb at the Hallowed Tower on Route 209 immediately with an Odd Keystone
+
 
 # Extra Trainers
 

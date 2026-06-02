@@ -14,18 +14,18 @@
     ScriptEntryEnd
 
 Route224_OnTransition:
-    CallIfEq VAR_SHAYMIN_EVENT_STATE, 1, Route224_IncreaseVars
-    GoToIfSet FLAG_WROTE_ON_ROUTE_224_TABLET, Route224_DontHideProfOak
+    CallIfEq VAR_SHAYMIN_EVENT_STATE, EVENT_STATE_SHAYMIN_OAK_LETTER_RECEIVED, Route224_IncreaseVars
+    GoToIfSet FLAG_WROTE_ON_ROUTE_224_TABLET, Route224_DontShowProfOak
     CheckGameCompleted VAR_MAP_LOCAL_0
-    GoToIfEq VAR_MAP_LOCAL_0, FALSE, Route224_DontHideProfOak
+    GoToIfEq VAR_MAP_LOCAL_0, FALSE, Route224_DontShowProfOak
     GetNationalDexEnabled VAR_MAP_LOCAL_0
-    GoToIfEq VAR_MAP_LOCAL_0, FALSE, Route224_DontHideProfOak
+    GoToIfEq VAR_MAP_LOCAL_0, FALSE, Route224_DontShowProfOak
     CheckItem ITEM_OAKS_LETTER, 1, VAR_MAP_LOCAL_0
-    GoToIfEq VAR_MAP_LOCAL_0, FALSE, Route224_DontHideProfOak
+    GoToIfEq VAR_MAP_LOCAL_0, FALSE, Route224_DontShowProfOak
     CheckDistributionEvent DISTRIBUTION_EVENT_SHAYMIN, VAR_MAP_LOCAL_0
-    GoToIfEq VAR_MAP_LOCAL_0, FALSE, Route224_DontHideProfOak
+    GoToIfEq VAR_MAP_LOCAL_0, FALSE, Route224_DontShowProfOak
     ClearFlag FLAG_HIDE_ROUTE_224_PROF_OAK
-Route224_DontHideProfOak:
+Route224_DontShowProfOak:
     End
 
 Route224_OnResume:
@@ -43,7 +43,7 @@ Route224_Unused:
     Return
 
 Route224_IncreaseVars:
-    SetVar VAR_SHAYMIN_EVENT_STATE, 2
+    SetVar VAR_SHAYMIN_EVENT_STATE, EVENT_STATE_SHAYMIN_STARTED_EVENT
     SetVar VAR_ROUTE_224_STATE, 1
     Return
 
@@ -107,8 +107,8 @@ Route224_ExpressThanks:
     FadeScreenIn FADE_SCREEN_SPEED_SLOW, COLOR_WHITE
     WaitFadeScreen
     Call Route224_ShayminSceneMovement
-    CallIfNe VAR_SHAYMIN_EVENT_STATE, 2, Route224_WhatWasThatPokemon2Return
-    CallIfEq VAR_SHAYMIN_EVENT_STATE, 2, Route224_ThankYou
+    CallIfNe VAR_SHAYMIN_EVENT_STATE, EVENT_STATE_SHAYMIN_STARTED_EVENT, Route224_WhatWasThatPokemon2Return
+    CallIfEq VAR_SHAYMIN_EVENT_STATE, EVENT_STATE_SHAYMIN_STARTED_EVENT, Route224_ThankYou
     WaitButton
     CloseMessage
     SetPlayerVolume SOUND_VOLUME_MAX
@@ -186,7 +186,7 @@ Route224_ShayminSceneMovement:
     WaitMovement
     PlayCry SPECIES_SHAYMIN
     WaitCry
-    CallIfEq VAR_SHAYMIN_EVENT_STATE, 2, Route224_MarleyNoticeShaymin
+    CallIfEq VAR_SHAYMIN_EVENT_STATE, EVENT_STATE_SHAYMIN_STARTED_EVENT, Route224_MarleyNoticeShaymin
     ApplyMovement LOCALID_PROF_OAK, Route224_Movement_ProfOakNoticeShaymin
     ApplyMovement LOCALID_SHAYMIN, Route224_Movement_ShayminNoticePeople
     ApplyMovement LOCALID_PLAYER, Route224_Movement_PlayerNoticeShaymin
@@ -393,7 +393,7 @@ Route224_MarleyWalkToTabletZ498:
     End
 
 Route224_ThatStoneTablet:
-    SetVar VAR_SHAYMIN_EVENT_STATE, 2
+    SetVar VAR_SHAYMIN_EVENT_STATE, EVENT_STATE_SHAYMIN_STARTED_EVENT
     SetVar VAR_ROUTE_224_STATE, 2
     Message Route224_Text_ThatStoneTablet
     WaitButton

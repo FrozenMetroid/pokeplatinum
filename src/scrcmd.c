@@ -7163,23 +7163,28 @@ static BOOL ScrCmd_SetPartyGiratinaForm(ScriptContext *ctx)
 
 static BOOL ScrCmd_CheckPartyHasFatefulEncounterRegigigas(ScriptContext *ctx)
 {
-    u16 *destVar = ScriptContext_GetVarPointer(ctx);
+    // UNUSED
+    // You can battle the Regi trio once you have the national pokedex
 
-    *destVar = FALSE;
-    int partyCount = Party_GetCurrentCount(SaveData_GetParty(ctx->fieldSystem->saveData));
+    
 
-    for (int i = 0; i < partyCount; i++) {
-        Pokemon *mon = Party_GetPokemonBySlotIndex(SaveData_GetParty(ctx->fieldSystem->saveData), i);
+    // u16 *destVar = ScriptContext_GetVarPointer(ctx);
 
-        if (!Pokemon_GetValue(mon, MON_DATA_IS_EGG, NULL)) {
-            if (Pokemon_GetValue(mon, MON_DATA_SPECIES, NULL) == SPECIES_REGIGIGAS) {
-                if (Pokemon_GetValue(mon, MON_DATA_FATEFUL_ENCOUNTER, NULL) == TRUE) {
-                    *destVar = TRUE;
-                    return FALSE;
-                }
-            }
-        }
-    }
+    // *destVar = FALSE;
+    // int partyCount = Party_GetCurrentCount(SaveData_GetParty(ctx->fieldSystem->saveData));
+
+    // for (int i = 0; i < partyCount; i++) {
+    //     Pokemon *mon = Party_GetPokemonBySlotIndex(SaveData_GetParty(ctx->fieldSystem->saveData), i);
+
+    //     if (!Pokemon_GetValue(mon, MON_DATA_IS_EGG, NULL)) {
+    //         if (Pokemon_GetValue(mon, MON_DATA_SPECIES, NULL) == SPECIES_REGIGIGAS) {
+    //             if (Pokemon_GetValue(mon, MON_DATA_FATEFUL_ENCOUNTER, NULL) == TRUE) {
+    //                 *destVar = TRUE;
+    //                 return FALSE;
+    //             }
+    //         }
+    //     }
+    // }
 
     return FALSE;
 }

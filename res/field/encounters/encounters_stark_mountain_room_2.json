@@ -31,7 +31,7 @@
         },
         {
             "level": 54,
-            "species": "SPECIES_GRAVELER"
+            "species": "SPECIES_MAGMAR"
         },
         {
             "level": 53,
@@ -39,7 +39,7 @@
         },
         {
             "level": 53,
-            "species": "SPECIES_KOFFING"
+            "species": "SPECIES_TORKOAL"
         },
         {
             "level": 53,
@@ -47,7 +47,7 @@
         },
         {
             "level": 53,
-            "species": "SPECIES_KOFFING"
+            "species": "SPECIES_TORKOAL"
         }
     ],
     "swarms": [

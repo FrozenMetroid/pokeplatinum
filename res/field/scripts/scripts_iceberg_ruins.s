@@ -28,7 +28,7 @@ IcebergRuins_Statue:
     GoToIfEq VAR_ICEBERG_RUINS_STATE, RUINS_STATE_CAUGHT_REGI, IcebergRuins_CaughtRegiceStatueStoppedEmanatingPower
     GoToIfEq VAR_ICEBERG_RUINS_STATE, RUINS_STATE_DID_NOT_CATCH_REGI, IcebergRuins_DidNotCatchRegiceStatueStoppedEmanatingPower
     GoToIfUnset FLAG_GAME_COMPLETED, IcebergRuins_ItsAStatueOfAPokemonBecomeStrongerYouMust
-    CheckPartyHasFatefulEncounterRegigigas VAR_RESULT
+    GetNationalDexEnabled VAR_RESULT
     GoToIfEq VAR_RESULT, 0, IcebergRuins_ItsAStatueOfAPokemon
     GoToIfEq VAR_ICEBERG_RUINS_STATE, RUINS_STATE_ACTIVATED_STATUE, IcebergRuins_EncounterRegice
     GoToIfLt VAR_ICEBERG_RUINS_STATE, RUINS_STATE_ACTIVATED_ALL_DOTS, IcebergRuins_ItsAStatueOfAPokemon
@@ -44,7 +44,7 @@ IcebergRuins_EncounterRegice:
     Message IcebergRuins_Text_RegiceCry
     WaitCry
     CloseMessage
-    StartLegendaryBattle SPECIES_REGICE, 30
+    StartLegendaryBattle SPECIES_REGICE, 60
     CheckWonBattle VAR_RESULT
     GoToIfEq VAR_RESULT, FALSE, IcebergRuins_BlackOut
     CheckDidNotCapture VAR_RESULT

@@ -14,12 +14,12 @@
             "species": "SPECIES_HIPPOWDON"
         },
         {
-            "level": 50,
-            "species": "SPECIES_RHYDON"
+            "level": 48,
+            "species": "SPECIES_SKORUPI"
         },
         {
-            "level": 52,
-            "species": "SPECIES_RHYDON"
+            "level": 51,
+            "species": "SPECIES_CLAYDOL"
         },
         {
             "level": 51,
@@ -43,11 +43,11 @@
         },
         {
             "level": 49,
-            "species": "SPECIES_VIBRAVA"
+            "species": "SPECIES_DRAPION"
         },
         {
             "level": 50,
-            "species": "SPECIES_VIBRAVA"
+            "species": "SPECIES_DRAPION"
         }
     ],
     "swarms": [

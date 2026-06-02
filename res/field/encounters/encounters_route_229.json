@@ -27,7 +27,7 @@
         },
         {
             "level": 47,
-            "species": "SPECIES_PIDGEY"
+            "species": "SPECIES_NINJASK"
         },
         {
             "level": 50,
@@ -55,8 +55,8 @@
         "SPECIES_PINSIR"
     ],
     "day": [
-        "SPECIES_PIDGEY",
-        "SPECIES_PIDGEY"
+        "SPECIES_PIDGEOTTO",
+        "SPECIES_PIDGEOTTO"
     ],
     "night": [
         "SPECIES_ARIADOS",

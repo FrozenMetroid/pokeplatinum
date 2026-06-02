@@ -7,6 +7,7 @@
 #include "constants/species.h"
 #include "generated/items.h"
 #include "generated/mystery_gift_delivery_stages.h"
+#include "generated/vars_states.h"
 
 #include "field/field_system.h"
 #include "underground/defs.h"
@@ -582,8 +583,8 @@ static void InitShayminEvent(FieldSystem *fieldSystem, GiftData *dummy)
     Bag_TryAddItem(bag, ITEM_OAKS_LETTER, 1, HEAP_ID_FIELD3);
     SystemVars_SetDistributionEventMagic(varsFlags, DISTRIBUTION_EVENT_SHAYMIN);
 
-    if (SystemVars_GetShayminEventState(varsFlags) == 0) {
-        SystemVars_SetShayminEventState(varsFlags, 1);
+    if (SystemVars_GetShayminEventState(varsFlags) == EVENT_STATE_SHAYMIN_NOT_STARTED) {
+        SystemVars_SetShayminEventState(varsFlags, EVENT_STATE_SHAYMIN_OAK_LETTER_RECEIVED);
     }
 }
 

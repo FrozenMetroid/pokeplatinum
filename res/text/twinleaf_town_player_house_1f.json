@@ -385,6 +385,21 @@
         "But you’re all right, aren’t you?\n",
         "After all, you’re never alone."
       ]
+    },
+    {
+      "id": "TwinleafTownPlayerHouse1F_Text_GiveOaksLetter",
+      "en_US": [
+        "Mom: {STRVAR_1 3, 0, 0}!\n",
+        "Some old man in a lab coat came by\f",
+        "to deliver this to you!\r"
+      ]
+    },
+    {
+      "id": "TwinleafTownPlayerHouse1F_Text_HeWasInAHurry",
+      "en_US": [
+        "Mom: He seemed to be in such a hurry --\n",
+        "I didn’t even catch his name...\r"
+      ]
     }
   ]
 }

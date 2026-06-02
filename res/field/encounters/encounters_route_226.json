@@ -7,7 +7,7 @@
         },
         {
             "level": 49,
-            "species": "SPECIES_GRAVELER"
+            "species": "SPECIES_SWELLOW"
         },
         {
             "level": 48,
@@ -39,7 +39,7 @@
         },
         {
             "level": 47,
-            "species": "SPECIES_RATTATA"
+            "species": "SPECIES_TAILLOW"
         },
         {
             "level": 47,
@@ -47,7 +47,7 @@
         },
         {
             "level": 47,
-            "species": "SPECIES_RATTATA"
+            "species": "SPECIES_TAILLOW"
         }
     ],
     "swarms": [
