@@ -260,7 +260,7 @@ void RoamingPokemon_ActivateSlot(SaveData *saveData, const u8 slot)
         species = SPECIES_CRESSELIA;
         level = 50;
         break;
-    case ROAMING_SLOT_DARKRAI:
+    case ROAMING_SLOT_DARKRAI: // unused
         species = SPECIES_DARKRAI;
         level = 40;
         break;

@@ -1447,6 +1447,29 @@
     {
       "id": "Villa_Text_EntryTableFree",
       "en_US": "Table"
+    },
+    {
+      "id": "Villa_Text_CynthiaGiveMemberCard",
+      "en_US": [
+        "Oh, {STRVAR_1 3, 0, 0}, I have something\n",
+        "for you to enjoy.\r"
+      ]
+    },
+    {
+      "id": "Villa_Text_CynthiaExplainMemberCard",
+      "en_US": [
+        "That was given to me by my grandmother.\n",
+        "It’s the key to a special inn in\f",
+        "Canalave City.\r",
+        "I have had it for years, but I\n",
+        "have never visited the inn.\r",
+        "Rather than let it go to waste,\n",
+        "a special Trainer like you should\f",
+        "enjoy a stay there.\r",
+        "Perhaps it will live up to your\n",
+        "taste you’ve displayed with\f",
+        "this villa’s decorations..."
+      ]
     }
   ]
 }

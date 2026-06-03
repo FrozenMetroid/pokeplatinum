@@ -41,7 +41,7 @@ NewmoonIslandForest_Darkrai:
     Message NewmoonIslandForest_Text_Ellipses
     CloseMessage
     SetFlag FLAG_MAP_LOCAL
-    StartLegendaryBattle SPECIES_DARKRAI, 50
+    StartLegendaryBattle SPECIES_DARKRAI, 75
     ClearFlag FLAG_MAP_LOCAL
     CheckWonBattle VAR_RESULT
     GoToIfEq VAR_RESULT, FALSE, NewmoonIslandForest_BlackOut

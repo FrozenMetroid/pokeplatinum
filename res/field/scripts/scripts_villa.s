@@ -677,6 +677,8 @@ Villa_Cynthia:
     CallIfEq VAR_RESORT_VILLA_VISITOR_MESSAGE_NUM, 2, Villa_CynthiaMessage2
     CallIfEq VAR_RESORT_VILLA_VISITOR_MESSAGE_NUM, 3, Villa_CynthiaMessage3
     CallIfEq VAR_RESORT_VILLA_VISITOR_MESSAGE_NUM, 4, Villa_CynthiaMessage4
+    CheckItem ITEM_MEMBER_CARD, 1, VAR_RESULT
+    GoToIfEq VAR_RESULT, FALSE, Villa_CynthiaGiveMemberCard
     GoTo Villa_VisitorEnd
     End
 
@@ -699,6 +701,17 @@ Villa_CynthiaMessage3:
 Villa_CynthiaMessage4:
     Message Villa_Text_CynthiaMessage4
     Return
+
+Villa_CynthiaGiveMemberCard:
+    WaitABPress
+    BufferPlayerName 0
+    Message Villa_Text_CynthiaGiveMemberCard
+    SetVar VAR_0x8004, ITEM_MEMBER_CARD
+    SetVar VAR_0x8005, 1
+    Common_GiveItemQuantity
+    SetVar VAR_DISTRIBUTION_EVENT_DARKRAI, 0x1209
+    Message Villa_Text_CynthiaExplainMemberCard
+    GoTo Villa_VisitorEnd
 
 Villa_Flint:
     PlaySE SEQ_SE_CONFIRM

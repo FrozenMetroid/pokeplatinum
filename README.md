@@ -311,9 +311,13 @@ Wild and Wonder Trade Pokémon will have randomly generated movesets based on wh
         - Once you have the National Pokédex, you can encounter these Titans in their caves from vanilla Platinum
         - They are now level 60 rather than level 30
     - Shaymin
-        - Beat the Elite Four and the Champion's rematch teams for the first time to receive Oak's Letter from the Mom after walking downstairs in the player's house
+        - Beat the Elite Four and the Cynthia's rematch teams for the first time to receive Oak's Letter from the Mom after walking downstairs in the player's house
+    - Darkrai
+        - Receive the Member Card from Cynthia in the Villa after ordering the piano decoration
+            - For the piano to show up in the list of available furniture, the player must defeat the Elite Four and Cynthia's rematch teams once instead of entering the Hall of Fame 10 times
+        - Darkrai is now level 75 rather than level 50
     - Rotom
-        - Rotom can still be encounted at night in the Old Chateau after gaining HM01 Cut and the Forest Badge
+        - Rotom can still be encountered at night in the Old Chateau after gaining HM01 Cut and the Forest Badge
         - Rotom's forms will be unlocked with the Secret Key that you obtain from Charon during the events of the story in Galactic HQ
     - Spiritomb
         - Encounter Spiritomb at the Hallowed Tower on Route 209 immediately with an Odd Keystone

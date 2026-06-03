@@ -55,6 +55,12 @@ Currently not working
 
 #define PARTY_MENU_ADD_MOVE_REMINDER
 
+/*
+Originally, you need to enter the Hall of Fame 10 times to get the piano in the Villa.
+Now, you have to have beaten the Elite Four and Champion rematch at least once.
+*/
+#define UPDATE_VILLA_PIANO_REQUIREMENT
+
 
 /*
 ===============BATTLE==============

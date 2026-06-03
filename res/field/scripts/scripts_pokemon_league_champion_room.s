@@ -26,7 +26,7 @@ PokemonLeagueChampionRoom_OnFrame:
     Message PokemonLeagueChampionRoom_Text_CynthiaDefeat
     SetFlag FLAG_DEFEATED_CYNTHIA
     CallIfUnset FLAG_ARRESTED_CHARON_STARK_MOUNTAIN, PokemonLeagueChampionRoom_CreateJournalEventDefeatedCynthia
-    CallIfSet FLAG_ARRESTED_CHARON_STARK_MOUNTAIN, PokemonLeagueChampionRoom_CreateJournalEventDefeatedRematchCynthia
+    CallIfSet FLAG_ARRESTED_CHARON_STARK_MOUNTAIN, PokemonLeagueChampionRoom_HandlePostRematch
     Message PokemonLeagueChampionRoom_Text_ComeWithMe
     CloseMessage
     ApplyMovement LOCALID_CYNTHIA, PokemonLeagueChampionRoom_CynthiaMoveAwayFromElevator
@@ -71,9 +71,10 @@ PokemonLeagueChampionRoom_CreateJournalEventDefeatedCynthia:
     CreateJournalEvent LOCATION_EVENT_BEAT_CHAMPION, TRAINER_CHAMPION_CYNTHIA, 0, 0, 0
     Return
 
-PokemonLeagueChampionRoom_CreateJournalEventDefeatedRematchCynthia:
+PokemonLeagueChampionRoom_HandlePostRematch:
     CreateJournalEvent LOCATION_EVENT_BEAT_CHAMPION, TRAINER_CHAMPION_CYNTHIA_REMATCH, 0, 0, 0
     CallIfEq VAR_SHAYMIN_EVENT_STATE, EVENT_STATE_SHAYMIN_NOT_STARTED, PokemonLeagueChampionRoom_TriggerReceiveOakLetter
+    SetFlag FLAG_BEAT_ELITE_FOUR_AND_CHAMPION_REMATCH
     Return
 
 PokemonLeagueChampionRoom_TriggerReceiveOakLetter:

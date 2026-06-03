@@ -45,6 +45,7 @@
 #include "savedata_misc.h"
 #include "screen_fade.h"
 #include "script_manager.h"
+#include "senate_config.h"
 #include "sound.h"
 #include "sound_playback.h"
 #include "string_gf.h"
@@ -798,9 +799,15 @@ BOOL ScrCmd_CheckMetFurnitureRequirements(ScriptContext *ctx)
         }
         break;
     case VILLA_FURNITURE_PIANO + 1:
+        #ifndef UPDATE_VILLA_PIANO_REQUIREMENT
         if (GameRecords_GetRecordValue(gameRecords, RECORD_TIMES_ENTERED_HALL_OF_FAME) < 10) {
             *destVar = FALSE;
         }
+        #else
+        if (!FieldSystem_CheckFlag(fieldSystem, FLAG_BEAT_ELITE_FOUR_AND_CHAMPION_REMATCH)) {
+            *destVar = FALSE;
+        }
+        #endif
         break;
     case VILLA_FURNITURE_GUEST_SET + 1:
         if (GameRecords_GetRecordValue(gameRecords, RECORD_TIMES_BATTLED_AT_BATTLEGROUND) < 50) {
