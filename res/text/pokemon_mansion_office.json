@@ -195,8 +195,7 @@
       "en_US": [
         "Manaphy\r",
         "An extremely rare Pokémon that has\n",
-        "never been seen, let alone captured,\f",
-        "in Sinnoh.\r"
+        "scarcely been seen in Sinnoh.\r"
       ]
     },
     {
@@ -209,6 +208,44 @@
     {
       "id": "PokemonMansionOffice_Text_PlayerPutBookBack",
       "en_US": "{STRVAR_1 3, 0, 0} put the book back."
+    },
+    {
+      "id": "PokemonMansionOffice_Text_TryGiveManaphyEgg",
+      "en_US": [
+        "Backlot: Oh! You have been coming to\n",
+        "visit my garden for quite some time\f",
+        "now, yes? I think so!\r",
+        "You must have an eye for rare\n",
+        "Pokémon, then!\r",
+        "I’m sure a fellow appreciator of\n",
+        "exotic Pokémon will value this Egg...\r"
+      ]
+    },
+    {
+      "id": "PokemonMansionOffice_Text_PartyFullForManaphy",
+      "en_US": [
+        "Doh, you have no room in your party\n",
+        "for this Egg... How disappointing."
+      ]
+    },
+    {
+      "id": "PokemonMansionOffice_Text_ReceivedMysteriousEgg",
+      "en_US": [
+        "{STRVAR_1 3, 0, 0} received the\n",
+        "mysterious Egg from Backlot!\r"
+      ]
+    },
+    {
+      "id": "PokemonMansionOffice_Text_ExplainMysteriousEgg",
+      "en_US": [
+        "I stumbled across that strange, blue\n",
+        "Egg one day while walking on the beach\f",
+        "in a faraway region.\r",
+        "I’ve never seen anything else quite\n",
+        "like it before!\r",
+        "I’m placing a lot of trust in you to\n",
+        "take good care of it!"
+      ]
     }
   ]
 }

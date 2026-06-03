@@ -33,6 +33,8 @@ PokemonMansionOffice_MrBacklot:
     PlaySE SEQ_SE_CONFIRM
     LockAll
     FacePlayer
+    GoToIfEq VAR_MAP_LOCAL_1, 1, PokemonMansionOffice_TalkAboutEgg
+    GoToIfSet FLAG_NEED_TO_GIVE_MANAPHY_EGG, PokemonMansionOffice_CheckGiveManaphy
     GoToIfSet FLAG_ADDED_TROPHY_GARDEN_MON, PokemonMansionOffice_ThereAreCutePokemon
     GoToIfEq VAR_MAP_LOCAL_B, 1, PokemonMansionOffice_ThereAreCutePokemon
     GetNationalDexEnabled VAR_RESULT
@@ -69,6 +71,7 @@ PokemonMansionOffice_YouAreEnviousYes2:
 
 PokemonMansionOffice_AddThrophyGardenMon:
     AddTrophyGardenMon
+    AddVar VAR_TROPHY_GARDEN_NAT_DEX_MONS, 1
     GetTrophyGardenSlot1Species VAR_0x8000
     BufferSpeciesNameFromVar 0, VAR_0x8000, 0, 0
     Message PokemonMansionOffice_Text_IBetYouAre
@@ -87,6 +90,7 @@ PokemonMansionOffice_AddThrophyGardenMon:
     SetVar VAR_MAP_LOCAL_B, 1
     Call PokemonMansionOffice_MrBacklotFacePlayer
     SetFlag FLAG_ADDED_TROPHY_GARDEN_MON
+    GoToIfGt VAR_TROPHY_GARDEN_NAT_DEX_MONS, 4, PokemonMansionOffice_CheckGiveManaphy // if you've spawned a new mon with backlot at least 5 times
     GoTo PokemonMansionOffice_ThereAreCutePokemon
 
 PokemonMansionOffice_ThereAreCutePokemon:
@@ -97,6 +101,34 @@ PokemonMansionOffice_ThereAreCutePokemon:
     CloseMessage
     ReleaseAll
     End
+
+PokemonMansionOffice_CheckGiveManaphy:
+    GoToIfSet FLAG_OBTAINED_POKEMON_MANSION_MANAPHY_EGG, PokemonMansionOffice_ThereAreCutePokemon
+    ApplyMovement LOCALID_MR_BACKLOT, PokemonMansionOffice_Movement_Exclamation
+    WaitMovement
+    Message PokemonMansionOffice_Text_TryGiveManaphyEgg
+    GetPartyCount VAR_RESULT
+    GoToIfEq VAR_RESULT, MAX_PARTY_SIZE, PokemonMansionOffice_PartyFullForManaphy
+    GiveEgg SPECIES_MANAPHY, SPECIAL_METLOC_NAME_BACKLOT
+    PlayFanfare SEQ_FANFA4
+    BufferPlayerName 0
+    Message PokemonMansionOffice_Text_ReceivedMysteriousEgg
+    WaitFanfare
+    CloseMessage
+    SetFlag FLAG_OBTAINED_POKEMON_MANSION_MANAPHY_EGG
+    ClearFlag FLAG_NEED_TO_GIVE_MANAPHY_EGG
+    SetVar VAR_MAP_LOCAL_1, 1
+    ReleaseAll
+    End
+
+PokemonMansionOffice_PartyFullForManaphy:
+    Message PokemonMansionOffice_Text_PartyFullForManaphy
+    SetFlag FLAG_NEED_TO_GIVE_MANAPHY_EGG // failed to get the egg, so now when you talk to him again, skip all of his usual dialogue and go straight to checking for giving the egg again
+    GoTo PokemonMansionOffice_EndDialogue
+
+PokemonMansionOffice_TalkAboutEgg:
+    Message PokemonMansionOffice_Text_ReceivedMysteriousEgg
+    GoTo PokemonMansionOffice_EndDialogue
 
 PokemonMansionOffice_MrBacklotFacePlayer:
     GoToIfEq VAR_0x8001, 4, PokemonMansionOffice_MrBacklotWalkOnSpotWest
@@ -168,6 +200,11 @@ PokemonMansionOffice_Movement_MrBacklotWalkOnSpotNorth:
     .balign 4, 0
 PokemonMansionOffice_Movement_MrBacklotWalkOnSpotSouth:
     WalkOnSpotNormalSouth
+    EndMovement
+
+    .balign 4, 0
+PokemonMansionOffice_Movement_Exclamation:
+    EmoteExclamationMark
     EndMovement
 
 PokemonMansionOffice_OldMan:
@@ -308,7 +345,7 @@ PokemonMansionOffice_ReadBook:
     RemovePokemonPreview
     SetFlag FLAG_SKIP_POKEMON_MANSION_OFFICE_BOOK_SEEN_MANAPHY_CHECK
     Message PokemonMansionOffice_Text_ManaphyAddedToPokedex
-    GoTo PokemonMansionOffice_BookEnd
+    GoTo PokemonMansionOffice_EndDialogue
     End
 
 PokemonMansionOffice_AlreadySawManaphy:
@@ -319,10 +356,10 @@ PokemonMansionOffice_AlreadySawManaphy:
 PokemonMansionOffice_PutBookBack:
     BufferPlayerName 0
     Message PokemonMansionOffice_Text_PlayerPutBookBack
-    GoTo PokemonMansionOffice_BookEnd
+    GoTo PokemonMansionOffice_EndDialogue
     End
 
-PokemonMansionOffice_BookEnd:
+PokemonMansionOffice_EndDialogue:
     WaitButton
     CloseMessage
     ReleaseAll

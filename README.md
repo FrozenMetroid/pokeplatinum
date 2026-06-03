@@ -78,10 +78,10 @@ Thank you!
     - Tauros (Route 210)
     - Vulpix (Route 209 at night)
 - Gym Leader sprites, as well as some regular Trainers' sprites, have been improved
-- If the player's lead Pokémon has the Ability Harvest, an additional Berry will be harvested when harvesting Berries in the overworld
+- If your lead Pokémon has the Ability Harvest, an additional Berry will be harvested when harvesting Berries in the overworld
 - Change your Pokémon's Poké Ball in Bebe's house in Hearthome City
 - Reset your Pokémon's EVs in the middle house of the Fight Area by talking to the man in the top right corner
-- The player immediately has the Running Shoes
+- You immediately have the Running Shoes
 - Debug/testing code for nearly perfect wild encounters and perfect starters (see ``testing.h`` for the config to enable these features if you are modifying this repository)
 - A myriad of changes to the battle system, as documented below
 
@@ -258,7 +258,7 @@ Wild and Wonder Trade Pokémon will have randomly generated movesets based on wh
 
 - Trainers' Pokémon with forms have the correct stats
     - Previously, Pokémon with forms that have different stats, such as Wormadam, always used the stats of the base form
-- HP bar is faster now (!!!)
+- HP bar is faster now for higher max HP values (!!!)
 - The data structure for Trainers has been completely overhauled to be like how it is in HeartGold-Engine -- now Trainers' Pokémon can have custom Poké Balls, Abilities, EVs, IVs, etc. (!!!)
 - Ice-types receive a 50% Defense increase when under the effects of Hail (Hail has not been modernized to Snow)
 - Trainer AI has been updated to fix a few bugs, such as not reading Dry Skin as a Water immunity and viewing Storm Drain and Lightning Rod as immunities now
@@ -300,24 +300,25 @@ Wild and Wonder Trade Pokémon will have randomly generated movesets based on wh
 # Encounters
 
 - The Pokédex accurately shows where Pokémon can be found
-- Murkrow and Misdreavus added back to Eterna Forest at night
-- Diamond and Pearl-exclusive Sinnoh encounters have been returned, such as Glameow and Stunky
-- You can complete the Sinnoh regional Pokédex, but not the National Pokédex, through singleplayer
+- Diamond and Pearl-exclusive Sinnoh encounters have been added back, such as Glameow and Stunky
+- You can complete the Sinnoh regional Pokédex, but not the National Pokédex, through singleplayer, unless if you get lucky with Wonder Trading
 - Locations for the additional Pokémon in the regional Pokédex listed above
 - Honey Tree encounters' levels are randomized between 10 and 55 based on the number of Badges you currently have (see ``HoneyTree_GetLevel`` for the formula) and have a chance of evolving if the generated level meets their evolution level threshold
-- Other locations are searchable in this repository for brevity...
+- Other wild Pokémon locations are searchable in this repository for brevity...
 - Legendaries/Mythicals & Special Encounters:
     - Regi Trio (Regirock, Regice, Registeel)
         - Once you have the National Pokédex, you can encounter these Titans in their caves from vanilla Platinum
         - They are now level 60 rather than level 30
     - Shaymin
-        - Beat the Elite Four and the Cynthia's rematch teams for the first time to receive Oak's Letter from the Mom after walking downstairs in the player's house
+        - Beat the Elite Four and the Cynthia's rematch teams for the first time to receive Oak's Letter from the Mom after walking downstairs in your in-game house
+    - Manaphy
+        - After visiting the Pokémon Mansion and speaking with Backlot to cause 5 or more special Pokémon to appear in the Trophy Garden (requires National Pokédex), he will gift you a Manaphy Egg. This effectively takes 5 days.
     - Darkrai
         - Receive the Member Card from Cynthia in the Villa after ordering the piano decoration
-            - For the piano to show up in the list of available furniture, the player must defeat the Elite Four and Cynthia's rematch teams once instead of entering the Hall of Fame 10 times
+            - For the piano to show up in the list of available furniture, you must defeat the Elite Four and Cynthia's rematch teams once instead of entering the Hall of Fame 10 times like vanilla Platinum
         - Darkrai is now level 75 rather than level 50
     - Arceus
-        - The player must collect all 16 Plates scattered throughout Sinnoh (all found in their vanilla Platinum locations); plates obtained through the Grand Underground or through trading will not count. Additionally, the player must have caught Dialga, Palkia, and Giratina. Once those requirements are met, the player must speak with the elder in the large house in Celestic Town to receive the Azure Flute, which can then be brought to Spear Pillar to start the Hall of Origin event
+        - You must collect all 16 Plates scattered throughout Sinnoh (all found in their vanilla Platinum locations); plates obtained through the Grand Underground or through trading will not count. Additionally, you must have caught Dialga, Palkia, and Giratina. Once those requirements are met, you must speak with the elder in the large house in Celestic Town to receive the Azure Flute, which can then be brought to Spear Pillar to start the Hall of Origin event
     - Rotom
         - Rotom can still be encountered at night in the Old Chateau after gaining HM01 Cut and the Forest Badge
         - Rotom's forms will be unlocked with the Secret Key that you obtain from Charon during the events of the story in Galactic HQ

@@ -62,6 +62,8 @@
 #include "constants/union_room_message_types.h"
 #include "constants/villa_visitors.h"
 
+#include "res/text/bank/special_met_location_names.h"
+
 .set DEBUG_GIVE_SHINY_CHARM_FROM_START, 0
 .set DEBUG_FLY_FROM_START, 0
 .set REMOVE_MOVE_REMINDER_IN_PASTORIA, 1 // since it was added to the party menu

@@ -35,7 +35,7 @@
     },
     {
       "id": "SPECIAL_METLOC_NAME_DISTANT_LAND",
-      "en_US": "Distant land"
+      "en_US": "Distant Land"
     },
     {
       "id": "SPECIAL_METLOC_NAME_TRAVELING_MAN",
@@ -52,6 +52,10 @@
     {
       "id": "SPECIAL_METLOC_NAME_MYSTERY_ZONE",
       "en_US": "Mystery Zone"
+    },
+    {
+      "id": "SPECIAL_METLOC_NAME_BACKLOT",
+      "en_US": "Backlot"
     }
   ]
 }

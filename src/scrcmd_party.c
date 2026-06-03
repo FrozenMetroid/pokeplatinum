@@ -160,7 +160,7 @@ BOOL ScrCmd_CheckIsPartyMonOutsider(ScriptContext *ctx)
 BOOL ScrCmd_GiveEgg(ScriptContext *ctx)
 {
     FieldSystem *fieldSystem = ctx->fieldSystem;
-    TrainerInfo *trainer = SaveData_GetTrainerInfo(fieldSystem->saveData);
+    TrainerInfo *trainerInfo = SaveData_GetTrainerInfo(fieldSystem->saveData);
     u16 species = ScriptContext_GetVar(ctx);
     u16 eggGiver = ScriptContext_GetVar(ctx);
 
@@ -172,7 +172,7 @@ BOOL ScrCmd_GiveEgg(ScriptContext *ctx)
         Pokemon_Init(egg);
 
         int specialMetLoc = SpecialMetLoc_GetId(1, eggGiver);
-        Egg_CreateEgg(egg, species, 1, trainer, 3, specialMetLoc);
+        Egg_CreateEgg(egg, species, MAP_HEADER_NOTHING, trainerInfo, 3, specialMetLoc);
 
         Party_AddPokemon(party, egg);
         Heap_Free(egg);

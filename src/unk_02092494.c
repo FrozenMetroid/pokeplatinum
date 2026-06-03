@@ -788,7 +788,7 @@ void UpdateBoxMonStatusAndTrainerInfo(BoxPokemon *boxMon, TrainerInfo *trainerIn
         BoxPokemon_SetMetLocationAndDate(boxMon, (SpecialMetLoc_GetId(0, 55)), TRUE);
         BoxPokemon_SetMetLevelToCurrentLevel(boxMon);
         break;
-    case 3:
+    case 3: // ScrCmd_GiveEgg goes here
         BoxPokemon_SetMetLocationAndDate(boxMon, metLocation, FALSE);
         BoxPokemon_ResetMetLocationAndDate(boxMon, TRUE);
         AssignTrainerInfoToBoxPokemon(boxMon, trainerInfo, heapID);
