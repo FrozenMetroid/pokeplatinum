@@ -7476,3 +7476,39 @@ static BOOL ScrCmd_ResetEVs(ScriptContext *ctx)
 
     return FALSE;
 }
+
+static BOOL ScrCmd_CheckObtainedAllArceusPlates(ScriptContext *ctx)
+// this purposefully doesn't check if they're in the bag
+// because those could come from trades and/or the Underground
+{
+    u16 *destVar = ScriptContext_GetVarPointer(ctx);
+    *destVar = TRUE;
+
+    static const u16 sArceusPlatesFlags[] = {
+        FLAG_OBTAINED_ROUTE_215_FIST_PLATE,
+        FLAG_OBTAINED_POKEMON_LEAGUE_SKY_PLATE,
+        FLAG_OBTAINED_GREAT_MARSH_TOXIC_PLATE,
+        FLAG_OBTAINED_OREBURGH_GATE_B1F_EARTH_PLATE,
+        FLAG_OBTAINED_MT_CORONET_STONE_PLATE,
+        FLAG_OBTAINED_ETERNA_FOREST_INSECT_PLATE,
+        FLAG_OBTAINED_AMITY_SQUARE_SPOOKY_PLATE,
+        FLAG_OBTAINED_IRON_ISLAND_IRON_PLATE,
+        FLAG_OBTAINED_STARK_MOUNTAIN_FLAME_PLATE,
+        FLAG_OBTAINED_ROUTE_220_SPLASH_PLATE,
+        FLAG_OBTAINED_ROUTE_210_MEADOW_PLATE,
+        FLAG_OBTAINED_SUNYSHORE_CITY_ZAP_PLATE,
+        FLAG_OBTAINED_SOLACEON_RUINS_ROOM_7_MIND_PLATE,
+        FLAG_OBTAINED_ROUTE_217_WEST_HOUSE_ICICLE_PLATE,
+        FLAG_OBTAINED_ETERNA_CITY_DRACO_PLATE,
+        FLAG_OBTAINED_OLD_CHATEAU_BACK_WEST_ROOM_DREAD_PLATE,
+    };
+
+    for (int i = 0; i < NELEMS(sArceusPlatesFlags); i++) {
+        if (!FieldSystem_CheckFlag(ctx->fieldSystem, sArceusPlatesFlags[i])) {
+            *destVar = FALSE;
+            break; // if you don't have any of the flags, then you don't have all of the plates
+        }
+    }
+
+    return FALSE;
+}

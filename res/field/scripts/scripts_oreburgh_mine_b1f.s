@@ -12,7 +12,9 @@
 OreburghMineB1F_OnTransition:
     SetFlag FLAG_FIRST_ARRIVAL_OREBURGH_MINE
     SetFlag FLAG_HIDE_OREBURGH_MINE_B1F_HIKER
-    CallIfEq VAR_ARCEUS_EVENT_STATE, 1, OreburghMineB1F_ShowHiker
+
+    // removed because you need all the plates to get Arceus in the first place
+    // CallIfEq VAR_ARCEUS_EVENT_STATE, 1, OreburghMineB1F_ShowHiker
     End
 
 OreburghMineB1F_ShowHiker:

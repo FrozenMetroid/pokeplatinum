@@ -46,6 +46,8 @@ CelesticTownNorthHouse_Elder:
     End
 
 CelesticTownNorthHouse_IDidSomeResearch:
+    GoToIfSet FLAG_CAUGHT_DIALGA, CelesticTownNorthHouse_CheckCaughtPalkia
+CelesticTownNorthHouse_UnlockDialgaAndPalkia:
     SetFlag FLAG_UNLOCKED_DIALGA_PALKIA_SPEAR_PILLAR
     Message CelesticTownNorthHouse_Text_IDidSomeResearch
     GoTo CelesticTownNorthHouse_ElderEnd
@@ -61,6 +63,38 @@ CelesticTownNorthHouse_ElderEnd:
     CloseMessage
     ReleaseAll
     End
+
+CelesticTownNorthHouse_CheckCaughtPalkia:
+    GoToIfUnset FLAG_CAUGHT_PALKIA, CelesticTownNorthHouse_UnlockDialgaAndPalkia
+CelesticTownNorthHouse_CheckCaughtGiratina:
+    GoToIfUnset FLAG_CAUGHT_GIRATINA, CelesticTownNorthHouse_UnlockDialgaAndPalkia
+    // caught all three of the Creation Trio, now check whether or not to give the azure flute
+CelesticTownNorthHouse_CheckHaveAllPlates:
+    CheckObtainedAllArceusPlates VAR_RESULT
+    GoToIfEq VAR_RESULT, FALSE, CelesticTownNorthHouse_GiveHintAboutArceusPlates
+    // if you collected all of the Plates and you do not already have the flute, give the Azure Flute
+    CheckItem ITEM_AZURE_FLUTE, 1, VAR_RESULT
+    GoToIfEq VAR_RESULT, TRUE, CelesticTownNorthHouse_CheckCaughtArceus // if you already have it, check stuff related to Arceus
+    Message CelesticTownNorthHouse_Text_GiveAzureFlute
+    SetVar VAR_0x8004, ITEM_AZURE_FLUTE
+    SetVar VAR_0x8005, 1
+    Common_GiveItemQuantity
+    SetVar VAR_DISTRIBUTION_EVENT_ARCEUS, 0x1123 // required for Hall of Origin to start
+    GoTo CelesticTownNorthHouse_TalkAboutAzureFlute
+
+CelesticTownNorthHouse_CheckCaughtArceus:
+    GoToIfSet FLAG_CAUGHT_ARCEUS, CelesticTownNorthHouse_TalkAboutArceus
+CelesticTownNorthHouse_TalkAboutAzureFlute:
+    Message CelesticTownNorthHouse_Text_TalkAboutAzureFlute
+    GoTo CelesticTownNorthHouse_ElderEnd
+
+CelesticTownNorthHouse_TalkAboutArceus:
+    Message CelesticTownNorthHouse_Text_TalkAboutArceus
+    GoTo CelesticTownNorthHouse_ElderEnd
+
+CelesticTownNorthHouse_GiveHintAboutArceusPlates:
+    Message CelesticTownNorthHouse_Text_GiveHintAboutArceusPlates
+    GoTo CelesticTownNorthHouse_ElderEnd
 
 CelesticTownNorthHouse_Lass:
     NPCMessage CelesticTownNorthHouse_Text_MySisterStudiesMyths

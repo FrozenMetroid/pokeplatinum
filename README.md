@@ -316,6 +316,8 @@ Wild and Wonder Trade Pokémon will have randomly generated movesets based on wh
         - Receive the Member Card from Cynthia in the Villa after ordering the piano decoration
             - For the piano to show up in the list of available furniture, the player must defeat the Elite Four and Cynthia's rematch teams once instead of entering the Hall of Fame 10 times
         - Darkrai is now level 75 rather than level 50
+    - Arceus
+        - The player must collect all 16 Plates scattered throughout Sinnoh (all found in their vanilla Platinum locations); plates obtained through the Grand Underground or through trading will not count. Additionally, the player must have caught Dialga, Palkia, and Giratina. Once those requirements are met, the player must speak with the elder in the large house in Celestic Town to receive the Azure Flute, which can then be brought to Spear Pillar to start the Hall of Origin event
     - Rotom
         - Rotom can still be encountered at night in the Old Chateau after gaining HM01 Cut and the Forest Badge
         - Rotom's forms will be unlocked with the Secret Key that you obtain from Charon during the events of the story in Galactic HQ

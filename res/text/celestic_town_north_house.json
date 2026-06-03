@@ -136,6 +136,68 @@
         "willpower bloomed among us,\f",
         "spurring us into action...”"
       ]
+    },
+    {
+      "id": "CelesticTownNorthHouse_Text_TalkAboutAzureFlute",
+      "en_US": [
+        "The Azure Flute is a precious heirloom\n",
+        "in my family.\r",
+        "Over time, my family has forgotten\n",
+        "how and where to use it, but I trust\f",
+        "that a remarkable Trainer such as\f",
+        "yourself will understand.\r",
+        "Your encounters with the deities\n",
+        "of Sinnoh fill me with awe and\f",
+        "admiration for your incredible spririt."
+      ]
+    },
+    {
+      "id": "CelesticTownNorthHouse_Text_TalkAboutArceus",
+      "en_US": [
+        "The mysteries of the Sinnoh region\n",
+        "are constantly unraveling.\r",
+        "For Arceus to have shown itself\n",
+        "to you... You truly are special.\r",
+        "I hope to one day be given the same\n",
+        "blessing of meeting such a Pokémon."
+      ]
+    },
+    {
+      "id": "CelesticTownNorthHouse_Text_GiveAzureFlute",
+      "en_US": [
+        "Oh? Could this be?\n",
+        "The legends of old...\f",
+        "You have captured Dialga, Palkia,\f",
+        "and Giratina... How remarkable...\r",
+        "My ancestors passed down tales of these\n",
+        "Pokémon throughout the millennia.\r",
+        "It is said that these three Pokémon\n",
+        "have their own roles in shaping the\f",
+        "universe as we know it.\r",
+        "They must have seen your righteous\n",
+        "heart and decided to accompany you\f",
+        "on your journey.\r",
+        "You also possess the fabled Plates\n",
+        "lost over time throughout Sinnoh...\r",
+        "I would like you to take this, please.\r"
+      ]
+    },
+    {
+      "id": "CelesticTownNorthHouse_Text_GiveHintAboutArceusPlates",
+      "en_US": [
+        "Throughout the history of Sinnoh,\n",
+        "there have been rumors of special\f",
+        "Plates blessed with the power of\f",
+        "one of Sinnoh’s deities.\r",
+        "Many have searched for them,\n",
+        "but to no avail.\r",
+        "These Plates are said to have\n",
+        "text engraved on them, text that\f",
+        "I suspect carries the wisdom of\f",
+        "my ancestors.\r",
+        "If you find those Plates, please\n",
+        "tell me..."
+      ]
     }
   ]
 }

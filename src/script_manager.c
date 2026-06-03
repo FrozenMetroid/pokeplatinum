@@ -532,7 +532,7 @@ void Script_ClearTrainerDefeated(FieldSystem *fieldSystem, u16 trainerID)
 u16 Script_GetHiddenItemFlag(u16 scriptID)
 {
     return scriptID - SCRIPT_ID_OFFSET_HIDDEN_ITEMS + FLAG_OFFSET_HIDDEN_ITEMS;
-}
+} // scriptID - 7270
 
 u16 Script_GetHiddenItemScript(u16 scriptID)
 {

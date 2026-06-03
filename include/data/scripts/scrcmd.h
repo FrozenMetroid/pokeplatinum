@@ -862,6 +862,7 @@ ScriptCommand(SCRCMD_DEBUG_SETMONITEM,                                     ScrCm
 ScriptCommand(SCRCMD_DEBUG_GIVEALLHMSANDBADGES,                            ScrCmd_Debug_GiveAllHMsandBadges)
 ScriptCommand(SCRCMD_CHANGEPOKEBALL,                                       ScrCmd_ChangePokeBall)
 ScriptCommand(SCRCMD_RESETEVS,                                             ScrCmd_ResetEVs)
+ScriptCommand(SCRCMD_CHECKOBTAINEDALLARCEUSPLATES,                         ScrCmd_CheckObtainedAllArceusPlates)
 
 // clang-format on
 

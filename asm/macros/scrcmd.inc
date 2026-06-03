@@ -5114,6 +5114,11 @@
     .short \resultVar
     .endm
 
+    .macro CheckObtainedAllArceusPlates resultVar
+    .short SCRCMD_CHECKOBTAINEDALLARCEUSPLATES
+    .short \resultVar
+    .endm
+
 
 // CONVENIENCE MACROS
 

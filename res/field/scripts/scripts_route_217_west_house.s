@@ -9,7 +9,7 @@ Route217WestHouse_Hiker:
     PlaySE SEQ_SE_CONFIRM
     LockAll
     FacePlayer
-    GoToIfSet FLAG_RECEIVED_ROUTE_217_WEST_HOUSE_ICICLE_PLATE, Route217WestHouse_IFoundIciclePlate
+    GoToIfSet FLAG_OBTAINED_ROUTE_217_WEST_HOUSE_ICICLE_PLATE, Route217WestHouse_IFoundIciclePlate
     CheckItem ITEM_HM08, 1, VAR_RESULT
     GoToIfEq VAR_RESULT, TRUE, Route217WestHouse_TryGiveIciclePlate
     Message Route217WestHouse_Text_IDroppedHM
@@ -31,7 +31,7 @@ Route217WestHouse_TryGiveIciclePlate:
     SetVar VAR_0x8005, 1
     GoToIfCannotFitItem VAR_0x8004, VAR_0x8005, VAR_RESULT, Route217WestHouse_BagIsFull
     Common_GiveItemQuantity
-    SetFlag FLAG_RECEIVED_ROUTE_217_WEST_HOUSE_ICICLE_PLATE
+    SetFlag FLAG_OBTAINED_ROUTE_217_WEST_HOUSE_ICICLE_PLATE
     GoTo Route217WestHouse_IFoundIciclePlate
 
 Route217WestHouse_BagIsFull:

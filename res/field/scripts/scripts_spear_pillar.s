@@ -32,6 +32,12 @@ SpearPillar_SetCounterpartGraphicsLucas:
     SetVar VAR_OBJ_GFX_ID_0, OBJ_EVENT_GFX_PLAYER_M
     End
 
+// Requirements for Hall of Origin:
+// 1. Beat Cynthia 
+// 2. Got National Dex
+// 3. Received the Azure Flute, which requires capturing Creation Trio and collecting all of the Plates across Sinnoh
+// 4. Distribution event var is set to the proper value (handled in the Azure Flute acquisition script in Celestic Town)
+// 5. Have not already caught the Hall of Origin Arceus
 SpearPillar_TryEnableHallOfOrigin:
     CheckGameCompleted VAR_MAP_LOCAL_0
     GoToIfEq VAR_MAP_LOCAL_0, FALSE, SpearPillar_TryEnableHallOfOriginEnd
