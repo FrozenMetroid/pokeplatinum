@@ -1744,7 +1744,7 @@ static void BoxPokemon_SetDataInternal(BoxPokemon *boxMon, enum PokemonDataParam
 
     case MON_DATA_EGG_LOCATION:
     case MON_DATA_EGG_LOCATION_PTHGSS:
-        if (*u16Value == 0 || sub_0201708C(*u16Value) == TRUE) {
+        if (*u16Value == 0 || SpeciesMetLoc_IsFromDP(*u16Value) == TRUE) {
             monDataBlockD->EggLocation_DP = *u16Value;
             monDataBlockB->EggLocation_PtHGSS = *u16Value;
         } else {
@@ -1755,7 +1755,7 @@ static void BoxPokemon_SetDataInternal(BoxPokemon *boxMon, enum PokemonDataParam
 
     case MON_DATA_MET_LOCATION:
     case MON_DATA_MET_LOCATION_PTHGSS:
-        if (*u16Value == 0 || sub_0201708C(*u16Value) == TRUE) {
+        if (*u16Value == 0 || SpeciesMetLoc_IsFromDP(*u16Value) == TRUE) {
             monDataBlockD->MetLocation_DP = *u16Value;
             monDataBlockB->MetLocation_PtHGSS = *u16Value;
         } else {

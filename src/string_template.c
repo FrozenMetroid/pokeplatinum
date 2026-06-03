@@ -295,7 +295,7 @@ void StringTemplate_SetLocationName(StringTemplate *template, u32 idx, u32 locat
         if (location == 0 || location >= MessageLoader_MessageCount(loader)) {
             MessageLoader_Free(loader);
             loader = InitMessageLoader(TEXT_BANK_MYSTERY_GIFT_EVENT_NAMES, template->heapID);
-            location = pl_msg_00000434_00002;
+            location = MYSTERY_GIFT_EVENT_NAME_FARAWAYPLACE;
         }
 
         MessageLoader_GetString(loader, location, template->templateBuf);
@@ -475,8 +475,8 @@ void StringTemplate_SetMetLocationName(StringTemplate *template, u32 idx, u32 lo
         TEXT_BANK_MYSTERY_GIFT_EVENT_NAMES,
     };
 
-    int metLocationType = sub_02017038(location);
-    int metLocationID = sub_02017058(location);
+    int metLocationType = SpeciesMetLoc_GetMetLocationType(location);
+    int metLocationID = SpeciesMetLoc_GetMetLocationID(location);
     MessageLoader *loader = InitMessageLoader(sMetLocationBanks[metLocationType], template->heapID);
 
     if (loader) {
@@ -494,7 +494,7 @@ void StringTemplate_SetMetLocationName(StringTemplate *template, u32 idx, u32 lo
                 msgID = SPECIAL_METLOC_NAME_MYSTERY_ZONE;
             } else {
                 bankID = sMetLocationBanks[2];
-                msgID = pl_msg_00000434_00002;
+                msgID = MYSTERY_GIFT_EVENT_NAME_FARAWAYPLACE;
             }
 
             SetArgFromArchive(template, idx, msgID, bankID);

@@ -1159,14 +1159,24 @@ static BOOL ScrCmd_CheckTrainerFlag(ScriptContext *ctx)
 static BOOL ScrCmd_AddVar(ScriptContext *ctx)
 {
     u16 *destVar = ScriptContext_GetVarPointer(ctx);
-    *destVar += ScriptContext_GetVar(ctx);
+    u16 num = ScriptContext_GetVar(ctx);
+    if (*destVar + num > 0xFFFF) {
+        *destVar = 0xFFFF;
+    } else {
+        *destVar += num;
+    }
     return FALSE;
 }
 
 static BOOL ScrCmd_SubVar(ScriptContext *ctx)
 {
     u16 *destVar = ScriptContext_GetVarPointer(ctx);
-    *destVar -= ScriptContext_GetVar(ctx);
+    u16 num = ScriptContext_GetVar(ctx);
+    if (*destVar - num < 0) {
+        *destVar = 0;
+    } else {
+        *destVar -= num;
+    }
     return FALSE;
 }
 
