@@ -10203,13 +10203,13 @@ static void BattleScript_GetExpTask(SysTask *task, void *inData)
             msg.params[0] = expBattler | (slot << 8);
             msg.params[1] = totalExp;
             if (slot == data->battleCtx->selectedPartySlot[expBattler]
-                || (data->battleCtx->slotBoostedEXPMask & (1 << slot))) { // if the active battler slot or if the slot got boosted exp and needs the message shown explicitly for it
+                || (data->battleCtx->slotBoostedEXPMask & (1 << slot))
+                || !partyWideExpShare) { // if the active battler slot or if the slot got boosted exp and needs the message shown explicitly for it, or if the party-wide exp share isn't enabled and every slot that gets exp needs the message shown
                 data->tmpData[GET_EXP_MSG_INDEX] = BattleMessage_Print(data->battleSys, msgLoader, &msg, BattleSystem_GetTextSpeed(data->battleSys));
                 data->battleCtx->slotBoostedEXPMask &= ~(1 << slot); // clear the mask for this slot since the message is now shown
-            } else if (!data->battleCtx->partyReceivedEXPTextDone && !data->battleCtx->slotBoostedEXPMask) { // if the "party gained exp" message hasn't been shown and there are no more boosted exp slots left that need their own message
+            } else if ((slot == BattleSystem_GetPartyCount(data->battleSys, expBattler) - 1) && partyWideExpShare) { // show the "party gained exp" message at the end
                 msg.id = BattleStrings_Text_PartyGainedExpPoints;
                 data->tmpData[GET_EXP_MSG_INDEX] = BattleMessage_Print(data->battleSys, msgLoader, &msg, BattleSystem_GetTextSpeed(data->battleSys));
-                data->battleCtx->partyReceivedEXPTextDone = TRUE;
             } else {
                 // 1. active battler slot has already received the "gained exp" message
                 // 1.1. this slot is not the active battler slot

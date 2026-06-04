@@ -3296,8 +3296,7 @@ enum BeforeMoveState {
 
 static void BattleControllerPlayer_BeforeMove(BattleSystem *battleSys, BattleContext *battleCtx)
 {
-    battleCtx->partyReceivedEXPTextDone = FALSE; // reset this flag at the start of using a move so that it is reinitialized for the EXP gain task
-    
+   
     switch (battleCtx->beforeMoveCheckState) {
     case BEFORE_MOVE_STATE_CLEAR_DEFIANT:
         for (int i = 0; i < BattleSystem_GetMaxBattlers(battleSys); i++) {
