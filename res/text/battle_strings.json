@@ -8961,6 +8961,15 @@
         "The rest of the party gained\n",
         "{STRVAR_1 54, 1, 0} Exp. Points!\r"
       ]
+    },
+    {
+      "id": "BattleStrings_Text_SlotBoostedEXPAndPartyGainedExpPoints",
+      "en_US": [
+        "{STRVAR_1 1, 0, 0} gained a boosted\n",
+        "{STRVAR_1 54, 1, 0} Exp. Points!\r",
+        "The rest of the party gained\n",
+        "{STRVAR_1 54, 1, 0} Exp. Points!\r"
+      ]
     }
   ]
 }

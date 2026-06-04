@@ -10119,12 +10119,14 @@ static void BattleScript_GetExpTask(SysTask *task, void *inData)
     int item;
     int itemEffect;
     BOOL partyWideExpShare = SaveData_GetExpShareStatus(SaveData_Ptr());
+    BOOL showEXPGainMessage = FALSE;
 
     battler = data->battleCtx->faintedMon >> 1 & 1; // init to the side with the fainted mon
     expBattler = 0;
+    int partyCount = BattleSystem_GetPartyCount(data->battleSys, expBattler);
 
     // Figure out which mon we're working on
-    for (slot = data->tmpData[GET_EXP_PARTY_SLOT]; slot < BattleSystem_GetPartyCount(data->battleSys, expBattler); slot++) {
+    for (slot = data->tmpData[GET_EXP_PARTY_SLOT]; slot < partyCount; slot++) {
         mon = BattleSystem_GetPartyPokemon(data->battleSys, expBattler, slot);
 
         if ((data->battleCtx->sideGetExpMask[battler] & FlagIndex(slot)) || partyWideExpShare) { // if party-wide exp share, give exp to every slot; otherwise, only slots that participated
@@ -10132,12 +10134,13 @@ static void BattleScript_GetExpTask(SysTask *task, void *inData)
         }
     }
 
-    if (slot == BattleSystem_GetPartyCount(data->battleSys, expBattler)) {
+    if (slot == partyCount) { // if we've gone through every slot, end the sequence
         data->seqNum = SEQ_GET_EXP_DONE;
     } else if ((battleType & BATTLE_TYPE_DOUBLES)
         && (battleType & BATTLE_TYPE_AI) == FALSE
         && data->battleCtx->selectedPartySlot[2] == slot) {
         expBattler = 2;
+        partyCount = BattleSystem_GetPartyCount(data->battleSys, expBattler);
     }
 
     switch (data->seqNum) {
@@ -10202,24 +10205,34 @@ static void BattleScript_GetExpTask(SysTask *task, void *inData)
             msg.tags = TAG_NICKNAME_NUM;
             msg.params[0] = expBattler | (slot << 8);
             msg.params[1] = totalExp;
-            if (slot == data->battleCtx->selectedPartySlot[expBattler]
-                || (data->battleCtx->slotBoostedEXPMask & (1 << slot))
-                || !partyWideExpShare) { // if the active battler slot or if the slot got boosted exp and needs the message shown explicitly for it, or if the party-wide exp share isn't enabled and every slot that gets exp needs the message shown
-                data->tmpData[GET_EXP_MSG_INDEX] = BattleMessage_Print(data->battleSys, msgLoader, &msg, BattleSystem_GetTextSpeed(data->battleSys));
-                data->battleCtx->slotBoostedEXPMask &= ~(1 << slot); // clear the mask for this slot since the message is now shown
-            } else if ((slot == BattleSystem_GetPartyCount(data->battleSys, expBattler) - 1) && partyWideExpShare) { // show the "party gained exp" message at the end
-                msg.id = BattleStrings_Text_PartyGainedExpPoints;
-                data->tmpData[GET_EXP_MSG_INDEX] = BattleMessage_Print(data->battleSys, msgLoader, &msg, BattleSystem_GetTextSpeed(data->battleSys));
-            } else {
-                // 1. active battler slot has already received the "gained exp" message
-                // 1.1. this slot is not the active battler slot
-                // 1.2. This slot doesn't get boosted exp and doesn't needs the message shown explicitly for it
-                // 2. The "party gained exp" message has already been shown and there are no more boosted exp slots left that need their own message
-                data->seqNum = SEQ_GET_EXP_CHECK_LEVEL_UP;
-                break;
-            }
             data->tmpData[GET_EXP_MSG_DELAY] = 30 / 4;
-            data->seqNum++;
+            if (partyWideExpShare) {
+                if (slot == data->battleCtx->selectedPartySlot[expBattler] // if the active battler slot, the slot got boosted exp, or the slot participated and needs the message shown explicitly for it
+                    || data->battleCtx->slotBoostedEXPMask & (1 << slot)
+                    || data->battleCtx->sideGetExpMask[battler] & FlagIndex(slot)) {
+                    // no need to change message id from what it was calculated to be earlier
+                    showEXPGainMessage = TRUE;
+                } else if (slot == partyCount - 1 || data->battleCtx->sideGetExpMask[battler]) { // if at the final slot or there are no more slots that need exp, show the "party gained exp" message 
+                    if (data->battleCtx->slotBoostedEXPMask & (1 << slot)) // if at the final slot this mon also gets boosted exp
+                    {
+                        msg.id = BattleStrings_Text_SlotBoostedEXPAndPartyGainedExpPoints;
+                        // don't bother with clearing the boosted exp mask for this slot since the sequence will end after this and it won't be used again until the next battle
+                    } else { // if the final slot without boosted exp
+                        msg.id = BattleStrings_Text_PartyGainedExpPoints;
+                    }
+                    showEXPGainMessage = TRUE;
+                }
+                if (showEXPGainMessage) {
+                    data->tmpData[GET_EXP_MSG_INDEX] = BattleMessage_Print(data->battleSys, msgLoader, &msg, BattleSystem_GetTextSpeed(data->battleSys));
+                    data->seqNum++;
+                } else {
+                    data->seqNum = SEQ_GET_EXP_CHECK_LEVEL_UP;
+                    break;
+                }
+            } else { // no party wide exp share, so play the message for any mon that received EXP
+                data->tmpData[GET_EXP_MSG_INDEX] = BattleMessage_Print(data->battleSys, msgLoader, &msg, BattleSystem_GetTextSpeed(data->battleSys));
+                data->seqNum++;
+            }
         } else {
             data->seqNum = SEQ_GET_EXP_CHECK_DONE;
         }

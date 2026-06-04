@@ -1,5 +1,5 @@
 {
-    "name": "Wake",
+    "name": "Crasher Wake",
     "class": "TRAINER_CLASS_LEADER_WAKE",
     "items": [
         "ITEM_FULL_RESTORE",
@@ -33,20 +33,20 @@
             "ball_seal": 0
         },
         {
-            "species": "SPECIES_GASTRODON",
-            "form": 1,
+            "species": "SPECIES_SWAMPERT",
+            "form": 0,
             "level": 64,
-            "item": "ITEM_RINDO_BERRY",
+            "item": "ITEM_EXPERT_BELT",
             "moves": [
-                "MOVE_EARTH_POWER",
-                "MOVE_SURF",
-                "MOVE_TOXIC",
-                "MOVE_RECOVER"
+                "MOVE_EARTHQUAKE",
+                "MOVE_WATERFALL",
+                "MOVE_STONE_EDGE",
+                "MOVE_ICE_PUNCH"
             ],
-            "ability": "ABILITY_STORM_DRAIN",
-            "nature": "NATURE_BOLD",
+            "ability": "ABILITY_SWIFT_SWIM",
+            "nature": "NATURE_ADAMANT",
             "ivnums": [31, 31, 31, 31, 31, 31],
-            "evnums": [252, 0, 152, 0, 100, 0],
+            "evnums": [0, 252, 152, 100, 0, 0],
             "ball": "ITEM_POKE_BALL",
             "iv_scale": 0,
             "ball_seal": 0

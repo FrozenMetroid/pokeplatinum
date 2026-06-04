@@ -4,6 +4,7 @@
 #include <string.h>
 
 #include "constants/heap.h"
+#include "constants/charcode.h"
 #include "generated/trainer_classes.h"
 #include "generated/trainers.h"
 
@@ -2918,12 +2919,21 @@ static String *EncounterEffect_GetGymLeaderName(u32 trainerID, enum HeapID heapI
     String *result;
     String *message;
 
+
     messageLoader = MessageLoader_Init(MSG_LOADER_LOAD_ON_DEMAND, NARC_INDEX_MSGDATA__PL_MSG, TEXT_BANK_UNK_0359, heapID);
     template = StringTemplate_Default(heapID);
     result = String_Init(128, heapID);
     message = String_Init(128, heapID);
     MessageLoader_GetString(messageLoader, 0, message);
-    StringTemplate_SetTrainerName(template, 0, trainerID);
+    if (trainerID == TRAINER_LEADER_WAKE || trainerID == TRAINER_LEADER_WAKE_REMATCH) {
+        String *wake = String_Init(128, heapID);
+        charcode_t wakeString[] = {CHAR_W, CHAR_a, CHAR_k, CHAR_e, CHAR_EOS};
+        String_CopyChars(wake, wakeString);
+        StringTemplate_SetString(template, 0, wake, 0, 0, GAME_LANGUAGE);
+        String_Free(wake);
+    } else {
+        StringTemplate_SetTrainerName(template, 0, trainerID);
+    }
     StringTemplate_Format(template, result, message);
 
     MessageLoader_Free(messageLoader);

@@ -47,7 +47,7 @@ void Trainer_Encounter(FieldBattleDTO *dto, const SaveData *saveData, enum HeapI
             CharCode_Copy(dto->trainer[i].name, rivalName);
         } else {
             String *trainerName = MessageLoader_GetNewString(msgLoader, dto->trainerIDs[i]);
-            String_ToChars(trainerName, dto->trainer[i].name, TRAINER_NAME_LEN + 1);
+            String_ToChars(trainerName, dto->trainer[i].name, TRAINER_NAME_LEN_LONGER + 1); // FIX: Trainer names in battle being too short and presenting as ???????????
             String_Free(trainerName);
         }
 

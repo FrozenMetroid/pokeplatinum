@@ -14,7 +14,7 @@
 #include "trainer_info.h"
 
 #define STRING_TEMPLATE_DEFAULT_MAX_ARGS   8
-#define STRING_TEMPLATE_DEFAULT_MAX_LENGTH 32
+#define STRING_TEMPLATE_DEFAULT_MAX_LENGTH 64
 
 typedef struct StringTemplateArgHeader {
     u8 unused_00;
