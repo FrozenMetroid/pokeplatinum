@@ -12,7 +12,7 @@
 // clang-format on
 
 void sub_020852B8(PartyMenuApplication *param0);
-int sub_02085348(void *param0);
+int PartyMenu_ItemUseFunc_WaitTextPrinterThenExitIfCannotReuseItem(void *application);
 BOOL CheckItemSacredAsh(u16 param0);
 int sub_02085804(PartyMenuApplication *param0);
 int sub_02085EF4(PartyMenuApplication *param0);

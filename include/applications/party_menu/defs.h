@@ -327,7 +327,7 @@ typedef struct PartyMenuApplication {
     PartyMenuMember partyMembers[MAX_PARTY_SIZE];
     const GridMenuCursorPosition *cursorPosTable;
     PartyOrderSwitchData orderSwitch;
-    GenericFunctionPtr unk_B00;
+    GenericFunctionPtr itemUseCallback;
     FunctionPtrPair unk_B04;
     u8 unk_B0C;
     u8 unk_B0D;

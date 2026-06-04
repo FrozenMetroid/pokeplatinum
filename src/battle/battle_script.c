@@ -10158,7 +10158,7 @@ static void BattleScript_GetExpTask(SysTask *task, void *inData)
         u32 totalExp = 0;
         msg.id = BattleStrings_Text_PokemonGainedExpPoints; // "{0} gained {1} Exp. Points!"
 
-        if (Pokemon_GetValue(mon, MON_DATA_HP, NULL) && Pokemon_GetValue(mon, MON_DATA_LEVEL, NULL) != MAX_POKEMON_LEVEL) {
+        if (Pokemon_GetValue(mon, MON_DATA_HP, NULL) && Pokemon_GetValue(mon, MON_DATA_LEVEL, NULL) != MAX_POKEMON_LEVEL && Pokemon_GetValue(mon, MON_DATA_IS_EGG, NULL) == FALSE) {
             if (data->battleCtx->sideGetExpMask[battler] & FlagIndex(slot)) {
                 totalExp = data->battleCtx->gainedExp; // for mons that actively participated
             } else if (partyWideExpShare) { // everyone else gets exp if the party-wise exp share is enabled; needs to be an else if because both could be true, but don't apply additional sharedExp to totalExp if the battler is the slot is one that participated

@@ -41,7 +41,7 @@
             [10, "MOVE_BUG_BITE"],
             [15, "MOVE_HIDDEN_POWER"],
             [23, "MOVE_GROWTH"],
-            [26, "MOVE_RAZOR_LEAF"],
+            [26, "MOVE_MAGICAL_LEAF"],
             [29, "MOVE_PSYBEAM"],
             [32, "MOVE_ATTRACT"],
             [35, "MOVE_GRASS_KNOT"],

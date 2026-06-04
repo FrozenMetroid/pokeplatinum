@@ -369,7 +369,7 @@ void sub_020852B8(PartyMenuApplication *application)
     case 1:
         break;
     case 2:
-        application->unk_B00 = sub_02085A70;
+        application->itemUseCallback = sub_02085A70;
         break;
     case 3:
     case 4:
@@ -388,7 +388,7 @@ void sub_020852B8(PartyMenuApplication *application)
     case 25:
     case 26:
     case 27:
-        application->unk_B00 = sub_02085384;
+        application->itemUseCallback = sub_02085384;
         break;
     case 18:
     case 19:
@@ -396,28 +396,36 @@ void sub_020852B8(PartyMenuApplication *application)
     case 21:
     case 22:
     case 23:
-        application->unk_B00 = sub_02085424;
+        application->itemUseCallback = sub_02085424;
         break;
     case 11:
-        application->unk_B00 = sub_020855C4;
+        application->itemUseCallback = sub_020855C4;
         break;
     }
 }
 
-int sub_02085348(void *param0)
+int PartyMenu_ItemUseFunc_WaitTextPrinterThenExitIfCannotReuseItem(void *param0)
 {
     PartyMenuApplication *application = (PartyMenuApplication *)param0;
 
     if (Text_IsPrinterActive(application->textPrinterID) != 0) {
-        return 5;
+        return PARTY_MENU_STATE_5;
     }
 
     if (gSystem.pressedKeys & (PAD_BUTTON_A | PAD_BUTTON_B)) {
         application->partyMenu->menuSelectionResult = PARTY_MENU_EXIT_CODE_DONE;
+        #ifdef PARTY_MENU_ITEM_REUSE_WITHOUT_EXITING
+        if (Item_LoadParam(application->partyMenu->usedItemID, ITEM_PARAM_EVOLVE, HEAP_ID_PARTY_MENU) == FALSE
+            && Bag_CanRemoveItem(application->partyMenu->bag, application->partyMenu->usedItemID, 1, HEAP_ID_PARTY_MENU)) {
+                Window_EraseMessageBox(&application->windows[34], TRUE);
+                PartyMenu_PrintShortMessage(application, PartyMenu_Text_UseOnWhichMon, TRUE);
+                return PARTY_MENU_EXIT_CODE_OVERWRITE_MOVE_TM_HM;
+        }
+        #endif
         return 32;
     }
 
-    return 5;
+    return PARTY_MENU_STATE_5;
 }
 
 static int sub_02085384(void *param0)
@@ -433,7 +441,7 @@ static int sub_02085384(void *param0)
     PartyMenu_PrintLongMessage(application, PRINT_MESSAGE_PRELOADED, TRUE);
     Sound_PlayEffect(SEQ_SE_DP_KAIFUKU);
 
-    application->unk_B00 = sub_02085348;
+    application->itemUseCallback = PartyMenu_ItemUseFunc_WaitTextPrinterThenExitIfCannotReuseItem;
 
     return 5;
 }
@@ -472,7 +480,7 @@ static int sub_02085424(void *applicationPtr)
     }
 
     PartyMenu_PrintLongMessage(application, PRINT_MESSAGE_PRELOADED, TRUE);
-    application->unk_B00 = sub_02085348;
+    application->itemUseCallback = PartyMenu_ItemUseFunc_WaitTextPrinterThenExitIfCannotReuseItem;
 
     return 5;
 }
@@ -514,7 +522,7 @@ static int sub_020855C4(void *applicationPtr)
     }
 
     PartyMenu_UpdateSlotPalette(application, application->currPartySlot);
-    application->unk_B00 = (void *)PokemonSummaryScreen_UpdateHPBar;
+    application->itemUseCallback = (void *)PokemonSummaryScreen_UpdateHPBar;
     Sound_PlayEffect(SEQ_SE_DP_KAIFUKU);
 
     return 5;
@@ -540,7 +548,7 @@ static int PokemonSummaryScreen_UpdateHPBar(PartyMenuApplication *param0)
 
     if (application->partyMembers[application->currPartySlot].curHP == curHP) {
         PartyMenu_PrintLongMessage(application, PRINT_MESSAGE_PRELOADED, TRUE);
-        application->unk_B00 = sub_02085348;
+        application->itemUseCallback = PartyMenu_ItemUseFunc_WaitTextPrinterThenExitIfCannotReuseItem;
     }
 
     return 5;
@@ -586,7 +594,7 @@ int sub_02085804(PartyMenuApplication *application)
         if (application->currPartySlot == 0xff) {
             MessageLoader_GetString(application->messageLoader, PartyMenu_Text_ItWontHaveAnyEffect, application->tmpString);
             PartyMenu_PrintLongMessage(application, PRINT_MESSAGE_PRELOADED, TRUE);
-            application->unk_B00 = sub_02085348;
+            application->itemUseCallback = PartyMenu_ItemUseFunc_WaitTextPrinterThenExitIfCannotReuseItem;
             PartyMenu_UpdateCursor(application, 0, 1);
             application->currPartySlot = 7;
 
@@ -702,13 +710,13 @@ static int sub_02085A70(void *applicationPtr)
 
     PartyMenu_UpdateSlotPalette(application, application->currPartySlot);
 
-    application->unk_B00 = (void *)PokemonSummaryScreen_UpdateHPBar;
+    application->itemUseCallback = (void *)PokemonSummaryScreen_UpdateHPBar;
 
     PartyMenu_DrawMemberPanelData(application, application->currPartySlot);
     PartyMenu_LoadMemberWindowTiles(application, application->currPartySlot);
     PartyMenu_PrintLongMessage(application, PRINT_MESSAGE_PRELOADED, TRUE);
 
-    application->unk_B00 = sub_02085C50;
+    application->itemUseCallback = sub_02085C50;
     application->unk_B13 = 0;
 
     return 5;
@@ -806,6 +814,8 @@ static int sub_02085C50(void *applicationPtr)
             application->unk_B13 = 4;
         }
         break;
+    // PartyMenu_ItemUseFunc_LevelUpLearnMovesLoop_Case6_hook from HeartGold Engine
+    // for Rare Candy looping
     case 6: {
         Pokemon *mon;
         FieldSystem *fieldSystem;
@@ -818,9 +828,20 @@ static int sub_02085C50(void *applicationPtr)
 
         if (application->partyMenu->evoTargetSpecies != 0) {
             application->partyMenu->menuSelectionResult = PARTY_MENU_EXIT_CODE_EVOLVE_BY_LEVEL;
+            #ifdef PARTY_MENU_ITEM_REUSE_WITHOUT_EXITING
+            return 32;
+            #endif
         } else {
             application->partyMenu->menuSelectionResult = PARTY_MENU_EXIT_CODE_DONE;
         }
+        #ifdef PARTY_MENU_ITEM_REUSE_WITHOUT_EXITING
+        // Rare Candies
+        if (Bag_CanRemoveItem(application->partyMenu->bag, application->partyMenu->usedItemID, 1, HEAP_ID_PARTY_MENU)) {
+            Window_EraseMessageBox(&application->windows[34], TRUE);
+            PartyMenu_PrintShortMessage(application, PartyMenu_Text_UseOnWhichMon, TRUE);
+            return PARTY_MENU_EXIT_CODE_OVERWRITE_MOVE_TM_HM;
+        }
+        #endif
     }
         return 32;
     }
@@ -833,7 +854,7 @@ int sub_02085EF4(PartyMenuApplication *application)
     Pokemon *mon;
     String *string;
 
-    application->unk_B00 = sub_02085C50;
+    application->itemUseCallback = sub_02085C50;
     application->unk_B13 = 3;
 
     mon = Party_GetPokemonBySlotIndex(application->partyMenu->party, application->currPartySlot);

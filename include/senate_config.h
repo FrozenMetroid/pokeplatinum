@@ -61,6 +61,8 @@ Now, you have to have beaten the Elite Four and Champion rematch at least once.
 */
 #define UPDATE_VILLA_PIANO_REQUIREMENT
 
+#define PARTY_MENU_ITEM_REUSE_WITHOUT_EXITING
+
 
 /*
 ===============BATTLE==============
