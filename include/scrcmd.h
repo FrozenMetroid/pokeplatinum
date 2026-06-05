@@ -15,5 +15,6 @@ BOOL ScrCmd_Debug_SetMonItem(ScriptContext *ctx);
 BOOL ScrCmd_ChangePokeBall(ScriptContext *ctx);
 BOOL ScrCmd_ResetEVs(ScriptContext *ctx);
 BOOL ScrCmd_CheckObtainedAllArceusPlates(ScriptContext *ctx);
+BOOL ScrCmd_SetLevel(ScriptContext *ctx);
 
 #endif // POKEPLATINUM_SCRCMD_H

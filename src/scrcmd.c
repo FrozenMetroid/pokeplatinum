@@ -7522,3 +7522,16 @@ static BOOL ScrCmd_CheckObtainedAllArceusPlates(ScriptContext *ctx)
 
     return FALSE;
 }
+
+static BOOL ScrCmd_SetLevel(ScriptContext *ctx)
+{
+    u8 partySlot = ScriptContext_GetVar(ctx);
+    u8 level = ScriptContext_GetVar(ctx);
+
+    GF_ASSERT(level > 0 && level <= MAX_POKEMON_LEVEL);
+    Pokemon *mon = Party_GetPokemonBySlotIndex(SaveData_GetParty(ctx->fieldSystem->saveData), partySlot);
+    Pokemon_SetValue(mon, MON_DATA_LEVEL, &level);
+    Pokemon_CalcStats(mon);
+
+    return FALSE;
+}

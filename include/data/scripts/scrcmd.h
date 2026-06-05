@@ -863,6 +863,7 @@ ScriptCommand(SCRCMD_DEBUG_GIVEALLHMSANDBADGES,                            ScrCm
 ScriptCommand(SCRCMD_CHANGEPOKEBALL,                                       ScrCmd_ChangePokeBall)
 ScriptCommand(SCRCMD_RESETEVS,                                             ScrCmd_ResetEVs)
 ScriptCommand(SCRCMD_CHECKOBTAINEDALLARCEUSPLATES,                         ScrCmd_CheckObtainedAllArceusPlates)
+ScriptCommand(SCRCMD_SETLEVEL,                                             ScrCmd_SetLevel)
 
 // clang-format on
 

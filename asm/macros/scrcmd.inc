@@ -5121,6 +5121,12 @@
     .short \resultVar
     .endm
 
+    .macro SetLevel slot, level // this is just for testing
+    .short SCRCMD_SETLEVEL
+    .short \slot
+    .short \level
+    .endm
+
 
 // CONVENIENCE MACROS
 

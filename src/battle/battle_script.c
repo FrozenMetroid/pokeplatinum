@@ -10199,6 +10199,12 @@ static void BattleScript_GetExpTask(SysTask *task, void *inData)
                 slot,
                 data->battleCtx->battleMons[data->battleCtx->faintedMon].species,
                 data->battleCtx->battleMons[data->battleCtx->faintedMon].formNum);
+        } else if (Pokemon_GetValue(mon, MON_DATA_LEVEL, NULL) == MAX_POKEMON_LEVEL // must do it here since the previous instance of calcing effort values is only reached with mons level 1-99
+            && (data->battleCtx->sideGetExpMask[battler] & FlagIndex(slot) || partyWideExpShare)) { // if the mon is at max level but should have gotten exp, still calculate EVs for it
+            BattleScript_CalcEffortValues(BattleSystem_GetParty(data->battleSys, expBattler),
+                slot,
+                data->battleCtx->battleMons[data->battleCtx->faintedMon].species,
+                data->battleCtx->battleMons[data->battleCtx->faintedMon].formNum);
         }
 
         if (totalExp) {
@@ -10750,6 +10756,10 @@ static void BattleScript_CalcEffortValues(Party *party, int slot, int species, i
         curEVs[stat] += tmp;
         sumEVs += tmp;
         Pokemon_SetValue(mon, MON_DATA_HP_EV + stat, &curEVs[stat]);
+    }
+
+    if (Pokemon_GetValue(mon, MON_DATA_LEVEL, NULL) == 100) {
+        Pokemon_CalcStats(mon); // only do this if the mon is already at max level since they won't be able to go through the normal leveling process that would recalculate stats
     }
 
     SpeciesData_Free(personal);

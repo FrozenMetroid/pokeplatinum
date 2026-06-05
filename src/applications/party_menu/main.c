@@ -1831,15 +1831,13 @@ static u8 GetContextMenuEntriesForPartyMon(PartyMenuApplication *application, u8
 
             // add Fly, Flash, Dig, and Defog if the mon can learn the move
             for (i = 0; i < NELEMS(tmsToInclude); i++) {
-                BOOL compatible = Pokemon_CanLearnTM(mon, Item_TMHMNumber(tmsToInclude[i]));
-                if (!compatible) {
+                if (!Pokemon_CanLearnTM(mon, Item_TMHMNumber(tmsToInclude[i]))) {
                     continue; // check the next index in the loop
                 }
                 move = Item_MoveForTMHM(tmsToInclude[i]);
                 fieldEffect = GetFieldMoveIndex(move);
                 if (fieldEffect != 0xFF) {
-                    BOOL hasTMHM = Bag_CanRemoveItem(bag, tmsToInclude[i], 1, HEAP_ID_PARTY_MENU);
-                    if (hasTMHM) {
+                    if (Bag_CanRemoveItem(bag, tmsToInclude[i], 1, HEAP_ID_PARTY_MENU)) {
                         menuEntriesBuffer[count] = fieldEffect;
                         count++;
                         PartyMenu_SetKnownFieldMove(application, move, moveSlot);
