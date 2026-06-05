@@ -266,6 +266,8 @@ _UseRockClimb:
 FieldMoves_Water:
     CheckItem ITEM_HM03, 1, VAR_RESULT // much easier to check it here rather than the code that initially checks for Surf
     GoToIfNe VAR_RESULT, TRUE, _End
+    CheckTMHMMoveCompatibility MOVE_SURF, VAR_0x8004, VAR_RESULT
+    GoToIfEQ VAR_RESULT, FALSE, _End
     PlaySE SEQ_SE_CONFIRM
     LockAll
     CheckHasPartner VAR_RESULT
@@ -285,8 +287,6 @@ _CannotUseSurf_Partner:
     GoTo _ReleaseAll
 
 _UseSurf:
-    CheckTMHMMoveCompatibility MOVE_SURF, VAR_0x8004, VAR_RESULT
-    // VAR_RESULT unused here because the check happens outside of the script; we just use this here to get the slot of the mon
     BufferPartyMonNickname 0, VAR_0x8004
     Message FieldMoves_Text_PokemonUsedSurf
     CloseMessage

@@ -65,7 +65,7 @@
             ],
             "iv_scale": 0,
             "ivnums": [15, 15, 15, 15, 15, 15],
-            "evnums": [35, 35, 0, 0, 0, 0],
+            "evnums": [50, 50, 0, 0, 0, 0],
             "ball": "ITEM_NEST_BALL",
             "ability": "ABILITY_POISON_POINT",
             "nature": "NATURE_QUIET",

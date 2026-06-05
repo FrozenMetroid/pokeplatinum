@@ -688,9 +688,9 @@ u16 Field_TileBehaviorToScript(FieldSystem *fieldSystem, u8 behavior)
         u32 distortionBehavior = PlayerAvatar_GetDistortionCurrTileBehaviour(fieldSystem->playerAvatar);
 
         if (PlayerAvatar_CanUseSurf(fieldSystem->playerAvatar, distortionBehavior, behavior) && TrainerInfo_HasBadge(info, 3)) {
-            if (Party_HasMonWithMove(SaveData_GetParty(fieldSystem->saveData), MOVE_SURF) != PARTY_SLOT_NONE) {
+            // if (Party_HasMonWithMove(SaveData_GetParty(fieldSystem->saveData), MOVE_SURF) != PARTY_SLOT_NONE) {
                 return SCRIPT_ID(FIELD_MOVES, 4);
-            }
+            // }
         }
     }
 
