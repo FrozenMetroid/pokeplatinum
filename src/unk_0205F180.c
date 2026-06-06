@@ -2580,15 +2580,11 @@ static BOOL FieldTask_StartWaterfallDescent(FieldTask *task) {
     u16 *var = FieldSystem_GetVarPointer(fieldSystem, VAR_MAP_LOCAL_1F); // 0x401F
     switch (*taskState) {
         case 0:
-            MapObjectMan_PauseAllMovement(fieldSystem->mapObjMan);
-            ++(*taskState);
-            break;
-        case 1:
             *var = 1;
             ScriptManager_Start(task, SCRIPT_ID(FIELD_MOVES, 16), NULL, NULL);
             ++(*taskState);
             break;
-        case 2:
+        case 1:
             if (*var == 0)
             {
                 return TRUE;

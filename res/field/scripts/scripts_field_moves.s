@@ -353,18 +353,21 @@ _UseWaterfall:
 _AfterWaterfall:
     GetCurrentMapID VAR_0x8004
     CreateJournalEvent LOCATION_EVENT_USED_WATERFALL, VAR_0x8004, 0, 0, 0
+_EndWaterfallTask:
     SetVar VAR_MAP_LOCAL_1F, 0 // ends the task for StartWaterfallDescent and doesn't mess with anything in the normal usage of Waterfall, so we gucci
     GoTo _ReleaseAll
 
 // this is only used when the player presses Down while at the top of a waterfall
 FieldMoves_StartWaterfallDescent:
     CheckTMHMMoveCompatibility MOVE_WATERFALL, VAR_0x8004, VAR_RESULT
-    GoToIfEq VAR_RESULT, FALSE, _End
+    GoToIfEq VAR_RESULT, FALSE, _EndWaterfallTask
     CheckItem ITEM_HM07, 1, VAR_RESULT
-    GoToIfEq VAR_RESULT, FALSE, _End
+    GoToIfEq VAR_RESULT, FALSE, _EndWaterfallTask
     CheckBadgeAcquired BADGE_ID_BEACON, VAR_RESULT
-    GoToIfEq VAR_RESULT, FALSE, _End
+    GoToIfEq VAR_RESULT, FALSE, _EndWaterfallTask
+    LockAll
     UseWaterfall VAR_0x8004, FALSE
     GoTo _AfterWaterfall
+    
 
 .balign 4, 0
