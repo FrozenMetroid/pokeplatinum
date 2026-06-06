@@ -7323,7 +7323,7 @@ static BOOL ScrCmd_BottleCapStatIncrease(ScriptContext *ctx)
     return FALSE;
 }
 
-static BOOL ScrCmd_PrintMonPersonality(ScriptContext *ctx)
+static BOOL ScrCmd_PrintMonPersonality(ScriptContext *ctx) // only for debugging
 {
     u16 partySlot = ScriptContext_GetVar(ctx);
     Pokemon *mon = Party_GetPokemonBySlotIndex(SaveData_GetParty(ctx->fieldSystem->saveData), partySlot);
@@ -7543,7 +7543,6 @@ static BOOL ScrCmd_SetLevel(ScriptContext *ctx)
 
 static BOOL ScrCmd_CameraTranslation(ScriptContext *ctx)
 {
-    EmulatorLog("In ScrCmd_CameraTranslation");
     Camera *camera = ctx->fieldSystem->camera;
     GFCameraTranslationWrapper *cameraMove = CreateCameraTranslationWrapper(HEAP_ID_FIELD2, camera);
     CameraTranslationPathTemplate template;
@@ -7569,7 +7568,6 @@ static BOOL ScrCmd_CameraTranslation(ScriptContext *ctx)
         template.position.z = -template.position.z;
     }
     u16 duration = ScriptContext_GetVar(ctx);
-    EmulatorLog("x: %i, signX: %d, y: %i, signY: %d, z: %i, signZ: %d, duration: %u", template.position.x, signX, template.position.y, signY, template.position.z, signZ, duration);
     SetCameraTranslationPath(cameraMove, &template, duration);
     void **dataPtr = FieldSystem_GetScriptMemberPtr(ctx->fieldSystem, SCRIPT_MANAGER_DATA_PTR);
     *dataPtr = cameraMove;
@@ -7587,7 +7585,6 @@ static BOOL ScriptContext_WaitCameraTranslation(ScriptContext *ctx)
     struct GFCameraTranslationWrapper **cameraMove = FieldSystem_GetScriptMemberPtr(ctx->fieldSystem, SCRIPT_MANAGER_DATA_PTR);
     if (IsCameraTranslationFinished(*cameraMove)) {
         DeleteCameraTranslationWrapper(*cameraMove);
-        EmulatorLog("Camera Translation done");
         *cameraMove = NULL;
         return TRUE;
     }

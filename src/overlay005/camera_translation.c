@@ -44,7 +44,6 @@ void SetCameraTranslationPath(GFCameraTranslationWrapper *wrapper, struct Camera
         wrapper->init.angle = angle.x;
         wrapper->init.fovY = Camera_GetFOV(wrapper->camera);
         if (bindTarget != NULL) {
-            EmulatorLog("Camera is currently bound");
             VEC_Subtract(&target, bindTarget, &wrapper->init.position);
         } else {
             wrapper->init.position.x = 0;
@@ -54,7 +53,6 @@ void SetCameraTranslationPath(GFCameraTranslationWrapper *wrapper, struct Camera
         wrapper->init.distance = Camera_GetDistance(wrapper->camera);
         wrapper->duration = duration;
         wrapper->step = 0;
-        EmulatorLog("Step: %d\nDuration: %u\nDistance: %u\ninit x: %u\ninit y: %u\ninit z: %u\nfov: %u\nangle: %u\n", wrapper->step, wrapper->duration, wrapper, wrapper->init.position.x, wrapper->init.position.y, wrapper->init.position.z, wrapper->init.fovY, wrapper->init.angle);
         wrapper->task = SysTask_Start((SysTaskFunc)sysTask_MoveCameraAlongTrack, wrapper, 0);
     }
 }
@@ -71,7 +69,6 @@ static void sysTask_MoveCameraAlongTrack(SysTask *unk, GFCameraTranslationWrappe
             resetWrapper(wrapper);
         }
     } else {
-        EmulatorLog("Wrapper->mode != 0");
         stepCamera(wrapper->camera, &wrapper->target, &wrapper->init, wrapper->duration - wrapper->step, wrapper->duration);
         wrapper->step--;
         if (wrapper->step == 0) {
@@ -82,7 +79,6 @@ static void sysTask_MoveCameraAlongTrack(SysTask *unk, GFCameraTranslationWrappe
 
 static void resetWrapper(GFCameraTranslationWrapper *wrapper) {
     if (wrapper->task != NULL) {
-        EmulatorLog("Deleting task\n");
         SysTask_Done(wrapper->task);
         wrapper->task = NULL;
     }
