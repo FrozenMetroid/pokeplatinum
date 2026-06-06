@@ -99,6 +99,7 @@
 #include "bg_window.h"
 #include "binoculars_vista_lighthouse.h"
 #include "camera.h"
+#include "camera_translation.h"
 #include "clear_game.h"
 #include "comm_player_manager.h"
 #include "communication_system.h"
@@ -748,6 +749,7 @@ static void sub_02040F5C(SysTask *param0, void *param1);
 static u32 SaveData_GetRotomFormsInSave(SaveData *saveData);
 
 BOOL FieldTask_WonderTrade(FieldTask *task);
+static BOOL ScriptContext_WaitCameraTranslation(ScriptContext *ctx);
 
 static const u8 sConditionTable[6][3] = {
     //   <     ==      >
@@ -7536,5 +7538,58 @@ static BOOL ScrCmd_SetLevel(ScriptContext *ctx)
     Pokemon_SetValue(mon, MON_DATA_LEVEL, &level);
     Pokemon_CalcStats(mon);
 
+    return FALSE;
+}
+
+static BOOL ScrCmd_CameraTranslation(ScriptContext *ctx)
+{
+    EmulatorLog("In ScrCmd_CameraTranslation");
+    Camera *camera = ctx->fieldSystem->camera;
+    GFCameraTranslationWrapper *cameraMove = CreateCameraTranslationWrapper(HEAP_ID_FIELD2, camera);
+    CameraTranslationPathTemplate template;
+
+    template.angle = camera->angle.x;
+    template.fovY = camera->fovY;
+    template.distance = camera->distance;
+
+    template.position.x = ScriptContext_GetVar(ctx) * MAP_OBJECT_TILE_SIZE;
+    u8 signX = ScriptContext_ReadByte(ctx);
+    if (signX != 1 && template.position.x != 0) {
+        template.position.x = -template.position.x;
+    }
+    template.position.y = ScriptContext_GetVar(ctx) * MAP_OBJECT_TILE_SIZE;
+    u8 signY = ScriptContext_ReadByte(ctx);
+    if (signY != 1 && template.position.y != 0) {
+        template.position.y = -template.position.y;
+    }
+    template.position.z = ScriptContext_GetVar(ctx) * MAP_OBJECT_TILE_SIZE;
+    u8 signZ = ScriptContext_ReadByte(ctx);
+    signZ = -signZ; // it's inverted, so to make the numbers make sense for the script where 1 is still positive in the script
+    if (signZ != 0 && template.position.z != 0) {
+        template.position.z = -template.position.z;
+    }
+    u16 duration = ScriptContext_GetVar(ctx);
+    EmulatorLog("x: %i, signX: %d, y: %i, signY: %d, z: %i, signZ: %d, duration: %u", template.position.x, signX, template.position.y, signY, template.position.z, signZ, duration);
+    SetCameraTranslationPath(cameraMove, &template, duration);
+    void **dataPtr = FieldSystem_GetScriptMemberPtr(ctx->fieldSystem, SCRIPT_MANAGER_DATA_PTR);
+    *dataPtr = cameraMove;
+    return FALSE;
+}
+
+static BOOL ScrCmd_WaitCameraTranslation(ScriptContext *ctx)
+{
+    ScriptContext_Pause(ctx, ScriptContext_WaitCameraTranslation);
+    return TRUE;
+}
+
+static BOOL ScriptContext_WaitCameraTranslation(ScriptContext *ctx)
+{
+    struct GFCameraTranslationWrapper **cameraMove = FieldSystem_GetScriptMemberPtr(ctx->fieldSystem, SCRIPT_MANAGER_DATA_PTR);
+    if (IsCameraTranslationFinished(*cameraMove)) {
+        DeleteCameraTranslationWrapper(*cameraMove);
+        EmulatorLog("Camera Translation done");
+        *cameraMove = NULL;
+        return TRUE;
+    }
     return FALSE;
 }

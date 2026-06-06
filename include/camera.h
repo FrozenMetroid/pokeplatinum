@@ -104,4 +104,7 @@ VecFx32 Camera_GetPosition(Camera const *camera);
 void Camera_SetTarget(const VecFx32 *target, Camera *camera);
 void Camera_SetPosition(const VecFx32 *position, Camera *camera);
 
+// new
+const VecFx32 *Camera_GetCurrentTarget(const Camera *camera);
+
 #endif // POKEPLATINUM_CAMERA_H

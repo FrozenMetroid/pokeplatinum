@@ -5128,6 +5128,22 @@
     .short \level
     .endm
 
+    .macro CameraTranslation x, signX, y, signY, z, signZ, duration
+    .short SCRCMD_CAMERATRANSLATION
+    .short \x
+    .byte \signX
+    .short \y
+    .byte \signY
+    .short \z
+    .byte \signZ
+    .short \duration
+    .endm
+
+    .macro WaitCameraTranslation
+    .short SCRCMD_WAITCAMERATRANSLATION
+    .endm
+
+
 
 // CONVENIENCE MACROS
 

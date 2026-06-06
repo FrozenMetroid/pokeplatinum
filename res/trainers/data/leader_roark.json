@@ -39,7 +39,7 @@
             "moves": [
                 "MOVE_HEADBUTT",
                 "MOVE_PURSUIT",
-                "MOVE_STEALTH_ROCK",
+                "MOVE_ROCK_SMASH",
                 "MOVE_ROCK_THROW"
             ],
             "iv_scale": 0,

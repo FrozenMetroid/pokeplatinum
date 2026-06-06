@@ -864,6 +864,8 @@ ScriptCommand(SCRCMD_CHANGEPOKEBALL,                                       ScrCm
 ScriptCommand(SCRCMD_RESETEVS,                                             ScrCmd_ResetEVs)
 ScriptCommand(SCRCMD_CHECKOBTAINEDALLARCEUSPLATES,                         ScrCmd_CheckObtainedAllArceusPlates)
 ScriptCommand(SCRCMD_SETLEVEL,                                             ScrCmd_SetLevel)
+ScriptCommand(SCRCMD_CAMERATRANSLATION,                                    ScrCmd_CameraTranslation)
+ScriptCommand(SCRCMD_WAITCAMERATRANSLATION,                                ScrCmd_WaitCameraTranslation)
 
 // clang-format on
 

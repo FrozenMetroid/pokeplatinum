@@ -36,7 +36,6 @@ LakeVerityLowWater_HideStarly:
     RemoveObject LOCALID_STARLY_EAST
     ClearFlag FLAG_MAP_LOCAL
     End
-    End
 
 LakeVerityLowWater_OnFrameCyrus:
     LockAll
@@ -47,17 +46,16 @@ LakeVerityLowWater_OnFrameCyrus:
     BufferRivalName 0
     Message LakeVerityLowWater_Text_WhatsGoingOn
     CloseMessage
-    AddFreeCamera 46, 53
-    ApplyFreeCameraMovement LakeVerityLowWater_Movement_PanToCyrus
-    WaitMovement
+    CameraTranslation 2, 1, 0, 0, 9, 1, 80
+    WaitCameraTranslation
     WaitTime 15, VAR_RESULT
     Message LakeVerityLowWater_Text_IWillMakeTimeAndSpaceMine
     CloseMessage
     WaitTime 30, VAR_RESULT
     ApplyMovement LOCALID_CYRUS, LakeVerityLowWater_Movement_CyrusWalkToPlayer
-    ApplyFreeCameraMovement LakeVerityLowWater_Movement_PanBackToPlayer
+    CameraTranslation 0, 0, 0, 0, 0, 0, 80
+    WaitCameraTranslation
     WaitMovement
-    RestoreCamera
     Message LakeVerityLowWater_Text_AllowMeToPass
     CloseMessage
     ApplyMovement LOCALID_RIVAL, LakeVerityLowWater_Movement_RivalMoveAwayForCyrus

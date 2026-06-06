@@ -448,6 +448,7 @@ pokeplatinum_c = files(
     'overlay005/ov5_021FAF40.c',
     'overlay005/field_effect_renderer.c',
     'overlay005/wonder_trade.c',
+    'overlay005/camera_translation.c',
     'overlay006/ov6_0223E140.c',
     'overlay006/wild_encounters.c',
     'overlay006/great_marsh_lookout_sprite.c',

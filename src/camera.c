@@ -469,6 +469,10 @@ VecFx32 Camera_GetTarget(Camera const *camera)
     return camera->lookAt.target;
 }
 
+const VecFx32 *Camera_GetCurrentTarget(const Camera *camera) {
+    return camera->targetPos;
+}
+
 VecFx32 Camera_GetPosition(Camera const *camera)
 {
     return camera->lookAt.position;

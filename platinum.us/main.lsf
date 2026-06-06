@@ -555,6 +555,7 @@ Overlay overlay5
 	Object main.nef.p/src_overlay005_villa_furniture.c.o
 	Object main.nef.p/src_overlay005_dist_world_surf_mount_renderer.c.o
 	Object main.nef.p/src_overlay005_wonder_trade.c.o
+	Object main.nef.p/src_overlay005_camera_translation.c.o
 }
 
 Overlay overlay6
