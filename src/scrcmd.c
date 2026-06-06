@@ -3655,7 +3655,10 @@ static BOOL ScrCmd_UseSurf(ScriptContext *ctx)
 
 static BOOL ScrCmd_UseWaterfall(ScriptContext *ctx)
 {
-    FieldTask_StartUseWaterfall(ctx->task, PlayerAvatar_GetDir(ctx->fieldSystem->playerAvatar), ScriptContext_GetVar(ctx));
+    u8 slot = ScriptContext_GetVar(ctx);
+    u8 playCutIn = ScriptContext_ReadByte(ctx);
+
+    FieldTask_StartUseWaterfall(ctx->task, PlayerAvatar_GetDir(ctx->fieldSystem->playerAvatar), slot, playCutIn);
     return TRUE;
 }
 

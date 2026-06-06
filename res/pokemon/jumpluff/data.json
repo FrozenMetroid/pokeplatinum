@@ -86,7 +86,9 @@
             "TM86",
             "TM87",
             "TM89",
-            "TM90"
+            "TM90",
+            "HM01",
+            "HM02"
         ],
         "by_tutor": [
             "MOVE_SNORE",

@@ -8,6 +8,7 @@
 #include "constants/field/movement.h"
 #include "generated/game_records.h"
 #include "generated/movement_actions.h"
+#include "generated/vars_flags.h"
 
 #include "struct_decls/map_object.h"
 #include "struct_defs/player_data.h"
@@ -26,10 +27,13 @@
 #include "persisted_map_features_init.h"
 #include "player_avatar.h"
 #include "sound_playback.h"
+#include "system.h"
 #include "terrain_collision_manager.h"
 #include "unk_020655F4.h"
 
 typedef BOOL (*UnkFuncPtr_020EDB84)(u8);
+
+static BOOL FieldTask_StartWaterfallDescent(FieldTask *task);
 
 typedef struct {
     UnkFuncPtr_020EDB84 unk_00;
@@ -141,13 +145,33 @@ static const UnkStruct_020EDB04 Unk_020EDB64[4] = {
 const UnkStruct_020EDB84 Unk_020EDB84[];
 static int (*const Unk_020EDAEC[6])(PlayerAvatar *, int);
 
-void PlayerAvatar_MoveControl(PlayerAvatar *playerAvatar, const LandDataManager *param1, int dir, u16 keyPad, u16 keyPress, BOOL param5)
+void PlayerAvatar_MoveControl(FieldSystem *fieldSystem, const LandDataManager *param1, int dir, u16 keyPad, u16 keyPress, BOOL param5)
 {
+    PlayerAvatar *playerAvatar = fieldSystem->playerAvatar;
+
     if (dir == -1) {
         dir = PlayerAvatar_CalcFaceDirectionInternal(playerAvatar, keyPad, keyPress);
     }
 
     PlayerAvatar_TryCyclingGearChange(playerAvatar, keyPad);
+
+    // add the ability to move down a waterfall immediately
+    // put it before the next check so that the sound effect for hitting a collision doesn't play
+    MapObject *mapObj = Player_MapObject(playerAvatar);
+    int targetX = MapObject_GetX(mapObj);
+    int targetZ = MapObject_GetZ(mapObj);
+    int direction = PlayerAvatar_GetMoveDir(playerAvatar);
+    targetX += MapObject_GetDxFromDir(direction);
+    targetZ += MapObject_GetDzFromDir(direction);
+    u8 nextTileBehavior = TerrainCollisionManager_GetTileBehavior(fieldSystem, targetX, targetZ);
+    if (TileBehavior_IsWaterfall(nextTileBehavior)
+        && direction == 1
+        && JOY_HELD(PAD_KEY_DOWN)) {
+        int *unused = Heap_AllocAtEnd(HEAP_ID_FIELD1, sizeof(int));
+        *unused = 0;
+        FieldSystem_CreateTask(fieldSystem, FieldTask_StartWaterfallDescent, unused);
+        return;
+    }
 
     if (PlayerAvatar_CheckStartMoveInternal(playerAvatar, dir) == FALSE) {
         return;
@@ -2548,4 +2572,28 @@ void sub_020617BC(PlayerAvatar *const playerAvatar, int *xOut, int *yOut, int *z
     *zOut = MapObject_GetZ(mapObj);
 
     sub_02061674(playerAvatar, v0, xOut, yOut, zOut);
+}
+
+static BOOL FieldTask_StartWaterfallDescent(FieldTask *task) {
+    FieldSystem *fieldSystem = FieldTask_GetFieldSystem(task);
+    u32 *taskState = FieldTask_GetState(task);
+    u16 *var = FieldSystem_GetVarPointer(fieldSystem, VAR_MAP_LOCAL_1F); // 0x401F
+    switch (*taskState) {
+        case 0:
+            MapObjectMan_PauseAllMovement(fieldSystem->mapObjMan);
+            ++(*taskState);
+            break;
+        case 1:
+            *var = 1;
+            ScriptManager_Start(task, SCRIPT_ID(FIELD_MOVES, 16), NULL, NULL);
+            ++(*taskState);
+            break;
+        case 2:
+            if (*var == 0)
+            {
+                return TRUE;
+            }
+            break;
+    } 
+    return FALSE;
 }

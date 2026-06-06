@@ -28,6 +28,7 @@
 #include "field/field_system.h"
 
 #include "generated/evolution_methods.h"
+#include "generated/abilities.h"
 
 #include "overlay005/script_message.h"
 #include "overlay006/npc_trade.h"
@@ -84,20 +85,23 @@ static const WonderTradeSpecialCases wonderTradeSpecialCasesData[] = {
     {SPECIES_HAPPINY, SPECIES_CHANSEY, SPECIES_BLISSEY,         1, 2},
     {SPECIES_RIOLU, SPECIES_LUCARIO, 0xFFFE,                    2, 0xFF},
     {SPECIES_BUNEARY, SPECIES_LOPUNNY, 0xFFFE,                  2, 0xFF},
-    {SPECIES_GLIGAR, SPECIES_GLISCOR, 0xFFFE,                   2, 0xFF}, // Razor Fang level 2
-    {SPECIES_SNEASEL, SPECIES_WEAVILE, 0xFFFE,                  2, 0xFF}, // Razor Claw level 2
     {SPECIES_NINCADA, SPECIES_NINJASK, SPECIES_SHEDINJA,        20, 20},
     {SPECIES_ZUBAT, SPECIES_GOLBAT, SPECIES_CROBAT,             22, 22},
     {SPECIES_MAGNEMITE, SPECIES_MAGNETON, SPECIES_MAGNEZONE,    30, 30},
-    {SPECIES_LICKITUNG, SPECIES_LICKILICKY, 0xFFFE,             33, 0xFF},
-    {SPECIES_TANGELA, SPECIES_TANGROWTH, 0xFFFE,                33, 0xFF},
     {SPECIES_SMOOCHUM, SPECIES_JYNX, 0xFFFE,                    30, 0xFF},
+    // originally needs an item to evolve
+    {SPECIES_GLIGAR, SPECIES_GLISCOR, 0xFFFE,                   2, 0xFF}, // Razor Fang level 2
+    {SPECIES_SNEASEL, SPECIES_WEAVILE, 0xFFFE,                  2, 0xFF}, // Razor Claw level 2
     {SPECIES_ELEKID, SPECIES_ELECTABUZZ, SPECIES_ELECTIVIRE,    30, 30},
     {SPECIES_MAGBY, SPECIES_MAGMAR, SPECIES_MAGMORTAR,          30, 30},
     {SPECIES_RHYHORN, SPECIES_RHYDON, SPECIES_RHYPERIOR,        38, 38},
     {SPECIES_HORSEA, SPECIES_SEADRA, SPECIES_KINGDRA,           30, 30},
+    // need to know a move at a specific level
     {SPECIES_AIPOM, SPECIES_AMBIPOM, 0xFFFE,                    32, 0xFF},
     {SPECIES_YANMA, SPECIES_YANMEGA, 0xFFFE,                    33, 0xFF},
+    {SPECIES_LICKITUNG, SPECIES_LICKILICKY, 0xFFFE,             33, 0xFF},
+    {SPECIES_TANGELA, SPECIES_TANGROWTH, 0xFFFE,                33, 0xFF},
+    {SPECIES_SWINUB, SPECIES_PILOSWINE, SPECIES_MAMOSWINE,      33, 44}, // ancient power changed to be a level up move for Piloswine at level 44
     {0xFFFF, 0xFFFF, 0xFFFF, 0xFF, 0xFF},
 };
 
@@ -370,7 +374,7 @@ void WonderTrade_GetHiddenAbility(struct WonderTradeData *wonderTradeData, u32 *
     if ((LCRNG_RandMod(100) > 94) && hiddenAbility != 0) { // 5% chance (95, 96, 97, 98, 99) to be hidden ability if it exists
         wonderTradeData->hiddenAbility = hiddenAbility;
     } else {
-        wonderTradeData->hiddenAbility = FALSE;
+        wonderTradeData->hiddenAbility = ABILITY_NONE;
     }
 
     ++(*taskState);
@@ -426,7 +430,7 @@ void WonderTrade_GiveMon(struct WonderTradeData *wonderTradeData, struct FieldSy
     BoxPokemon_SetMetLocationAndDate(&mon->box, LocationNames_Text_WonderTrade, TRUE);
 
     Pokemon_SetValue(mon, MON_DATA_HELD_ITEM, &wonderTradeData->item);
-    if (wonderTradeData->hiddenAbility != 0) {
+    if (wonderTradeData->hiddenAbility != ABILITY_NONE) {
         u8 truthnuke = TRUE;
         Pokemon_SetValue(mon, MON_DATA_ABILITY, &wonderTradeData->hiddenAbility); // only use this line if the hidden ability is selected because the default ability is already determined by the personality value generated in Pokemon_InitWith
         Pokemon_SetValue(mon, MON_DATA_HIDDEN_ABILITY_SET, &truthnuke);
@@ -496,7 +500,7 @@ void WonderTrade_GetEggMove(struct WonderTradeData *wonderTradeData, u32 *taskSt
 {
 
     u16 tempEggMoves[MAX_EGG_MOVES];
-    u16 eggSpecies = Pokemon_GetBaseSpeciesForBattle(wonderTradeData->species); // not sure why it is called this
+    u16 eggSpecies = Pokemon_GetBaseSpeciesFromPersonalData(wonderTradeData->species);
     Pokemon *mon = Pokemon_New(HEAP_ID_FIELD1);
     Pokemon_InitWith(mon, eggSpecies, 1, 0, TRUE, 0, 0, 0); // LoadEggMoves works with PartyPokemon pointer data, so had to make mon data temporarily
     u8 eggMoveLearnsetSize = LoadSpeciesEggMoves(mon, tempEggMoves); // also populates tempEggMoves with the moves
@@ -542,7 +546,7 @@ void WonderTrade_GetTMMoves(struct WonderTradeData *wonderTradeData, u32 *taskSt
 {
     u8 numOfTMsToAdd = LCRNG_RandMod(5); // 0 - 4 TMs
     BOOL alreadyKnowsMove;
-    u16 rand, learnedMove, move, i = 0;
+    u16 learnedMove, move, i = 0;
     u8 randomSlot, j = 0;
     if (LCRNG_RandMod(20) == 0) { // 5% chance to get a TM added
         u16 tmMoves[NUM_TMS];
@@ -555,8 +559,7 @@ void WonderTrade_GetTMMoves(struct WonderTradeData *wonderTradeData, u32 *taskSt
         }
         while (j <= numOfTMsToAdd && numberOfLearnableTMs != 0) { // 25% chance for 1 TM to be added, 25% for 2, etc. Only do this for mons that can actually learn TMs, so no Magikarp etc.
             alreadyKnowsMove = FALSE;
-            rand = LCRNG_RandMod(numberOfLearnableTMs); // randomly select an eligible tm
-            move = tmMoves[rand];
+            move = tmMoves[LCRNG_RandMod(numberOfLearnableTMs)]; // randomly select an eligible tm move
             for (i = 0; i < LEARNED_MOVES_MAX; i++) {
                 learnedMove = Pokemon_GetValue(wonderTradeData->receivedPokemon, MON_DATA_MOVE1 + i, NULL);
                 if (move == learnedMove) {

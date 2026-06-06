@@ -2401,7 +2401,7 @@ static BOOL BtlCmd_StartGetExpTask(BattleSystem *battleSys, BattleContext *battl
     battleCtx->taskData->battleCtx = battleCtx;
     battleCtx->taskData->seqNum = SEQ_GET_EXP_START;
     battleCtx->taskData->tmpData[GET_EXP_PARTY_SLOT] = 0;
-
+    battleCtx->showedActiveBattlerExpGain = FALSE;
     SysTask_Start(BattleScript_GetExpTask, battleCtx->taskData, NULL);
 
     return FALSE;
@@ -10126,14 +10126,18 @@ static void BattleScript_GetExpTask(SysTask *task, void *inData)
     int partyCount = BattleSystem_GetPartyCount(data->battleSys, expBattler);
 
     // Figure out which mon we're working on
-    for (slot = data->tmpData[GET_EXP_PARTY_SLOT]; slot < partyCount; slot++) {
-        mon = BattleSystem_GetPartyPokemon(data->battleSys, expBattler, slot);
+    if (data->battleCtx->showedActiveBattlerExpGain == FALSE) { // if we haven't shown the exp gain for the active battler yet, start with them
+        slot = data->battleCtx->selectedPartySlot[battler];
+        data->battleCtx->showedActiveBattlerExpGain = TRUE;
+    } else { // otherwise, start with the first mon in the party and work our way up until we find one that participated or, if party-wide exp share is on, until we've gone through every mon
+        for (slot = data->tmpData[GET_EXP_PARTY_SLOT]; slot < partyCount; slot++) {
+            mon = BattleSystem_GetPartyPokemon(data->battleSys, expBattler, slot);
 
-        if ((data->battleCtx->sideGetExpMask[battler] & FlagIndex(slot)) || partyWideExpShare) { // if party-wide exp share, give exp to every slot; otherwise, only slots that participated
-            break;
+            if ((data->battleCtx->sideGetExpMask[battler] & FlagIndex(slot)) || partyWideExpShare) { // if party-wide exp share, give exp to every slot; otherwise, only slots that participated
+                break;
+            }
         }
     }
-
     if (slot == partyCount) { // if we've gone through every slot, end the sequence
         data->seqNum = SEQ_GET_EXP_DONE;
     } else if ((battleType & BATTLE_TYPE_DOUBLES)

@@ -7,10 +7,12 @@
 
 #include "overlay005/land_data_manager_decl.h"
 
+#include "field/field_system_decl.h"
+
 #include "location.h"
 #include "player_avatar.h"
 
-void PlayerAvatar_MoveControl(PlayerAvatar *playerAvatar, const LandDataManager *param1, int param2, u16 param3, u16 param4, BOOL param5);
+void PlayerAvatar_MoveControl(FieldSystem *fieldSystem, const LandDataManager *param1, int param2, u16 param3, u16 param4, BOOL param5);
 int PlayerAvatar_CheckStartMove(PlayerAvatar *playerAvatar, int param1);
 void sub_0205F490(PlayerAvatar *playerAvatar);
 void sub_0205F56C(PlayerAvatar *playerAvatar);

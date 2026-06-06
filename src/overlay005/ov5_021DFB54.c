@@ -1182,13 +1182,14 @@ void ov5_021E097C(FieldSystem *fieldSystem, int param1)
     FieldSystem_CreateTask(fieldSystem, FieldTask_UseWaterfall, taskEnv);
 }
 
-void FieldTask_StartUseWaterfall(FieldTask *task, int direction, int partySlot)
+void FieldTask_StartUseWaterfall(FieldTask *task, u8 direction, u8 partySlot, u8 playCutIn)
 {
     MonRideTask monRideTask;
     FieldSystem *fieldSystem = FieldTask_GetFieldSystem(task);
     Pokemon *partyMon = GetPokemonByIndex(fieldSystem, partySlot);
 
     MonRideTask_Init(fieldSystem, partyMon, &monRideTask);
+    monRideTask.playCutIn = playCutIn;
 
     {
         WaterfallTaskEnv *taskEnv = WaterfallTaskEnv_New(fieldSystem, direction, &monRideTask);
@@ -1454,7 +1455,7 @@ static int SubTask_Waterfall_FinishDescent(WaterfallTaskEnv *taskEnv)
 
     ov6_02248608(taskEnv->unk_50);
 
-    return 1;
+    return 1; // finishes the task
 }
 
 static const MapObjectAnimCmd Unk_ov5_021F9B9C[] = {

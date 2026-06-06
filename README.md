@@ -335,3 +335,4 @@ Wild and Wonder Trade Pokémon will have randomly generated movesets based on wh
 - Earthquake TM in Wayward Cave requires Strength now that TMs are infinite
     - Gible is still accessible at the same point in progression as vanilla Platinum
 - Exp. Share moved to Oreburgh City Poké Center; must have seen 20 species in the Pokédex to receive it, which is possible before Roark
+- Pressing Down while at the top of a waterfall will allow you to immediately descend it without confirming if you have a Pokémon that can learn Waterfall, you have the Beacon Badge, and HM07

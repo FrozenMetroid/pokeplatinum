@@ -18,6 +18,7 @@
     ScriptEntry FieldMoves_UseWaterfallFromMenu
     ScriptEntry FieldMoves_UseDefogFromMenu
     ScriptEntry FieldMoves_UseFlashFromMenu
+    ScriptEntry FieldMoves_StartWaterfallDescent
     ScriptEntryEnd
 
 FieldMoves_Fog_Unused:
@@ -44,17 +45,16 @@ FieldMoves_CutTree:
     LockAll
     FacePlayer
     CheckTMHMMoveCompatibility MOVE_CUT, VAR_0x8004, VAR_RESULT
-    GoToIfEQ VAR_RESULT, FALSE, _CannotUseCut
+    GoToIfEq VAR_RESULT, FALSE, _CannotUseCut
     CheckItem ITEM_HM01, 1, VAR_RESULT
-    GoToIfNe VAR_RESULT, TRUE, _CannotUseCut
+    GoToIfEq VAR_RESULT, FALSE, _CannotUseCut
     CheckBadgeAcquired BADGE_ID_FOREST, VAR_RESULT
-    GoToIfEq VAR_RESULT, 0, _CannotUseCut
+    GoToIfEq VAR_RESULT, FALSE, _CannotUseCut
     Message FieldMoves_Text_WouldYouLikeToUseCut
     ShowYesNoMenu VAR_RESULT
     GoToIfEq VAR_RESULT, MENU_YES, _UseCut
     CloseMessage
     GoTo _ReleaseAll
-    End
 
 _CannotUseCut:
     Message FieldMoves_Text_TreeLooksLikeCanBeCut
@@ -63,7 +63,6 @@ _CannotUseCut:
     WaitButton
     CloseMessage
     GoTo _ReleaseAll
-    End
 
 _UseCut:
     BufferPartyMonNickname 0, VAR_0x8004
@@ -79,7 +78,6 @@ _CutLoop:
     WaitTime 1, VAR_RESULT
     GoToIfEq VAR_0x8005, 0, _CutLoop
     GoTo _ReleaseAll
-    End
 
 _014A:
     GoToIfNe VAR_ETERNA_FOREST_CHERYL_OLD_CHATEAU_CUTSCENE_STATE, 0, _0221
@@ -133,7 +131,7 @@ FieldMoves_Rock:
     LockAll
     FacePlayer
     CheckTMHMMoveCompatibility MOVE_ROCK_SMASH, VAR_0x8004, VAR_RESULT
-    GoToIfEQ VAR_RESULT, FALSE, _CannotUseRockSmash
+    GoToIfEq VAR_RESULT, FALSE, _CannotUseRockSmash
     CheckItem ITEM_HM06, 1, VAR_RESULT
     GoToIfNe VAR_RESULT, TRUE, _CannotUseRockSmash
     CheckBadgeAcquired BADGE_ID_COAL, VAR_RESULT
@@ -143,14 +141,12 @@ FieldMoves_Rock:
     GoToIfEq VAR_RESULT, MENU_YES, _UseRockSmash
     CloseMessage
     GoTo _ReleaseAll
-    End
 
 _CannotUseRockSmash:
     Message FieldMoves_Text_PokemonMayBeAbleToSmashRock
     WaitButton
     CloseMessage
     GoTo _ReleaseAll
-    End
 
 _UseRockSmash:
     BufferPartyMonNickname 0, VAR_0x8004
@@ -166,7 +162,6 @@ _02B2:
     WaitTime 1, VAR_RESULT
     GoToIfEq VAR_0x8005, 0, _02B2
     GoTo _ReleaseAll
-    End
 
 // STRENGTH
 
@@ -177,7 +172,7 @@ FieldMoves_Boulder:
     Strength 2, VAR_RESULT
     GoToIfEq VAR_RESULT, TRUE, _StrengthActive
     CheckTMHMMoveCompatibility MOVE_STRENGTH, VAR_0x8004, VAR_RESULT
-    GoToIfEQ VAR_RESULT, FALSE, _CannotUseStrength
+    GoToIfEq VAR_RESULT, FALSE, _CannotUseStrength
     CheckItem ITEM_HM04, 1, VAR_RESULT
     GoToIfNe VAR_RESULT, TRUE, _CannotUseStrength
     CheckBadgeAcquired BADGE_ID_MINE, VAR_RESULT
@@ -187,14 +182,12 @@ FieldMoves_Boulder:
     GoToIfEq VAR_RESULT, MENU_YES, _UseStrength
     CloseMessage
     GoTo _ReleaseAll
-    End
 
 _CannotUseStrength:
     Message FieldMoves_Text_BoulderMayBeAbleToPush
     WaitButton
     CloseMessage
     GoTo _ReleaseAll
-    End
 
 _UseStrength:
     Strength 1
@@ -208,14 +201,12 @@ _UseStrength:
     GetCurrentMapID VAR_0x8004
     CreateJournalEvent LOCATION_EVENT_USED_STRENGTH, VAR_0x8004, 0, 0, 0
     GoTo _ReleaseAll
-    End
 
 _StrengthActive:
     Message FieldMoves_Text_StrengthMadePossibleToMove
     WaitButton
     CloseMessage
     GoTo _ReleaseAll
-    End
 
 // ROCK CLIMB
 
@@ -223,11 +214,11 @@ FieldMoves_RockyWall:
     PlaySE SEQ_SE_CONFIRM
     LockAll
     CheckTMHMMoveCompatibility MOVE_ROCK_CLIMB, VAR_0x8004, VAR_RESULT
-    GoToIfEQ VAR_RESULT, FALSE, _CannotUseRockClimb
+    GoToIfEq VAR_RESULT, FALSE, _CannotUseRockClimb
     CheckItem ITEM_HM08, 1, VAR_RESULT
-    GoToIfNe VAR_RESULT, TRUE, _CannotUseRockClimb
+    GoToIfEq VAR_RESULT, FALSE, _CannotUseRockClimb
     CheckBadgeAcquired BADGE_ID_ICICLE, VAR_RESULT
-    GoToIfEq VAR_RESULT, 0, _CannotUseRockClimb
+    GoToIfEq VAR_RESULT, FALSE, _CannotUseRockClimb
     CheckHasPartner VAR_RESULT
     GoToIfEq VAR_RESULT, 1, _CannotUseRockClimb_Partner
     Message FieldMoves_Text_WouldYouLikeToUseRockClimb
@@ -235,21 +226,18 @@ FieldMoves_RockyWall:
     GoToIfEq VAR_RESULT, MENU_YES, _UseRockClimb
     CloseMessage
     GoTo _ReleaseAll
-    End
 
 _CannotUseRockClimb:
     Message FieldMoves_Text_RockyWallWillMoveScale
     WaitButton
     CloseMessage
     GoTo _ReleaseAll
-    End
 
 _CannotUseRockClimb_Partner:
     Message FieldMoves_Text_NoRockClimbingWithPartner
     WaitButton
     CloseMessage
     GoTo _ReleaseAll
-    End
 
 _UseRockClimb:
     BufferPartyMonNickname 0, VAR_0x8004
@@ -259,15 +247,14 @@ _UseRockClimb:
     GetCurrentMapID VAR_0x8004
     CreateJournalEvent LOCATION_EVENT_USED_ROCK_CLIMB, VAR_0x8004, 0, 0, 0
     GoTo _ReleaseAll
-    End
 
 // SURF
 
 FieldMoves_Water:
-    CheckItem ITEM_HM03, 1, VAR_RESULT // much easier to check it here rather than the code that initially checks for Surf
+    CheckItem ITEM_HM03, 1, VAR_RESULT
     GoToIfNe VAR_RESULT, TRUE, _End
     CheckTMHMMoveCompatibility MOVE_SURF, VAR_0x8004, VAR_RESULT
-    GoToIfEQ VAR_RESULT, FALSE, _End
+    GoToIfEq VAR_RESULT, FALSE, _End
     PlaySE SEQ_SE_CONFIRM
     LockAll
     CheckHasPartner VAR_RESULT
@@ -294,7 +281,6 @@ _UseSurf:
     GetCurrentMapID VAR_0x8004
     CreateJournalEvent LOCATION_EVENT_USED_SURF, VAR_0x8004, 0, 0, 0
     GoTo _ReleaseAll
-    End
 
 
 
@@ -316,14 +302,14 @@ FieldMoves_UseDefogFromMenu:
     ScrCmd_0C4
     GetCurrentMapID VAR_0x8004
     CreateJournalEvent LOCATION_EVENT_USED_DEFOG, VAR_0x8004, 0, 0, 0
-    CallIfEq VAR_0x8004, 0x169, _UsedDefogInLostTower
+    CallIfEq VAR_0x8004, MAP_HEADER_ROUTE_209_LOST_TOWER_5F, _UsedDefogInLostTower
     GoTo _ReleaseAll
 
 // FLASH
 
 FieldMoves_UseFlashFromMenu:
     LockAll
-    CheckTMHMMoveCompatibility MOVE_DEFOG, VAR_0x8004, VAR_RESULT
+    CheckTMHMMoveCompatibility MOVE_FLASH, VAR_0x8004, VAR_RESULT
     BufferPartyMonNickname 0, VAR_0x8004
     Message FieldMoves_Text_PokemonUsedFlash
     CloseMessage
@@ -331,8 +317,6 @@ FieldMoves_UseFlashFromMenu:
     Flash 1
     ScrCmd_0C3
     WaitTime 42, VAR_RESULT
-    GoTo _ReleaseAll
-
 _ReleaseAll:
     ReleaseAll
     End
@@ -344,34 +328,43 @@ FieldMoves_Waterfall:
     PlaySE SEQ_SE_CONFIRM
     LockAll
     CheckTMHMMoveCompatibility MOVE_WATERFALL, VAR_0x8004, VAR_RESULT
-    GoToIfEq VAR_RESULT, 6, _CannotUseWaterfall
+    GoToIfEq VAR_RESULT, FALSE, _CannotUseWaterfall
     CheckItem ITEM_HM07, 1, VAR_RESULT
-    GoToIfNe VAR_RESULT, TRUE, _CannotUseWaterfall
+    GoToIfEq VAR_RESULT, FALSE, _CannotUseWaterfall
     CheckBadgeAcquired BADGE_ID_BEACON, VAR_RESULT
-    GoToIfEq VAR_RESULT, 0, _CannotUseWaterfall
+    GoToIfEq VAR_RESULT, FALSE, _CannotUseWaterfall
     Message FieldMoves_Text_WouldYouLikeToUseWaterfall
     ShowYesNoMenu VAR_RESULT
     GoToIfEq VAR_RESULT, MENU_YES, _UseWaterfall
     CloseMessage
     GoTo _ReleaseAll
-    End
 
 _CannotUseWaterfall:
     Message FieldMoves_Text_WallOfWater
     WaitButton
     CloseMessage
     GoTo _ReleaseAll
-    End
 
 _UseWaterfall:
     BufferPartyMonNickname 0, VAR_0x8004
     Message FieldMoves_Text_PokemonUsedWaterfall
     CloseMessage
-    UseWaterfall VAR_0x8004
+    UseWaterfall VAR_0x8004, TRUE
+_AfterWaterfall:
     GetCurrentMapID VAR_0x8004
     CreateJournalEvent LOCATION_EVENT_USED_WATERFALL, VAR_0x8004, 0, 0, 0
+    SetVar VAR_MAP_LOCAL_1F, 0 // ends the task for StartWaterfallDescent and doesn't mess with anything in the normal usage of Waterfall, so we gucci
     GoTo _ReleaseAll
-    End
 
+// this is only used when the player presses Down while at the top of a waterfall
+FieldMoves_StartWaterfallDescent:
+    CheckTMHMMoveCompatibility MOVE_WATERFALL, VAR_0x8004, VAR_RESULT
+    GoToIfEq VAR_RESULT, FALSE, _End
+    CheckItem ITEM_HM07, 1, VAR_RESULT
+    GoToIfEq VAR_RESULT, FALSE, _End
+    CheckBadgeAcquired BADGE_ID_BEACON, VAR_RESULT
+    GoToIfEq VAR_RESULT, FALSE, _End
+    UseWaterfall VAR_0x8004, FALSE
+    GoTo _AfterWaterfall
 
-    .balign 4, 0
+.balign 4, 0

@@ -16,7 +16,7 @@ BOOL PlayerAvatar_CanUseSurf(PlayerAvatar *playerAvatar, u32 currTileBehavior, u
 void FieldTask_StartUseRockClimb(FieldTask *task, int direction, int partySlot);
 BOOL PlayerAvatar_CanUseRockClimb(u32 metatileBehavior, int facingDir);
 void ov5_021E097C(FieldSystem *fieldSystem, int param1);
-void FieldTask_StartUseWaterfall(FieldTask *task, int direction, int partySlot);
+void FieldTask_StartUseWaterfall(FieldTask *task, u8 direction, u8 partySlot, u8 playCutIn);
 void ov5_021E0DD4(FieldTask *param0);
 void ov5_021E0E94(PlayerAvatar *playerAvatar);
 void ov5_021E0EEC(PlayerAvatar *playerAvatar);

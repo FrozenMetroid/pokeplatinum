@@ -1236,9 +1236,10 @@
     .short \partySlot
     .endm
 
-    .macro UseWaterfall partySlot
+    .macro UseWaterfall partySlot, playCutIn
     .short SCRCMD_USEWATERFALL
     .short \partySlot
+    .byte \playCutIn
     .endm
 
     .macro UseFly mapID, x, z

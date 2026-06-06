@@ -1120,7 +1120,7 @@ BOOL StartMenu_ExitPartyMenu(FieldTask *fieldTask)
         break;
     #ifdef PARTY_MENU_ADD_MOVE_REMINDER
     case PARTY_MENU_EXIT_CODE_MOVE_RELEARNER:
-        u16 *var = FieldSystem_GetVarPointer(fieldSystem, VAR_MAP_LOCAL_1F); // 0x401F, not used anywhere else
+        u16 *var = FieldSystem_GetVarPointer(fieldSystem, VAR_MAP_LOCAL_1F); // 0x401F
         *var = partyMenu->selectedMonSlot;
         ScriptManager_Start(fieldTask, SCRIPT_ID(COMMON_SCRIPTS, 60), NULL, NULL);
         menu->state = START_MENU_STATE_9;

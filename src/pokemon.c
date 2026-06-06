@@ -3841,6 +3841,7 @@ u16 Pokemon_GetBaseSpeciesFromPersonalData(const u16 species)
 
 u16 Pokemon_GetBaseSpeciesForBattle(const u16 species)
 {
+    // incense babies
     switch (species) {
     case SPECIES_WOBBUFFET:
     case SPECIES_MARILL:
