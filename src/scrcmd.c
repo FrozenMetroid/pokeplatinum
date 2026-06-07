@@ -6688,7 +6688,6 @@ static BOOL ScrCmd_PokeMartFrontier(ScriptContext *ctx)
         ITEM_PP_UP,
         ITEM_PP_MAX,
         ITEM_RARE_CANDY,
-        ITEM_ABILITY_CAPSULE,
         ITEM_ABILITY_PATCH,
         SHOP_ITEM_END,
     };

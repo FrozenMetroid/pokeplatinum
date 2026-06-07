@@ -25,10 +25,16 @@ Thank you!
 
 - Singleplayer Wonder Trade in the Global Terminal (!!!)
 - Toggleable party-wide Exp. Share (!!!)
+- Infinite TMs and forgettable HMs (!!!)
+- Use HMs without teaching the move (!!!)
+    - Must have a Pokémon capable of using the move in your party, the associated Badge if there is one, and the HM in your Bag
+- Faster HP bar (!!!)
+- The data structure for Trainers has been completely overhauled to be like how it is in HeartGold-Engine (!!!)
+    - Trainers' Pokémon can have custom Poké Balls, Abilities, EVs, IVs, etc.
 - Most if not all Pokémon sprites in battle have been updated to use HeartGold/SoulSilver's and/or my own edits (e.g. improving Hoenn palettes)
 - Move reminder is accessible from the party menu outside of special situations
 - Footstep sounds for walking, running, metal, grass, wood, and caves from HeartGold and Soulsilver
-    - Metal, Grass, and Wood metatile behavior have not been applied to any maps because of the inability to edit maps in the decomp currently
+    - Metal has not been used yet
 - Multiple Premier Balls when buying Poké Balls of any type
 - Shiny Charm
 - Critical Capture
@@ -36,9 +42,6 @@ Thank you!
 - Oval Charm
 - Lowercase Pokémon names
 - Some Pokémon have moves defined to be learned whenever they evolve, e.g. Close Combat on Infernape
-- Infinite TMs and forgettable HMs
-- Use HMs without teaching the move
-    - Must have a Pokémon capable of using the move in your party, the associated Badge if there is one, and the HM in your Bag
 - Hidden Abilities
     - Use the Ability Patch or find them in the wild with Poké Radar chains!
     - Not all Pokémon have their Hidden Abilities due to those Abilities not being programmed (e.g. Infiltrator is missing)
@@ -77,7 +80,7 @@ Thank you!
     - Spinarak (Route 203 and northern 205 at night)
     - Tauros (Route 210)
     - Vulpix (Route 209 at night)
-- Gym Leader sprites, as well as some regular Trainers' sprites, have been improved
+- Most Gym Leader sprites, as well as some regular Trainers' sprites, have been improved
 - If your lead Pokémon has the Ability Harvest, an additional Berry will be harvested when harvesting Berries in the overworld
 - Change your Pokémon's Poké Ball in Bebe's house in Hearthome City
 - Reset your Pokémon's EVs in the middle house of the Fight Area by talking to the man in the top right corner
@@ -259,13 +262,11 @@ Wild and Wonder Trade Pokémon will have randomly generated movesets based on wh
 
 - Trainers' Pokémon with forms have the correct stats
     - Previously, Pokémon with forms that have different stats, such as Wormadam, always used the stats of the base form
-- HP bar is faster now for higher max HP values (!!!)
-- The data structure for Trainers has been completely overhauled to be like how it is in HeartGold-Engine -- now Trainers' Pokémon can have custom Poké Balls, Abilities, EVs, IVs, etc. (!!!)
 - Ice-types receive a 50% Defense increase when under the effects of Hail (Hail has not been modernized to Snow)
 - Trainer AI has been updated to fix a few bugs, such as not reading Dry Skin as a Water immunity and viewing Storm Drain and Lightning Rod as immunities now
 - Trainer AI should (lol) work with all the new/changed Abilities
 - Paralysis
-    - Not ignorable by Magic Guard (Jirachi wins the Clefable matchup even more now)
+    - Not ignorable by Magic Guard
     - Reduces speed by 50%
     - Electric-types immune
 - Burn
@@ -281,22 +282,22 @@ Wild and Wonder Trade Pokémon will have randomly generated movesets based on wh
 
 - Evolutionary items like the Magmarizer are purchasable at the Battle Frontier
 - Evolution stone seller in Sunyshore Market
-- Ability Capsule: Battle Frontier, Team Galactic HQ, Pickup, Poké Mart after 2 Badges
+- Ability Capsule: Team Galactic HQ, Poké Mart after 2 Badges
 - Rocky Helmet: Battle Frontier, Iron Island
 - Eviolite: Battle Frontier
 - Prism Scale: Battle Frontier, first time completing a Contest
 - Linking Cord: Battle Frontier, Game Corner
 - Nature mints: Eterna Herp Shop
-- Bottle Caps: Battle Frontier (use them in the middle house in the Fight Area)
+- Bottle Caps: Battle Frontier, rare Pickup (use them in the middle house in the Fight Area)
+- Gold Bottle Caps: Battle Frontier (use them in the middle house in the Fight Area)
 - Mental Herb: Battle Frontier
 - Life Orb: Battle Frontier
 - Lucky Egg: Battle Frontier
 - Ability Patch: Battle Frontier
-- PP UP: Poké Mart after 5 Badges
-- PP Max: Poké Mart after 8 Badges
-
+- Poké Mart items' required Badges changed and some additional items added, such as the aformentioned Ability Capsule, Ethers, etc.
+    - Check out ``PokeMartCommonItems`` in ``mart_items.h`` for the list
 - Pickup Table:
-    - Replaced TMs Focus Punch, Rest, and Earthquake with Lucky Egg, Ability Capsule, and PP Max respectively since TMs are infinite now
+    - Replaced TMs Focus Punch, Rest, and Earthquake with Lucky Egg, PP Max, and Bottle Cap respectively since TMs are infinite now
 
 # Encounters
 

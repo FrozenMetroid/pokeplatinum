@@ -32,9 +32,9 @@ static const u16 sRarePickupItems[] = {
     ITEM_WHITE_HERB,
     ITEM_LUCKY_EGG,
     ITEM_ELIXIR,
-    ITEM_ABILITY_CAPSULE,
-    ITEM_LEFTOVERS,
     ITEM_PP_MAX,
+    ITEM_LEFTOVERS,
+    ITEM_BOTTLE_CAP,
 };
 
 static const u8 sCommonPickupRate[] = {

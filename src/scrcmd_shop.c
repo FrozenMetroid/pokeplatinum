@@ -21,12 +21,9 @@
 BOOL ScrCmd_PokeMartCommon(ScriptContext *ctx)
 {
     u16 shopItems[64];
-    u8 requiredBadges, badgeNum, i, j;
     u16 unused = ScriptContext_GetVar(ctx);
+    u8 i = 0, j = 0, badgeNum = 0;
 
-    i = 0;
-    badgeNum = 0;
-    requiredBadges = 0;
 
     for (j = 0; j < MAX_BADGES; j++) {
         if (TrainerInfo_HasBadge(SaveData_GetTrainerInfo(ctx->fieldSystem->saveData), j) == TRUE) {
@@ -34,35 +31,8 @@ BOOL ScrCmd_PokeMartCommon(ScriptContext *ctx)
         }
     }
 
-    switch (badgeNum) {
-    case 0:
-        requiredBadges = 1;
-        break;
-    case 1:
-    case 2:
-        requiredBadges = 2;
-        break;
-    case 3:
-    case 4:
-        requiredBadges = 3;
-        break;
-    case 5:
-    case 6:
-        requiredBadges = 4;
-        break;
-    case 7:
-        requiredBadges = 5;
-        break;
-    case 8:
-        requiredBadges = 6;
-        break;
-    default:
-        requiredBadges = 1;
-        break;
-    }
-
     for (j = 0; j < (NELEMS(PokeMartCommonItems)); j++) {
-        if (requiredBadges >= PokeMartCommonItems[j].requiredBadges) {
+        if (badgeNum >= PokeMartCommonItems[j].requiredBadges) {
             shopItems[i] = PokeMartCommonItems[j].itemID;
             i++;
         }
