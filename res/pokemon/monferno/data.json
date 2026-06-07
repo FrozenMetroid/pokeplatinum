@@ -36,14 +36,14 @@
     "learnset": {
         "by_level": [
             [0, "MOVE_MACH_PUNCH"],
+            [1, "MOVE_FAKE_OUT"],
             [1, "MOVE_SCRATCH"],
             [1, "MOVE_LEER"],
             [1, "MOVE_EMBER"],
             [6, "MOVE_EMBER"],
             [9, "MOVE_TAUNT"],
             [12, "MOVE_FURY_SWIPES"],
-            [15, "MOVE_FLAME_WHEEL"],
-            [19, "MOVE_FAKE_OUT"],
+            [19, "MOVE_FLAME_WHEEL"],
             [23, "MOVE_FIRE_SPIN"],
             [26, "MOVE_FEINT"],
             [29, "MOVE_TORMENT"],

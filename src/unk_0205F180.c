@@ -31,6 +31,8 @@
 #include "terrain_collision_manager.h"
 #include "unk_020655F4.h"
 
+#include "res/text/bank/location_names.h"
+
 typedef BOOL (*UnkFuncPtr_020EDB84)(u8);
 
 static BOOL FieldTask_StartWaterfallDescent(FieldTask *task);
@@ -50,7 +52,7 @@ typedef struct {
 static int PlayerAvatar_CheckStartMoveInternal(PlayerAvatar *playerAvatar, int dir);
 static void PlayerAvatar_StartMoveInit(PlayerAvatar *playerAvatar, int param1, u16 keyPad, u16 keyPress);
 static void sub_0205F378(PlayerAvatar *playerAvatar);
-static void PlayerAvatar_PlayWalkSE(PlayerAvatar *playerAvatar);
+static void PlayerAvatar_PlayWalkSE(PlayerAvatar *playerAvatar, FieldSystem *fieldSystem);
 static int sub_0205F62C(PlayerAvatar *playerAvatar, int param1);
 static u32 sub_0205F644(PlayerAvatar *playerAvatar, int param1);
 static int sub_0205F6A4(PlayerAvatar *playerAvatar, u32 param1, int param2);
@@ -198,7 +200,7 @@ void PlayerAvatar_MoveControl(FieldSystem *fieldSystem, const LandDataManager *p
     inline_0205F180(playerAvatar, param1, dir, keyPad, keyPress);
 
     sub_0205F378(playerAvatar);
-    PlayerAvatar_PlayWalkSE(playerAvatar);
+    PlayerAvatar_PlayWalkSE(playerAvatar, fieldSystem);
 }
 
 int PlayerAvatar_CheckStartMove(PlayerAvatar *playerAvatar, int dir)
@@ -290,54 +292,67 @@ typedef struct Sound_FootStep {
 } Sound_FootStep;
 
 typedef struct Sound_TileBehaviorFootStep {
-    u16 tileBehavior;
+    u16 tileBehavior; // 0-255 but need it to be aligned
     u16 seq;
 } Sound_TileBehaviorFootStep;
 
+static const Sound_FootStep Sound_FootStepData[] = {
+    {0,     40},
+	{64,    105},
+	{32,    45},
+	{64,    115},
+	{0,     60},
+	{48,    125},
+	{0,     50},
+	{48,    115},
+};
+
 static const Sound_TileBehaviorFootStep Sound_TileBehaviorFootStepData[] = {
     {TILE_BEHAVIOR_SNOW_DEEP,           SEQ_SE_PL_YUKI},
-    {TILE_BEHAVIOR_SNOW_DEEPER,         SEQ_SE_PL_YUKI},
-    {TILE_BEHAVIOR_SNOW_DEEPEST,        SEQ_SE_PL_YUKI},
-    {TILE_BEHAVIOR_SNOW_SHALLOW,        SEQ_SE_PL_YUKI},
-    {TILE_BEHAVIOR_SNOW_WITH_SHADOWS,   SEQ_SE_PL_YUKI},
     {TILE_BEHAVIOR_PUDDLE,              SEQ_SE_DP_FOOT3_0},
     {TILE_BEHAVIOR_PUDDLE_NO_SPLASHING, SEQ_SE_DP_FOOT3_0},
     {TILE_BEHAVIOR_SHALLOW_WATER,       SEQ_SE_DP_FOOT3_1},
     {TILE_BEHAVIOR_MUD,                 SEQ_SE_DP_MARSH_WALK},
-    {TILE_BEHAVIOR_MUD_DEEP,            SEQ_SE_DP_MARSH_WALK},
-    {TILE_BEHAVIOR_MUD_WITH_GRASS,      SEQ_SE_DP_MARSH_WALK},
-    {TILE_BEHAVIOR_MUD_DEEP_WITH_GRASS, SEQ_SE_DP_MARSH_WALK},
-    {TILE_BEHAVIOR_TALL_GRASS,          SEQ_SE_PL_ASHIOTO_GRASS}, // SEQ_SE_PL_KUSA lowkey bad
-    {TILE_BEHAVIOR_VERY_TALL_GRASS,     SEQ_SE_PL_ASHIOTO_GRASS},
+    {TILE_BEHAVIOR_TALL_GRASS,          SEQ_SE_PL_ASHIOTO_GRASS}, // SEQ_SE_DP_KUSA plays in addition to this
+    {TILE_BEHAVIOR_VERY_TALL_GRASS,     SEQ_SE_PL_ASHIOTO_GRASS}, // SEQ_SE_DP_KUSA plays in addition to this
     {TILE_BEHAVIOR_SAND,                SEQ_SE_PL_ASHIOTO_SAND},
     {TILE_BEHAVIOR_CAVE_FLOOR,          SEQ_SE_PL_ASHIOTO_CAVE},
     {TILE_BEHAVIOR_FLAT_GRASS,          SEQ_SE_PL_ASHIOTO_GRASS}, // haven't defined this behavior on any maps because we can't edit map data in the decomp yet
     {TILE_BEHAVIOR_METAL,               SEQ_SE_PL_ASHIOTO_METAL}, // haven't defined this behavior on any maps because we can't edit map data in the decomp yet
     {TILE_BEHAVIOR_WOOD,                SEQ_SE_PL_ASHIOTO_WOOD}, // haven't defined this behavior on any maps because we can't edit map data in the decomp yet
+    {TILE_BEHAVIOR_BRIDGE,              SEQ_SE_PL_ASHIOTO_WOOD}, // cycling road uses the bridge behavior and wood wouldn't make sense on it, but since you can only access the cycling road with the bicycle it works out since the sound effect is only used for walking
 };
 
-static const Sound_FootStep Sound_FootStepData[] = {
-    {0,     42},
-	{64,    107},
-	{32,    47},
-	{64,    119},
-	{0,     62},
-	{48,    127},
-	{0,     52},
-	{48,    117},
-};
+static BOOL Sound_IsTileBehaviorBridge(u8 tileBehavior) // will use this to reduce the size of the table
+// IMPORTANT:
+// bridges over snow and sand will be handled specially
+{
+    if (tileBehavior >= TILE_BEHAVIOR_BRIDGE_START && tileBehavior <= TILE_BEHAVIOR_BRIDGE_OVER_SNOW) {
+        return TRUE;
+    }
+    return FALSE;
+}
+
+static BOOL Sound_IsTileBehaviorMud(u8 tileBehavior)
+{
+    if (tileBehavior >= TILE_BEHAVIOR_MUD && tileBehavior <= TILE_BEHAVIOR_MUD_DEEP_WITH_GRASS) {
+        return TRUE;
+    }
+    return FALSE;
+}
+
 
 void Sound_ControlFootstepCounter(u16 seq) {
     u8 *footStepCounter = SoundSystem_GetParam(SOUND_SYSTEM_PARAM_FOOT_STEP_COUNTER);
 
-    if (seq != SEQ_SE_PL_YUKI) {
-        Sound_SetInitialVolumeForSequence(seq, Sound_FootStepData[*footStepCounter].volume);
+    if (seq != SEQ_SE_PL_YUKI && seq != SEQ_SE_PL_ASHIOTO_WOOD) {
+        Sound_SetInitialVolumeForSequence(seq, Sound_FootStepData[*footStepCounter].volume * 65 / 100); // make the default footsteps quieter because they sound pretty loud
     } else {
-        Sound_SetInitialVolumeForSequence(seq, Sound_FootStepData[*footStepCounter].volume * 2); // make the snow footsteps louder because they sound quieter than the others
+        Sound_SetInitialVolumeForSequence(seq, Sound_FootStepData[*footStepCounter].volume * 2); // make the snow and wood footsteps louder because they sound quieter than the others
     }
     Sound_SetPitchForHandle(SOUND_HANDLE_TYPE_SFX_2, 0xFFFF, Sound_FootStepData[*footStepCounter].pitch);
 
-    *footStepCounter++;
+    (*footStepCounter)++;
     if (*footStepCounter >= NELEMS(Sound_FootStepData)) {
         *footStepCounter = 0;
     }
@@ -359,7 +374,7 @@ BUG:
     E.g. if I am standing still and facing right and 
     I move up, it won't play a sound effect.
 */
-static void PlayerAvatar_PlayWalkSE(PlayerAvatar *playerAvatar)
+static void PlayerAvatar_PlayWalkSE(PlayerAvatar *playerAvatar, FieldSystem *fieldSystem)
 {
     int moveState = Player_MoveState(playerAvatar);
     int avatarState = PlayerAvatar_MoveState(playerAvatar);
@@ -372,7 +387,8 @@ static void PlayerAvatar_PlayWalkSE(PlayerAvatar *playerAvatar)
     if (playerAvatar->stepsSE == 0 && avatarState == AVATAR_MOVE_STATE_MOVING && playerState != PLAYER_STATE_CYCLING && playerState != PLAYER_STATE_SURFING) { // don't play the sound effect in you turn in place
         MapObject *player = Player_MapObject(playerAvatar);
         int code = MapObject_GetMovementAction(player);
-        u8 next, now = MapObject_GetCurrTileBehavior(player);
+        u8 now = MapObject_GetCurrTileBehavior(player);
+        u8 next;
 
         int direction = MovementAction_GetDirFromAction(code);
         if (direction == -1) { // erroneously passed in a movement code that doesn't have a direction associated with it
@@ -380,17 +396,47 @@ static void PlayerAvatar_PlayWalkSE(PlayerAvatar *playerAvatar)
         } else {
             next = MapObject_GetTileBehaviorFromDir(player, direction);
         }
-        BOOL foundUniqueSoundEffect = FALSE;
-        u16 seq;
+        if (TileBehavior_IsTallGrass(next) || TileBehavior_IsVeryTallGrass(next)) { // this makes it play for every step like hgss
+            Sound_PlayEffect(SEQ_SE_DP_KUSA); // layered with the grass footstep sound effect
+        }
+
+        u8 tempNext = next; // record the original tile behavior for special handling of bridges in a moment
+
+        if (TileBehavior_IsSnow(next) || TileBehavior_IsSnowWithShadows(next)) { // treat all snow as the same for sound purposes to reduce the size of the table being iterated through with every step
+            next = TILE_BEHAVIOR_SNOW_DEEP;
+        } else if (Sound_IsTileBehaviorMud(next)) {
+            next = TILE_BEHAVIOR_MUD; // same thing for mud
+        } else if (Sound_IsTileBehaviorBridge(next)) {
+            next = TILE_BEHAVIOR_BRIDGE; // same thing for bridges
+            if (MapHeader_GetMapLabelTextID(fieldSystem->location->mapId) == LocationNames_Text_SunyshoreCity) {
+                next = 0; // this will cause it to use the default walking and running sound effects instead of the wood ones, which is what we want for sunyshore since the bridge there isn't made of wood
+            }
+        }
+
+        u16 seq = 0;
         // first check if the tile permission already has a sound
         for (int i = 0; i < NELEMS(Sound_TileBehaviorFootStepData); i++) {
-            if (Sound_TileBehaviorFootStepData[i].tileBehavior == next || Sound_TileBehaviorFootStepData[i].tileBehavior == now) {
-                seq = Sound_TileBehaviorFootStepData[i].seq;
-                foundUniqueSoundEffect = TRUE;
+            if (Sound_TileBehaviorFootStepData[i].tileBehavior == next) {
+                // special handling for bridges
+                if (next == TILE_BEHAVIOR_BRIDGE && !MapObject_IsStatusOnElevatedBridge(player)) // what sound effect to play below the bridge, or on bridges like 205's one on the river where they're not elevated
+                {
+                    switch (tempNext) { // tempNext has the original permission so we can check for the specific type of bridge
+                        case TILE_BEHAVIOR_BRIDGE_OVER_SNOW:
+                            seq = SEQ_SE_PL_YUKI;
+                            break;
+                        case TILE_BEHAVIOR_BRIDGE_OVER_SAND:
+                            seq = SEQ_SE_PL_ASHIOTO_SAND;
+                            break;
+                        default: // sunyshore bridges and any others that don't have a specific sound defined should just play the default walking and running sounds
+                            break;
+                    }
+                    break;
+                }
+                seq = Sound_TileBehaviorFootStepData[i].seq; // default to the one in the table
                 break;
             }
         }
-        if (!foundUniqueSoundEffect) { // default to these two if there was nothing special above
+        if (!seq) { // default to these two if there was nothing special above
             if (IsMovementRunning(code)) {
                 seq = SEQ_SE_PL_ASHIOTO_RUN;
             } else {

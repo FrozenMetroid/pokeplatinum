@@ -128,7 +128,8 @@ u16 HoneyTree_GetTreeSlatherStatus(FieldSystem *fieldSystem)
     treeDat = SpecialEncounter_GetPlayerHoneyTreeStates(SaveData_GetSpecialEncounters(fieldSystem->saveData));
     tree = SpecialEncounter_GetHoneyTree(treeId, treeDat);
 
-    if (SixHoursSinceSlathered(tree->minutesRemaining)) {
+    if (SixHoursSinceSlathered(tree->minutesRemaining)
+        && fieldSystem->unk_A8->trees[treeId].isShaking) {
         return TREE_STATUS_ENCOUNTER; // tree can have Pokemon
     } else if (tree->minutesRemaining != 0) {
         return TREE_STATUS_SLATHERED; // tree is slathered

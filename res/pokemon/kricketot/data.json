@@ -52,7 +52,7 @@
     "evolutions": [
         [
             "EVO_LEVEL",
-            10,
+            14,
             "SPECIES_KRICKETUNE"
         ]
     ],

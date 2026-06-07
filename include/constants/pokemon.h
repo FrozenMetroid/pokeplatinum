@@ -1,6 +1,7 @@
 #ifndef POKEPLATINUM_CONSTANTS_POKEMON_H
 #define POKEPLATINUM_CONSTANTS_POKEMON_H
 
+#include "senate_config.h"
 #include "generated/pokemon_data_params.h" // PokemonDataParam
 #include "generated/pokemon_stats.h" // PokemonStat
 #include "generated/pokemon_types.h" // PokemonType
@@ -22,7 +23,11 @@
 #define MAX_POKEMON_LEVEL    100
 #define EGG_POKEMON_LEVEL    1
 
+#ifndef UPDATE_FRIENDSHIP_EVO_THRESHOLD
 #define EVOLVE_FRIENDSHIP_THRESHOLD 220
+#else
+#define EVOLVE_FRIENDSHIP_THRESHOLD 160
+#endif
 
 #define BASE_FRIENDSHIP_VALUE 70
 #define MAX_FRIENDSHIP_VALUE  255

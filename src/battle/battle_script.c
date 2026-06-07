@@ -10393,7 +10393,9 @@ static void BattleScript_GetExpTask(SysTask *task, void *inData)
         break;
 
     case SEQ_GET_EXP_CHECK_LEVEL_UP:
+        #ifdef DEBUG_EXP_GAIN
         EmulatorLog("In SEQ_GET_EXP_CHECK_LEVEL_UP");
+        #endif
         if (Pokemon_ShouldLevelUp(mon)) {
             // Only play the special level-up animation for an active battler
             if (data->battleCtx->selectedPartySlot[expBattler] == slot) {

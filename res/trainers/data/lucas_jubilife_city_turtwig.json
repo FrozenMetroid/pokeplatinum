@@ -18,9 +18,40 @@
             "item": null,
             "moves": [
                 "MOVE_BUBBLE",
-                "MOVE_POUND"
+                "MOVE_POUND",
+                "MOVE_PECK",
+                "MOVE_NONE"
             ],
-            "iv_scale": 30,
+            "iv_scale": 50,
+            "ball_seal": 0
+        },
+        {
+            "species": "SPECIES_CLEFFA",
+            "form": 0,
+            "level": 12,
+            "item": null,
+            "moves": [
+                "MOVE_POUND",
+                "MOVE_CHARM",
+                "MOVE_ENCORE",
+                "MOVE_SING"
+            ],
+            "ability": "ABILITY_MAGIC_GUARD",
+            "iv_scale": 50,
+            "ball_seal": 0
+        },
+        {
+            "species": "SPECIES_ABRA",
+            "form": 0,
+            "level": 11,
+            "item": null,
+            "moves": [
+                "MOVE_HIDDEN_POWER",
+                "MOVE_NONE",
+                "MOVE_NONE",
+                "MOVE_NONE"
+            ],
+            "iv_scale": 50,
             "ball_seal": 0
         }
     ],

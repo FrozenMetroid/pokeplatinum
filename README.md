@@ -23,8 +23,8 @@ Thank you!
 
 # Features
 
-- Singleplayer Wonder Trade in the Global Terminal
-- Toggleable party-wide Exp. Share
+- Singleplayer Wonder Trade in the Global Terminal (!!!)
+- Toggleable party-wide Exp. Share (!!!)
 - Most if not all Pokémon sprites in battle have been updated to use HeartGold/SoulSilver's and/or my own edits (e.g. improving Hoenn palettes)
 - Move reminder is accessible from the party menu outside of special situations
 - Footstep sounds for walking, running, metal, grass, wood, and caves from HeartGold and Soulsilver
@@ -253,6 +253,7 @@ Wild and Wonder Trade Pokémon will have randomly generated movesets based on wh
 - Ominous Wind: 5PP -> 15PP
 - Silver Wind: 5PP -> 15PP
 - Aerial Ace: 60BP -> 75BP
+- Bubble: 20BP -> 30BP
 
 ### Miscellaneous Battle System Changes:
 
@@ -336,3 +337,4 @@ Wild and Wonder Trade Pokémon will have randomly generated movesets based on wh
     - Gible is still accessible at the same point in progression as vanilla Platinum
 - Exp. Share moved to Oreburgh City Poké Center; must have seen 20 species in the Pokédex to receive it, which is possible before Roark
 - Pressing Down while at the top of a waterfall will allow you to immediately descend it without confirming if you have a Pokémon that can learn Waterfall, you have the Beacon Badge, and HM07
+- Pokémon that evolve through friendship/happiness will do so at 160 rather than 220, like modern games

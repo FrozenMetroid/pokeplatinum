@@ -63,6 +63,8 @@ Now, you have to have beaten the Elite Four and Champion rematch at least once.
 
 #define PARTY_MENU_ITEM_REUSE_WITHOUT_EXITING
 
+#define UPDATE_FRIENDSHIP_EVO_THRESHOLD
+
 
 /*
 ===============BATTLE==============
