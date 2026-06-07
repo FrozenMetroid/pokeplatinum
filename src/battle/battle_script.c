@@ -2284,8 +2284,9 @@ static BOOL BtlCmd_CalcExpGain(BattleSystem *battleSys, BattleContext *battleCtx
 
         int battler = (battleCtx->faintedMon >> 1) & 1; // the side of the fainted mon
         int expBattler = 0;
+        int partyCount = Party_GetCurrentCount(BattleSystem_GetParty(battleSys, BATTLER_US));
 
-        for (i = 0; i < Party_GetCurrentCount(BattleSystem_GetParty(battleSys, BATTLER_US)); i++) {
+        for (i = 0; i < partyCount; i++) {
             mon = BattleSystem_GetPartyPokemon(battleSys, BATTLER_US, i);
 
             if (Pokemon_GetValue(mon, MON_DATA_SPECIES, NULL) && Pokemon_GetValue(mon, MON_DATA_HP, NULL)) {
@@ -2309,11 +2310,24 @@ static BOOL BtlCmd_CalcExpGain(BattleSystem *battleSys, BattleContext *battleCtx
                         || i == battleCtx->selectedPartySlot[expBattler]) {
                         battleCtx->slotNeedsExpMessage |= (1 << i);
                     }
-
-                    // now record previous exp to see which battlers have not had their exp changed after all of the previous slots have been prioritized for the individualized exp gain message
-                    battleCtx->previousEXP[i] = Pokemon_GetValue(mon, MON_DATA_EXPERIENCE, NULL);
                 }
             }
+        }
+
+        // figure out the remaining slots that need to receive exp with partywideexpshare
+        // remainingExpShareSlots is the inverse
+        if (partyWideExpShare) {
+            for (i = 0; i < partyCount; i++)
+            {
+                if (battleCtx->slotNeedsExpMessage & (1 << i)) {
+                    battleCtx->remainingExpShareSlots |= (0 << i);
+                } else {
+                    battleCtx->remainingExpShareSlots |= (1 << i);
+                }
+            }
+            #ifdef DEBUG_EXP_GAIN
+            EmulatorLog("battleCtx->remainingExpShareSlots: %u, battleCtx->slotNeedsExpMessage: %u", battleCtx->remainingExpShareSlots, battleCtx->slotNeedsExpMessage );
+            #endif
         }
 
         u16 exp = SpeciesData_GetSpeciesValue(battleCtx->battleMons[battleCtx->faintedMon].species, SPECIES_DATA_BASE_EXP_REWARD);
@@ -2326,6 +2340,9 @@ static BOOL BtlCmd_CalcExpGain(BattleSystem *battleSys, BattleContext *battleCtx
         }
         if (partyWideExpShare) {
             battleCtx->sharedExp = battleCtx->gainedExp / 3; // reduce party wide exp from half to a third because Sinnoh was not designed with this feature in mind and I don't want to go through and change all of the levels
+            if (battleCtx->sharedExp == 0) {
+                battleCtx->sharedExp = 1;
+            }
         } else {
             battleCtx->sharedExp = 0;
         }
@@ -10132,6 +10149,7 @@ static void BattleScript_GetExpTask(SysTask *task, void *inData)
     BOOL partyWideExpShare = SaveData_GetExpShareStatus(SaveData_Ptr());
     BOOL showEXPGainMessage = FALSE;
     BOOL showPartyWideExpGainMessage = FALSE;
+    u32 curExp;
 
     battler = data->battleCtx->faintedMon >> 1 & 1; // init to the side with the fainted mon
     expBattler = 0;
@@ -10148,12 +10166,12 @@ static void BattleScript_GetExpTask(SysTask *task, void *inData)
     } else {
         // start with the active battler
         if (data->battleCtx->slotNeedsExpMessage & (1 << data->battleCtx->selectedPartySlot[expBattler])) {
-            #ifdef DEBUG_EXP_GAIN
-            EmulatorLog("First slot checked is the active battler slot: %d", data->battleCtx->selectedPartySlot[expBattler]);
-            #endif
             slot = data->battleCtx->selectedPartySlot[expBattler];
             // don't reset the flag in slotNeedsExpMessage until the end so that this slot continues to be selected
         } else if (data->battleCtx->slotNeedsExpMessage) { // determine the next slot to show the exp gain for by checking the bitfield of which slots need to show exp messages, starting from the first slot
+            #ifdef DEBUG_EXP_GAIN
+            EmulatorLog("There is a slot that explicitly needs the EXP message");
+            #endif
             for (i = 0; i < partyCount; i++) {
                 if (data->battleCtx->slotNeedsExpMessage & (1 << i)) {
                     slot = i;
@@ -10163,31 +10181,39 @@ static void BattleScript_GetExpTask(SysTask *task, void *inData)
                     break;
                 }
             }
-        } else { // find the next slot whose exp hasn't changed and play the "party gained exp" message for the first time
+        } else if (data->battleCtx->remainingExpShareSlots) { // find the next slot that didn't get a special exp message from above
             // this ensures that the "party gained exp" message shows up AFTER the individualized messages and BEFORE we see the remaining slots level up, if applicable, and only shows up once
             if (!data->battleCtx->shownPartyGainedExpMsg) {
                 showPartyWideExpGainMessage = TRUE;
             }
             for (i = 0; i < partyCount; i++) {
-                mon = BattleSystem_GetPartyPokemon(data->battleSys, expBattler, i);
-                if (Pokemon_GetValue(mon, MON_DATA_EXPERIENCE, NULL) == data->battleCtx->previousEXP[i]) {
+                if (data->battleCtx->remainingExpShareSlots & (1 << i)) {
                     slot = i;
                     break;
                 }
             }
+            #ifdef DEBUG_EXP_GAIN
+            EmulatorLog("Non-special slot chosen with exp share");
+            #endif
+        } else {
+            slot = partyCount; // if no slots need messages/exp, set slot to party count to end the sequence
+            #ifdef DEBUG_EXP_GAIN
+            EmulatorLog("No more slots need EXP messages");
+            #endif
         }
         // redundant for the "else" case above but needed for the other two
         mon = BattleSystem_GetPartyPokemon(data->battleSys, expBattler, slot);
     }
 
-    if (slot == partyCount || i == partyCount) { // if we've gone through every slot, end the sequence
+    if (slot == partyCount) { // if we've gone through every slot, end the sequence
+        #ifdef DEBUG_EXP_GAIN
+        EmulatorLog("Ending EXP Gain, slot = %u", slot);
+        #endif
         data->seqNum = SEQ_GET_EXP_DONE;
     } else if ((battleType & BATTLE_TYPE_DOUBLES)
         && (battleType & BATTLE_TYPE_AI) == FALSE
         && data->battleCtx->selectedPartySlot[2] == slot) {
         expBattler = 2;
-        // would need to adjust partyCount if used after this I think
-        // partyCount = BattleSystem_GetPartyCount(data->battleSys, expBattler);
     }
 
     switch (data->seqNum) {
@@ -10233,6 +10259,9 @@ static void BattleScript_GetExpTask(SysTask *task, void *inData)
 
             if (battleType & BATTLE_TYPE_TRAINER) {
                 totalExp = totalExp * 150 / 100;
+                #ifdef DEBUG_EXP_GAIN
+                EmulatorLog("Applying trainer battle exp boost of 1.5x");
+                #endif
             }
 
             if (BattleSystem_PokemonIsOT(data->battleSys, mon) == FALSE) {
@@ -10245,15 +10274,26 @@ static void BattleScript_GetExpTask(SysTask *task, void *inData)
                 msg.id = BattleStrings_Text_PokemonGainedABoostedExpPoints; // "{0} gained a boosted {1} Exp. Points!"
             }
 
-            u32 newExp = Pokemon_GetValue(mon, MON_DATA_EXPERIENCE, NULL);
-            data->tmpData[GET_EXP_NEW_EXP] = newExp - Pokemon_GetCurrentLevelBaseExp(mon);
-            newExp += totalExp;
+            curExp = Pokemon_GetValue(mon, MON_DATA_EXPERIENCE, NULL);
+            #ifdef DEBUG_EXP_GAIN
+            EmulatorLog("Total Current EXP: %d", curExp);
+            #endif
+            u32 baseEXPForLevel = Pokemon_GetCurrentLevelBaseExp(mon);
+            #ifdef DEBUG_EXP_GAIN
+            EmulatorLog("Base EXP for current level: %d", baseEXPForLevel);
+            #endif
+            data->tmpData[GET_EXP_NEW_EXP] = curExp - baseEXPForLevel; // this gives the amount of exp that the mon is currently displaying on the bar
+            u32 newEXP = curExp + totalExp;
+            #ifdef DEBUG_EXP_GAIN
+            EmulatorLog("EXP given: %d", newEXP - curExp);
+            #endif
 
+            // set the active slot's exp in the battle context to the new exp
             if (slot == data->battleCtx->selectedPartySlot[expBattler]) {
-                data->battleCtx->battleMons[expBattler].exp = newExp;
+                data->battleCtx->battleMons[expBattler].exp = newEXP;
             }
 
-            Pokemon_SetValue(mon, MON_DATA_EXPERIENCE, &newExp);
+            Pokemon_SetValue(mon, MON_DATA_EXPERIENCE, &newEXP);
             BattleScript_CalcEffortValues(BattleSystem_GetParty(data->battleSys, expBattler),
                 slot,
                 data->battleCtx->battleMons[data->battleCtx->faintedMon].species,
@@ -10276,22 +10316,31 @@ static void BattleScript_GetExpTask(SysTask *task, void *inData)
                     // no need to change message id from what it was calculated to be earlier
                     showEXPGainMessage = TRUE;
                 } else if (showPartyWideExpGainMessage) { // if show the "party gained exp" message; this won't be reset to FALSE until the start of the next calcexpgain because this should be the last slot anyway
+                    #ifdef DEBUG_EXP_GAIN
+                    EmulatorLog("showPartyWideExpGainMessage");
+                    #endif
                     msg.id = BattleStrings_Text_PartyGainedExpPoints;
                     data->battleCtx->shownPartyGainedExpMsg = TRUE;
                     showEXPGainMessage = TRUE;
                 }
                 if (showEXPGainMessage) {
+                    #ifdef DEBUG_EXP_GAIN
+                    EmulatorLog("showEXPGainMessage");
+                    #endif
                     data->tmpData[GET_EXP_MSG_INDEX] = BattleMessage_Print(data->battleSys, msgLoader, &msg, BattleSystem_GetTextSpeed(data->battleSys));
-                    data->seqNum++;
-                    break;
+                    data->seqNum = SEQ_GET_EXP_WAIT_MESSAGE_PRINT;
                 } else {
+                    #ifdef DEBUG_EXP_GAIN
+                    EmulatorLog("Reached data->seqNum = SEQ_GET_EXP_CHECK_LEVEL_UP");
+                    #endif
                     data->seqNum = SEQ_GET_EXP_CHECK_LEVEL_UP;
-                    break;
                 }
             } else { // no party wide exp share, so play the message for any mon that received EXP
+                #ifdef DEBUG_EXP_GAIN
+                EmulatorLog("No Exp Share, play message for every slot that participated");
+                #endif
                 data->tmpData[GET_EXP_MSG_INDEX] = BattleMessage_Print(data->battleSys, msgLoader, &msg, BattleSystem_GetTextSpeed(data->battleSys));
-                data->seqNum++;
-                break;
+                data->seqNum = SEQ_GET_EXP_WAIT_MESSAGE_PRINT;
             }
         } else {
             #ifdef DEBUG_EXP_GAIN
@@ -10304,12 +10353,18 @@ static void BattleScript_GetExpTask(SysTask *task, void *inData)
 
     case SEQ_GET_EXP_WAIT_MESSAGE_PRINT:
         if (Text_IsPrinterActive(data->tmpData[GET_EXP_MSG_INDEX]) == FALSE) {
+            #ifdef DEBUG_EXP_GAIN
+            EmulatorLog("Text printer inactive, going to state SEQ_GET_EXP_WAIT_MESSAGE_DELAY");
+            #endif
             data->seqNum++;
         }
         break;
 
     case SEQ_GET_EXP_WAIT_MESSAGE_DELAY:
         if (--data->tmpData[GET_EXP_MSG_DELAY] == 0) {
+            #ifdef DEBUG_EXP_GAIN
+            EmulatorLog("Message delay finished, going to state SEQ_GET_EXP_GAUGE");
+            #endif
             data->seqNum++;
         }
         break;
@@ -10324,6 +10379,9 @@ static void BattleScript_GetExpTask(SysTask *task, void *inData)
             data->tmpData[GET_EXP_NEW_EXP] = 0;
             data->seqNum++;
         } else {
+            #ifdef DEBUG_EXP_GAIN
+            EmulatorLog("Setting seqNum to SEQ_GET_EXP_CHECK_LEVEL_UP");
+            #endif
             data->seqNum = SEQ_GET_EXP_CHECK_LEVEL_UP;
         }
         break;
@@ -10335,6 +10393,7 @@ static void BattleScript_GetExpTask(SysTask *task, void *inData)
         break;
 
     case SEQ_GET_EXP_CHECK_LEVEL_UP:
+        EmulatorLog("In SEQ_GET_EXP_CHECK_LEVEL_UP");
         if (Pokemon_ShouldLevelUp(mon)) {
             // Only play the special level-up animation for an active battler
             if (data->battleCtx->selectedPartySlot[expBattler] == slot) {
@@ -10705,18 +10764,21 @@ static void BattleScript_GetExpTask(SysTask *task, void *inData)
         data->tmpData[GET_EXP_PARTY_SLOT] = slot + 1;
         data->seqNum = SEQ_GET_EXP_START; // go back to the top and get the next mon
         data->battleCtx->slotNeedsExpMessage &= ~(1 << slot); // clear the flag for the slot
+        data->battleCtx->remainingExpShareSlots &= ~(1 << slot); // clear the flag for the slot
         #ifdef DEBUG_EXP_GAIN
         EmulatorLog("Moving on to the next slot");
         #endif
         break;
 
     case SEQ_GET_EXP_DONE:
-        data->battleCtx->taskData = NULL;
-        Heap_Free(inData);
-        SysTask_Done(task);
-        #ifdef DEBUG_EXP_GAIN
-        EmulatorLog("Done with Get EXP sequence");
-        #endif
+        if (Text_IsPrinterActive(data->tmpData[GET_EXP_MSG_INDEX]) == FALSE) {
+            data->battleCtx->taskData = NULL;
+            Heap_Free(inData);
+            SysTask_Done(task);
+            #ifdef DEBUG_EXP_GAIN
+            EmulatorLog("Done with Get EXP sequence");
+            #endif
+        }
         break;
     }
 }

@@ -316,15 +316,16 @@ struct BattleContext {
     u32 battleProgressFlag : 1;
     u32 padding3154_01 : 31;
 
-    u32 magicBounceTracker : 1; // if any client has already activated magic bounce, another can not activate
     u32 slotNeedsExpMessage : 6; // track which slots need to have the exp gain message explicitly show for them
+    u32 remainingExpShareSlots : 6;
     u32 shownPartyGainedExpMsg : 1; // if we need to show the "party gained exp" message for the first time when showing exp gain for the rest of the party after showing it for the active battler
-    u32 padding_end:24;
+
+    u32 magicBounceTracker : 1; // if any client has already activated magic bounce, another can not activate
+    u32 padding_end:18;
     
     u8 clientPriority[MAX_BATTLERS];
     u16 itemsToRestore[MAX_PARTY_SIZE];
-    u8 tailwindCounter[NUM_BATTLE_SIDES];
-    u32 previousEXP[MAX_PARTY_SIZE]; // needs to be u32 because the max exp for a Fluctuating mon is close to 2mil
+    u16 tailwindCounter[NUM_BATTLE_SIDES];
 };
 
 #endif // POKEPLATINUM_BATTLE_CONTEXT_H

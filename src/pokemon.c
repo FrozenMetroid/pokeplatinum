@@ -3548,6 +3548,10 @@ BOOL Pokemon_ShouldLevelUp(Pokemon *mon)
     int monExpRate = SpeciesData_GetSpeciesValue(monSpecies, SPECIES_DATA_EXP_RATE);
     u32 maxExp = Pokemon_GetExpRateBaseExpAt(monExpRate, MAX_POKEMON_LEVEL);
 
+    #ifdef DEBUG_EXP_GAIN
+    EmulatorLog("Species: %d, Next Level %d, Mon EXP: %u, Mon EXP Rate: %u, Max EXP: %u", monSpecies, monNextLevel, monExp, monExpRate, maxExp);
+    #endif
+
     if (monExp > maxExp) {
         monExp = maxExp;
         Pokemon_SetValue(mon, MON_DATA_EXPERIENCE, &monExp);

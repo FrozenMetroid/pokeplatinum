@@ -2,7 +2,7 @@
     "name": "Bubble",
     "class": "CLASS_SPECIAL",
     "type": "TYPE_WATER",
-    "power": 40,
+    "power": 30,
     "accuracy": 100,
     "pp": 30,
     "effect": {

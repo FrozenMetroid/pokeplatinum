@@ -950,7 +950,7 @@
     },
     {
       "id": "pl_msg_00000662_00156",
-      "en_US": "MIME JR. Top"
+      "en_US": "Mime Jr. Top"
     },
     {
       "id": "pl_msg_00000662_00157",
@@ -1561,7 +1561,7 @@
       "id": "pl_msg_00000662_00277",
       "en_US": [
         "{STRVAR_1 3, 0, 0}:\n",
-        "I’d say MIME JR. Top.\r"
+        "I’d say Mime Jr. Top.\r"
       ]
     },
     {
@@ -2410,7 +2410,7 @@
       "id": "pl_msg_00000662_00398",
       "en_US": [
         "{STRVAR_1 3, 0, 0}:\n",
-        "Oh, you’re good at MIME JR. Top!\r"
+        "Oh, you’re good at Mime Jr. Top!\r"
       ]
     },
     {
@@ -4687,7 +4687,7 @@
       "id": "pl_msg_00000662_00730",
       "en_US": [
         "{COLOR 2}{STRVAR_1 3, 0, 0}{COLOR 0}:\n",
-        "I’d say MIME JR. Top.\r"
+        "I’d say Mime Jr. Top.\r"
       ]
     },
     {
@@ -5247,7 +5247,7 @@
       "id": "pl_msg_00000662_00810",
       "en_US": [
         "{COLOR 2}{STRVAR_1 3, 0, 0}{COLOR 0}:\n",
-        "Oh, you’re good at MIME JR. Top!\r"
+        "Oh, you’re good at Mime Jr. Top!\r"
       ]
     },
     {

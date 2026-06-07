@@ -221,9 +221,14 @@ Route201_DawnBringBriefcase:
     CloseMessage
     ApplyMovement LOCALID_PROF_ROWAN, Route201_Movement_ProfRowanFaceCounterpart
     WaitMovement
+    ApplyMovement LOCALID_COUNTERPART, Route201_Movement_WalkOnSpotNormalSouth
+    WaitMovement
     ClearFlag FLAG_HIDE_ROUTE_201_BRIEFCASE
     AddObject LOCALID_BRIEFCASE
+    PlaySE SEQ_SE_PL_SUTYA2
     WaitTime 15, VAR_RESULT
+    ApplyMovement LOCALID_COUNTERPART, Route201_Movement_WalkOnSpotNormalEast
+    WaitMovement
     Message Route201_Text_OhIsSomethingWrongHere
     Message Route201_Text_ThereItIsNiceWorkDawn
     ApplyMovement LOCALID_COUNTERPART, Route201_Movement_CounterpartWalkOnSpotEast
@@ -237,9 +242,14 @@ Route201_LucasBringBriefcase:
     CloseMessage
     ApplyMovement LOCALID_PROF_ROWAN, Route201_Movement_ProfRowanFaceCounterpart
     WaitMovement
+    ApplyMovement LOCALID_COUNTERPART, Route201_Movement_WalkOnSpotNormalSouth
+    WaitMovement
     ClearFlag FLAG_HIDE_ROUTE_201_BRIEFCASE
     AddObject LOCALID_BRIEFCASE
+    PlaySE SEQ_SE_PL_SUTYA2
     WaitTime 15, VAR_RESULT
+    ApplyMovement LOCALID_COUNTERPART, Route201_Movement_WalkOnSpotNormalEast
+    WaitMovement
     Message Route201_Text_IsSomethingWrongHere
     Message Route201_Text_ThereItIsNiceWorkLucas
     ApplyMovement LOCALID_COUNTERPART, Route201_Movement_CounterpartWalkOnSpotEast
@@ -732,6 +742,11 @@ Route201_Movement_CounterpartLeave:
     WalkNormalEast 9
     EndMovement
 
+    .balign 4, 0
+Route201_Movement_WalkOnSpotNormalEast:
+    WalkOnSpotNormalEast
+    EndMovement
+
 Route201_TriggerFollowingRivalStopPlayerEast:
     LockAll
     GetPlayerDir VAR_RESULT
@@ -872,7 +887,7 @@ Route201_Movement_PlayerTurnToRivalNorth:
 
 Route201_TriggerPickAPokemon:
     LockAll
-    ApplyMovement LOCALID_RIVAL, Route201_Movement_RivalWalkOnSpotNormalSouth
+    ApplyMovement LOCALID_RIVAL, Route201_Movement_WalkOnSpotNormalSouth
     WaitMovement
     BufferRivalName 0
     Message Route201_Text_PickAPokemon
@@ -899,7 +914,7 @@ Route201_Release:
     End
 
     .balign 4, 0
-Route201_Movement_RivalWalkOnSpotNormalSouth:
+Route201_Movement_WalkOnSpotNormalSouth:
     WalkOnSpotNormalSouth
     EndMovement
 
