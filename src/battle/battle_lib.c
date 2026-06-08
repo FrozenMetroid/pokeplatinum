@@ -7268,7 +7268,7 @@ static const u16 sSharpnessMoves[] = {
     MOVE_RAZOR_LEAF,
     // MOVE_RAZOR_SHELL,
     // MOVE_SACRED_SWORD,
-    MOVE_SHADOW_CLAW,
+    MOVE_SHADOW_CLAW, // from Champion
     MOVE_SLASH,
     // MOVE_SOLAR_BLADE
     // MOVE_STONE_AXE,

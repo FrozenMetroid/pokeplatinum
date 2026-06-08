@@ -413,7 +413,7 @@ static void TrainerData_BuildParty(FieldBattleDTO *dto, int battler, enum HeapID
         // Default ability handling if it's not overridden later
         ability1 = SpeciesData_GetFormValue(species, form, SPECIES_DATA_ABILITY_1);
         ability2 = SpeciesData_GetFormValue(species, form, SPECIES_DATA_ABILITY_2);
-        // add hidden ability here later
+        // hidden abilities will be manually set in the expanded data, so no need to handle them here
         if (ability2 != 0) {
             if (data->abilityslot & 1 || data->abilityslot == 32) {
                 Pokemon_SetValue(mon, MON_DATA_ABILITY, &ability1);
@@ -424,7 +424,6 @@ static void TrainerData_BuildParty(FieldBattleDTO *dto, int battler, enum HeapID
             Pokemon_SetValue(mon, MON_DATA_ABILITY, &ability1);
         }
 
-        // Explicit overrides from expanded record
         Pokemon_SetValue(mon, MON_DATA_HELD_ITEM, &data->itemno);
 
         if (data->moves[0] != 0) { // only set the moves if the first one is specified, otherwise leave them as the default for the species
@@ -433,6 +432,7 @@ static void TrainerData_BuildParty(FieldBattleDTO *dto, int battler, enum HeapID
             }
         }
 
+        // manually override the ability from before if it's specified
         if (data->ability != 0) {
             Pokemon_SetValue(mon, MON_DATA_ABILITY, &data->ability);
         }

@@ -152,7 +152,7 @@ Wild and Wonder Trade Pokémon will have randomly generated movesets based on wh
 - Protean: This Pokémon changes its type to the type of whatever move it uses
 - Tough Claws: Moves used by this Pokémon that make contact deal 30% more damage
 - Bulletproof: This Pokémon is completely protected from some ball and bomb moves, such as Shadow Ball
-- Multiscale: This Pokémon received 50% less damage if it is at max HP
+- Multiscale: This Pokémon receives 50% less damage if it is at max HP
 
 ### Ability Modernizations:
 

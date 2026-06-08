@@ -3865,12 +3865,12 @@ u16 Pokemon_GetBaseSpeciesForBattle(const u16 species)
 
 static void BoxPokemon_SetDefaultMoves(BoxPokemon *boxMon)
 {
-    BOOL reencrypt; // must pre-declare to match
+    BOOL reencrypt;
     u32 *monLevelUpMoves = Heap_Alloc(HEAP_ID_SYSTEM, sizeof(SpeciesLearnset));
     reencrypt = BoxPokemon_EnterDecryptionContext(boxMon);
 
     u16 monSpecies = BoxPokemon_GetValue(boxMon, MON_DATA_SPECIES, NULL);
-    int monForm = BoxPokemon_GetValue(boxMon, MON_DATA_FORM, NULL);
+    u8 monForm = BoxPokemon_GetValue(boxMon, MON_DATA_FORM, NULL);
     u8 monLevel = BoxPokemon_GetLevel(boxMon);
 
     Pokemon_LoadLevelUpMovesOf(monSpecies, monForm, monLevelUpMoves);
