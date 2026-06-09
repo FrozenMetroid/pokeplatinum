@@ -393,3 +393,41 @@ u32 PCBoxes_CountUnlockedWallpapers(const PCBoxes *pcBoxes)
 
     return count;
 }
+
+#ifdef UPDATE_SAVEDATA_TO_HGSS_HANDLING
+
+void PCBoxes_SetBoxModified(PCBoxes *pcBoxes, u8 boxno) {
+    if (boxno >= NUM_BOXES) {
+        GF_ASSERT(FALSE);
+        return;
+    }
+    storage->boxModifiedFlag |= 1 << boxno;
+}
+
+void PCBoxes_SetAllBoxesModified(PCBoxes *pcBoxes) {
+    storage->boxModifiedFlag = BOX_ALL_MODIFIED_FLAG;
+}
+
+void PCBoxes_ResetBoxModifiedFlags(PCBoxes *pcBoxes) {
+    storage->boxModifiedFlag = 0;
+}
+
+u32 PCBoxes_GetBoxModifiedFlags(PCBoxes *pcBoxes) {
+    return storage->boxModifiedFlag;
+}
+
+u32 PCModifiedFlags_CountModifiedBoxes(u32 flags) {
+    u8 i, n;
+
+    n = 0;
+    for (i = 0; i < MAX_PC_BOXES; i++) {
+        if (flags & 1) {
+            n++;
+        }
+        flags >>= 1;
+        flags &= BOX_ALL_MODIFIED_FLAG;
+    }
+    return n;
+}
+
+#endif

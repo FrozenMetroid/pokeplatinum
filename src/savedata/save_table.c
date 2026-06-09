@@ -29,6 +29,7 @@
 #include "save_player.h"
 #include "savedata.h"
 #include "savedata_misc.h"
+#include "senate_config.h"
 #include "special_encounter.h"
 #include "system_data.h"
 #include "trainer_case_save_data.h"
@@ -152,3 +153,23 @@ int SaveData_SaveBattleHallWinRecords(SaveData *saveData, BattleHallWinRecords *
 {
     return SaveDataExtra_SaveMirror(saveData, EXTRA_SAVE_TABLE_ENTRY_FRONTIER, records);
 }
+
+#ifdef UPDATE_SAVEDATA_TO_HGSS_HANDLING
+
+u32 SaveData_GetPCBoxModifiedFlags(SaveData *saveData) {
+    return PCBoxes_GetBoxModifiedFlags(SaveData_GetPCBoxes(saveData));
+}
+
+void SaveData_ResetPCBoxModifiedFlags(SaveData *saveData) {
+    PCBoxes_ResetBoxModifiedFlags(SaveData_GetPCBoxes(saveData));
+}
+
+void SaveData_SetAllPCBoxesModified(SaveData *saveData) {
+    PCBoxes_SetAllBoxesModified(SaveData_GetPCBoxes(saveData));
+}
+
+void sub_020271A0(SaveData *saveData) {
+    sub_02074128(SaveData_GetPCBoxes(saveData));
+}
+
+#endif

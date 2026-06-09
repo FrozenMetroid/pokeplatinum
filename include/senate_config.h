@@ -65,6 +65,13 @@ Now, you have to have beaten the Elite Four and Champion rematch at least once.
 
 #define UPDATE_FRIENDSHIP_EVO_THRESHOLD
 
+/*
+HGSS made saving faster
+
+THIS IS NOT FINISHED, DO NOT ENABLE IT
+*/
+//define UPDATE_SAVEDATA_TO_HGSS_HANDLING
+
 
 /*
 ===============BATTLE==============

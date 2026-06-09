@@ -2,6 +2,7 @@
 #define POKEPLATINUM_PC_BOXES_H
 
 #include "pokemon.h"
+#include "senate_config.h"
 #include "string_gf.h"
 
 #define MAX_PC_BOXES              18
@@ -15,12 +16,19 @@
 
 #define USE_CURRENT_BOX -1
 
+// new
+#define BOX_ALL_MODIFIED_FLAG ((u32)((1 << MAX_PC_BOXES) - 1))
+
 typedef struct PCBoxes {
     u32 currentBoxID;
     BoxPokemon boxMons[MAX_PC_BOXES][MAX_MONS_PER_BOX];
     u16 names[MAX_PC_BOXES][PC_BOX_NAME_BUFFER_LEN];
     u8 wallpapers[MAX_PC_BOXES];
     u8 unlockedWallpapers;
+
+    #ifdef UPDATE_SAVEDATA_TO_HGSS_HANDLING
+    u32 boxModifiedFlag;
+    #endif
 } PCBoxes;
 
 void PCBoxes_Init(PCBoxes *pcBoxes);
@@ -47,5 +55,13 @@ BoxPokemon *PCBoxes_GetBoxMonAt(const PCBoxes *pcBoxes, u32 boxID, u32 slot);
 void PCBoxes_UnlockWallpaper(PCBoxes *pcBoxes, u32 wallpaper);
 BOOL PCBoxes_CheckHasUnlockedWallpaper(const PCBoxes *pcBoxes, u32 wallpaper);
 u32 PCBoxes_CountUnlockedWallpapers(const PCBoxes *pcBoxes);
+
+#ifdef UPDATE_SAVEDATA_TO_HGSS_HANDLING
+void PCBoxes_SetBoxModified(PCBoxes *pcBoxes, u8 boxno);
+void PCBoxes_SetAllBoxesModified(PCBoxes *pcBoxes);
+void PCBoxes_ResetBoxModifiedFlags(PCBoxes *pcBoxes);
+u32 PCBoxes_GetBoxModifiedFlags(PCBoxes *pcBoxes);
+u32 PCModifiedFlags_CountModifiedBoxes(u32 flags);
+#endif
 
 #endif // POKEPLATINUM_PC_BOXES_H

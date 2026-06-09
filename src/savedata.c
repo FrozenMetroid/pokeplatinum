@@ -39,7 +39,6 @@ static BOOL sSaveComplete;
 SaveData *SaveData_Init(void)
 {
     SaveData *saveData = Heap_Alloc(HEAP_ID_SAVE, sizeof(SaveData));
-    ;
 
     MI_CpuClearFast(saveData, sizeof(SaveData));
 
@@ -70,7 +69,12 @@ SaveData *SaveData_Init(void)
 
         if (loadResult == LOAD_RESULT_CORRUPT) {
             saveData->loadCheckStatus |= NORMAL_LOAD_CORRUPT;
+        } 
+        #ifdef UPDATE_SAVEDATA_TO_HGSS_HANDLING
+        else {
+            saveData->boxModifiedFlags = SaveData_GetPCBoxModifiedFlags(saveData);
         }
+        #endif
 
         int frontierResult, videoResult;
 
@@ -156,6 +160,9 @@ BOOL SaveData_Load(SaveData *saveData)
 
         int frontierResult, videoResult;
         SaveDataExtra_LoadCheck(saveData, &frontierResult, &videoResult);
+        #ifdef UPDATE_SAVEDATA_TO_HGSS_HANDLING
+        SaveData_ResetPCBoxModifiedFlags(saveData);
+        #endif
         return TRUE;
     }
 
@@ -208,8 +215,12 @@ int SaveData_SaveBlock(SaveData *saveData, int saveBlockID)
 void SaveData_Clear(SaveData *saveData)
 {
     saveData->isNewGameData = TRUE;
+    #ifndef UPDATE_SAVEDATA_TO_HGSS_HANDLING
     saveData->fullSaveRequired = TRUE;
-
+    #else
+    saveData->sectorCleanFlag[0] = 1;
+    saveData->sectorCleanFlag[1] = 1;
+    #endif
     SaveTable_Clear(&saveData->body, saveData->pageInfo);
 }
 
@@ -250,8 +261,19 @@ BOOL SaveData_OverwriteCheck(const SaveData *saveData)
 
 BOOL SaveData_FullSaveRequired(const SaveData *saveData)
 {
+    #ifndef UPDATE_SAVEDATA_TO_HGSS_HANDLING
     return saveData->fullSaveRequired;
+    #else
+    return SaveData_CalcNumModifiedPCBoxes(saveData) >= 6;
+    #endif
 }
+
+#ifdef UPDATE_SAVEDATA_TO_HGSS_HANDLING
+static u32 SaveData_CalcNumModifiedPCBoxes(SaveData *saveData)
+{
+    return PCModifiedFlags_CountModifiedBoxes(Save_CalcPCBoxModifiedFlags(saveData));
+}
+#endif
 
 void SaveData_SetFullSaveRequired(void)
 {
@@ -1361,3 +1383,18 @@ void SaveData_SetChecksum(int saveTableID)
 
     u32 address = (u32)&halfTable[halfSize];
 }
+
+#ifdef UPDATE_SAVEDATA_TO_HGSS_HANDLING
+
+u32 Save_CalcPCBoxModifiedFlags(SaveData *saveData) {
+    u32 ret;
+
+    ret = SaveData_GetPCBoxModifiedFlags(saveData);
+    ret |= saveData->boxModifiedFlags;
+    if (saveData->sectorCleanFlag[0] || saveData->sectorCleanFlag[1]) {
+        ret = BOX_ALL_MODIFIED_FLAG;
+    }
+    return ret;
+}
+
+#endif

@@ -1,6 +1,8 @@
 #ifndef POKEPLATINUM_SAVEDATA_H
 #define POKEPLATINUM_SAVEDATA_H
 
+#include "senate_config.h"
+
 #include "constants/heap.h"
 #include "constants/savedata/save_table.h"
 #include "constants/savedata/savedata.h"
@@ -61,6 +63,11 @@ typedef struct SaveData {
     SaveDataState state;
     int sectorSwitch;
     u32 sectorCounter;
+    #ifdef UPDATE_SAVEDATA_TO_HGSS_HANDLING
+    u32 boxModifiedFlags,
+    u16 numModifiedBoxes,
+    u8 sectorCleanFlag[2];
+    #endif
 } SaveData;
 
 typedef struct SaveCheckInfo {
@@ -109,5 +116,15 @@ BOOL SaveData_CardSave(u32 address, void *data, u32 size);
 BOOL SaveData_CardLoad(u32 address, void *data, u32 size);
 BOOL SaveData_Checksum(int saveTableID);
 void SaveData_SetChecksum(int saveTableID);
+
+#ifdef UPDATE_SAVEDATA_TO_HGSS_HANDLING
+u32 SaveData_GetPCBoxModifiedFlags(SaveData *saveData)
+void SaveData_ResetPCBoxModifiedFlags(SaveData *saveData)
+void SaveData_SetAllPCBoxesModified(SaveData *saveData)
+void sub_020271A0(SaveData *saveData)
+
+BOOL SaveData_NumModifiedPCBoxesIsMany(SaveData *saveData);
+u32 Save_CalcPCBoxModifiedFlags(SaveData *saveData);
+#endif
 
 #endif // POKEPLATINUM_SAVEDATA_H
