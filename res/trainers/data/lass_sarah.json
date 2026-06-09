@@ -15,7 +15,7 @@
             "item": null,
             "moves": [
                 "MOVE_POUND",
-                "MOVE_CHARM"
+                "MOVE_COPYCAT"
             ],
             "iv_scale": 10,
             "ball_seal": 0
