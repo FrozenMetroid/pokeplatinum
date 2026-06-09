@@ -6,6 +6,10 @@
 
 #define ENCOUNTERS_NONE 0xFFFF
 
+#define MAP_FOLLOWMODE_PREVENT         0
+#define MAP_FOLLOWMODE_HEIGHT_RESTRICT 1
+#define MAP_FOLLOWMODE_ALLOW           2
+
 typedef struct {
     u8 areaDataArchiveID;
     u8 unk_01;
@@ -27,6 +31,8 @@ typedef struct {
     u16 isRunningAllowed : 1;
     u16 isEscapeRopeAllowed : 1;
     u16 isFlyAllowed : 1;
+    u16 followMode: 2;
+    u16 padding: 14;
 } MapHeader;
 
 typedef struct {

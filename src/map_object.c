@@ -10,6 +10,7 @@
 #include "struct_defs/struct_020EDF0C.h"
 
 #include "field/field_system.h"
+#include "field/field_system_decl.h"
 #include "functypes/funcptr_020EDF0C.h"
 #include "functypes/funcptr_020EDF0C_1.h"
 #include "functypes/funcptr_020EDF0C_2.h"
@@ -29,6 +30,7 @@
 #include "berry_patch_graphics.h"
 #include "heap.h"
 #include "map_header_data.h"
+#include "map_object.h"
 #include "map_object_move.h"
 #include "narc.h"
 #include "script_manager.h"
@@ -36,71 +38,6 @@
 #include "sys_task_manager.h"
 #include "unk_020655F4.h"
 #include "unk_020EDBAC.h"
-
-typedef struct MapObjectManager {
-    u32 status;
-    int maxObjects;
-    int objectCnt;
-    int taskBasePriority;
-    int unk_10;
-    NARC *narc;
-    UnkStruct_ov5_021ED0A4 unk_18;
-    UnkStruct_02061830_sub1 *unk_120;
-    MapObject *mapObj;
-    FieldSystem *fieldSystem;
-} MapObjectManager;
-
-typedef struct MapObject {
-    u32 status;
-    u32 unk_04;
-    u32 localID;
-    u32 mapID;
-    u32 graphicsID;
-    u32 movementType;
-    u32 trainerType;
-    u32 flag;
-    u32 script;
-    int initialDir;
-    int facingDir;
-    int movingDir;
-    int prevFacingDir;
-    int prevMovingDir;
-    int data[3];
-    int movementRangeX;
-    int movementRangeZ;
-    int xInitial;
-    int yInitial;
-    int zInitial;
-    int xPrev;
-    int yPrev;
-    int zPrev;
-    int x;
-    int y;
-    int z;
-    VecFx32 pos;
-    VecFx32 spriteJumpOffset;
-    VecFx32 spritePosOffset;
-    VecFx32 spriteTerrainOffset;
-    u32 unk_A0;
-    enum MovementAction movementAction;
-    int movementStep;
-    u16 currTileBehavior;
-    u16 prevTileBehavior;
-    SysTask *task;
-    const MapObjectManager *mapObjMan;
-    UnkFuncPtr_020EDF0C unk_B8;
-    UnkFuncPtr_020EDF0C_1 unk_BC;
-    UnkFuncPtr_020EDF0C_2 unk_C0;
-    UnkFuncPtr_ov5_021FB0F0 unk_C4;
-    UnkFuncPtr_ov5_021FB0F0_1 unk_C8;
-    UnkFuncPtr_ov5_021FB0F0_2 unk_CC;
-    UnkFuncPtr_ov5_021FB0F0_3 unk_D0;
-    UnkFuncPtr_ov5_021FB0F0_4 unk_D4;
-    u8 unk_D8[16];
-    u8 unk_E8[16];
-    u8 movementData[16];
-    u8 unk_108[32];
-} MapObject;
 
 typedef struct {
     int unk_00;

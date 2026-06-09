@@ -84,6 +84,7 @@ const SaveTableEntry gSaveTable[] = {
     { SAVE_TABLE_ENTRY_EMAIL, SAVE_BLOCK_ID_NORMAL, (SaveEntrySizeFunc)Email_SaveSize, (SaveEntryInitFunc)Email_Init },
     { SAVE_TABLE_ENTRY_WIFI_QUESTIONS, SAVE_BLOCK_ID_NORMAL, (SaveEntrySizeFunc)WiFiQuestion_SaveSize, (SaveEntryInitFunc)WiFiQuestion_Init },
     { SAVE_TABLE_ENTRY_PC_BOXES, SAVE_BLOCK_ID_BOXES, (SaveEntrySizeFunc)PCBoxes_SaveSize, (SaveEntryInitFunc)PCBoxes_Init },
+    { SAVE_TABLE_FOLLOW_MON, SAVE_BLOCK_ID_NORMAL, (SaveEntrySizeFunc)FollowMon_SaveSize, (SaveEntryInitFunc)FollowMon_SaveInit},
 };
 
 const int gSaveTableSize = NELEMS(gSaveTable);

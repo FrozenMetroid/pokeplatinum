@@ -8,7 +8,7 @@
 #include "generated/movement_actions.h"
 
 #include "struct_decls/map_object.h"
-#include "struct_decls/map_object_manager.h"
+#include "struct_decls/struct_02061830_sub1_decl.h"
 
 #include "field/field_system_decl.h"
 #include "functypes/funcptr_020EDF0C.h"
@@ -57,6 +57,71 @@ typedef struct MapObjectSave {
     u8 unk_30[16];
     u8 unk_40[16];
 } MapObjectSave;
+
+typedef struct MapObject {
+    u32 status;
+    u32 unk_04;
+    u32 localID;
+    u32 mapID;
+    u32 graphicsID;
+    u32 movementType;
+    u32 trainerType;
+    u32 flag;
+    u32 script;
+    int initialDir;
+    int facingDir;
+    int movingDir;
+    int prevFacingDir;
+    int prevMovingDir;
+    int data[3];
+    int movementRangeX;
+    int movementRangeZ;
+    int xInitial;
+    int yInitial;
+    int zInitial;
+    int xPrev;
+    int yPrev;
+    int zPrev;
+    int x;
+    int y;
+    int z;
+    VecFx32 pos;
+    VecFx32 spriteJumpOffset;
+    VecFx32 spritePosOffset;
+    VecFx32 spriteTerrainOffset;
+    u32 unk_A0;
+    enum MovementAction movementAction;
+    int movementStep;
+    u16 currTileBehavior;
+    u16 prevTileBehavior;
+    SysTask *task;
+    const MapObjectManager *mapObjMan;
+    UnkFuncPtr_020EDF0C unk_B8;
+    UnkFuncPtr_020EDF0C_1 unk_BC;
+    UnkFuncPtr_020EDF0C_2 unk_C0;
+    UnkFuncPtr_ov5_021FB0F0 unk_C4;
+    UnkFuncPtr_ov5_021FB0F0_1 unk_C8;
+    UnkFuncPtr_ov5_021FB0F0_2 unk_CC;
+    UnkFuncPtr_ov5_021FB0F0_3 unk_D0;
+    UnkFuncPtr_ov5_021FB0F0_4 unk_D4;
+    u8 unk_D8[16];
+    u8 unk_E8[16];
+    u8 movementData[16];
+    u8 unk_108[32];
+} MapObject;
+
+typedef struct MapObjectManager {
+    u32 status;
+    int maxObjects;
+    int objectCnt;
+    int taskBasePriority;
+    int unk_10;
+    NARC *narc;
+    UnkStruct_ov5_021ED0A4 unk_18;
+    UnkStruct_02061830_sub1 *unk_120;
+    MapObject *mapObj;
+    FieldSystem *fieldSystem;
+} MapObjectManager;
 
 MapObjectManager *MapObjectMan_New(FieldSystem *fieldSystem, int maxObjs, int taskBasePriority);
 void MapObjectMan_Delete(MapObjectManager *mapObjMan);

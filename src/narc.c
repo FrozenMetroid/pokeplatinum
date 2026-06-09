@@ -202,6 +202,7 @@ static const char *sNarcPaths[] = {
     [NARC_INDEX_GRAPHIC__UNIONOBJ2D_ONLYFRONT] = "graphic/unionobj2d_onlyfront.narc",
     [NARC_INDEX_GRAPHIC__LIBRARY_TV] = "graphic/library_tv.narc",
     [NARC_INDEX_APPLICATION__ZUKANLIST__ZKN_DATA__ZUKAN_DATA_GIRA] = "application/zukanlist/zkn_data/zukan_data_gira.narc",
+    [NARC_INDEX_POKETOOL] = 'poketool/followmonsize.narc'
 };
 
 static void ReadFromNarcMemberByPathAndIndex(void *dest, const char *path, int memberIndex, int offset, int bytesToRead);

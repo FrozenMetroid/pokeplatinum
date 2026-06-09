@@ -107,6 +107,7 @@ Static main
 	Object main.nef.p/src_savedata.c.o
 	Object main.nef.p/src_system_data.c.o
 	Object main.nef.p/src_save_player.c.o
+	Object main.nef.p/src_save_follow_mon.c.o
 	Object main.nef.p/src_trainer_info.c.o
 	Object main.nef.p/src_battle_regulation.c.o
 	Object main.nef.p/src_daycare_save.c.o
@@ -286,6 +287,7 @@ Static main
 	Object main.nef.p/src_unk_02073700.c.o
 	Object main.nef.p/src_simple3d.c.o
 	Object main.nef.p/src_pokemon.c.o
+	Object main.nef.p/src_follow_mon.c.o
 	Object main.nef.p/src_move_table.c.o
 	Object main.nef.p/src_trainer_data.c.o
 	Object main.nef.p/src_pc_boxes.c.o

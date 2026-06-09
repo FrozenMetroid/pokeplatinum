@@ -644,9 +644,6 @@ void WonderTrade_GetOTName(struct WonderTradeData *wonderTradeData, struct Field
     String *stringTrainerName = String_Init(16, HEAP_ID_FIELD1); // arbitrarily using 16
     String *stringRivalName = String_Init(16, HEAP_ID_FIELD1);
     String *stringForbiddenName = String_Init(16, HEAP_ID_FIELD1);
-    String_Clear(stringTrainerName);
-    String_Clear(stringRivalName);
-    String_Clear(stringForbiddenName);
 
     String_ConcatTrainerName(stringTrainerName, wonderTradeData->otName); // decodes the trainer name and adds it to stringTrainerName
     u32 length = 1; // start from one because string->data[0] == TRNAMECODE if it's a trainer name
@@ -694,18 +691,17 @@ void WonderTrade_GetOTName(struct WonderTradeData *wonderTradeData, struct Field
 void WonderTrade_TradeGraphics(WonderTradeData *wonderTradeData, struct FieldSystem_t *fieldSystem, u32 *taskState)
 {
     struct NPCTradeData *data = Heap_Alloc(HEAP_ID_FIELD2, sizeof(struct NPCTradeData));
-    data->mon = Party_GetPokemonBySlotIndex(wonderTradeData->party, wonderTradeData->partySlot);
+    data->mon = wonderTradeData->receivedPokemon;
     data->npcTradeMon = NULL; // not needed since the receiving mon is what is shown in the graphics and that is the wonder trade mon, but just to be safe
     data->heapID = HEAP_ID_FIELD2;
     data->trainerInfo = TrainerInfo_New(data->heapID);
     data->wonderTrade = TRUE;
 
     TrainerInfo_Init(data->trainerInfo);
-    String *string = wonderTradeData->otName; // this is already a string, so no need to convert it, but the trainer info needs it in charcode format, so will convert it there
 
     charcode_t otName[TRAINER_NAME_LEN * 2]; // just in case it needs to be larger
-    String_ToChars(string, otName, NELEMS(otName));
-    String_Free(string);
+    String_ToChars(wonderTradeData->otName, otName, NELEMS(otName)); // the trainer info needs the ot name string in charcode format, so will convert it there
+    String_Free(wonderTradeData->otName);
     TrainerInfo_SetName(data->trainerInfo, otName);
     TrainerInfo_SetGender(data->trainerInfo, wonderTradeData->trainerClassGender);
 

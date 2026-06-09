@@ -34,6 +34,7 @@
 #include "location.h"
 #include "map_header_data.h"
 #include "map_matrix.h"
+#include "map_object.h"
 #include "overlay_manager.h"
 #include "player_avatar.h"
 #include "pokedex_memory.h"
@@ -65,6 +66,21 @@ typedef struct FieldProcessManager {
     BOOL pause;
     BOOL kill;
 } FieldProcessManager;
+
+typedef struct FollowMon {
+    MapObject *mapObject;
+    u32 unk4;
+    u32 unk8;
+    u32 unkC;
+    u32 species;
+    u8 gender;
+    u8 unk15;
+    u8 active;
+    u8 shiny;
+    u16 form;
+    u16 dummy;
+    u32 unk1C;
+} FollowMon;
 
 typedef struct FieldSystem_t {
     FieldProcessManager *processManager;
@@ -117,6 +133,7 @@ typedef struct FieldSystem_t {
     u8 *battleSubscreenCursorOn;
     u32 unk_C0;
     UnkStruct_ov66_0222DCE0_sub1 unk_C4;
+    FolllowMon followMon;
 } FieldSystem;
 
 #endif // POKEPLATINUM_FIELD_SYSTEM_H
