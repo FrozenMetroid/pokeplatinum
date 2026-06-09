@@ -644,13 +644,10 @@ void WonderTrade_GetOTName(struct WonderTradeData *wonderTradeData, struct Field
     String *stringTrainerName = String_Init(16, HEAP_ID_FIELD1); // arbitrarily using 16
     String *stringRivalName = String_Init(16, HEAP_ID_FIELD1);
     String *stringForbiddenName = String_Init(16, HEAP_ID_FIELD1);
-    String_Clear(stringTrainerName);
-    String_Clear(stringRivalName);
-    String_Clear(stringForbiddenName);
 
     String_ConcatTrainerName(stringTrainerName, wonderTradeData->otName); // decodes the trainer name and adds it to stringTrainerName
     u32 length = 1; // start from one because string->data[0] == TRNAMECODE if it's a trainer name
-    while (stringTrainerName->data[length] != 0xFFFF) {
+    while (stringTrainerName->data[length] != CHAR_EOS) {
         if (stringTrainerName->data[length] == CHAR_AMPERSAND) { // exclude doubles names like Kay & Tia
             regenName = TRUE;
             length = 10; // force skip the next else check, should make it go slightly faster lol
@@ -701,11 +698,10 @@ void WonderTrade_TradeGraphics(WonderTradeData *wonderTradeData, struct FieldSys
     data->wonderTrade = TRUE;
 
     TrainerInfo_Init(data->trainerInfo);
-    String *string = wonderTradeData->otName; // this is already a string, so no need to convert it, but the trainer info needs it in charcode format, so will convert it there
 
     charcode_t otName[TRAINER_NAME_LEN * 2]; // just in case it needs to be larger
-    String_ToChars(string, otName, NELEMS(otName));
-    String_Free(string);
+    String_ToChars(wonderTradeData->otName, otName, NELEMS(otName)); // trainer info needs ot string in charcode format, so will convert it there
+    String_Free(wonderTradeData->otName);
     TrainerInfo_SetName(data->trainerInfo, otName);
     TrainerInfo_SetGender(data->trainerInfo, wonderTradeData->trainerClassGender);
 
