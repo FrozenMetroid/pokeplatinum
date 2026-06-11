@@ -81,7 +81,7 @@ THIS IS NOT FINISHED, DO NOT ENABLE IT
 
 #define BATTLE_EXPANDED_TRAINER_STRUCT // this is the big one
 
-#define BATTLE_ADD_CRITICAL_CAPTURES
+#define BATTLE_ADD_CATCHING_CHARM // raises catch rate by 20%
 
 #define BATTLE_HAIL_DEFENSE_BOOST // for ice types
 

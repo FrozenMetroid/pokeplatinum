@@ -37,8 +37,7 @@ Thank you!
     - Metal has not been used yet
 - Multiple Premier Balls when buying Poké Balls of any type
 - Shiny Charm
-- Critical Capture
-- Catching Charm
+- Catching Charm (raises catch rate by 20%)
 - Oval Charm
 - Lowercase Pokémon names
 - Some Pokémon have moves defined to be learned whenever they evolve, e.g. Close Combat on Infernape
