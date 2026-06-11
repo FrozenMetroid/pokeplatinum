@@ -2800,7 +2800,7 @@ static int ApplyItemEffectOnPokemon(PartyMenuApplication *app)
         if (app->partyMenu->usedItemID == ITEM_ABILITY_PATCH) {
             if (currentAbility == hiddenAbility) { // remove hidden ability
                 Pokemon_SetValue(mon, MON_DATA_ABILITY, &ability1);
-                Pokemon_SetValue(mon, MON_DATA_HIDDEN_ABILITY_SET, &success);
+                Pokemon_SetValue(mon, MON_DATA_HIDDEN_ABILITY_SET, &success); // remove hidden ability flag
                 success = TRUE;
             } else if (hiddenAbility != 0) { // set hidden ability
                 Pokemon_SetValue(mon, MON_DATA_ABILITY, &hiddenAbility);
@@ -2810,13 +2810,15 @@ static int ApplyItemEffectOnPokemon(PartyMenuApplication *app)
                 msg = MessageLoader_GetNewString(app->messageLoader, PartyMenu_Text_AbilityChangeFail);
             }
         } else { // ability capsule handling
-            if (currentAbility == ability1 && ability2 != 0) {
+            if (currentAbility == ability1 && ability2 != ABILITY_NONE) {
                 Pokemon_SetValue(mon, MON_DATA_ABILITY, &ability2);
                 success = TRUE;
             } else if (currentAbility == ability2) {
                 Pokemon_SetValue(mon, MON_DATA_ABILITY, &ability1);
                 success = TRUE;
-            } else if (currentAbility == hiddenAbility) {
+            } else {
+                // current ability is hidden ability
+                // or there is no second ability
                 msg = MessageLoader_GetNewString(app->messageLoader, PartyMenu_Text_AbilityChangeFail);
             }
         }
