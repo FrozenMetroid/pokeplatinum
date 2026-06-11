@@ -42,7 +42,7 @@ BOOL FieldTask_ProcessNPCTrade(FieldTask *task)
     switch (taskEnv->state) {
     case 0:
         NPCTrade_FillAnimationTemplate(fieldSystem, taskEnv->npcTradeData, taskEnv->partySlot, &taskEnv->tradeAnimTemplate, taskEnv->givingMon, taskEnv->receivingMon);
-        if (!taskEnv->npcTradeData->wonderTrade) {
+        if (!taskEnv->npcTradeData->wonderTrade) { // mon is already given in wonder trade scenario before this
             NPCTrade_ReceiveMon(fieldSystem, taskEnv->npcTradeData, taskEnv->partySlot);
         }
         taskEnv->state++;
@@ -62,6 +62,9 @@ BOOL FieldTask_ProcessNPCTrade(FieldTask *task)
     case 4:
         u16 targetSpecies, method;
         Party *party = SaveData_GetParty(fieldSystem->saveData);
+        if (!taskEnv->npcTradeData->wonderTrade) {
+            Heap_Free(taskEnv->receivingMon); /// get rid of the initial mon data that was generated in FieldTask_StartNPCTrade
+        }
         taskEnv->receivingMon = Party_GetPokemonBySlotIndex(party, taskEnv->partySlot); // had to update this pointer because I was having an issue with the mon evolving, but not updating the species at the end, and since it's already in the party, who cares
         if (NPCTrade_ShouldEvolve(taskEnv->receivingMon, &targetSpecies, &method, HEAP_ID_FIELD2)) {
             Heap_Create(HEAP_ID_APPLICATION, HEAP_ID_EVOLUTION, HEAP_SIZE_EVOLUTION);
@@ -83,9 +86,7 @@ BOOL FieldTask_ProcessNPCTrade(FieldTask *task)
         taskEnv->state++;
         break;
     case 8:
-        if (!taskEnv->npcTradeData->wonderTrade) { // don't need to free the receiving mon in either case because the pointer is updated to a mon in the party
-            // don't want to free this because the pointer to givingMon
-            // points to the mon in the wonder trade struct for the mon you sent
+        if (!taskEnv->npcTradeData->wonderTrade) {
             Heap_Free(taskEnv->givingMon);
         }
         Heap_Free(taskEnv->npcTradeData->trainerInfo);
@@ -108,6 +109,7 @@ void FieldTask_StartNPCTrade(FieldTask *task, NPCTradeData *npcTradeData, int pa
     taskEnv->partySlot = partySlot;
     taskEnv->givingMon = Pokemon_New(heapID);
     taskEnv->receivingMon = Pokemon_New(heapID);
+    taskEnv->npcTradeData->wonderTrade = FALSE;
 
     FieldTask_InitCall(task, FieldTask_ProcessNPCTrade, taskEnv);
 }

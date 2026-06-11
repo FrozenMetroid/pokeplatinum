@@ -339,3 +339,9 @@ Wild and Wonder Trade Pokémon will have randomly generated movesets based on wh
 - Exp. Share moved to Oreburgh City Poké Center; must have seen 20 species in the Pokédex to receive it, which is possible before Roark
 - Pressing Down while at the top of a waterfall will allow you to immediately descend it without confirming if you have a Pokémon that can learn Waterfall, you have the Beacon Badge, and HM07
 - Pokémon that evolve through friendship/happiness will do so at 160 rather than 220, like modern games
+- NPC-traded Pokémon, including Wonder Trade Pokémon, can evolve if their evolution requirements are met (yes, including Haunter in Snowpoint)
+    - NPC-trade Pokémon now have defined levels rather than using the level of the Pokémon you sent:
+        - Kazza the Abra in Oreburgh City: level 10
+        - Charap the Chatot in Eterna City: level 18
+        - Gaspar the Haunter in Snowpoint City: level 40
+        - Foppa the Magikarp on Route 226: level 35, perfect IVs
