@@ -97,7 +97,9 @@
             "MOVE_SPLASH",
             "MOVE_DRAGON_RAGE",
             "MOVE_DRAGON_BREATH",
-            "MOVE_SIGNAL_BEAM"
+            "MOVE_SIGNAL_BEAM",
+            "MOVE_RAZOR_WIND",
+            "MOVE_MUDDY_WATER"
         ]
     },
     "evolutions": [

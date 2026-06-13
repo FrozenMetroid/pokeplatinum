@@ -1338,19 +1338,20 @@ static void BattleScript_CalcMoveDamage(BattleSystem *battleSys, BattleContext *
     int moveType;
     if (Battler_Ability(battleCtx, battleCtx->attacker) == ABILITY_NORMALIZE) {
         moveType = TYPE_NORMAL;
-    } else if (MOVE_DATA(battleCtx->moveCur).type == TYPE_NORMAL && MoveIsAffectedByNormalizeVariants(battleCtx->moveCur)) {
+    } else if (battleCtx->moveType) {
+        moveType = battleCtx->moveType;
+    } else {
+        moveType = CURRENT_MOVE_DATA.type;
+    }
+
+    if (moveType == TYPE_NORMAL && MoveIsAffectedByNormalizeVariants(battleCtx->moveCur)) {
         switch (Battler_Ability(battleCtx, battleCtx->attacker)) {
             case ABILITY_GALVANIZE:
                 moveType = TYPE_ELECTRIC;
                 break;
             default:
-                moveType = TYPE_NORMAL;
                 break;
         }
-    } else if (battleCtx->moveType) {
-        moveType = battleCtx->moveType;
-    } else {
-        moveType = CURRENT_MOVE_DATA.type;
     }
 
     battleCtx->damage = BattleSystem_CalcMoveDamage(battleSys,
@@ -11594,6 +11595,7 @@ static int BattleScript_CalcCatchShakes(BattleSystem *battleSys, BattleContext *
         #ifdef BATTLE_ADD_CATCHING_CHARM
         if (Bag_CanRemoveItem(battleSys->bag, ITEM_CATCHING_CHARM, 1, HEAP_ID_BATTLE)) {
             catchRate = catchRate * 12 / 10;
+            catchRate++;
         }
         #endif
 

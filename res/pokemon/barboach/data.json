@@ -96,7 +96,8 @@
             "MOVE_SPARK",
             "MOVE_HYDRO_PUMP",
             "MOVE_FLAIL",
-            "MOVE_TAKE_DOWN"
+            "MOVE_TAKE_DOWN",
+            "MOVE_DRAGON_DANCE"
         ]
     },
     "evolutions": [

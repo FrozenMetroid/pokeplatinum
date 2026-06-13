@@ -115,7 +115,8 @@
             "MOVE_PERISH_SONG",
             "MOVE_SWORDS_DANCE",
             "MOVE_DOUBLE_KICK",
-            "MOVE_IRON_HEAD"
+            "MOVE_IRON_HEAD",
+            "MOVE_DETECT"
         ]
     },
     "evolutions": [

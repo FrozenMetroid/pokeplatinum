@@ -124,7 +124,8 @@
             "MOVE_WAKE_UP_SLAP",
             "MOVE_TEETER_DANCE",
             "MOVE_HEALING_WISH",
-            "MOVE_CHARM"
+            "MOVE_CHARM",
+            "MOVE_NASTY_PLOT"
         ]
     },
     "evolutions": [

@@ -101,7 +101,8 @@
             "MOVE_INGRAIN",
             "MOVE_MAGICAL_LEAF",
             "MOVE_WORRY_SEED",
-            "MOVE_TICKLE"
+            "MOVE_TICKLE",
+            "MOVE_WEATHER_BALL"
         ]
     },
     "evolutions": [

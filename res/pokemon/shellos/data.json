@@ -103,7 +103,9 @@
             "MOVE_MEMENTO",
             "MOVE_CURSE",
             "MOVE_AMNESIA",
-            "MOVE_FISSURE"
+            "MOVE_FISSURE",
+            "MOVE_TRUMP_CARD",
+            "MOVE_SLUDGE"
         ]
     },
     "evolutions": [

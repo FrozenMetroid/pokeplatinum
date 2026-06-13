@@ -107,7 +107,8 @@
             "MOVE_ROLLOUT",
             "MOVE_EXPLOSION",
             "MOVE_DOUBLE_EDGE",
-            "MOVE_BLOCK"
+            "MOVE_BLOCK",
+            "MOVE_HEAD_SMASH"
         ]
     },
     "evolutions": [

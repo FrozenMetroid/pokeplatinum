@@ -90,7 +90,8 @@
             "MOVE_SUPERSONIC",
             "MOVE_BARRIER",
             "MOVE_CONFUSE_RAY",
-            "MOVE_AQUA_RING"
+            "MOVE_AQUA_RING",
+            "MOVE_MUDDY_WATER"
         ]
     },
     "evolutions": [

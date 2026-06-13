@@ -116,7 +116,8 @@
             "MOVE_LOW_KICK",
             "MOVE_IRON_DEFENSE",
             "MOVE_BLAZE_KICK",
-            "MOVE_BULLET_PUNCH"
+            "MOVE_BULLET_PUNCH",
+            "MOVE_FOLLOW_ME"
         ]
     },
     "evolutions": [

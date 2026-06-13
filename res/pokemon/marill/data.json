@@ -107,7 +107,8 @@
             "MOVE_SUBSTITUTE",
             "MOVE_AQUA_JET",
             "MOVE_SUPERPOWER",
-            "MOVE_REFRESH"
+            "MOVE_REFRESH",
+            "MOVE_BODY_SLAM"
         ]
     },
     "evolutions": [

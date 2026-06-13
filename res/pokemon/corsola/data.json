@@ -117,7 +117,8 @@
             "MOVE_CONFUSE_RAY",
             "MOVE_ICICLE_SPEAR",
             "MOVE_NATURE_POWER",
-            "MOVE_AQUA_RING"
+            "MOVE_AQUA_RING",
+            "MOVE_CURSE"
         ]
     },
     "evolutions": [  ],

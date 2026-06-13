@@ -106,7 +106,10 @@
             "MOVE_SEED_BOMB",
             "MOVE_THRASH",
             "MOVE_AMNESIA",
-            "MOVE_SUPERPOWER"
+            "MOVE_SUPERPOWER",
+            "MOVE_STOCKPILE",
+            "MOVE_SWALLOW",
+            "MOVE_SPIT_UP"
         ]
     },
     "evolutions": [

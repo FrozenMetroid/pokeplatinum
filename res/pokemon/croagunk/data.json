@@ -125,7 +125,8 @@
             "MOVE_WAKE_UP_SLAP",
             "MOVE_SMELLING_SALT",
             "MOVE_CROSS_CHOP",
-            "MOVE_BULLET_PUNCH"
+            "MOVE_BULLET_PUNCH",
+            "MOVE_COUNTER"
         ]
     },
     "evolutions": [

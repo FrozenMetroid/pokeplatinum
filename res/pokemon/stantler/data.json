@@ -116,7 +116,8 @@
             "MOVE_EXTRASENSORY",
             "MOVE_THRASH",
             "MOVE_DOUBLE_KICK",
-            "MOVE_ZEN_HEADBUTT"
+            "MOVE_ZEN_HEADBUTT",
+            "MOVE_MEGAHORN"
         ]
     },
     "evolutions": [  ],

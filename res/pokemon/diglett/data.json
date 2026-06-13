@@ -95,7 +95,8 @@
             "MOVE_UPROAR",
             "MOVE_ROCK_SLIDE",
             "MOVE_MUD_BOMB",
-            "MOVE_ASTONISH"
+            "MOVE_ASTONISH",
+            "MOVE_REVERSAL"
         ]
     },
     "evolutions": [

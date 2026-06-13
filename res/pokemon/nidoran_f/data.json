@@ -101,7 +101,8 @@
             "MOVE_CHARM",
             "MOVE_COUNTER",
             "MOVE_BEAT_UP",
-            "MOVE_PURSUIT"
+            "MOVE_PURSUIT",
+            "MOVE_SKULL_BASH"
         ]
     },
     "evolutions": [

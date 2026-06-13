@@ -94,7 +94,8 @@
             "MOVE_ASTONISH",
             "MOVE_SKY_ATTACK",
             "MOVE_WHIRLWIND",
-            "MOVE_UPROAR"
+            "MOVE_UPROAR",
+            "MOVE_FEATHER_DANCE"
         ]
     },
     "evolutions": [

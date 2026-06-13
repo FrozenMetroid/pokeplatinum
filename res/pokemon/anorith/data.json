@@ -104,7 +104,8 @@
             "MOVE_ROCK_SLIDE",
             "MOVE_SCREECH",
             "MOVE_SAND_ATTACK",
-            "MOVE_CROSS_POISON"
+            "MOVE_CROSS_POISON",
+            "MOVE_CURSE"
         ]
     },
     "evolutions": [

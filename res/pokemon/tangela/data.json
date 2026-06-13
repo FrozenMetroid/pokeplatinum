@@ -107,7 +107,8 @@
             "MOVE_LEECH_SEED",
             "MOVE_NATURE_POWER",
             "MOVE_ENDEAVOR",
-            "MOVE_LEAF_STORM"
+            "MOVE_LEAF_STORM",
+            "MOVE_POWER_SWAP"
         ]
     },
     "evolutions": [

@@ -112,7 +112,8 @@
             "MOVE_ANCIENT_POWER",
             "MOVE_KNOCK_OFF",
             "MOVE_SUPERPOWER",
-            "MOVE_METAL_CLAW"
+            "MOVE_METAL_CLAW",
+            "MOVE_DRAGON_DANCE"
         ]
     },
     "evolutions": [

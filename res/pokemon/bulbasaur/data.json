@@ -107,7 +107,9 @@
             "MOVE_INGRAIN",
             "MOVE_NATURE_POWER",
             "MOVE_AMNESIA",
-            "MOVE_LEAF_STORM"
+            "MOVE_LEAF_STORM",
+            "MOVE_POWER_WHIP",
+            "MOVE_SLUDGE"
         ]
     },
     "evolutions": [

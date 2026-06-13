@@ -90,7 +90,8 @@
             "MOVE_HYPNOSIS",
             "MOVE_CHARM",
             "MOVE_DOUBLE_EDGE",
-            "MOVE_HORN_DRILL"
+            "MOVE_HORN_DRILL",
+            "MOVE_MORNING_SUN"
         ]
     },
     "evolutions": [

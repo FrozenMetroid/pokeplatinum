@@ -97,7 +97,8 @@
             "MOVE_THUNDER_PUNCH",
             "MOVE_MACH_PUNCH",
             "MOVE_DYNAMIC_PUNCH",
-            "MOVE_FLARE_BLITZ"
+            "MOVE_FLARE_BLITZ",
+            "MOVE_BELLY_DRUM"
         ]
     },
     "evolutions": [

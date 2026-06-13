@@ -101,7 +101,8 @@
             "MOVE_SAND_TOMB",
             "MOVE_REVENGE",
             "MOVE_DOUBLE_EDGE",
-            "MOVE_TOXIC_SPIKES"
+            "MOVE_TOXIC_SPIKES",
+            "MOVE_POWER_TRICK"
         ]
     },
     "evolutions": [

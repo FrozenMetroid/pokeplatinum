@@ -115,7 +115,8 @@
             "MOVE_SKY_ATTACK",
             "MOVE_CURSE",
             "MOVE_BRAVE_BIRD",
-            "MOVE_ASSURANCE"
+            "MOVE_ASSURANCE",
+            "MOVE_GUARD_SWAP"
         ]
     },
     "evolutions": [  ],

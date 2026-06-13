@@ -112,7 +112,8 @@
             "MOVE_CURSE",
             "MOVE_NATURE_POWER",
             "MOVE_LUCKY_CHANT",
-            "MOVE_LEAF_STORM"
+            "MOVE_LEAF_STORM",
+            "MOVE_POWER_SWAP"
         ]
     },
     "evolutions": [

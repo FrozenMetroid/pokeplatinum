@@ -2716,19 +2716,20 @@ int BattleSystem_ApplyTypeChart(BattleSystem *battleSys, BattleContext *battleCt
 
     if (Battler_Ability(battleCtx, attacker) == ABILITY_NORMALIZE) {
         moveType = TYPE_NORMAL;
-    } else if (MOVE_DATA(move).type == TYPE_NORMAL && MoveIsAffectedByNormalizeVariants(move)) {
+    } else if (inType) {
+        moveType = inType;
+    } else {
+        moveType = MOVE_DATA(move).type;
+    }
+
+    if (moveType == TYPE_NORMAL && MoveIsAffectedByNormalizeVariants(move)) {
         switch (Battler_Ability(battleCtx, attacker)) {
             case ABILITY_GALVANIZE:
                 moveType = TYPE_ELECTRIC;
                 break;
             default:
-                moveType = TYPE_NORMAL;
                 break;
         }
-    } else if (inType) {
-        moveType = inType;
-    } else {
-        moveType = MOVE_DATA(move).type;
     }
 
     movePower = MOVE_DATA(move).power;
@@ -2837,19 +2838,20 @@ void BattleSystem_CalcEffectiveness(BattleContext *battleCtx, int move, int inTy
 
     if (attackerAbility == ABILITY_NORMALIZE) {
         moveType = TYPE_NORMAL;
-    } else if (MOVE_DATA(move).type == TYPE_NORMAL && MoveIsAffectedByNormalizeVariants(move)) {
-        switch (Battler_Ability(battleCtx, battleCtx->attacker)) {
-            case ABILITY_GALVANIZE:
-                moveType = TYPE_ELECTRIC;
-                break;
-            default:
-                moveType = TYPE_NORMAL;
-                break;
-        }
     } else if (inType) {
         moveType = inType;
     } else {
         moveType = MOVE_DATA(move).type;
+    }
+
+    if (moveType == TYPE_NORMAL && MoveIsAffectedByNormalizeVariants(move)) {
+        switch (attackerAbility) {
+            case ABILITY_GALVANIZE:
+                moveType = TYPE_ELECTRIC;
+                break;
+            default:
+                break;
+        }
     }
 
     if (attackerAbility != ABILITY_MOLD_BREAKER
@@ -3687,19 +3689,20 @@ int BattleSystem_TriggerImmunityAbility(BattleContext *battleCtx, int attacker, 
 
     if (Battler_Ability(battleCtx, attacker) == ABILITY_NORMALIZE) {
         moveType = TYPE_NORMAL;
-    } else if (MOVE_DATA(battleCtx->moveCur).type == TYPE_NORMAL && MoveIsAffectedByNormalizeVariants(battleCtx->moveCur)) {
+    } if (battleCtx->moveType) {
+        moveType = battleCtx->moveType;
+    } else {
+        moveType = CURRENT_MOVE_DATA.type;
+    }
+
+    if (moveType == TYPE_NORMAL && MoveIsAffectedByNormalizeVariants(battleCtx->moveCur)) {
         switch (Battler_Ability(battleCtx, attacker)) {
             case ABILITY_GALVANIZE:
                 moveType = TYPE_ELECTRIC;
                 break;
             default:
-                moveType = TYPE_NORMAL;
                 break;
         }
-    } else if (battleCtx->moveType) {
-        moveType = battleCtx->moveType;
-    } else {
-        moveType = CURRENT_MOVE_DATA.type;
     }
 
     if (Battler_IgnorableAbility(battleCtx, attacker, defender, ABILITY_VOLT_ABSORB) == TRUE
@@ -4681,19 +4684,20 @@ BOOL BattleSystem_TriggerDefenderAbilityOnHit(BattleSystem *battleSys, BattleCon
 
     if (Battler_Ability(battleCtx, battleCtx->attacker) == ABILITY_NORMALIZE) {
         moveType = TYPE_NORMAL;
-    } else if (MOVE_DATA(battleCtx->moveCur).type == TYPE_NORMAL && MoveIsAffectedByNormalizeVariants(battleCtx->moveCur)) {
+    } else if (battleCtx->moveType) {
+        moveType = battleCtx->moveType;
+    } else {
+        moveType = CURRENT_MOVE_DATA.type;
+    }
+
+    if (moveType == TYPE_NORMAL && MoveIsAffectedByNormalizeVariants(battleCtx->moveCur)) {
         switch (Battler_Ability(battleCtx, battleCtx->attacker)) {
             case ABILITY_GALVANIZE:
                 moveType = TYPE_ELECTRIC;
                 break;
             default:
-                moveType = TYPE_NORMAL;
                 break;
         }
-    } else if (battleCtx->moveType) {
-        moveType = battleCtx->moveType;
-    } else {
-        moveType = CURRENT_MOVE_DATA.type;
     }
     
     if (Battler_Ability(battleCtx, battleCtx->attacker) != ABILITY_MOLD_BREAKER)
@@ -7408,20 +7412,22 @@ int BattleSystem_CalcMoveDamage(BattleSystem *battleSys,
         #ifdef BATTLE_NORMALIZE_POWER_BOOST
         movePower = movePower * 12 / 10;
         #endif
-    } else if (moveType == TYPE_NORMAL && MoveIsAffectedByNormalizeVariants(move)) {
-        switch (Battler_Ability(battleCtx, attacker)) {
-            case ABILITY_GALVANIZE:
-                moveType = TYPE_ELECTRIC;
-                break;
-            default:
-                moveType = TYPE_NORMAL;
-                break;
-        }
-        movePower = movePower * 13 / 10;
     } else if (inType == TYPE_NORMAL) {
         moveType = MOVE_DATA(move).type;
     } else {
         moveType = inType & 0x3F;
+    }
+
+    if (moveType == TYPE_NORMAL && MoveIsAffectedByNormalizeVariants(move)) {
+        switch (Battler_Ability(battleCtx, attacker)) {
+            case ABILITY_GALVANIZE:
+                moveType = TYPE_ELECTRIC;
+                movePower = movePower * 13 / 10;
+                break;
+            // add Aerilate and Refrigerate here if those abilities are implemented
+            default:
+                break;
+        }
     }
 
     GF_ASSERT(battleCtx->powerMul >= 10);

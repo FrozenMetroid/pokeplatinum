@@ -93,7 +93,8 @@
             "MOVE_THUNDER_FANG",
             "MOVE_QUICK_ATTACK",
             "MOVE_HOWL",
-            "MOVE_TAKE_DOWN"
+            "MOVE_TAKE_DOWN",
+            "MOVE_NIGHT_SLASH"
         ]
     },
     "evolutions": [

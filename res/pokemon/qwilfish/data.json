@@ -110,7 +110,8 @@
             "MOVE_SUPERSONIC",
             "MOVE_ASTONISH",
             "MOVE_SIGNAL_BEAM",
-            "MOVE_POISON_JAB"
+            "MOVE_POISON_JAB",
+            "MOVE_AQUA_JET"
         ]
     },
     "evolutions": [  ],

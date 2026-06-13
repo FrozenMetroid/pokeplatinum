@@ -116,7 +116,8 @@
             "MOVE_EXPLOSION",
             "MOVE_FIRE_PUNCH",
             "MOVE_ICE_PUNCH",
-            "MOVE_THUNDER_PUNCH"
+            "MOVE_THUNDER_PUNCH",
+            "MOVE_DISABLE"
         ]
     },
     "evolutions": [

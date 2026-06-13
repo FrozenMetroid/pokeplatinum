@@ -112,7 +112,8 @@
             "MOVE_GRASS_WHISTLE",
             "MOVE_SYNTHESIS",
             "MOVE_MAGICAL_LEAF",
-            "MOVE_LEAF_STORM"
+            "MOVE_LEAF_STORM",
+            "MOVE_RAZOR_WIND"
         ]
     },
     "evolutions": [

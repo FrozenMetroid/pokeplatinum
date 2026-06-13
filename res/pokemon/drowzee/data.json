@@ -111,7 +111,8 @@
             "MOVE_ICE_PUNCH",
             "MOVE_NASTY_PLOT",
             "MOVE_FLATTER",
-            "MOVE_PSYCHO_CUT"
+            "MOVE_PSYCHO_CUT",
+            "MOVE_GUARD_SWAP"
         ]
     },
     "evolutions": [

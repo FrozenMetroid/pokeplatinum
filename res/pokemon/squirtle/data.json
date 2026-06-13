@@ -108,7 +108,8 @@
             "MOVE_MUDDY_WATER",
             "MOVE_FAKE_OUT",
             "MOVE_AQUA_RING",
-            "MOVE_AQUA_JET"
+            "MOVE_AQUA_JET",
+            "MOVE_WATER_SPOUT"
         ]
     },
     "evolutions": [

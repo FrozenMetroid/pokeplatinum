@@ -100,7 +100,8 @@
             "MOVE_SAFEGUARD",
             "MOVE_CONFUSE_RAY",
             "MOVE_KNOCK_OFF",
-            "MOVE_ACUPRESSURE"
+            "MOVE_ACUPRESSURE",
+            "MOVE_MUDDY_WATER"
         ]
     },
     "evolutions": [

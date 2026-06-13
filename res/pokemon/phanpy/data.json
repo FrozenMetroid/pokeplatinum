@@ -103,7 +103,8 @@
             "MOVE_COUNTER",
             "MOVE_FISSURE",
             "MOVE_ENDEAVOR",
-            "MOVE_ICE_SHARD"
+            "MOVE_ICE_SHARD",
+            "MOVE_HEAD_SMASH"
         ]
     },
     "evolutions": [

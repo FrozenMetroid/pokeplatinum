@@ -99,7 +99,10 @@
             "MOVE_ENCORE",
             "MOVE_FAKE_OUT",
             "MOVE_ICICLE_SPEAR",
-            "MOVE_SIGNAL_BEAM"
+            "MOVE_SIGNAL_BEAM",
+            "MOVE_STOCKPILE",
+            "MOVE_SWALLOW",
+            "MOVE_SPIT_UP"
         ]
     },
     "evolutions": [

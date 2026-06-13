@@ -95,7 +95,8 @@
             "MOVE_WATER_SPORT",
             "MOVE_MUD_SPORT",
             "MOVE_CAPTIVATE",
-            "MOVE_AQUA_RING"
+            "MOVE_AQUA_RING",
+            "MOVE_AQUA_JET"
         ]
     },
     "evolutions": [  ],

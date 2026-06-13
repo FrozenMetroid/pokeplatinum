@@ -93,7 +93,8 @@
             "MOVE_ICE_BALL",
             "MOVE_MUD_SHOT",
             "MOVE_REFRESH",
-            "MOVE_ENDEAVOR"
+            "MOVE_ENDEAVOR",
+            "MOVE_ENCORE"
         ]
     },
     "evolutions": [

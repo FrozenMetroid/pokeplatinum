@@ -92,7 +92,8 @@
             "MOVE_CURSE",
             "MOVE_SLACK_OFF",
             "MOVE_BODY_SLAM",
-            "MOVE_SAND_TOMB"
+            "MOVE_SAND_TOMB",
+            "MOVE_REVENGE"
         ]
     },
     "evolutions": [

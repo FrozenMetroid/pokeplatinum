@@ -123,7 +123,8 @@
             "MOVE_DRAGON_RUSH",
             "MOVE_ICE_FANG",
             "MOVE_FIRE_FANG",
-            "MOVE_THUNDER_FANG"
+            "MOVE_THUNDER_FANG",
+            "MOVE_SKULL_BASH"
         ]
     },
     "evolutions": [

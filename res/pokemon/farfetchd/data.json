@@ -113,7 +113,8 @@
             "MOVE_CURSE",
             "MOVE_COVET",
             "MOVE_MUD_SLAP",
-            "MOVE_NIGHT_SLASH"
+            "MOVE_NIGHT_SLASH",
+            "MOVE_LEAF_BLADE"
         ]
     },
     "evolutions": [  ],

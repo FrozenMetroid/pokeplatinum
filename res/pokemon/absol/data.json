@@ -140,7 +140,8 @@
             "MOVE_PUNISHMENT",
             "MOVE_SUCKER_PUNCH",
             "MOVE_ASSURANCE",
-            "MOVE_ME_FIRST"
+            "MOVE_ME_FIRST",
+            "MOVE_MEGAHORN"
         ]
     },
     "evolutions": [  ],

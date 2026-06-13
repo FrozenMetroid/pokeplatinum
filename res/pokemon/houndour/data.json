@@ -112,7 +112,8 @@
             "MOVE_FIRE_FANG",
             "MOVE_THUNDER_FANG",
             "MOVE_NASTY_PLOT",
-            "MOVE_PUNISHMENT"
+            "MOVE_PUNISHMENT",
+            "MOVE_FEINT"
         ]
     },
     "evolutions": [

@@ -108,7 +108,8 @@
             "MOVE_AGILITY",
             "MOVE_AQUA_RING",
             "MOVE_HYDRO_PUMP",
-            "MOVE_AQUA_JET"
+            "MOVE_AQUA_JET",
+            "MOVE_FEATHER_DANCE"
         ]
     },
     "evolutions": [

@@ -107,7 +107,8 @@
             "MOVE_CRUNCH",
             "MOVE_DRAGON_RUSH",
             "MOVE_METAL_CLAW",
-            "MOVE_FLARE_BLITZ"
+            "MOVE_FLARE_BLITZ",
+            "MOVE_COUNTER"
         ]
     },
     "evolutions": [

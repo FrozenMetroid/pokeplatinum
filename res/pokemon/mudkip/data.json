@@ -106,7 +106,9 @@
             "MOVE_WHIRLPOOL",
             "MOVE_BITE",
             "MOVE_DOUBLE_EDGE",
-            "MOVE_MUD_BOMB"
+            "MOVE_MUD_BOMB",
+            "MOVE_YAWN",
+            "MOVE_SLUDGE"
         ]
     },
     "evolutions": [

@@ -108,7 +108,8 @@
             "MOVE_MIRROR_COAT",
             "MOVE_ROCK_SLIDE",
             "MOVE_WRING_OUT",
-            "MOVE_TICKLE"
+            "MOVE_TICKLE",
+            "MOVE_CURSE"
         ]
     },
     "evolutions": [

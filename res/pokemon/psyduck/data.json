@@ -113,7 +113,8 @@
             "MOVE_REFRESH",
             "MOVE_CONFUSE_RAY",
             "MOVE_YAWN",
-            "MOVE_MUD_BOMB"
+            "MOVE_MUD_BOMB",
+            "MOVE_ENCORE"
         ]
     },
     "evolutions": [

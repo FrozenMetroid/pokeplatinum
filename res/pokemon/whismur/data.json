@@ -98,7 +98,8 @@
             "MOVE_EXTRASENSORY",
             "MOVE_SMELLING_SALT",
             "MOVE_SMOKE_SCREEN",
-            "MOVE_ENDEAVOR"
+            "MOVE_ENDEAVOR",
+            "MOVE_HAMMER_ARM"
         ]
     },
     "evolutions": [

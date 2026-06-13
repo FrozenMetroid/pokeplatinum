@@ -105,7 +105,8 @@
             "MOVE_SUPERSONIC",
             "MOVE_DRAGON_BREATH",
             "MOVE_DRAGON_DANCE",
-            "MOVE_DRAGON_RUSH"
+            "MOVE_DRAGON_RUSH",
+            "MOVE_EXTREME_SPEED"
         ]
     },
     "evolutions": [

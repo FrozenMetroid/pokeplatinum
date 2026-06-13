@@ -113,7 +113,8 @@
             "MOVE_CURSE",
             "MOVE_SCREECH",
             "MOVE_IRON_HEAD",
-            "MOVE_DRAGON_RUSH"
+            "MOVE_DRAGON_RUSH",
+            "MOVE_HEAD_SMASH"
         ]
     },
     "evolutions": [

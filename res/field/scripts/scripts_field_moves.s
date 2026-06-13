@@ -292,7 +292,6 @@ _UsedDefogInLostTower:
 
 FieldMoves_UseDefogFromMenu:
     LockAll
-    // CheckTMHMMoveCompatibility MOVE_DEFOG, VAR_0x8004, VAR_RESULT
     BufferPartyMonNickname 0, VAR_0x8000
     Message FieldMoves_Text_PokemonUsedDefog
     CloseMessage
@@ -309,11 +308,10 @@ FieldMoves_UseDefogFromMenu:
 
 FieldMoves_UseFlashFromMenu:
     LockAll
-    CheckTMHMMoveCompatibility MOVE_FLASH, VAR_0x8004, VAR_RESULT
-    BufferPartyMonNickname 0, VAR_0x8004
+    BufferPartyMonNickname 0, VAR_0x8000
     Message FieldMoves_Text_PokemonUsedFlash
     CloseMessage
-    FieldMoveSummonAnim VAR_0x8004
+    FieldMoveSummonAnim VAR_0x8000
     Flash 1
     ScrCmd_0C3
     WaitTime 42, VAR_RESULT

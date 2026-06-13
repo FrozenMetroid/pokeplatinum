@@ -107,7 +107,8 @@
             "MOVE_RAPID_SPIN",
             "MOVE_ICE_BALL",
             "MOVE_ICE_SHARD",
-            "MOVE_ICE_PUNCH"
+            "MOVE_ICE_PUNCH",
+            "MOVE_FAKE_OUT"
         ]
     },
     "evolutions": [  ],

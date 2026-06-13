@@ -125,7 +125,8 @@
             "MOVE_DOUBLE_EDGE",
             "MOVE_FEINT",
             "MOVE_NIGHT_SLASH",
-            "MOVE_CROSS_POISON"
+            "MOVE_CROSS_POISON",
+            "MOVE_POWER_TRICK"
         ]
     },
     "evolutions": [

@@ -125,7 +125,8 @@
             "MOVE_CURSE",
             "MOVE_TRUMP_CARD",
             "MOVE_MAGIC_COAT",
-            "MOVE_SNORE"
+            "MOVE_SNORE",
+            "MOVE_AGILITY"
         ]
     },
     "evolutions": [  ],

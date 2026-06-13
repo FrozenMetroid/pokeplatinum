@@ -109,7 +109,8 @@
             "MOVE_METAL_CLAW",
             "MOVE_SAND_TOMB",
             "MOVE_BODY_SLAM",
-            "MOVE_IRON_HEAD"
+            "MOVE_IRON_HEAD",
+            "MOVE_MUD_SHOT"
         ]
     },
     "evolutions": [

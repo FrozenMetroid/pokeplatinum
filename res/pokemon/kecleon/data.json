@@ -134,7 +134,8 @@
             "MOVE_TRICK",
             "MOVE_FAKE_OUT",
             "MOVE_NASTY_PLOT",
-            "MOVE_DIZZY_PUNCH"
+            "MOVE_DIZZY_PUNCH",
+            "MOVE_RECOVER"
         ]
     },
     "evolutions": [  ],

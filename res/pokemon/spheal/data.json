@@ -110,7 +110,8 @@
             "MOVE_ROCK_SLIDE",
             "MOVE_CURSE",
             "MOVE_FISSURE",
-            "MOVE_SIGNAL_BEAM"
+            "MOVE_SIGNAL_BEAM",
+            "MOVE_AQUA_RING"
         ]
     },
     "evolutions": [

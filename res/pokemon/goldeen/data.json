@@ -99,7 +99,8 @@
             "MOVE_SLEEP_TALK",
             "MOVE_MUD_SPORT",
             "MOVE_MUD_SLAP",
-            "MOVE_AQUA_TAIL"
+            "MOVE_AQUA_TAIL",
+            "MOVE_BODY_SLAM"
         ]
     },
     "evolutions": [

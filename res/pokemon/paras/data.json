@@ -105,7 +105,8 @@
             "MOVE_PURSUIT",
             "MOVE_METAL_CLAW",
             "MOVE_BUG_BITE",
-            "MOVE_CROSS_POISON"
+            "MOVE_CROSS_POISON",
+            "MOVE_AGILITY"
         ]
     },
     "evolutions": [

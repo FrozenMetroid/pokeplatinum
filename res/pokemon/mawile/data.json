@@ -127,7 +127,8 @@
             "MOVE_ICE_FANG",
             "MOVE_FIRE_FANG",
             "MOVE_THUNDER_FANG",
-            "MOVE_PUNISHMENT"
+            "MOVE_PUNISHMENT",
+            "MOVE_GUARD_SWAP"
         ]
     },
     "evolutions": [  ],

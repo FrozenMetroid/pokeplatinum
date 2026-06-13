@@ -107,7 +107,8 @@
             "MOVE_DYNAMIC_PUNCH",
             "MOVE_COUNTER",
             "MOVE_WAKE_UP_SLAP",
-            "MOVE_BULLET_PUNCH"
+            "MOVE_BULLET_PUNCH",
+            "MOVE_FEINT"
         ]
     },
     "evolutions": [

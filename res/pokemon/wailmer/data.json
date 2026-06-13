@@ -105,7 +105,8 @@
             "MOVE_FISSURE",
             "MOVE_TICKLE",
             "MOVE_DEFENSE_CURL",
-            "MOVE_BODY_SLAM"
+            "MOVE_BODY_SLAM",
+            "MOVE_AQUA_RING"
         ]
     },
     "evolutions": [

@@ -89,7 +89,8 @@
             "MOVE_QUICK_ATTACK",
             "MOVE_GUST",
             "MOVE_FLAIL",
-            "MOVE_FURY_CUTTER"
+            "MOVE_FURY_CUTTER",
+            "MOVE_MUD_SHOT"
         ]
     },
     "evolutions": [

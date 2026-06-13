@@ -126,7 +126,8 @@
             "MOVE_PUNISHMENT",
             "MOVE_PURSUIT",
             "MOVE_ICE_SHARD",
-            "MOVE_ICE_PUNCH"
+            "MOVE_ICE_PUNCH",
+            "MOVE_ASSIST"
         ]
     },
     "evolutions": [

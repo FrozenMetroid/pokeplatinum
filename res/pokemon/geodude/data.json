@@ -105,7 +105,8 @@
             "MOVE_ROCK_SLIDE",
             "MOVE_BLOCK",
             "MOVE_HAMMER_ARM",
-            "MOVE_FLAIL"
+            "MOVE_FLAIL",
+            "MOVE_CURSE"
         ]
     },
     "evolutions": [

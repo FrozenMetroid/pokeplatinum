@@ -111,7 +111,8 @@
             "MOVE_DRAGON_CLAW",
             "MOVE_ICE_PUNCH",
             "MOVE_METAL_CLAW",
-            "MOVE_DRAGON_DANCE"
+            "MOVE_DRAGON_DANCE",
+            "MOVE_AQUA_JET"
         ]
     },
     "evolutions": [

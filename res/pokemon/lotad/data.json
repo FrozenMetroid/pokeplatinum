@@ -99,7 +99,8 @@
             "MOVE_LEECH_SEED",
             "MOVE_FLAIL",
             "MOVE_WATER_GUN",
-            "MOVE_TICKLE"
+            "MOVE_TICKLE",
+            "MOVE_COUNTER"
         ]
     },
     "evolutions": [

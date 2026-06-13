@@ -127,7 +127,8 @@
             "MOVE_RECOVER",
             "MOVE_MOONLIGHT",
             "MOVE_NASTY_PLOT",
-            "MOVE_FLATTER"
+            "MOVE_FLATTER",
+            "MOVE_FEINT"
         ]
     },
     "evolutions": [  ],

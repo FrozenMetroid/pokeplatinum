@@ -109,7 +109,8 @@
             "MOVE_WISH",
             "MOVE_SUBSTITUTE",
             "MOVE_FAKE_TEARS",
-            "MOVE_COVET"
+            "MOVE_COVET",
+            "MOVE_AROMATHERAPY"
         ]
     },
     "evolutions": [

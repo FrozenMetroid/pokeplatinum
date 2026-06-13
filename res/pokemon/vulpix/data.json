@@ -101,7 +101,8 @@
             "MOVE_HEAT_WAVE",
             "MOVE_FLARE_BLITZ",
             "MOVE_EXTRASENSORY",
-            "MOVE_ENERGY_BALL"
+            "MOVE_ENERGY_BALL",
+            "MOVE_POWER_SWAP"
         ]
     },
     "evolutions": [

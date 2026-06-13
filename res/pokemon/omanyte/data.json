@@ -109,7 +109,8 @@
             "MOVE_SPIKES",
             "MOVE_KNOCK_OFF",
             "MOVE_WRING_OUT",
-            "MOVE_TOXIC_SPIKES"
+            "MOVE_TOXIC_SPIKES",
+            "MOVE_MUDDY_WATER"
         ]
     },
     "evolutions": [

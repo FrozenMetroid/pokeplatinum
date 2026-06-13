@@ -96,7 +96,8 @@
             "MOVE_TAKE_DOWN",
             "MOVE_FALSE_SWIPE",
             "MOVE_WORRY_SEED",
-            "MOVE_NASTY_PLOT"
+            "MOVE_NASTY_PLOT",
+            "MOVE_POWER_SWAP"
         ]
     },
     "evolutions": [

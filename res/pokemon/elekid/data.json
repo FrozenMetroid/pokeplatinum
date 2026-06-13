@@ -101,7 +101,8 @@
             "MOVE_CROSS_CHOP",
             "MOVE_FIRE_PUNCH",
             "MOVE_ICE_PUNCH",
-            "MOVE_DYNAMIC_PUNCH"
+            "MOVE_DYNAMIC_PUNCH",
+            "MOVE_FEINT"
         ]
     },
     "evolutions": [

@@ -106,7 +106,8 @@
             "MOVE_SUBSTITUTE",
             "MOVE_WISH",
             "MOVE_SING",
-            "MOVE_SWEET_KISS"
+            "MOVE_SWEET_KISS",
+            "MOVE_DISCHARGE"
         ]
     },
     "evolutions": [  ],

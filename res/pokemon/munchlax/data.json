@@ -122,7 +122,8 @@
             "MOVE_SUBSTITUTE",
             "MOVE_WHIRLWIND",
             "MOVE_PURSUIT",
-            "MOVE_ZEN_HEADBUTT"
+            "MOVE_ZEN_HEADBUTT",
+            "MOVE_COUNTER"
         ]
     },
     "evolutions": [

@@ -129,7 +129,8 @@
             "MOVE_FURY_SWIPES",
             "MOVE_NIGHT_SLASH",
             "MOVE_METAL_CLAW",
-            "MOVE_DOUBLE_HIT"
+            "MOVE_DOUBLE_HIT",
+            "MOVE_DISABLE"
         ]
     },
     "evolutions": [  ],

@@ -122,7 +122,8 @@
             "MOVE_CROSS_CHOP",
             "MOVE_DOUBLE_EDGE",
             "MOVE_CLOSE_COMBAT",
-            "MOVE_NIGHT_SLASH"
+            "MOVE_NIGHT_SLASH",
+            "MOVE_BELLY_DRUM"
         ]
     },
     "evolutions": [

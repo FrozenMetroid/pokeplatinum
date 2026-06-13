@@ -112,7 +112,8 @@
             "MOVE_DESTINY_BOND",
             "MOVE_GRUDGE",
             "MOVE_SHADOW_SNEAK",
-            "MOVE_CONFUSE_RAY"
+            "MOVE_CONFUSE_RAY",
+            "MOVE_ENCORE"
         ]
     },
     "evolutions": [

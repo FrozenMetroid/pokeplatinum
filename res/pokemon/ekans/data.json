@@ -105,7 +105,8 @@
             "MOVE_POISON_FANG",
             "MOVE_SCARY_FACE",
             "MOVE_POISON_TAIL",
-            "MOVE_DISABLE"
+            "MOVE_DISABLE",
+            "MOVE_SWITCHEROO"
         ]
     },
     "evolutions": [

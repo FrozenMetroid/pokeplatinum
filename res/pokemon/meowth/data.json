@@ -114,7 +114,8 @@
             "MOVE_ODOR_SLEUTH",
             "MOVE_FLAIL",
             "MOVE_LAST_RESORT",
-            "MOVE_PUNISHMENT"
+            "MOVE_PUNISHMENT",
+            "MOVE_TAIL_WHIP"
         ]
     },
     "evolutions": [

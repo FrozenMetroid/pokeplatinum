@@ -93,7 +93,8 @@
             "MOVE_SYNTHESIS",
             "MOVE_CHARM",
             "MOVE_INGRAIN",
-            "MOVE_TICKLE"
+            "MOVE_TICKLE",
+            "MOVE_TEETER_DANCE"
         ]
     },
     "evolutions": [

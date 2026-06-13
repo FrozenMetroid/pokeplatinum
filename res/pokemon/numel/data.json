@@ -100,7 +100,10 @@
             "MOVE_YAWN",
             "MOVE_ANCIENT_POWER",
             "MOVE_MUD_BOMB",
-            "MOVE_HEAT_WAVE"
+            "MOVE_HEAT_WAVE",
+            "MOVE_STOCKPILE",
+            "MOVE_SWALLOW",
+            "MOVE_SPIT_UP"
         ]
     },
     "evolutions": [

@@ -118,7 +118,8 @@
             "MOVE_BEAT_UP",
             "MOVE_REVENGE",
             "MOVE_SMELLING_SALT",
-            "MOVE_CLOSE_COMBAT"
+            "MOVE_CLOSE_COMBAT",
+            "MOVE_ENCORE"
         ]
     },
     "evolutions": [

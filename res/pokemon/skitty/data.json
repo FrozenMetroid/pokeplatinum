@@ -117,7 +117,8 @@
             "MOVE_LAST_RESORT",
             "MOVE_FAKE_OUT",
             "MOVE_ZEN_HEADBUTT",
-            "MOVE_SUCKER_PUNCH"
+            "MOVE_SUCKER_PUNCH",
+            "MOVE_MUD_BOMB"
         ]
     },
     "evolutions": [

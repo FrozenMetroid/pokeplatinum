@@ -101,7 +101,8 @@
             "MOVE_AMNESIA",
             "MOVE_CONFUSION",
             "MOVE_BEAT_UP",
-            "MOVE_SUCKER_PUNCH"
+            "MOVE_SUCKER_PUNCH",
+            "MOVE_HEAD_SMASH"
         ]
     },
     "evolutions": [

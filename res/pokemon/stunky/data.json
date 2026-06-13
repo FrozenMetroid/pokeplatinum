@@ -109,7 +109,8 @@
             "MOVE_CRUNCH",
             "MOVE_SCARY_FACE",
             "MOVE_ASTONISH",
-            "MOVE_PUNISHMENT"
+            "MOVE_PUNISHMENT",
+            "MOVE_HAZE"
         ]
     },
     "evolutions": [

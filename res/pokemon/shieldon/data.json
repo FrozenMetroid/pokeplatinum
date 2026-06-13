@@ -111,7 +111,8 @@
             "MOVE_BODY_SLAM",
             "MOVE_SCREECH",
             "MOVE_CURSE",
-            "MOVE_FISSURE"
+            "MOVE_FISSURE",
+            "MOVE_COUNTER"
         ]
     },
     "evolutions": [

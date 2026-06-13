@@ -107,7 +107,8 @@
             "MOVE_SPIT_UP",
             "MOVE_COUNTER",
             "MOVE_ENCORE",
-            "MOVE_DOUBLE_KICK"
+            "MOVE_DOUBLE_KICK",
+            "MOVE_RECOVER"
         ]
     },
     "evolutions": [

@@ -110,7 +110,8 @@
             "MOVE_METAL_CLAW",
             "MOVE_SWORDS_DANCE",
             "MOVE_CRUSH_CLAW",
-            "MOVE_NIGHT_SLASH"
+            "MOVE_NIGHT_SLASH",
+            "MOVE_MUD_SHOT"
         ]
     },
     "evolutions": [

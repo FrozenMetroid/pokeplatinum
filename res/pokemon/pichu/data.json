@@ -97,7 +97,8 @@
             "MOVE_CHARGE",
             "MOVE_FAKE_OUT",
             "MOVE_THUNDER_PUNCH",
-            "MOVE_TICKLE"
+            "MOVE_TICKLE",
+            "MOVE_FLAIL"
         ]
     },
     "evolutions": [

@@ -102,7 +102,8 @@
             "MOVE_THUNDER_WAVE",
             "MOVE_ROCK_BLAST",
             "MOVE_SNORE",
-            "MOVE_FLAIL"
+            "MOVE_FLAIL",
+            "MOVE_WATER_SPOUT"
         ]
     },
     "evolutions": [
