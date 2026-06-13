@@ -92,7 +92,8 @@
             "TM86",
             "TM87",
             "TM90",
-            "HM01"
+            "HM01",
+            "HM05"
         ],
         "by_tutor": [
             "MOVE_MUD_SLAP",
