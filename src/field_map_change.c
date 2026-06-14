@@ -341,7 +341,7 @@ void FieldMapChange_UpdateGameDataDistortionWorld(FieldSystem *fieldSystem, BOOL
 
 static void FieldMapChange_CreateObjects(FieldSystem *fieldSystem)
 {
-    fieldSystem->mapObjMan = MapObjectMan_New(fieldSystem, 64, 5);
+    fieldSystem->mapObjMan = MapObjectMan_New(fieldSystem, MAX_MAP_OBJECTS, 5);
 
     int gender = TrainerInfo_Gender(SaveData_GetTrainerInfo(fieldSystem->saveData));
     FieldOverworldState *fieldState = SaveData_GetFieldOverworldState(fieldSystem->saveData);
@@ -362,7 +362,7 @@ static void FieldMapChange_DeleteObjects(FieldSystem *fieldSystem)
 
 static void FieldMapChange_LoadObjects(FieldSystem *fieldSystem)
 {
-    fieldSystem->mapObjMan = MapObjectMan_New(fieldSystem, 64, 5);
+    fieldSystem->mapObjMan = MapObjectMan_New(fieldSystem, MAX_MAP_OBJECTS, 5);
     FieldSystem_LoadObjects(fieldSystem);
 
     FieldOverworldState *fieldState = SaveData_GetFieldOverworldState(fieldSystem->saveData);

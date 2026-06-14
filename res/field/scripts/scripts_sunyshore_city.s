@@ -131,7 +131,7 @@ SunyshoreCity_RivalAndJasmine:
     CallIfEq VAR_0x8004, 857, SunyshoreCity_JasmineLeaveX857
     ApplyMovement LOCALID_PLAYER, SunyshoreCity_Movement_PlayerWatchJasmineLeave
     WaitMovement
-    SetFlag FLAG_HIDE_SUNYSHORE_JASMINE
+    SetFlag FLAG_HIDE_SUNYSHORE_CITY_JASMINE
     RemoveObject LOCALID_JASMINE
     SetVar VAR_SUNYSHORE_STATE, 3
     ReleaseAll

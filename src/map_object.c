@@ -241,12 +241,18 @@ MapObject *MapObjectMan_AddMapObjectFromHeader(const MapObjectManager *mapObjMan
 
             return mapObj;
         }
-    } else {
-        mapObj = sub_020624CC(mapObjMan, localID, ObjectEvent_GetHiddenFlagNoScript(v2));
+    } else { // checks for the alias
+        FieldSystem *fieldSystem = MapObjectMan_FieldSystem(mapObjMan);
+        // if the flag is not set for the event that the alias is an alias of,
+        // then add the object
+        if (!FieldSystem_CheckFlag(fieldSystem, fieldSystem->previousObjectEventFlags[localID])) {
 
-        if (mapObj != NULL) {
-            sub_02062714(mapObj, mapID, v2);
-            return mapObj;
+            mapObj = sub_020624CC(mapObjMan, localID, ObjectEvent_GetHiddenFlagNoScript(v2));
+
+            if (mapObj != NULL) {
+                sub_02062714(mapObj, mapID, v2);
+                return mapObj;
+            }
         }
     }
 
@@ -624,14 +630,17 @@ static void sub_020620C4(UnkStruct_020620C4 *param0)
 
     fieldSystem = MapObjectMan_FieldSystem(param0->mapObjMan);
     objectEvent = param0->objectEvent;
-
+    u8 i = 0;
     do {
         if (ObjectEvent_HasNoScript(objectEvent) == TRUE || FieldSystem_CheckFlag(fieldSystem, objectEvent->hiddenFlag) == FALSE) {
             mapObj = MapObjectMan_AddMapObjectFromHeader(param0->mapObjMan, objectEvent, param0->unk_00);
             GF_ASSERT(mapObj != NULL);
+            fieldSystem->previousObjectEventFlags[i] = fieldSystem->currentObjectEventFlags[i];
+            fieldSystem->currentObjectEventFlags[i] = ObjectEvent_GetHiddenFlagNoScript(objectEvent);
         }
 
-        objectEvent++;
+        objectEvent++; // pointer
+        i++;
         param0->unk_08++;
     } while (param0->unk_08 < param0->unk_04);
 

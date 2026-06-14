@@ -483,6 +483,7 @@ scripts_route_222
 scripts_route_222_west_house
 scripts_route_222_east_house
 scripts_route_222_gate_to_sunyshore_city
+scripts_route_223
 scripts_route_224
 scripts_route_225
 scripts_route_225_house
@@ -965,6 +966,7 @@ scripts_init_route_222
 scripts_init_route_222_west_house
 scripts_init_route_222_east_house
 scripts_init_route_222_gate_to_sunyshore_city
+scripts_init_route_223
 scripts_init_route_224
 scripts_init_route_225
 scripts_init_route_225_house

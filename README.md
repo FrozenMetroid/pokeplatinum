@@ -85,6 +85,7 @@ Thank you!
 - Reset your Pokémon's EVs in the middle house of the Fight Area by talking to the man in the top right corner
 - You immediately have the Running Shoes
 - Egg moves exclusive to HGSS have been added
+- Rotom's forms have their respective types that were addded in Black and White
 - Debug/testing code for nearly perfect wild encounters and perfect starters (see ``testing.h`` for the config to enable these features if you are modifying this repository)
 - A myriad of changes to the battle system, as documented below
 

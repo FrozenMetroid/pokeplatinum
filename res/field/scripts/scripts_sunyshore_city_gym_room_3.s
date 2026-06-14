@@ -48,8 +48,7 @@ SunyshoreGymRoom3_Volkner:
     SetTrainerFlag TRAINER_SCHOOL_KID_FORREST
     SetTrainerFlag TRAINER_SCHOOL_KID_TIERA
     SetVar VAR_SUNYSHORE_STATE, 2
-    // BUG: TRAINER_LEADER_ROARK should be TRAINER_LEADER_VOLKNER
-    CreateJournalEvent LOCATION_EVENT_BEAT_GYM_LEADER, 156, TRAINER_LEADER_ROARK, 0, 0
+    CreateJournalEvent LOCATION_EVENT_BEAT_GYM_LEADER, 156, TRAINER_LEADER_VOLKNER, 0, 0
     Message SunyshoreGymRoom3_Text_VolknerExplainBeaconBadge
     GoTo SunyshoreGymRoom3_VolknerTryGiveTM57
 

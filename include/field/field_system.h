@@ -42,6 +42,8 @@
 #include "terrain_attributes.h"
 #include "terrain_collision_manager.h"
 
+#include "constants/map_object.h"
+
 #define NUM_HONEY_TREES 21
 
 typedef struct HoneyTreeShake {
@@ -117,6 +119,8 @@ typedef struct FieldSystem_t {
     u8 *battleSubscreenCursorOn;
     u32 unk_C0;
     UnkStruct_ov66_0222DCE0_sub1 unk_C4;
+    u16 currentObjectEventFlags[MAX_MAP_OBJECTS];
+    u16 previousObjectEventFlags[MAX_MAP_OBJECTS];
 } FieldSystem;
 
 #endif // POKEPLATINUM_FIELD_SYSTEM_H

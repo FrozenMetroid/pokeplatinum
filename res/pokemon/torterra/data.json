@@ -36,8 +36,6 @@
     "learnset": {
         "by_level": [
             [0, "MOVE_EARTHQUAKE"],
-            [1, "MOVE_WOOD_HAMMER"],
-            [1, "MOVE_SEED_BOMB"],
             [1, "MOVE_TACKLE"],
             [1, "MOVE_WITHDRAW"],
             [1, "MOVE_ABSORB"],

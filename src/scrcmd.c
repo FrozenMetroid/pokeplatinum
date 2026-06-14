@@ -7263,7 +7263,7 @@ static BOOL ScrCmd_QueueNewRepel(ScriptContext *ctx)
 
 static BOOL ScrCmd_Debug_SetAllTownsVisited(ScriptContext *ctx)
 {
-    for (int i = FLAG_FIRST_ARRIVAL_TWINLEAF_TOWN; i < FLAG_HIDE_SUNYSHORE_JASMINE; i++) {
+    for (int i = FLAG_FIRST_ARRIVAL_TWINLEAF_TOWN; i < FLAG_HIDE_SUNYSHORE_CITY_JASMINE; i++) {
         FieldSystem_SetFlag(ctx->fieldSystem, i);
     }
 
