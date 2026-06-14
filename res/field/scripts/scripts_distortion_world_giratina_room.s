@@ -71,7 +71,7 @@ DistortionWorldGiratinaRoom_Giratina:
     WaitCry
     CloseMessage
     SetFlag FLAG_MAP_LOCAL
-    StartGiratinaOriginBattle SPECIES_GIRATINA, 50
+    StartGiratinaOriginBattle SPECIES_GIRATINA, 55
     ClearFlag FLAG_MAP_LOCAL
     CheckWonBattle VAR_RESULT
     GetBattleResult VAR_RESULT

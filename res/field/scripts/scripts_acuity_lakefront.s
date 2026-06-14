@@ -42,11 +42,10 @@ AcuityLakefront_ArrowSignpostLakeAcuity:
 
 AcuityLakefront_TriggerRival:
     LockAll
-    GetPlayerMapPos VAR_0x8004, VAR_0x8005
-    AddFreeCamera VAR_0x8004, VAR_0x8005
-    ApplyFreeCameraMovement AcuityLakefront_Movement_CameraMoveNorth
-    WaitMovement
+    CameraTranslation 0, 0, 5, 1, 5, 1, 60
+    WaitCameraTranslation
     WaitTime 15, VAR_RESULT
+    PlaySE SEQ_SE_CONFIRM
     BufferRivalName 0
     BufferPlayerName 1
     Message AcuityLakefront_Text_CantClimbWithoutBadge
@@ -54,9 +53,8 @@ AcuityLakefront_TriggerRival:
     ApplyMovement LOCALID_RIVAL, AcuityLakefront_Movement_RivalLeave
     WaitMovement
     RemoveObject LOCALID_RIVAL
-    ApplyFreeCameraMovement AcuityLakefront_Movement_CameraMoveSouth
-    WaitMovement
-    RestoreCamera
+    CameraTranslation 0, 0, 0, 0, 0, 0, 60
+    WaitCameraTranslation
     SetVar VAR_ACUITY_LAKEFRONT_STATE, 1
     ReleaseAll
     End

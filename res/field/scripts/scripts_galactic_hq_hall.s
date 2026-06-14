@@ -15,12 +15,8 @@ GalacticHQHall_TriggerSpeech:
     CloseMessage
     CallIfEq VAR_0x8005, 12, GalacticHQHall_LookerPlayerWalkToSpeechZ12
     CallIfEq VAR_0x8005, 13, GalacticHQHall_LookerPlayerWalkToSpeechZ13
-    AddFreeCamera VAR_0x8004, VAR_0x8005
-    FadeScreenOut FADE_SCREEN_SPEED_MEDIUM
-    ApplyFreeCameraMovement GalacticHQHall_Movement_CameraMoveNorthWest
-    WaitMovement
-    FadeScreenIn
-    WaitFadeScreen
+    CameraTranslation 6, 0, 4, 1, 5, 1, 80
+    WaitCameraTranslation
     WaitTime 15, VAR_RESULT
     ClearFlag FLAG_HIDE_GALACTIC_HQ_HALL_CYRUS
     AddObject LOCALID_CYRUS
@@ -48,9 +44,7 @@ GalacticHQHall_TriggerSpeech:
     RemoveObject LOCALID_CYRUS
     FadeScreenOut FADE_SCREEN_SPEED_MEDIUM
     WaitFadeScreen
-    ApplyFreeCameraMovement GalacticHQHall_Movement_CameraMoveSouthEast
-    WaitMovement
-    RestoreCamera
+    CameraTranslation 0, 0, 0, 0, 0, 0, 1
     RemoveObject LOCALID_GRUNTS_GROUP_OF_4_1
     RemoveObject LOCALID_GRUNT_M_1
     RemoveObject LOCALID_GRUNTS_GROUP_OF_4_2
@@ -88,6 +82,8 @@ GalacticHQHall_TriggerSpeech:
     ApplyMovement LOCALID_LOOKER, GalacticHQHall_Movement_LookerWalkOnSpotSouth
     ApplyMovement LOCALID_PLAYER, GalacticHQHall_Movement_PlayerWalkOnSpotNorth
     WaitMovement
+    WaitCameraTranslation
+    WaitTime 15, VAR_RESULT
     FadeScreenIn
     WaitFadeScreen
     WaitTime 15, VAR_RESULT

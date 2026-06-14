@@ -164,6 +164,8 @@ THIS IS NOT FINISHED, DO NOT ENABLE IT
 
 #define BATTLE_ADD_CELESTIAL_BODY
 
+#define BATTLE_CRITICAL_HITS_DEAL_1_5X_DAMAGE
+
 
 // The following are always applied because they deal with some subscripts and/or things that aren't easily configurable
 // Modernization:

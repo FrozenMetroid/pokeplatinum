@@ -277,6 +277,9 @@ Wild and Wonder Trade Pokémon will have randomly generated movesets based on wh
 - Items collected from wild Pokémon at the end of a battle will be put into the Bag
 - Trainers will withold their Supreme Overlord Pokémon until all other fainted teammates are defeated
 - Tailwind has been modernized to last 4 turns (effectively 3 turns)
+- Overworld fog now reduces accuracy to 80% as opposed to 60% -- should be far less frustrating now
+- Regular critical hits deal 1.5x damage like later generations as opposed to vanilla Platinum's 2x damage
+    - Sniper-boosted critical hits deal 2.25x damage instead of 3x
 
 # Additional Item Locations
 
@@ -294,6 +297,7 @@ Wild and Wonder Trade Pokémon will have randomly generated movesets based on wh
 - Life Orb: Battle Frontier
 - Lucky Egg: Battle Frontier
 - Ability Patch: Battle Frontier
+- Destiny Knot: Lost Tower to replace the Return TM
 - Poké Mart items' required Badges changed and some additional items added, such as the aformentioned Ability Capsule, Ethers, etc.
     - Check out ``PokeMartCommonItems`` in ``mart_items.h`` for the list
 - Pickup Table:
@@ -332,7 +336,7 @@ Wild and Wonder Trade Pokémon will have randomly generated movesets based on wh
 
 - Jasmine: Found in the Battleground with the other Gym Leaders after clearing Stark Mountain
 
-# Miscellaneous Changes
+# Miscellaneous Changes and/or Features
 
 - Earthquake TM in Wayward Cave requires Strength now that TMs are infinite
     - Gible is still accessible at the same point in progression as vanilla Platinum
@@ -345,3 +349,4 @@ Wild and Wonder Trade Pokémon will have randomly generated movesets based on wh
         - Charap the Chatot in Eterna City: level 18
         - Gaspar the Haunter in Snowpoint City: level 40
         - Foppa the Magikarp on Route 226: level 35, perfect IVs
+- Warp pads are animated like HGSS

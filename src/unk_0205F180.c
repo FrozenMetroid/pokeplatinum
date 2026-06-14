@@ -429,6 +429,9 @@ static void PlayerAvatar_PlayWalkSE(PlayerAvatar *playerAvatar, FieldSystem *fie
                             case TILE_BEHAVIOR_BRIDGE_OVER_SAND:
                                 seq = SEQ_SE_PL_ASHIOTO_SAND;
                                 break;
+                            case TILE_BEHAVIOR_BRIDGE_OVER_CAVE:
+                                seq = SEQ_SE_PL_ASHIOTO_CAVE;
+                                break;
                             default: // any others that don't have a specific sound defined should just play the default walking and running sounds
                                 break;
                         }

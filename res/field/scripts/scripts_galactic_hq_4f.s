@@ -14,6 +14,7 @@ GalacticHQ4F_TriggerCyrus:
     LockAll
     ApplyMovement LOCALID_CYRUS, GalacticHQ4F_Movement_CyrusWalkOnSpotSouth
     WaitMovement
+    PlaySE SEQ_SE_CONFIRM
     Message GalacticHQ4F_Text_SpeechWasBigLie
     CloseMessage
     ApplyMovement LOCALID_CYRUS, GalacticHQ4F_Movement_CyrusWalkSouth

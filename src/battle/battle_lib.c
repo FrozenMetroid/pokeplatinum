@@ -3247,7 +3247,7 @@ BOOL BattleSystem_CanWhirlwind(BattleSystem *battleSys, BattleContext *battleCtx
 u8 Battler_Ability(BattleContext *battleCtx, int battler)
 {
     if ((battleCtx->battleMons[battler].moveEffectsMask & MOVE_EFFECT_ABILITY_SUPPRESSED)
-        && BattleSystem_CannotSuppressAbility(battleCtx->battleMons[battler].ability) == FALSE) {
+        && Battle_CannotSuppressAbility(battleCtx->battleMons[battler].ability) == FALSE) {
         return ABILITY_NONE;
     }
 
@@ -3271,7 +3271,7 @@ u8 Battler_Ability(BattleContext *battleCtx, int battler)
     for (int i = 0; i < 4; i++) { // cannot use BattleSystem_GetMaxBattlers here 
         if ( battleCtx->battleMons[i].ability == ABILITY_NEUTRALIZING_GAS
             && battleCtx->battleMons[i].curHP
-            && (BattleSystem_CannotSuppressAbility(battleCtx->battleMons[battler].ability) == FALSE)) {
+            && (Battle_CannotSuppressAbility(battleCtx->battleMons[battler].ability) == FALSE)) {
             return ABILITY_NONE;
         }
     }
@@ -3761,7 +3761,7 @@ int BattleSystem_TriggerImmunityAbility(BattleContext *battleCtx, int attacker, 
 
     #ifdef BATTLE_ADD_WIND_RIDER
     if (Battler_IgnorableAbility(battleCtx, attacker, defender, ABILITY_WIND_RIDER) == TRUE
-        && BattleSystem_IsWindMove(battleCtx->moveCur)
+        && Battle_IsWindMove(battleCtx->moveCur)
         && attacker != defender) {
         battleCtx->sideEffectMon = defender;
         battleCtx->msgBattlerTemp = defender;
@@ -4987,8 +4987,8 @@ BOOL BattleSystem_TriggerAttackerAbilityOnHit(BattleSystem *battleSys, BattleCon
                 && (battleCtx->battleStatusMask2 & SYSCTL_UTURN_ACTIVE) == FALSE
                 && (DEFENDER_SELF_TURN_FLAGS.physicalDamageTaken || DEFENDER_SELF_TURN_FLAGS.specialDamageTaken)
                 && (!(battleCtx->battleMons[battleCtx->defender].moveEffectsMask & MOVE_EFFECT_ABILITY_SUPPRESSED)) // does not already have Gastro Acid applied
-                && (BattleSystem_IsBitingMove(battleCtx->moveCur))
-                && (!(BattleSystem_CannotSuppressAbility(Battler_Ability(battleCtx, battleCtx->defender))))
+                && (Battle_IsBitingMove(battleCtx->moveCur))
+                && (!(Battle_CannotSuppressAbility(Battler_Ability(battleCtx, battleCtx->defender))))
                 && (!(Battler_SubstituteWasHit(battleCtx, battleCtx->defender)))) {
 
                 battleCtx->msgAttacker = battleCtx->attacker;
@@ -7760,7 +7760,7 @@ int BattleSystem_CalcMoveDamage(BattleSystem *battleSys,
     }
 
     if (attackerParams.ability == ABILITY_STRONG_JAW
-        && BattleSystem_IsBitingMove(move)) {
+        && Battle_IsBitingMove(move)) {
             movePower = movePower * 15 / 10;
         }
 
@@ -9264,7 +9264,7 @@ BOOL MoveIsAffectedByNormalizeVariants(int move)
     }
 }
 
-BOOL BattleSystem_MoveNotExemptedFromPriorityBlocking(BattleContext *battleCtx, int attacker, int defender)
+BOOL BattleContext_MoveNotExemptedFromPriorityBlocking(BattleContext *battleCtx, int attacker, int defender)
 {
     u16 target = CURRENT_MOVE_DATA.range;
 
@@ -9287,7 +9287,7 @@ BOOL BattleSystem_MoveNotExemptedFromPriorityBlocking(BattleContext *battleCtx, 
 }
 
 #ifdef BATTLE_ADD_NEUTRALIZING_GAS
-BOOL BattleSystem_CannotSuppressAbility(u8 ability)
+BOOL Battle_CannotSuppressAbility(u8 ability)
 {
     switch (ability) {
         case ABILITY_MULTITYPE:
@@ -9329,7 +9329,7 @@ BOOL BattleSystem_CannotSwapAbilities(BattleContext *battleCtx, int attacker, in
     return FALSE;
 }
 
-BOOL BattleSystem_IsWindMove(u16 move)
+BOOL Battle_IsWindMove(u16 move)
 {
     switch (move) {
         case MOVE_AEROBLAST:
@@ -9349,7 +9349,7 @@ BOOL BattleSystem_IsWindMove(u16 move)
     }
 }
 
-BOOL BattleSystem_IsBitingMove(u16 move)
+BOOL Battle_IsBitingMove(u16 move)
 {
     for (int i = 0; i < NELEMS(sBitingMoves); i++) {
         if (move == sBitingMoves[i]) {
@@ -9359,7 +9359,7 @@ BOOL BattleSystem_IsBitingMove(u16 move)
     return FALSE;
 }
 
-BOOL BattleSystem_IsMimesisMove(u16 move)
+BOOL Battle_IsMimesisMove(u16 move)
 {
     for (int i = 0; i < NELEMS(sMimesisMoves); i++) {
         if (move == sMimesisMoves[i]) {
@@ -9368,3 +9368,13 @@ BOOL BattleSystem_IsMimesisMove(u16 move)
     }
     return FALSE;
 }
+
+#ifdef BATTLE_CRITICAL_HITS_DEAL_1_5X_DAMAGE
+void BattleContext_ReduceCriticalDamage(BattleContext *battleCtx)
+// 1.5x for regular crits, 2.25 for Sniper-boosted crits
+{
+    if (battleCtx->criticalMul > 1) {
+        battleCtx->damage = battleCtx->damage * 3 / 4;
+    }
+}
+#endif

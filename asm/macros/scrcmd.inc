@@ -5131,11 +5131,11 @@
     .macro CameraTranslation x, signX, y, signY, z, signZ, duration
     .short SCRCMD_CAMERATRANSLATION
     .short \x
-    .byte \signX
+    .short \signX
     .short \y
-    .byte \signY
+    .short \signY
     .short \z
-    .byte \signZ
+    .short \signZ
     .short \duration
     .endm
 

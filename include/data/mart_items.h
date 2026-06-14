@@ -173,6 +173,8 @@ const u16 VeilstoneDeptStoreStock_2F_MID[] = {
     ITEM_HP_UP,
     SHOP_ITEM_END
 };
+// TM removed since it is found elsewhere in the overworld:
+// TM70 - Flash
 
 const u16 VeilstoneDeptStoreStock_3F_UP[] = {
     ITEM_TM83,
@@ -181,14 +183,15 @@ const u16 VeilstoneDeptStoreStock_3F_UP[] = {
     ITEM_TM20,
     ITEM_TM33,
     ITEM_TM16,
-    ITEM_TM70,
     SHOP_ITEM_END
 };
 
+// TMs removed since they are found elsewhere in the overworld:
+// TM14 - Blizzard
+// TM25 - Thunder
+// TM38 - Fire Blast
+
 const u16 VeilstoneDeptStoreStock_3F_DOWN[] = {
-    ITEM_TM38,
-    ITEM_TM25,
-    ITEM_TM14,
     ITEM_TM22,
     ITEM_TM52,
     ITEM_TM15,

@@ -96,7 +96,7 @@
     ScriptEntry VisibleItems_Route209LostTower2F_OvalStone
     ScriptEntry VisibleItems_FullmoonIslandForest_LunarWing
     ScriptEntry VisibleItems_Route209LostTower3F_Revive
-    ScriptEntry VisibleItems_Route209LostTower4F_TM27
+    ScriptEntry VisibleItems_Route209LostTower4F_DestinyKnot
     ScriptEntry VisibleItems_SolaceonRuinsRoom7_MindPlate
     ScriptEntry VisibleItems_SolaceonRuinsRoom7_OddIncense
     ScriptEntry VisibleItems_SolaceonRuinsRoom7_Nugget
@@ -896,8 +896,8 @@ VisibleItems_Route209LostTower3F_Revive:
     GoTo VisibleItems_TryGiveItem
     End
 
-VisibleItems_Route209LostTower4F_TM27:
-    SetVar VAR_0x8008, ITEM_TM27
+VisibleItems_Route209LostTower4F_DestinyKnot:
+    SetVar VAR_0x8008, ITEM_DESTINY_KNOT
     SetVar VAR_0x8009, 1
     GoTo VisibleItems_TryGiveItem
     End

@@ -97,6 +97,7 @@ prop_animation_files = copy_gen.process(files(
     'prop_animation_095.nsbta',
     'prop_animation_096.nsbca',
     'prop_animation_097.nsbtp',
+    'prop_animation_098.nsbta',
 ))
 
 prop_animation_narc = custom_target('prop_animations.narc',

@@ -8,13 +8,15 @@
 
 LakeAcuity_TriggerJupiterRival:
     LockAll
+    SetVar VAR_0x8000, 2
     GetPlayerMapPos VAR_0x8004, VAR_0x8005
-    AddFreeCamera VAR_0x8004, VAR_0x8005
-    ApplyFreeCameraMovement LakeAcuity_Movement_CameraMoveNorth
-    WaitMovement
-    WaitTime 15, VAR_RESULT
+    CallIfEq VAR_0x8004, 14, LakeAcuity_Inc0x8000
+    CameraTranslation VAR_0x8000, 1, 0, 0, 5, 1, 45
+    WaitCameraTranslation
+    WaitTime 10, VAR_RESULT
     ApplyMovement LOCALID_RIVAL, LakeAcuity_Movement_RivalWalkOnSpotNorth
     WaitMovement
+    PlaySE SEQ_SE_CONFIRM
     BufferRivalName 0
     Message LakeAcuity_Text_YoureNotGettingAway
     CloseMessage
@@ -25,7 +27,6 @@ LakeAcuity_TriggerJupiterRival:
     GetPlayerMapPos VAR_0x8004, VAR_0x8005
     CallIfEq VAR_0x8004, 14, LakeAcuity_JupiterWalkToPlayerX14
     CallIfEq VAR_0x8004, 15, LakeAcuity_JupiterWalkToPlayerX15
-    RestoreCamera
     Message LakeAcuity_Text_DontWasteYourTime
     CloseMessage
     GetPlayerMapPos VAR_0x8004, VAR_0x8005
@@ -69,9 +70,14 @@ LakeAcuity_TriggerJupiterRival:
     ReleaseAll
     End
 
+LakeAcuity_Inc0x8000:
+    AddVar VAR_0x8000, 1
+    Return
+
 LakeAcuity_JupiterWalkToPlayerX14:
     ApplyMovement LOCALID_JUPITER, LakeAcuity_Movement_JupiterWalkToPlayerX14
-    ApplyFreeCameraMovement LakeAcuity_Movement_CameraMoveSouth
+    CameraTranslation 0, 0, 0, 0, 0, 0, 60
+    WaitCameraTranslation
     WaitMovement
     ApplyMovement LOCALID_PLAYER, LakeAcuity_Movement_PlayerWalkOnSpotEast
     WaitMovement
@@ -79,7 +85,8 @@ LakeAcuity_JupiterWalkToPlayerX14:
 
 LakeAcuity_JupiterWalkToPlayerX15:
     ApplyMovement LOCALID_JUPITER, LakeAcuity_Movement_JupiterWalkToPlayerX15
-    ApplyFreeCameraMovement LakeAcuity_Movement_CameraMoveSouth
+    CameraTranslation 0, 0, 0, 0, 0, 0, 60
+    WaitCameraTranslation
     WaitMovement
     Return
 

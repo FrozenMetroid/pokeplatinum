@@ -23,9 +23,8 @@ SpearPillarDistorted_OnFrameAfterWarp:
     SetObjectEventMovementType LOCALID_CYNTHIA, MOVEMENT_TYPE_LOOK_NORTH
     ClearFlag FLAG_HIDE_SPEAR_PILLAR_DISTORTED_CYNTHIA
     AddObject LOCALID_CYNTHIA
-    AddFreeCamera 30, 30
-    ApplyFreeCameraMovement SpearPillarDistorted_Movement_CameraMoveNorthEast
-    WaitMovement
+    CameraTranslation 1, 1, 0, 0, 5, 1, 20
+    WaitCameraTranslation
     FadeScreenIn
     WaitFadeScreen
     SetVar VAR_SPEAR_PILLAR_DISTORTED_STATE, 2
@@ -39,9 +38,8 @@ SpearPillarDistorted_WaitThenAskEnterDistortionWorld:
     ScrCmd_20D 6, VAR_RESULT
     GoToIfEq VAR_RESULT, 0, SpearPillarDistorted_WaitThenAskEnterDistortionWorld
     RemoveObject LOCALID_MESPRIT
-    ApplyFreeCameraMovement SpearPillarDistorted_Movement_CameraMoveSouthWest
-    WaitMovement
-    RestoreCamera
+    CameraTranslation 0, 0, 0, 0, 0, 0, 45
+    WaitCameraTranslation
     ApplyMovement LOCALID_PLAYER, SpearPillarDistorted_Movement_PlayerWalkOnSpotEast
     ApplyMovement LOCALID_CYNTHIA, SpearPillarDistorted_Movement_CynthiaWalkOnSpotWest
     WaitMovement

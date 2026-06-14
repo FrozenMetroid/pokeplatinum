@@ -7551,17 +7551,17 @@ static BOOL ScrCmd_CameraTranslation(ScriptContext *ctx)
     template.distance = camera->distance;
 
     template.position.x = ScriptContext_GetVar(ctx) * MAP_OBJECT_TILE_SIZE;
-    u8 signX = ScriptContext_ReadByte(ctx);
+    u16 signX = ScriptContext_GetVar(ctx);
     if (signX != 1 && template.position.x != 0) {
         template.position.x = -template.position.x;
     }
     template.position.y = ScriptContext_GetVar(ctx) * MAP_OBJECT_TILE_SIZE;
-    u8 signY = ScriptContext_ReadByte(ctx);
+    u16 signY = ScriptContext_GetVar(ctx);
     if (signY != 1 && template.position.y != 0) {
         template.position.y = -template.position.y;
     }
     template.position.z = ScriptContext_GetVar(ctx) * MAP_OBJECT_TILE_SIZE;
-    u8 signZ = ScriptContext_ReadByte(ctx);
+    u16 signZ = ScriptContext_GetVar(ctx);
     signZ = -signZ; // it's inverted, so to make the numbers make sense for the script where 1 is still positive in the script
     if (signZ != 0 && template.position.z != 0) {
         template.position.z = -template.position.z;

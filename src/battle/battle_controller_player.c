@@ -3386,7 +3386,7 @@ static void BattleControllerPlayer_BeforeMove(BattleSystem *battleSys, BattleCon
         if (BattleSystem_CountAbility(battleSys, battleCtx, COUNT_ALIVE_BATTLERS_OUR_SIDE, battleCtx->defender, ABILITY_QUEENLY_MAJESTY)) {
             if ((Battler_Ability(battleCtx, battleCtx->attacker) != ABILITY_MOLD_BREAKER)
                 && (battleCtx->clientPriority[battleCtx->attacker] > 0 || CURRENT_MOVE_DATA.priority > 0)
-                && (BattleSystem_MoveNotExemptedFromPriorityBlocking(battleCtx, battleCtx->attacker, battleCtx->defender))) {
+                && (BattleContext_MoveNotExemptedFromPriorityBlocking(battleCtx, battleCtx->attacker, battleCtx->defender))) {
                     Battler_UnlockMoveChoice(battleSys, battleCtx, battleCtx->attacker);
                     LOAD_SUBSEQ(subscript_cannot_use_move);
                     battleCtx->commandNext = BATTLE_CONTROL_MOVE_FAILED;
@@ -3529,7 +3529,7 @@ static void BattleControllerPlayer_CheckMoveFailure(BattleSystem *battleSys, Bat
     switch (battleCtx->moveCur)
     {
         case MOVE_GASTRO_ACID:
-            if (BattleSystem_CannotSuppressAbility(battleCtx->battleMons[battleCtx->defender].ability)) {
+            if (Battle_CannotSuppressAbility(battleCtx->battleMons[battleCtx->defender].ability)) {
                 butItFailed = TRUE;
             }
             break;
@@ -3539,7 +3539,7 @@ static void BattleControllerPlayer_CheckMoveFailure(BattleSystem *battleSys, Bat
             }
             break;
         case MOVE_WORRY_SEED:
-            if (BattleSystem_CannotSuppressAbility(battleCtx->battleMons[battleCtx->defender].ability)
+            if (Battle_CannotSuppressAbility(battleCtx->battleMons[battleCtx->defender].ability)
                 || Battler_Ability(battleCtx, battleCtx->defender) == ABILITY_TRUANT) {
                 butItFailed = TRUE;
             }
@@ -5180,7 +5180,7 @@ static BOOL BattleControllerPlayer_TriggerAfterMoveHitEffects(BattleSystem *batt
                 && (battleCtx->battleStatusMask2 & SYSCTL_UTURN_ACTIVE) == FALSE
                 && (battleCtx->battleStatusMask & SYSCTL_FIRST_OF_MULTI_TURN) == FALSE
                 && (!(battleCtx->moveStatusFlags & MOVE_STATUS_DID_NOT_HIT))
-                && (BattleSystem_IsMimesisMove(battleCtx->moveCur))
+                && (Battle_IsMimesisMove(battleCtx->moveCur))
                 && (opponent)) {
                     if ((DEFENDER_TURN_FLAGS.magicCoat && (CURRENT_MOVE_DATA.flags & MOVE_FLAG_CAN_MAGIC_COAT))
                         || (DEFENDER_TURN_FLAGS.snatching && (CURRENT_MOVE_DATA.flags & MOVE_FLAG_CAN_SNATCH))) { // Dancer doesn't work with Magic Coat or Snatching so I'm doing the same with Mimesis

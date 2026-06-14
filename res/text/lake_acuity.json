@@ -4,7 +4,7 @@
     {
       "id": "LakeAcuity_Text_YoureNotGettingAway",
       "en_US": [
-        "{STRVAR_1 3, 0, 0}: !\r",
+        "{STRVAR_1 3, 0, 0}: ...!\r",
         "You’re not getting away with this,\n",
         "Team Galactic!\r"
       ]

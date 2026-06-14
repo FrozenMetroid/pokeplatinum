@@ -1519,14 +1519,17 @@ BOOL MoveIsAffectedByNormalizeVariants(int move);
  *  @param defender defender client
  *  @return TRUE if the move should NOT be exempted from priority blocking effects
  */
-BOOL BattleSystem_MoveNotExemptedFromPriorityBlocking(BattleContext *battleCtx, int attacker, int defender);
+BOOL BattleContext_MoveNotExemptedFromPriorityBlocking(BattleContext *battleCtx, int attacker, int defender);
 
 // for Neutralizing Gas and Gastro Acid
-BOOL BattleSystem_CannotSuppressAbility(u8 ability);
+BOOL Battle_CannotSuppressAbility(u8 ability);
 
-BOOL BattleSystem_IsWindMove(u16 move);
-BOOL BattleSystem_IsBitingMove(u16 move);
-BOOL BattleSystem_IsMimesisMove(u16 move);
+BOOL Battle_IsWindMove(u16 move);
+BOOL Battle_IsBitingMove(u16 move);
+BOOL Battle_IsMimesisMove(u16 move);
 
 int BattleSystem_GetFaintedTeammateCount(BattleSystem *battleSys, int client);
+
+void BattleContext_ReduceCriticalDamage(BattleContext *battleCtx);
+
 #endif // POKEPLATINUM_BATTLE_BATTLE_LIB_H

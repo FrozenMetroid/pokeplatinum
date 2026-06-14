@@ -8522,7 +8522,7 @@
       "id": "BattleStrings_Text_SupremeOverlord_Wild",
       "en_US": [
         "The wild {STRVAR_1 1, 0, 0} gained\n",
-        "from the fallen with its\f",
+        "strength from the fallen with its\f",
         "{STRVAR_1 3, 1, 0}!"
       ]
     },
@@ -8530,7 +8530,7 @@
       "id": "BattleStrings_Text_SupremeOverlord_Foe",
       "en_US": [
         "The foe’s {STRVAR_1 1, 0, 0} gained\n",
-        "from the fallen with its\f",
+        "strength from the fallen with its\f",
         "{STRVAR_1 3, 1, 0}!"
       ]
     },

@@ -367,9 +367,8 @@ SpearPillar_Cyrus:
     ApplyMovement LOCALID_PLAYER, SpearPillar_Movement_PlayerWalkOnSpotNorth
     WaitMovement
     GetPlayerMapPos VAR_0x8000, VAR_0x8001
-    AddFreeCamera VAR_0x8000, VAR_0x8001
     Call SpearPillar_CameraMoveToCyrus
-    WaitMovement
+    WaitCameraTranslation
     SetVar VAR_0x8005, SpearPillar_Text_EverythingIsReady
     SetVar VAR_0x8006, SpearPillar_Text_Dummy68
     Call SpearPillar_SetMessageVar
@@ -399,7 +398,6 @@ SpearPillar_WaitThenWarpToSpearPillarDistorted:
     SetVar VAR_SPEAR_PILLAR_DISTORTED_STATE, 1
     SetSpeciesSeen SPECIES_DIALGA, 0, 0
     SetSpeciesSeen SPECIES_PALKIA, 0, 0
-    RestoreCamera
     Warp MAP_HEADER_SPEAR_PILLAR_DISTORTED, 0, 30, 30, DIR_NORTH
     End
 
@@ -410,33 +408,40 @@ SpearPillar_Movement_PlayerWalkOnSpotNorth:
 
 SpearPillar_CameraMoveToCyrus:
     GetPlayerMapPos VAR_0x8004, VAR_0x8005
-    SetVar VAR_0x8008, VAR_0x8004
-    GoToIfEq VAR_0x8008, 29, SpearPillar_CameraMoveToCyrusX29
-    GoToIfEq VAR_0x8008, 30, SpearPillar_CameraMoveToCyrusX30
-    GoToIfEq VAR_0x8008, 31, SpearPillar_CameraMoveToCyrusX31
-    GoToIfEq VAR_0x8008, 32, SpearPillar_CameraMoveToCyrusX32
-    GoToIfEq VAR_0x8008, 33, SpearPillar_CameraMoveToCyrusX33
+    switch VAR_0x8004
+    case 29, SpearPillar_CameraMoveToCyrusX29
+    case 30, SpearPillar_CameraMoveToCyrusX30
+    case 31, SpearPillar_CameraMoveToCyrusX31
+    case 32, SpearPillar_CameraMoveToCyrusX32
+    case 33, SpearPillar_CameraMoveToCyrusX33
+_BeginCameraMoveToCyrus:
+    CameraTranslation VAR_0x8000, VAR_0x8001, 0, 0, 4, 1, 45
     Return
 
 SpearPillar_CameraMoveToCyrusX29:
-    ApplyFreeCameraMovement SpearPillar_Movement_CameraMoveToCyrusX29
-    Return
+    SetVar VAR_0x8000, 2
+    SetVar VAR_0x8001, 1
+    GoTo _BeginCameraMoveToCyrus
 
 SpearPillar_CameraMoveToCyrusX30:
-    ApplyFreeCameraMovement SpearPillar_Movement_CameraMoveToCyrusX30
-    Return
+    SetVar VAR_0x8000, 1
+    SetVar VAR_0x8001, 1
+    GoTo _BeginCameraMoveToCyrus
 
 SpearPillar_CameraMoveToCyrusX31:
-    ApplyFreeCameraMovement SpearPillar_Movement_CameraMoveToCyrusX31
-    Return
+    SetVar VAR_0x8000, 0
+    SetVar VAR_0x8001, 0
+    GoTo _BeginCameraMoveToCyrus
 
 SpearPillar_CameraMoveToCyrusX32:
-    ApplyFreeCameraMovement SpearPillar_Movement_CameraMoveToCyrusX32
-    Return
+    SetVar VAR_0x8000, 1
+    SetVar VAR_0x8001, 0
+    GoTo _BeginCameraMoveToCyrus
 
 SpearPillar_CameraMoveToCyrusX33:
-    ApplyFreeCameraMovement SpearPillar_Movement_CameraMoveToCyrusX33
-    Return
+    SetVar VAR_0x8000, 2
+    SetVar VAR_0x8001, 0
+    GoTo _BeginCameraMoveToCyrus
 
     .balign 4, 0
 SpearPillar_Movement_CameraMoveToCyrusX29:
