@@ -847,6 +847,7 @@ PrismScale_Give:
     SetVar VAR_0x8004, ITEM_PRISM_SCALE
     SetVar VAR_0x8005, 1
     Common_GiveItemQuantity
+    SetFlag FLAG_OBTAINED_CONTEST_HALL_PRISM_SCALE
     CloseMessage
     ReleaseAll
     GoTo ContestRegistration_End

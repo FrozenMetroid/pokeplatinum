@@ -2795,26 +2795,33 @@ static int ApplyItemEffectOnPokemon(PartyMenuApplication *app)
         u8 ability2 = SpeciesData_GetFormValue(species, form, SPECIES_DATA_ABILITY_2);
         u8 hiddenAbility = SpeciesData_GetFormValue(species, form, SPECIES_DATA_HIDDEN_ABILITY);
         u8 currentAbility = Pokemon_GetValue(mon, MON_DATA_ABILITY, NULL);
+        u8 abilityMask = 0;
         String *msg;
         BOOL success = FALSE;
         if (app->partyMenu->usedItemID == ITEM_ABILITY_PATCH) {
             if (currentAbility == hiddenAbility) { // remove hidden ability
                 Pokemon_SetValue(mon, MON_DATA_ABILITY, &ability1);
-                Pokemon_SetValue(mon, MON_DATA_HIDDEN_ABILITY_SET, &success); // remove hidden ability flag
+                abilityMask |= ABILITY_MASK_ABILITY_1; // set the ability mask to use the first ability
+                Pokemon_SetValue(mon, MON_DATA_ABILITY_MASK, &abilityMask); // remove hidden ability flag
                 success = TRUE;
             } else if (hiddenAbility != 0) { // set hidden ability
                 Pokemon_SetValue(mon, MON_DATA_ABILITY, &hiddenAbility);
+                abilityMask |= ABILITY_MASK_HIDDEN_ABILITY;
+                Pokemon_SetValue(mon, MON_DATA_ABILITY_MASK, &abilityMask);
                 success = TRUE;
-                Pokemon_SetValue(mon, MON_DATA_HIDDEN_ABILITY_SET, &success);
             } else {
                 msg = MessageLoader_GetNewString(app->messageLoader, PartyMenu_Text_AbilityChangeFail);
             }
         } else { // ability capsule handling
             if (currentAbility == ability1 && ability2 != ABILITY_NONE) {
                 Pokemon_SetValue(mon, MON_DATA_ABILITY, &ability2);
+                abilityMask |= ABILITY_MASK_ABILITY_2;
+                Pokemon_SetValue(mon, MON_DATA_ABILITY_MASK, &abilityMask);
                 success = TRUE;
             } else if (currentAbility == ability2) {
                 Pokemon_SetValue(mon, MON_DATA_ABILITY, &ability1);
+                abilityMask |= ABILITY_MASK_ABILITY_1;
+                Pokemon_SetValue(mon, MON_DATA_ABILITY_MASK, &abilityMask);
                 success = TRUE;
             } else {
                 // current ability is hidden ability

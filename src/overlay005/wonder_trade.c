@@ -433,7 +433,9 @@ void WonderTrade_GiveMon(struct WonderTradeData *wonderTradeData, struct FieldSy
     if (wonderTradeData->hiddenAbility != ABILITY_NONE) {
         u8 truthnuke = TRUE;
         Pokemon_SetValue(mon, MON_DATA_ABILITY, &wonderTradeData->hiddenAbility); // only use this line if the hidden ability is selected because the default ability is already determined by the personality value generated in Pokemon_InitWith
-        Pokemon_SetValue(mon, MON_DATA_HIDDEN_ABILITY_SET, &truthnuke);
+        u8 abilityMask = 0;
+        abilityMask |= ABILITY_MASK_HIDDEN_ABILITY;
+        Pokemon_SetValue(mon, MON_DATA_ABILITY_MASK, &abilityMask);
     }
     Pokemon_SetValue(mon, MON_DATA_FORM, &wonderTradeData->form);
     Pokemon_SetValue(mon, MON_DATA_POKEBALL, &wonderTradeData->ball);

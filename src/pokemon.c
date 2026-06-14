@@ -1110,8 +1110,8 @@ static u32 BoxPokemon_GetDataInternal(BoxPokemon *boxMon, enum PokemonDataParam 
         }
         break;
 
-    case MON_DATA_HIDDEN_ABILITY_SET:
-        result = monDataBlockC->hiddenAbilitySet;
+    case MON_DATA_ABILITY_MASK:
+        result = monDataBlockC->abilityMask;
         break;
 
     case MON_DATA_MET_GAME:
@@ -1668,8 +1668,8 @@ static void BoxPokemon_SetDataInternal(BoxPokemon *boxMon, enum PokemonDataParam
         String_ToChars(value, monDataBlockC->nickname, NELEMS(monDataBlockC->nickname));
         break;
 
-    case MON_DATA_HIDDEN_ABILITY_SET:
-        monDataBlockC->hiddenAbilitySet = *u8Value;
+    case MON_DATA_ABILITY_MASK:
+        monDataBlockC->abilityMask = *u8Value;
         break;
 
     case MON_DATA_MET_GAME:
@@ -2109,7 +2109,7 @@ static void BoxPokemon_IncreaseDataInternal(BoxPokemon *boxMon, enum PokemonData
     case MON_DATA_NICKNAME:
     case MON_DATA_NICKNAME_STRING:
     case MON_DATA_NICKNAME_STRING_AND_FLAG:
-    case MON_DATA_HIDDEN_ABILITY_SET:
+    case MON_DATA_ABILITY_MASK:
     case MON_DATA_MET_GAME:
     case MON_DATA_SUPER_COOL_RIBBON:
     case MON_DATA_SUPER_COOL_RIBBON_GREAT:
@@ -4887,16 +4887,23 @@ void Pokemon_CalcAbility(Pokemon *mon)
 static void BoxPokemon_CalcAbility(BoxPokemon *boxMon)
 {
     BOOL reencrypt = BoxPokemon_EnterDecryptionContext(boxMon);
-    int monSpecies = BoxPokemon_GetValue(boxMon, MON_DATA_SPECIES, NULL);
+    u16 monSpecies = BoxPokemon_GetValue(boxMon, MON_DATA_SPECIES, NULL);
     u32 monPersonality = BoxPokemon_GetValue(boxMon, MON_DATA_PERSONALITY, NULL);
-    int monForm = BoxPokemon_GetValue(boxMon, MON_DATA_FORM, NULL);
-    int monAbility1 = SpeciesData_GetFormValue(monSpecies, monForm, SPECIES_DATA_ABILITY_1);
-    int monAbility2 = SpeciesData_GetFormValue(monSpecies, monForm, SPECIES_DATA_ABILITY_2);
-    int hiddenAbility = SpeciesData_GetFormValue(monSpecies, monForm, SPECIES_DATA_HIDDEN_ABILITY);
+    u8 monForm = BoxPokemon_GetValue(boxMon, MON_DATA_FORM, NULL);
+    u16 monAbility1 = SpeciesData_GetFormValue(monSpecies, monForm, SPECIES_DATA_ABILITY_1);
+    u16 monAbility2 = SpeciesData_GetFormValue(monSpecies, monForm, SPECIES_DATA_ABILITY_2);
+    u16 hiddenAbility = SpeciesData_GetFormValue(monSpecies, monForm, SPECIES_DATA_HIDDEN_ABILITY);
+    u8 abilityMask = BoxPokemon_GetValue(boxMon, MON_DATA_ABILITY_MASK, NULL);
 
-    if (BoxPokemon_GetValue(boxMon, MON_DATA_HIDDEN_ABILITY_SET, NULL) // priority to hidden ability if set
-        && hiddenAbility != ABILITY_NONE) { // must include this for mons like Shedinja that don't have a Hidden Ability but the previous mon in the evolutionary tree does
-        BoxPokemon_SetValue(boxMon, MON_DATA_ABILITY, &hiddenAbility);
+    if (abilityMask) { // override the normal ability determination through personality value
+        if (abilityMask & ABILITY_MASK_HIDDEN_ABILITY // priority to hidden ability if set
+            && hiddenAbility != ABILITY_NONE) { // must include this for mons like Shedinja that don't have a Hidden Ability but the previous mon in the evolutionary tree does
+                BoxPokemon_SetValue(boxMon, MON_DATA_ABILITY, &hiddenAbility);
+        } else if (abilityMask & ABILITY_MASK_ABILITY_2) {
+            BoxPokemon_SetValue(boxMon, MON_DATA_ABILITY, &monAbility2); 
+        } else {
+            BoxPokemon_SetValue(boxMon, MON_DATA_ABILITY, &monAbility1);
+        }
     } else if (monAbility2 != ABILITY_NONE) {
         if (monPersonality & 1) {
             BoxPokemon_SetValue(boxMon, MON_DATA_ABILITY, &monAbility2);
@@ -5512,7 +5519,9 @@ void Pokemon_SetWildHiddenAbility(Pokemon *newEncounter, u16 species)
     u8 hiddenAbility = SpeciesData_GetValue(speciesData, SPECIES_DATA_HIDDEN_ABILITY);
     if (hiddenAbility != ABILITY_NONE) {
         Pokemon_SetValue(newEncounter, MON_DATA_ABILITY, &hiddenAbility);
-        Pokemon_SetValue(newEncounter, MON_DATA_HIDDEN_ABILITY_SET, &hasHiddenAbility);
+        u8 abilityMask = 0;
+        abilityMask |= ABILITY_MASK_HIDDEN_ABILITY;
+        Pokemon_SetValue(newEncounter, MON_DATA_ABILITY_MASK, &abilityMask);
     }
     Heap_Free(speciesData);
 }

@@ -76,7 +76,7 @@ typedef struct PokemonDataBlockB {
 typedef struct PokemonDataBlockC {
     /* 0x00 */ charcode_t nickname[MON_NAME_LEN + 1]; //!< The Pokemon's nickname.
 
-    /* 0x16 */ u8 hiddenAbilitySet; //!< Whether the Pokemon's hidden ability has been set
+    /* 0x16 */ u8 abilityMask; //!< track what the ability should be after using Ability Capsule/Patch
     /* 0x17 */ u8 originGame;
 
     /* 0x18 */ u64 ribbonsDS2; //!< A bitmask of ribbons given to the Pokemon from Sinnoh's Super Contests.
