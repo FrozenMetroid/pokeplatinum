@@ -623,7 +623,7 @@
       "id": "SandgemTownLab_Text_JustGaveCatchingCharm",
       "en_US": [
         "That’s a Catching Charm!\n",
-        "It will help you catch Pokémon\n",
+        "It will help you catch Pokémon\f",
         "more frequently than without it!\r",
         "Good luck with the Pokédex,\n",
         "{STRVAR_1 3, 0, 0}!"

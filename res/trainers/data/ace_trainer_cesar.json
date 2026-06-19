@@ -27,6 +27,25 @@
             "ball": "ITEM_ULTRA_BALL",
             "iv_scale": 0,
             "ball_seal": 0
+        },
+        {
+            "species": "SPECIES_MAWILE",
+            "form": 0,
+            "level": 38,
+            "item": null,
+            "moves": [
+                "MOVE_CRUNCH",
+                "MOVE_FIRE_FANG",
+                "MOVE_THUNDER_FANG",
+                "MOVE_IRON_HEAD"
+            ],
+            "ability": "ABILITY_STRONG_JAW",
+            "nature": "NATURE_ADAMANT",
+            "ivnums": [25, 25, 25, 25, 25, 25],
+            "evnums": [0, 80, 80, 0, 0, 0],
+            "ball": "ITEM_POKE_BALL",
+            "iv_scale": 0,
+            "ball_seal": 0
         }
     ],
     "messages": [

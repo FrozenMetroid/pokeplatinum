@@ -16,56 +16,76 @@
             "species": "SPECIES_ABSOL",
             "form": 0,
             "level": 61,
-            "item": "ITEM_NONE",
+            "item": "ITEM_EXPERT_BELT",
             "moves": [
                 "MOVE_PSYCHO_CUT",
                 "MOVE_NIGHT_SLASH",
                 "MOVE_SWORDS_DANCE",
-                "MOVE_QUICK_ATTACK"
+                "MOVE_MEGAHORN"
             ],
-            "iv_scale": 200,
+            "iv_scale": 0,
+            "ability": "ABILITY_SHARPNESS",
+            "nature": "NATURE_ADAMANT",
+            "ivnums": [31, 31, 31, 31, 31, 31],
+            "evnums": [0, 252, 0, 252, 0, 0],
+            "ball": "ITEM_POKE_BALL",
             "ball_seal": 0
         },
         {
             "species": "SPECIES_URSARING",
             "form": 0,
             "level": 61,
-            "item": "ITEM_NONE",
+            "item": "ITEM_FLAME_ORB",
             "moves": [
                 "MOVE_AVALANCHE",
                 "MOVE_SLASH",
                 "MOVE_AERIAL_ACE",
                 "MOVE_SHADOW_CLAW"
             ],
-            "iv_scale": 200,
+            "iv_scale": 0,
+            "ability": "ABILITY_GUTS",
+            "nature": "NATURE_ADAMANT",
+            "ivnums": [31, 31, 31, 31, 31, 31],
+            "evnums": [252, 252, 0, 0, 0, 0],
+            "ball": "ITEM_POKE_BALL",
             "ball_seal": 0
         },
         {
             "species": "SPECIES_METAGROSS",
             "form": 0,
             "level": 62,
-            "item": "ITEM_NONE",
+            "item": "ITEM_LIFE_ORB",
             "moves": [
                 "MOVE_METEOR_MASH",
                 "MOVE_ZEN_HEADBUTT",
                 "MOVE_HAMMER_ARM",
                 "MOVE_BULLET_PUNCH"
             ],
-            "iv_scale": 200,
+            "iv_scale": 0,
+            "ability": "ABILITY_TOUGH_CLAWS",
+            "nature": "NATURE_ADAMANT",
+            "ivnums": [31, 31, 31, 31, 31, 31],
+            "evnums": [252, 252, 0, 0, 0, 0],
+            "ball": "ITEM_POKE_BALL",
             "ball_seal": 0
         },
         {
             "species": "SPECIES_SALAMENCE",
             "form": 0,
             "level": 63,
-            "item": "ITEM_NONE",
+            "item": "ITEM_YACHE_BERRY",
             "moves": [
                 "MOVE_DRAGON_CLAW",
                 "MOVE_CRUNCH",
                 "MOVE_FIRE_FANG",
                 "MOVE_THUNDER_FANG"
             ],
-            "iv_scale": 200,
+            "iv_scale": 0,
+            "ability": "ABILITY_MOXIE",
+            "nature": "NATURE_ADAMANT",
+            "ivnums": [31, 31, 31, 31, 31, 31],
+            "evnums": [0, 252, 0, 252, 0, 0],
+            "ball": "ITEM_POKE_BALL",
             "ball_seal": 0
         },
         {
@@ -79,8 +99,12 @@
                 "MOVE_BONE_RUSH",
                 "MOVE_BLAZE_KICK"
             ],
+            "iv_scale": 0,
+            "ability": "ABILITY_INNER_FOCUS",
+            "nature": "NATURE_ADAMANT",
+            "ivnums": [31, 31, 31, 31, 31, 31],
+            "evnums": [0, 252, 0, 252, 0, 0],
             "ball": "ITEM_LUXURY_BALL",
-            "iv_scale": 200,
             "ball_seal": 0
         }
     ],

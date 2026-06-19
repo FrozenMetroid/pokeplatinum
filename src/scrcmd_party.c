@@ -40,9 +40,10 @@ BOOL ScrCmd_GivePokemon(ScriptContext *ctx)
 
     Party *unused = SaveData_GetParty(fieldSystem->saveData);
     *success = Pokemon_GiveMonFromScript(HEAP_ID_FIELD2, fieldSystem->saveData, species, level, heldItem, metLocation, metTerrain);
-    #endif
 
-    #ifdef TESTING_GIVE_PERFECT_ENCOUNTERS
+    #else 
+
+
     int metLocation = MapHeader_GetMapLabelTextID(ctx->fieldSystem->location->mapId);
     int metTerrain = TERRAIN_MAX;
     FieldSystem *fieldSystem = ctx->fieldSystem;
@@ -115,6 +116,7 @@ BOOL ScrCmd_GivePokemon(ScriptContext *ctx)
     } else {
         *success = Pokemon_GiveMonFromScript(HEAP_ID_FIELD2, fieldSystem->saveData, species, level, heldItem, metLocation, metTerrain);
     }
+    
     #endif
 
     return FALSE;

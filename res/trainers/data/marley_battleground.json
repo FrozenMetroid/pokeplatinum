@@ -8,7 +8,8 @@
     "ai_flags": [
         "AI_FLAG_BASIC",
         "AI_FLAG_EVAL_ATTACK",
-        "AI_FLAG_EXPERT"
+        "AI_FLAG_EXPERT",
+        "AI_FLAG_BATON_PASS"
     ],
     "double_battle": false,
     "party": [
@@ -16,56 +17,76 @@
             "species": "SPECIES_NINJASK",
             "form": 0,
             "level": 61,
-            "item": "ITEM_NONE",
+            "item": "ITEM_CHARTI_BERRY",
             "moves": [
                 "MOVE_X_SCISSOR",
                 "MOVE_AERIAL_ACE",
                 "MOVE_SWORDS_DANCE",
-                "MOVE_SLASH"
+                "MOVE_BATON_PASS"
             ],
-            "iv_scale": 200,
+            "iv_scale": 0,
+            "ability": "ABILITY_SPEED_BOOST",
+            "nature": "NATURE_ADAMANT",
+            "ivnums": [31, 31, 31, 31, 31, 31],
+            "evnums": [0, 252, 0, 252, 0, 0],
+            "ball": "ITEM_POKE_BALL",
             "ball_seal": 0
         },
         {
             "species": "SPECIES_ELECTRODE",
             "form": 0,
             "level": 61,
-            "item": "ITEM_NONE",
+            "item": "ITEM_MAGNET",
             "moves": [
                 "MOVE_HYPER_BEAM",
                 "MOVE_THUNDER",
                 "MOVE_THUNDER_WAVE",
-                "MOVE_DOUBLE_TEAM"
+                "MOVE_SIGNAL_BEAM"
             ],
-            "iv_scale": 200,
+            "iv_scale": 0,
+            "ability": "ABILITY_GALVANIZE",
+            "nature": "NATURE_MODEST",
+            "ivnums": [31, 31, 31, 31, 31, 31],
+            "evnums": [0, 0, 0, 252, 252, 0],
+            "ball": "ITEM_POKE_BALL",
             "ball_seal": 0
         },
         {
             "species": "SPECIES_CROBAT",
             "form": 0,
             "level": 62,
-            "item": "ITEM_NONE",
+            "item": "ITEM_EXPERT_BELT",
             "moves": [
-                "MOVE_AIR_SLASH",
-                "MOVE_POISON_FANG",
-                "MOVE_CONFUSE_RAY",
-                "MOVE_DOUBLE_TEAM"
+                "MOVE_AERIAL_ACE",
+                "MOVE_CROSS_POISON",
+                "MOVE_LEECH_LIFE",
+                "MOVE_CRUNCH"
             ],
-            "iv_scale": 200,
+            "iv_scale": 0,
+            "ability": "ABILITY_INNER_FOCUS",
+            "nature": "NATURE_ADAMANT",
+            "ivnums": [31, 31, 31, 31, 31, 31],
+            "evnums": [0, 252, 0, 252, 0, 0],
+            "ball": "ITEM_POKE_BALL",
             "ball_seal": 0
         },
         {
             "species": "SPECIES_WEAVILE",
             "form": 0,
             "level": 63,
-            "item": "ITEM_NONE",
+            "item": "ITEM_CHOPLE_BERRY",
             "moves": [
                 "MOVE_ICE_SHARD",
                 "MOVE_NIGHT_SLASH",
                 "MOVE_ICE_PUNCH",
-                "MOVE_AERIAL_ACE"
+                "MOVE_LOW_KICK"
             ],
-            "iv_scale": 200,
+            "iv_scale": 0,
+            "ability": "ABILITY_PICKPOCKET",
+            "nature": "NATURE_ADAMANT",
+            "ivnums": [31, 31, 31, 31, 31, 31],
+            "evnums": [0, 252, 0, 252, 0, 0],
+            "ball": "ITEM_POKE_BALL",
             "ball_seal": 0
         },
         {
@@ -79,7 +100,12 @@
                 "MOVE_CRUNCH",
                 "MOVE_THUNDER_FANG"
             ],
-            "iv_scale": 200,
+            "iv_scale": 0,
+            "ability": "ABILITY_INTIMIDATE",
+            "nature": "NATURE_JOLLY",
+            "ivnums": [31, 31, 31, 31, 31, 31],
+            "evnums": [0, 252, 0, 252, 0, 0],
+            "ball": "ITEM_POKE_BALL",
             "ball_seal": 0
         }
     ],

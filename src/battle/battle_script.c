@@ -2310,7 +2310,7 @@ static BOOL BtlCmd_CalcExpGain(BattleSystem *battleSys, BattleContext *battleCtx
                         && battleCtx->selectedPartySlot[2] == i) {
                         expBattler = 2;
                     }
-                    // then check if the mon is not the OT's for the boosted exp message or it is the active battler so that it gets the individual message instead of just the shared message
+                    // then check if the mon is not the OT's for the boosted exp message, or it is the active battler, or it participated in battle so that it gets the individual message instead of just the shared message
                     if (BattleSystem_PokemonIsOT(battleSys, mon) == FALSE
                         || battleCtx->sideGetExpMask[battler] & FlagIndex(i)
                         || i == battleCtx->selectedPartySlot[expBattler]) {
@@ -2323,14 +2323,7 @@ static BOOL BtlCmd_CalcExpGain(BattleSystem *battleSys, BattleContext *battleCtx
         // figure out the remaining slots that need to receive exp with partywideexpshare
         // remainingExpShareSlots is the inverse
         if (partyWideExpShare) {
-            for (i = 0; i < partyCount; i++)
-            {
-                if (battleCtx->slotNeedsExpMessage & (1 << i)) {
-                    battleCtx->remainingExpShareSlots |= (0 << i);
-                } else {
-                    battleCtx->remainingExpShareSlots |= (1 << i);
-                }
-            }
+            battleCtx->remainingExpShareSlots = (~battleCtx->slotNeedsExpMessage) & ((1 << partyCount) - 1);// flip the bits so that 1s represent the slots that need to receive exp from party wide exp share
             #ifdef DEBUG_EXP_GAIN
             EmulatorLog("battleCtx->remainingExpShareSlots: %u, battleCtx->slotNeedsExpMessage: %u", battleCtx->remainingExpShareSlots, battleCtx->slotNeedsExpMessage );
             #endif

@@ -10,15 +10,15 @@
     "double_battle": false,
     "party": [
         {
-            "species": "SPECIES_SHIELDON",
+            "species": "SPECIES_MAWILE",
             "form": 0,
             "level": 21,
             "item": null,
             "moves": [
                 "MOVE_METAL_CLAW",
-                "MOVE_ROCK_TOMB",
-                "MOVE_TAKE_DOWN",
-                "MOVE_TAUNT"
+                "MOVE_BITE",
+                "MOVE_VICE_GRIP",
+                "MOVE_ASTONISH"
             ],
             "iv_scale": 50,
             "ball_seal": 0

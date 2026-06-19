@@ -81,7 +81,7 @@
             "nature": "NATURE_ADAMANT",
             "ivnums": [31, 31, 31, 31, 31, 31],
             "evnums": [100, 100, 0, 0, 0, 0],
-            "ball": "ITEM_POKE_BALL",
+            "ball": "ITEM_NEST_BALL",
             "iv_scale": 0,
             "ball_seal": 0
         },

@@ -21,6 +21,20 @@
             ],
             "iv_scale": 80,
             "ball_seal": 0
+        },
+        {
+            "species": "SPECIES_SMEARGLE",
+            "form": 0,
+            "level": 28,
+            "item": null,
+            "moves": [
+                "MOVE_DOUBLE_HIT",
+                "MOVE_FIRE_BLAST",
+                "MOVE_THUNDER",
+                "MOVE_BLIZZARD"
+            ],
+            "iv_scale": 80,
+            "ball_seal": 0
         }
     ],
     "messages": [

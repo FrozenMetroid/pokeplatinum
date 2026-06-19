@@ -20,7 +20,31 @@
                 "MOVE_LIGHT_SCREEN",
                 "MOVE_REFLECT"
             ],
-            "iv_scale": 30,
+            "iv_scale": 0,
+            "ability": "ABILITY_LEVITATE",
+            "nature": "NATURE_MODEST",
+            "ivnums": [31, 31, 31, 31, 31, 31],
+            "evnums": [180, 0, 0, 0, 180, 0],
+            "ball": "ITEM_POKE_BALL",
+            "ball_seal": 0
+        },
+        {
+            "species": "SPECIES_TORKOAL",
+            "form": 0,
+            "level": 61,
+            "item": null,
+            "moves": [
+                "MOVE_FLAMETHROWER",
+                "MOVE_PROTECT",
+                "MOVE_WILL_O_WISP",
+                "MOVE_EARTH_POWER"
+            ],
+            "iv_scale": 0,
+            "ability": "ABILITY_HEAT_SINK",
+            "nature": "NATURE_MODEST",
+            "ivnums": [31, 31, 31, 31, 31, 31],
+            "evnums": [180, 0, 0, 0, 180, 0],
+            "ball": "ITEM_POKE_BALL",
             "ball_seal": 0
         }
     ],

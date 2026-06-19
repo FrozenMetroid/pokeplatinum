@@ -81,7 +81,7 @@
             "nature": "NATURE_JOLLY",
             "ivnums": [31, 31, 31, 31, 31, 31],
             "evnums": [0, 60, 0, 60, 0, 0],
-            "ball": "ITEM_NEST_BALL",
+            "ball": "ITEM_POKE_BALL",
             "iv_scale": 0,
             "ball_seal": 0
         },

@@ -316,9 +316,9 @@ struct BattleContext {
     u32 battleProgressFlag : 1;
     u32 padding3154_01 : 31;
 
-    u32 slotNeedsExpMessage : 6; // track which slots need to have the exp gain message explicitly show for them
-    u32 remainingExpShareSlots : 6;
-    u32 shownPartyGainedExpMsg : 1; // if we need to show the "party gained exp" message for the first time when showing exp gain for the rest of the party after showing it for the active battler
+    u32 slotNeedsExpMessage : MAX_PARTY_SIZE; // track which slots need to have the exp gain message explicitly shown for them
+    u32 remainingExpShareSlots : MAX_PARTY_SIZE; // track which slots still need to receive exp from party wide exp share
+    u32 shownPartyGainedExpMsg : 1; // if we need to show the "party gained exp" message for the first time when showing exp gain for the rest of the party after showing it for the active battler and any battlers that participated
 
     u32 magicBounceTracker : 1; // if any client has already activated magic bounce, another can not activate
     u32 padding_end:18;

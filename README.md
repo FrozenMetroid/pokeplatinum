@@ -71,10 +71,12 @@ Thank you!
     - Makuhita (Ravaged Path, Victory Road)
     - Mareep (Route 209)
     - Mankey (Uncommon Honey Trees, northern Route 210)
+    - Mawile (Wayward Cave, Iron Island)
     - Miltank (Route 210)
     - Sableye (Wayward Cave)
     - Shroomish (Eterna Forest)
     - Skarmory (Iron Island)
+    - Smeargle (Trophy Garden)
     - Smoochum (Route 216)
     - Spinarak (Route 203 and northern 205 at night)
     - Tauros (Route 210)
@@ -291,7 +293,7 @@ Wild and Wonder Trade Pokémon will have randomly generated movesets based on wh
 - Eviolite: Battle Frontier
 - Prism Scale: Battle Frontier, first time completing a Contest
 - Linking Cord: Battle Frontier, Game Corner
-- Nature mints: Eterna Herp Shop
+- Nature mints: Eterna Herb Shop
 - Bottle Caps: Battle Frontier, rare Pickup (use them in the middle house in the Fight Area)
 - Gold Bottle Caps: Battle Frontier (use them in the middle house in the Fight Area)
 - Mental Herb: Battle Frontier

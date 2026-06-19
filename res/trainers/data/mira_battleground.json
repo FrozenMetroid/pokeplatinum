@@ -16,70 +16,95 @@
             "species": "SPECIES_PORYGON_Z",
             "form": 0,
             "level": 61,
-            "item": "ITEM_NONE",
+            "item": "ITEM_WISE_GLASSES",
             "moves": [
                 "MOVE_TRI_ATTACK",
                 "MOVE_PSYCHIC",
                 "MOVE_THUNDERBOLT",
                 "MOVE_DARK_PULSE"
             ],
-            "iv_scale": 200,
+            "iv_scale": 0,
+            "ability": "ABILITY_ADAPTABILITY",
+            "nature": "NATURE_TIMID",
+            "ivnums": [31, 31, 31, 31, 31, 31],
+            "evnums": [0, 0, 0, 252, 252, 0],
+            "ball": "ITEM_POKE_BALL",
             "ball_seal": 0
         },
         {
             "species": "SPECIES_GENGAR",
             "form": 0,
             "level": 61,
-            "item": "ITEM_NONE",
+            "item": "ITEM_KASIB_BERRY",
             "moves": [
                 "MOVE_SHADOW_BALL",
                 "MOVE_PSYCHIC",
                 "MOVE_SLUDGE_BOMB",
                 "MOVE_ENERGY_BALL"
             ],
-            "iv_scale": 200,
+            "iv_scale": 0,
+            "ability": "ABILITY_LEVITATE",
+            "nature": "NATURE_MODEST",
+            "ivnums": [31, 31, 31, 31, 31, 31],
+            "evnums": [0, 0, 0, 252, 252, 0],
+            "ball": "ITEM_POKE_BALL",
             "ball_seal": 0
         },
         {
             "species": "SPECIES_MAGNEZONE",
             "form": 0,
             "level": 62,
-            "item": "ITEM_NONE",
+            "item": "ITEM_SHUCA_BERRY",
             "moves": [
                 "MOVE_THUNDER",
                 "MOVE_FLASH_CANNON",
                 "MOVE_THUNDER_WAVE",
-                "MOVE_HYPER_BEAM"
+                "MOVE_MAGNET_RISE"
             ],
-            "iv_scale": 200,
+            "iv_scale": 0,
+            "ability": "ABILITY_STURDY",
+            "nature": "NATURE_RELAXED",
+            "ivnums": [31, 31, 31, 31, 31, 31],
+            "evnums": [0, 0, 252, 0, 252, 0],
+            "ball": "ITEM_POKE_BALL",
             "ball_seal": 0
         },
         {
             "species": "SPECIES_TOGEKISS",
             "form": 0,
             "level": 63,
-            "item": "ITEM_NONE",
+            "item": "ITEM_SITRUS_BERRY",
             "moves": [
-                "MOVE_EXTREME_SPEED",
+                "MOVE_HYPER_VOICE",
                 "MOVE_AIR_SLASH",
                 "MOVE_AURA_SPHERE",
                 "MOVE_PSYCHIC"
             ],
-            "iv_scale": 200,
+            "iv_scale": 0,
+            "ability": "ABILITY_SERENE_GRACE",
+            "nature": "NATURE_MODEST",
+            "ivnums": [31, 31, 31, 31, 31, 31],
+            "evnums": [252, 0, 0, 0, 252, 0],
+            "ball": "ITEM_POKE_BALL",
             "ball_seal": 0
         },
         {
             "species": "SPECIES_ALAKAZAM",
             "form": 0,
             "level": 65,
-            "item": "ITEM_SITRUS_BERRY",
+            "item": "ITEM_LIFE_ORB",
             "moves": [
                 "MOVE_PSYCHIC",
                 "MOVE_FOCUS_BLAST",
                 "MOVE_CALM_MIND",
-                "MOVE_HYPER_BEAM"
+                "MOVE_SHADOW_BALL"
             ],
-            "iv_scale": 200,
+            "iv_scale": 0,
+            "ability": "ABILITY_MAGIC_GUARD",
+            "nature": "NATURE_TIMID",
+            "ivnums": [31, 31, 31, 31, 31, 31],
+            "evnums": [0, 0, 0, 252, 252, 0],
+            "ball": "ITEM_POKE_BALL",
             "ball_seal": 0
         }
     ],

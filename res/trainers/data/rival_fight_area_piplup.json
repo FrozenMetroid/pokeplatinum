@@ -16,11 +16,16 @@
             "item": null,
             "moves": [
                 "MOVE_CLOSE_COMBAT",
-                "MOVE_AERIAL_ACE",
-                "MOVE_STEEL_WING",
+                "MOVE_FLY",
+                "MOVE_DOUBLE_EDGE",
                 "MOVE_U_TURN"
             ],
-            "iv_scale": 200,
+            "ability": "ABILITY_INTIMIDATE",
+            "nature": "NATURE_JOLLY",
+            "ivnums": [31, 31, 31, 31, 31, 31],
+            "evnums": [0, 160, 0, 160, 0, 0],
+            "ball": "ITEM_POKE_BALL",
+            "iv_scale": 0,
             "ball_seal": 0
         },
         {
@@ -32,9 +37,14 @@
                 "MOVE_AQUA_JET",
                 "MOVE_CRUNCH",
                 "MOVE_ICE_FANG",
-                "MOVE_BRICK_BREAK"
+                "MOVE_WATERFALL"
             ],
-            "iv_scale": 200,
+            "ability": "ABILITY_SWIFT_SWIM",
+            "nature": "NATURE_ADAMANT",
+            "ivnums": [31, 31, 31, 31, 31, 31],
+            "evnums": [0, 160, 0, 160, 0, 0],
+            "ball": "ITEM_POKE_BALL",
+            "iv_scale": 0,
             "ball_seal": 0
         },
         {
@@ -46,9 +56,14 @@
                 "MOVE_CLOSE_COMBAT",
                 "MOVE_ROCK_SLIDE",
                 "MOVE_NIGHT_SLASH",
-                "MOVE_AERIAL_ACE"
+                "MOVE_MEGAHORN"
             ],
-            "iv_scale": 200,
+            "ability": "ABILITY_SWARM",
+            "nature": "NATURE_MODEST",
+            "ivnums": [31, 31, 31, 31, 31, 31],
+            "evnums": [160, 160, 0, 0, 0, 0],
+            "ball": "ITEM_NEST_BALL",
+            "iv_scale": 0,
             "ball_seal": 0
         },
         {
@@ -57,12 +72,17 @@
             "level": 52,
             "item": null,
             "moves": [
-                "MOVE_FIRE_BLAST",
+                "MOVE_BLAZE_KICK",
                 "MOVE_SUNNY_DAY",
                 "MOVE_BOUNCE",
-                "MOVE_WILL_O_WISP"
+                "MOVE_JUMP_KICK"
             ],
-            "iv_scale": 200,
+            "ability": "ABILITY_FLAME_BODY",
+            "nature": "NATURE_ADAMANT",
+            "ivnums": [31, 31, 31, 31, 31, 31],
+            "evnums": [0, 160, 0, 160, 0, 0],
+            "ball": "ITEM_POKE_BALL",
+            "iv_scale": 0,
             "ball_seal": 0
         },
         {
@@ -73,10 +93,15 @@
             "moves": [
                 "MOVE_BODY_SLAM",
                 "MOVE_CRUNCH",
-                "MOVE_EARTHQUAKE",
+                "MOVE_ZEN_HEADBUTT",
                 "MOVE_REST"
             ],
-            "iv_scale": 200,
+            "ability": "ABILITY_THICK_FAT",
+            "nature": "NATURE_ADAMANT",
+            "ivnums": [31, 31, 31, 31, 31, 31],
+            "evnums": [160, 160, 0, 0, 0, 0],
+            "ball": "ITEM_POKE_BALL",
+            "iv_scale": 0,
             "ball_seal": 0
         },
         {
@@ -85,12 +110,17 @@
             "level": 56,
             "item": null,
             "moves": [
-                "MOVE_LEAF_STORM",
-                "MOVE_EARTHQUAKE",
+                "MOVE_LEAF_BLADE",
+                "MOVE_ROCK_SLIDE",
                 "MOVE_CRUNCH",
-                "MOVE_SYNTHESIS"
+                "MOVE_EARTHQUAKE"
             ],
-            "iv_scale": 200,
+            "ability": "ABILITY_OVERGROW",
+            "nature": "NATURE_ADAMANT",
+            "ivnums": [31, 31, 31, 31, 31, 31],
+            "evnums": [180, 180, 0, 0, 0, 0],
+            "ball": "ITEM_POKE_BALL",
+            "iv_scale": 0,
             "ball_seal": 24
         }
     ],

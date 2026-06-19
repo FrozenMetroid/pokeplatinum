@@ -18,9 +18,33 @@
                 "MOVE_EXTREME_SPEED",
                 "MOVE_FIRE_FANG",
                 "MOVE_HELPING_HAND",
-                "MOVE_AGILITY"
+                "MOVE_THUNDER_FANG"
             ],
-            "iv_scale": 30,
+            "iv_scale": 0,
+            "ability": "ABILITY_INTIMIDATE",
+            "nature": "NATURE_ADAMANT",
+            "ivnums": [31, 31, 31, 31, 31, 31],
+            "evnums": [90, 180, 0, 90, 0, 0],
+            "ball": "ITEM_POKE_BALL",
+            "ball_seal": 0
+        },
+        {
+            "species": "SPECIES_NINJASK",
+            "form": 0,
+            "level": 58,
+            "item": null,
+            "moves": [
+                "MOVE_X_SCISSOR",
+                "MOVE_AERIAL_ACE",
+                "MOVE_DIG",
+                "MOVE_PROTECT"
+            ],
+            "iv_scale": 0,
+            "ability": "ABILITY_SPEED_BOOST",
+            "nature": "NATURE_ADAMANT",
+            "ivnums": [31, 31, 31, 31, 31, 31],
+            "evnums": [0, 180, 0, 180, 0, 0],
+            "ball": "ITEM_POKE_BALL",
             "ball_seal": 0
         }
     ],

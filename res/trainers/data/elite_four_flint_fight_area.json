@@ -8,7 +8,9 @@
     "ai_flags": [
         "AI_FLAG_BASIC",
         "AI_FLAG_EVAL_ATTACK",
-        "AI_FLAG_EXPERT"
+        "AI_FLAG_EXPERT",
+        "AI_FLAG_WEATHER",
+        "AI_FLAG_TAG_STRATEGY"
     ],
     "double_battle": false,
     "party": [
@@ -16,42 +18,57 @@
             "species": "SPECIES_HOUNDOOM",
             "form": 0,
             "level": 56,
-            "item": "ITEM_NONE",
+            "item": "ITEM_HEAT_ROCK",
             "moves": [
                 "MOVE_FLAMETHROWER",
-                "MOVE_SLUDGE_BOMB",
+                "MOVE_THUNDER_FANG",
                 "MOVE_DARK_PULSE",
                 "MOVE_SUNNY_DAY"
             ],
-            "iv_scale": 250,
+            "iv_scale": 0,
+            "ivnums": [31, 31, 31, 31, 31, 31],
+            "evnums": [0, 0, 0, 180, 180, 0],
+            "ball": "ITEM_POKE_BALL",
+            "ability": "ABILITY_SOLAR_POWER",
+            "nature": "NATURE_HASTY",
             "ball_seal": 0
         },
         {
             "species": "SPECIES_FLAREON",
             "form": 0,
             "level": 56,
-            "item": "ITEM_NONE",
+            "item": "ITEM_CHARCOAL",
             "moves": [
-                "MOVE_OVERHEAT",
-                "MOVE_GIGA_IMPACT",
-                "MOVE_QUICK_ATTACK",
+                "MOVE_FLARE_BLITZ",
+                "MOVE_SUPERPOWER",
+                "MOVE_CRUNCH",
                 "MOVE_WILL_O_WISP"
             ],
-            "iv_scale": 250,
+            "iv_scale": 0,
+            "ivnums": [31, 31, 31, 31, 31, 31],
+            "evnums": [0, 180, 0, 180, 0, 0],
+            "ball": "ITEM_POKE_BALL",
+            "ability": "ABILITY_FLASH_FIRE",
+            "nature": "NATURE_ADAMANT",
             "ball_seal": 0
         },
         {
             "species": "SPECIES_MAGMORTAR",
             "form": 0,
             "level": 58,
-            "item": "ITEM_SITRUS_BERRY",
+            "item": "ITEM_POWER_HERB",
             "moves": [
-                "MOVE_FLAMETHROWER",
+                "MOVE_FIRE_BLAST",
                 "MOVE_THUNDERBOLT",
                 "MOVE_SOLAR_BEAM",
-                "MOVE_HYPER_BEAM"
+                "MOVE_PSYCHIC"
             ],
-            "iv_scale": 250,
+            "iv_scale": 0,
+            "ivnums": [31, 31, 31, 31, 31, 31],
+            "evnums": [200, 0, 0, 0, 200, 0],
+            "ball": "ITEM_TIMER_BALL",
+            "ability": "ABILITY_FLAME_BODY",
+            "nature": "NATURE_MODEST",
             "ball_seal": 13
         }
     ],

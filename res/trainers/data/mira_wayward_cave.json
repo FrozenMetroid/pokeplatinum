@@ -20,7 +20,21 @@
                 "MOVE_FLASH",
                 "MOVE_KINESIS"
             ],
-            "iv_scale": 30,
+            "iv_scale": 100,
+            "ball_seal": 0
+        },
+        {
+            "species": "SPECIES_PORYGON",
+            "form": 0,
+            "level": 25,
+            "item": null,
+            "moves": [
+                "MOVE_SWIFT",
+                "MOVE_SHOCK_WAVE",
+                "MOVE_PSYBEAM",
+                "MOVE_AGILITY"
+            ],
+            "iv_scale": 100,
             "ball_seal": 0
         }
     ],

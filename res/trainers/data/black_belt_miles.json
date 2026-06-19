@@ -30,20 +30,20 @@
             "ball_seal": 0
         },
         {
-            "species": "SPECIES_BRELOOM",
+            "species": "SPECIES_GOLEM",
             "form": 0,
             "level": 47,
             "item": null,
             "moves": [
-                "MOVE_FOCUS_PUNCH",
-                "MOVE_SUBSTITUTE",
-                "MOVE_LEECH_SEED",
-                "MOVE_MACH_PUNCH"
+                "MOVE_EARTHQUAKE",
+                "MOVE_ROCK_SLIDE",
+                "MOVE_DOUBLE_EDGE",
+                "MOVE_THUNDER_PUNCH"
             ],
-            "ability": "ABILITY_EFFECT_SPORE",
+            "ability": "ABILITY_ROCK_HEAD",
             "nature": "NATURE_ADAMANT",
             "ivnums": [31, 31, 31, 31, 31, 31],
-            "evnums": [0, 120, 60, 60, 0, 0],
+            "evnums": [0, 120, 120, 0, 0, 0],
             "ball": "ITEM_POKE_BALL",
             "iv_scale": 0,
             "ball_seal": 0

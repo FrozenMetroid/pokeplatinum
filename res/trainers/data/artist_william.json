@@ -35,6 +35,20 @@
             ],
             "iv_scale": 40,
             "ball_seal": 0
+        },
+        {
+            "species": "SPECIES_SMEARGLE",
+            "form": 0,
+            "level": 21,
+            "item": null,
+            "moves": [
+                "MOVE_STUN_SPORE",
+                "MOVE_HEADBUTT",
+                "MOVE_SHADOW_SNEAK",
+                "MOVE_ACUPRESSURE"
+            ],
+            "iv_scale": 40,
+            "ball_seal": 0
         }
     ],
     "messages": [
