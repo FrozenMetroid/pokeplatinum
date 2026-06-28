@@ -23,6 +23,8 @@
 #include "sprite_system.h"
 #include "trainer_info.h"
 
+#include "res/pokemon/regional_pokedex_size.h"
+
 #define OTID_NOT_SET   0
 #define OTID_SET       1
 #define OTID_NOT_SHINY 2
@@ -56,6 +58,12 @@
 #define ABILITY_MASK_ABILITY_1 (1 << 1)
 #define ABILITY_MASK_ABILITY_2 (1 << 2)
 #define ABILITY_MASK_HIDDEN_ABILITY (1 << 3)
+
+#define MAGIC_NUMBER          0xBEEFCAFE
+#define NUM_EXCLUDED_NATIONAL ((int)(sizeof(sExcludedMonsNational) / sizeof(u16)))
+#define NUM_EXCLUDED_LOCAL    0 //((int)(sizeof(sExcludedMonsLocal) / sizeof(u16)))
+#define NATIONAL_DEX_GOAL     (NATIONAL_DEX_COUNT - NUM_EXCLUDED_NATIONAL)
+#define LOCAL_DEX_GOAL        (REGIONAL_DEX_COUNT - NUM_EXCLUDED_LOCAL)
 
 enum FriendshipEvents {
     FRIENDSHIP_EVENT_LEVEL_UP,

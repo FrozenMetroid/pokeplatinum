@@ -122,8 +122,8 @@ u16 Pokedex_GetRatingMessageID_Local(u16 pokemonSeen, u16 reachedEternaCity)
     if (pokemonSeen <= 200) {
         return PokedexRatings_Text_RowanPokemonSeenOver180;
     }
-
-    if (pokemonSeen <= 209) {
+    
+    if (pokemonSeen < LOCAL_DEX_GOAL) {
         return PokedexRatings_Text_RowanPokemonSeenOver200;
     }
 

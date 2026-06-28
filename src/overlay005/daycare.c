@@ -959,9 +959,7 @@ BOOL Daycare_Update(Daycare *daycare, Party *party, FieldSystem *fieldSystem)
             rand = (rand * 100) / 0xffff;
 
             // oval charm stuff
-            Bag *bag = SaveData_GetBag(SaveData_Ptr());
-            BOOL hasOvalCharm = Bag_CanRemoveItem(bag, ITEM_OVAL_CHARM, 1, HEAP_ID_FIELD1);
-            if (hasOvalCharm) {
+            if (Bag_CanRemoveItem(SaveData_GetBag(fieldSystem->saveData), ITEM_OVAL_CHARM, 1, HEAP_ID_FIELD1)) {
                 compatibilityScore = Daycare_GetEggChanceWithOvalCharm(compatibilityScore);
             }
 
