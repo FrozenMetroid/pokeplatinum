@@ -17,6 +17,7 @@
 
 #include "constants/items.h"
 #include "data/field/hidden_items.h"
+#include "generated/vars_flags.h"
 #include "berry_data.h"
 #include "item.h"
 
@@ -26,6 +27,7 @@ static enum_template_t enums[] = {
     include_defs("constants/items.h",             "PLUCK_EFFECT"),
     include_defs("constants/items.h",             "FLING_EFFECT"),
     include_defs("constants/items.h",             "ITEM_USE_FUNC"),
+    include_defs("constants/items.h",             "BATTLE_USE_CATEGORY"),
     include_defs("berry_data.h",                  "FIRMNESS"),
     include_defs("res/items/item_icon.naix",      NULL),
     include_enum("generated/item_hold_effects.h", "enum ItemHoldEffect"),
@@ -78,7 +80,7 @@ static void proc_item(datafile_t *df, const char *member);
 static void proc_text(const char *stem, const char *name, const char *plural, datanode_t *article, datanode_t *desc);
 static void add_idmap(datafile_t *df, size_t i, size_t data_id);
 static int  pack_berries(void);
-static void emit_hidden_scripts(void);
+static void emit_hidden_scripts(size_t max_script_id);
 
 static char *filename     = NULL;
 static char *base_dir     = NULL;
@@ -105,6 +107,23 @@ int main(int argc, char **argv) {
         .textbanks   = textbanks,
         .filter      = has_data,
     );
+
+    size_t item_flags_count = HIDDEN_ITEM_FLAGS_END - HIDDEN_ITEM_FLAGS_START + 1;
+    size_t max_script_id = 0; 
+
+    for (size_t i = 0; i < countof(gHiddenItems); i++) {
+        if (gHiddenItems[i].script > max_script_id) {
+            max_script_id = gHiddenItems[i].script;
+        }
+    }
+
+    max_script_id++;
+    if (max_script_id > item_flags_count) {
+        fprintf(stderr, "fatal: more hidden items defined (%zu) than there are hidden item flags (%zu)\n", max_script_id, item_flags_count);
+        return EXIT_FAILURE;
+    }
+
+    emit_hidden_scripts(max_script_id);
 
     for (size_t i = 0; i < items.size; i++) {
         const char *stem = items.members[i].name + lengthof("ITEM_");
@@ -136,8 +155,6 @@ int main(int argc, char **argv) {
         }
     }
 
-    emit_hidden_scripts();
-
     return common_done(errc, pack_berries);
 }
 
@@ -159,19 +176,19 @@ static void proc_params(datafile_t *df, ItemData *item);
 
 static void proc_item(datafile_t *df, const char *member) {
     ItemData item = {
-        .price            = u16(".price"),
-        .effectParam      = u8(".effectParam"),
-        .holdEffect       = enum_u8(".holdEffect", enum ItemHoldEffect),
-        .pluckEffect      = enum_u8(".pluckEffect", PLUCK_EFFECT),
-        .flingEffect      = enum_u8(".flingEffect", FLING_EFFECT),
-        .flingPower       = u8(".flingPower"),
-        .naturalGiftPower = u8(".naturalGiftPower"),
-        .preventToss      = boolean(".preventToss"),
-        .canRegister      = boolean(".canRegister"),
-        .fieldPocket      = towidth(enum_u8(".fieldPocket", POCKET), 4),
-        .battlePocket     = towidth(enum_u8(".battlePocket", BATTLE_POCKET_MASK), 5),
-        .fieldUseFunc     = enum_u8(".fieldUseFunc", ITEM_USE_FUNC),
-        .battleUseFunc    = u8(".battleUseFunc"),
+        .price             = u16(".price"),
+        .effectParam       = u8(".effectParam"),
+        .holdEffect        = enum_u8(".holdEffect", enum ItemHoldEffect),
+        .pluckEffect       = enum_u8(".pluckEffect", PLUCK_EFFECT),
+        .flingEffect       = enum_u8(".flingEffect", FLING_EFFECT),
+        .flingPower        = u8(".flingPower"),
+        .naturalGiftPower  = u8(".naturalGiftPower"),
+        .preventToss       = boolean(".preventToss"),
+        .canRegister       = boolean(".canRegister"),
+        .fieldPocket       = towidth(enum_u8(".fieldPocket", POCKET), 4),
+        .battlePocket      = towidth(enum_u8(".battlePocket", BATTLE_POCKET_MASK), 5),
+        .fieldUseFunc      = enum_u8(".fieldUseFunc", ITEM_USE_FUNC),
+        .battleUseCategory = enum_u8(".battleUseCategory", BATTLE_USE_CATEGORY),
     };
 
     datanode_t nat_gift_type = dp_get(df, ".naturalGiftType");
@@ -363,16 +380,8 @@ static void add_idmap(datafile_t *df, size_t i, size_t data_id) {
             i, data_id, icon, palette, gba_id);
 }
 
-static void emit_hidden_scripts(void) {
-    size_t maxScriptID = 0; 
-
-    for (size_t i = 0; i < countof(gHiddenItems); i++) {
-        if (gHiddenItems[i].script > maxScriptID) {
-            maxScriptID = gHiddenItems[i].script;
-        }
-    }
-
-    for (size_t i = 0; i <= maxScriptID; i++) {
+static void emit_hidden_scripts(size_t max_script_id) {
+    for (size_t i = 0; i < max_script_id; i++) {
         fputs("    ScriptEntry HiddenItems_Item\n", headers[H_HIDDEN_ITEM_SCRIPTS].out_file);
     }
     fputs("    ScriptEntryEnd\n", headers[H_HIDDEN_ITEM_SCRIPTS].out_file);

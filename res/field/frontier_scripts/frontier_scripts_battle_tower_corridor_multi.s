@@ -3,8 +3,8 @@
 
     .data
 
-    .long _0142 - 4
-    .short 0xFD13
+    ScriptEntry _0142
+    ScriptEntryEnd
 
     .balign 4, 0
 _0008:
@@ -193,7 +193,7 @@ _0142:
     Call _0278
     Call _0344
     SetVar FR_VAR_0x800F, 232
-    PlaySoundEffect SEQ_SE_DP_DOOR10
+    PlaySoundEffect SEQ_SE_DP_DOOR10_sseq
     FrontierScrCmd_2A _009C
     FrontierScrCmd_2C _00A0
     FrontierScrCmd_2F 1
@@ -249,7 +249,7 @@ _0250:
     End
 
 _0270:
-    FrontierScrCmd_04 FRONTIER_SCENE_TOWER_MULTI_BATTLE_ROOM, 0
+    ChangeScript FRONTIER_SCENE_TOWER_MULTI_BATTLE_ROOM, 0
     End
 
 _0278:

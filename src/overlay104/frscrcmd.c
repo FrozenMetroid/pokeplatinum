@@ -13,6 +13,7 @@
 #include "struct_decls/wi_fi_list.h"
 
 #include "applications/naming_screen.h"
+#include "global/utility.h"
 #include "nintendo_wfc/main.h"
 #include "overlay063/ov63_0222BE18.h"
 #include "overlay063/ov63_0222CCE4.h"
@@ -20,7 +21,9 @@
 #include "overlay063/struct_ov63_0222CE44.h"
 #include "overlay063/struct_ov63_0222D77C_decl.h"
 #include "overlay104/defs.h"
+#include "overlay104/frontier_brain_encounter_effect.h"
 #include "overlay104/frontier_graphics.h"
+#include "overlay104/frontier_opponents.h"
 #include "overlay104/frontier_particle_system.h"
 #include "overlay104/frontier_script_context.h"
 #include "overlay104/frontier_script_manager.h"
@@ -30,9 +33,8 @@
 #include "overlay104/frscrcmd_battle_hall.h"
 #include "overlay104/frscrcmd_battle_tower.h"
 #include "overlay104/frscrcmd_sound.h"
-#include "overlay104/ov104_0222DCE0.h"
+#include "overlay104/frscrcmd_wfc_facility_selector.h"
 #include "overlay104/ov104_02231F74.h"
-#include "overlay104/ov104_022395F0.h"
 #include "overlay104/ov104_0223D768.h"
 #include "overlay104/ov104_0223D860.h"
 #include "overlay104/ov104_0223E894.h"
@@ -122,12 +124,11 @@ typedef struct {
     UnkStruct_ov104_0223EBD0 *unk_2C;
 } UnkStruct_ov104_02231148;
 
-void ov104_0223DC7C(int param0, BgConfig *param1, SpriteSystem *param2, SpriteManager *param3, PaletteData *param4, u16 *param5, s16 param6, s16 param7);
 u16 FrontierScriptContext_TryGetVar(FrontierScriptContext *ctx, u16 varID);
 u16 *FrontierScriptContext_GetVarPointer(FrontierScriptContext *ctx, u16 varID);
 static BOOL FrontierScrCmd_Noop(FrontierScriptContext *ctx);
 static BOOL FrontierScrCmd_End(FrontierScriptContext *ctx);
-static BOOL FrontierScrCmd_02(FrontierScriptContext *ctx);
+static BOOL FrontierScrCmd_ExitFrontier(FrontierScriptContext *ctx);
 static BOOL FrontierScrCmd_WaitTime(FrontierScriptContext *ctx);
 static BOOL DecrementTimer(FrontierScriptContext *ctx);
 static BOOL FrontierScrCmd_MessageInstant(FrontierScriptContext *ctx);
@@ -200,8 +201,8 @@ u16 FrontierScriptContext_GetVar(FrontierScriptContext *ctx);
 static BOOL FrontierScrCmd_Call(FrontierScriptContext *ctx);
 static BOOL FrontierScrCmd_Return(FrontierScriptContext *ctx);
 static BOOL FrontierScrCmd_CallIf(FrontierScriptContext *ctx);
-static BOOL FrontierScrCmd_03(FrontierScriptContext *ctx);
-static BOOL FrontierScrCmd_04(FrontierScriptContext *ctx);
+static BOOL FrontierScrCmd_ChangeSceneWithinScript(FrontierScriptContext *ctx);
+static BOOL FrontierScrCmd_ChangeScript(FrontierScriptContext *ctx);
 static BOOL Resume(FrontierScriptContext *ctx);
 static BOOL FrontierScrCmd_26(FrontierScriptContext *ctx);
 static BOOL FrontierScrCmd_Dummy27(FrontierScriptContext *ctx);
@@ -251,8 +252,8 @@ static BOOL FrontierScrCmd_54(FrontierScriptContext *ctx);
 static u32 ov104_022313F4(u16 param0, u16 param1);
 static BOOL FrontierScrCmd_45(FrontierScriptContext *ctx);
 static BOOL FrontierScrCmd_46(FrontierScriptContext *ctx);
-static BOOL FrontierScrCmd_47(FrontierScriptContext *ctx);
-static BOOL ov104_02231E14(FrontierScriptContext *ctx);
+static BOOL FrontierScrCmd_PlayFrontierBrainEncounterEffect(FrontierScriptContext *ctx);
+static BOOL WaitForFrontierBrainEncounterEffectFinished(FrontierScriptContext *ctx);
 static BOOL FrontierScrCmd_IncrementRecordValue(FrontierScriptContext *ctx);
 static BOOL FrontierScrCmd_AddToRecordValue(FrontierScriptContext *ctx);
 static BOOL FrontierScrCmd_IncrementTrainerScore(FrontierScriptContext *ctx);
@@ -277,7 +278,7 @@ static const WindowTemplate sYesNoWindowTemplate = {
     .tilemapTop = 13,
     .width = 6,
     .height = 4,
-    .palette = PLTT_14,
+    .palette = 14,
     .baseTile = 0x355,
 };
 
@@ -361,20 +362,20 @@ static BOOL FrontierScrCmd_End(FrontierScriptContext *ctx)
     return FALSE;
 }
 
-static BOOL FrontierScrCmd_02(FrontierScriptContext *ctx)
+static BOOL FrontierScrCmd_ExitFrontier(FrontierScriptContext *ctx)
 {
     FrontierScriptContext_Stop(ctx);
-    sub_0209B9B4(ctx->scriptMan->frontier);
+    BattleFrontier_ExitFrontier(ctx->scriptMan->frontier);
 
     return FALSE;
 }
 
-static BOOL FrontierScrCmd_03(FrontierScriptContext *ctx)
+static BOOL FrontierScrCmd_ChangeSceneWithinScript(FrontierScriptContext *ctx)
 {
-    FrontierScriptManager *v0 = ctx->scriptMan;
+    FrontierScriptManager *scriptMan = ctx->scriptMan;
     u16 sceneID = FrontierScriptContext_GetVar(ctx);
 
-    sub_0209B9BC(v0->frontier, sceneID, 0xFFFF);
+    BattleFrontier_ChangeScene(scriptMan->frontier, sceneID, NO_NEW_ENTRY_POINT);
     FrontierScriptContext_Pause(ctx, Resume);
 
     return TRUE;
@@ -385,13 +386,13 @@ static BOOL Resume(FrontierScriptContext *ctx)
     return TRUE;
 }
 
-static BOOL FrontierScrCmd_04(FrontierScriptContext *ctx)
+static BOOL FrontierScrCmd_ChangeScript(FrontierScriptContext *ctx)
 {
-    FrontierScriptManager *v0 = ctx->scriptMan;
+    FrontierScriptManager *scriptMan = ctx->scriptMan;
     u16 sceneID = FrontierScriptContext_GetVar(ctx);
-    u16 v2 = FrontierScriptContext_GetVar(ctx);
+    u16 offsetID = FrontierScriptContext_GetVar(ctx);
 
-    sub_0209B9BC(v0->frontier, sceneID, v2);
+    BattleFrontier_ChangeScene(scriptMan->frontier, sceneID, offsetID);
     FrontierScriptContext_Stop(ctx);
 
     return FALSE;
@@ -1165,7 +1166,7 @@ static BOOL FrontierScrCmd_34(FrontierScriptContext *ctx)
     FieldFrontierDTO *fieldData = BattleFrontier_GetFieldData(ctx->scriptMan->frontier);
     void *namingScreenArgs = NamingScreenArgs_Init(HEAP_ID_FIELD2, NAMING_SCREEN_TYPE_PLAYER, 0, 8, (void *)fieldData->options);
 
-    sub_0209B988(ctx->scriptMan->frontier, &gNamingScreenAppTemplate, namingScreenArgs, 0, ov104_02230950);
+    BattleFrontier_RunSubApp(ctx->scriptMan->frontier, &gNamingScreenAppTemplate, namingScreenArgs, 0, ov104_02230950);
 
     return TRUE;
 }
@@ -1352,8 +1353,8 @@ static BOOL FrontierScrCmd_6E(FrontierScriptContext *ctx)
     MI_CpuClear8(dto, sizeof(FieldBattleDTO));
 
     sub_0202F298(fieldData->saveData, 11, &v0, dto, 0);
-    Sound_SetSceneAndPlayBGM(SOUND_SCENE_BATTLE, SEQ_BATTLE_TRAINER, 1);
-    sub_0209B988(ctx->scriptMan->frontier, &gBattleApplicationTemplate, dto, 1, NULL);
+    Sound_SetSceneAndPlayBGM(SOUND_SCENE_BATTLE, BATTLE_TRAINER_sseq, 1);
+    BattleFrontier_RunSubApp(ctx->scriptMan->frontier, &gBattleApplicationTemplate, dto, 1, NULL);
 
     return TRUE;
 }
@@ -1761,7 +1762,7 @@ static BOOL ov104_022311BC(UnkStruct_ov104_02231148 *param0)
         param0->unk_28 = Window_New(HEAP_ID_FIELD2, 1);
 
         Window_Add(param0->unk_00->bgConfig, param0->unk_28, 1, 0, 0, 32, 32, 0, 0);
-        PaletteData_FillBufferRange(param0->unk_00->plttData, 0, 2, 0x0, 0, 16);
+        PaletteData_FillBufferRange(param0->unk_00->plttData, PLTTBUF_MAIN_BG, PLTTSEL_BOTH, 0x0, 0, 16);
         Window_FillTilemap(param0->unk_28, 0);
         Window_ScheduleCopyToVRAM(param0->unk_28);
 
@@ -1815,7 +1816,7 @@ static BOOL ov104_022312D8(UnkStruct_ov104_02231148 *param0)
         param0->unk_28 = Window_New(HEAP_ID_FIELD2, 1);
 
         Window_Add(param0->unk_00->bgConfig, param0->unk_28, 1, 0, 0, 32, 32, 0, 0);
-        PaletteData_FillBufferRange(param0->unk_00->plttData, 0, 2, 0x0, 0, 16);
+        PaletteData_FillBufferRange(param0->unk_00->plttData, PLTTBUF_MAIN_BG, PLTTSEL_BOTH, 0x0, 0, 16);
         Window_FillTilemap(param0->unk_28, 0);
         Window_ScheduleCopyToVRAM(param0->unk_28);
 
@@ -2152,7 +2153,7 @@ static BOOL FrontierScrCmd_3F(FrontierScriptContext *ctx)
     fieldData = BattleFrontier_GetFieldData(ctx->scriptMan->frontier);
     ctx->data[0] = FrontierScriptContext_GetVar(ctx);
 
-    Sound_SetSceneAndPlayBGM(SOUND_SCENE_BATTLE, SEQ_BATTLE_TRAINER, 1);
+    Sound_SetSceneAndPlayBGM(SOUND_SCENE_BATTLE, BATTLE_TRAINER_sseq, 1);
 
     v1 = Heap_Alloc(HEAP_ID_FIELD2, sizeof(UnkStruct_ov104_02231148));
     v1->unk_14 = BattleFrontier_GetFacilityStruct(ctx->scriptMan->frontier);
@@ -2162,7 +2163,7 @@ static BOOL FrontierScrCmd_3F(FrontierScriptContext *ctx)
 
     BattleFrontier_SetFacilityStruct(ctx->scriptMan->frontier, v1);
     FrontierScriptContext_Pause(ctx, ov104_02231AA8);
-    PaletteData_FillBufferRange(v1->unk_00->plttData, 0, 2, 0x0, 0, 1);
+    PaletteData_FillBufferRange(v1->unk_00->plttData, PLTTBUF_MAIN_BG, PLTTSEL_BOTH, 0x0, 0, 1);
 
     return TRUE;
 }
@@ -2380,30 +2381,25 @@ static BOOL FrontierScrCmd_46(FrontierScriptContext *ctx)
     return FALSE;
 }
 
-static BOOL FrontierScrCmd_47(FrontierScriptContext *ctx)
+static BOOL FrontierScrCmd_PlayFrontierBrainEncounterEffect(FrontierScriptContext *ctx)
 {
-    FrontierGraphics *v0 = FrontierScriptManager_GetGraphics(ctx->scriptMan);
-    u16 v1 = FrontierScriptContext_ReadHalfWord(ctx);
+    FrontierGraphics *graphics = FrontierScriptManager_GetGraphics(ctx->scriptMan);
+    u16 facility = FrontierScriptContext_ReadHalfWord(ctx);
     s16 v2, v3;
 
-    ov104_0223D554(v0, &v2, &v3);
-    ov104_0223DC7C(v1, v0->bgConfig, v0->spriteSystem, v0->spriteMan, v0->plttData, &ctx->data[0], v2, v3);
-    Sound_SetSceneAndPlayBGM(SOUND_SCENE_BATTLE, SEQ_BATTLE_FRONTIER_BRAIN, 1);
-    FrontierScriptContext_Pause(ctx, ov104_02231E14);
+    ov104_0223D554(graphics, &v2, &v3);
+    BattleFrontier_PlayFrontierBrainEncounterEffect(facility, graphics->bgConfig, graphics->spriteSystem, graphics->spriteMan, graphics->plttData, &ctx->data[0], v2, v3);
+    Sound_SetSceneAndPlayBGM(SOUND_SCENE_BATTLE, BATTLE_FRONTIER_BRAIN_sseq, 1);
+    FrontierScriptContext_Pause(ctx, WaitForFrontierBrainEncounterEffectFinished);
 
     return TRUE;
 }
 
-static BOOL ov104_02231E14(FrontierScriptContext *ctx)
+static BOOL WaitForFrontierBrainEncounterEffectFinished(FrontierScriptContext *ctx)
 {
-    FrontierScriptManager *v0 = ctx->scriptMan;
-    FrontierGraphics *v1 = BattleFrontier_GetGraphics(v0->frontier);
+    UNUSED(BattleFrontier_GetGraphics(ctx->scriptMan->frontier));
 
-    if (ctx->data[0] == 1) {
-        return TRUE;
-    }
-
-    return FALSE;
+    return ctx->data[0] == TRUE;
 }
 
 static BOOL FrontierScrCmd_IncrementRecordValue(FrontierScriptContext *ctx)

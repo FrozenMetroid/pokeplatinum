@@ -1,4 +1,4 @@
-// Copyright (c) 2015 YamaArashi, 2021-2024 red031000
+// Copyright (c) 2015 YamaArashi, 2021-2025 red031000
 
 #include <ctype.h>
 #include <stdio.h>
@@ -133,23 +133,25 @@ void ConvertPngToNtr(char *inputPath, char *outputPath, struct PngToNtrOptions *
     if (options->handleEmpty)
     {
         FILE *fp = fopen(inputPath, "rb");
+        uint32_t size = 0;
         if (fp != NULL)
         {
             fseek(fp, 0, SEEK_END);
-            uint32_t size = ftell(fp);
+            size = ftell(fp);
             rewind(fp);
-            if (size == 0)
+        }
+
+        if (size == 0)
+        {
+            FILE *out = fopen(outputPath, "wb+");
+            if (out != NULL)
             {
-                FILE *out = fopen(outputPath, "wb+");
-                if (out != NULL)
-                {
-                    fclose(out);
-                }
-                fclose(fp);
-                return;
+                fclose(out);
             }
             fclose(fp);
+            return;
         }
+        fclose(fp);
     }
 
     struct Image image;
@@ -286,10 +288,11 @@ void HandleNtrToPngCommand(char *inputPath, char *outputPath, int argc, char **a
     options.rowsPerChunk = 1;
     options.palIndex = 1;
     options.handleEmpty = false;
-    options.noSkip = false;
+    options.encodeMode = 0;
     options.convertTo8Bpp = false;
     options.verbose = false;
-    options.encodeMode = 0;
+    options.noSkip = false;
+    options.bitDepth = 0;
 
     for (int i = 3; i < argc; i++)
     {
@@ -389,6 +392,13 @@ void HandleNtrToPngCommand(char *inputPath, char *outputPath, int argc, char **a
 
             if (options.rowsPerChunk < 1)
                 FATAL_ERROR("rows per chunk must be positive.\n");
+        }
+        else if (strcmp(option, "-scanfronttoback") == 0)
+        {
+            // maintained for compatibility
+            if (options.encodeMode != 0)
+                FATAL_ERROR("Encode mode specified more than once.\n-encodebacktofront goes back to front as in DP, -encodefronttoback goes front to back as in PtHGSS\n");
+            options.encodeMode = 2;
         }
         else if (strcmp(option, "-encodebacktofront") == 0)
         {
@@ -527,13 +537,15 @@ void HandlePngToNtrCommand(char *inputPath, char *outputPath, int argc, char **a
     options.version101 = false;
     options.sopc = false;
     options.scan = false;
-    options.encodeMode = 0;
     options.handleEmpty = false;
     options.vramTransfer = false;
     options.mappingType = 0;
+    options.encodeMode = 0;
     options.convertTo4Bpp = false;
     options.rotate = 0;
     options.noSkip = false;
+
+    bool freeCellPath = false;
 
     for (int i = 3; i < argc; i++)
     {
@@ -563,6 +575,7 @@ void HandlePngToNtrCommand(char *inputPath, char *outputPath, int argc, char **a
 
             if (strcmp(options.cellFilePath, "-preservepath") == 0)
             {
+                freeCellPath = true;
                 const char *suffix = "_cell.json";
                 size_t inputStemSize = strlen(inputPath) - strlen(".png");
                 options.cellFilePath = calloc(inputStemSize + strlen(suffix) + 1, sizeof(char));
@@ -661,6 +674,22 @@ void HandlePngToNtrCommand(char *inputPath, char *outputPath, int argc, char **a
         {
             options.scan = true;
         }
+        else if (strcmp(option, "-scanned") == 0)
+        {
+            // maintained for compatibility
+            if (options.encodeMode != 0)
+                FATAL_ERROR("Encode mode specified more than once.\n-encodebacktofront goes back to front as in DP, -encodefronttoback goes front to back as in PtHGSS\n");
+            options.encodeMode = 1;
+            options.scan = true;
+        }
+        else if (strcmp(option, "-scanfronttoback") == 0)
+        {
+            // maintained for compatibility
+            if (options.encodeMode != 0)
+                FATAL_ERROR("Encode mode specified more than once.\n-encodebacktofront goes back to front as in DP, -encodefronttoback goes front to back as in PtHGSS\n");
+            options.encodeMode = 2;
+            options.scan = true;
+        }
         else if (strcmp(option, "-encodebacktofront") == 0)
         {
             if (options.encodeMode != 0)
@@ -720,6 +749,10 @@ void HandlePngToNtrCommand(char *inputPath, char *outputPath, int argc, char **a
     }
 
     ConvertPngToNtr(inputPath, outputPath, &options);
+
+    if (freeCellPath) {
+        free(options.cellFilePath);
+    }
 }
 
 void HandlePngToNtrLzCommand(char *inputPath, char *outputPath, int argc, char **argv)
@@ -823,7 +856,7 @@ void HandlePngToNtrPaletteCommand(char *inputPath, char *outputPath, int argc, c
     }
 
     ReadPngPalette(inputPath, &palette);
-    WriteNtrPalette(outputPath, &palette, ncpr, ir, bitdepth, !nopad, compNum, pcmp, pcmpStartIndex, inverted, convertTo4Bpp);
+    WriteNtrPalette(outputPath, &palette, ncpr, ir, bitdepth, !nopad, compNum, pcmp, pcmpStartIndex, inverted, convertTo4Bpp, false);
 }
 
 void HandleGbaToJascPaletteCommand(char *inputPath, char *outputPath, int argc UNUSED, char **argv UNUSED)
@@ -831,7 +864,7 @@ void HandleGbaToJascPaletteCommand(char *inputPath, char *outputPath, int argc U
     struct Palette palette;
 
     ReadGbaPalette(inputPath, &palette);
-    WriteJascPalette(outputPath, &palette);
+    WriteJascPalette(outputPath, &palette, 0);
 }
 
 void HandleNtrToJascPaletteCommand(char *inputPath, char *outputPath, int argc, char **argv)
@@ -868,7 +901,20 @@ void HandleNtrToJascPaletteCommand(char *inputPath, char *outputPath, int argc, 
     }
 
     ReadNtrPalette(inputPath, &palette, bitdepth, 0, false, verbose);
-    WriteJascPalette(outputPath, &palette);
+    if (!palette.extendedLength)
+    {
+        WriteJascPalette(outputPath, &palette, 0);
+    }
+    else
+    {
+        int pathLen = strlen(outputPath);
+        char *extendedOutputPath = calloc(pathLen + 4, sizeof(char));
+        for (int i = 0; i < palette.extendedLength; i++)
+        {
+            snprintf(extendedOutputPath, pathLen + 4, "%.*s_%d.pal", pathLen - 4, outputPath, i);
+            WriteJascPalette(extendedOutputPath, &palette, i);
+        }
+    }
 }
 
 void HandleJascToGbaPaletteCommand(char *inputPath, char *outputPath, int argc, char **argv)
@@ -900,7 +946,7 @@ void HandleJascToGbaPaletteCommand(char *inputPath, char *outputPath, int argc, 
 
     struct Palette palette;
 
-    ReadJascPalette(inputPath, &palette);
+    ReadJascPalette(inputPath, &palette, 0);
 
     if (numColors != 0)
         palette.numColors = numColors;
@@ -919,6 +965,8 @@ void HandleJascToNtrPaletteCommand(char *inputPath, char *outputPath, int argc, 
     int pcmpStartIndex = 0;
     bool pcmp = false;
     bool inverted = false;
+    int extendedLength = 0;
+    int paddingType = 0;
 
     for (int i = 3; i < argc; i++)
     {
@@ -993,6 +1041,27 @@ void HandleJascToNtrPaletteCommand(char *inputPath, char *outputPath, int argc, 
         {
             inverted = true;
         }
+        else if (strcmp(option, "-extended") == 0)
+        {
+
+            if (i + 1 >= argc)
+                FATAL_ERROR("No length value following \"-extended\".\n");
+
+            i++;
+
+            if (!ParseNumber(argv[i], NULL, 10, &extendedLength))
+                FATAL_ERROR("Failed to parse extended length.\n");
+
+            if (i + 2 < argc)
+            {
+                if (strcmp(argv[i + 1], "-paddingtype") == 0)
+                {
+                    i += 2;
+                    if (!ParseNumber(argv[i], NULL, 10, &paddingType))
+                        FATAL_ERROR("Failed to parse extended NCLR padding type.\n");
+                }
+            }
+        }
         else
         {
             FATAL_ERROR("Unrecognized option \"%s\".\n", option);
@@ -1000,13 +1069,65 @@ void HandleJascToNtrPaletteCommand(char *inputPath, char *outputPath, int argc, 
     }
 
     struct Palette palette;
+    if (!extendedLength)
+    {
+        ReadJascPalette(inputPath, &palette, 0);
+    }
+    else
+    {
+        int pathLen = strlen(inputPath);
+        char *extendedInputPath = calloc(pathLen + 4, sizeof(char));
+        for (int i = 0; i < extendedLength; i++)
+        {
+            snprintf(extendedInputPath, pathLen + 4, "%.*s_%d.pal", pathLen - 6, inputPath, i);
+            ReadJascPalette(extendedInputPath, &palette, i);
+        }
+        free(extendedInputPath);
 
-    ReadJascPalette(inputPath, &palette);
+        if (nopad)
+        {
+            palette.numColors *= extendedLength;
+        }
+        else
+        {
+            palette.numColors *= 16;
+            if (paddingType == 0)
+            {
+                if (extendedLength < 16)
+                    memset(&palette.extendedColors[extendedLength - 1], 0, sizeof(struct Color) * (16 - extendedLength) * 256);
+            }
+            else
+            {
+                for (int i = extendedLength; i < 16; i++)
+                {
+                    int count = 0;
+                    int red = 0;
+                    int green = 0;
+                    for (int j = 0; j < 256; j++)
+                    {
+                        palette.extendedColors[i - 1][j].red = (red * 255) / 31;
+                        palette.extendedColors[i - 1][j].green = (green * 255) / 31;
+                        palette.extendedColors[i - 1][j].blue = 0;
+                        red += i * 2;
+                        if (red >= 32)
+                        {
+                            red &= 0x1F;
+                            if (++count == 8)
+                            {
+                                green++;
+                                count = 0;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
 
     if (numColors != 0)
         palette.numColors = numColors;
 
-    WriteNtrPalette(outputPath, &palette, ncpr, ir, bitdepth, !nopad, compNum, pcmp, pcmpStartIndex, inverted, false);
+    WriteNtrPalette(outputPath, &palette, ncpr, ir, bitdepth, !nopad, compNum, pcmp, pcmpStartIndex, inverted, false, extendedLength);
 }
 
 void HandleJsonToNtrCellCommand(char *inputPath, char *outputPath, int argc UNUSED, char **argv UNUSED)
@@ -1248,6 +1369,7 @@ static void HandleLZCompressCommand(char *inputPath, char *outputPath, int argc,
     int overflowSize = 0;
     int minDistance = 2; // default, for compatibility with LZ77UnCompVram()
     bool forwardIteration = true;
+    bool extFormat = false;
     bool nopad = false;
 
     for (int i = 3; i < argc; i++)
@@ -1283,6 +1405,10 @@ static void HandleLZCompressCommand(char *inputPath, char *outputPath, int argc,
         else if (strcmp(option, "-reverse") == 0)
         {
             forwardIteration = false;
+        } 
+        else if (strcmp(option, "-extfmt") == 0)
+        {
+            extFormat = true;
         }
         else if (strcmp(option, "-nopad") == 0)
         {
@@ -1304,7 +1430,7 @@ static void HandleLZCompressCommand(char *inputPath, char *outputPath, int argc,
     unsigned char *buffer = ReadWholeFileZeroPadded(inputPath, &fileSize, overflowSize);
 
     int compressedSize;
-    unsigned char *compressedData = LZCompress(buffer, fileSize + overflowSize, &compressedSize, minDistance, forwardIteration, !nopad);
+    unsigned char *compressedData = LZCompress(buffer, fileSize + overflowSize, &compressedSize, minDistance, forwardIteration, !nopad, extFormat);
 
     compressedData[1] = (unsigned char)fileSize;
     compressedData[2] = (unsigned char)(fileSize >> 8);

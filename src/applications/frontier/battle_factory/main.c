@@ -13,8 +13,8 @@
 #include "applications/frontier/battle_factory/sprite_manager.h"
 #include "applications/frontier/battle_factory/windows.h"
 #include "applications/pokemon_summary_screen/main.h"
-#include "overlay104/ov104_0222DCE0.h"
-#include "overlay104/ov104_0223A7F4.h"
+#include "overlay104/battle_factory_helpers.h"
+#include "overlay104/frontier_opponents.h"
 
 #include "bg_window.h"
 #include "communication_information.h"
@@ -31,7 +31,6 @@
 #include "menu.h"
 #include "message.h"
 #include "narc.h"
-#include "narc_frontier_bg.h"
 #include "network_icon.h"
 #include "overlay_manager.h"
 #include "palette.h"
@@ -57,13 +56,10 @@
 #include "vram_transfer.h"
 
 #include "constdata/const_020F410C.h"
+#include "res/graphics/frontier/backgrounds/frontier_backgrounds.naix"
 #include "res/text/bank/battle_factory_app.h"
 
 FS_EXTERN_OVERLAY(overlay104);
-
-#define NUM_INITIAL_SELECT_OPTIONS 6
-#define PARTY_SIZE_SOLO            3
-#define PARTY_SIZE_MULTI           2
 
 #define MENU_OPTION_SUMMARY  0
 #define MENU_OPTION_RENT     1
@@ -102,7 +98,7 @@ typedef struct BattleFactoryApp {
     ApplicationManager *monSummaryAppMan;
     u8 subState;
     u8 challengeType;
-    u8 unk_0A;
+    u8 isOpenLevel;
     u8 isExchangeMode;
     int conveyorXOffset;
     u8 printerID;
@@ -135,12 +131,12 @@ typedef struct BattleFactoryApp {
     PaletteData *plttData;
     G3DPipelineBuffers *g3dPipeline;
     PokemonSpriteManager *monSpriteMan;
-    PokemonSprite *monSprites[MATH_MAX(PARTY_SIZE_SOLO, PARTY_SIZE_MULTI)];
+    PokemonSprite *monSprites[MATH_MAX(FACTORY_PARTY_SIZE_SOLO, FACTORY_PARTY_SIZE_MULTI)];
     Options *options;
     SaveData *saveData;
     PokemonSummary *monSummary;
     BattleFactoryAppSpriteManager spriteMan;
-    BattleFactoryAppPokeballSprite *ballSprites[NUM_INITIAL_SELECT_OPTIONS];
+    BattleFactoryAppPokeballSprite *ballSprites[FACTORY_INITIAL_RENTAL_OPTIONS];
     BattleFactoryAppCursor *monCursor;
     BattleFactoryAppCursor *menuCursor;
     BattleFactoryAppPanelSprite *bluePanelSprite;
@@ -153,8 +149,8 @@ typedef struct BattleFactoryApp {
     NARC *narc;
     u16 commPayload[60];
     u16 partnerTradedMon;
-    u16 partnerMonSpecies[PARTY_SIZE_MULTI];
-    u16 partnenMonGenders[PARTY_SIZE_MULTI];
+    u16 partnerMonSpecies[FACTORY_PARTY_SIZE_MULTI];
+    u16 partnenMonGenders[FACTORY_PARTY_SIZE_MULTI];
     u8 numTradeResultMsgReceived;
     u8 partnerListingUpdateNeeded;
     u32 unused3;
@@ -256,7 +252,7 @@ static void DummyCreatePayload(BattleFactoryApp *app, u16 cmd);
 static void CreateUpdateSelectionPayload(BattleFactoryApp *app, u16 cmd, u16 unused);
 static void CreateTradeResultPayload(BattleFactoryApp *app, u16 cmd, u16 tradedMon);
 
-static const CoordinatesU16 sInitialSelectionPokeballPositions[NUM_INITIAL_SELECT_OPTIONS] = {
+static const CoordinatesU16 sInitialSelectionPokeballPositions[FACTORY_INITIAL_RENTAL_OPTIONS] = {
     { 24, 112 },
     { 64, 112 },
     { 104, 112 },
@@ -265,25 +261,25 @@ static const CoordinatesU16 sInitialSelectionPokeballPositions[NUM_INITIAL_SELEC
     { 224, 112 }
 };
 
-static const CoordinatesU16 sExchangeSelectPokeballPositions[PARTY_SIZE_SOLO] = {
+static const CoordinatesU16 sExchangeSelectPokeballPositions[FACTORY_PARTY_SIZE_SOLO] = {
     { 64, 112 },
     { 120, 112 },
     { 176, 112 }
 };
 
-static const CoordinatesU16 sExchangeSelectMultiPokeballPositions[PARTY_SIZE_MULTI] = {
+static const CoordinatesU16 sExchangeSelectMultiPokeballPositions[FACTORY_PARTY_SIZE_MULTI] = {
     { 96, 112 },
     { 152, 112 }
 };
 
-static const CoordinatesU16 sReceiveSelectMultiPokeballPositions[PARTY_SIZE_MULTI * 2] = {
+static const CoordinatesU16 sReceiveSelectMultiPokeballPositions[FACTORY_PARTY_SIZE_MULTI * 2] = {
     { 40, 112 },
     { 96, 112 },
     { 152, 112 },
     { 208, 112 }
 };
 
-static const CoordinatesS16 sInitialSelectCursorPositions[NUM_INITIAL_SELECT_OPTIONS] = {
+static const CoordinatesS16 sInitialSelectCursorPositions[FACTORY_INITIAL_RENTAL_OPTIONS] = {
     { 24, 112 },
     { 64, 112 },
     { 104, 112 },
@@ -292,7 +288,7 @@ static const CoordinatesS16 sInitialSelectCursorPositions[NUM_INITIAL_SELECT_OPT
     { 224, 112 }
 };
 
-static const CoordinatesS16 sExchangeSelectCursorPositions[PARTY_SIZE_SOLO + 1] = {
+static const CoordinatesS16 sExchangeSelectCursorPositions[FACTORY_PARTY_SIZE_SOLO + 1] = {
     { 64, 112 },
     { 120, 112 },
     { 176, 112 },
@@ -306,7 +302,7 @@ static const u8 sExchangeSelectCursorAnimIDs[NELEMS(sExchangeSelectCursorPositio
     ANIM_ID_MENU_CURSOR
 };
 
-static const CoordinatesS16 sExchangeSelectMultiCursorPositions[PARTY_SIZE_MULTI + 1] = {
+static const CoordinatesS16 sExchangeSelectMultiCursorPositions[FACTORY_PARTY_SIZE_MULTI + 1] = {
     { 96, 112 },
     { 152, 112 },
     { 212, 144 }
@@ -318,7 +314,7 @@ static const u8 sExchangeSelectMultiCursorAnimIDs[NELEMS(sExchangeSelectMultiCur
     ANIM_ID_MENU_CURSOR
 };
 
-static const CoordinatesS16 sReceiveSelectCursorPositions[PARTY_SIZE_SOLO + 2] = {
+static const CoordinatesS16 sReceiveSelectCursorPositions[FACTORY_PARTY_SIZE_SOLO + 2] = {
     { 64, 112 },
     { 120, 112 },
     { 176, 112 },
@@ -334,7 +330,7 @@ static const u8 sReceiveSelectCursorAnimIDs[NELEMS(sReceiveSelectCursorPositions
     ANIM_ID_MENU_CURSOR
 };
 
-static const CoordinatesS16 sReceiveSelectMultiCursorPositions[PARTY_SIZE_MULTI * 2 + 2] = {
+static const CoordinatesS16 sReceiveSelectMultiCursorPositions[FACTORY_PARTY_SIZE_MULTI * 2 + 2] = {
     { 40, 112 },
     { 96, 112 },
     { 152, 112 },
@@ -389,7 +385,7 @@ int BattleFactoryApp_Init(ApplicationManager *appMan, int *state)
 
     app->saveData = args->saveData;
     app->challengeType = args->challengeType;
-    app->unk_0A = args->unk_05;
+    app->isOpenLevel = args->isOpenLevel;
     app->isExchangeMode = args->isExchangeMode;
     app->personalParty = args->personalParty;
     app->receivableParty = args->receivableParty;
@@ -651,14 +647,14 @@ static BOOL State_FadeInApp(BattleFactoryApp *app)
             break;
         }
 
-        Sound_PlayEffect(SEQ_SE_DP_ELEBETA2);
+        Sound_PlayEffect(SEQ_SE_DP_ELEBETA2_sseq);
         app->animationTimer = 0;
         app->subState++;
         break;
     case 4:
         if (ConveyPokeballsOntoScreen(app) == TRUE) {
-            Sound_StopEffect(SEQ_SE_DP_ELEBETA2, 0);
-            Sound_PlayEffect(SEQ_SE_DP_KASYA);
+            Sound_StopEffect(SEQ_SE_DP_ELEBETA2_sseq, 0);
+            Sound_PlayEffect(SEQ_SE_DP_KASYA_sseq);
 
             for (int i = 0; i < app->numPokeballs; i++) {
                 BattleFactoryAppPokeballSprite_SetAnim(app->ballSprites[i], ANIM_ID_BALL_ONE_SHAKE);
@@ -875,12 +871,12 @@ static BOOL State_SelectInitialParty(BattleFactoryApp *app)
         BattleFactoryAppCursor_ProcessInput(app->monCursor);
 
         if (JOY_NEW(PAD_KEY_LEFT | PAD_KEY_RIGHT)) {
-            Sound_PlayEffect(SEQ_SE_CONFIRM);
+            Sound_PlayEffect(SE_CONFIRM_sseq_3);
             UpdateInfoForMonUnderCursor(app, app->numMonsSelected, BattleFactoryAppCursor_GetCurrentSlot(app->monCursor), 0, app->personalParty);
         }
 
         if (JOY_NEW(PAD_BUTTON_A)) {
-            Sound_PlayEffect(SEQ_SE_CONFIRM);
+            Sound_PlayEffect(SE_CONFIRM_sseq_3);
             UpdateMonCursorState(app->monCursor, TRUE);
             OpenMonOptionsMenu(app);
 
@@ -888,7 +884,7 @@ static BOOL State_SelectInitialParty(BattleFactoryApp *app)
             app->subState++;
         } else if (JOY_NEW(PAD_BUTTON_B)) {
             if (app->numMonsSelected > 0) {
-                Sound_PlayEffect(SEQ_SE_CONFIRM);
+                Sound_PlayEffect(SE_CONFIRM_sseq_3);
                 RemoveLastSelectedMon(app);
 
                 if (BattleFactory_IsMultiplayerChallenge(app->challengeType) == TRUE) {
@@ -1387,12 +1383,12 @@ static BOOL State_SelectMonToExchange(BattleFactoryApp *app)
         BattleFactoryAppCursor_ProcessInput(app->monCursor);
 
         if (JOY_NEW(PAD_KEY_LEFT | PAD_KEY_RIGHT | PAD_KEY_UP | PAD_KEY_DOWN)) {
-            Sound_PlayEffect(SEQ_SE_CONFIRM);
+            Sound_PlayEffect(SE_CONFIRM_sseq_3);
             UpdateInfoForMonUnderCursor(app, app->numMonsSelected, BattleFactoryAppCursor_GetCurrentSlot(app->monCursor), TRUE, app->personalParty);
         }
 
         if (JOY_NEW(PAD_BUTTON_A)) {
-            Sound_PlayEffect(SEQ_SE_CONFIRM);
+            Sound_PlayEffect(SE_CONFIRM_sseq_3);
 
             if (BattleFactoryAppCursor_GetCurrentSlot(app->monCursor) == app->exchangeSelectCursorPositions - 1) {
                 SetMenuWasCancelled(app, TRUE);
@@ -1405,7 +1401,7 @@ static BOOL State_SelectMonToExchange(BattleFactoryApp *app)
                 app->subState++;
             }
         } else if (JOY_NEW(PAD_BUTTON_B)) {
-            Sound_PlayEffect(SEQ_SE_CONFIRM);
+            Sound_PlayEffect(SE_CONFIRM_sseq_3);
             SetMenuWasCancelled(app, TRUE);
             return TRUE;
         }
@@ -1593,17 +1589,17 @@ static BOOL State_SelectMonToReceive(BattleFactoryApp *app)
         BattleFactoryAppCursor_ProcessInput(app->monCursor);
 
         if (JOY_NEW(PAD_KEY_UP | PAD_KEY_DOWN)) {
-            Sound_PlayEffect(SEQ_SE_CONFIRM);
+            Sound_PlayEffect(SE_CONFIRM_sseq_3);
             UpdateInfoForMonUnderCursor(app, 0, BattleFactoryAppCursor_GetCurrentSlot(app->monCursor), FALSE, app->receivableParty);
         }
 
         if (JOY_NEW(PAD_KEY_LEFT | PAD_KEY_RIGHT)) {
-            Sound_PlayEffect(SEQ_SE_CONFIRM);
+            Sound_PlayEffect(SE_CONFIRM_sseq_3);
             UpdateInfoForMonUnderCursor(app, 0, BattleFactoryAppCursor_GetCurrentSlot(app->monCursor), FALSE, app->receivableParty);
         }
 
         if (JOY_NEW(PAD_BUTTON_A)) {
-            Sound_PlayEffect(SEQ_SE_CONFIRM);
+            Sound_PlayEffect(SE_CONFIRM_sseq_3);
 
             if (BattleFactoryAppCursor_GetCurrentSlot(app->monCursor) == app->numReceiveSelectCursorPositions - 1) {
                 SetMenuWasCancelled(app, TRUE);
@@ -1620,7 +1616,7 @@ static BOOL State_SelectMonToReceive(BattleFactoryApp *app)
                 app->subState++;
             }
         } else if (JOY_NEW(PAD_BUTTON_B)) {
-            Sound_PlayEffect(SEQ_SE_CONFIRM);
+            Sound_PlayEffect(SE_CONFIRM_sseq_3);
             SetMenuWasCancelled(app, TRUE);
             return TRUE;
         }
@@ -1836,15 +1832,15 @@ static BOOL State_ChangeExchangeToReceiveSelect(BattleFactoryApp *app)
         LoadAppStartupBackground(app, BG_LAYER_MAIN_3);
 
         Bg_SetOffset(app->bgConfig, BG_LAYER_MAIN_2, BG_OFFSET_UPDATE_SET_X, app->conveyorXOffset);
-        Sound_PlayEffect(SEQ_SE_DP_ELEBETA2);
+        Sound_PlayEffect(SEQ_SE_DP_ELEBETA2_sseq);
 
         app->animationTimer = 0;
         app->subState++;
         break;
     case 3:
         if (ConveyPokeballOffScreen(app) == TRUE) {
-            Sound_StopEffect(SEQ_SE_DP_ELEBETA2, 0);
-            Sound_PlayEffect(SEQ_SE_DP_KASYA);
+            Sound_StopEffect(SEQ_SE_DP_ELEBETA2_sseq, 0);
+            Sound_PlayEffect(SEQ_SE_DP_KASYA_sseq);
 
             app->wheelPaletteCounter = 8;
 
@@ -1867,7 +1863,7 @@ static BOOL State_ChangeExchangeToReceiveSelect(BattleFactoryApp *app)
                 BattleFactoryAppPokeballSprite_SetPositionForConveyorStart(app->ballSprites[i]);
             }
 
-            Sound_PlayEffect(SEQ_SE_DP_ELEBETA2);
+            Sound_PlayEffect(SEQ_SE_DP_ELEBETA2_sseq);
 
             app->animationTimer = 0;
             app->subState++;
@@ -1875,8 +1871,8 @@ static BOOL State_ChangeExchangeToReceiveSelect(BattleFactoryApp *app)
         break;
     case 4:
         if (ConveyPokeballsOntoScreen(app) == 1) {
-            Sound_StopEffect(SEQ_SE_DP_ELEBETA2, 0);
-            Sound_PlayEffect(SEQ_SE_DP_KASYA);
+            Sound_StopEffect(SEQ_SE_DP_ELEBETA2_sseq, 0);
+            Sound_PlayEffect(SEQ_SE_DP_KASYA_sseq);
 
             for (i = 0; i < app->numPokeballs; i++) {
                 BattleFactoryAppPokeballSprite_SetAnim(app->ballSprites[i], ANIM_ID_BALL_ONE_SHAKE);
@@ -2309,19 +2305,19 @@ static void SetPanelSpritesAnim(BattleFactoryApp *app, u32 animID)
 
     switch (animID) {
     case ANIM_ID_MON_PANEL_OPEN:
-        Sound_PlayEffect(SEQ_SE_DP_OPEN2);
+        Sound_PlayEffect(SEQ_SE_DP_OPEN2_sseq);
         greenPanelAnimID = ANIM_ID_PARTNER_PANEL_OPEN;
         break;
     case ANIM_ID_MON_PANEL_CLOSE:
-        Sound_PlayEffect(SEQ_SE_DP_CLOSE2);
+        Sound_PlayEffect(SEQ_SE_DP_CLOSE2_sseq);
         greenPanelAnimID = ANIM_ID_PARTNER_PANEL_CLOSE;
         break;
     case ANIM_ID_CONFIRM_PANEL_OPEN:
-        Sound_PlayEffect(SEQ_SE_DP_OPEN2);
+        Sound_PlayEffect(SEQ_SE_DP_OPEN2_sseq);
         greenPanelAnimID = ANIM_ID_PARTNER_PANEL_OPEN;
         break;
     case ANIM_ID_CONFIRM_PANEL_CLOSE:
-        Sound_PlayEffect(SEQ_SE_DP_CLOSE2);
+        Sound_PlayEffect(SEQ_SE_DP_CLOSE2_sseq);
         greenPanelAnimID = ANIM_ID_PARTNER_PANEL_CLOSE;
         break;
     }
@@ -2335,38 +2331,38 @@ static void SetPanelSpritesAnim(BattleFactoryApp *app, u32 animID)
 
 static void LoadMonSelectionBackground(BattleFactoryApp *app, enum BgLayer bgLayer)
 {
-    Graphics_LoadTilesToBgLayerFromOpenNARC(app->narc, BATTLE_FACTORY_APP_TILES, app->bgConfig, bgLayer, 0, 0, TRUE, HEAP_ID_BATTLE_FACTORY_APP);
+    Graphics_LoadTilesToBgLayerFromOpenNARC(app->narc, battle_factory_app_NCGR_lz, app->bgConfig, bgLayer, 0, 0, TRUE, HEAP_ID_BATTLE_FACTORY_APP);
 
     if (!BattleFactory_IsMultiplayerChallenge(app->challengeType)) {
-        Graphics_LoadTilemapToBgLayerFromOpenNARC(app->narc, BATTLE_FACTORY_APP_MON_SELECTION_TILEMAP, app->bgConfig, bgLayer, 0, 0, TRUE, HEAP_ID_BATTLE_FACTORY_APP);
+        Graphics_LoadTilemapToBgLayerFromOpenNARC(app->narc, battle_factory_app_mon_selection_NSCR_lz, app->bgConfig, bgLayer, 0, 0, TRUE, HEAP_ID_BATTLE_FACTORY_APP);
     } else {
-        Graphics_LoadTilemapToBgLayerFromOpenNARC(app->narc, BATTLE_FACTORY_APP_MULTI_MON_SELECTION_TILEMAP, app->bgConfig, bgLayer, 0, 0, TRUE, HEAP_ID_BATTLE_FACTORY_APP);
+        Graphics_LoadTilemapToBgLayerFromOpenNARC(app->narc, battle_factory_app_multi_mon_selection_NSCR_lz, app->bgConfig, bgLayer, 0, 0, TRUE, HEAP_ID_BATTLE_FACTORY_APP);
     }
 }
 
 static void LoadAppStartupBackground(BattleFactoryApp *app, enum BgLayer bgLayer)
 {
-    Graphics_LoadTilesToBgLayerFromOpenNARC(app->narc, BATTLE_FACTORY_APP_TILES, app->bgConfig, bgLayer, 0, 0, TRUE, HEAP_ID_BATTLE_FACTORY_APP);
-    Graphics_LoadTilemapToBgLayerFromOpenNARC(app->narc, BATTLE_FACTORY_APP_NO_SCREENS_TILEMAP, app->bgConfig, bgLayer, 0, 0, TRUE, HEAP_ID_BATTLE_FACTORY_APP);
+    Graphics_LoadTilesToBgLayerFromOpenNARC(app->narc, battle_factory_app_NCGR_lz, app->bgConfig, bgLayer, 0, 0, TRUE, HEAP_ID_BATTLE_FACTORY_APP);
+    Graphics_LoadTilemapToBgLayerFromOpenNARC(app->narc, battle_factory_app_no_screens_NSCR_lz, app->bgConfig, bgLayer, 0, 0, TRUE, HEAP_ID_BATTLE_FACTORY_APP);
 }
 
 static void LoadConveyorBackground(BattleFactoryApp *app, enum BgLayer bgLayer)
 {
-    Graphics_LoadTilesToBgLayerFromOpenNARC(app->narc, BATTLE_FACTORY_APP_TILES, app->bgConfig, bgLayer, 0, 0, TRUE, HEAP_ID_BATTLE_FACTORY_APP);
-    Graphics_LoadTilemapToBgLayerFromOpenNARC(app->narc, BATTLE_FACTORY_APP_CONVEYOR_TILEMAP, app->bgConfig, bgLayer, 0, 0, TRUE, HEAP_ID_BATTLE_FACTORY_APP);
+    Graphics_LoadTilesToBgLayerFromOpenNARC(app->narc, battle_factory_app_NCGR_lz, app->bgConfig, bgLayer, 0, 0, TRUE, HEAP_ID_BATTLE_FACTORY_APP);
+    Graphics_LoadTilemapToBgLayerFromOpenNARC(app->narc, battle_factory_app_conveyor_NSCR_lz, app->bgConfig, bgLayer, 0, 0, TRUE, HEAP_ID_BATTLE_FACTORY_APP);
 }
 
 static void LoadWheelBackground(BattleFactoryApp *app, enum BgLayer bgLayer)
 {
-    Graphics_LoadTilesToBgLayerFromOpenNARC(app->narc, BATTLE_FACTORY_APP_TILES, app->bgConfig, bgLayer, 0, 0, TRUE, HEAP_ID_BATTLE_FACTORY_APP);
-    Graphics_LoadTilemapToBgLayerFromOpenNARC(app->narc, BATTLE_FACTORY_APP_WHEEL_TILEMAP, app->bgConfig, bgLayer, 0, 0, TRUE, HEAP_ID_BATTLE_FACTORY_APP);
+    Graphics_LoadTilesToBgLayerFromOpenNARC(app->narc, battle_factory_app_NCGR_lz, app->bgConfig, bgLayer, 0, 0, TRUE, HEAP_ID_BATTLE_FACTORY_APP);
+    Graphics_LoadTilemapToBgLayerFromOpenNARC(app->narc, battle_factory_app_wheel_NSCR_lz, app->bgConfig, bgLayer, 0, 0, TRUE, HEAP_ID_BATTLE_FACTORY_APP);
     Bg_SetPriority(BG_LAYER_MAIN_1, 2);
 }
 
 static void LoadPalette(void)
 {
     NNSG2dPaletteData *plttData;
-    void *pltt = Graphics_GetPlttData(NARC_INDEX_RESOURCE__ENG__FRONTIER_GRAPHIC__FRONTIER_BG, BATTLE_FACTORY_APP_PLTT, &plttData, HEAP_ID_BATTLE_FACTORY_APP);
+    void *pltt = Graphics_GetPlttData(NARC_INDEX_FRONTIER_BACKGROUNDS, battle_factory_app_NCLR, &plttData, HEAP_ID_BATTLE_FACTORY_APP);
 
     DC_FlushRange(plttData->pRawData, PALETTE_SIZE_BYTES * 11);
     GX_LoadBGPltt(plttData->pRawData, 0, PALETTE_SIZE_BYTES * 11);
@@ -2375,31 +2371,31 @@ static void LoadPalette(void)
 
 static void LoadSubScreenBackground(BattleFactoryApp *app, enum BgLayer bgLayer)
 {
-    Graphics_LoadTilesToBgLayerFromOpenNARC(app->narc, BATTLE_FRONTIER_APP_SUB_SCREEN_TILES, app->bgConfig, bgLayer, 0, 0, TRUE, HEAP_ID_BATTLE_FACTORY_APP);
-    Graphics_LoadTilemapToBgLayerFromOpenNARC(app->narc, BATTLE_FRONTIER_APP_SUB_SCREEN_TILEMAP, app->bgConfig, bgLayer, 0, 0, TRUE, HEAP_ID_BATTLE_FACTORY_APP);
-    Graphics_LoadPaletteFromOpenNARC(app->narc, BATTLE_FRONTIER_APP_SUB_SCREEN_PLTT, PAL_LOAD_SUB_BG, 0, PALETTE_SIZE_BYTES, HEAP_ID_BATTLE_FACTORY_APP);
+    Graphics_LoadTilesToBgLayerFromOpenNARC(app->narc, battle_frontier_app_sub_NCGR_lz, app->bgConfig, bgLayer, 0, 0, TRUE, HEAP_ID_BATTLE_FACTORY_APP);
+    Graphics_LoadTilemapToBgLayerFromOpenNARC(app->narc, battle_frontier_app_sub_NSCR_lz, app->bgConfig, bgLayer, 0, 0, TRUE, HEAP_ID_BATTLE_FACTORY_APP);
+    Graphics_LoadPaletteFromOpenNARC(app->narc, battle_frontier_app_sub_NCLR, PAL_LOAD_SUB_BG, 0, PALETTE_SIZE_BYTES, HEAP_ID_BATTLE_FACTORY_APP);
 }
 
 static void ReloadMonSelectionBackground(BattleFactoryApp *app, enum BgLayer bgLayer)
 {
     if (!BattleFactory_IsMultiplayerChallenge(app->challengeType)) {
-        Graphics_LoadTilemapToBgLayerFromOpenNARC(app->narc, BATTLE_FACTORY_APP_MON_SELECTION_TILEMAP, app->bgConfig, BG_LAYER_MAIN_3, 0, 0, TRUE, HEAP_ID_BATTLE_FACTORY_APP);
+        Graphics_LoadTilemapToBgLayerFromOpenNARC(app->narc, battle_factory_app_mon_selection_NSCR_lz, app->bgConfig, BG_LAYER_MAIN_3, 0, 0, TRUE, HEAP_ID_BATTLE_FACTORY_APP);
     } else {
-        Graphics_LoadTilemapToBgLayerFromOpenNARC(app->narc, BATTLE_FACTORY_APP_MULTI_MON_SELECTION_TILEMAP, app->bgConfig, BG_LAYER_MAIN_3, 0, 0, TRUE, HEAP_ID_BATTLE_FACTORY_APP);
+        Graphics_LoadTilemapToBgLayerFromOpenNARC(app->narc, battle_factory_app_multi_mon_selection_NSCR_lz, app->bgConfig, BG_LAYER_MAIN_3, 0, 0, TRUE, HEAP_ID_BATTLE_FACTORY_APP);
     }
 }
 
 static void ReloadNoScreensBackground(BattleFactoryApp *app, enum BgLayer bgLayer)
 {
-    Graphics_LoadTilemapToBgLayerFromOpenNARC(app->narc, BATTLE_FACTORY_APP_NO_SCREENS_TILEMAP, app->bgConfig, BG_LAYER_MAIN_3, 0, 0, TRUE, HEAP_ID_BATTLE_FACTORY_APP);
+    Graphics_LoadTilemapToBgLayerFromOpenNARC(app->narc, battle_factory_app_no_screens_NSCR_lz, app->bgConfig, BG_LAYER_MAIN_3, 0, 0, TRUE, HEAP_ID_BATTLE_FACTORY_APP);
 }
 
 static void LoadSelectionConfirmBackground(BattleFactoryApp *app, enum BgLayer bgLayer)
 {
     if (!BattleFactory_IsMultiplayerChallenge(app->challengeType)) {
-        Graphics_LoadTilemapToBgLayerFromOpenNARC(app->narc, BATTLE_FACTORY_APP_SUMMARY_TILEMAP, app->bgConfig, BG_LAYER_MAIN_3, 0, 0, TRUE, HEAP_ID_BATTLE_FACTORY_APP);
+        Graphics_LoadTilemapToBgLayerFromOpenNARC(app->narc, battle_factory_app_summary_NSCR_lz, app->bgConfig, BG_LAYER_MAIN_3, 0, 0, TRUE, HEAP_ID_BATTLE_FACTORY_APP);
     } else {
-        Graphics_LoadTilemapToBgLayerFromOpenNARC(app->narc, BATTLE_FACTORY_APP_MULTI_SUMMARY_TILEMAP, app->bgConfig, BG_LAYER_MAIN_3, 0, 0, TRUE, HEAP_ID_BATTLE_FACTORY_APP);
+        Graphics_LoadTilemapToBgLayerFromOpenNARC(app->narc, battle_factory_app_multi_summary_NSCR_lz, app->bgConfig, BG_LAYER_MAIN_3, 0, 0, TRUE, HEAP_ID_BATTLE_FACTORY_APP);
     }
 }
 
@@ -2656,7 +2652,7 @@ static void InitGraphicsPlane(void)
 
 static void LoadAssets(BattleFactoryApp *app)
 {
-    app->narc = NARC_ctor(NARC_INDEX_RESOURCE__ENG__FRONTIER_GRAPHIC__FRONTIER_BG, HEAP_ID_BATTLE_FACTORY_APP);
+    app->narc = NARC_ctor(NARC_INDEX_FRONTIER_BACKGROUNDS, HEAP_ID_BATTLE_FACTORY_APP);
 
     LoadBackgrounds(app);
     InitSpriteManager(app);

@@ -195,7 +195,7 @@ res/graphics/options_menu/config_gra.narc,/graphic/config_gra.narc
 res/prebuilt/graphic/demo_trade.narc,/graphic/demo_trade.narc
 res/prebuilt/graphic/dendou_demo.narc,/graphic/dendou_demo.narc
 res/prebuilt/graphic/dendou_pc.narc,/graphic/dendou_pc.narc
-res/prebuilt/graphic/ending.narc,/graphic/ending.narc
+res/graphics/end_credits/ending.narc,/graphic/ending.narc
 res/prebuilt/graphic/ev_pokeselect.narc,/graphic/ev_pokeselect.narc
 res/prebuilt/graphic/f_note_gra.narc,/graphic/f_note_gra.narc
 res/graphics/signposts/field_board.narc,/graphic/field_board.narc
@@ -212,8 +212,8 @@ res/graphics/mail/mail.narc,/graphic/mail_gra.narc
 res/graphics/start_menu/start_menu.narc,/graphic/menu_gra.narc
 res/graphics/signature_interface/signature_interface.narc,/graphic/mysign.narc
 res/graphics/main_menu/main_menu_graphics.narc,/graphic/mystery.narc
-res/prebuilt/graphic/ntag_gra.narc,/graphic/ntag_gra.narc
-res/prebuilt/graphic/nutmixer.narc,/graphic/nutmixer.narc
+res/graphics/berry_tag/berry_tag.narc,/graphic/ntag_gra.narc
+res/graphics/poffin_cooking/poffin_cooking.narc,/graphic/nutmixer.narc
 res/prebuilt/graphic/oekaki.narc,/graphic/oekaki.narc
 res/prebuilt/graphic/opening.narc,/graphic/opening.narc
 res/graphics/bag/bag_graphics.narc,/graphic/pl_bag_gra.narc
@@ -252,7 +252,7 @@ res/items/pl_item_data.narc,/itemtool/itemdata/pl_item_data.narc
 res/pokemon/pl_poke_icon.narc,/poketool/icongra/pl_poke_icon.narc
 res/prebuilt/poketool/icongra/poke_icon.narc,/poketool/icongra/poke_icon.narc
 res/pokemon/pokefoot.narc,/poketool/pokefoot/pokefoot.narc
-res/prebuilt/data/mmodel/mmodel.narc,/data/mmodel/mmodel.narc
+res/graphics/field_sprites/field_sprites.narc,/data/mmodel/mmodel.narc
 res/prebuilt/data/mmodel/fldeff.narc,/data/mmodel/fldeff.narc
 res/graphics/battle/particles/pokeballs/ball_particles.narc,/wazaeffect/effectdata/ball_particle.narc
 res/graphics/battle/particles/battle_particles.narc,/wazaeffect/effectdata/waza_particle.narc
@@ -334,7 +334,7 @@ res/npc_trades.narc,/fielddata/pokemon_trade/fld_trade.narc
 res/graphics/pokedex/zukan.narc,/resource/eng/zukan/zukan.narc
 res/prebuilt/resource/eng/batt_rec/batt_rec_gra.narc,/resource/eng/batt_rec/batt_rec_gra.narc
 res/prebuilt/resource/eng/wifi_lobby_minigame/wlmngm_tool.narc,/resource/eng/wifi_lobby_minigame/wlmngm_tool.narc
-res/prebuilt/resource/eng/frontier_graphic/frontier_bg.narc,/resource/eng/frontier_graphic/frontier_bg.narc
+res/graphics/frontier/backgrounds/frontier_backgrounds.narc,/resource/eng/frontier_graphic/frontier_bg.narc
 res/prebuilt/resource/eng/frontier_graphic/frontier_obj.narc,/resource/eng/frontier_graphic/frontier_obj.narc
 res/prebuilt/resource/eng/scratch/scratch.narc,/resource/eng/scratch/scratch.narc
 res/words/word_bank.narc,/resource/eng/pms_aikotoba/pms_aikotoba.narc

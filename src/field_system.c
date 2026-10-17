@@ -9,8 +9,8 @@
 #include "generated/signpost_commands.h"
 
 #include "applications/poketch/poketch_system.h"
+#include "applications/title_screen.h"
 #include "field/field_system_sub2_t.h"
-#include "game_opening/const_ov77_021D742C.h"
 #include "overlay005/field_control.h"
 #include "overlay005/fieldmap.h"
 #include "overlay005/map_name_popup.h"
@@ -32,11 +32,11 @@
 #include "map_header_data.h"
 #include "map_matrix.h"
 #include "overlay_manager.h"
+#include "player_move.h"
 #include "pokedex_memory.h"
 #include "pokeradar.h"
 #include "savedata.h"
 #include "system.h"
-#include "unk_0205F180.h"
 #include "unk_0209C370.h"
 
 FS_EXTERN_OVERLAY(overlay5);
@@ -239,12 +239,12 @@ static void HandleFieldInput(FieldSystem *fieldSystem)
 
     FieldInput fieldInput;
     if (processInput) {
-        sub_0205F490(fieldSystem->playerAvatar);
+        PlayerAvatar_UpdatePlayerMoveState(fieldSystem->playerAvatar);
         FieldInput_Update(&fieldInput, fieldSystem, gSystem.pressedKeys, gSystem.heldKeys);
     }
 
     enum MapLoadType loadType = fieldSystem->mapLoadType;
-    if (fieldSystem->location->mapId == MAP_HEADER_BATTLE_TOWER) {
+    if (fieldSystem->location->mapHeaderID == MAP_HEADER_BATTLE_TOWER) {
         loadType = MAP_LOAD_TYPE_OVERWORLD;
     }
 
@@ -274,7 +274,7 @@ static void HandleFieldInput(FieldSystem *fieldSystem)
     case MAP_LOAD_TYPE_UNION:
         if (processInput) {
             if (FieldInput_Process_UnionRoom(&fieldInput, fieldSystem) != TRUE) {
-                PlayerAvatar_MoveControl(fieldSystem->playerAvatar, fieldSystem->landDataMan, -1, fieldInput.pressedKeys, fieldInput.heldKeys, 0);
+                PlayerAvatar_MoveMain(fieldSystem->playerAvatar, fieldSystem->landDataMan, -1, fieldInput.pressedKeys, fieldInput.heldKeys, 0);
             }
         }
         break;
@@ -297,7 +297,7 @@ static void HandleFieldInput(FieldSystem *fieldSystem)
                     tappedPoketch = PoketchSystem_IsTapped(poketchSys);
                 }
 
-                PlayerAvatar_MoveControl(fieldSystem->playerAvatar, fieldSystem->landDataMan, -1, fieldInput.pressedKeys, fieldInput.heldKeys, tappedPoketch);
+                PlayerAvatar_MoveMain(fieldSystem->playerAvatar, fieldSystem->landDataMan, -1, fieldInput.pressedKeys, fieldInput.heldKeys, tappedPoketch);
             }
         }
         break;
@@ -307,7 +307,7 @@ static void HandleFieldInput(FieldSystem *fieldSystem)
             if (FieldInput_Process(&fieldInput, fieldSystem) == TRUE) {
                 MapNamePopUp_Hide(fieldSystem->unk_04->mapPopup);
                 Signpost_DoCommand(fieldSystem, SIGNPOST_CMD_REMOVE);
-                sub_0205F56C(fieldSystem->playerAvatar);
+                PlayerAvatar_ClearMoveState(fieldSystem->playerAvatar);
                 ov5_021E0EEC(fieldSystem->playerAvatar);
                 FieldSystem_SendPoketchEvent(fieldSystem, POKETCH_EVENT_SLEEP, 1);
             } else {
@@ -321,7 +321,7 @@ static void HandleFieldInput(FieldSystem *fieldSystem)
                     tappedPoketch = PoketchSystem_IsTapped(poketchSys);
                 }
 
-                PlayerAvatar_MoveControl(fieldSystem->playerAvatar, fieldSystem->landDataMan, -1, fieldInput.pressedKeys, fieldInput.heldKeys, tappedPoketch);
+                PlayerAvatar_MoveMain(fieldSystem->playerAvatar, fieldSystem->landDataMan, -1, fieldInput.pressedKeys, fieldInput.heldKeys, tappedPoketch);
             }
         }
         break;

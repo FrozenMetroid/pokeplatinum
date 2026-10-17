@@ -6,11 +6,11 @@
 #include "struct_decls/tv_broadcast.h"
 #include "struct_defs/dress_up_photo.h"
 #include "struct_defs/image_clips.h"
+#include "struct_defs/wifi_player_profile.h"
 
 #include "overlay059/ov59_021D2A2C.h"
 #include "overlay059/ov59_021D2B44.h"
 #include "overlay059/struct_ov59_021D30E0.h"
-#include "overlay096/struct_wifi_player_profile.h"
 #include "savedata/save_table.h"
 
 #include "communication_information.h"
@@ -109,14 +109,14 @@ static void ov59_021D3068(const UnkStruct_ov59_021D2FBC *param0)
 
 static void *ov59_021D3088(SaveData *saveData, enum HeapID heapID, u32 param2)
 {
-    return sub_0202E9FC(saveData, heapID);
+    return SaveData_GetRankingEntries(saveData, heapID);
 }
 
 static void ov59_021D3090(const UnkStruct_ov59_021D2FBC *param0)
 {
     Rankings *v0 = SaveData_GetRankings(param0->saveData);
 
-    sub_0202ED0C(param0->saveData, param0->unk_0C, param0->unk_08, param0->unk_10, param0->heapID);
+    SaveData_UpdateRankings(param0->saveData, param0->unk_0C, param0->unk_08, param0->unk_10, param0->heapID);
 }
 
 static void *ov59_021D30B4(SaveData *saveData, enum HeapID heapID, u32 param2)

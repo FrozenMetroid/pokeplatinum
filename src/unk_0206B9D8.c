@@ -23,11 +23,11 @@
 #include "heap.h"
 #include "party.h"
 #include "record_mixed_rng.h"
+#include "ribbon_save_data.h"
 #include "save_player.h"
 #include "savedata.h"
 #include "script_manager.h"
 #include "underground.h"
-#include "unk_0202D778.h"
 #include "unk_020363E8.h"
 #include "unk_02038FFC.h"
 #include "unk_0203D1B8.h"
@@ -499,7 +499,7 @@ u32 sub_0206C068(SaveData *saveData)
 
 BOOL FieldSystem_IsInBattleTowerSalon(FieldSystem *fieldSystem)
 {
-    if (fieldSystem->location->mapId == MAP_HEADER_BATTLE_TOWER_BATTLE_SALON) {
+    if (fieldSystem->location->mapHeaderID == MAP_HEADER_BATTLE_TOWER_BATTLE_SALON) {
         return TRUE;
     }
 

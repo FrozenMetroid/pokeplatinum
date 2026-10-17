@@ -6,7 +6,6 @@
 #include "constants/heap.h"
 
 #include "field/field_system.h"
-#include "functypes/funcptr_0209B988.h"
 #include "overlay104/defs.h"
 #include "overlay104/frontier_graphics.h"
 #include "overlay104/frontier_script_manager.h"
@@ -32,16 +31,16 @@ FS_EXTERN_OVERLAY(battle_factory_app);
 typedef struct BattleFrontier {
     FieldFrontierDTO *fieldData;
     ApplicationManager *appMan;
-    void *unk_08;
-    UnkFuncPtr_0209B988 unk_0C;
-    u8 unk_10;
+    void *appArgs;
+    BattleFrontierSubAppCallback finishCallback;
+    u8 freeArgsAfter;
     FrontierScriptManager *scriptMan;
     FrontierGraphics *graphics;
-    u8 unk_1C;
+    u8 unused;
     u8 isGraphicsInitialized;
-    u8 unk_1E;
-    u16 unk_20;
-    u8 unk_22;
+    u8 changeScript;
+    u16 offsetID;
+    u8 exitBattleFrontier;
     UnkStruct_ov104_0223C688 unk_24[24];
     UnkStruct_ov104_0223C634 unk_6C[32];
     UnkStruct_ov104_0223D8F0 unk_78C[32];
@@ -94,7 +93,7 @@ int BattleFrontier_Main(ApplicationManager *appMan, int *state)
         *state = 1;
         break;
     case 1:
-        if (frontier->unk_22 == 1) {
+        if (frontier->exitBattleFrontier == TRUE) {
             *state = 2;
             break;
         }
@@ -103,7 +102,7 @@ int BattleFrontier_Main(ApplicationManager *appMan, int *state)
             break;
         }
 
-        if (frontier->unk_1E == 1) {
+        if (frontier->changeScript == TRUE) {
             *state = 5;
             break;
         }
@@ -131,17 +130,17 @@ int BattleFrontier_Main(ApplicationManager *appMan, int *state)
             ApplicationManager_Free(frontier->appMan);
             LoadBattleFrontierOverlays();
 
-            if (frontier->unk_0C != NULL) {
-                frontier->unk_0C(frontier->unk_08);
+            if (frontier->finishCallback != NULL) {
+                frontier->finishCallback(frontier->appArgs);
             }
 
-            if (frontier->unk_08 != NULL && frontier->unk_10 == 1) {
-                Heap_Free(frontier->unk_08);
+            if (frontier->appArgs != NULL && frontier->freeArgsAfter == 1) {
+                Heap_Free(frontier->appArgs);
             }
 
             frontier->appMan = NULL;
-            frontier->unk_0C = NULL;
-            frontier->unk_08 = NULL;
+            frontier->finishCallback = NULL;
+            frontier->appArgs = NULL;
 
             InitFrontierGraphics(frontier);
             ov104_0223C688(frontier->graphics);
@@ -156,20 +155,18 @@ int BattleFrontier_Main(ApplicationManager *appMan, int *state)
     case 6:
         InitFrontierGraphics(frontier);
 
-        if (frontier->unk_20 == 0xffff) {
+        if (frontier->offsetID == NO_NEW_ENTRY_POINT) {
             FrontierScriptManager_UpdateMessageLoader(frontier->scriptMan, frontier->fieldData->sceneID, HEAP_ID_FIELD2);
         } else {
-            UnkStruct_ov104_0222E8C8 *v2;
-
-            v2 = ov104_0222E8C8(frontier->scriptMan, HEAP_ID_FIELD2);
+            UnkStruct_ov104_0222E8C8 *v2 = ov104_0222E8C8(frontier->scriptMan, HEAP_ID_FIELD2);
             FrontierScriptManager_Free(frontier->scriptMan);
 
             frontier->scriptMan = FrontierScriptManager_New(frontier, HEAP_ID_FIELD2, frontier->fieldData->sceneID);
-            FrontierScriptManager_Load(frontier->scriptMan, frontier->fieldData->sceneID, frontier->unk_20);
+            FrontierScriptManager_Load(frontier->scriptMan, frontier->fieldData->sceneID, frontier->offsetID);
             ov104_0222E8E8(frontier->scriptMan, v2);
         }
 
-        frontier->unk_1E = 0;
+        frontier->changeScript = FALSE;
         *state = 1;
         break;
     }
@@ -249,25 +246,25 @@ void BattleFrontier_SetFacilityStruct(BattleFrontier *frontier, void *facilityDa
     frontier->fieldData->facilityData = facilityData;
 }
 
-void sub_0209B988(BattleFrontier *frontier, const ApplicationManagerTemplate *param1, void *param2, int param3, UnkFuncPtr_0209B988 param4)
+void BattleFrontier_RunSubApp(BattleFrontier *frontier, const ApplicationManagerTemplate *appTemplate, void *appArgs, BOOL freeArgsAfter, BattleFrontierSubAppCallback finishCallback)
 {
     GF_ASSERT(frontier->appMan == NULL);
-    frontier->appMan = ApplicationManager_New(param1, param2, HEAP_ID_FIELD2);
-    frontier->unk_08 = param2;
-    frontier->unk_10 = param3;
-    frontier->unk_0C = param4;
+    frontier->appMan = ApplicationManager_New(appTemplate, appArgs, HEAP_ID_FIELD2);
+    frontier->appArgs = appArgs;
+    frontier->freeArgsAfter = freeArgsAfter;
+    frontier->finishCallback = finishCallback;
 }
 
-void sub_0209B9B4(BattleFrontier *frontier)
+void BattleFrontier_ExitFrontier(BattleFrontier *frontier)
 {
-    frontier->unk_22 = 1;
+    frontier->exitBattleFrontier = TRUE;
 }
 
-void sub_0209B9BC(BattleFrontier *frontier, u16 sceneID, u16 param2)
+void BattleFrontier_ChangeScene(BattleFrontier *frontier, u16 sceneID, u16 entryPointOffset)
 {
     frontier->fieldData->sceneID = sceneID;
-    frontier->unk_1E = 1;
-    frontier->unk_20 = param2;
+    frontier->changeScript = TRUE;
+    frontier->offsetID = entryPointOffset;
 }
 
 UnkStruct_ov104_0223C688 *sub_0209B9CC(BattleFrontier *frontier)
@@ -299,13 +296,13 @@ void sub_0209B9EC(BattleFrontier *frontier)
     }
 }
 
-FieldFrontierDTO *sub_0209BA18(FieldSystem *fieldSystem, void *param1)
+FieldFrontierDTO *BattleFrontier_LaunchWFCFacilitySelector(FieldSystem *fieldSystem, void *data)
 {
     FieldFrontierDTO *fieldData = Heap_AllocAtEnd(HEAP_ID_FIELD2, sizeof(FieldFrontierDTO));
 
     MI_CpuClear8(fieldData, sizeof(FieldFrontierDTO));
 
-    fieldData->facilityData = param1;
+    fieldData->facilityData = data;
     fieldData->options = SaveData_GetOptions(fieldSystem->saveData);
     fieldData->saveData = fieldSystem->saveData;
     fieldData->journalEntry = fieldSystem->journalEntry;
@@ -313,8 +310,8 @@ FieldFrontierDTO *sub_0209BA18(FieldSystem *fieldSystem, void *param1)
     fieldData->subscreenCursorOn = fieldSystem->battleSubscreenCursorOn;
     fieldData->unk_14 = 0;
     fieldData->unk_18 = 0;
-    fieldData->mapHeaderID = fieldSystem->location->mapId;
-    fieldData->sceneID = FRONTIER_SCENE_14;
+    fieldData->mapHeaderID = fieldSystem->location->mapHeaderID;
+    fieldData->sceneID = FRONTIER_SCENE_WFC_FACILITY_SELECTOR;
     fieldData->fieldSystem = fieldSystem;
 
     FieldSystem_StartChildProcess(fieldSystem, &gBattleFrontierAppTemplate, fieldData);

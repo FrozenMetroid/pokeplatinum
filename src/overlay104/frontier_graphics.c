@@ -22,9 +22,9 @@
 #include "overlay063/union_ov63_0222BDAC.h"
 #include "overlay065/struct_ov65_0223582C.h"
 #include "overlay065/struct_ov65_022376D0.h"
+#include "overlay104/frontier_opponents.h"
 #include "overlay104/frontier_particle_system.h"
 #include "overlay104/frontier_scenes.h"
-#include "overlay104/ov104_0222DCE0.h"
 #include "overlay104/ov104_0223D768.h"
 #include "overlay104/struct_ov104_02230BE4.h"
 #include "overlay104/struct_ov104_0223C634.h"
@@ -41,7 +41,6 @@
 #include "gx_layers.h"
 #include "heap.h"
 #include "narc.h"
-#include "narc_frontier_bg.h"
 #include "network_icon.h"
 #include "palette.h"
 #include "render_text.h"
@@ -59,6 +58,7 @@
 #include "vram_transfer.h"
 
 #include "res/fonts/pl_font.naix"
+#include "res/graphics/frontier/backgrounds/frontier_backgrounds.naix"
 
 static void VBlankCallback(void *data);
 static void DummyExecuteOnVBlank(SysTask *task, void *data);
@@ -601,11 +601,11 @@ static void LoadMessageBoxAndWindowGraphics(FrontierGraphics *graphics)
 
 static void LoadSubScreenBackground(FrontierGraphics *graphics)
 {
-    NARC *narc = NARC_ctor(NARC_INDEX_RESOURCE__ENG__FRONTIER_GRAPHIC__FRONTIER_BG, HEAP_ID_94);
+    NARC *narc = NARC_ctor(NARC_INDEX_FRONTIER_BACKGROUNDS, HEAP_ID_94);
 
-    Graphics_LoadTilesToBgLayerFromOpenNARC(narc, BATTLE_FRONTIER_APP_SUB_SCREEN_TILES, graphics->bgConfig, BG_LAYER_SUB_0, 0, 0, TRUE, HEAP_ID_94);
-    Graphics_LoadTilemapToBgLayerFromOpenNARC(narc, BATTLE_FRONTIER_APP_SUB_SCREEN_TILEMAP, graphics->bgConfig, BG_LAYER_SUB_0, 0, 0, TRUE, HEAP_ID_94);
-    PaletteData_LoadBufferFromFileStart(graphics->plttData, NARC_INDEX_RESOURCE__ENG__FRONTIER_GRAPHIC__FRONTIER_BG, BATTLE_FRONTIER_APP_SUB_SCREEN_PLTT, HEAP_ID_94, PLTTBUF_SUB_BG, PALETTE_SIZE_BYTES, 0);
+    Graphics_LoadTilesToBgLayerFromOpenNARC(narc, battle_frontier_app_sub_NCGR_lz, graphics->bgConfig, BG_LAYER_SUB_0, 0, 0, TRUE, HEAP_ID_94);
+    Graphics_LoadTilemapToBgLayerFromOpenNARC(narc, battle_frontier_app_sub_NSCR_lz, graphics->bgConfig, BG_LAYER_SUB_0, 0, 0, TRUE, HEAP_ID_94);
+    PaletteData_LoadBufferFromFileStart(graphics->plttData, NARC_INDEX_FRONTIER_BACKGROUNDS, battle_frontier_app_sub_NCLR, HEAP_ID_94, PLTTBUF_SUB_BG, PALETTE_SIZE_BYTES, 0);
     NARC_dtor(narc);
 }
 
@@ -669,7 +669,7 @@ static void ov104_0223CC74(FrontierGraphics *param0, int sceneID, const TrainerI
         Graphics_LoadTilesToBgLayerFromOpenNARC(narc, FrontierScene_GetParam(sceneID, FR_SCENE_TILES_IDX), param0->bgConfig, 3, 0, 0, 1, HEAP_ID_94);
 
         if (bgMode == GX_BGMODE_0) {
-            PaletteData_LoadBufferFromFileStart(param0->plttData, narcID, FrontierScene_GetParam(sceneID, FR_SCENE_PLTT_IDX), 94, 0, (10 - 0 + 1) * 0x20, 0 * 16);
+            PaletteData_LoadBufferFromFileStart(param0->plttData, narcID, FrontierScene_GetParam(sceneID, FR_SCENE_PLTT_IDX), HEAP_ID_94, 0, (10 - 0 + 1) * PALETTE_SIZE_BYTES, PLTT_DEST(0));
         } else {
             NNSG2dPaletteData *plttData;
 
@@ -683,7 +683,7 @@ static void ov104_0223CC74(FrontierGraphics *param0, int sceneID, const TrainerI
             Heap_Free(pltt);
         }
 
-        PaletteData_FillBufferRange(param0->plttData, 0, 2, 0x0, 0, 1);
+        PaletteData_FillBufferRange(param0->plttData, PLTTBUF_MAIN_BG, PLTTSEL_BOTH, 0x0, 0, 1);
         Graphics_LoadTilemapToBgLayerFromOpenNARC(narc, FrontierScene_GetParam(sceneID, FR_SCENE_TILEMAP_IDX), param0->bgConfig, 3, 0, 0, 1, HEAP_ID_94);
 
         if (FrontierScene_GetParam(sceneID, FR_SCENE_SUB_TILEMAP_IDX) != 0xffff) {

@@ -194,7 +194,7 @@ f0dd678b1de5b9231ffad99f207085a1dab37491 *res/prebuilt/graphic/bucket.narc
 937807f1632664139194b95e3f7b8a58ac33f89a *res/prebuilt/graphic/demo_trade.narc
 67a8fb6c1b269ab107f2a98f23a5f53fb383ca1d *res/prebuilt/graphic/dendou_demo.narc
 d5a8953a61b8589539ce7b139ab956a802adaa33 *res/prebuilt/graphic/dendou_pc.narc
-2d1a354e31cdd1861bdd7aade661fb9e4dc0ae31 *res/prebuilt/graphic/ending.narc
+2d1a354e31cdd1861bdd7aade661fb9e4dc0ae31 *res/graphics/end_credits/ending.narc
 d91ceca1e3ef5e57061dabc690c0f1a1556dc624 *res/prebuilt/graphic/ev_pokeselect.narc
 5c673be62fe6bddfa911e3be26762b7e47d60b41 *res/prebuilt/graphic/f_note_gra.narc
 4941a639804c2b009836d1ab9b86a2ab0bb0c436 *res/graphics/signposts/field_board.narc
@@ -211,8 +211,8 @@ e7266bd8b7095861b6e1fdaf4f13cb648a9c325d *res/prebuilt/graphic/footprint_board.n
 1d70dd8856d2f85beb2d4e461cfaf7179153640a *res/graphics/start_menu/start_menu.narc
 5ccc879d6b89822eff8adeb0637af9f06c7d640d *res/graphics/signature_interface/signature_interface.narc
 0f05587c988da3072761675d31b6bf94c9928d65 *res/graphics/main_menu/main_menu_graphics.narc
-0de1d0a92bf3c1cf90b4522b11fb397dfdf9d533 *res/prebuilt/graphic/ntag_gra.narc
-46742a8665062b1fa4fe576491fa2ad67ca83f49 *res/prebuilt/graphic/nutmixer.narc
+0de1d0a92bf3c1cf90b4522b11fb397dfdf9d533 *res/graphics/berry_tag/berry_tag.narc
+46742a8665062b1fa4fe576491fa2ad67ca83f49 *res/graphics/poffin_cooking/poffin_cooking.narc
 e22f0296444ce01e0b7619f73a8cf2016b2307b4 *res/prebuilt/graphic/oekaki.narc
 917f25f4e5bb3f5e1837471d2a90225e9e95363d *res/prebuilt/graphic/opening.narc
 dd0663e46347230d1d1b9eb8b583cee9acc10f31 *res/graphics/bag/bag_graphics.narc
@@ -251,7 +251,7 @@ a2eca9df316b9cad191ace16d08a90603966e892 *res/prebuilt/graphic/worldtrade.narc
 6d861f9f35d1b267cd7b84368a1b7dc76b4e9669 *res/pokemon/pl_poke_icon.narc
 0622e95a5dc830735e711852032b829ead7d21e6 *res/prebuilt/poketool/icongra/poke_icon.narc
 7fb44c0bcde2ac5ae042835146c21b84159f5693 *res/pokemon/pokefoot.narc
-21bd9b9e352c828de0a93979589f7ea487c846d6 *res/prebuilt/data/mmodel/mmodel.narc
+21bd9b9e352c828de0a93979589f7ea487c846d6 *res/graphics/field_sprites/field_sprites.narc
 70d483c69d9f83dc52de91f2451c6cdfba6a046c *res/prebuilt/data/mmodel/fldeff.narc
 5de52d02105237dc02fb4c87c9b8378a5da93217 *res/graphics/battle/particles/pokeballs/ball_particles.narc
 bd80949f0ab84fe4b4963a41063088b2e2d6df92 *res/graphics/battle/particles/battle_particles.narc
@@ -333,7 +333,7 @@ d7e86fadf59a54f922fc7cf65ae65fa326b8429e *res/graphics/title_screen/titledemo.na
 d4b6f9731b808a613338005f59959325ce1e3ac9 *res/graphics/pokedex/zukan.narc
 7e85af57b27fa4a0829b24550fc6c0dd275cf994 *res/prebuilt/resource/eng/batt_rec/batt_rec_gra.narc
 2994f2955035001a22a1f225c68bfa809e4c85bf *res/prebuilt/resource/eng/wifi_lobby_minigame/wlmngm_tool.narc
-6be171e5d73a8ce4f6e262e6be0dd47c9bb95e41 *res/prebuilt/resource/eng/frontier_graphic/frontier_bg.narc
+6be171e5d73a8ce4f6e262e6be0dd47c9bb95e41 *res/graphics/frontier/backgrounds/frontier_backgrounds.narc
 8da7c7124dc267e37a556c7f7f5f56b15cd2e1fe *res/prebuilt/resource/eng/frontier_graphic/frontier_obj.narc
 5e8b4dcaf50f35dbf82ba9035c9fdddc88208b6e *res/prebuilt/resource/eng/scratch/scratch.narc
 9f8e15ee6e39f5d3ab5abf065dcc8d4850c08c5e *res/words/word_bank.narc
